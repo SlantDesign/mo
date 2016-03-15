@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CocoaAsyncSocket
 
-class WorkSpace: CanvasController {
+class WorkSpace: CanvasController, GCDAsyncSocketDelegate {
 
     override func setup() {
         //Work your magic here.
