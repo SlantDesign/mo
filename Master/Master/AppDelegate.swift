@@ -1,0 +1,24 @@
+//
+//  AppDelegate.swift
+//  Master
+//
+//  Created by travis on 2016-03-14.
+//  Copyright © 2016 C4. All rights reserved.
+//
+
+import Cocoa
+import CocoaLumberjackSwift
+
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
+
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
+        DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
+    }
+
+    func applicationWillTerminate(aNotification: NSNotification) {
+        // Insert code here to tear down your application
+    }
+}
+
