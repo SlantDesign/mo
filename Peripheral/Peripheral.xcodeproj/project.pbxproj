@@ -90,6 +90,8 @@
 		1F545E101C97E64D00436812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0F1C97E64D00436812 /* Images.xcassets */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
+		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
+		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,8 @@
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		1F545D691C97E64C00436812 = {
 			isa = PBXGroup;
 			children = (
+				D9C634351C98A01200AB3F75 /* Packet.swift */,
 				1F545D741C97E64C00436812 /* Peripheral */,
 				1F545E1C1C97E64D00436812 /* PeripheralTests */,
 				1F545D731C97E64C00436812 /* Products */,
@@ -259,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				1F545D751C97E64C00436812 /* AppDelegate.swift */,
+				D9C6342D1C9896F000AB3F75 /* SocketManager.swift */,
 				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
 				1F545E0F1C97E64D00436812 /* Images.xcassets */,
@@ -507,8 +513,10 @@
 				1F545DBF1C97E64D00436812 /* Rectangle.swift in Sources */,
 				1F545DC31C97E64D00436812 /* ScreenRecorder.swift in Sources */,
 				1F545DAF1C97E64D00436812 /* ImageLayer.swift in Sources */,
+				D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */,
 				1F545E011C97E64D00436812 /* HueAdjust.swift in Sources */,
 				1F545DBD1C97E64D00436812 /* QuadCurve.swift in Sources */,
+				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
 				1F545D8C1C97E64C00436812 /* Vector.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
 				1F545DD91C97E64D00436812 /* View.swift in Sources */,

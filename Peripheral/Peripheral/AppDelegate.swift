@@ -13,13 +13,19 @@ import CocoaLumberjackSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var socketManager: SocketManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if NSUserDefaults.standardUserDefaults().objectForKey("deviceID") == nil {
+            var deviceName = UIDevice.currentDevice().name
+            deviceName = deviceName.stringByReplacingOccurrencesOfString("M-O ", withString: "")
+            NSUserDefaults.standardUserDefaults().setInteger(Int(deviceName)!, forKey: "deviceID")
+        }
 
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
 
+        socketManager = SocketManager.sharedManager
         return true
     }
 
