@@ -4,49 +4,94 @@ import Foundation
 
 public enum PacketMessage: Int8 {
     case Handshake
-    case Disconnect
+    case Bubbles
+    case Sync
+    case Alignment
+    case Bars
+    case Scroll
     case None
 }
 
 public enum PacketType: Int8 {
     case Connection
+    case Gesture
+    case Scroll
+    case SwitchUniverse
     case General
 }
 
-public enum MOObject: Int8 {
-    case Core
-    case Peripheral
-    case None
+enum PacketInitializationError: ErrorType {
+    case PacketType
+    case PacketMessage
+    case ID
+    case DataLength
+    case Data
 }
 
 public struct Packet: Equatable {
     public var type = PacketType.General
     public var message = PacketMessage.None
+    public var id = -1
+    public var data: NSData?
+    var dataLength = 0
 
-    public init(type: PacketType, message: PacketMessage) {
+    public init(type: PacketType, message: PacketMessage, id: Int, data: NSData? = nil) {
         self.type = type
         self.message = message
+        self.id = id
+        self.data = data
+
+        if let d = self.data {
+            dataLength = d.length
+        } else {
+            dataLength = 0
+        }
     }
     
     public func serialize() -> NSData {
-        let data = NSMutableData()
+        let packetData = NSMutableData()
         var t = type
-        data.appendBytes(&t, length: sizeof(PacketType))
+        packetData.appendBytes(&t, length: sizeof(PacketType))
         var m = message
-        data.appendBytes(&m, length: sizeof(PacketMessage))
-        return data
+        packetData.appendBytes(&m, length: sizeof(PacketMessage))
+        var i = id
+        packetData.appendBytes(&i, length: sizeof(Int))
+        var dl = dataLength
+        packetData.appendBytes(&dl, length: sizeof(Int))
+        if var d = self.data where dl > 0 {
+            packetData.appendBytes(&d, length: dataLength)
+        }
+        return packetData
     }
     
-    public init(_ data: NSData) {
+    public init(_ packetData: NSData) throws {
         var index = 0
-        type = PacketType(rawValue: UnsafePointer<Int8>(data.bytes).memory)!
+
+        guard let t = PacketType(rawValue: UnsafePointer<Int8>(packetData.bytes).memory) else {
+            throw PacketInitializationError.PacketType
+        }
+        type = t
         index += sizeof(PacketType)
-        message = PacketMessage(rawValue: UnsafePointer<Int8>(data.bytes + index).memory)!
+
+        guard let m = PacketMessage(rawValue: UnsafePointer<Int8>(packetData.bytes + index).memory) else {
+            throw PacketInitializationError.PacketMessage
+        }
+        message = m
         index += sizeof(PacketMessage)
+
+        id = UnsafePointer<Int>(packetData.bytes + index).memory
+        index += sizeof(Int)
+
+        dataLength = UnsafePointer<Int>(packetData.bytes+index).memory
+        index += sizeof(Int)
+
+        if dataLength > 0 {
+            data = NSData(bytes: UnsafePointer<Void>(packetData.bytes+index), length: dataLength)
+        }
     }
     
     public var description : String {
-        return "Packet: \(type), \(message)"
+        return "Packet: \(type), \(message), \(id), \(dataLength), \(data == nil ? "No Data" : "Data Exists")"
     }
 }
 

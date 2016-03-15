@@ -40,7 +40,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
     public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         DDLogVerbose("Connected to host \(host) on port \(port)")
-        let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake)
+        let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
         writeTo(sock, data: packet.serialize())    }
 
     func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
@@ -58,6 +58,12 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         sock.readDataToData(GCDAsyncSocket.CRLFData(), withTimeout: -1, tag: 0)
     }
 
+    public func sendPacket(packet: Packet) {
+        if let sock = socket {
+            writeTo(sock, data: packet.serialize())
+        }
+    }
+
     public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         DDLogVerbose("\(deviceID) disconnected from \(sock)")
         socket?.disconnect()
@@ -69,14 +75,18 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     }
 
     public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        let packet = Packet(data)
+        var packet: Packet!
+        do {
+            packet = try Packet(data)
+        } catch {
+            DDLogVerbose("Could not initialize packet from data: \(error)")
+            return
+        }
 
         switch packet.type {
         case .Connection:
             if packet.message == .Handshake {
                 DDLogVerbose("\(deviceID) shook hands with \(sock)")
-            } else if packet.message == .Disconnect {
-
             }
         default:
             break

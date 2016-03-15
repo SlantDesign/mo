@@ -19,6 +19,8 @@
 		1F545D391C97E27100436812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F545D371C97E27100436812 /* Main.storyboard */; };
 		D9C6342C1C988FF200AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342B1C988FF200AB3F75 /* SocketManager.swift */; };
 		D9C634341C98A00A00AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
+		D9C6343E1C98C5F500AB3F75 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */; };
+		D9C634431C98C6A300AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,9 @@
 		1F545D3A1C97E27100436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C6342B1C988FF200AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634331C98A00A00AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
+		D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PacketTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTest.swift; sourceTree = "<group>"; };
+		D9C6343F1C98C5F500AB3F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9C634381C98C5F500AB3F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +82,7 @@
 			children = (
 				D9C634331C98A00A00AB3F75 /* Packet.swift */,
 				1F545D301C97E27100436812 /* Master */,
+				D9C6343C1C98C5F500AB3F75 /* PacketTest */,
 				1F545D2F1C97E27100436812 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1F545D2E1C97E27100436812 /* Master.app */,
+				D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +121,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		D9C6343C1C98C5F500AB3F75 /* PacketTest */ = {
+			isa = PBXGroup;
+			children = (
+				D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */,
+				D9C6343F1C98C5F500AB3F75 /* Info.plist */,
+			);
+			path = PacketTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +152,23 @@
 			productReference = 1F545D2E1C97E27100436812 /* Master.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D9C6343A1C98C5F500AB3F75 /* PacketTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9C634401C98C5F500AB3F75 /* Build configuration list for PBXNativeTarget "PacketTest" */;
+			buildPhases = (
+				D9C634371C98C5F500AB3F75 /* Sources */,
+				D9C634381C98C5F500AB3F75 /* Frameworks */,
+				D9C634391C98C5F500AB3F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PacketTest;
+			productName = PacketTest;
+			productReference = D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +180,9 @@
 				ORGANIZATIONNAME = C4;
 				TargetAttributes = {
 					1F545D2D1C97E27100436812 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					D9C6343A1C98C5F500AB3F75 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -158,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				1F545D2D1C97E27100436812 /* Master */,
+				D9C6343A1C98C5F500AB3F75 /* PacketTest */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +213,13 @@
 			files = (
 				1F545D361C97E27100436812 /* Assets.xcassets in Resources */,
 				1F545D391C97E27100436812 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9C634391C98C5F500AB3F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +252,15 @@
 				D9C6342C1C988FF200AB3F75 /* SocketManager.swift in Sources */,
 				1F545D321C97E27100436812 /* AppDelegate.swift in Sources */,
 				D9C634341C98A00A00AB3F75 /* Packet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9C634371C98C5F500AB3F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9C6343E1C98C5F500AB3F75 /* PacketTest.swift in Sources */,
+				D9C634431C98C6A300AB3F75 /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +390,35 @@
 			};
 			name = Release;
 		};
+		D9C634411C98C5F500AB3F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PacketTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = c4.PacketTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D9C634421C98C5F500AB3F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PacketTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = c4.PacketTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -350,6 +439,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D9C634401C98C5F500AB3F75 /* Build configuration list for PBXNativeTarget "PacketTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9C634411C98C5F500AB3F75 /* Debug */,
+				D9C634421C98C5F500AB3F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

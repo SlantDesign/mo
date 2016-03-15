@@ -92,6 +92,10 @@
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
+		D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634441C98C93800AB3F75 /* UniverseController.swift */; };
+		D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634471C98C99100AB3F75 /* Gesture.swift */; };
+		D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634491C98CA2700AB3F75 /* Spiral.swift */; };
+		D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +211,10 @@
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
+		D9C634441C98C93800AB3F75 /* UniverseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseController.swift; sourceTree = "<group>"; };
+		D9C634471C98C99100AB3F75 /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
+		D9C634491C98CA2700AB3F75 /* Spiral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spiral.swift; sourceTree = "<group>"; };
+		D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +271,9 @@
 		1F545D741C97E64C00436812 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				D9C634461C98C93C00AB3F75 /* Universes */,
+				D9C634471C98C99100AB3F75 /* Gesture.swift */,
+				D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */,
 				1F545D751C97E64C00436812 /* AppDelegate.swift */,
 				D9C6342D1C9896F000AB3F75 /* SocketManager.swift */,
 				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
@@ -395,6 +406,15 @@
 			path = PeripheralTests;
 			sourceTree = "<group>";
 		};
+		D9C634461C98C93C00AB3F75 /* Universes */ = {
+			isa = PBXGroup;
+			children = (
+				D9C634441C98C93800AB3F75 /* UniverseController.swift */,
+				D9C634491C98CA2700AB3F75 /* Spiral.swift */,
+			);
+			name = Universes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,6 +530,7 @@
 				1F545D7C1C97E64C00436812 /* EventSource.swift in Sources */,
 				1F545DD71C97E64D00436812 /* UIImage+AddRemove.swift in Sources */,
 				1F545DF71C97E64D00436812 /* Bloom.swift in Sources */,
+				D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */,
 				1F545DBF1C97E64D00436812 /* Rectangle.swift in Sources */,
 				1F545DC31C97E64D00436812 /* ScreenRecorder.swift in Sources */,
 				1F545DAF1C97E64D00436812 /* ImageLayer.swift in Sources */,
@@ -519,6 +540,7 @@
 				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
 				1F545D8C1C97E64C00436812 /* Vector.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
+				D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */,
 				1F545DD91C97E64D00436812 /* View.swift in Sources */,
 				1F545DAB1C97E64C00436812 /* Image+Filter.swift in Sources */,
 				1F545DE31C97E64D00436812 /* View+Shadow.swift in Sources */,
@@ -550,6 +572,7 @@
 				1F545D841C97E64C00436812 /* Point.swift in Sources */,
 				1F545E071C97E64D00436812 /* Sharpen.swift in Sources */,
 				1F545DFD1C97E64D00436812 /* DotScreen.swift in Sources */,
+				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
 				1F545D9D1C97E64C00436812 /* Filter.swift in Sources */,
 				1F545DD11C97E64D00436812 /* Timer.swift in Sources */,
 				1F545D821C97E64C00436812 /* Path.swift in Sources */,
@@ -568,6 +591,7 @@
 				1F545DBB1C97E64D00436812 /* Polygon.swift in Sources */,
 				1F545DB31C97E64D00436812 /* Layer.swift in Sources */,
 				1F545DC91C97E64D00436812 /* ShapeLayer.swift in Sources */,
+				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
 				1F545DAD1C97E64C00436812 /* Image+Generator.swift in Sources */,
 				1F545DFF1C97E64D00436812 /* GaussianBlur.swift in Sources */,
 				1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */,
