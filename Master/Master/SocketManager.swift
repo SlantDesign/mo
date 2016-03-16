@@ -37,21 +37,41 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         DDLogVerbose("Accepted sock: \(sock) from: \(newSocket.connectedHost):\(newSocket.connectedPort)")
         if sock == socket {
             connectedSockets.append(newSocket)
-            let p = Packet(type: PacketType.Connection, message: PacketMessage.Handshake)
+            let p = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
             writeTo(newSocket, packet: p)
         }
     }
 
     public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        DDLogVerbose("\(deviceID) Incoming data from: \(sock)")
         sock.readDataWithTimeout(-1, tag: 0)
 
-        let packet = Packet(data)
+        var packet: Packet
+        do {
+            packet = try Packet(data)
+        } catch {
+            print("Could not unpack data from \(sock) \(error)")
+            return
+        }
+
+        switch packet.packetType {
+        case .Scroll:
+            forwardScroll(data, excluding: sock)
+            return
+        default:
+            break
+        }
 
         if packet.message == .Handshake {
-            DDLogVerbose("Shook hands with peripheral")
         } else {
             DDLogVerbose("Unknown Data: \(packet)")
+        }
+    }
+
+    func forwardScroll(data: NSData, excluding sender: GCDAsyncSocket) {
+        for sock in connectedSockets {
+            if sock != sender {
+                writeTo(sock, data: data)
+            }
         }
     }
 

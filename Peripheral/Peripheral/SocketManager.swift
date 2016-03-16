@@ -10,9 +10,14 @@ import Foundation
 import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
+//let currentHost = "192.168.0.11"
+let currentHost = "169.254.176.152"
+
 public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     static let sharedManager = SocketManager()
 
+    var workspace: WorkSpace?
+    
     var deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
 
     //a list of addresses that point to a broadcast NSNetService
@@ -23,7 +28,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
     public override init() {
         super.init()
-        initializeSocketWithHost("169.254.64.68", port: 10101)
+        initializeSocketWithHost(currentHost, port: 10101)
     }
 
     func initializeSocketWithHost(host: String, port: UInt16) {
@@ -31,7 +36,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         socket?.delegate = self
         do {
             //doesn't work without specifying the timeout (2h)
-            try socket?.connectToHost(host, onPort: port, withTimeout: -1)
+            try socket?.connectToHost(host, onPort: port, withTimeout: 1)
             DDLogVerbose("Trying to connect to host \(host) on port \(port)")
         } catch {
             DDLogVerbose("\(deviceID): Could not connect to host \(host) on port \(port)")
@@ -40,7 +45,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
     public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         DDLogVerbose("Connected to host \(host) on port \(port)")
-        let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake)
+        let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
         writeTo(sock, data: packet.serialize())    }
 
     func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
@@ -48,7 +53,6 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     }
 
     func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        DDLogVerbose("Attempting to write to: \(sock)")
         let data = NSMutableData(data: data)
         //appends an extra bit of data that acts as an "end point" for reading
         data.appendData(GCDAsyncSocket.CRLFData())
@@ -58,28 +62,38 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         sock.readDataToData(GCDAsyncSocket.CRLFData(), withTimeout: -1, tag: 0)
     }
 
+    public func sendPacket(packet: Packet) {
+        if let sock = socket {
+            writeTo(sock, data: packet.serialize())
+        }
+    }
+
     public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         DDLogVerbose("\(deviceID) disconnected from \(sock)")
         socket?.disconnect()
         socket = nil
 
         wait(0.1) {
-            self.initializeSocketWithHost("169.254.64.68", port: 10101)
+            self.initializeSocketWithHost(currentHost, port: 10101)
         }
     }
 
     public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        let packet = Packet(data)
+        var packet: Packet!
+        do {
+            packet = try Packet(data)
+        } catch {
+            DDLogVerbose("Could not initialize packet from data: \(error)")
+            return
+        }
 
-        switch packet.type {
+        switch packet.packetType {
         case .Connection:
             if packet.message == .Handshake {
                 DDLogVerbose("\(deviceID) shook hands with \(sock)")
-            } else if packet.message == .Disconnect {
-
             }
         default:
-            break
+            workspace?.receivePacket(packet)
         }
         sock.readDataWithTimeout(-1, tag: 0)
     }
