@@ -6,6 +6,7 @@
 //  Copyright © 2016 C4. All rights reserved.
 //
 
+import C4
 import UIKit
 import CocoaLumberjackSwift
 

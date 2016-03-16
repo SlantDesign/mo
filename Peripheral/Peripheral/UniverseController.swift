@@ -1,5 +1,6 @@
 //  Copyright © 2015 C4. All rights reserved.
 
+import C4
 import UIKit
 
 let frameGap = 229.0

@@ -36,6 +36,21 @@ public class Movie: View {
     /// The default value of this property is `true`.
     public var loops: Bool = true
 
+    /// Mute/Unmute the audio track.
+    ///
+    /// The default value of this property is `false`.
+    public var muted: Bool {
+        get {
+            guard let p = player else {
+                return false
+            }
+            return p.muted
+        }
+        set {
+            player?.muted = newValue
+        }
+    }
+
     /// A variable that provides access to the width of the receiver. Animatable.
     /// The default value of this property is defined by the movie being created.
     /// Assigning a value to this property causes the receiver to change the width of its frame. If the receiver's
@@ -85,21 +100,6 @@ public class Movie: View {
     public var originalRatio: Double {
         get {
             return originalSize.width / originalSize.height
-        }
-    }
-
-    /// Mute/Unmute the audio track.
-    ///
-    /// The default value of this property is `false`.
-    public var muted: Bool {
-        get {
-            guard let p = player else {
-                return false
-            }
-            return p.muted
-        }
-        set {
-            player?.muted = newValue
         }
     }
 
@@ -156,12 +156,10 @@ public class Movie: View {
         let asset = AVAsset(URL: url)
         let tracks = asset.tracksWithMediaType(AVMediaTypeVideo)
 
-        //grab the movie track and size
         let movieTrack = tracks[0]
-        let size = Size(movieTrack.naturalSize)
-
-        self.init(frame: Rect(0, 0, Double(size.width), Double(size.height)))
+        self.init(frame: Rect(0, 0, Double(movieTrack.naturalSize.width), Double(movieTrack.naturalSize.height)))
         self.filename = filename
+
         //initialize player with item
         let newPlayer = AVQueuePlayer(playerItem: AVPlayerItem(asset: asset))
         newPlayer.actionAtItemEnd = .Pause
@@ -178,6 +176,9 @@ public class Movie: View {
         movieLayer.videoGravity = AVLayerVideoGravityResize
 
         originalSize = self.size
+
+        // unmute
+        muted = false
     }
 
     /// Initializes a new Movie using the specified frame.
