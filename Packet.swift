@@ -29,14 +29,14 @@ enum PacketInitializationError: ErrorType {
 }
 
 public struct Packet: Equatable {
-    public var type = PacketType.General
+    public var packetType = PacketType.General
     public var message = PacketMessage.None
     public var id = -1
     public var data: NSData?
     var dataLength = 0
 
     public init(type: PacketType, message: PacketMessage, id: Int, data: NSData? = nil) {
-        self.type = type
+        self.packetType = type
         self.message = message
         self.id = id
         self.data = data
@@ -50,7 +50,7 @@ public struct Packet: Equatable {
     
     public func serialize() -> NSData {
         let packetData = NSMutableData()
-        var t = type
+        var t = packetType
         packetData.appendBytes(&t, length: sizeof(PacketType))
         var m = message
         packetData.appendBytes(&m, length: sizeof(PacketMessage))
@@ -58,8 +58,8 @@ public struct Packet: Equatable {
         packetData.appendBytes(&i, length: sizeof(Int))
         var dl = dataLength
         packetData.appendBytes(&dl, length: sizeof(Int))
-        if var d = self.data where dl > 0 {
-            packetData.appendBytes(&d, length: dataLength)
+        if let d = self.data where dl > 0 {
+            packetData.appendData(d)
         }
         return packetData
     }
@@ -70,7 +70,7 @@ public struct Packet: Equatable {
         guard let t = PacketType(rawValue: UnsafePointer<Int8>(packetData.bytes).memory) else {
             throw PacketInitializationError.PacketType
         }
-        type = t
+        packetType = t
         index += sizeof(PacketType)
 
         guard let m = PacketMessage(rawValue: UnsafePointer<Int8>(packetData.bytes + index).memory) else {
@@ -80,10 +80,10 @@ public struct Packet: Equatable {
         index += sizeof(PacketMessage)
 
         id = UnsafePointer<Int>(packetData.bytes + index).memory
-        index += sizeof(Int)
+        index += 8 //sizeof(Int)
 
         dataLength = UnsafePointer<Int>(packetData.bytes+index).memory
-        index += sizeof(Int)
+        index += 8 //sizeof(Int)
 
         if dataLength > 0 {
             data = NSData(bytes: UnsafePointer<Void>(packetData.bytes+index), length: dataLength)
@@ -91,11 +91,11 @@ public struct Packet: Equatable {
     }
     
     public var description : String {
-        return "Packet: \(type), \(message), \(id), \(dataLength), \(data == nil ? "No Data" : "Data Exists")"
+        return "Packet: \(packetType), \(message), \(id), \(dataLength), \(data == nil ? "No Data" : "Data Exists")"
     }
 }
 
 public func ==(lhs: Packet, rhs: Packet) -> Bool {
-    return lhs.type == rhs.type &&
+    return lhs.packetType == rhs.packetType &&
         lhs.message == rhs.message
 }

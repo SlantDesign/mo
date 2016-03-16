@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CocoaLumberjackSwift
 
 public class Spiral : UniverseController {
     let scrollViewRotation = -M_PI/32
-    private var userDidScrollContext = 1
-    private var userDidNotScrollContext = 2
-    private var currentContext = 1
+    private var userDidScrollContext = true
+    private var userDidNotScrollContext = false
+    private var currentContext = true
 
     let container = View()
     let scrollview = InfiniteScrollView()
@@ -21,6 +22,7 @@ public class Spiral : UniverseController {
     let pageCount = 60
     var colors: [Color]!
     var shouldReportContentOffset: Bool = true
+    var spiralUniverseDelegate: SpiralUniverseDelegate?
 
     public override func setup() {
 
@@ -101,17 +103,24 @@ public class Spiral : UniverseController {
     }
 
     public var shouldReportScroll: Bool {
-        return currentContext == userDidScrollContext
+        return currentContext
     }
 
     public func registerUserInteraction(gestureRecognizer: UIGestureRecognizer) {
         currentContext = userDidScrollContext
     }
 
-//    public func handleContentOffset(contentOffset: ContentOffset) {
-//        currentContext = userDidNotScrollContext
-//        interaction.setContentOffset(CGPoint(contentOffset.offset), animated: false)
-//    }
+    public func registerRemoteUserInteraction(point: CGPoint) {
+        currentContext = userDidNotScrollContext
+        if scrollview.contentOffset != point {
+            scrollview.contentOffset = point
+            let normalOffset = (scrollview.contentOffset.x / scrollview.contentSize.width)
+            let targetOffset = normalOffset * interaction.contentSize.width
+            interaction.contentOffset = CGPoint(x: targetOffset,y: 0)
+            let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
+            container.center.y = y
+        }
+    }
 
     func generateColors(from c1: Color = C4Pink, to c2: Color = C4Blue, steps: Int) -> [Color] {
         let vP = Vector(x: c1.red, y: c1.green, z: c1.blue)
@@ -132,12 +141,15 @@ public class Spiral : UniverseController {
     }
 
     public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
-        let targetOffset = normalOffset * scrollview.contentSize.width
-        if scrollview.contentOffset.x != targetOffset {
-            scrollview.contentOffset = CGPoint(x: targetOffset,y: 0)
-            let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
-            container.center.y = y
+        if currentContext {
+            let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
+            let targetOffset = normalOffset * scrollview.contentSize.width
+            if scrollview.contentOffset.x != targetOffset {
+                scrollview.contentOffset = CGPoint(x: targetOffset,y: 0)
+                let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
+                container.center.y = y
+                spiralUniverseDelegate?.shouldSendScrollData()
+            }
         }
     }
 }

@@ -10,9 +10,14 @@ import Foundation
 import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
+//let currentHost = "192.168.0.11"
+let currentHost = "169.254.176.152"
+
 public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     static let sharedManager = SocketManager()
 
+    var workspace: WorkSpace?
+    
     var deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
 
     //a list of addresses that point to a broadcast NSNetService
@@ -23,7 +28,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
     public override init() {
         super.init()
-        initializeSocketWithHost("169.254.64.68", port: 10101)
+        initializeSocketWithHost(currentHost, port: 10101)
     }
 
     func initializeSocketWithHost(host: String, port: UInt16) {
@@ -31,7 +36,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         socket?.delegate = self
         do {
             //doesn't work without specifying the timeout (2h)
-            try socket?.connectToHost(host, onPort: port, withTimeout: -1)
+            try socket?.connectToHost(host, onPort: port, withTimeout: 1)
             DDLogVerbose("Trying to connect to host \(host) on port \(port)")
         } catch {
             DDLogVerbose("\(deviceID): Could not connect to host \(host) on port \(port)")
@@ -48,7 +53,6 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     }
 
     func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        DDLogVerbose("Attempting to write to: \(sock)")
         let data = NSMutableData(data: data)
         //appends an extra bit of data that acts as an "end point" for reading
         data.appendData(GCDAsyncSocket.CRLFData())
@@ -70,7 +74,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         socket = nil
 
         wait(0.1) {
-            self.initializeSocketWithHost("169.254.64.68", port: 10101)
+            self.initializeSocketWithHost(currentHost, port: 10101)
         }
     }
 
@@ -83,13 +87,13 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
             return
         }
 
-        switch packet.type {
+        switch packet.packetType {
         case .Connection:
             if packet.message == .Handshake {
                 DDLogVerbose("\(deviceID) shook hands with \(sock)")
             }
         default:
-            break
+            workspace?.receivePacket(packet)
         }
         sock.readDataWithTimeout(-1, tag: 0)
     }

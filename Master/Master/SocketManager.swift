@@ -43,7 +43,6 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     }
 
     public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        DDLogVerbose("\(deviceID) Incoming data from: \(sock)")
         sock.readDataWithTimeout(-1, tag: 0)
 
         var packet: Packet
@@ -54,10 +53,25 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
             return
         }
 
+        switch packet.packetType {
+        case .Scroll:
+            forwardScroll(data, excluding: sock)
+            return
+        default:
+            break
+        }
+
         if packet.message == .Handshake {
-            DDLogVerbose("Shook hands with peripheral")
         } else {
             DDLogVerbose("Unknown Data: \(packet)")
+        }
+    }
+
+    func forwardScroll(data: NSData, excluding sender: GCDAsyncSocket) {
+        for sock in connectedSockets {
+            if sock != sender {
+                writeTo(sock, data: data)
+            }
         }
     }
 
