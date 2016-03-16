@@ -28,6 +28,8 @@ enum PacketInitializationError: ErrorType {
     case Data
 }
 
+import CocoaLumberjackSwift
+
 public struct Packet: Equatable {
     public var packetType = PacketType.General
     public var message = PacketMessage.None
@@ -80,12 +82,12 @@ public struct Packet: Equatable {
         index += sizeof(PacketMessage)
 
         id = UnsafePointer<Int>(packetData.bytes + index).memory
-        index += 8 //sizeof(Int)
+        index += sizeof(Int)
 
         dataLength = UnsafePointer<Int>(packetData.bytes+index).memory
-        index += 8 //sizeof(Int)
+        index += sizeof(Int)
 
-        if dataLength > 0 {
+        if dataLength > 0 && ((index + dataLength) < packetData.length) {
             data = NSData(bytes: UnsafePointer<Void>(packetData.bytes+index), length: dataLength)
         }
     }
