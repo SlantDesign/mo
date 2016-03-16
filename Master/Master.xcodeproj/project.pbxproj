@@ -447,6 +447,7 @@
 				D9C634421C98C5F500AB3F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

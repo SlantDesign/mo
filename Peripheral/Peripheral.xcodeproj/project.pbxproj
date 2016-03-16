@@ -90,6 +90,7 @@
 		1F545E101C97E64D00436812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0F1C97E64D00436812 /* Images.xcassets */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
+		1F96F19F1C99C53B007A3718 /* SerialAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96F19E1C99C53B007A3718 /* SerialAnimation.swift */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
 		D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634441C98C93800AB3F75 /* UniverseController.swift */; };
@@ -209,6 +210,7 @@
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F96F19E1C99C53B007A3718 /* SerialAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialAnimation.swift; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
 		D9C634441C98C93800AB3F75 /* UniverseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C634351C98A01200AB3F75 /* Packet.swift */,
+				1F96F19E1C99C53B007A3718 /* SerialAnimation.swift */,
 				1F545D741C97E64C00436812 /* Peripheral */,
 				1F545E1C1C97E64D00436812 /* PeripheralTests */,
 				1F545D731C97E64C00436812 /* Products */,
@@ -554,6 +557,7 @@
 				1F545D911C97E64C00436812 /* Arc.swift in Sources */,
 				1F545DE91C97E64D00436812 /* UIGestureRecognizer+Closure.swift in Sources */,
 				1F545DA51C97E64C00436812 /* GradientLayer.swift in Sources */,
+				1F96F19F1C99C53B007A3718 /* SerialAnimation.swift in Sources */,
 				1F545DCB1C97E64D00436812 /* StoredAnimation.swift in Sources */,
 				1F545D9B1C97E64C00436812 /* Ellipse.swift in Sources */,
 				1F545D7E1C97E64C00436812 /* Foundation.swift in Sources */,
