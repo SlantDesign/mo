@@ -12,7 +12,8 @@ import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
 //let currentHost = "192.168.0.11"
-let currentHost = "169.254.176.152"
+//let currentHost = "169.254.176.152"
+let currentHost = "169.254.102.150"
 
 public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     static let sharedManager = SocketManager()
