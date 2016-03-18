@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F4228041C97FF4200B731FE /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228021C97FF4200B731FE /* CocoaLumberjack.framework */; };
-		1F4228051C97FF4200B731FE /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228021C97FF4200B731FE /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F4228061C97FF4200B731FE /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228031C97FF4200B731FE /* CocoaLumberjackSwift.framework */; };
-		1F4228071C97FF4200B731FE /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228031C97FF4200B731FE /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F4228091C97FF5C00B731FE /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228081C97FF5C00B731FE /* CocoaAsyncSocket.framework */; };
-		1F42280A1C97FF5C00B731FE /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228081C97FF5C00B731FE /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F545D321C97E27100436812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545D311C97E27100436812 /* AppDelegate.swift */; };
 		1F545D341C97E27100436812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545D331C97E27100436812 /* ViewController.swift */; };
 		1F545D361C97E27100436812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545D351C97E27100436812 /* Assets.xcassets */; };
 		1F545D391C97E27100436812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F545D371C97E27100436812 /* Main.storyboard */; };
+		A9B46D031C9CAD1C00E1D1DD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CF91C9CACE400E1D1DD /* CocoaAsyncSocket.framework */; };
+		A9B46D041C9CAD1C00E1D1DD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CF91C9CACE400E1D1DD /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B46D051C9CAD1C00E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFA1C9CACE400E1D1DD /* CocoaLumberjackSwift.framework */; };
+		A9B46D061C9CAD1C00E1D1DD /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFA1C9CACE400E1D1DD /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B46D0E1C9CAE7200E1D1DD /* MasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B46D0D1C9CAE7200E1D1DD /* MasterTests.swift */; };
+		A9B46D161C9CAE9800E1D1DD /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B46D151C9CAE9800E1D1DD /* PacketTest.swift */; };
+		A9B46D171C9CAEDF00E1D1DD /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
 		D9C6342C1C988FF200AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342B1C988FF200AB3F75 /* SocketManager.swift */; };
 		D9C634341C98A00A00AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
-		D9C6343E1C98C5F500AB3F75 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */; };
-		D9C634431C98C6A300AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9B46D101C9CAE7200E1D1DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F545D261C97E27100436812 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F545D2D1C97E27100436812;
+			remoteInfo = Master;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1F4227FA1C97FE8500B731FE /* Embed Frameworks */ = {
@@ -30,9 +39,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1F42280A1C97FF5C00B731FE /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				1F4228071C97FF4200B731FE /* CocoaLumberjackSwift.framework in Embed Frameworks */,
-				1F4228051C97FF4200B731FE /* CocoaLumberjack.framework in Embed Frameworks */,
+				A9B46D061C9CAD1C00E1D1DD /* CocoaLumberjackSwift.framework in Embed Frameworks */,
+				A9B46D041C9CAD1C00E1D1DD /* CocoaAsyncSocket.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,20 +48,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F4228021C97FF4200B731FE /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		1F4228031C97FF4200B731FE /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/Mac/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
-		1F4228081C97FF5C00B731FE /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		1F545D2E1C97E27100436812 /* Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Master.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545D311C97E27100436812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F545D331C97E27100436812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F545D351C97E27100436812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F545D381C97E27100436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F545D3A1C97E27100436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B46CF91C9CACE400E1D1DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		A9B46CFA1C9CACE400E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/Mac/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		A9B46D0B1C9CAE7200E1D1DD /* MasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B46D0D1C9CAE7200E1D1DD /* MasterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTests.swift; sourceTree = "<group>"; };
+		A9B46D0F1C9CAE7200E1D1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B46D151C9CAE9800E1D1DD /* PacketTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTest.swift; sourceTree = "<group>"; };
 		D9C6342B1C988FF200AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634331C98A00A00AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
-		D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PacketTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTest.swift; sourceTree = "<group>"; };
-		D9C6343F1C98C5F500AB3F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +69,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4228091C97FF5C00B731FE /* CocoaAsyncSocket.framework in Frameworks */,
-				1F4228061C97FF4200B731FE /* CocoaLumberjackSwift.framework in Frameworks */,
-				1F4228041C97FF4200B731FE /* CocoaLumberjack.framework in Frameworks */,
+				A9B46D051C9CAD1C00E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */,
+				A9B46D031C9CAD1C00E1D1DD /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9C634381C98C5F500AB3F75 /* Frameworks */ = {
+		A9B46D081C9CAE7200E1D1DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,7 +89,7 @@
 			children = (
 				D9C634331C98A00A00AB3F75 /* Packet.swift */,
 				1F545D301C97E27100436812 /* Master */,
-				D9C6343C1C98C5F500AB3F75 /* PacketTest */,
+				A9B46D0C1C9CAE7200E1D1DD /* MasterTests */,
 				1F545D2F1C97E27100436812 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1F545D2E1C97E27100436812 /* Master.app */,
-				D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */,
+				A9B46D0B1C9CAE7200E1D1DD /* MasterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,21 +120,21 @@
 		1F545E2F1C97EC3000436812 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F4228081C97FF5C00B731FE /* CocoaAsyncSocket.framework */,
-				1F4228021C97FF4200B731FE /* CocoaLumberjack.framework */,
-				1F4228031C97FF4200B731FE /* CocoaLumberjackSwift.framework */,
+				A9B46CF91C9CACE400E1D1DD /* CocoaAsyncSocket.framework */,
+				A9B46CFA1C9CACE400E1D1DD /* CocoaLumberjackSwift.framework */,
 			);
 			name = Frameworks;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		D9C6343C1C98C5F500AB3F75 /* PacketTest */ = {
+		A9B46D0C1C9CAE7200E1D1DD /* MasterTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9C6343D1C98C5F500AB3F75 /* PacketTest.swift */,
-				D9C6343F1C98C5F500AB3F75 /* Info.plist */,
+				A9B46D151C9CAE9800E1D1DD /* PacketTest.swift */,
+				A9B46D0D1C9CAE7200E1D1DD /* MasterTests.swift */,
+				A9B46D0F1C9CAE7200E1D1DD /* Info.plist */,
 			);
-			path = PacketTest;
+			path = MasterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +147,6 @@
 				1F545D2A1C97E27100436812 /* Sources */,
 				1F545D2B1C97E27100436812 /* Frameworks */,
 				1F545D2C1C97E27100436812 /* Resources */,
-				1F545D481C97E39900436812 /* ShellScript */,
 				1F4227FA1C97FE8500B731FE /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -152,21 +158,22 @@
 			productReference = 1F545D2E1C97E27100436812 /* Master.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D9C6343A1C98C5F500AB3F75 /* PacketTest */ = {
+		A9B46D0A1C9CAE7200E1D1DD /* MasterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9C634401C98C5F500AB3F75 /* Build configuration list for PBXNativeTarget "PacketTest" */;
+			buildConfigurationList = A9B46D121C9CAE7200E1D1DD /* Build configuration list for PBXNativeTarget "MasterTests" */;
 			buildPhases = (
-				D9C634371C98C5F500AB3F75 /* Sources */,
-				D9C634381C98C5F500AB3F75 /* Frameworks */,
-				D9C634391C98C5F500AB3F75 /* Resources */,
+				A9B46D071C9CAE7200E1D1DD /* Sources */,
+				A9B46D081C9CAE7200E1D1DD /* Frameworks */,
+				A9B46D091C9CAE7200E1D1DD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A9B46D111C9CAE7200E1D1DD /* PBXTargetDependency */,
 			);
-			name = PacketTest;
-			productName = PacketTest;
-			productReference = D9C6343B1C98C5F500AB3F75 /* PacketTest.xctest */;
+			name = MasterTests;
+			productName = MasterTests;
+			productReference = A9B46D0B1C9CAE7200E1D1DD /* MasterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,8 +189,9 @@
 					1F545D2D1C97E27100436812 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
-					D9C6343A1C98C5F500AB3F75 = {
+					A9B46D0A1C9CAE7200E1D1DD = {
 						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 1F545D2D1C97E27100436812;
 					};
 				};
 			};
@@ -201,7 +209,7 @@
 			projectRoot = "";
 			targets = (
 				1F545D2D1C97E27100436812 /* Master */,
-				D9C6343A1C98C5F500AB3F75 /* PacketTest */,
+				A9B46D0A1C9CAE7200E1D1DD /* MasterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,7 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9C634391C98C5F500AB3F75 /* Resources */ = {
+		A9B46D091C9CAE7200E1D1DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,24 +232,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1F545D481C97E39900436812 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/CocoaAsyncSocket.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/CocoaLumberjackSwift.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F545D2A1C97E27100436812 /* Sources */ = {
@@ -255,16 +245,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9C634371C98C5F500AB3F75 /* Sources */ = {
+		A9B46D071C9CAE7200E1D1DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C6343E1C98C5F500AB3F75 /* PacketTest.swift in Sources */,
-				D9C634431C98C6A300AB3F75 /* Packet.swift in Sources */,
+				A9B46D171C9CAEDF00E1D1DD /* Packet.swift in Sources */,
+				A9B46D0E1C9CAE7200E1D1DD /* MasterTests.swift in Sources */,
+				A9B46D161C9CAE9800E1D1DD /* PacketTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9B46D111C9CAE7200E1D1DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F545D2D1C97E27100436812 /* Master */;
+			targetProxy = A9B46D101C9CAE7200E1D1DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F545D371C97E27100436812 /* Main.storyboard */ = {
@@ -363,10 +362,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac";
 				INFOPLIST_FILE = Master/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Master;
@@ -379,10 +376,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac";
 				INFOPLIST_FILE = Master/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Master;
@@ -390,32 +385,31 @@
 			};
 			name = Release;
 		};
-		D9C634411C98C5F500AB3F75 /* Debug */ = {
+		A9B46D131C9CAE7200E1D1DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = PacketTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = c4.PacketTest;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac";
+				INFOPLIST_FILE = MasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.MasterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Master.app/Contents/MacOS/Master";
 			};
 			name = Debug;
 		};
-		D9C634421C98C5F500AB3F75 /* Release */ = {
+		A9B46D141C9CAE7200E1D1DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = PacketTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = c4.PacketTest;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac";
+				INFOPLIST_FILE = MasterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.MasterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Master.app/Contents/MacOS/Master";
 			};
 			name = Release;
 		};
@@ -440,11 +434,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9C634401C98C5F500AB3F75 /* Build configuration list for PBXNativeTarget "PacketTest" */ = {
+		A9B46D121C9CAE7200E1D1DD /* Build configuration list for PBXNativeTarget "MasterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9C634411C98C5F500AB3F75 /* Debug */,
-				D9C634421C98C5F500AB3F75 /* Release */,
+				A9B46D131C9CAE7200E1D1DD /* Debug */,
+				A9B46D141C9CAE7200E1D1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

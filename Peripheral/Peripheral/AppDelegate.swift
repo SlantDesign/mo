@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if NSUserDefaults.standardUserDefaults().objectForKey("deviceID") == nil {
             var deviceName = UIDevice.currentDevice().name
             deviceName = deviceName.stringByReplacingOccurrencesOfString("M-O ", withString: "")
-            NSUserDefaults.standardUserDefaults().setInteger(Int(deviceName)!, forKey: "deviceID")
+            if let deviceID = Int(deviceName) {
+                NSUserDefaults.standardUserDefaults().setInteger(deviceID, forKey: "deviceID")
+            }
         }
 
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console

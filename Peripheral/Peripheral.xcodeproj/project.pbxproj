@@ -7,26 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F4228131C98006700B731FE /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228101C98006700B731FE /* CocoaAsyncSocket.framework */; };
-		1F4228141C98006700B731FE /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228101C98006700B731FE /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F4228151C98006700B731FE /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228111C98006700B731FE /* CocoaLumberjack.framework */; };
-		1F4228161C98006700B731FE /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228111C98006700B731FE /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F4228171C98006700B731FE /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228121C98006700B731FE /* CocoaLumberjackSwift.framework */; };
-		1F4228181C98006700B731FE /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4228121C98006700B731FE /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545D751C97E64C00436812 /* AppDelegate.swift */; };
 		1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E0A1C97E64D00436812 /* WorkSpace.swift */; };
 		1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0C1C97E64D00436812 /* Main.storyboard */; };
 		1F545E101C97E64D00436812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0F1C97E64D00436812 /* Images.xcassets */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
+		A9B46D001C9CAD0700E1D1DD /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFD1C9CAD0700E1D1DD /* C4.framework */; };
+		A9B46D011C9CAD0700E1D1DD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */; };
+		A9B46D021C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
 		D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634441C98C93800AB3F75 /* UniverseController.swift */; };
 		D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634471C98C99100AB3F75 /* Gesture.swift */; };
 		D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634491C98CA2700AB3F75 /* Spiral.swift */; };
 		D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */; };
-		D9F597421C99E59A00955839 /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F597411C99E59A00955839 /* C4.framework */; };
-		D9F597431C99E59A00955839 /* C4.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9F597411C99E59A00955839 /* C4.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1F4228161C98006700B731FE /* CocoaLumberjack.framework in Embed Frameworks */,
-				1F4228141C98006700B731FE /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				1F4228181C98006700B731FE /* CocoaLumberjackSwift.framework in Embed Frameworks */,
-				D9F597431C99E59A00955839 /* C4.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,9 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F4228101C98006700B731FE /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		1F4228111C98006700B731FE /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		1F4228121C98006700B731FE /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		1F545D721C97E64C00436812 /* Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545D751C97E64C00436812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F545E0A1C97E64D00436812 /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
@@ -70,13 +58,15 @@
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B46CFD1C9CAD0700E1D1DD /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = ../Carthage/Build/iOS/C4.framework; sourceTree = "<group>"; };
+		A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
 		D9C634441C98C93800AB3F75 /* UniverseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseController.swift; sourceTree = "<group>"; };
 		D9C634471C98C99100AB3F75 /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		D9C634491C98CA2700AB3F75 /* Spiral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spiral.swift; sourceTree = "<group>"; };
 		D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollview.swift; sourceTree = "<group>"; };
-		D9F597411C99E59A00955839 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = Carthage/Build/iOS/C4.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4228151C98006700B731FE /* CocoaLumberjack.framework in Frameworks */,
-				1F4228131C98006700B731FE /* CocoaAsyncSocket.framework in Frameworks */,
-				1F4228171C98006700B731FE /* CocoaLumberjackSwift.framework in Frameworks */,
-				D9F597421C99E59A00955839 /* C4.framework in Frameworks */,
+				A9B46D021C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */,
+				A9B46D011C9CAD0700E1D1DD /* CocoaAsyncSocket.framework in Frameworks */,
+				A9B46D001C9CAD0700E1D1DD /* C4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +93,9 @@
 		1F4227F11C97FE3D00B731FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9F597411C99E59A00955839 /* C4.framework */,
-				1F4228101C98006700B731FE /* CocoaAsyncSocket.framework */,
-				1F4228111C98006700B731FE /* CocoaLumberjack.framework */,
-				1F4228121C98006700B731FE /* CocoaLumberjackSwift.framework */,
+				A9B46CFD1C9CAD0700E1D1DD /* C4.framework */,
+				A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */,
+				A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */,
 			);
 			name = Frameworks;
 			path = ..;
@@ -408,12 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;
@@ -426,12 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;

@@ -131,7 +131,7 @@ public class Spiral : UniverseController {
 
         let step = dBP / Double(steps)
 
-        var vC = Vector(copy: vP)
+        var vC = Vector(x: vP.x, y: vP.y, z: vP.z)
         var colorSteps = [Color]()
         for _ in 0..<steps {
             let c = Color(red: vC.x, green: vC.y, blue: vC.z, alpha: 1.0)

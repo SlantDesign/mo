@@ -47,7 +47,8 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         DDLogVerbose("Connected to host \(host) on port \(port)")
         let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
-        writeTo(sock, data: packet.serialize())    }
+        writeTo(sock, data: packet.serialize())
+    }
 
     func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
         writeTo(sock, data: packet.serialize(), tag: tag)
