@@ -10,27 +10,41 @@ import XCTest
 @testable import Peripheral
 
 class PeripheralTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    func testSerialize() {
+        let type = PacketType.General
+        let message = PacketMessage.Bubbles
+        let id = 17
+
+        let packet = Packet(type: type, message: message, id: id, data: nil)
+        let data = packet.serialize()
+        var array = [Int8](count: data.length, repeatedValue: 0)
+        data.getBytes(&array, length: data.length)
+
+        let packetSize = Int(UnsafePointer<UInt32>(data.bytes).memory)
+        XCTAssertEqual(packetSize, Packet.basePacketSize)
+
+        XCTAssertEqual(array[4], type.rawValue)
+        XCTAssertEqual(array[5], message.rawValue)
+
+        let serializedId = Int(UnsafePointer<Int32>(data.bytes + 6).memory)
+        XCTAssertEqual(serializedId, id)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+
+    func testRoundtrip() {
+        let type = PacketType.General
+        let message = PacketMessage.Handshake
+        let id = 17
+
+        let expectedPacket = Packet(type: type, message: message, id: id, data: nil)
+        let data = expectedPacket.serialize()
+        var actualPacket: Packet?
+        do {
+            actualPacket = try Packet(data)
+        } catch {
+            print("Could not initialize packet, during tests: \(error)")
         }
+        XCTAssertEqual(actualPacket, expectedPacket)
     }
     
 }

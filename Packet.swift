@@ -21,8 +21,9 @@ public enum PacketType: Int8 {
 }
 
 enum PacketInitializationError: ErrorType {
-    case PacketType
-    case PacketMessage
+    case NotEnoughData
+    case InvalidPacketType
+    case InvalidPacketMessage
     case ID
     case DataLength
     case Data
@@ -31,36 +32,38 @@ enum PacketInitializationError: ErrorType {
 import CocoaLumberjackSwift
 
 public struct Packet: Equatable {
+    public static let basePacketSize = sizeof(UInt32) + sizeof(PacketType) + sizeof(PacketMessage) + sizeof(Int32)
+
     public var packetType = PacketType.General
     public var message = PacketMessage.None
     public var id = -1
     public var data: NSData?
-    var dataLength = 0
 
     public init(type: PacketType, message: PacketMessage, id: Int, data: NSData? = nil) {
         self.packetType = type
         self.message = message
         self.id = id
         self.data = data
-
-        if let d = self.data {
-            dataLength = d.length
-        } else {
-            dataLength = 0
-        }
     }
     
     public func serialize() -> NSData {
         let packetData = NSMutableData()
-        var t = packetType
-        packetData.appendBytes(&t, length: sizeof(PacketType))
-        var m = message
-        packetData.appendBytes(&m, length: sizeof(PacketMessage))
-        var i = id
-        packetData.appendBytes(&i, length: sizeof(Int))
-        var dl = dataLength
-        packetData.appendBytes(&dl, length: sizeof(Int))
-        if let d = self.data where dl > 0 {
+
+        // The first element in the packet data needs to be the packet size to know if we have enought data to build the packet.
+        let dataSize = data?.length ?? 0
+        var packetSize = UInt32(Packet.basePacketSize + dataSize)
+        packetData.appendBytes(&packetSize, length: sizeofValue(packetSize))
+
+        var t = packetType.rawValue
+        packetData.appendBytes(&t, length: sizeofValue(t))
+
+        var m = message.rawValue
+        packetData.appendBytes(&m, length: sizeofValue(m))
+
+        var i = Int32(id)
+        packetData.appendBytes(&i, length: sizeofValue(i))
+
+        if let d = data {
             packetData.appendData(d)
         }
         return packetData
@@ -69,31 +72,35 @@ public struct Packet: Equatable {
     public init(_ packetData: NSData) throws {
         var index = 0
 
-        guard let t = PacketType(rawValue: UnsafePointer<Int8>(packetData.bytes).memory) else {
-            throw PacketInitializationError.PacketType
+        let packetSize = UnsafePointer<UInt32>(packetData.bytes + index).memory
+        if packetData.length < Int(packetSize) {
+            throw PacketInitializationError.NotEnoughData
+        }
+        index += sizeofValue(packetSize)
+
+        guard let t = PacketType(rawValue: UnsafePointer<Int8>(packetData.bytes + index).memory) else {
+            throw PacketInitializationError.InvalidPacketType
         }
         packetType = t
-        index += sizeof(PacketType)
+        index += sizeofValue(t)
 
         guard let m = PacketMessage(rawValue: UnsafePointer<Int8>(packetData.bytes + index).memory) else {
-            throw PacketInitializationError.PacketMessage
+            throw PacketInitializationError.InvalidPacketMessage
         }
         message = m
-        index += sizeof(PacketMessage)
+        index += sizeofValue(m)
 
-        id = UnsafePointer<Int>(packetData.bytes + index).memory
-        index += sizeof(Int)
+        id = Int(UnsafePointer<Int32>(packetData.bytes + index).memory)
+        index += sizeof(Int32)
 
-        dataLength = UnsafePointer<Int>(packetData.bytes+index).memory
-        index += sizeof(Int)
-
-        if dataLength > 0 && ((index + dataLength) < packetData.length) {
-            data = NSData(bytes: UnsafePointer<Void>(packetData.bytes+index), length: dataLength)
+        let dataLength = Int(packetSize) - Packet.basePacketSize
+        if dataLength > 0 {
+            data = NSData(bytes: UnsafePointer<Void>(packetData.bytes + index), length: dataLength)
         }
     }
     
     public var description : String {
-        return "Packet: \(packetType), \(message), \(id), \(dataLength), \(data == nil ? "No Data" : "Data Exists")"
+        return "Packet: \(packetType), \(message), \(id), \(data == nil ? "No Data" : "\(data!.length) bytes of Data")"
     }
 }
 
