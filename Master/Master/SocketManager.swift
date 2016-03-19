@@ -6,10 +6,8 @@ import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
 public class SocketManager: NSObject, GCDAsyncSocketDelegate {
+    static let masterID = Int(INT_MAX)
     static let sharedManager = SocketManager()
-
-    //The current ID
-    let deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
 
     //The main socket, all peripherals will connect to this
     var socket: GCDAsyncSocket?
@@ -30,9 +28,9 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         do {
             try socket?.acceptOnPort(port)
             socket?.delegate = self
-            DDLogVerbose("\(deviceID): Initialized Socket on port \(port)")
+            DDLogVerbose("Initialized Socket on port \(port)")
         } catch {
-            DDLogVerbose("\(deviceID): Coult not initialize socket using acceptOnPort(\(port))")
+            DDLogError("Could not initialize socket using acceptOnPort(\(port))")
         }
     }
 
@@ -41,8 +39,9 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
 
         let peripheral = Peripheral(socket: newSocket)
         peripheral.didReceivePacketAction = processPacket
+        peripheral.didDisconnectAction = peripheralDidDisconnect
         peripherals.append(peripheral)
-        peripheral.sendHandshake(deviceID)
+        peripheral.sendHandshake()
 
         changeAction?()
     }
@@ -55,7 +54,9 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
 
         case .Handshake:
             changeAction?()
-            break
+
+        case .Ping:
+            changeAction?()
         }
     }
 
@@ -84,7 +85,7 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     }
 
     public func disconnectAll() {
-        DDLogVerbose("\(deviceID) is disconnecting from all sockets")
+        DDLogVerbose("Master is disconnecting from all sockets")
         for p in peripherals {
             p.socket.disconnect()
         }

@@ -2,6 +2,9 @@ import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
 class Peripheral: NSObject, GCDAsyncSocketDelegate {
+    static let pingInterval = 0.5
+    static let pingTimeout = 5.0
+
     /// The peripheral's identifier
     var id = -1
 
@@ -30,7 +33,16 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
         }
     }
 
-    var lag: NSTimeInterval = 0
+    var pingDate: NSDate?
+    var lastLag: NSTimeInterval = 0
+    weak var pingTimer: NSTimer?
+
+    var lag: NSTimeInterval {
+        if let date = pingDate {
+            return NSDate().timeIntervalSinceDate(date)
+        }
+        return lastLag
+    }
 
     init(socket: GCDAsyncSocket) {
         self.socket = socket
@@ -39,11 +51,33 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
     }
 
     deinit {
+        pingTimer?.invalidate()
         socket.delegate = nil
     }
 
-    func sendHandshake(deviceID: Int) {
-        let p = Packet(type: .Handshake, id: deviceID)
+    func sendHandshake() {
+        let p = Packet(type: .Handshake, id: SocketManager.masterID)
+        socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
+        socket.readDataWithTimeout(-1, tag: 0)
+
+        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: Selector("ping"), userInfo: nil, repeats: true)
+    }
+
+    func ping() {
+        if !socket.isConnected {
+            return
+        }
+
+        if let date = pingDate {
+            // Disconnect if we don't get a ping for a while
+            if NSDate().timeIntervalSinceDate(date) > Peripheral.pingTimeout {
+                socket.disconnect()
+            }
+            return
+        }
+
+        pingDate = NSDate()
+        let p = Packet(type: .Ping, id: SocketManager.masterID)
         socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
         socket.readDataWithTimeout(-1, tag: 0)
     }
@@ -81,10 +115,20 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
             return
         }
 
-        if packet.packetType == .Handshake {
+        switch packet.packetType {
+        case .Handshake:
             id = packet.id
             handshaked = true
             DDLogVerbose("Got handshake from \(id)")
+
+        case .Ping:
+            if let sentDate = pingDate {
+                lastLag = NSDate().timeIntervalSinceDate(sentDate)
+                pingDate = nil
+            }
+
+        default:
+            break
         }
 
         didReceivePacketAction?(packet, self)
@@ -92,6 +136,9 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
 
     func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         DDLogVerbose("Disconnected from: \(id)")
+        pingDate = nil
+        lastLag = 0
+        pingTimer?.invalidate()
         didDisconnectAction?(self)
     }
 }

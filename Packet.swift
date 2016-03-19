@@ -5,6 +5,7 @@ import Foundation
 
 public enum PacketType: Int8 {
     case Handshake
+    case Ping
     case Scroll
 }
 

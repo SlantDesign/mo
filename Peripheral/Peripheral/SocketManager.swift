@@ -88,6 +88,10 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         case .Handshake:
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
+        case .Ping:
+            let packet = Packet(type: .Ping, id: deviceID)
+            writeTo(sock, data: packet.serialize())
+
         default:
             workspace?.receivePacket(packet)
         }

@@ -66,7 +66,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             view.textField?.stringValue = peripheral.status
 
         case "lag":
-            view.textField?.stringValue = "\(peripheral.lag * 1000.0)ms"
+            view.textField?.stringValue = String(format: "%.2fms", arguments: [peripheral.lag * 1000.0])
 
         default:
             break
