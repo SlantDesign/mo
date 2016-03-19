@@ -13,9 +13,15 @@
 		1F545E101C97E64D00436812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0F1C97E64D00436812 /* Images.xcassets */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
-		A9B46D001C9CAD0700E1D1DD /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFD1C9CAD0700E1D1DD /* C4.framework */; };
-		A9B46D011C9CAD0700E1D1DD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */; };
-		A9B46D021C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */; };
+		A9B46D1A1C9D0D0200E1D1DD /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFD1C9CAD0700E1D1DD /* C4.framework */; };
+		A9B46D1B1C9D0D0200E1D1DD /* C4.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFD1C9CAD0700E1D1DD /* C4.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B46D1C1C9D0D0200E1D1DD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */; };
+		A9B46D1D1C9D0D0200E1D1DD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B46D1E1C9D0D0200E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */; };
+		A9B46D1F1C9D0D0200E1D1DD /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B46D211C9D0D4E00E1D1DD /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */; };
+		A9B46D221C9D0D5300E1D1DD /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */; };
+		A9B46D231C9D0D5300E1D1DD /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
 		D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634441C98C93800AB3F75 /* UniverseController.swift */; };
@@ -41,6 +47,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A9B46D1D1C9D0D0200E1D1DD /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				A9B46D1B1C9D0D0200E1D1DD /* C4.framework in Embed Frameworks */,
+				A9B46D231C9D0D5300E1D1DD /* CocoaLumberjack.framework in Embed Frameworks */,
+				A9B46D1F1C9D0D0200E1D1DD /* CocoaLumberjackSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +71,7 @@
 		A9B46CFD1C9CAD0700E1D1DD /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = ../Carthage/Build/iOS/C4.framework; sourceTree = "<group>"; };
 		A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
 		D9C634441C98C93800AB3F75 /* UniverseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseController.swift; sourceTree = "<group>"; };
@@ -74,9 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9B46D021C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */,
-				A9B46D011C9CAD0700E1D1DD /* CocoaAsyncSocket.framework in Frameworks */,
-				A9B46D001C9CAD0700E1D1DD /* C4.framework in Frameworks */,
+				A9B46D1C1C9D0D0200E1D1DD /* CocoaAsyncSocket.framework in Frameworks */,
+				A9B46D1A1C9D0D0200E1D1DD /* C4.framework in Frameworks */,
+				A9B46D221C9D0D5300E1D1DD /* CocoaLumberjack.framework in Frameworks */,
+				A9B46D211C9D0D4E00E1D1DD /* CocoaLumberjack.framework in Frameworks */,
+				A9B46D1E1C9D0D0200E1D1DD /* CocoaLumberjackSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,7 @@
 		1F4227F11C97FE3D00B731FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */,
 				A9B46CFD1C9CAD0700E1D1DD /* C4.framework */,
 				A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */,
 				A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */,
@@ -207,7 +221,7 @@
 				TargetAttributes = {
 					1F545D711C97E64C00436812 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 75C7KVJZ99;
+						DevelopmentTeam = G3GED29J33;
 					};
 					1F545E181C97E64D00436812 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -330,6 +344,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -344,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,6 +390,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -383,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -395,12 +411,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,12 +426,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
