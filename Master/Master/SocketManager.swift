@@ -17,6 +17,9 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     //A list of all the sockets that have been connected
     var peripherals = [Peripheral]()
 
+    /// Action invoked when there is a change in status
+    var changeAction: (() -> Void)?
+
     public override init() {
         super.init()
         initializeSocketOnPort(10101)
@@ -40,6 +43,8 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         peripheral.didReceivePacketAction = processPacket
         peripherals.append(peripheral)
         peripheral.sendHandshake(deviceID)
+
+        changeAction?()
     }
 
     func processPacket(packet: Packet, peripheral: Peripheral) {
@@ -49,7 +54,7 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
             return
 
         case .Handshake:
-            // Ignore
+            changeAction?()
             break
         }
     }
@@ -75,6 +80,7 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         if let index = peripherals.indexOf(peripheral) {
             peripherals.removeAtIndex(index)
         }
+        changeAction?()
     }
 
     public func disconnectAll() {
@@ -84,5 +90,6 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         }
 
         peripherals.removeAll()
+        changeAction?()
     }
 }

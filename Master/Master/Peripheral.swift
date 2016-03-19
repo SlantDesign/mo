@@ -20,6 +20,18 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
     /// The action to invoke when the connection is lost
     var didDisconnectAction: ((Peripheral) -> Void)?
 
+    var status: String {
+        if socket.isDisconnected {
+            return "Disconnected"
+        } else if handshaked {
+            return "Connected"
+        } else {
+            return "Waiting"
+        }
+    }
+
+    var lag: NSTimeInterval = 0
+
     init(socket: GCDAsyncSocket) {
         self.socket = socket
         super.init()
