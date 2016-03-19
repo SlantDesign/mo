@@ -58,7 +58,7 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
                 if offset != currentOffset {
                     let data = NSMutableData()
                     data.appendBytes(&offset, length: sizeof(CGPoint))
-                    let packet = Packet(type: PacketType.Scroll, message: PacketMessage.None, id:  deviceId, data: data)
+                    let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
                     socketManager?.sendPacket(packet)
                     currentOffset = offset
                 }

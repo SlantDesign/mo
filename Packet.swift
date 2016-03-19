@@ -1,46 +1,27 @@
 //  Copyright (c) 2015 C4. All rights reserved.
 
+import CocoaLumberjackSwift
 import Foundation
-
-public enum PacketMessage: Int8 {
-    case Bubbles
-    case Sync
-    case Alignment
-    case Bars
-    case Scroll
-    case None
-}
 
 public enum PacketType: Int8 {
     case Handshake
-    case Gesture
     case Scroll
-    case SwitchUniverse
-    case General
 }
 
 enum PacketInitializationError: ErrorType {
     case NotEnoughData
     case InvalidPacketType
-    case InvalidPacketMessage
-    case ID
-    case DataLength
-    case Data
 }
 
-import CocoaLumberjackSwift
-
 public struct Packet: Equatable {
-    public static let basePacketSize = sizeof(UInt32) + sizeof(PacketType) + sizeof(PacketMessage) + sizeof(Int32)
+    public static let basePacketSize = sizeof(UInt32) + sizeof(PacketType) + sizeof(Int32)
 
-    public var packetType = PacketType.General
-    public var message = PacketMessage.None
+    public var packetType: PacketType
     public var id = -1
     public var data: NSData?
 
-    public init(type: PacketType, message: PacketMessage, id: Int, data: NSData? = nil) {
+    public init(type: PacketType, id: Int, data: NSData? = nil) {
         self.packetType = type
-        self.message = message
         self.id = id
         self.data = data
     }
@@ -55,9 +36,6 @@ public struct Packet: Equatable {
 
         var t = packetType.rawValue
         packetData.appendBytes(&t, length: sizeofValue(t))
-
-        var m = message.rawValue
-        packetData.appendBytes(&m, length: sizeofValue(m))
 
         var i = Int32(id)
         packetData.appendBytes(&i, length: sizeofValue(i))
@@ -83,12 +61,6 @@ public struct Packet: Equatable {
         packetType = t
         index += sizeofValue(t)
 
-        guard let m = PacketMessage(rawValue: UnsafePointer<Int8>(packetData.bytes + index).memory) else {
-            throw PacketInitializationError.InvalidPacketMessage
-        }
-        message = m
-        index += sizeofValue(m)
-
         id = Int(UnsafePointer<Int32>(packetData.bytes + index).memory)
         index += sizeof(Int32)
 
@@ -99,11 +71,10 @@ public struct Packet: Equatable {
     }
     
     public var description : String {
-        return "Packet: \(packetType), \(message), \(id), \(data == nil ? "No Data" : "\(data!.length) bytes of Data")"
+        return "Packet: \(packetType), \(id), \(data == nil ? "No Data" : "\(data!.length) bytes of Data")"
     }
 }
 
 public func ==(lhs: Packet, rhs: Packet) -> Bool {
-    return lhs.packetType == rhs.packetType &&
-        lhs.message == rhs.message
+    return lhs.packetType == rhs.packetType && lhs.id == rhs.id
 }

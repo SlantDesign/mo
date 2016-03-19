@@ -17,8 +17,6 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     //A list of all the sockets that have been connected
     var peripherals = [Peripheral]()
 
-    var readBuffer = NSMutableData()
-
     public override init() {
         super.init()
         initializeSocketOnPort(10101)
@@ -53,9 +51,6 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         case .Handshake:
             // Ignore
             break
-
-        default:
-            DDLogVerbose("Invalid packet type received from \(peripheral.id): \(packet)")
         }
     }
 

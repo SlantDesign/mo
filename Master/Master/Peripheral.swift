@@ -31,7 +31,7 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
     }
 
     func sendHandshake(deviceID: Int) {
-        let p = Packet(type: .Handshake, message: .None, id: deviceID)
+        let p = Packet(type: .Handshake, id: deviceID)
         socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
         socket.readDataWithTimeout(-1, tag: 0)
     }
