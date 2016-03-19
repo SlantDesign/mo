@@ -5,26 +5,32 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet weak var tableView: NSTableView!
 
     var socketManager = SocketManager.sharedManager
-    
+    var sortedPeripherals = [Peripheral]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         socketManager.changeAction = {
-            self.tableView.reloadData()
+            self.reload()
         }
     }
 
+    func reload() {
+        let sorted = (socketManager.peripherals as NSArray).sortedArrayUsingDescriptors(tableView.sortDescriptors)
+        sortedPeripherals = sorted as! [Peripheral]
+        tableView.reloadData()
+    }
 
     // MARK: - NSTableViewDataSource
 
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return socketManager.peripherals.count
+        return sortedPeripherals.count
     }
 
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
         guard let column = tableColumn else {
             return nil
         }
-        let peripheral = socketManager.peripherals[row]
+        let peripheral = sortedPeripherals[row]
 
         switch column.identifier {
         case "id":
@@ -42,8 +48,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     func tableView(tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-        let sorted = (socketManager.peripherals as NSArray).sortedArrayUsingDescriptors(tableView.sortDescriptors)
-        socketManager.peripherals = sorted as! [Peripheral]
+        reload()
     }
 
 
@@ -56,7 +61,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guard let view = tableView.makeViewWithIdentifier(column.identifier, owner: self) as? NSTableCellView else {
             return nil
         }
-        let peripheral = socketManager.peripherals[row]
+        let peripheral = sortedPeripherals[row]
 
         switch column.identifier {
         case "id":
