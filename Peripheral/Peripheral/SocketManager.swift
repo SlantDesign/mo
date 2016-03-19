@@ -12,7 +12,7 @@ import CocoaAsyncSocket
 import CocoaLumberjackSwift
 
 //let currentHost = "192.168.0.11"
-let currentHost = "169.254.176.152"
+let currentHost = "192.168.0.143"
 
 public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     static let sharedManager = SocketManager()
@@ -46,8 +46,9 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
     public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         DDLogVerbose("Connected to host \(host) on port \(port)")
-        let packet = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
+        let packet = Packet(type: .Handshake, message: .None, id: deviceID)
         writeTo(sock, data: packet.serialize())
+        sock.readDataWithTimeout(-1, tag: 0)
     }
 
     func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
@@ -55,13 +56,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     }
 
     func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        let data = NSMutableData(data: data)
-        //appends an extra bit of data that acts as an "end point" for reading
-        data.appendData(GCDAsyncSocket.CRLFData())
-        //writes the full data to the socket
         sock.writeData(data, withTimeout: -1, tag: tag)
-        //tells the socket to read until it reaches the "end point"
-        sock.readDataToData(GCDAsyncSocket.CRLFData(), withTimeout: -1, tag: 0)
     }
 
     public func sendPacket(packet: Packet) {
@@ -90,13 +85,13 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
         }
 
         switch packet.packetType {
-        case .Connection:
-            if packet.message == .Handshake {
-                DDLogVerbose("\(deviceID) shook hands with \(sock)")
-            }
+        case .Handshake:
+            DDLogVerbose("\(deviceID) shook hands with \(sock)")
+
         default:
             workspace?.receivePacket(packet)
         }
+        
         sock.readDataWithTimeout(-1, tag: 0)
     }
 }

@@ -32,8 +32,8 @@ class PeripheralTests: XCTestCase {
     }
 
     func testRoundtrip() {
-        let type = PacketType.General
-        let message = PacketMessage.Handshake
+        let type = PacketType.Handshake
+        let message = PacketMessage.None
         let id = 17
 
         let expectedPacket = Packet(type: type, message: message, id: id, data: nil)

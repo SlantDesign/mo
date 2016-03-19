@@ -15,7 +15,9 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     var socket: GCDAsyncSocket?
 
     //A list of all the sockets that have been connected
-    var connectedSockets = [GCDAsyncSocket]()
+    var peripherals = [Peripheral]()
+
+    var readBuffer = NSMutableData()
 
     public override init() {
         super.init()
@@ -34,43 +36,34 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     }
 
     public func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
-        DDLogVerbose("Accepted sock: \(sock) from: \(newSocket.connectedHost):\(newSocket.connectedPort)")
-        if sock == socket {
-            connectedSockets.append(newSocket)
-            let p = Packet(type: PacketType.Connection, message: PacketMessage.Handshake, id: deviceID)
-            writeTo(newSocket, packet: p)
-        }
+        DDLogVerbose("Accepted connection from: \(newSocket.connectedHost)")
+
+        let peripheral = Peripheral(socket: newSocket)
+        peripheral.didReceivePacketAction = processPacket
+        peripherals.append(peripheral)
+        peripheral.sendHandshake(deviceID)
     }
 
-    public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        sock.readDataWithTimeout(-1, tag: 0)
-
-        var packet: Packet
-        do {
-            packet = try Packet(data)
-        } catch {
-            print("Could not unpack data from \(sock) \(error)")
-            return
-        }
-
+    func processPacket(packet: Packet, peripheral: Peripheral) {
         switch packet.packetType {
         case .Scroll:
-            forwardScroll(data, excluding: sock)
+            forwardScroll(packet, excluding: peripheral)
             return
-        default:
-            break
-        }
 
-        if packet.message == .Handshake {
-        } else {
-            DDLogVerbose("Unknown Data: \(packet)")
+        case .Handshake:
+            // Ignore
+            break
+
+        default:
+            DDLogVerbose("Invalid packet type received from \(peripheral.id): \(packet)")
         }
     }
 
-    func forwardScroll(data: NSData, excluding sender: GCDAsyncSocket) {
-        for sock in connectedSockets {
-            if sock != sender {
-                writeTo(sock, data: data)
+    func forwardScroll(packet: Packet, excluding peripheral: Peripheral) {
+        let data = packet.serialize()
+        for p in peripherals {
+            if p !== peripheral {
+                writeTo(p.socket, data: data)
             }
         }
     }
@@ -80,31 +73,21 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     }
 
     func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        let data = NSMutableData(data: data)
-        //appends an extra bit of data that acts as an "end point" for reading
-        data.appendData(GCDAsyncSocket.CRLFData())
-        //writes the full data to the socket
         sock.writeData(data, withTimeout: -1, tag: tag)
-        //tells the socket to read until it reaches the "end point"
-        sock.readDataToData(GCDAsyncSocket.CRLFData(), withTimeout: -1, tag: 0)
     }
 
-    public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
-        DDLogVerbose("Disconnecting from: \(sock), [\(connectedSockets.count)]")
-        if let index = connectedSockets.indexOf(sock) {
-            connectedSockets.removeAtIndex(index)
-            sock.disconnect()
-            DDLogVerbose("\tDisconnected from: \(sock), [\(connectedSockets.count)]")
+    func peripheralDidDisconnect(peripheral: Peripheral) {
+        if let index = peripherals.indexOf(peripheral) {
+            peripherals.removeAtIndex(index)
         }
     }
 
     public func disconnectAll() {
         DDLogVerbose("\(deviceID) is disconnecting from all sockets")
-        for socket in connectedSockets {
-            socket.delegate = nil
-            socket.disconnect()
+        for p in peripherals {
+            p.socket.disconnect()
         }
 
-        connectedSockets.removeAll()
+        peripherals.removeAll()
     }
 }

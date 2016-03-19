@@ -3,7 +3,6 @@
 import Foundation
 
 public enum PacketMessage: Int8 {
-    case Handshake
     case Bubbles
     case Sync
     case Alignment
@@ -13,7 +12,7 @@ public enum PacketMessage: Int8 {
 }
 
 public enum PacketType: Int8 {
-    case Connection
+    case Handshake
     case Gesture
     case Scroll
     case SwitchUniverse
@@ -63,7 +62,7 @@ public struct Packet: Equatable {
         var i = Int32(id)
         packetData.appendBytes(&i, length: sizeofValue(i))
 
-        if let d = data {
+        if let d = data where d.length > 0 {
             packetData.appendData(d)
         }
         return packetData
