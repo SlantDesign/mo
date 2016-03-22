@@ -21,7 +21,6 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
     var currentUniverse: UniverseController?
 
     override func setup() {
-        let schedule = Schedule()
     }
 
     func initializeSocketManager() {
