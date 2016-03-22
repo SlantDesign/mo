@@ -8,7 +8,7 @@
 
 import C4
 import UIKit
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 public class Spiral : UniverseController {
     let scrollViewRotation = -M_PI/32

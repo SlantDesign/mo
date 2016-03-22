@@ -1,6 +1,6 @@
 //  Copyright (c) 2015 C4. All rights reserved.
 
-import CocoaLumberjackSwift
+import CocoaLumberjack
 import Foundation
 
 public enum PacketType: Int8 {

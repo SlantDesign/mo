@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

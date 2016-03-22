@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

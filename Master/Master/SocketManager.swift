@@ -3,7 +3,7 @@
 import Foundation
 import Cocoa
 import CocoaAsyncSocket
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 public class SocketManager: NSObject, GCDAsyncSocketDelegate {
     static let masterID = Int(INT_MAX)

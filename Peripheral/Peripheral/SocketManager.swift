@@ -9,7 +9,7 @@
 import C4
 import Foundation
 import CocoaAsyncSocket
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 //let currentHost = "192.168.0.11"
 let currentHost = "192.168.0.143"

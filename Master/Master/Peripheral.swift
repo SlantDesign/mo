@@ -1,5 +1,5 @@
 import CocoaAsyncSocket
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 class Peripheral: NSObject, GCDAsyncSocketDelegate {
     static let pingInterval = 0.5

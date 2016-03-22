@@ -9,7 +9,7 @@
 import C4
 import UIKit
 import CocoaAsyncSocket
-import CocoaLumberjackSwift
+import CocoaLumberjack
 
 public protocol SpiralUniverseDelegate {
     func shouldSendScrollData()
