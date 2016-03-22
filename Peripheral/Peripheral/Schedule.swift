@@ -15,7 +15,6 @@ class Schedule: NSObject, UICollectionViewDataSource {
     let hours = 24
     let days = 7
     var events = [Event]()
-    var startDate: NSDate!
 
     override func awakeFromNib() {
         dispatch_once(&dataLoaded) {
@@ -36,9 +35,6 @@ class Schedule: NSObject, UICollectionViewDataSource {
             print("Could not extract array of events from file")
             return
         }
-
-        let opening = e[0]
-        startDate = opening["date"] as? NSDate
 
         var unsortedEvents = Set<Event>()
         for event in e {
@@ -69,15 +65,13 @@ class Schedule: NSObject, UICollectionViewDataSource {
         events = unsortedEvents.sort({$0 < $1})
     }
 
-    func indexPathsOfEventsBetween(start t1: NSTimeInterval, end t2: NSTimeInterval) -> [NSIndexPath] {
+    func indexPathsOfEventsBetween(start: NSDate, end: NSDate) -> [NSIndexPath] {
         var paths = [NSIndexPath]()
-        let start = startDate.dateByAddingTimeInterval(t1)
-        let end = startDate.dateByAddingTimeInterval(t2)
         for (index, event) in events.enumerate() {
-            //if the startDate occurs before the last visible date
-            //and if the end date occurs after the first visible date
+            //if the event date occurs before the visible end date
+            //and if the event endDate occurs after the visible start date
             if event.date.earlierDate(end) === event.date &&
-                event.endDate.laterDate(start) == event.endDate {
+                event.endDate.laterDate(start) === event.endDate {
                 paths.append(NSIndexPath(forItem: index, inSection: 0))
             }
         }
