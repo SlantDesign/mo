@@ -13,6 +13,10 @@
 		1F545E101C97E64D00436812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0F1C97E64D00436812 /* Images.xcassets */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
+		1F68D8A61CA0F24B00F5268E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8A51CA0F24B00F5268E /* Helpers.swift */; };
+		1F68D8A81CA0F29800F5268E /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F68D8A71CA0F29800F5268E /* events.plist */; };
+		1F68D8AA1CA0F2AF00F5268E /* Voga-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */; };
+		1F68D8AC1CA0F2F000F5268E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8AB1CA0F2F000F5268E /* Schedule.swift */; };
 		AAF17C2E1C50975421007ED9 /* Pods_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A68A39A46059479EACF855 /* Pods_Peripheral.framework */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
@@ -43,12 +47,12 @@
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F68D8A51CA0F24B00F5268E /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		1F68D8A71CA0F29800F5268E /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
+		1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Voga-Bold.otf"; sourceTree = "<group>"; };
+		1F68D8AB1CA0F2F000F5268E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		71A68A39A46059479EACF855 /* Pods_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860E0D5A6C1FA917A2080FF6 /* Pods-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peripheral.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
-		A9B46CFD1C9CAD0700E1D1DD /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = ../Carthage/Build/iOS/C4.framework; sourceTree = "<group>"; };
-		A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
-		A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D7CB24A1AF358421890923F5 /* Pods-Peripheral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peripheral.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral.release.xcconfig"; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
@@ -77,18 +81,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F4227F11C97FE3D00B731FE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */,
-				A9B46CFD1C9CAD0700E1D1DD /* C4.framework */,
-				A9B46CFE1C9CAD0700E1D1DD /* CocoaAsyncSocket.framework */,
-				A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */,
-			);
-			name = Frameworks;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		1F545D691C97E64C00436812 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +105,10 @@
 		1F545D741C97E64C00436812 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				1F68D8A71CA0F29800F5268E /* events.plist */,
+				1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */,
+				1F68D8A51CA0F24B00F5268E /* Helpers.swift */,
+				1F68D8AB1CA0F2F000F5268E /* Schedule.swift */,
 				D9C634461C98C93C00AB3F75 /* Universes */,
 				D9C634471C98C99100AB3F75 /* Gesture.swift */,
 				D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */,
@@ -123,7 +119,6 @@
 				1F545E0F1C97E64D00436812 /* Images.xcassets */,
 				1F545E111C97E64D00436812 /* LaunchScreen.xib */,
 				1F545E141C97E64D00436812 /* Info.plist */,
-				1F4227F11C97FE3D00B731FE /* Frameworks */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -170,12 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F545E221C97E64D00436812 /* Build configuration list for PBXNativeTarget "Peripheral" */;
 			buildPhases = (
-				DB6B3E70EB5413ECE3AFC02C /* Check Pods Manifest.lock */,
+				DB6B3E70EB5413ECE3AFC02C /* 📦 Check Pods Manifest.lock */,
 				1F545D6E1C97E64C00436812 /* Sources */,
 				1F545D6F1C97E64C00436812 /* Frameworks */,
 				1F545D701C97E64C00436812 /* Resources */,
-				04A20D32C8E2BDB2C071EFF6 /* Embed Pods Frameworks */,
-				4340241B955801F36467EBB7 /* Copy Pods Resources */,
+				04A20D32C8E2BDB2C071EFF6 /* 📦 Embed Pods Frameworks */,
+				4340241B955801F36467EBB7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +246,8 @@
 				1F545E101C97E64D00436812 /* Images.xcassets in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
+				1F68D8AA1CA0F2AF00F5268E /* Voga-Bold.otf in Resources */,
+				1F68D8A81CA0F29800F5268E /* events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,14 +261,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04A20D32C8E2BDB2C071EFF6 /* Embed Pods Frameworks */ = {
+		04A20D32C8E2BDB2C071EFF6 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,14 +276,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4340241B955801F36467EBB7 /* Copy Pods Resources */ = {
+		4340241B955801F36467EBB7 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +291,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB6B3E70EB5413ECE3AFC02C /* Check Pods Manifest.lock */ = {
+		DB6B3E70EB5413ECE3AFC02C /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,9 +317,11 @@
 				D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */,
 				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
+				1F68D8A61CA0F24B00F5268E /* Helpers.swift in Sources */,
 				D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */,
 				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
 				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
+				1F68D8AC1CA0F2F000F5268E /* Schedule.swift in Sources */,
 				1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
