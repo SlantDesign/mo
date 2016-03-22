@@ -213,6 +213,60 @@
 		<key>duration</key>
 		<integer>40</integer>
 		<key>date</key>
+		<date>2016-04-16T22:50:00Z</date>
+		<key>location</key>
+		<string>KolaracMainHall</string>
+		<key>artists</key>
+		<array>
+			<string>Memo Akten</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>green</string>
+		<key>live</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-16T23:40:00Z</date>
+		<key>location</key>
+		<string>KolaracMainHall</string>
+		<key>artists</key>
+		<array>
+			<string>Media Molecule</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>green</string>
+		<key>live</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-17T00:30:00Z</date>
+		<key>location</key>
+		<string>KolaracMainHall</string>
+		<key>artists</key>
+		<array>
+			<string>Nicholas Felton</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>green</string>
+		<key>live</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
 		<date>2016-04-16T17:30:00Z</date>
 		<key>location</key>
 		<string>KinotekaCinema</string>
