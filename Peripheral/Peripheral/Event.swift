@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Event: Equatable, Hashable {
+struct Event: Equatable, Hashable, CustomStringConvertible {
     var date = NSDate()
     var endDate: NSDate {
         return date.dateByAddingTimeInterval(duration*60.0)
@@ -19,6 +19,10 @@ struct Event: Equatable, Hashable {
 
     var hashValue: Int {
         return "\(date)\(duration)\(location)\(title)".hashValue
+    }
+
+    var description: String {
+        return "\(date)\n\(duration)\n\(endDate)\n\(location)\n\(title)\n"
     }
 }
 

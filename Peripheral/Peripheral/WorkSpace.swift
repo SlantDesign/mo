@@ -19,8 +19,21 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
     let deviceId = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
     var socketManager: SocketManager?
     var currentUniverse: UniverseController?
+    var scheduleViewController: ScheduleViewController?
 
     override func setup() {
+        initializeCollectionView()
+    }
+
+    func initializeCollectionView() {
+        let storyboard = UIStoryboard(name: "ScheduleViewController", bundle: nil)
+        scheduleViewController = storyboard.instantiateViewControllerWithIdentifier("ScheduleViewController") as? ScheduleViewController
+        scheduleViewController?.collectionView?.dataSource = Schedule.shared
+        guard scheduleViewController != nil else {
+            print("Collection view could not be instantiated from storyboard.")
+            return
+        }
+        canvas.add(scheduleViewController?.collectionView)
     }
 
     func initializeSocketManager() {
