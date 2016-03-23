@@ -12,17 +12,18 @@ import CocoaLumberjack
 
 public class Spiral : UniverseController {
     let scrollViewRotation = -M_PI/32
-    private var userDidScrollContext = true
-    private var userDidNotScrollContext = false
-    private var currentContext = true
+    let pageCount = 60
+
+    enum ScrollSource {
+        case Local
+        case Remote
+    }
+    var scrollSource = ScrollSource.Local
 
     let container = View()
     let scrollview = InfiniteScrollView()
     let interaction = InfiniteScrollView()
     var primaryCenter = Point()
-    let pageCount = 60
-    var colors: [Color]!
-    var shouldReportContentOffset: Bool = true
     var spiralUniverseDelegate: SpiralUniverseDelegate?
 
     public override func setup() {
@@ -39,45 +40,9 @@ public class Spiral : UniverseController {
         primaryCenter = container.center
         scrollview.clipsToBounds = false
 
-        colors = generateColors(steps: pageCount)
-
         for i in 0..<pageCount {
-            let v = View(frame: canvas.frame)
-            v.backgroundColor = colors[i]
-
-
-            let label = TextShape(text: "\(i)")
-            label?.fillColor = white
-            label?.center = v.center
-            v.add(label)
-
-            if i == 0 {
-                let copy = View(copyView: v)
-                copy.origin = Point(Double(pageCount)*v.width, 0)
-
-                let label = TextShape(text: "\(i)")
-                label?.fillColor = white
-                label?.center = v.center
-                copy.add(label)
-
-                scrollview.add(copy)
-            }
-
-            if i == pageCount - 1 {
-                let copy = View(copyView: v)
-                copy.origin = Point(-v.width, 0)
-
-                let label = TextShape(text: "\(i)")
-                label?.fillColor = white
-                label?.center = v.center
-                copy.add(label)
-
-                scrollview.add(copy)
-            }
-
-            v.origin = Point(canvas.width * Double(i), 0)
-
-            scrollview.add(v)
+            let view = createViewAtIndex(i)
+            scrollview.add(view)
         }
 
         scrollview.contentSize = CGSize(width: scrollview.frame.width * CGFloat(pageCount + 1), height: 1)
@@ -103,16 +68,40 @@ public class Spiral : UniverseController {
         }
     }
 
+    func createViewAtIndex(index: Int) -> View {
+        let v = View(frame: canvas.frame)
+        v.backgroundColor = colorAtIndex(index)
+
+        let label = TextShape(text: "\(index)")
+        label?.fillColor = white
+        label?.center = v.center
+        v.add(label)
+
+        v.origin = Point(canvas.width * Double(index), 0)
+
+        return v
+    }
+
+    func colorAtIndex(index: Int) -> Color {
+        let c1 = C4Pink
+        let c2 = C4Blue
+        let vA = Vector(x: c1.red, y: c1.green, z: c1.blue)
+        let vB = Vector(x: c2.red, y: c2.green, z: c2.blue)
+        let t = Double(index) / Double(pageCount)
+        let vC = vA + (vB - vA) * t
+        return Color(red: vC.x, green: vC.y, blue: vC.z, alpha: 1.0)
+    }
+
     public var shouldReportScroll: Bool {
-        return currentContext
+        return scrollSource == .Local
     }
 
     public func registerUserInteraction(gestureRecognizer: UIGestureRecognizer) {
-        currentContext = userDidScrollContext
+        scrollSource = .Local
     }
 
     public func registerRemoteUserInteraction(point: CGPoint) {
-        currentContext = userDidNotScrollContext
+        scrollSource = .Remote
         if scrollview.contentOffset != point {
             scrollview.contentOffset = point
             let normalOffset = (scrollview.contentOffset.x / scrollview.contentSize.width)
@@ -123,26 +112,8 @@ public class Spiral : UniverseController {
         }
     }
 
-    func generateColors(from c1: Color = C4Pink, to c2: Color = C4Blue, steps: Int) -> [Color] {
-        let vP = Vector(x: c1.red, y: c1.green, z: c1.blue)
-        let vB = Vector(x: c2.red, y: c2.green, z: c2.blue)
-
-        let dBP = vB - vP
-
-        let step = dBP / Double(steps)
-
-        var vC = Vector(x: vP.x, y: vP.y, z: vP.z)
-        var colorSteps = [Color]()
-        for _ in 0..<steps {
-            let c = Color(red: vC.x, green: vC.y, blue: vC.z, alpha: 1.0)
-            colorSteps.append(c)
-            vC += step
-        }
-        return colorSteps
-    }
-
     public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if currentContext {
+        if scrollSource == .Local {
             let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
             let targetOffset = normalOffset * scrollview.contentSize.width
             if scrollview.contentOffset.x != targetOffset {

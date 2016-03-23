@@ -53,15 +53,13 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
     var currentOffset = CGPointZero
     func shouldSendScrollData() {
         if let spiral = currentUniverse as? Spiral {
-            if spiral.shouldReportContentOffset {
-                var offset = spiral.scrollview.contentOffset
-                if offset != currentOffset {
-                    let data = NSMutableData()
-                    data.appendBytes(&offset, length: sizeof(CGPoint))
-                    let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
-                    socketManager?.sendPacket(packet)
-                    currentOffset = offset
-                }
+            var offset = spiral.scrollview.contentOffset
+            if offset != currentOffset {
+                let data = NSMutableData()
+                data.appendBytes(&offset, length: sizeof(CGPoint))
+                let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
+                socketManager?.sendPacket(packet)
+                currentOffset = offset
             }
         }
     }
