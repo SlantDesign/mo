@@ -20,6 +20,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     var workspace: WorkSpace?
     
     var deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
+    var maxDeviceID = 0
 
     //a list of addresses that point to a broadcast NSNetService
     var serverAddresses : [NSData]?
@@ -86,6 +87,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
         switch packet.packetType {
         case .Handshake:
+            maxDeviceID = max(maxDeviceID, packet.id)
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
         case .Ping:

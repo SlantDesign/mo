@@ -13,6 +13,7 @@ import CocoaLumberjack
 public class Spiral : UniverseController {
     let scrollViewRotation = -M_PI/32
     let pageCount = 60
+    let interactionTimeout = NSTimeInterval(10)
 
     enum ScrollSource {
         case Local
@@ -25,6 +26,9 @@ public class Spiral : UniverseController {
     let interaction = InfiniteScrollView()
     var primaryCenter = Point()
     var spiralUniverseDelegate: SpiralUniverseDelegate?
+
+    var interactionsByID = [Int: RemoteInteraction]()
+    var lastLocalInteractionTimestamp: NSTimeInterval?
 
     public override func setup() {
 
@@ -100,28 +104,73 @@ public class Spiral : UniverseController {
         scrollSource = .Local
     }
 
-    public func registerRemoteUserInteraction(point: CGPoint) {
-        scrollSource = .Remote
-        if scrollview.contentOffset != point {
-            scrollview.contentOffset = point
-            let normalOffset = (scrollview.contentOffset.x / scrollview.contentSize.width)
-            let targetOffset = normalOffset * interaction.contentSize.width
-            interaction.contentOffset = CGPoint(x: targetOffset,y: 0)
-            let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
-            container.center.y = y
+    public func registerRemoteUserInteraction(interaction: RemoteInteraction) {
+        interactionsByID[interaction.deviceID] = interaction
+
+        let currentTimestamp = NSDate().timeIntervalSinceReferenceDate
+        if let timestamp = lastLocalInteractionTimestamp where currentTimestamp - timestamp < interactionTimeout {
+            // Local interactions trump remote ones
+            // TODO: maybe start moving slowly as time goes by?
+            return
+        }
+
+        if let closest = pickClosestInteraction() {
+            // TODO: Maybe take into consideration time as well?
+            remoteScrollTo(closest.point)
         }
     }
 
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if scrollSource == .Local {
-            let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
-            let targetOffset = normalOffset * scrollview.contentSize.width
-            if scrollview.contentOffset.x != targetOffset {
-                scrollview.contentOffset = CGPoint(x: targetOffset,y: 0)
-                let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
-                container.center.y = y
-                spiralUniverseDelegate?.shouldSendScrollData()
+    func remoteScrollTo(point: CGPoint) {
+        if scrollview.contentOffset == point {
+            return
+        }
+
+        scrollSource = .Remote
+        scrollview.contentOffset = point
+
+        let normalOffset = (scrollview.contentOffset.x / scrollview.contentSize.width)
+        let targetOffset = normalOffset * interaction.contentSize.width
+        interaction.contentOffset = CGPoint(x: targetOffset, y: 0)
+
+        let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
+        container.center.y = y
+    }
+
+    func pickClosestInteraction() -> RemoteInteraction? {
+        let deviceID = SocketManager.sharedManager.deviceID
+        let maxDeviceID = SocketManager.sharedManager.maxDeviceID
+        let currentTimestamp = NSDate().timeIntervalSinceReferenceDate
+
+        var minDistance = 1000
+        var minInteraction: RemoteInteraction?
+        for (_, interaction) in interactionsByID {
+            if currentTimestamp - interaction.timestamp >= interactionTimeout {
+                continue
+            }
+            let diff = abs(interaction.deviceID - deviceID)
+            let d = min(diff, maxDeviceID - diff)
+            if d < minDistance {
+                minDistance = d
+                minInteraction = interaction
             }
         }
+
+        return minInteraction
+    }
+
+    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if scrollSource != .Local {
+            return
+        }
+
+        let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
+        let targetOffset = normalOffset * scrollview.contentSize.width
+        if scrollview.contentOffset.x != targetOffset {
+            scrollview.contentOffset = CGPoint(x: targetOffset,y: 0)
+            let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
+            container.center.y = y
+            spiralUniverseDelegate?.shouldSendScrollData()
+        }
+        lastLocalInteractionTimestamp = NSDate().timeIntervalSinceReferenceDate
     }
 }

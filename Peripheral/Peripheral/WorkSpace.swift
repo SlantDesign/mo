@@ -37,31 +37,25 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
                 DDLogVerbose("Packet does not contain point data")
                 return
             }
-            let point = UnsafePointer<CGPoint>(d.bytes).memory
-            handleScroll(point)
+
+            let interaction = UnsafePointer<RemoteInteraction>(d.bytes).memory
+            if let s = currentUniverse as? Spiral {
+                s.registerRemoteUserInteraction(interaction)
+            }
+            
         default:
             break
-        }
-    }
-
-    func handleScroll(point: CGPoint) {
-        if let s = currentUniverse as? Spiral {
-            s.registerRemoteUserInteraction(point)
         }
     }
 
     var currentOffset = CGPointZero
     func shouldSendScrollData() {
         if let spiral = currentUniverse as? Spiral {
-            var offset = spiral.scrollview.contentOffset
-            if offset != currentOffset {
-                let data = NSMutableData()
-                data.appendBytes(&offset, length: sizeof(CGPoint))
-                let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
-                socketManager?.sendPacket(packet)
-                currentOffset = offset
-            }
+            var interaction = RemoteInteraction(point: spiral.scrollview.contentOffset, timestamp: NSDate().timeIntervalSinceReferenceDate, deviceID: deviceId)
+            let data = NSMutableData()
+            data.appendBytes(&interaction, length: sizeof(RemoteInteraction))
+            let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
+            socketManager?.sendPacket(packet)
         }
     }
 }
-
