@@ -173,12 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F545E221C97E64D00436812 /* Build configuration list for PBXNativeTarget "Peripheral" */;
 			buildPhases = (
-				DB6B3E70EB5413ECE3AFC02C /* Check Pods Manifest.lock */,
+				DB6B3E70EB5413ECE3AFC02C /* 📦 Check Pods Manifest.lock */,
 				1F545D6E1C97E64C00436812 /* Sources */,
 				1F545D6F1C97E64C00436812 /* Frameworks */,
 				1F545D701C97E64C00436812 /* Resources */,
-				04A20D32C8E2BDB2C071EFF6 /* Embed Pods Frameworks */,
-				4340241B955801F36467EBB7 /* Copy Pods Resources */,
+				04A20D32C8E2BDB2C071EFF6 /* 📦 Embed Pods Frameworks */,
+				4340241B955801F36467EBB7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,7 +219,7 @@
 				TargetAttributes = {
 					1F545D711C97E64C00436812 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = G3GED29J33;
+						DevelopmentTeam = 75C7KVJZ99;
 					};
 					1F545E181C97E64D00436812 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -267,14 +267,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04A20D32C8E2BDB2C071EFF6 /* Embed Pods Frameworks */ = {
+		04A20D32C8E2BDB2C071EFF6 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,14 +282,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4340241B955801F36467EBB7 /* Copy Pods Resources */ = {
+		4340241B955801F36467EBB7 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +297,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB6B3E70EB5413ECE3AFC02C /* Check Pods Manifest.lock */ = {
+		DB6B3E70EB5413ECE3AFC02C /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,9 +462,9 @@
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;
+				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "65e3a58e-1b0e-4fa9-99ae-be628aca2406";
 			};
 			name = Debug;
 		};
@@ -478,9 +478,9 @@
 				INFOPLIST_FILE = Peripheral/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = C4.Peripheral;
+				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "65e3a58e-1b0e-4fa9-99ae-be628aca2406";
 			};
 			name = Release;
 		};
