@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 var dataLoaded: dispatch_once_t = 0
-let hour: (width: NSTimeInterval, height: NSTimeInterval) = (384.0, 128.0)
+let hour: (width: NSTimeInterval, height: NSTimeInterval) = (768.0, 155.0)
 
 class Schedule: NSObject, UICollectionViewDataSource {
     static let shared = Schedule()
@@ -33,7 +33,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
             DDLogVerbose("Schedule Loaded (Awake)")
         }
     }
-    
+
     override init() {
         super.init()
         dispatch_once(&dataLoaded) {
@@ -57,33 +57,22 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func loadData() {
-        let path = NSBundle.mainBundle().pathForResource("events", ofType: "plist")!
+        let path = NSBundle.mainBundle().pathForResource("events2016", ofType: "plist")!
         guard let e = NSArray(contentsOfFile: path) as? [[String : AnyObject]] else {
             print("Could not extract array of events from file")
             return
         }
 
         for event in e {
-            if let date = event["date"] as? NSDate,
-                let artists = event["artists"] as? [String],
-                let duration = event["duration"] as? Double,
-                let title = event["title"] as? String,
-                let location = event["location"] as? String {
-                    var titleString = "M/O"
-                    if artists.count > 0 {
-                        titleString = artists[0]
-                        for i in 1..<artists.count {
-                            titleString += ", \(artists[i])"
-                        }
-                    } else if title != "" {
-                        titleString = title
-                    }
+            let date = event["date"] as! NSDate
+            let artists = event["artists"] as! [String]
+            let duration = event["duration"] as! Double
+            let title = event["title"] as! String
+            let location = event["location"] as! String
+            let summary = event["description"] as! String
 
-                    if let location = Location(rawValue: location) {
-                        let event = Event(date: date, duration: duration, location: location, title: titleString)
-                        events.append(event)
-                    }
-            }
+            let event = Event(date: date, duration: duration, location: Location(rawValue: location)!, title: title, artists: artists, summary: summary)
+            events.append(event)
         }
         events.sortInPlace {
             $0 < $1
@@ -115,13 +104,12 @@ class Schedule: NSObject, UICollectionViewDataSource {
         let event = events[indexPath.item]
         cell.frame = frameFor(event)
         cell.event = event
+        cell.animate()
         return cell
     }
 
     //fix displacement errors...
-
     func frameFor(event:Event) -> CGRect {
-
         let x = CGFloat(event.date.timeIntervalSinceDate(startDate) / 3600.0 * hour.width)
         let y = CGFloat(NSTimeInterval(event.location.level) * hour.height)
         let w = CGFloat(event.duration / 60.0 * hour.width)
