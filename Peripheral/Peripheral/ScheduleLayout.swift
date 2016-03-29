@@ -37,6 +37,9 @@ class ScheduleLayout: UICollectionViewLayout {
     }
 
     func indexPathsOfItemsIn(rect: CGRect) -> [NSIndexPath] {
+        if rect.origin.x < 0 {
+            print(rect.origin.x)
+        }
         var paths = [NSIndexPath]()
         let start = Schedule.shared.startDate.dateByAddingTimeInterval(NSTimeInterval(rect.minX / Schedule.shared.totalWidth) * Schedule.shared.totalInterval)
         let end = Schedule.shared.startDate.dateByAddingTimeInterval(NSTimeInterval(rect.maxX / Schedule.shared.totalWidth) * Schedule.shared.totalInterval)
@@ -60,5 +63,5 @@ class ScheduleLayout: UICollectionViewLayout {
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return true
     }
-
+    
 }
