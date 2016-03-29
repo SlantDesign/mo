@@ -16,6 +16,8 @@ struct Event: Equatable, Hashable, CustomStringConvertible {
     var duration = 0.0
     var location = Location.Unknown
     var title = "M/O"
+    var artists = ["Travis Kirton, Jake Lim"]
+    var summary = "M/O"
 
     var hashValue: Int {
         return "\(date)\(duration)\(location)\(title)".hashValue
@@ -28,9 +30,9 @@ struct Event: Equatable, Hashable, CustomStringConvertible {
 
 func ==(lhs: Event, rhs: Event) -> Bool {
     return lhs.date.isEqualToDate(rhs.date) &&
-    lhs.duration == rhs.duration &&
-    lhs.location == lhs.location &&
-    lhs.title == lhs.title
+        lhs.duration == rhs.duration &&
+        lhs.location == lhs.location &&
+        lhs.title == lhs.title
 }
 
 func >(lhs: Event, rhs: Event) -> Bool {
