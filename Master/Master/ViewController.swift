@@ -15,7 +15,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     func reload() {
-        let sorted = (socketManager.peripherals as NSArray).sortedArrayUsingDescriptors(tableView.sortDescriptors)
+        let array = Array(socketManager.peripherals.values)
+        let sorted = (array as NSArray).sortedArrayUsingDescriptors(tableView.sortDescriptors)
         sortedPeripherals = sorted as! [Peripheral]
         tableView.reloadData()
     }
@@ -37,7 +38,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             return peripheral.id
 
         case "status":
-            return peripheral.status
+            return peripheral.status.rawValue
 
         case "lag":
             return peripheral.lag
@@ -68,7 +69,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             view.textField?.integerValue = peripheral.id
 
         case "status":
-            view.textField?.stringValue = peripheral.status
+            view.textField?.stringValue = peripheral.status.rawValue
 
         case "lag":
             view.textField?.stringValue = String(format: "%.2fms", arguments: [peripheral.lag * 1000.0])

@@ -1,18 +1,34 @@
 import CocoaAsyncSocket
 import CocoaLumberjack
 
-class Peripheral: NSObject, GCDAsyncSocketDelegate {
-    static let pingInterval = 0.5
+class Peripheral: NSObject {
+    enum Status: String {
+        case Connecting
+        case Connected
+        case Disconnected
+    }
+
     static let pingTimeout = 5.0
+
+    var socket: GCDAsyncUdpSocket
 
     /// The peripheral's identifier
     var id = -1
 
-    /// The socket connected to the peripheral
-    var socket: GCDAsyncSocket
+    /// The peripheral's IP address
+    var address: String
 
     /// Whether a hanshake was received
-    var handshaked = false
+    var status = Status.Connecting
+
+    var lastPingResponse: NSDate?
+
+    var lag: NSTimeInterval {
+        guard let date = lastPingResponse else {
+            return -1
+        }
+        return NSDate().timeIntervalSinceDate(date)
+    }
 
     /// Buffer for reading data
     var readBuffer = NSMutableData()
@@ -20,69 +36,18 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
     /// The action to invoke when a packet is received
     var didReceivePacketAction: ((Packet, Peripheral) -> Void)?
 
-    /// The action to invoke when the connection is lost
-    var didDisconnectAction: ((Peripheral) -> Void)?
-
-    var status: String {
-        if socket.isDisconnected {
-            return "Disconnected"
-        } else if handshaked {
-            return "Connected"
-        } else {
-            return "Waiting"
-        }
-    }
-
-    var pingDate: NSDate?
-    var lastLag: NSTimeInterval = 0
-    weak var pingTimer: NSTimer?
-
-    var lag: NSTimeInterval {
-        if let date = pingDate {
-            return NSDate().timeIntervalSinceDate(date)
-        }
-        return lastLag
-    }
-
-    init(socket: GCDAsyncSocket) {
+    init(address: String, socket: GCDAsyncUdpSocket) {
         self.socket = socket
+        self.address = address
         super.init()
-        socket.delegate = self
-    }
-
-    deinit {
-        pingTimer?.invalidate()
-        socket.delegate = nil
     }
 
     func sendHandshake() {
         let p = Packet(type: .Handshake, id: SocketManager.masterID)
-        socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
-        socket.readDataWithTimeout(-1, tag: 0)
-
-        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: #selector(Peripheral.ping), userInfo: nil, repeats: true)
+        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
     }
 
-    func ping() {
-        if !socket.isConnected {
-            return
-        }
-
-        if let date = pingDate {
-            // Disconnect if we don't get a ping for a while
-            if NSDate().timeIntervalSinceDate(date) > Peripheral.pingTimeout {
-                socket.disconnect()
-            }
-            return
-        }
-
-        pingDate = NSDate()
-        let p = Packet(type: .Ping, id: SocketManager.masterID)
-        socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
-        socket.readDataWithTimeout(-1, tag: 0)
-    }
-
-    func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
+    func processData(data: NSData) {
         readBuffer.appendData(data)
 
         var readOffset = 0
@@ -91,7 +56,7 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
             if packetSize > 0 && readBuffer.length - readOffset >= packetSize {
                 // We have all the data necessary for the packet
                 let packetData = NSData(bytes: readBuffer.bytes + readOffset, length: packetSize)
-                processPacketWithData(packetData, fromSocket: sock)
+                processPacketWithData(packetData)
                 readOffset += packetSize
             } else {
                 break
@@ -102,11 +67,9 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
         let remainingSize = readBuffer.length - readOffset
         readBuffer.replaceBytesInRange(NSRange(location: 0, length: remainingSize), withBytes: readBuffer.bytes + readOffset)
         readBuffer.length -= readOffset
-
-        sock.readDataWithTimeout(-1, tag: 0)
     }
 
-    func processPacketWithData(data: NSData, fromSocket sock: GCDAsyncSocket) {
+    func processPacketWithData(data: NSData) {
         var packet: Packet
         do {
             packet = try Packet(data)
@@ -118,27 +81,16 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
         switch packet.packetType {
         case .Handshake:
             id = packet.id
-            handshaked = true
+            status = .Connected
             DDLogVerbose("Got handshake from \(id)")
 
         case .Ping:
-            if let sentDate = pingDate {
-                lastLag = NSDate().timeIntervalSinceDate(sentDate)
-                pingDate = nil
-            }
+            lastPingResponse = NSDate()
 
         default:
             break
         }
 
         didReceivePacketAction?(packet, self)
-    }
-
-    func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
-        DDLogVerbose("Disconnected from: \(id)")
-        pingDate = nil
-        lastLag = 0
-        pingTimer?.invalidate()
-        didDisconnectAction?(self)
     }
 }

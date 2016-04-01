@@ -5,92 +5,96 @@ import Cocoa
 import CocoaAsyncSocket
 import CocoaLumberjack
 
-public class SocketManager: NSObject, GCDAsyncSocketDelegate {
+public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let masterID = Int(INT_MAX)
+    static let portNumber = UInt16(10101)
+    static let broadcastHost = "255.255.255.255"
+    static let pingInterval = 0.5
+    
     static let sharedManager = SocketManager()
 
-    //The main socket, all peripherals will connect to this
-    var socket: GCDAsyncSocket?
+    var queue: dispatch_queue_t
+    var socket: GCDAsyncUdpSocket!
 
-    //A list of all the sockets that have been connected
-    var peripherals = [Peripheral]()
+    /// A list of all the peripherals by IP address
+    var peripherals = [String: Peripheral]()
 
     /// Action invoked when there is a change in status
     var changeAction: (() -> Void)?
 
+    /// Buffer for reading data
+    var readBuffer = NSMutableData()
+
+    weak var pingTimer: NSTimer?
+
     public override init() {
+        queue = dispatch_queue_create("SocketManager", DISPATCH_QUEUE_SERIAL)
         super.init()
-        initializeSocketOnPort(10101)
+
+        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: queue)
+        try! socket.enableBroadcast(true)
+        try! socket.bindToPort(SocketManager.portNumber)
+        try! socket.beginReceiving()
+
+        pingTimer = NSTimer.scheduledTimerWithTimeInterval(SocketManager.pingInterval, target: self, selector: #selector(SocketManager.ping), userInfo: nil, repeats: true)
     }
 
-    func initializeSocketOnPort(port: UInt16) {
-        socket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
-        do {
-            try socket?.acceptOnPort(port)
-            socket?.delegate = self
-            DDLogVerbose("Initialized Socket on port \(port)")
-        } catch {
-            DDLogError("Could not initialize socket using acceptOnPort(\(port))")
+    public func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
+        var hostString: NSString? = NSString()
+        var port: UInt16 = 0
+        GCDAsyncUdpSocket.getHost(&hostString, port: &port, fromAddress: address)
+
+        guard let host = hostString as? String else {
+            DDLogWarn("Received data from an invalid host")
+            return
         }
-    }
 
-    public func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
-        DDLogVerbose("Accepted connection from: \(newSocket.connectedHost)")
-
-        let peripheral = Peripheral(socket: newSocket)
-        peripheral.didReceivePacketAction = processPacket
-        peripheral.didDisconnectAction = peripheralDidDisconnect
-        peripherals.append(peripheral)
-        peripheral.sendHandshake()
-
-        changeAction?()
+        if let peripheral = peripherals[host] {
+            peripheral.processData(data)
+        } else {
+            let peripheral = Peripheral(address: host, socket: socket)
+            peripheral.didReceivePacketAction = processPacket
+            peripherals[host] = peripheral
+            peripheral.processData(data)
+        }
     }
 
     func processPacket(packet: Packet, peripheral: Peripheral) {
         switch packet.packetType {
-        case .Scroll, .Cease:
-            forwardPacket(packet, excluding: peripheral)
-            return
-
         case .Handshake:
-            changeAction?()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.changeAction?()
+            }
 
         case .Ping:
-            changeAction?()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.changeAction?()
+            }
+
+        default:
+            break
         }
     }
 
-    func forwardPacket(packet: Packet, excluding peripheral: Peripheral) {
-        let data = packet.serialize()
-        for p in peripherals {
-            if p !== peripheral {
-                writeTo(p.socket, data: data)
+
+    // MARK: - Pinging
+
+    func ping() {
+        updateStatuses()
+        let p = Packet(type: .Ping, id: SocketManager.masterID)
+        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
+    }
+
+    func updateStatuses() {
+        for (_, p) in peripherals {
+            if p.lag > Peripheral.pingTimeout {
+                // Disconnect if we don't get a ping for a while
+                p.status = .Disconnected
+                DDLogVerbose("Disconnected from: \(p.id)")
+                dispatch_async(queue) {
+                    self.peripherals.removeValueForKey(p.address)
+                }
             }
         }
-    }
-
-    func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
-        writeTo(sock, data: packet.serialize(), tag: tag)
-    }
-
-    func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        sock.writeData(data, withTimeout: -1, tag: tag)
-    }
-
-    func peripheralDidDisconnect(peripheral: Peripheral) {
-        if let index = peripherals.indexOf(peripheral) {
-            peripherals.removeAtIndex(index)
-        }
-        changeAction?()
-    }
-
-    public func disconnectAll() {
-        DDLogVerbose("Master is disconnecting from all sockets")
-        for p in peripherals {
-            p.socket.disconnect()
-        }
-
-        peripherals.removeAll()
-        changeAction?()
     }
 }

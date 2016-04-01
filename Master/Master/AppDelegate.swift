@@ -19,9 +19,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         socketManager = SocketManager.sharedManager
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        socketManager?.disconnectAll()
-    }
 }
 

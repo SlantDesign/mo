@@ -11,10 +11,11 @@ import Foundation
 import CocoaAsyncSocket
 import CocoaLumberjack
 
-let currentHost = "192.168.0.11"
-//let currentHost = "192.168.0.143"
+public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
+    static let portNumber = UInt16(10101)
+    static let masterHost = "192.168.0.11"
+    static let broadcastHost = "255.255.255.255"
 
-public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     static let sharedManager = SocketManager()
 
     var workspace: WorkSpace?
@@ -22,61 +23,21 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
     var deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
     var maxDeviceID = 0
 
-    //a list of addresses that point to a broadcast NSNetService
-    var serverAddresses : [NSData]?
-
     //the socket that will be used to connect to the core app
-    var socket : GCDAsyncSocket?
+    var socket: GCDAsyncUdpSocket!
 
     public override init() {
         super.init()
-        initializeSocketWithHost(currentHost, port: 10101)
-    }
 
-    func initializeSocketWithHost(host: String, port: UInt16) {
-        socket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
-        socket?.delegate = self
-        do {
-            //doesn't work without specifying the timeout (2h)
-            try socket?.connectToHost(host, onPort: port, withTimeout: 1)
-            DDLogVerbose("Trying to connect to host \(host) on port \(port)")
-        } catch {
-            DDLogVerbose("\(deviceID): Could not connect to host \(host) on port \(port)")
-        }
-    }
+        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
+        try! socket.enableBroadcast(true)
+        try! socket.beginReceiving()
 
-    public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
-        DDLogVerbose("Connected to host \(host) on port \(port)")
         let packet = Packet(type: .Handshake, id: deviceID)
-        writeTo(sock, data: packet.serialize())
-        sock.readDataWithTimeout(-1, tag: 0)
+        socket.sendData(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
     }
 
-    func writeTo(sock: GCDAsyncSocket, packet: Packet, tag: Int = 0) {
-        writeTo(sock, data: packet.serialize(), tag: tag)
-    }
-
-    func writeTo(sock: GCDAsyncSocket, data: NSData, tag: Int = 0) {
-        sock.writeData(data, withTimeout: -1, tag: tag)
-    }
-
-    public func sendPacket(packet: Packet) {
-        if let sock = socket {
-            writeTo(sock, data: packet.serialize())
-        }
-    }
-
-    public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
-        DDLogVerbose("\(deviceID) disconnected from \(sock)")
-        socket?.disconnect()
-        socket = nil
-
-        wait(0.1) {
-            self.initializeSocketWithHost(currentHost, port: 10101)
-        }
-    }
-
-    public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
+    public func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
         var packet: Packet!
         do {
             packet = try Packet(data)
@@ -92,12 +53,14 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
 
         case .Ping:
             let packet = Packet(type: .Ping, id: deviceID)
-            writeTo(sock, data: packet.serialize())
+            socket.sendData(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
 
         default:
             workspace?.receivePacket(packet)
         }
-        
-        sock.readDataWithTimeout(-1, tag: 0)
+    }
+
+    public func broadcastPacket(packet: Packet) {
+        socket.sendData(packet.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
     }
 }

@@ -64,11 +64,11 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
         let data = NSMutableData()
         data.appendBytes(&interaction, length: sizeof(RemoteInteraction))
         let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
-        socketManager?.sendPacket(packet)
+        socketManager?.broadcastPacket(packet)
     }
 
     func shouldSendCease() {
         let packet = Packet(type: .Cease, id: deviceId)
-        socketManager?.sendPacket(packet)
+        socketManager?.broadcastPacket(packet)
     }
 }
