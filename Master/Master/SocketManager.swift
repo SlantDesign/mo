@@ -6,6 +6,7 @@ import CocoaAsyncSocket
 import CocoaLumberjack
 
 public class SocketManager: NSObject, GCDAsyncSocketDelegate {
+    static let portNumber = UInt16(10101)
     static let masterID = Int(INT_MAX)
     static let sharedManager = SocketManager()
 
@@ -20,7 +21,7 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
 
     public override init() {
         super.init()
-        initializeSocketOnPort(10101)
+        initializeSocketOnPort(SocketManager.portNumber)
     }
 
     func initializeSocketOnPort(port: UInt16) {

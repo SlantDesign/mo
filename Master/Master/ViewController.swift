@@ -2,6 +2,9 @@ import Cocoa
 import CocoaAsyncSocket
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+    @IBOutlet weak var ipAddressTextField: NSTextField!
+    @IBOutlet weak var ipPortTextField: NSTextField!
+    @IBOutlet weak var timestampTextField: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
 
     var socketManager = SocketManager.sharedManager
@@ -9,8 +12,14 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ipAddressTextField.stringValue = socketManager.socket?.localHost ?? ""
+        ipPortTextField.stringValue = "\(SocketManager.portNumber)"
+        timestampTextField.stringValue = String(format: "%.0f", arguments: [round(NSDate().timeIntervalSinceReferenceDate)])
+
         socketManager.changeAction = {
             self.reload()
+            self.timestampTextField.stringValue = String(format: "%.0f", arguments: [round(NSDate().timeIntervalSinceReferenceDate)])
         }
     }
 
@@ -42,6 +51,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         case "lag":
             return peripheral.lag
 
+        case "timestamp":
+            return peripheral.timestamp
+
         default:
             return nil
         }
@@ -72,6 +84,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
         case "lag":
             view.textField?.stringValue = String(format: "%.2fms", arguments: [peripheral.lag * 1000.0])
+
+        case "timestamp":
+            view.textField?.stringValue = String(format: "%.0f", arguments: [peripheral.timestamp])
 
         default:
             break
