@@ -7,7 +7,8 @@ import CocoaLumberjack
 
 public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let masterID = Int(INT_MAX)
-    static let portNumber = UInt16(10101)
+    static let masterPort = UInt16(10101)
+    static let peripheralPort = UInt16(11111)
     static let broadcastHost = "255.255.255.255"
     static let pingInterval = 0.5
     
@@ -22,9 +23,6 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     /// Action invoked when there is a change in status
     var changeAction: (() -> Void)?
 
-    /// Buffer for reading data
-    var readBuffer = NSMutableData()
-
     weak var pingTimer: NSTimer?
 
     public override init() {
@@ -33,7 +31,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: queue)
         try! socket.enableBroadcast(true)
-        try! socket.bindToPort(SocketManager.portNumber)
+        try! socket.bindToPort(SocketManager.masterPort)
         try! socket.beginReceiving()
 
         pingTimer = NSTimer.scheduledTimerWithTimeInterval(SocketManager.pingInterval, target: self, selector: #selector(SocketManager.ping), userInfo: nil, repeats: true)
@@ -82,7 +80,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     func ping() {
         updateStatuses()
         let p = Packet(type: .Ping, id: SocketManager.masterID)
-        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
+        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
     func updateStatuses() {

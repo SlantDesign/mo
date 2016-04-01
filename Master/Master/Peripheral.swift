@@ -44,7 +44,7 @@ class Peripheral: NSObject {
 
     func sendHandshake() {
         let p = Packet(type: .Handshake, id: SocketManager.masterID)
-        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.portNumber, withTimeout: -1, tag: 0)
+        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
     func processData(data: NSData) {
