@@ -14,9 +14,6 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
     /// Whether a hanshake was received
     var handshaked = false
 
-    /// Peripheral's timestamp
-    var timestamp = 0.0
-
     /// Buffer for reading data
     var readBuffer = NSMutableData()
 
@@ -63,7 +60,7 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
         socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
         socket.readDataWithTimeout(-1, tag: 0)
 
-        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: #selector(Peripheral.ping), userInfo: nil, repeats: true)
+        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: Selector("ping"), userInfo: nil, repeats: true)
     }
 
     func ping() {
@@ -128,9 +125,6 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
             if let sentDate = pingDate {
                 lastLag = NSDate().timeIntervalSinceDate(sentDate)
                 pingDate = nil
-            }
-            if let data = packet.data {
-                timestamp = UnsafePointer<Double>(data.bytes).memory
             }
 
         default:

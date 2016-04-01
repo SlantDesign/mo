@@ -91,9 +91,7 @@ public class SocketManager : NSObject, GCDAsyncSocketDelegate {
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
         case .Ping:
-            var timestamp = NSDate().timeIntervalSinceReferenceDate
-            let data = NSData(bytes: &timestamp, length: sizeofValue(timestamp))
-            let packet = Packet(type: .Ping, id: deviceID, data: data)
+            let packet = Packet(type: .Ping, id: deviceID)
             writeTo(sock, data: packet.serialize())
 
         default:
