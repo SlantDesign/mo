@@ -4,9 +4,17 @@ import CocoaLumberjack
 import Foundation
 
 public enum PacketType: Int8 {
+    /// First packet sent when a connection is made, used to identify the peripheral
     case Handshake
+
+    /// Packet sent periodically to measure lag and detect disconnected peripherals
     case Ping
+
+    /// Packet sent for scroll events
     case Scroll
+
+    /// Packet sent when a device is done controlling scroll events
+    case Cease
 }
 
 enum PacketInitializationError: ErrorType {

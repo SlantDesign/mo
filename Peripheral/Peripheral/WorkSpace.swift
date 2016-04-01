@@ -13,6 +13,7 @@ import CocoaLumberjack
 
 public protocol SpiralUniverseDelegate {
     func shouldSendScrollData()
+    func shouldSendCease()
 }
 
 class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegate {
@@ -42,7 +43,12 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
             if let s = currentUniverse as? Spiral {
                 s.registerRemoteUserInteraction(interaction)
             }
-            
+
+        case .Cease:
+            if let s = currentUniverse as? Spiral {
+                s.registerRemoteCease(packet.id)
+            }
+
         default:
             break
         }
@@ -50,12 +56,19 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
 
     var currentOffset = CGPointZero
     func shouldSendScrollData() {
-        if let spiral = currentUniverse as? Spiral {
-            var interaction = RemoteInteraction(point: spiral.scrollview.contentOffset, timestamp: NSDate().timeIntervalSinceReferenceDate, deviceID: deviceId)
-            let data = NSMutableData()
-            data.appendBytes(&interaction, length: sizeof(RemoteInteraction))
-            let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
-            socketManager?.sendPacket(packet)
+        guard let spiral = currentUniverse as? Spiral else {
+            return
         }
+
+        var interaction = RemoteInteraction(point: spiral.scrollview.contentOffset, deviceID: deviceId)
+        let data = NSMutableData()
+        data.appendBytes(&interaction, length: sizeof(RemoteInteraction))
+        let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
+        socketManager?.sendPacket(packet)
+    }
+
+    func shouldSendCease() {
+        let packet = Packet(type: .Cease, id: deviceId)
+        socketManager?.sendPacket(packet)
     }
 }

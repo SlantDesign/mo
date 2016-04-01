@@ -60,7 +60,7 @@ class Peripheral: NSObject, GCDAsyncSocketDelegate {
         socket.writeData(p.serialize(), withTimeout: -1, tag: 0)
         socket.readDataWithTimeout(-1, tag: 0)
 
-        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: Selector("ping"), userInfo: nil, repeats: true)
+        pingTimer = NSTimer.scheduledTimerWithTimeInterval(Peripheral.pingInterval, target: self, selector: #selector(Peripheral.ping), userInfo: nil, repeats: true)
     }
 
     func ping() {

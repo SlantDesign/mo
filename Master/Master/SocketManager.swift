@@ -48,8 +48,8 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
 
     func processPacket(packet: Packet, peripheral: Peripheral) {
         switch packet.packetType {
-        case .Scroll:
-            forwardScroll(packet, excluding: peripheral)
+        case .Scroll, .Cease:
+            forwardPacket(packet, excluding: peripheral)
             return
 
         case .Handshake:
@@ -60,7 +60,7 @@ public class SocketManager: NSObject, GCDAsyncSocketDelegate {
         }
     }
 
-    func forwardScroll(packet: Packet, excluding peripheral: Peripheral) {
+    func forwardPacket(packet: Packet, excluding peripheral: Peripheral) {
         let data = packet.serialize()
         for p in peripherals {
             if p !== peripheral {

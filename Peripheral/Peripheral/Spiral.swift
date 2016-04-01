@@ -29,6 +29,7 @@ public class Spiral : UniverseController {
 
     var interactionsByID = [Int: RemoteInteraction]()
     var lastLocalInteractionTimestamp: NSTimeInterval?
+    weak var interactionCeaseTimer: NSTimer?
 
     public override func setup() {
 
@@ -67,7 +68,7 @@ public class Spiral : UniverseController {
 
         if let grs = interaction.gestureRecognizers {
             for g in grs {
-                g.addTarget(self, action: "registerUserInteraction:")
+                g.addTarget(self, action: #selector(Spiral.registerUserInteraction(_:)))
             }
         }
     }
@@ -115,9 +116,12 @@ public class Spiral : UniverseController {
         }
 
         if let closest = pickClosestInteraction() {
-            // TODO: Maybe take into consideration time as well?
             remoteScrollTo(closest.point)
         }
+    }
+
+    public func registerRemoteCease(id: Int) {
+        interactionsByID[id] = nil
     }
 
     func remoteScrollTo(point: CGPoint) {
@@ -139,14 +143,10 @@ public class Spiral : UniverseController {
     func pickClosestInteraction() -> RemoteInteraction? {
         let deviceID = SocketManager.sharedManager.deviceID
         let maxDeviceID = SocketManager.sharedManager.maxDeviceID
-        let currentTimestamp = NSDate().timeIntervalSinceReferenceDate
 
         var minDistance = 1000
         var minInteraction: RemoteInteraction?
         for (_, interaction) in interactionsByID {
-            if currentTimestamp - interaction.timestamp >= interactionTimeout {
-                continue
-            }
             let diff = abs(interaction.deviceID - deviceID)
             let d = min(diff, maxDeviceID - diff)
             if d < minDistance {
@@ -171,6 +171,15 @@ public class Spiral : UniverseController {
             container.center.y = y
             spiralUniverseDelegate?.shouldSendScrollData()
         }
+
         lastLocalInteractionTimestamp = NSDate().timeIntervalSinceReferenceDate
+
+        interactionCeaseTimer?.invalidate()
+        interactionCeaseTimer = NSTimer.scheduledTimerWithTimeInterval(interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
+    }
+
+    func interactionTimedOut() {
+        lastLocalInteractionTimestamp = nil
+        spiralUniverseDelegate?.shouldSendCease()
     }
 }
