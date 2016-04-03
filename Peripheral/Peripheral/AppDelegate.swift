@@ -16,14 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var socketManager: SocketManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        if NSUserDefaults.standardUserDefaults().objectForKey("deviceID") == nil {
-            var deviceName = UIDevice.currentDevice().name
-            deviceName = deviceName.stringByReplacingOccurrencesOfString("M-O ", withString: "")
-            if let deviceID = Int(deviceName) {
-                NSUserDefaults.standardUserDefaults().setInteger(deviceID, forKey: "deviceID")
-            }
-        }
-
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
 

@@ -11,7 +11,7 @@ import UIKit
 import CocoaLumberjack
 
 public class Spiral : UniverseController {
-    let scrollViewRotation = -M_PI/32
+    let scrollViewRotation = -0.01
     let pageCount = 60
     let interactionTimeout = NSTimeInterval(10)
 
@@ -147,6 +147,12 @@ public class Spiral : UniverseController {
         var minDistance = 1000
         var minInteraction: RemoteInteraction?
         for (_, interaction) in interactionsByID {
+            // Ignore stale interactions
+            if interaction.deviceID <= 0 || CFAbsoluteTimeGetCurrent() - interaction.timestamp > 60 {
+                DDLogWarn("Ignoring stale interaction \(interaction.deviceID)")
+                continue
+            }
+
             let diff = abs(interaction.deviceID - deviceID)
             let d = min(diff, maxDeviceID - diff)
             if d < minDistance {

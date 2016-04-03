@@ -6,4 +6,7 @@ public struct RemoteInteraction {
 
     /// The ID of the source device
     public var deviceID: Int
+
+    /// The timestamp, from the local clock
+    public var timestamp: NSTimeInterval
 }

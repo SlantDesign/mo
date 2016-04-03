@@ -85,6 +85,7 @@ class Peripheral: NSObject {
             DDLogVerbose("Got handshake from \(id)")
 
         case .Ping:
+            id = packet.id
             lastPingResponse = NSDate()
 
         default:

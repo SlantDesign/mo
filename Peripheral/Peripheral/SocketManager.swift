@@ -6,18 +6,26 @@ import CocoaLumberjack
 public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let masterPort = UInt16(10101)
     static let peripheralPort = UInt16(11111)
-    static let masterHost = "127.0.0.1"
-    static let broadcastHost = "255.255.255.255"
+    static let masterHost = "10.0.0.1"
+    static let broadcastHost = "10.0.255.255"
 
     static let sharedManager = SocketManager()
 
     var workspace: WorkSpace?
     
-    var deviceID = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
-    var maxDeviceID = 0
+    let maxDeviceID = 28
 
     //the socket that will be used to connect to the core app
     var socket: GCDAsyncUdpSocket!
+
+    public lazy var deviceID: Int = {
+        var deviceName = UIDevice.currentDevice().name
+        deviceName = deviceName.stringByReplacingOccurrencesOfString("MO", withString: "")
+        if let deviceID = Int(deviceName) {
+            return deviceID
+        }
+        return 0
+    }()
 
     public override init() {
         super.init()
@@ -42,7 +50,6 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
         switch packet.packetType {
         case .Handshake:
-            maxDeviceID = max(maxDeviceID, packet.id)
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
         case .Ping:

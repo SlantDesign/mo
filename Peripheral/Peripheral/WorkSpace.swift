@@ -17,7 +17,6 @@ public protocol SpiralUniverseDelegate {
 }
 
 class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegate {
-    let deviceId = NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
     var socketManager: SocketManager?
     var currentUniverse: UniverseController?
 
@@ -39,7 +38,8 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
                 return
             }
 
-            let interaction = UnsafePointer<RemoteInteraction>(d.bytes).memory
+            let point = UnsafePointer<CGPoint>(d.bytes).memory
+            let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
             if let s = currentUniverse as? Spiral {
                 s.registerRemoteUserInteraction(interaction)
             }
@@ -60,14 +60,17 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
             return
         }
 
-        var interaction = RemoteInteraction(point: spiral.scrollview.contentOffset, deviceID: deviceId)
+        var point = spiral.scrollview.contentOffset
         let data = NSMutableData()
-        data.appendBytes(&interaction, length: sizeof(RemoteInteraction))
-        let packet = Packet(type: PacketType.Scroll, id:  deviceId, data: data)
+        data.appendBytes(&point, length: sizeof(CGPoint))
+
+        let deviceId = SocketManager.sharedManager.deviceID
+        let packet = Packet(type: PacketType.Scroll, id: deviceId, data: data)
         socketManager?.broadcastPacket(packet)
     }
 
     func shouldSendCease() {
+        let deviceId = SocketManager.sharedManager.deviceID
         let packet = Packet(type: .Cease, id: deviceId)
         socketManager?.broadcastPacket(packet)
     }

@@ -27,13 +27,8 @@ public class UniverseController : CanvasController {
     
     var dx : Double {
         get {
+            let id = SocketManager.sharedManager.deviceID
             return Double(id-1) * frameCanvasWidth - frameGap/2.0
-        }
-    }
-    
-    var id : Int {
-        get {
-           return NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
         }
     }
     
