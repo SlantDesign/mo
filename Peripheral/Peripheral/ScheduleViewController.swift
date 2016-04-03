@@ -13,5 +13,10 @@ class ScheduleViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
+        collectionView?.delegate = self
+    }
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let event = Schedule.shared.eventAt(indexPath)
     }
 }
