@@ -244,22 +244,22 @@ enum LocationSaturday: String {
     }
 }
 
-enum EventType: Int {
-    case IntensiveWorkshop
-    case Workshop
-    case Screening
-    case Lecture
-    case Performance
-    case QA
-    case Panel
-    case Venue
+enum EventType: String {
+    case IntensiveWorkshop = "IntensiveWorkshop"
+    case Workshop = "Workshop"
+    case Screening = "Screening"
+    case Lecture = "Lecture"
+    case Performance = "Performance"
+    case QA = "QA"
+    case Panel = "Panel"
+    case Venue = "Venue"
 }
 
-enum Programme: Int {
-    case Conference
-    case Live
-    case Both
-    case IntensiveWorkshop
+enum Programme: String {
+    case Conference = "Conference"
+    case Live = "Live"
+    case Both = "Both"
+    case IntensiveWorkshop = "IntensiveWorkshop"
 }
  
 enum LocationSaturdayNight: String {

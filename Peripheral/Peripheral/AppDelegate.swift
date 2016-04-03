@@ -16,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var socketManager: SocketManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        if NSUserDefaults.standardUserDefaults().objectForKey("deviceID") == nil {
-            var deviceName = UIDevice.currentDevice().name
-            deviceName = deviceName.stringByReplacingOccurrencesOfString("M-O ", withString: "")
-            if let deviceID = Int(deviceName) {
-                NSUserDefaults.standardUserDefaults().setInteger(deviceID, forKey: "deviceID")
-            }
+        var deviceName = UIDevice.currentDevice().name
+        deviceName = deviceName.stringByReplacingOccurrencesOfString("MO", withString: "")
+        if let deviceID = Int(deviceName) {
+            NSUserDefaults.standardUserDefaults().setInteger(deviceID, forKey: "deviceID")
+            NSUserDefaults.standardUserDefaults().integerForKey("deviceID")
+        } else {
+            print("Couldn't convert \(deviceName) to an Int")
         }
 
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console

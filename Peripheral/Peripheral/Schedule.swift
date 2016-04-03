@@ -108,7 +108,6 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-    //fix displacement errors...
     func frameFor(event:Event) -> CGRect {
         let x = CGFloat(event.date.timeIntervalSinceDate(startDate) / 3600.0 * hour.width)
         let y = CGFloat(NSTimeInterval(event.location.level) * hour.height)
