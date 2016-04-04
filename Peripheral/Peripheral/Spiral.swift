@@ -98,7 +98,7 @@ public class Spiral : UniverseController {
 
         if let grs = interaction.gestureRecognizers {
             for g in grs {
-                g.addTarget(self, action: "registerUserInteraction:")
+                g.addTarget(self, action: #selector(registerUserInteraction))
             }
         }
     }
