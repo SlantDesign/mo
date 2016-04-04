@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   venueOrder.plist
-   Peripheral
-
-   Created by travis on 2016-04-03.
-   Copyright (c) 2016 C4. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>Monday</key>
+	<array>
+		<string>UKParobrod0</string>
+		<string>UKParobrod1</string>
+		<string>UKParobrod2</string>
+		<string>UKParobrod3</string>
+	</array>
+	<key>Tuesday</key>
+	<array>
+		<string>UKParobrod0</string>
+		<string>UKParobrod1</string>
+		<string>UKParobrod2</string>
+		<string>UKParobrod3</string>
+		<string>KinotekaCinema</string>
+		<string>Kinoteka200</string>
+		<string>Kinoteka0</string>
+		<string>Kinoteka1</string>
+		<string>Kinoteka2</string>
+	</array>
+	<key>TuesdayNight</key>
+	<array>
+		<string>DOT</string>
+	</array>
+	<key>Wednesday</key>
+	<array>
+		<string>UKParobrod0</string>
+		<string>UKParobrod1</string>
+		<string>UKParobrod2</string>
+		<string>UKParobrod3</string>
+		<string>KCGrad</string>
+		<string>KinotekaCinema</string>
+		<string>Kinoteka200</string>
+		<string>GalleryZvono</string>
+	</array>
+	<key>WednesdayNight</key>
+	<array>
+		<string>DomOmladine</string>
+		<string>Twenty44</string>
+		<string>GalleryZvono</string>
+	</array>
+	<key>Thursday</key>
+	<array>
+		<string>KolaracMain</string>
+		<string>KinotekaCinema</string>
+		<string>Kinoteka0</string>
+		<string>Kinoteka1</string>
+		<string>Kinoteka2</string>
+		<string>Kinoteka3</string>
+		<string>Kinoteka4</string>
+		<string>Kinoteka5</string>
+		<string>Kinoteka6</string>
+		<string>Kinoteka7</string>
+		<string>GalleryZvono</string>
+	</array>
+	<key>ThursdayNight</key>
+	<array>
+		<string>Magacin</string>
+	</array>
+	<key>Friday</key>
+	<array>
+		<string>KolaracMain</string>
+		<string>KolaracS</string>
+		<string>KinotekaCinema</string>
+		<string>Kinoteka200</string>
+		<string>KinotekaPool</string>
+		<string>GalleryZvono</string>
+	</array>
+	<key>FridayNight</key>
+	<array>
+		<string>Magacin</string>
+	</array>
+	<key>Saturday</key>
+	<array>
+		<string>KolaracMain</string>
+		<string>KolaracS</string>
+		<string>KinotekaCinema</string>
+		<string>Kinoteka200</string>
+		<string>GalleryZvono</string>
+	</array>
+	<key>SaturdayNight</key>
+	<array>
+		<string>DomOmladine</string>
+		<string>ClubTube</string>
+	</array>
+</dict>
 </plist>

@@ -8,34 +8,62 @@
 
 import Foundation
 
-enum Location: String {
-    case Kinoteka1 = "Kinoteka1"
-    case KinotekaGround = "KinotekaGround"
-    case KinotekaPool = "KinotekaPool"
-    case KinotekaLibrary = "KinotekaLibrary"
-    case Kinoteka200 = "Kinoteka200"
-    case KinotekaCinema = "KinotekaCinema"
-    case KolaracS = "KolaracS"
-    case KolaracMainHall = "KolaracMainHall"
-    case DomOmladineBeograda = "DomOmladineBeograda"
-    case Unknown = "Unknown"
+enum Day: Int {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
+    case Unknown
 
-    var level: Int {
-        switch self {
-        case .KinotekaPool:
-            return 0
-        case .KolaracS:
-            return 1
-        case .Kinoteka200:
-            return 2
-        case .KinotekaCinema:
-            return 3
-        case .KolaracMainHall:
-            return 4
+    init(date: NSDate) {
+        let startDate = Schedule.shared.startDate
+        let interval = date.timeIntervalSinceDate(startDate)
+        let secondsInDay = NSTimeInterval(24 * 60 * 60)
+        let secondsInFirstDay = NSTimeInterval(14 * 60 * 60)
+
+        switch interval {
+        case 0.0..<secondsInFirstDay:
+            self = .Monday
+        case secondsInFirstDay..<(secondsInFirstDay + secondsInDay):
+            self = .Tuesday
+        case (secondsInFirstDay + secondsInDay)..<(secondsInFirstDay + secondsInDay * 2.0):
+            self = .Wednesday
+        case (secondsInFirstDay + secondsInDay * 2.0)..<(secondsInFirstDay + secondsInDay * 3.0):
+            self = .Thursday
+        case (secondsInFirstDay + secondsInDay * 3.0)..<(secondsInFirstDay + secondsInDay * 4.0):
+            self = .Friday
+        case (secondsInFirstDay + secondsInDay * 4.0)..<(secondsInFirstDay + secondsInDay * 5.0):
+            self = .Saturday
         default:
-            return -1
+            self = .Unknown
+            assertionFailure("Unknown day.")
         }
     }
+}
+
+enum Location: String {
+    case UKParobrod0 = "UKParobrod0"
+    case UKParobrod1 = "UKParobrod1"
+    case UKParobrod2 = "UKParobrod2"
+    case UKParobrod3 = "UKParobrod3"
+    case KolaracMain = "KolaracMain"
+    case KinotekaCinema = "KinotekaCinema"
+    case Kinoteka200 = "Kinoteka200"
+    case Kinoteka = "Kinoteka"
+    case Kinoteka0 = "Kinoteka0"
+    case Kinoteka1 = "Kinoteka1"
+    case Kinoteka2 = "Kinoteka2"
+    case Kinoteka3 = "Kinoteka3"
+    case Kinoteka4 = "Kinoteka4"
+    case Kinoteka5 = "Kinoteka5"
+    case Kinoteka6 = "Kinoteka6"
+    case Kinoteka7 = "Kinoteka7"
+    case GalleryZvono = "GalleryZvono"
+    case KinotekaPool = "KinotekaPool"
+    case Magacin = "Magacin"
+    case Unknown = "Unknown"
 }
 
 enum LocationMonday: String {
@@ -43,19 +71,6 @@ enum LocationMonday: String {
     case UKParobrod1 = "UKParobrod1"
     case UKParobrod2 = "UKParobrod2"
     case UKParobrod3 = "UKParobrod3"
-
-    var level: Int {
-        switch self {
-        case .UKParobrod0:
-            return 0
-        case .UKParobrod1:
-            return 1
-        case .UKParobrod2:
-            return 2
-        case .UKParobrod3:
-            return 3
-        }
-    }
 }
 
 enum LocationTuesday: String {
@@ -66,6 +81,10 @@ enum LocationTuesday: String {
     case KinotekaCinema = "KinotekaCinema"
     case Kinoteka200 = "Kinoteka200"
     case Kinoteka = "Kinoteka"
+    case DomOmladine = "DomOmladine"
+    case Twenty44 = "Twenty44"
+    case GalleryZvono = "GalleryZvono"
+    case KCGrad = "KCGrad"
 
     var level: Int {
         switch self {
@@ -83,6 +102,14 @@ enum LocationTuesday: String {
             return 5
         case .Kinoteka:
             return 6
+        case .DomOmladine:
+            return 7
+        case .Twenty44:
+            return 8
+        case .GalleryZvono:
+            return 9
+        case.KCGrad:
+            return 10
         }
     }
 }

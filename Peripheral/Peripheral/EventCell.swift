@@ -38,10 +38,36 @@ class EventCell: UICollectionViewCell {
 
     var animationOffset: CGFloat = 0.0
 
+    func fontSizeForDay(day: String) -> Double {
+        switch day {
+        case "Monday":
+            return 250.0
+        case "Tuesday":
+            return 108.0
+        case "Wednesday":
+            return 123.0
+        case "Thursday":
+            return 88.0
+        case "Friday":
+            return 165.0
+        case "Saturday":
+            return 200.0
+        default:
+            return 250.0
+        }
+    }
+
+    //    256.0
+    //    113.778
+    //    128.0
+    //    93.0909
+    //    170.667
+    //    204.8
+
     func generateLabel() {
 
         ShapeLayer.disableActions = true
-        let font = Font(name: "AppleSDGothicNeo-Bold", size: 150)!
+        let font = Font(name: "AppleSDGothicNeo-Bold", size: fontSizeForDay(event.day))!
 
         //create a titleElements array
         var titleElements = [String]()
@@ -109,10 +135,34 @@ class EventCell: UICollectionViewCell {
         CGPathAddPath(backgroundPath, &transformOrigin, t.path!.CGPath)
 
         shapeLayer.path = backgroundPath
-        shapeLayer.fillColor = UIColor.blueColor().CGColor
         shapeLayer.bounds = CGPathGetBoundingBox(backgroundPath)
 
-        self.layer.borderColor = UIColor.redColor().CGColor
+        shapeLayer.fillColor = colorForType(event.type)
+    }
+
+    func colorForType(type: String) -> CGColor {
+        switch type {
+        case "IntensiveWorkshop":
+            return UIColor.blueColor().CGColor
+        case "Workshop":
+            return UIColor.redColor().CGColor
+        case "Screening":
+            return UIColor.greenColor().CGColor
+        case "Lecture":
+            return UIColor.darkGrayColor().CGColor
+        case "Performance":
+            return UIColor.purpleColor().CGColor
+        case "QA":
+            return UIColor.magentaColor().CGColor
+        case "Panel":
+            return UIColor.orangeColor().CGColor
+        case "Venue":
+            return UIColor.yellowColor().CGColor
+        case "OverNight":
+            return UIColor.whiteColor().CGColor
+        default:
+            return UIColor.lightGrayColor().CGColor
+        }
     }
 
     func animate() {

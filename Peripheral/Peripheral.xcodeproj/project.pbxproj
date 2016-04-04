@@ -15,6 +15,9 @@
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
 		A93957C11CA24F0900EF809A /* RemoteInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93957C01CA24F0900EF809A /* RemoteInteraction.swift */; };
 		1F68D8A61CA0F24B00F5268E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8A51CA0F24B00F5268E /* Helpers.swift */; };
+		1F56703F1CB1C1530011B95A /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F56703E1CB1C1530011B95A /* programme2016.plist */; };
+		1F5670411CB1DB480011B95A /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F5670401CB1DB480011B95A /* venueOrder.plist */; };
+		1F5670451CB21DDD0011B95A /* dayOffsets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F5670441CB21DDD0011B95A /* dayOffsets.plist */; };
 		1F68D8A61CA0F24B00F5268E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8A51CA0F24B00F5268E /* Event.swift */; };
 		1F68D8AA1CA0F2AF00F5268E /* Voga-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */; };
 		1F68D8AC1CA0F2F000F5268E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8AB1CA0F2F000F5268E /* Schedule.swift */; };
@@ -24,7 +27,6 @@
 		1F68D8B41CA11EBE00F5268E /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8B31CA11EBE00F5268E /* ScheduleViewController.swift */; };
 		1F68D8B61CA11FB000F5268E /* ScheduleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68D8B51CA11FB000F5268E /* ScheduleViewController.storyboard */; };
 		AAF17C2E1C50975421007ED9 /* Pods_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A68A39A46059479EACF855 /* Pods_Peripheral.framework */; };
-		D907E63A1CAAF9C3007CD0B1 /* events2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D907E6391CAAF9C3007CD0B1 /* events2016.plist */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
 		D9C634361C98A01200AB3F75 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634351C98A01200AB3F75 /* Packet.swift */; };
 		D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634441C98C93800AB3F75 /* UniverseController.swift */; };
@@ -54,9 +56,12 @@
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F56703E1CB1C1530011B95A /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
+		1F5670401CB1DB480011B95A /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
+		1F5670441CB21DDD0011B95A /* dayOffsets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dayOffsets.plist; sourceTree = "<group>"; };
 		1F68D8A51CA0F24B00F5268E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Voga-Bold.otf"; sourceTree = "<group>"; };
-		1F68D8AB1CA0F2F000F5268E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		1F68D8AB1CA0F2F000F5268E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; tabWidth = 5; };
 		1F68D8AD1CA0FE6E00F5268E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1F68D8AF1CA0FEE500F5268E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1F68D8B11CA1058500F5268E /* ScheduleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		A9B46CFF1C9CAD0700E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		A9B46D201C9D0D4E00E1D1DD /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D7CB24A1AF358421890923F5 /* Pods-Peripheral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peripheral.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral.release.xcconfig"; sourceTree = "<group>"; };
-		D907E6391CAAF9C3007CD0B1 /* events2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events2016.plist; sourceTree = "<group>"; };
 		D9C6342D1C9896F000AB3F75 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		D9C634351C98A01200AB3F75 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = ../Packet.swift; sourceTree = "<group>"; };
 		D9C634441C98C93800AB3F75 /* UniverseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseController.swift; sourceTree = "<group>"; };
@@ -122,7 +126,9 @@
 		1F545D741C97E64C00436812 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
-				D907E6391CAAF9C3007CD0B1 /* events2016.plist */,
+				1F56703E1CB1C1530011B95A /* programme2016.plist */,
+				1F5670401CB1DB480011B95A /* venueOrder.plist */,
+				1F5670441CB21DDD0011B95A /* dayOffsets.plist */,
 				1F68D8A91CA0F2AF00F5268E /* Voga-Bold.otf */,
 				1F68D8A51CA0F24B00F5268E /* Event.swift */,
 				1F68D8AF1CA0FEE500F5268E /* Location.swift */,
@@ -268,7 +274,9 @@
 			files = (
 				1F545E101C97E64D00436812 /* Images.xcassets in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
-				D907E63A1CAAF9C3007CD0B1 /* events2016.plist in Resources */,
+				1F5670451CB21DDD0011B95A /* dayOffsets.plist in Resources */,
+				1F5670411CB1DB480011B95A /* venueOrder.plist in Resources */,
+				1F56703F1CB1C1530011B95A /* programme2016.plist in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
 				1F68D8B61CA11FB000F5268E /* ScheduleViewController.storyboard in Resources */,
 				1F68D8AA1CA0F2AF00F5268E /* Voga-Bold.otf in Resources */,

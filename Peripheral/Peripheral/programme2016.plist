@@ -4,9 +4,11 @@
 <array>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-11T17:00:00Z</date>
+		<key>day</key>
+		<string>Monday</string>
 		<key>location</key>
 		<string>UKParobrod0</string>
 		<key>artists</key>
@@ -29,9 +31,11 @@ Curated in collaboration with European Lab.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>UKParobrod0</string>
 		<key>artists</key>
@@ -54,9 +58,11 @@ Curated in collaboration with European Lab.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>UKParobrod0</string>
 		<key>artists</key>
@@ -79,9 +85,11 @@ Curated in collaboration with European Lab.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-11T17:00:00Z</date>
+		<key>day</key>
+		<string>Monday</string>
 		<key>location</key>
 		<string>UKParobrod1</string>
 		<key>artists</key>
@@ -104,9 +112,11 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>UKParobrod1</string>
 		<key>artists</key>
@@ -129,9 +139,11 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>UKParobrod1</string>
 		<key>artists</key>
@@ -154,9 +166,11 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-11T17:00:00Z</date>
+		<key>day</key>
+		<string>Monday</string>
 		<key>location</key>
 		<string>UKParobrod2</string>
 		<key>artists</key>
@@ -177,9 +191,11 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>UKParobrod2</string>
 		<key>artists</key>
@@ -200,9 +216,11 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>UKParobrod2</string>
 		<key>artists</key>
@@ -223,9 +241,11 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-11T17:00:00Z</date>
+		<key>day</key>
+		<string>Monday</string>
 		<key>location</key>
 		<string>UKParobrod3</string>
 		<key>artists</key>
@@ -245,9 +265,11 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>UKParobrod3</string>
 		<key>artists</key>
@@ -267,9 +289,11 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>UKParobrod3</string>
 		<key>artists</key>
@@ -289,9 +313,11 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -309,9 +335,11 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -332,6 +360,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<integer>120</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>Kinoteka0</string>
 		<key>artists</key>
@@ -350,9 +380,11 @@ While these performances were mostly taking part during music and sound art fest
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>Kinoteka1</string>
 		<key>artists</key>
@@ -379,9 +411,11 @@ Curated in collaboration with Bright Collisions.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>Kinoteka2</string>
 		<key>artists</key>
@@ -409,6 +443,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<integer>120</integer>
 		<key>date</key>
 		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -427,6 +463,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<integer>120</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -445,6 +483,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<integer>75</integer>
 		<key>date</key>
 		<date>2016-04-12T19:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -466,6 +506,8 @@ Smith left the island to attend Berklee College of Music, where she studied comp
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-12T21:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -485,7 +527,7 @@ In 1968 Roedelius co-founded the music commune known as “Human Being” and co
 In 1973 Roedelius and Moebius worked with Neu! guitarist Michael Rother for the first time. Rother helped to co-produce their third album, Zuckerzeit, that moved the band’s style further from avant-garde ‘noise’ to a more melodic music, similar to modern-daytrance. Roedelius, Moebius and Rother toured Germany and the Low Countries as a trio from early 1973 and decided to record an album together under the name of Harmonia. Musik von Harmonia was released on the back of a huge publicity campaign by Brain. Harmonia released one further album initially, 1975’s Deluxe. British musician Brian Eno, a fan of both Cluster and Harmonia, joined them for several jams, the result of which was released in 1997 as Tracks &amp; Traces. Rother left Harmonia to pursue his solo career and Cluster returned to the studio to record Sowiesoso which was released on Sky Records. Brian Eno, who had returned to Germany to work with David Bowie, worked on two albums with Cluster: 1977’s Cluster &amp; Eno and 1978’s After the Heat, the latter of which gained the band much attention in the British music press. A further Cluster album produced by former Tangerine Dream member Peter Baumann Großes Wasser extended Cluster’s music into long form.
 Solo career
 Roedelius’ solo career began with Durch die Wüste in 1978 and then Jardin au Fou in 1979. This album laid down Roedelius’ future style: melodic piano and (often faked) acoustic instruments played with a sharp tinge of electronics. The first of the lengthy Selbstportrait series was released in 1979, being material done beside his work with Cluster and Harmonia, without the input of his collaborators. Recorded on only two tracks, the Selbstportraits make up the backbone of Roedelius’ early solo recordings. Leaving Sky in 1982, his work took a more new-age style as he signed to Virgin’s Venture sub-label. During this period, his best selling solo album Geschenk des Augenblicks – Gift of the Moment was released.
-He was dropped by Venture in 1989 and began releasing on a variety of small labels, notably Multimood and Prudence. He began to venture into the newly emerging genre oftechno, starting with 1991’s Der Ohrenspiegel, whose 25-minute opener, Reflectorum displays some of the characteristics of the later Sinfonia Contempora series. By 1994 Roedelius’ style was a heady mix of amateur electronics and sometimes clichéd ambient jazz. An album from this year; Theatreworks, was rewarded with the title “album of the month” by experimental music magazine The Wire. Arguably the biggest turning point in Roedelius’ career came in 1994 as well. The release of Sinfonia Contempora No. 1: Von Zeit zu Zeit marked, in Roedelius’ own words, “Since the beginning of my career nothing was more important to me than to find my own musical language. I have, so I believe, eventually found it.” The album consists of mismatched tape fragments (from numerous jams ranging from the mid-eighties to the mid-nineties) multitracked over the top of each other to create a disjointed but oddly musical sound.
+He was dropped by Venture in 1989 and began releasing on a variety of small labels, notably Multimood and Prudence. He began to venture into the newly emerging genre oftechno, starting with 1991’s Der Ohrenspiegel, whose 25-minute opener, Reflectorum displays some of the characteristics of the later Sinfonia Contempora series. By 1994 Roedelius’ style was a heady mix of amateur electronics and sometimes cliched ambient jazz. An album from this year; Theatreworks, was rewarded with the title “album of the month” by experimental music magazine The Wire. Arguably the biggest turning point in Roedelius’ career came in 1994 as well. The release of Sinfonia Contempora No. 1: Von Zeit zu Zeit marked, in Roedelius’ own words, “Since the beginning of my career nothing was more important to me than to find my own musical language. I have, so I believe, eventually found it.” The album consists of mismatched tape fragments (from numerous jams ranging from the mid-eighties to the mid-nineties) multitracked over the top of each other to create a disjointed but oddly musical sound.
 Sinfonia Contempora No. 2: La Nordica (Salz Des Nordens) was released in 1996, making for a much more sinister and muddy sound than its predecessor. Also released in this period was Selbstportrait VI: The Diary of the Unforgotten, the first of the modern Selbstportraits. Now, rather than merely remastering the seventies tapes, Roedelius also played over them, the sound montage Homage á Forst samples many Harmonia and Cluster tracks into the mix.
 Reformation of Cluster
 In the meantime, Cluster had reformed. 1990’s Apropos Cluster was an update for the band, being a work of avant-techno not dissimilar in style to Großes Wasser. In 1996 Cluster embarked on two international tours, one of Japan and one of America. Both tours would be summarised on the following years live albums. The new sound of Cluster learns from the Sinfonia Contempora sound whilst adding Moebius’ distinctive sound.
@@ -500,7 +542,9 @@ In November 2010 it was announced that Cluster had split up for the third time. 
 		<key>duration</key>
 		<integer>60</integer>
 		<key>date</key>
-		<date>2016-04-13T22:00:00Z</date>
+		<date>2016-04-12T22:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -522,7 +566,9 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<key>duration</key>
 		<integer>60</integer>
 		<key>date</key>
-		<date>2016-04-13T23:00:00Z</date>
+		<date>2016-04-12T23:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -542,7 +588,9 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<key>duration</key>
 		<integer>240</integer>
 		<key>date</key>
-		<date>2016-04-14T06:00:00Z</date>
+		<date>2016-04-13T06:00:00Z</date>
+		<key>day</key>
+		<string>TuesdayNight</string>
 		<key>location</key>
 		<string>DOT</string>
 		<key>artists</key>
@@ -561,9 +609,121 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 	</dict>
 	<dict>
 		<key>duration</key>
+		<integer>60</integer>
+		<key>date</key>
+		<date>2016-04-12T15:45:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
+		<key>location</key>
+		<string>UKParobrod0</string>
+		<key>artists</key>
+		<array>
+			<string>Good Night</string>
+		</array>
+		<key>title</key>
+		<string>Tuesday Tuesday Tuesday Tuesday </string>
+		<key>type</key>
+		<string>OverNight</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>60</integer>
+		<key>date</key>
+		<date>2016-04-13T15:30:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
+		<key>location</key>
+		<string>UKParobrod0</string>
+		<key>artists</key>
+		<array>
+			<string>Good Night</string>
+		</array>
+		<key>title</key>
+		<string>Wednesday Wednesday Wednesday Wednesday </string>
+		<key>type</key>
+		<string>OverNight</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>60</integer>
+		<key>date</key>
+		<date>2016-04-14T15:30:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
+		<key>location</key>
+		<string>KolaracMain</string>
+		<key>artists</key>
+		<array>
+			<string>Good Night</string>
+		</array>
+		<key>title</key>
+		<string>Thursday Thursday Thursday Thursday</string>
+		<key>type</key>
+		<string>OverNight</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>60</integer>
+		<key>date</key>
+		<date>2016-04-15T16:15:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
+		<key>location</key>
+		<string>KolaracMain</string>
+		<key>artists</key>
+		<array>
+			<string>Good Night</string>
+		</array>
+		<key>title</key>
+		<string>Friday Friday Friday Friday Friday </string>
+		<key>type</key>
+		<string>OverNight</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>60</integer>
+		<key>date</key>
+		<date>2016-04-16T16:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
+		<key>location</key>
+		<string>KolaracMain</string>
+		<key>artists</key>
+		<array>
+			<string>Good Night</string>
+		</array>
+		<key>title</key>
+		<string>Saturday Saturday Saturday Saturday </string>
+		<key>type</key>
+		<string>OverNight</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>duration</key>
 		<integer>75</integer>
 		<key>date</key>
-		<date>2016-04-12T19:00:00Z</date>
+		<date>2016-04-13T19:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -584,6 +744,8 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-13T21:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -608,6 +770,8 @@ Matthew has also worked as a foreign correspondent for the BBC, Al Jazeera and A
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-13T22:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -630,6 +794,8 @@ This new audiovisual live performance has been created to celebrate the 20th ann
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-13T23:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -649,9 +815,11 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-13T17:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KCGrad</string>
 		<key>artists</key>
@@ -665,13 +833,15 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<key>programme</key>
 		<string>Live</string>
 		<key>description</key>
-		<string>In this workshop Mr Punzo will, together with participants, be experimenting with the sound of a fluid matter, that is: electrons and photons. Dividing participants into several teams which will be in charge for different building tasks (oscillators, rhythm robots, electronics, solar panels) with the final goal of making the sculpture that will be transforming light, sound and tactile instances into one living and breathing machine, and at the end of the workshop the band of participants will perform together with Mr Punzo on this sculpture.</string>
+		<string>In this workshop Mr Punzo will, together with participants, be experimenting with the sound of a fluid matter, that is: electrons and photons. Dividing participants into several teams which will be in charge for different building tasks (oscillators, rhythm robots, electronics, solar panels) with the final goal of making the sculpture that will be transforming light, sound and tactile instances into one living and breathing machine, and at the end of the workshop the band of participants will perform together with Mr 480 on this sculpture.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-14T02:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>KCGrad</string>
 		<key>artists</key>
@@ -692,6 +862,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-14T02:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -705,13 +877,15 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>180</integer>
 		<key>date</key>
 		<date>2016-04-14T03:00:00Z</date>
+		<key>day</key>
+		<string>WednesdayNight</string>
 		<key>location</key>
 		<string>DomOmladine</string>
 		<key>artists</key>
@@ -735,6 +909,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<integer>180</integer>
 		<key>date</key>
 		<date>2016-04-17T03:00:00Z</date>
+		<key>day</key>
+		<string>SaturdayNight</string>
 		<key>location</key>
 		<string>DomOmladine</string>
 		<key>artists</key>
@@ -754,9 +930,11 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>240</integer>
+		<integer>300</integer>
 		<key>date</key>
 		<date>2016-04-17T06:00:00Z</date>
+		<key>day</key>
+		<string>SaturdayNight</string>
 		<key>location</key>
 		<string>ClubTube</string>
 		<key>artists</key>
@@ -779,6 +957,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<integer>240</integer>
 		<key>date</key>
 		<date>2016-04-14T06:00:00Z</date>
+		<key>day</key>
+		<string>WednesdayNight</string>
 		<key>location</key>
 		<string>Twenty44</string>
 		<key>artists</key>
@@ -800,6 +980,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-14T03:00:00Z</date>
+		<key>day</key>
+		<string>WednesdayNight</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -813,13 +995,15 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-17T01:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -833,13 +1017,15 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-17T02:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -853,13 +1039,15 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka0</string>
 		<key>artists</key>
@@ -883,9 +1071,11 @@ Workshop leaders Jakob Bak and Dennis P. Paul collaborated last year at Resonate
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka1</string>
 		<key>artists</key>
@@ -904,9 +1094,11 @@ This workshop is sponsored by Orbbec who have developed their own community frie
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka2</string>
 		<key>artists</key>
@@ -926,14 +1118,16 @@ We are going to go through some of the basics on how to use motion capture data 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka3</string>
 		<key>artists</key>
 		<array>
-			<string>Félicien Goguey</string>
+			<string>Felicien Goguey</string>
 		</array>
 		<key>title</key>
 		<string>Making Visible the Data Spectrum Waving Around Us</string>
@@ -948,9 +1142,11 @@ Participants will first learn to catch and parse raw data from an open wireless 
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka4</string>
 		<key>artists</key>
@@ -972,9 +1168,11 @@ In this workshop, we’ll give you a hands-on introduction to using machine lear
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka5</string>
 		<key>artists</key>
@@ -994,9 +1192,11 @@ On this workshop we’ll work with Max/MSP and OpenFrameworks to develop, modify
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka6</string>
 		<key>artists</key>
@@ -1015,9 +1215,11 @@ On this workshop we’ll work with Max/MSP and OpenFrameworks to develop, modify
 	</dict>
 	<dict>
 		<key>duration</key>
-		<integer>640</integer>
+		<integer>480</integer>
 		<key>date</key>
 		<date>2016-04-14T17:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>Kinoteka7</string>
 		<key>artists</key>
@@ -1041,6 +1243,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<integer>100</integer>
 		<key>date</key>
 		<date>2016-04-14T18:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1059,6 +1263,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<integer>10</integer>
 		<key>date</key>
 		<date>2016-04-14T22:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1077,6 +1283,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<integer>60</integer>
 		<key>date</key>
 		<date>2016-04-14T22:10:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1096,6 +1304,8 @@ http://onedotzero.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-14T23:10:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1117,6 +1327,8 @@ In 2012 Bethany co-founded Technology Will Save Us – a business dedicated to s
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T00:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1140,6 +1352,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<integer>420</integer>
 		<key>date</key>
 		<date>2016-04-14T19:00:00Z</date>
+		<key>day</key>
+		<string>Thursday</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -1153,13 +1367,15 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>420</integer>
 		<key>date</key>
 		<date>2016-04-15T19:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>GalleryZvono</string>
 		<key>artists</key>
@@ -1173,13 +1389,15 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<key>programme</key>
 		<string>Both</string>
 		<key>description</key>
-		<string>Nibiru : Planet of crossing est une installation performative et mécanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathématiques sur des plaques de verre à l’aide d’une aiguille. Les sons de résistance provoqués par ce phénomène sont amplifiés et viennent sublimer les mouvements circulaires de la machine.</string>
+		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>300</integer>
 		<key>date</key>
 		<date>2016-04-15T05:00:00Z</date>
+		<key>day</key>
+		<string>ThursdayNight</string>
 		<key>location</key>
 		<string>Magacin</string>
 		<key>artists</key>
@@ -1203,6 +1421,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<integer>300</integer>
 		<key>date</key>
 		<date>2016-04-16T05:00:00Z</date>
+		<key>day</key>
+		<string>FridayNight</string>
 		<key>location</key>
 		<string>Magacin</string>
 		<key>artists</key>
@@ -1225,6 +1445,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T17:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1248,6 +1470,8 @@ The team was created in October 2013 and since then has been working doing data 
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T18:20:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1270,6 +1494,8 @@ http://pablogarcia.org</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T19:10:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1284,7 +1510,7 @@ http://pablogarcia.org</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Romain Tardy is a visual artist, and focuses his work primarily in digital arts.
-Born on September 23, 1984, in Paris, he studied at the École des Beaux-Arts before working for various animation and post-production studios in Paris. He also worked as a VJ at numerous events in France and across Europe, which led him to further examine the complex connections between sound and image. With this experience,Tardy, along with three other artists, created the European visual label Antivj in 2008, which formed the base of his research and work on projected light and its in uence on perception. He remained one of the label’s main artists until late 2013.
+Born on September 23, 1984, in Paris, he studied at the ecole des Beaux-Arts before working for various animation and post-production studios in Paris. He also worked as a VJ at numerous events in France and across Europe, which led him to further examine the complex connections between sound and image. With this experience,Tardy, along with three other artists, created the European visual label Antivj in 2008, which formed the base of his research and work on projected light and its in uence on perception. He remained one of the label’s main artists until late 2013.
 His installations, which often use the technique of videomapping, are conceived as tangible experiences in situ and use light as a way to enhance existing architecture or original structures. By examining our relationship to reality as we are confronted by computer imagery and the social changes that it triggers, as well as the way that digital technology is situated in public space,Tardy’s installations seek to evoke these current issues through a poetic approach. His work has been exhibited in more than 15 countries, including France, Sweden,The Netherlands, Poland, Switzerland, UK, Czech Republic, Belgium, China, South Korea, Japan, Mexico, USA (New York), Cuba…</string>
 	</dict>
 	<dict>
@@ -1292,6 +1518,8 @@ His installations, which often use the technique of videomapping, are conceived 
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T20:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1314,6 +1542,8 @@ He loves thinking by making.</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T22:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1337,6 +1567,8 @@ James recently moved to Portugal to conduct research at the Madeira Interactive 
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T17:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1358,6 +1590,8 @@ As an artist he explores with new forms of creative expression combining digital
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T18:20:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1382,6 +1616,8 @@ http://random.nu</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T19:10:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1404,6 +1640,8 @@ His has received commissions by the Villa Empain – Boghossian Foundation in Br
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:50:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1426,6 +1664,8 @@ www.neilmendoza.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T22:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1448,6 +1688,8 @@ http://instagram.com/danhett</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-16T17:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1471,6 +1713,8 @@ project oriented company named after one of the first boygroups around.</string>
 		<integer>80</integer>
 		<key>date</key>
 		<date>2016-04-16T18:10:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1494,6 +1738,8 @@ project oriented company named after one of the first boygroups around.</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-16T19:40:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1515,6 +1761,8 @@ http://www.artificialrome.com</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-16T20:20:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1535,6 +1783,8 @@ http://www.artificialrome.com</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-16T22:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1549,7 +1799,7 @@ http://www.artificialrome.com</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Gael Hugo is a swiss interactive designer established in Paris in 2005, where he’s running « one more studio » since 2009. Starting to play with web technologies in the early 2000s, his design practice aims to reflect the blurry boundaries of visual communication at a digital age. From experimental interactive projects to institutional communication, from Art installation to commercial product design, he likes to produce dedicated design solution relayed by dubious self-made tools to achieve unexpected visual experience in a large range of disciplines.
-This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîté Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
+This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîte Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
 Since 2006, he’s a regular professor at ECAL/University of art and design Lausanne, in the Media and Interaction Design unit (M&amp;ID) and part-time lecturer at Parsons School for Design for AMT (Art, Media &amp; Technology) where he teaches both workshops and mentoring sessions in Advanced Interaction, Network Related Design and Experimental Game Design.</string>
 	</dict>
 	<dict>
@@ -1557,11 +1807,13 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T17:50:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
 		<array>
-			<string>Félicien Goguey</string>
+			<string>Felicien Goguey</string>
 			<string>HEAD</string>
 		</array>
 		<key>title</key>
@@ -1571,7 +1823,7 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<key>programme</key>
 		<string>Conference</string>
 		<key>description</key>
-		<string>Félicien is a french designer based in Switzerland and currently an assistant teacher in MA Media Design at Geneva University of Art and Design (HEAD — Genève). He uses his multiple skills to create interactive installations, live performances, applications and connected objects. He explores the creative potential of programming languages and new technologies with a preference for open-source tools.
+		<string>Felicien is a french designer based in Switzerland and currently an assistant teacher in MA Media Design at Geneva University of Art and Design (HEAD — Genève). He uses his multiple skills to create interactive installations, live performances, applications and connected objects. He explores the creative potential of programming languages and new technologies with a preference for open-source tools.
 His main interests lie in computer networks and the imperceptibility of the Internet, more precisely in the factors responsible for its imperceptibility and the invisible mechanisms that a user encounters, as well as their political and social consequences. His research involves design methods that question or develop strategies to tackle these issues.</string>
 	</dict>
 	<dict>
@@ -1579,6 +1831,8 @@ His main interests lie in computer networks and the imperceptibility of the Inte
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T18:40:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -1593,7 +1847,7 @@ His main interests lie in computer networks and the imperceptibility of the Inte
 		<string>Conference</string>
 		<key>description</key>
 		<string>Gael Hugo is a swiss interactive designer established in Paris in 2005, where he’s running « one more studio » since 2009. Starting to play with web technologies in the early 2000s, his design practice aims to reflect the blurry boundaries of visual communication at a digital age. From experimental interactive projects to institutional communication, from Art installation to commercial product design, he likes to produce dedicated design solution relayed by dubious self-made tools to achieve unexpected visual experience in a large range of disciplines.
-This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîté Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
+This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîte Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
 Since 2006, he’s a regular professor at ECAL/University of art and design Lausanne, in the Media and Interaction Design unit (M&amp;ID) and part-time lecturer at Parsons School for Design for AMT (Art, Media &amp; Technology) where he teaches both workshops and mentoring sessions in Advanced Interaction, Network Related Design and Experimental Game Design.</string>
 	</dict>
 	<dict>
@@ -1601,6 +1855,8 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T19:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -1621,6 +1877,8 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1642,6 +1900,8 @@ http://thefactoryfactory.com/</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:50:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1664,6 +1924,8 @@ Sugrue holds a Masters of Fine Arts in Design and Technology from Parsons School
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T00:30:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1687,6 +1949,8 @@ https://github.com/postspectacular/</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T23:40:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -1709,6 +1973,8 @@ http://www.kimchiandchips.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T17:30:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1729,6 +1995,8 @@ http://www.kimchiandchips.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T18:20:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1749,6 +2017,8 @@ http://www.kimchiandchips.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T19:10:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1773,6 +2043,8 @@ http://www.refikanadol.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T20:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1794,6 +2066,8 @@ http://www.refikanadol.com</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1817,6 +2091,8 @@ Darsha is an avid technologist and educator. Her do-it-yourself electronics work
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T20:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1842,6 +2118,8 @@ http://www.artistsandengineers.co.uk</string>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T23:40:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1855,7 +2133,7 @@ http://www.artistsandengineers.co.uk</string>
 		<key>programme</key>
 		<string>Conference</string>
 		<key>description</key>
-		<string>Tom “Squarepusher” Jenkinson makes manic, schizoid, experimental drum’n’bass with a heavy progressive jazz influence and a lean toward pushing the clichés of the genre out the proverbial window. Rising from near-total obscurity to drum’n’bass cause célèbre in the space of a couple of months, Jenkinson released only a pair of EPs and a DJ Food remix for the latter’s Refried Food series before securing EP and LP release plans with three different labels. His first full-length work, Feed Me Weird Things (on Richard “Aphex Twin” James’ Rephlex label), was a dizzying, quixotic blend of super-fast jungle breaks with Aphex-style synth textures, goofy, offbeat melodies, and instrumental arrangements (he samples his own playing for his tracks) that vaguely recall jazz fusion pioneers such as Mahavishnu Orchestra and Weather Report. A skilled bassist and multi-instrumentalist, Jenkinson’s fretless accompaniment is a staple of his music and one of the more obvious affiliations with jazz (although his formal arrangements are often as jazz-derived as his playing).
+		<string>Tom “Squarepusher” Jenkinson makes manic, schizoid, experimental drum’n’bass with a heavy progressive jazz influence and a lean toward pushing the cliches of the genre out the proverbial window. Rising from near-total obscurity to drum’n’bass cause celèbre in the space of a couple of months, Jenkinson released only a pair of EPs and a DJ Food remix for the latter’s Refried Food series before securing EP and LP release plans with three different labels. His first full-length work, Feed Me Weird Things (on Richard “Aphex Twin” James’ Rephlex label), was a dizzying, quixotic blend of super-fast jungle breaks with Aphex-style synth textures, goofy, offbeat melodies, and instrumental arrangements (he samples his own playing for his tracks) that vaguely recall jazz fusion pioneers such as Mahavishnu Orchestra and Weather Report. A skilled bassist and multi-instrumentalist, Jenkinson’s fretless accompaniment is a staple of his music and one of the more obvious affiliations with jazz (although his formal arrangements are often as jazz-derived as his playing).
 Jenkinson grew up listening to jazz and dub greats like Miles Davis, Augustus Pablo, Charlie Parker, and Art Blakey. The son of a jazz drummer, Jenkinson followed in his father’s footsteps, playing bass and drums in high school. Introduced to electronic music through experimental electro-techno artists such as LFO and Carl Craig, Jenkinson soon began assembling his disparate influences into amalgams of breakbeat techno and post-bop avant-garde and progressive jazz. Claiming a closer affinity with jazz than jungle (although he draws from both equally in his music), Jenkinson’s EPs as Squarepusher and the Duke of Harringay (Jenkinson moved to Harringay from his Chelmsford birthplace) were initially disregarded as misplaced perversions of jungle’s more obvious compositional principles, but found ready audiences in fans of post-acid house experimental listening music. He inked a deal with Warp in 1995, releasing the Port Rhombus EP and three others through a variety of different labels. The aforementioned full-length Feed Me Weird Things appeared in 1996, followed a year later by Hard Normal Daddy.
 Critical acclaim for Jenkinson’s work peaked with 1998’s Music Is Rotted One Note, for which he became a one-man fusion group — multi-tracking himself playing drums, bass, and keyboards. The following year, he released two EPs (Budakhan Mindphone, Maximum Priest) and another full LP, Selection Sixteen. Go Plastic appeared in summer 2001, featuring the closest thing to a hit Squarepusher had ever seen with the single “My Red Hot Car.” Subsequent releases such as 2003’s Do You Know Squarepusher and 2004’s Ultravisitor found him refining his fusion of composition, programming, and musicianship, characteristics that were also heard on 2006’s Hello Everything and 2008’s Just a Souvenir. After a record of solo bass (titled Solo Electric Bass, Vol. 1), he unveiled his next project, a masked foursome named Shobaleader One that released a 2010 collaboration album (Shobaleader One: D’demonstrator) consisting of throwback electronic pop with an R&amp;B edge and synthesized vocals, not unlike Daft Punk. In 2012, Jenkinson returned with the coldly symphonic Ufabulum, adding an apocalyptic soundtrack feel to his already dense programming. In 2013, he worked with a team of Japanese roboticists on an ambitious project called Z-Machines, the creation of robots that could play music far beyond the capabilities of even the most skilled human instrumentalists. Jenkinson aided the robotics team in the composition of music for these robots to play, set to life by a 22-armed drumming robot and a guitar-playing robot with the equivalent of 78 fingers. The next year, Warp Records released the Music for Robots EP, a five-song recording of the results of the experiment. 2015 saw the release of Damogen Furies, a full-length that found Jenkinson pushing the limits of even his own unbridled hysteria, employing punishing overdriven tones on almost every beat, synth, and bassline on the album.</string>
 	</dict>
@@ -1864,6 +2142,8 @@ Critical acclaim for Jenkinson’s work peaked with 1998’s Music Is Rotted One
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T00:30:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaCinema</string>
 		<key>artists</key>
@@ -1887,6 +2167,8 @@ Pak is currently at uncharted space experimenting with new forms of creation and
 		<integer>80</integer>
 		<key>date</key>
 		<date>2016-04-15T17:30:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1907,6 +2189,8 @@ Pak is currently at uncharted space experimenting with new forms of creation and
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-15T19:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1929,6 +2213,8 @@ Driven by technology – we explore artistic possibilities, tell stories and cre
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-15T19:40:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1951,6 +2237,8 @@ http://instagram.com/danhett</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-15T20:20:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1971,6 +2259,8 @@ http://instagram.com/danhett</string>
 		<integer>80</integer>
 		<key>date</key>
 		<date>2016-04-15T22:40:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -1989,6 +2279,8 @@ http://instagram.com/danhett</string>
 		<integer>30</integer>
 		<key>date</key>
 		<date>2016-04-16T00:10:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>Kinoteka200</string>
 		<key>artists</key>
@@ -2011,6 +2303,8 @@ Patricio lives in Brooklyn and Buenos Aires. In his previous life he was a clini
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T17:30:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2056,15 +2350,15 @@ Works (selection)
 
 (artistic direction committee, project direction and catalogue edition)
 
-– «Art et médias localisés: quelques représentations et pratiques spatiales entre réel et virtuel»,
+– «Art et medias localises: quelques representations et pratiques spatiales entre reel et virtuel»,
 
-Société des Arts, Geneva, Jan. 2009 (talk)
+Societe des Arts, Geneva, Jan. 2009 (talk)
 
-– Dark Designs/Sombres Desseins, Immédiat, arts et médias, Issue N°4, Head–Geneva, June 2009
+– Dark Designs/Sombres Desseins, Immediat, arts et medias, Issue N°4, Head–Geneva, June 2009
 
 (publication, article and editorial coordination)
 
-– Version bêta: expérimentations en cours, biennale, Centre pour l’image contemporaine, Saint-Gervais Genève,
+– Version bêta: experimentations en cours, biennale, Centre pour l’image contemporaine, Saint-Gervais Genève,
 
 Geneva, 2008 (artistic direction committee)
 
@@ -2078,17 +2372,17 @@ Maison d’Ailleurs, Yverdon, Oct. 2008 (line-up, artistic direction, project co
 
 – «Locative Workshop», research days Mobile-Immobile, University Paris 8, Jan. 2008 (contribution)
 
-– CH-2300 : étude typographique 01.07 – 06.07, School of Applied Arts, La Chaux-de-Fonds, June 2007
+– CH-2300 : etude typographique 01.07 – 06.07, School of Applied Arts, La Chaux-de-Fonds, June 2007
 
 (publication, author, art direction)
 
-– Formes de l’interactivité, research project (J-L. Boissier, D. Pinkas), Head–Geneva, 2007–2008
+– Formes de l’interactivite, research project (J-L. Boissier, D. Pinkas), Head–Geneva, 2007–2008
 
 (research assistant, interface designer)
 
-– «Positioning System Exploration. Pratiques d’espaces et géolocalisation dans l’art et les nouveaux médias»,
+– «Positioning System Exploration. Pratiques d’espaces et geolocalisation dans l’art et les nouveaux medias»,
 
-Université Paris 8, Vincennes - Saint-Denis, Sept. 2006 (MA Thesis)
+Universite Paris 8, Vincennes - Saint-Denis, Sept. 2006 (MA Thesis)
 
 – «Positioning System Exploration», Leonardo/Olats workshop and symposium Space: Planetary Consciousness and
 
@@ -2096,7 +2390,7 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 
 – GPS-Movies I/II, Saint-Denis, Ciren/University Paris 8, Oct. 2004–June 2005 (workshops, project direction)
 
-– Jouable - Art, jeu et interactivité, HEAA/SGG-Genève, ENSAD/CIREN, Paris, 2004 (GPS-Movies)
+– Jouable - Art, jeu et interactivite, HEAA/SGG-Genève, ENSAD/CIREN, Paris, 2004 (GPS-Movies)
 
 – Jouable, exhibition at ENSAD, Paris, Nov.–Dec. 2004 (GPS-Movies)</string>
 	</dict>
@@ -2105,6 +2399,8 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T18:20:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2125,6 +2421,8 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T19:10:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2147,6 +2445,8 @@ Kravitz’s works can be found primarily as temporary public interactive art. Sh
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T20:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2168,6 +2468,8 @@ In Lighting Design Collective he specializes in creating custom applications tha
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2191,6 +2493,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T22:50:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracS</string>
 		<key>artists</key>
@@ -2211,6 +2515,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 		<integer>20</integer>
 		<key>date</key>
 		<date>2016-04-16T01:10:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaPool</string>
 		<key>artists</key>
@@ -2234,6 +2540,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 		<integer>20</integer>
 		<key>date</key>
 		<date>2016-04-16T01:40:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KinotekaPool</string>
 		<key>artists</key>
@@ -2255,6 +2563,8 @@ In his work he is concerned with the interaction between humans and technology a
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-16T22:50:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -2269,13 +2579,15 @@ In his work he is concerned with the interaction between humans and technology a
 		<string>Conference</string>
 		<key>description</key>
 		<string>Memo Akten is an artist from Istanbul, based in London, UK. His work explores the harmonies and tensions between nature, science, technology, culture and tradition. Studying and working with complex systems, behaviour and algorithms, he creates data dramatizations of natural and anthropogenic processes, and combines conceptual work with investigations into form, movement and sound. Akten’s work spans many disciplines including video, sound, light, dance, software, online works, installations and performances. Alongside his practice, he is currently working towards a PhD at Goldsmiths University of London in artificial intelligence and artistic, expressive human-machine interaction.
-Akten received the Prix Ars Electronic Golden Nica in 2013 for his collaboration with Quayola, ‘Forms’. His work has been featured in books, academic papers, magazines and websites such as Wallpaper*, Dazed, Eye magazine, Guardian, BBC, Financial Times, Wired and Dezeen. Past exhibitions and performances include the Victoria &amp; Albert Museum, London; Royal Opera House, London; La Gaîté lyrique, Paris; Holon Design Museum, Israel and the EYE Film Institute, Amsterdam.</string>
+Akten received the Prix Ars Electronic Golden Nica in 2013 for his collaboration with Quayola, ‘Forms’. His work has been featured in books, academic papers, magazines and websites such as Wallpaper*, Dazed, Eye magazine, Guardian, BBC, Financial Times, Wired and Dezeen. Past exhibitions and performances include the Victoria &amp; Albert Museum, London; Royal Opera House, London; La Gaîte lyrique, Paris; Holon Design Museum, Israel and the EYE Film Institute, Amsterdam.</string>
 	</dict>
 	<dict>
 		<key>duration</key>
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-15T23:40:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
@@ -2299,6 +2611,8 @@ They love to experiment with all kind of new formats and collaborate with people
 		<integer>40</integer>
 		<key>date</key>
 		<date>2016-04-17T00:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
 		<key>location</key>
 		<string>KolaracMain</string>
 		<key>artists</key>
