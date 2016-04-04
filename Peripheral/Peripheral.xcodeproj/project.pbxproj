@@ -21,6 +21,19 @@
 		D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634471C98C99100AB3F75 /* Gesture.swift */; };
 		D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634491C98CA2700AB3F75 /* Spiral.swift */; };
 		D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */; };
+		D9DAAE591CB2D524000D647A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE4A1CB2D524000D647A /* LaunchScreen.xib */; };
+		D9DAAE5A1CB2D524000D647A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE4C1CB2D524000D647A /* Main.storyboard */; };
+		D9DAAE5B1CB2D524000D647A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE4E1CB2D524000D647A /* Event.swift */; };
+		D9DAAE5C1CB2D524000D647A /* Event.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE4F1CB2D524000D647A /* Event.xib */; };
+		D9DAAE5D1CB2D524000D647A /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE501CB2D524000D647A /* EventCell.swift */; };
+		D9DAAE5E1CB2D524000D647A /* events2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE511CB2D524000D647A /* events2016.plist */; };
+		D9DAAE5F1CB2D524000D647A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE521CB2D524000D647A /* Images.xcassets */; };
+		D9DAAE601CB2D524000D647A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE531CB2D524000D647A /* Location.swift */; };
+		D9DAAE611CB2D524000D647A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE541CB2D524000D647A /* Schedule.swift */; };
+		D9DAAE621CB2D524000D647A /* ScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE551CB2D524000D647A /* ScheduleLayout.swift */; };
+		D9DAAE631CB2D524000D647A /* ScheduleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE561CB2D524000D647A /* ScheduleViewController.storyboard */; };
+		D9DAAE641CB2D524000D647A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAAE571CB2D524000D647A /* ScheduleViewController.swift */; };
+		D9DAAE651CB2D524000D647A /* Voga-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9DAAE581CB2D524000D647A /* Voga-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +71,19 @@
 		D9C634471C98C99100AB3F75 /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		D9C634491C98CA2700AB3F75 /* Spiral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spiral.swift; sourceTree = "<group>"; };
 		D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollview.swift; sourceTree = "<group>"; };
+		D9DAAE4B1CB2D524000D647A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		D9DAAE4D1CB2D524000D647A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		D9DAAE4E1CB2D524000D647A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D9DAAE4F1CB2D524000D647A /* Event.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Event.xib; sourceTree = "<group>"; };
+		D9DAAE501CB2D524000D647A /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D9DAAE511CB2D524000D647A /* events2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events2016.plist; sourceTree = "<group>"; };
+		D9DAAE521CB2D524000D647A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D9DAAE531CB2D524000D647A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D9DAAE541CB2D524000D647A /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		D9DAAE551CB2D524000D647A /* ScheduleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
+		D9DAAE561CB2D524000D647A /* ScheduleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleViewController.storyboard; sourceTree = "<group>"; };
+		D9DAAE571CB2D524000D647A /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		D9DAAE581CB2D524000D647A /* Voga-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Voga-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +143,18 @@
 			children = (
 				D9C634461C98C93C00AB3F75 /* Universes */,
 				D9C634471C98C99100AB3F75 /* Gesture.swift */,
+				D9DAAE491CB2D524000D647A /* Base.lproj */,
+				D9DAAE4E1CB2D524000D647A /* Event.swift */,
+				D9DAAE4F1CB2D524000D647A /* Event.xib */,
+				D9DAAE501CB2D524000D647A /* EventCell.swift */,
+				D9DAAE511CB2D524000D647A /* events2016.plist */,
+				D9DAAE521CB2D524000D647A /* Images.xcassets */,
+				D9DAAE531CB2D524000D647A /* Location.swift */,
+				D9DAAE541CB2D524000D647A /* Schedule.swift */,
+				D9DAAE551CB2D524000D647A /* ScheduleLayout.swift */,
+				D9DAAE561CB2D524000D647A /* ScheduleViewController.storyboard */,
+				D9DAAE571CB2D524000D647A /* ScheduleViewController.swift */,
+				D9DAAE581CB2D524000D647A /* Voga-Bold.otf */,
 				D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */,
 				A93957C01CA24F0900EF809A /* RemoteInteraction.swift */,
 				1F545D751C97E64C00436812 /* AppDelegate.swift */,
@@ -164,6 +202,15 @@
 				D9C634491C98CA2700AB3F75 /* Spiral.swift */,
 			);
 			name = Universes;
+			sourceTree = "<group>";
+		};
+		D9DAAE491CB2D524000D647A /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAAE4A1CB2D524000D647A /* LaunchScreen.xib */,
+				D9DAAE4C1CB2D524000D647A /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +299,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DAAE5C1CB2D524000D647A /* Event.xib in Resources */,
+				D9DAAE5F1CB2D524000D647A /* Images.xcassets in Resources */,
+				D9DAAE591CB2D524000D647A /* LaunchScreen.xib in Resources */,
+				D9DAAE651CB2D524000D647A /* Voga-Bold.otf in Resources */,
+				D9DAAE5A1CB2D524000D647A /* Main.storyboard in Resources */,
+				D9DAAE5E1CB2D524000D647A /* events2016.plist in Resources */,
 				1F545E101C97E64D00436812 /* Images.xcassets in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
+				D9DAAE631CB2D524000D647A /* ScheduleViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,14 +389,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DAAE641CB2D524000D647A /* ScheduleViewController.swift in Sources */,
 				D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */,
 				D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */,
 				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
+				D9DAAE5B1CB2D524000D647A /* Event.swift in Sources */,
 				D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */,
+				D9DAAE5D1CB2D524000D647A /* EventCell.swift in Sources */,
 				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
+				D9DAAE621CB2D524000D647A /* ScheduleLayout.swift in Sources */,
 				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
 				1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */,
+				D9DAAE601CB2D524000D647A /* Location.swift in Sources */,
+				D9DAAE611CB2D524000D647A /* Schedule.swift in Sources */,
 				A93957C11CA24F0900EF809A /* RemoteInteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +440,22 @@
 				1F545E121C97E64D00436812 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D9DAAE4A1CB2D524000D647A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9DAAE4B1CB2D524000D647A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D9DAAE4C1CB2D524000D647A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9DAAE4D1CB2D524000D647A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

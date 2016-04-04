@@ -34,8 +34,7 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
             return
         }
         canvas.add(scheduleViewController?.collectionView)
-        scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(deviceId-1) * 997.0, y: 0)
-
+        scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(SocketManager.sharedManager.deviceID-1) * 997.0, y: 0)
     }
 
     func initializeSocketManager() {
