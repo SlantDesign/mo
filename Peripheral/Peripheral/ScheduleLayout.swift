@@ -34,6 +34,13 @@ class ScheduleLayout: UICollectionViewLayout {
             }
         }
 
+        let hourHeaderViewIndexPaths = indexPathsOfHourHeaderViewsInRect(rect)
+        for path in hourHeaderViewIndexPaths {
+            if let attributes = layoutAttributesForSupplementaryViewOfKind("HourHeaderView", atIndexPath: path) {
+                layoutAttributes.append(attributes)
+            }
+        }
+
         return layoutAttributes
     }
 
@@ -74,8 +81,40 @@ class ScheduleLayout: UICollectionViewLayout {
         return attributes
     }
 
+    override func layoutAttributesForSupplementaryViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, withIndexPath: indexPath)
+
+        if elementKind == "HourHeaderView" {
+            attributes.frame = CGRect(x: CGFloat(hour.width) * CGFloat(indexPath.item), y: UIScreen.mainScreen().bounds.maxY-37, width: CGFloat(hour.width), height: 37)
+            attributes.zIndex = -1000
+        }
+        return attributes
+    }
+
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return true
     }
-    
+
+    func indexPathsOfHourHeaderViewsInRect(rect: CGRect) -> [NSIndexPath] {
+
+        let minIndex = hourIndexFromCoordinate(Double(rect.minX))
+        let maxIndex = hourIndexFromCoordinate(Double(rect.maxX) + hour.width)
+
+        var indexPaths = Set<NSIndexPath>()
+        for i in minIndex..<maxIndex {
+            indexPaths.insert(NSIndexPath(forItem: i, inSection: 0))
+        }
+
+        var paths = [NSIndexPath](indexPaths)
+        paths.sortInPlace {
+            $0.item < $1.item
+        }
+        return paths
+    }
+
+    func hourIndexFromCoordinate(x: Double) -> Int {
+        let hourIndex = max(0.0, x / hour.width)
+        return Int(hourIndex)
+    }
 }

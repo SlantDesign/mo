@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 class ScheduleViewController: UICollectionViewController {
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
+
+        let headerViewNib = UINib.init(nibName: "HourHeaderView", bundle: nil)
+        collectionView?.registerNib(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
         collectionView?.delegate = self
     }
 

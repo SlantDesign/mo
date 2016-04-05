@@ -23,6 +23,8 @@
 		1FEA02F11CB3A17A00BE9EF1 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E81CB3A17A00BE9EF1 /* EventCell.swift */; };
 		1FEA02F21CB3A17A00BE9EF1 /* CellBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E91CB3A17A00BE9EF1 /* CellBackgroundLayer.swift */; };
 		1FEA02F41CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */; };
+		1FEA02F61CB428B600BE9EF1 /* HourHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */; };
+		1FEA02F81CB4293300BE9EF1 /* HourHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */; };
 		A93957C11CA24F0900EF809A /* RemoteInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93957C01CA24F0900EF809A /* RemoteInteraction.swift */; };
 		AAF17C2E1C50975421007ED9 /* Pods_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A68A39A46059479EACF855 /* Pods_Peripheral.framework */; };
 		D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6342D1C9896F000AB3F75 /* SocketManager.swift */; };
@@ -67,6 +69,8 @@
 		1FEA02E81CB3A17A00BE9EF1 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1FEA02E91CB3A17A00BE9EF1 /* CellBackgroundLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayer.swift; sourceTree = "<group>"; };
 		1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleViewController.storyboard; sourceTree = "<group>"; };
+		1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourHeaderView.xib; sourceTree = "<group>"; };
+		1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourHeaderView.swift; sourceTree = "<group>"; };
 		71A68A39A46059479EACF855 /* Pods_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860E0D5A6C1FA917A2080FF6 /* Pods-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peripheral.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Peripheral/Pods-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		A93957C01CA24F0900EF809A /* RemoteInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteInteraction.swift; sourceTree = "<group>"; };
@@ -159,8 +163,10 @@
 				1F545D751C97E64C00436812 /* AppDelegate.swift */,
 				D9C6342D1C9896F000AB3F75 /* SocketManager.swift */,
 				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
+				1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */,
 				1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
+				1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */,
 				1F545E0F1C97E64D00436812 /* Images.xcassets */,
 				1F545E111C97E64D00436812 /* LaunchScreen.xib */,
 				1F545E141C97E64D00436812 /* Info.plist */,
@@ -309,6 +315,7 @@
 				1FEA02EC1CB3A17A00BE9EF1 /* dayOffsets.plist in Resources */,
 				1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
+				1FEA02F61CB428B600BE9EF1 /* HourHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +404,7 @@
 				D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */,
 				1FEA02F11CB3A17A00BE9EF1 /* EventCell.swift in Sources */,
 				1FEA02EF1CB3A17A00BE9EF1 /* Schedule.swift in Sources */,
+				1FEA02F81CB4293300BE9EF1 /* HourHeaderView.swift in Sources */,
 				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
 				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
 				1FEA02F21CB3A17A00BE9EF1 /* CellBackgroundLayer.swift in Sources */,

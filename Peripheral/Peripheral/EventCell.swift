@@ -34,6 +34,8 @@ class EventCell: UICollectionViewCell {
         clipsToBounds = true
         layer.addSublayer(shapeLayer)
         layer.backgroundColor = UIColor.clearColor().CGColor
+        layer.borderColor = UIColor.blackColor().CGColor
+        layer.borderWidth = 2.0
     }
 
     func animate() {

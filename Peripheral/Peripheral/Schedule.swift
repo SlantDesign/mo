@@ -118,7 +118,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func offsetDate(date: NSDate, currentDay: String) -> NSDate {
         var offset: NSTimeInterval = 0
-//        switch currentDay {
+        switch currentDay {
 //        case "Tuesday", "TuesdayNight":
 //            offset = dayOffsets["Tuesday"]!
 //        case "Wednesday", "WednesdayNight":
@@ -129,9 +129,9 @@ class Schedule: NSObject, UICollectionViewDataSource {
 //            offset = dayOffsets["Friday"]!
 //        case "Saturday", "SaturdayNight":
 //            offset = dayOffsets["Saturday"]!
-//        default:
-//            break
-//        }
+        default:
+            offset = 0
+        }
 
         return NSDate(timeInterval: -offset, sinceDate: date)
     }
@@ -194,4 +194,15 @@ class Schedule: NSObject, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
+
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HourHeaderView", forIndexPath: indexPath)
+
+        if let hour = headerView as? HourHeaderView {
+            hour.label!.text = String(format:"%2d:00", (indexPath.item + 10) % 24)
+        }
+
+        return headerView
+    }
+
 }
