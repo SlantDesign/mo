@@ -9,11 +9,15 @@
 import CocoaLumberjack
 import Foundation
 import UIKit
+import C4
 
 var dataLoaded: dispatch_once_t = 0
-let hour: (width: NSTimeInterval, height: NSTimeInterval) = (768.0, 155.0)
+let hour: (width: NSTimeInterval, height: NSTimeInterval) = (997.0/2.0, 155.0)
 
 class Schedule: NSObject, UICollectionViewDataSource {
+    var venueOrder: [String : [String]]!
+    var dayOffsets: [String : NSTimeInterval]!
+
     static let shared = Schedule()
     var startDate: NSDate!
     var endDate: NSDate!
@@ -26,20 +30,21 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
     var events = [Event]()
 
+    var shapeLayers = [CellBackgroundLayer]()
+
     override func awakeFromNib() {
-        dispatch_once(&dataLoaded) {
-            self.setStartEndDates()
-            self.loadData()
-            DDLogVerbose("Schedule Loaded (Awake)")
-        }
+        setup()
     }
 
     override init() {
         super.init()
+        setup()
+    }
+
+    func setup() {
         dispatch_once(&dataLoaded) {
             self.setStartEndDates()
             self.loadData()
-            DDLogVerbose("Schedule Loaded (Init)")
         }
     }
 
@@ -47,8 +52,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
         let df = NSDateFormatter()
         df.timeZone = NSTimeZone(name: "GMT")
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        startDate = df.dateFromString("2016-04-14 17:00:00")
-        endDate = df.dateFromString("2016-04-17 06:00:00")
+        startDate = df.dateFromString("2016-04-11 17:00:00")
+        endDate = df.dateFromString("2016-04-17 11:00:00")
 
         guard startDate != nil && endDate != nil else {
             print("Couldn't create the start and end dates")
@@ -57,26 +62,73 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func loadData() {
-        let path = NSBundle.mainBundle().pathForResource("events2016", ofType: "plist")!
+        let dayOffsetPath = NSBundle.mainBundle().pathForResource("dayOffsets", ofType: "plist")
+        guard let offsets = NSDictionary(contentsOfFile: dayOffsetPath!) as? [String : NSNumber] else {
+            print("Could not extract day offsets.")
+            return
+        }
+
+        dayOffsets = [String : NSTimeInterval]()
+        for key in offsets.keys {
+            dayOffsets[key] = NSTimeInterval(offsets[key]!.doubleValue)
+        }
+        
+        let path = NSBundle.mainBundle().pathForResource("programme2016", ofType: "plist")!
         guard let e = NSArray(contentsOfFile: path) as? [[String : AnyObject]] else {
             print("Could not extract array of events from file")
             return
         }
 
-        for event in e {
-            let date = event["date"] as! NSDate
+        for var event in e {
+            var date = event["date"] as! NSDate
+            let day = event["day"] as! String
+            date = offsetDate(date, currentDay: day)
             let artists = event["artists"] as! [String]
             let duration = event["duration"] as! Double
             let title = event["title"] as! String
             let location = event["location"] as! String
             let summary = event["description"] as! String
-
-            let event = Event(date: date, duration: duration, location: Location(rawValue: location)!, title: title, artists: artists, summary: summary)
+            let type = event["type"] as! String
+            let event = Event(date: date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type)
             events.append(event)
         }
+
         events.sortInPlace {
             $0 < $1
         }
+
+        let venueOrderPath = NSBundle.mainBundle().pathForResource("venueOrder", ofType: "plist")
+        guard let order = NSDictionary(contentsOfFile: venueOrderPath!) as? [String : [String]] else {
+            print("Could not extract array of events from file")
+            return
+        }
+        venueOrder = order
+
+        ShapeLayer.disableActions = true
+        for event in events {
+            shapeLayers.append(CellBackgroundLayer(event: event, visibleFrame: frameFor(event)))
+        }
+        ShapeLayer.disableActions = false
+    }
+
+    func offsetDate(date: NSDate, currentDay: String) -> NSDate {
+        var offset: NSTimeInterval = 0
+        switch currentDay {
+        case "Tuesday", "TuesdayNight":
+            offset = dayOffsets["Tuesday"]!
+        case "Wednesday", "WednesdayNight":
+            offset = dayOffsets["Wednesday"]!
+        case "Thursday", "ThursdayNight":
+            offset = dayOffsets["Thursday"]!
+        case "Friday", "FridayNight":
+            offset = dayOffsets["Friday"]!
+        case "Saturday", "SaturdayNight":
+            offset = dayOffsets["Saturday"]!
+        default:
+            break
+        }
+
+        return NSDate(timeInterval: -offset, sinceDate: date)
     }
 
     func indexPathsOfEventsBetween(start: NSDate, end: NSDate) -> [NSIndexPath] {
@@ -101,19 +153,33 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
-        let event = events[indexPath.item]
-        cell.frame = frameFor(event)
-        cell.event = event
+        let shapeLayer = shapeLayers[indexPath.item]
+        cell.shapeLayer.removeFromSuperlayer()
+        cell.shapeLayer = shapeLayer
         cell.animate()
         return cell
     }
 
     func frameFor(event:Event) -> CGRect {
-        let x = CGFloat(event.date.timeIntervalSinceDate(startDate) / 3600.0 * hour.width)
-        let y = CGFloat(NSTimeInterval(event.location.level) * hour.height)
+        let x = CGFloat((event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width)
+        let h = heightForDay(event.day)
+        let y = CGFloat(levelForVenue(event.location, day: event.day)) * h
         let w = CGFloat(event.duration / 60.0 * hour.width)
-        let h = CGFloat(hour.height)
         return CGRect(x: x, y: y, width: w, height: h)
+    }
+
+    func levelForVenue(venue: String, day: String) -> Int {
+        return venueOrder[day]!.indexOf(venue)!
+    }
+
+    func heightForDay(day: String) -> CGFloat {
+        guard let order = venueOrder else {
+            print("venueOrder not initialized")
+            return 1.0
+        }
+        let dayCount = Double(order[day]!.count)
+        let calculatedHeight = 1024.0 / dayCount
+        return CGFloat(min(calculatedHeight, 256.0))
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

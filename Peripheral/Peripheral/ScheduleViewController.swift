@@ -17,6 +17,8 @@ class ScheduleViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let event = Schedule.shared.eventAt(indexPath)
+    }
+
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
     }
 }

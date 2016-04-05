@@ -9,15 +9,21 @@
 import Foundation
 
 struct Event: Equatable, Hashable, CustomStringConvertible {
-    var date = NSDate()
+    var date = NSDate() {
+        didSet {
+
+        }
+    }
+    var day = ""
     var endDate: NSDate {
         return date.dateByAddingTimeInterval(duration*60.0)
     }
     var duration = 0.0
-    var location = Location.Unknown
+    var location = "Belgrade"
     var title = "M/O"
     var artists = ["Travis Kirton, Jake Lim"]
     var summary = "M/O"
+    var type = "Unknown"
 
     var hashValue: Int {
         return "\(date)\(duration)\(location)\(title)".hashValue
