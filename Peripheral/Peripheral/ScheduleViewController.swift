@@ -8,14 +8,19 @@
 
 import Foundation
 import UIKit
+import C4
 
 class ScheduleViewController: UICollectionViewController {
+    let indicator = Circle(center: Point(0,1014), radius: 5)
     override func viewDidLoad() {
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
 
         let headerViewNib = UINib.init(nibName: "HourHeaderView", bundle: nil)
         collectionView?.registerNib(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
         collectionView?.delegate = self
+
+        indicator.lineWidth = 0.0
+        collectionView?.add(indicator)
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -30,5 +35,12 @@ class ScheduleViewController: UICollectionViewController {
             newOffset.x = 0
             scrollView.contentOffset = newOffset
         }
+
+        var x = Double(scrollView.contentOffset.x / scrollView.contentSize.width)
+        x *= 768.0
+        x *= 2.0
+        x += Double(scrollView.contentOffset.x)
+        indicator.center = Point(x ,indicator.center.y)
+        indicator.zPosition = Double(Int.max)
     }
 }
