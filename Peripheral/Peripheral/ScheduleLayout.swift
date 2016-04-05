@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ScheduleLayout: UICollectionViewLayout {
+    var shapeLayers: [CAShapeLayer]!
 
     override init() {
         super.init()

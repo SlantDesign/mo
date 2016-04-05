@@ -9,6 +9,7 @@
 import CocoaLumberjack
 import Foundation
 import UIKit
+import C4
 
 var dataLoaded: dispatch_once_t = 0
 let hour: (width: NSTimeInterval, height: NSTimeInterval) = (997.0/2.0, 155.0)
@@ -28,6 +29,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return CGFloat(totalInterval / 3600.0 * hour.width)
     }
     var events = [Event]()
+
+    var shapeLayers = [CellBackgroundLayer]()
 
     override func awakeFromNib() {
         setup()
@@ -89,6 +92,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
             let event = Event(date: date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type)
             events.append(event)
         }
+
         events.sortInPlace {
             $0 < $1
         }
@@ -99,6 +103,12 @@ class Schedule: NSObject, UICollectionViewDataSource {
             return
         }
         venueOrder = order
+
+        ShapeLayer.disableActions = true
+        for event in events {
+            shapeLayers.append(CellBackgroundLayer(event: event, visibleFrame: frameFor(event)))
+        }
+        ShapeLayer.disableActions = false
     }
 
     func offsetDate(date: NSDate, currentDay: String) -> NSDate {
@@ -141,24 +151,16 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return events[indexPath.item]
     }
 
-    /*to do:
-     - colors (by type)
-     */
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
-        let event = events[indexPath.item]
-        cell.frame = frameFor(event)
-        cell.event = event
-        let mod = cell.frame.origin.y / 1024.0
+        let shapeLayer = shapeLayers[indexPath.item]
+        cell.shapeLayer.removeFromSuperlayer()
+        cell.shapeLayer = shapeLayer
         cell.animate()
         return cell
     }
 
     func frameFor(event:Event) -> CGRect {
-//        var offset: NSTimeInterval = 0.0
-//        if event.day == "Tuesday" {
-//            offset = 54000.0
-//        }
         let x = CGFloat((event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width)
         let h = heightForDay(event.day)
         let y = CGFloat(levelForVenue(event.location, day: event.day)) * h
@@ -172,7 +174,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func heightForDay(day: String) -> CGFloat {
         guard let order = venueOrder else {
-            print("venueOrder not initialize")
+            print("venueOrder not initialized")
             return 1.0
         }
         let dayCount = Double(order[day]!.count)
