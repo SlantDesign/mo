@@ -37,13 +37,24 @@ class ScheduleLayout: UICollectionViewLayout {
         return layoutAttributes
     }
 
+    var currentLayoutRect = CGRectZero
+
     func indexPathsOfItemsIn(rect: CGRect) -> [NSIndexPath] {
+        currentLayoutRect = rect
         var paths = [NSIndexPath]()
-        let start = Schedule.shared.startDate.dateByAddingTimeInterval(NSTimeInterval(rect.minX / Schedule.shared.totalWidth) * Schedule.shared.totalInterval)
-        let end = Schedule.shared.startDate.dateByAddingTimeInterval(NSTimeInterval(rect.maxX / Schedule.shared.totalWidth) * Schedule.shared.totalInterval)
+        let startNormalized = NSTimeInterval((rect.minX % Schedule.shared.singleContentWidth) / Schedule.shared.singleContentWidth)
+        let endNormalized = NSTimeInterval((rect.maxX % Schedule.shared.singleContentWidth) / Schedule.shared.singleContentWidth)
+
+        let start = Schedule.shared.startDate.dateByAddingTimeInterval(startNormalized * Schedule.shared.totalInterval)
+        let end = Schedule.shared.startDate.dateByAddingTimeInterval(endNormalized * Schedule.shared.totalInterval)
 
         if let dataSource = self.collectionView?.dataSource as? Schedule {
-            paths = dataSource.indexPathsOfEventsBetween(start, end: end)
+            if startNormalized > endNormalized {
+                paths = dataSource.indexPathsOfEventsBetween(start, end: Schedule.shared.endDate)
+                paths += dataSource.indexPathsOfEventsBetween(Schedule.shared.startDate, end: end)
+            } else {
+                paths = dataSource.indexPathsOfEventsBetween(start, end: end)
+            }
         }
         return paths
     }
@@ -53,7 +64,12 @@ class ScheduleLayout: UICollectionViewLayout {
         if let dataSource = collectionView?.dataSource as? Schedule {
             let event = dataSource.eventAt(indexPath)
             attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-            attributes?.frame = dataSource.frameFor(event)
+
+            var frame = dataSource.frameFor(event)
+            if !CGRectIntersectsRect(frame, currentLayoutRect) {
+                frame.origin.x += Schedule.shared.singleContentWidth
+            }
+            attributes?.frame = frame
         }
         return attributes
     }

@@ -26,8 +26,13 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     var totalWidth: CGFloat {
+        return CGFloat(totalInterval / 3600.0 * hour.width) * 2.0
+    }
+
+    var singleContentWidth: CGFloat {
         return CGFloat(totalInterval / 3600.0 * hour.width)
     }
+
     var events = [Event]()
 
     var shapeLayers = [CellBackgroundLayer]()
@@ -113,20 +118,20 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func offsetDate(date: NSDate, currentDay: String) -> NSDate {
         var offset: NSTimeInterval = 0
-        switch currentDay {
-        case "Tuesday", "TuesdayNight":
-            offset = dayOffsets["Tuesday"]!
-        case "Wednesday", "WednesdayNight":
-            offset = dayOffsets["Wednesday"]!
-        case "Thursday", "ThursdayNight":
-            offset = dayOffsets["Thursday"]!
-        case "Friday", "FridayNight":
-            offset = dayOffsets["Friday"]!
-        case "Saturday", "SaturdayNight":
-            offset = dayOffsets["Saturday"]!
-        default:
-            break
-        }
+//        switch currentDay {
+//        case "Tuesday", "TuesdayNight":
+//            offset = dayOffsets["Tuesday"]!
+//        case "Wednesday", "WednesdayNight":
+//            offset = dayOffsets["Wednesday"]!
+//        case "Thursday", "ThursdayNight":
+//            offset = dayOffsets["Thursday"]!
+//        case "Friday", "FridayNight":
+//            offset = dayOffsets["Friday"]!
+//        case "Saturday", "SaturdayNight":
+//            offset = dayOffsets["Saturday"]!
+//        default:
+//            break
+//        }
 
         return NSDate(timeInterval: -offset, sinceDate: date)
     }

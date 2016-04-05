@@ -20,5 +20,13 @@ class ScheduleViewController: UICollectionViewController {
     }
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        var newOffset = scrollView.contentOffset
+        if newOffset.x < 0 {
+            newOffset.x += Schedule.shared.singleContentWidth
+            scrollView.contentOffset = newOffset
+        } else if newOffset.x > Schedule.shared.singleContentWidth {
+            newOffset.x = 0
+            scrollView.contentOffset = newOffset
+        }
     }
 }
