@@ -20,27 +20,8 @@ class CellBackgroundLayer: ShapeLayer {
         self.generateLabel(event)
     }
 
-    func fontSizeForDay(day: String) -> Double {
-        switch day {
-        case "Monday":
-            return 250.0
-        case "Tuesday":
-            return 108.0
-        case "Wednesday":
-            return 123.0
-        case "Thursday":
-            return 88.0
-        case "Friday":
-            return 165.0
-        case "Saturday":
-            return 200.0
-        default:
-            return 250.0
-        }
-    }
-
     func generateLabel(event: Event) {
-        let font = Font(name: "AppleSDGothicNeo-Bold", size: fontSizeForDay(event.day))!
+        let font = Font(name: "AppleSDGothicNeo-Bold", size: Double(visibleFrame.size.height))!
 
         //create a titleElements array
         var titleElements = [String]()

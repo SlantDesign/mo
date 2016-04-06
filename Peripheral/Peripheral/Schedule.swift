@@ -66,28 +66,23 @@ class Schedule: NSObject, UICollectionViewDataSource {
         }
     }
 
-    func loadData() {
-        let dayOffsetPath = NSBundle.mainBundle().pathForResource("dayOffsets", ofType: "plist")
-        guard let offsets = NSDictionary(contentsOfFile: dayOffsetPath!) as? [String : NSNumber] else {
-            print("Could not extract day offsets.")
-            return
-        }
-
-        dayOffsets = [String : NSTimeInterval]()
-        for key in offsets.keys {
-            dayOffsets[key] = NSTimeInterval(offsets[key]!.doubleValue)
-        }
-        
+    func loadData() {        
         let path = NSBundle.mainBundle().pathForResource("programme2016", ofType: "plist")!
         guard let e = NSArray(contentsOfFile: path) as? [[String : AnyObject]] else {
             print("Could not extract array of events from file")
             return
         }
 
+        let venueOrderPath = NSBundle.mainBundle().pathForResource("venueOrder", ofType: "plist")
+        guard let order = NSDictionary(contentsOfFile: venueOrderPath!) as? [String : [String]] else {
+            print("Could not extract array of events from file")
+            return
+        }
+        venueOrder = order
+
         for var event in e {
-            var date = event["date"] as! NSDate
+            let date = event["date"] as! NSDate
             let day = event["day"] as! String
-            date = offsetDate(date, currentDay: day)
             let artists = event["artists"] as! [String]
             let duration = event["duration"] as! Double
             let title = event["title"] as! String
@@ -102,38 +97,11 @@ class Schedule: NSObject, UICollectionViewDataSource {
             $0 < $1
         }
 
-        let venueOrderPath = NSBundle.mainBundle().pathForResource("venueOrder", ofType: "plist")
-        guard let order = NSDictionary(contentsOfFile: venueOrderPath!) as? [String : [String]] else {
-            print("Could not extract array of events from file")
-            return
-        }
-        venueOrder = order
-
         ShapeLayer.disableActions = true
         for event in events {
             shapeLayers.append(CellBackgroundLayer(event: event, visibleFrame: frameFor(event)))
         }
         ShapeLayer.disableActions = false
-    }
-
-    func offsetDate(date: NSDate, currentDay: String) -> NSDate {
-        var offset: NSTimeInterval = 0
-        switch currentDay {
-//        case "Tuesday", "TuesdayNight":
-//            offset = dayOffsets["Tuesday"]!
-//        case "Wednesday", "WednesdayNight":
-//            offset = dayOffsets["Wednesday"]!
-//        case "Thursday", "ThursdayNight":
-//            offset = dayOffsets["Thursday"]!
-//        case "Friday", "FridayNight":
-//            offset = dayOffsets["Friday"]!
-//        case "Saturday", "SaturdayNight":
-//            offset = dayOffsets["Saturday"]!
-        default:
-            offset = 0
-        }
-
-        return NSDate(timeInterval: -offset, sinceDate: date)
     }
 
     func indexPathsOfEventsBetween(start: NSDate, end: NSDate) -> [NSIndexPath] {
@@ -183,8 +151,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
             return 1.0
         }
         let dayCount = Double(order[day]!.count)
-        let calculatedHeight = 1024.0 / dayCount
-        return CGFloat(min(calculatedHeight, 256.0))
+        let calculatedHeight = 980.0 / dayCount
+        return CGFloat(min(calculatedHeight, 245))
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
