@@ -13,6 +13,8 @@
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
 		1F64C6CB1CB4DF9B006886BF /* AnimatableCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C6CA1CB4DF9B006886BF /* AnimatableCellPath.swift */; };
+		1F64C80B1CB4FDD0006886BF /* Artists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; };
+		1F64C80C1CB4FDD0006886BF /* Artists.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
@@ -46,6 +48,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1F64C80D1CB4FDD1006886BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1F64C80C1CB4FDD0006886BF /* Artists.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F545D721C97E64C00436812 /* Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545D751C97E64C00436812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +74,8 @@
 		1F545E1D1C97E64D00436812 /* PeripheralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F64C6CA1CB4DF9B006886BF /* AnimatableCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCellPath.swift; sourceTree = "<group>"; };
+		1F64C7641CB4F909006886BF /* Artists.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Artists.framework; path = "../../../Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphonesimulator/Artists.framework"; sourceTree = "<group>"; };
+		1F64C80A1CB4FDD0006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Artists.framework; path = "/Users/travis/Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphoneos/Artists.framework"; sourceTree = "<absolute>"; };
 		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -93,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF17C2E1C50975421007ED9 /* Pods_Peripheral.framework in Frameworks */,
+				1F64C80B1CB4FDD0006886BF /* Artists.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +140,7 @@
 		1F545D691C97E64C00436812 = {
 			isa = PBXGroup;
 			children = (
+				1F64C80A1CB4FDD0006886BF /* Artists.framework */,
 				D9C634351C98A01200AB3F75 /* Packet.swift */,
 				1F545D741C97E64C00436812 /* Peripheral */,
 				1F545E1C1C97E64D00436812 /* PeripheralTests */,
@@ -192,6 +212,7 @@
 		7B05703BB2A2DB513B05A263 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F64C7641CB4F909006886BF /* Artists.framework */,
 				71A68A39A46059479EACF855 /* Pods_Peripheral.framework */,
 			);
 			name = Frameworks;
@@ -229,6 +250,7 @@
 				04A20D32C8E2BDB2C071EFF6 /* 📦 Embed Pods Frameworks */,
 				4340241B955801F36467EBB7 /* 📦 Copy Pods Resources */,
 				BE9E2498CB4998BC70B818C6 /* Embed Pods Frameworks */,
+				1F64C80D1CB4FDD1006886BF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -554,7 +576,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
 				INFOPLIST_FILE = Peripheral/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,7 +592,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Travis Stuart Kirton (L8K667RYG7)";
 				INFOPLIST_FILE = Peripheral/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.c4ios.Peripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";

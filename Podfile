@@ -18,3 +18,10 @@ target 'Peripheral' do
   pod 'CocoaLumberjack/Swift', '~> 2.2'
   pod 'CocoaAsyncSocket', '~> 7.4'
 end
+
+target ‘Artists’ do
+  platform :ios, '9.0'
+  xcodeproj 'Artists/Artists.xcodeproj'
+
+  pod 'C4', '~> 1.1'
+end

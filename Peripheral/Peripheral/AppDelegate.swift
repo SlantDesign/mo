@@ -8,6 +8,7 @@
 
 import UIKit
 import CocoaLumberjack
+import Artists
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
-
         return true
     }
 
