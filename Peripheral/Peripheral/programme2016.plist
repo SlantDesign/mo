@@ -1273,6 +1273,8 @@ On this workshop we’ll work with Max/MSP and OpenFrameworks to develop, modify
 		<key>description</key>
 		<string>Openframe is an open source platform for artists, curators, and art enthusiasts to experiment with new art forms and new ways of displaying and interacting with digital art. The platform consists of an API and extensible frame controller software that allows anyone to set up a frame using a display and a Raspberry Pi.
 During the first part of the workshop we’ll learn about Openframe. We’ll discuss how the project came about, how the platform works, how to setup and interact with a frame, and how to create extensions. During the second half of the workshop Patricio will give an introduction to shaders based on his Book of Shaders and show how to push them into an Openframe. In this part we’ll cover the principles behind glsl shaders, how to create algorithmic compositions, and how to animate them.</string>
+		<key>function</key>
+		<string>patricioGonzalezVivo01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2230,6 +2232,8 @@ http://www.artistsandengineers.co.uk</string>
 		<string>Tom “Squarepusher” Jenkinson makes manic, schizoid, experimental drum’n’bass with a heavy progressive jazz influence and a lean toward pushing the cliches of the genre out the proverbial window. Rising from near-total obscurity to drum’n’bass cause celèbre in the space of a couple of months, Jenkinson released only a pair of EPs and a DJ Food remix for the latter’s Refried Food series before securing EP and LP release plans with three different labels. His first full-length work, Feed Me Weird Things (on Richard “Aphex Twin” James’ Rephlex label), was a dizzying, quixotic blend of super-fast jungle breaks with Aphex-style synth textures, goofy, offbeat melodies, and instrumental arrangements (he samples his own playing for his tracks) that vaguely recall jazz fusion pioneers such as Mahavishnu Orchestra and Weather Report. A skilled bassist and multi-instrumentalist, Jenkinson’s fretless accompaniment is a staple of his music and one of the more obvious affiliations with jazz (although his formal arrangements are often as jazz-derived as his playing).
 Jenkinson grew up listening to jazz and dub greats like Miles Davis, Augustus Pablo, Charlie Parker, and Art Blakey. The son of a jazz drummer, Jenkinson followed in his father’s footsteps, playing bass and drums in high school. Introduced to electronic music through experimental electro-techno artists such as LFO and Carl Craig, Jenkinson soon began assembling his disparate influences into amalgams of breakbeat techno and post-bop avant-garde and progressive jazz. Claiming a closer affinity with jazz than jungle (although he draws from both equally in his music), Jenkinson’s EPs as Squarepusher and the Duke of Harringay (Jenkinson moved to Harringay from his Chelmsford birthplace) were initially disregarded as misplaced perversions of jungle’s more obvious compositional principles, but found ready audiences in fans of post-acid house experimental listening music. He inked a deal with Warp in 1995, releasing the Port Rhombus EP and three others through a variety of different labels. The aforementioned full-length Feed Me Weird Things appeared in 1996, followed a year later by Hard Normal Daddy.
 Critical acclaim for Jenkinson’s work peaked with 1998’s Music Is Rotted One Note, for which he became a one-man fusion group — multi-tracking himself playing drums, bass, and keyboards. The following year, he released two EPs (Budakhan Mindphone, Maximum Priest) and another full LP, Selection Sixteen. Go Plastic appeared in summer 2001, featuring the closest thing to a hit Squarepusher had ever seen with the single “My Red Hot Car.” Subsequent releases such as 2003’s Do You Know Squarepusher and 2004’s Ultravisitor found him refining his fusion of composition, programming, and musicianship, characteristics that were also heard on 2006’s Hello Everything and 2008’s Just a Souvenir. After a record of solo bass (titled Solo Electric Bass, Vol. 1), he unveiled his next project, a masked foursome named Shobaleader One that released a 2010 collaboration album (Shobaleader One: D’demonstrator) consisting of throwback electronic pop with an R&amp;B edge and synthesized vocals, not unlike Daft Punk. In 2012, Jenkinson returned with the coldly symphonic Ufabulum, adding an apocalyptic soundtrack feel to his already dense programming. In 2013, he worked with a team of Japanese roboticists on an ambitious project called Z-Machines, the creation of robots that could play music far beyond the capabilities of even the most skilled human instrumentalists. Jenkinson aided the robotics team in the composition of music for these robots to play, set to life by a 22-armed drumming robot and a guitar-playing robot with the equivalent of 78 fingers. The next year, Warp Records released the Music for Robots EP, a five-song recording of the results of the experiment. 2015 saw the release of Damogen Furies, a full-length that found Jenkinson pushing the limits of even his own unbridled hysteria, employing punishing overdriven tones on almost every beat, synth, and bassline on the album.</string>
+		<key>function</key>
+		<string>squarepusher00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2255,6 +2259,8 @@ Critical acclaim for Jenkinson’s work peaked with 1998’s Music Is Rotted One
 Pak studied design, visual communication and communication theories after a long quantitative background, and is currently doing three PhDs in New Media, Design and Interaction/UX.
 Pak’s work has been showcased and featured in many major design communities such as Vimeo, IDN, OFFF, Motionographer, GraphicDesign, Fubiz, Designcollector, Shots, Stash, Computerarts; besides numerous magazines, festivals, publications, installations and interviews.
 Pak is currently at uncharted space experimenting with new forms of creation and communication.</string>
+		<key>function</key>
+		<string>muratPak02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2277,6 +2283,8 @@ Pak is currently at uncharted space experimenting with new forms of creation and
 		<string>Conference</string>
 		<key>description</key>
 		<string>The European Network for Contemporary Audiovisual Creation aims to foster innovation based on a combination of the knowledge, experience and resources of its members, an interdisciplinary and complementary vision. Their contribution to the process of creators, in the fields of research, production, education and dissemination of the new audiovisual practices will result in a more effective implementation of innovative solutions that can be exported, that are sustainable and that bring the new audiovisual culture closer to the general public and to the audiovisual industry. Furthermore, the network will foster interaction and collaborative work among European creators/developers fostering and boosting intermedia research.Training is considered a strategic pillar of this project at different levels with the purpose of boosting the capabilities of creators reinforcing and supporting their knowledge and skills thus extending their contribution to the various creative and cultural industries and, with the firm purpose of extending the critical mass and bringing these practices closer to a larger audience, based on collective participation and critical reflection through actions that make us re-think the environment that we inhabit. Furthermore, the aim is to explore how these advancements can develop and trascend to industries that are not merely cultural or creative. 6 European partners from 5 countries (Spain, France, Serbia, Germany and Austria) and 4 non-European collaborating partners based in Switzerland, Canada and Mexico, the project will include the following actions: 20 research and production residencies, 12 series of expert training workshops, 2 developer and creator meetings and 24 public presentations of the results by means of performances, installations and/or exhibitions, in addition to talks, conferences and round tables to share the processes and debate important issues for the network and its audiences.</string>
+		<key>function</key>
+		<string>eNCAC00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2301,6 +2309,8 @@ Pak is currently at uncharted space experimenting with new forms of creation and
 		<string>Builders Club is the partnership of film director Jonas Hegi and creative director Julien Simshauser.
 Rethinking conventional directorial ideas of where an image ends, we unify real and artificial elements seamlessly.
 Driven by technology – we explore artistic possibilities, tell stories and create experiences.</string>
+		<key>function</key>
+		<string>buildersClub02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2347,6 +2357,8 @@ http://instagram.com/danhett</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Entropy is a collaboration between artists and scientists which aims to frame a public lecture by professional astronomers staged as an immersive live audio-visual performance. Original music composed and performed live by mysterious sonic pioneers Dopplereffekt, will be integrated with a unique set of scientific visualisations of real data staged and directed by Antivj artists. For this first-ever public announcement of the project at Resonate, team members Dida Markovic, Zaz Magic, Nicolas Boritch and Elie Zananiri will present a work-in-progress, introducing the international team, the scenography, content, and demonstrate a selection of visualisation prototypes. The presentation will also go into the planned release of some of the project tools as open source for the scientific and artistic communities to use and further develop, an important aspect of the project.</string>
+		<key>function</key>
+		<string>entropy00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2367,6 +2379,8 @@ http://instagram.com/danhett</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>In recent years, a wave of newcomers have risen to the surface among digital art festivals. This panel will be gathering festival representatives to assess together the current situation on the workings of these festivals, artistic inspirations, the process of presenting and developing works, economic models, international development, as well as the prospective markets that are being opened up.</string>
+		<key>function</key>
+		<string>digitalArtFestivalsAssessmentAndProspects00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2487,6 +2501,8 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 – Jouable - Art, jeu et interactivite, HEAA/SGG-Genève, ENSAD/CIREN, Paris, 2004 (GPS-Movies)
 
 – Jouable, exhibition at ENSAD, Paris, Nov.–Dec. 2004 (GPS-Movies)</string>
+		<key>function</key>
+		<string>danielSciboz00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2509,6 +2525,8 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 		<string>Conference</string>
 		<key>description</key>
 		<string>John Fass is a designer, researcher and lecturer at the Royal College of Art. He has a background in designing for interaction and interfaces. John has lived and worked in London, Milan, Berlin, and Brussels, working on various design and technology projects for international clients. As a researcher, his interests include the role of design in externalising digital experiences, cultures of technology production, and the politics of digital interfaces. He has presented research at national and international conferences on various topics including; digital news, web browsing, elicitation methods, data visualisation and design research.</string>
+		<key>function</key>
+		<string>johnFass00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2533,6 +2551,8 @@ the Arts, Maison d’Ailleurs, Yverdon, May 2005 (talk)
 		<string>Born in Poughkeepsie, NY, Sophi Kravitz is an American artist. Early in her career she studied sculpture and bronze casting while building props and FX for movies (if it was a bleeding body part on TV in the 90s, she may have made it). Kravitz was a studio assistant to Jeff Koons, who she highly admires and considers a huge influence on her work.
 Later, needing to make a living, she called on her science side and pursued an education, and then a career in engineering. She worked on room-sized process equipment and robotics large and small.
 Kravitz’s works can be found primarily as temporary public interactive art. She currently lives and works near New York City, in the Hudson Valley.</string>
+		<key>function</key>
+		<string>sophiKravitz02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2556,6 +2576,8 @@ Kravitz’s works can be found primarily as temporary public interactive art. Sh
 		<key>description</key>
 		<string>Originally from Venezuela, Gorka has a background in sociology and studies in his home country. He started a successful career in the world of technology, focusing on providing creative solutions to communication problems through emerging technologies.  During his career in Latin America he advised projects for global brands like Warner Brothers, Sony Entertainment Television, AXN, Santander Bank and Movistar.  His aim is to explore the boundaries between technology and art, and he specializes in real time generative art, applied trough projection mapping and architectural lighting.  He holds workshops about programming, generative art and projection mapping in various institutions in Spain, Brazil, Mexico and United Kingdom.
 In Lighting Design Collective he specializes in creating custom applications that drives permanent lighting installations, in countries as diverse as Finland, Azerbaijan, Tunisia or Holland.</string>
+		<key>function</key>
+		<string>gorkaCortazar03</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2581,6 +2603,8 @@ In Lighting Design Collective he specializes in creating custom applications tha
 Atau’s first inspirations came upon meeting John Cage during his Norton Lectures at Harvard. He moved to Europe in the 90’s and formed Sensorband with Zbigniew Karkowski and Edwin van der Heide. He then moved to Japan and came in contact with the noise music scene, playing with Merzbow, Otomo, KK Null and others. In Tokyo he was artist in residence at NTT InterCommunication Center (ICC), and visiting professor at Keio University SFC.
 He helped to establish the conference, New Interfaces for Musical Expression (NIME). His research in this area covers biosignal interfaces, networked performance, and mobile locative media. With the democratization of these technologies, he looks at the societal impact of creative practice with digital media in major projects for the Research Councils UK (RCUK) Digital Economy Hub, Social Inclusion through the Digital Economy (SiDE).
 Atau has released solo, group, and compilation recordings on labels such as Sub Rosa, Bip-hop, Caipirinha Music, Touch/Ash, Sonoris, Sirr-ecords. His work has been presented at Ars Electronica, SFMOMA, Eyebeam, V2, ZKM, and has received support from the Fondation Daniel Langlois. He was Artistic Co-Director of the Studio for Electro-Instrumental Music (STEIM) and mentor at the National Endowment for Science Technology and the Arts (NESTA, UK).</string>
+		<key>function</key>
+		<string>atauTanaka00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2678,6 +2702,8 @@ In his work he is concerned with the interaction between humans and technology a
 		<key>description</key>
 		<string>Memo Akten is an artist from Istanbul, based in London, UK. His work explores the harmonies and tensions between nature, science, technology, culture and tradition. Studying and working with complex systems, behaviour and algorithms, he creates data dramatizations of natural and anthropogenic processes, and combines conceptual work with investigations into form, movement and sound. Akten’s work spans many disciplines including video, sound, light, dance, software, online works, installations and performances. Alongside his practice, he is currently working towards a PhD at Goldsmiths University of London in artificial intelligence and artistic, expressive human-machine interaction.
 Akten received the Prix Ars Electronic Golden Nica in 2013 for his collaboration with Quayola, ‘Forms’. His work has been featured in books, academic papers, magazines and websites such as Wallpaper*, Dazed, Eye magazine, Guardian, BBC, Financial Times, Wired and Dezeen. Past exhibitions and performances include the Victoria &amp; Albert Museum, London; Royal Opera House, London; La Gaîte lyrique, Paris; Holon Design Museum, Israel and the EYE Film Institute, Amsterdam.</string>
+		<key>function</key>
+		<string>memoAkten01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2727,6 +2753,8 @@ They love to experiment with all kind of new formats and collaborate with people
 		<string>Conference</string>
 		<key>description</key>
 		<string>Nicholas Felton is a designer, entrepreneur and artist whose work focuses on translating quotidian data into meaningful objects and experiences. He is the author of numerous personal annual reports that condense the events of a year into a tapestry of maps, graphs and statistics. He was one of the lead designers of Facebook’s timeline and is the co-creator of Reporter for iPhone and Daytum.com. He has been profiled by The Wall Street Journal and the New York Times and his work is a part of the permanent collection at MoMA.</string>
+		<key>function</key>
+		<string>nicholasFelton03</string>
 	</dict>
 </array>
 </plist>

@@ -63,7 +63,7 @@ public var selectors = [
     "entropy00" : entropy00,
     "gorkaCortazar03" : gorkaCortazar03,
     "johnFass00" : johnFass00,
-    "memoAtken01" : memoAtken01,
+    "memoAkten01" : memoAkten01,
     "nicholasFelton03" : nicholasFelton03,
     "patricioGonzalezVivo01" : patricioGonzalezVivo01,
     "sophiKravitz02" : sophiKravitz02
