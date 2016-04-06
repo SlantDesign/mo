@@ -12,7 +12,7 @@ import UIKit
 import C4
 
 var dataLoaded: dispatch_once_t = 0
-let hour: (width: NSTimeInterval, height: NSTimeInterval) = (997.0/2.0, 155.0)
+let hour: (width: CGFloat, height: CGFloat) = (997.0/2.0, 155.0)
 
 class Schedule: NSObject, UICollectionViewDataSource {
     var venueOrder: [String : [String]]!
@@ -26,11 +26,11 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     var totalWidth: CGFloat {
-        return CGFloat(totalInterval / 3600.0 * hour.width) * 2.0
+        return 2 * CGFloat(totalInterval) / 3600.0 * hour.width
     }
 
     var singleContentWidth: CGFloat {
-        return CGFloat(totalInterval / 3600.0 * hour.width)
+        return CGFloat(totalInterval) / 3600.0 * hour.width
     }
 
     var events = [Event]()
@@ -134,10 +134,10 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func frameFor(event:Event) -> CGRect {
-        let x = CGFloat((event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width)
+        let x = CGFloat(event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width
         let h = heightForDay(event.day)
         let y = CGFloat(levelForVenue(event.location, day: event.day)) * h
-        let w = CGFloat(event.duration / 60.0 * hour.width)
+        let w = CGFloat(event.duration) / 60.0 * hour.width
         return CGRect(x: x, y: y, width: w, height: h)
     }
 
@@ -156,7 +156,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

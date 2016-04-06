@@ -82,11 +82,11 @@ class ScheduleLayout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForSupplementaryViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-
+        let maxIndex = hourIndexFromCoordinate(Schedule.shared.singleContentWidth)
         let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, withIndexPath: indexPath)
 
         if elementKind == "HourHeaderView" {
-            attributes.frame = CGRect(x: CGFloat(hour.width) * CGFloat(indexPath.item), y: UIScreen.mainScreen().bounds.maxY-37, width: CGFloat(hour.width), height: 37)
+            attributes.frame = CGRect(x: hour.width * CGFloat(indexPath.item + indexPath.section * maxIndex), y: UIScreen.mainScreen().bounds.maxY-37, width: CGFloat(hour.width), height: 37)
             attributes.zIndex = -1000
         }
         return attributes
@@ -97,13 +97,13 @@ class ScheduleLayout: UICollectionViewLayout {
     }
 
     func indexPathsOfHourHeaderViewsInRect(rect: CGRect) -> [NSIndexPath] {
-
-        let minIndex = hourIndexFromCoordinate(Double(rect.minX))
-        let maxIndex = hourIndexFromCoordinate(Double(rect.maxX) + hour.width)
+        let lowIndex = hourIndexFromCoordinate(rect.minX)
+        let highIndex = hourIndexFromCoordinate(rect.maxX + hour.width)
+        let maxIndex = hourIndexFromCoordinate(Schedule.shared.singleContentWidth)
 
         var indexPaths = Set<NSIndexPath>()
-        for i in minIndex..<maxIndex {
-            indexPaths.insert(NSIndexPath(forItem: i, inSection: 0))
+        for i in lowIndex..<highIndex {
+            indexPaths.insert(NSIndexPath(forItem: i % maxIndex, inSection: i < maxIndex ? 0 : 1))
         }
 
         var paths = [NSIndexPath](indexPaths)
@@ -113,8 +113,7 @@ class ScheduleLayout: UICollectionViewLayout {
         return paths
     }
 
-    func hourIndexFromCoordinate(x: Double) -> Int {
-        let hourIndex = max(0.0, x / hour.width)
-        return Int(hourIndex)
+    func hourIndexFromCoordinate(x: CGFloat) -> Int {
+        return Int(x / hour.width)
     }
 }
