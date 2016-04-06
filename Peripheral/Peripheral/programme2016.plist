@@ -28,6 +28,8 @@ This technology can be inclusive and exclusive; can save lives and waste time; c
 The workshop will create the circumstances to test your ideas and abilities – and extend them! The results could form the beginnings of big projects, boundary pushing ideas, or even become a lifelong mission.
  
 Curated in collaboration with European Lab.</string>
+		<key>function</key>
+		<string>danielHirschmann00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -55,6 +57,8 @@ This technology can be inclusive and exclusive; can save lives and waste time; c
 The workshop will create the circumstances to test your ideas and abilities – and extend them! The results could form the beginnings of big projects, boundary pushing ideas, or even become a lifelong mission.
  
 Curated in collaboration with European Lab.</string>
+		<key>function</key>
+		<string>danielHirschmann00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -82,6 +86,8 @@ This technology can be inclusive and exclusive; can save lives and waste time; c
 The workshop will create the circumstances to test your ideas and abilities – and extend them! The results could form the beginnings of big projects, boundary pushing ideas, or even become a lifelong mission.
  
 Curated in collaboration with European Lab.</string>
+		<key>function</key>
+		<string>danielHirschmann00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -109,6 +115,8 @@ Curated in collaboration with European Lab.</string>
 We will start with an introduction to C4, a creative-coding framework that focuses on interaction, animation and media for iOS, and then dive into the infrastructure that makes it possible to build an interactive work on multiple tablets, including animations that can span all screens, and how they communicate with one another. Along the way we’ll provide instruction on how to program, test, debug and – most importantly – design media for presentation on M-O.
 After learning how to build basic examples with C4 and design shapes / components using programs like PaintCode, we’re going to hand over to you all the classes, components, and media we’ve used to create our new artwork and give you free reign to build your own Universe for M-O.
 P.S. If we get really advanced, we’ll show you how to control M-O from an iPhone.</string>
+		<key>function</key>
+		<string>travisKirton00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -136,6 +144,8 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 We will start with an introduction to C4, a creative-coding framework that focuses on interaction, animation and media for iOS, and then dive into the infrastructure that makes it possible to build an interactive work on multiple tablets, including animations that can span all screens, and how they communicate with one another. Along the way we’ll provide instruction on how to program, test, debug and – most importantly – design media for presentation on M-O.
 After learning how to build basic examples with C4 and design shapes / components using programs like PaintCode, we’re going to hand over to you all the classes, components, and media we’ve used to create our new artwork and give you free reign to build your own Universe for M-O.
 P.S. If we get really advanced, we’ll show you how to control M-O from an iPhone.</string>
+		<key>function</key>
+		<string>travisKirton00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -163,6 +173,8 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 We will start with an introduction to C4, a creative-coding framework that focuses on interaction, animation and media for iOS, and then dive into the infrastructure that makes it possible to build an interactive work on multiple tablets, including animations that can span all screens, and how they communicate with one another. Along the way we’ll provide instruction on how to program, test, debug and – most importantly – design media for presentation on M-O.
 After learning how to build basic examples with C4 and design shapes / components using programs like PaintCode, we’re going to hand over to you all the classes, components, and media we’ve used to create our new artwork and give you free reign to build your own Universe for M-O.
 P.S. If we get really advanced, we’ll show you how to control M-O from an iPhone.</string>
+		<key>function</key>
+		<string>travisKirton00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -189,7 +201,7 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 Computer sciences neglected visual programming mostly criticising its ack of readability and scalability and the fact that programming metaphors like object-orientation can not be expressed well and compact in a visual form.
 With vvvv we’ve been on a mission to tackle those issues for around 15 years. In April 2015 we released a preview of VL, our new approach to visual programming that we claim will solve many of the known problems and open visual programming to a wider range of audiences.</string>
 		<key>function</key>
-		<string>sebastianGregor00</string>
+		<string>eliasHolzer00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -215,6 +227,8 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 		<string>Visual programming has been around since the early days of computers but has mostly been successful in niche markets for many years.
 Computer sciences neglected visual programming mostly criticising its ack of readability and scalability and the fact that programming metaphors like object-orientation can not be expressed well and compact in a visual form.
 With vvvv we’ve been on a mission to tackle those issues for around 15 years. In April 2015 we released a preview of VL, our new approach to visual programming that we claim will solve many of the known problems and open visual programming to a wider range of audiences.</string>
+		<key>function</key>
+		<string>eliasHolzer00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -240,6 +254,8 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 		<string>Visual programming has been around since the early days of computers but has mostly been successful in niche markets for many years.
 Computer sciences neglected visual programming mostly criticising its ack of readability and scalability and the fact that programming metaphors like object-orientation can not be expressed well and compact in a visual form.
 With vvvv we’ve been on a mission to tackle those issues for around 15 years. In April 2015 we released a preview of VL, our new approach to visual programming that we claim will solve many of the known problems and open visual programming to a wider range of audiences.</string>
+		<key>function</key>
+		<string>eliasHolzer00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -264,6 +280,8 @@ With vvvv we’ve been on a mission to tackle those issues for around 15 years. 
 		<string>ARM processors are ubiquitous in mobile devices and in an ever increasing number of embedded devices, with RISC processors making a comeback in low power computing environments. With major operating systems (incl. Linux, iOS and Android) choosing to run on these processors, understanding the low level operations of these processors can serve to better understand, optimize and debug software stacks running on them.
 This workshop will introduce you to the exciting world of programming ARM embedded devices outside the world of Arduino, working ‘baremetal’ with the powerful ARM Cortex-M processor family. We will use the STM32F746 discovery board (included in workshop fee), the first device featuring the latest and most powerful CPU in the Cortex-M family. After an introduction to generic ARM hardware and baremetal (no OS!) topics, including basic examples demonstrating how to work with core peripherals of the board, we’ll then start using C libraries from the thi.ng project (to be announced) and learn to create a few fully featured applications based on our own programmable, polyphonic stereo synthesizer and a multi-track MIDI step sequencer with interactive touchscreen GUIs to control the instrument – all of which you can take home later. This is not just going to be a lo-fi noise box! Furthermore, with the help from a little studio gear, we will be able to jam together as band and strive to do some recording on the last day.
 Source code scaffolding will be provided to maximize time for experimentation.</string>
+		<key>function</key>
+		<string>karstenSchmidt02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -288,6 +306,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<string>ARM processors are ubiquitous in mobile devices and in an ever increasing number of embedded devices, with RISC processors making a comeback in low power computing environments. With major operating systems (incl. Linux, iOS and Android) choosing to run on these processors, understanding the low level operations of these processors can serve to better understand, optimize and debug software stacks running on them.
 This workshop will introduce you to the exciting world of programming ARM embedded devices outside the world of Arduino, working ‘baremetal’ with the powerful ARM Cortex-M processor family. We will use the STM32F746 discovery board (included in workshop fee), the first device featuring the latest and most powerful CPU in the Cortex-M family. After an introduction to generic ARM hardware and baremetal (no OS!) topics, including basic examples demonstrating how to work with core peripherals of the board, we’ll then start using C libraries from the thi.ng project (to be announced) and learn to create a few fully featured applications based on our own programmable, polyphonic stereo synthesizer and a multi-track MIDI step sequencer with interactive touchscreen GUIs to control the instrument – all of which you can take home later. This is not just going to be a lo-fi noise box! Furthermore, with the help from a little studio gear, we will be able to jam together as band and strive to do some recording on the last day.
 Source code scaffolding will be provided to maximize time for experimentation.</string>
+		<key>function</key>
+		<string>karstenSchmidt02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -312,6 +332,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<string>ARM processors are ubiquitous in mobile devices and in an ever increasing number of embedded devices, with RISC processors making a comeback in low power computing environments. With major operating systems (incl. Linux, iOS and Android) choosing to run on these processors, understanding the low level operations of these processors can serve to better understand, optimize and debug software stacks running on them.
 This workshop will introduce you to the exciting world of programming ARM embedded devices outside the world of Arduino, working ‘baremetal’ with the powerful ARM Cortex-M processor family. We will use the STM32F746 discovery board (included in workshop fee), the first device featuring the latest and most powerful CPU in the Cortex-M family. After an introduction to generic ARM hardware and baremetal (no OS!) topics, including basic examples demonstrating how to work with core peripherals of the board, we’ll then start using C libraries from the thi.ng project (to be announced) and learn to create a few fully featured applications based on our own programmable, polyphonic stereo synthesizer and a multi-track MIDI step sequencer with interactive touchscreen GUIs to control the instrument – all of which you can take home later. This is not just going to be a lo-fi noise box! Furthermore, with the help from a little studio gear, we will be able to jam together as band and strive to do some recording on the last day.
 Source code scaffolding will be provided to maximize time for experimentation.</string>
+		<key>function</key>
+		<string>karstenSchmidt02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -334,6 +356,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<string>IntensiveWorkshop</string>
 		<key>description</key>
 		<string>Deep down inside code is really just electricity and that means if you have a way to control electricity you have a way to make input, logic, and output without any code at all. All you need is electronics to structure electricity. If you can give structure to electricity, you can make sound. In this workshop we’re going to learn how this works by building two simple synthesizers which you can take home with you. You’ll learn the building blocks of controlling current, building logic, and creating sound, and everyone will receive a 3d printed controller box and and all the electronics needed to make a two small synths that can be powered off of a 9V battery.</string>
+		<key>function</key>
+		<string>joshuaNoble01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -356,6 +380,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<string>IntensiveWorkshop</string>
 		<key>description</key>
 		<string>Deep down inside code is really just electricity and that means if you have a way to control electricity you have a way to make input, logic, and output without any code at all. All you need is electronics to structure electricity. If you can give structure to electricity, you can make sound. In this workshop we’re going to learn how this works by building two simple synthesizers which you can take home with you. You’ll learn the building blocks of controlling current, building logic, and creating sound, and everyone will receive a 3d printed controller box and and all the electronics needed to make a two small synths that can be powered off of a 9V battery.</string>
+		<key>function</key>
+		<string>joshuaNoble01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -465,6 +491,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>resonateDefault2</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -485,6 +513,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>resonateDefault2</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -597,6 +627,8 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<string>Live</string>
 		<key>description</key>
 		<string>Serbia Presentation</string>
+		<key>function</key>
+		<string>resonateDefault2</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -620,116 +652,8 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
-	</dict>
-	<dict>
-		<key>duration</key>
-		<integer>60</integer>
-		<key>date</key>
-		<date>2016-04-12T15:45:00Z</date>
-		<key>day</key>
-		<string>Tuesday</string>
-		<key>location</key>
-		<string>UKParobrod0</string>
-		<key>artists</key>
-		<array>
-			<string>Good Night</string>
-		</array>
-		<key>title</key>
-		<string>Tuesday Tuesday Tuesday Tuesday </string>
-		<key>type</key>
-		<string>OverNight</string>
-		<key>programme</key>
-		<string>Live</string>
-		<key>description</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>duration</key>
-		<integer>60</integer>
-		<key>date</key>
-		<date>2016-04-13T15:30:00Z</date>
-		<key>day</key>
-		<string>Wednesday</string>
-		<key>location</key>
-		<string>UKParobrod0</string>
-		<key>artists</key>
-		<array>
-			<string>Good Night</string>
-		</array>
-		<key>title</key>
-		<string>Wednesday Wednesday Wednesday Wednesday </string>
-		<key>type</key>
-		<string>OverNight</string>
-		<key>programme</key>
-		<string>Live</string>
-		<key>description</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>duration</key>
-		<integer>60</integer>
-		<key>date</key>
-		<date>2016-04-14T15:30:00Z</date>
-		<key>day</key>
-		<string>Thursday</string>
-		<key>location</key>
-		<string>KolaracMain</string>
-		<key>artists</key>
-		<array>
-			<string>Good Night</string>
-		</array>
-		<key>title</key>
-		<string>Thursday Thursday Thursday Thursday</string>
-		<key>type</key>
-		<string>OverNight</string>
-		<key>programme</key>
-		<string>Live</string>
-		<key>description</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>duration</key>
-		<integer>60</integer>
-		<key>date</key>
-		<date>2016-04-15T16:15:00Z</date>
-		<key>day</key>
-		<string>Friday</string>
-		<key>location</key>
-		<string>KolaracMain</string>
-		<key>artists</key>
-		<array>
-			<string>Good Night</string>
-		</array>
-		<key>title</key>
-		<string>Friday Friday Friday Friday Friday </string>
-		<key>type</key>
-		<string>OverNight</string>
-		<key>programme</key>
-		<string>Live</string>
-		<key>description</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>duration</key>
-		<integer>60</integer>
-		<key>date</key>
-		<date>2016-04-16T16:00:00Z</date>
-		<key>day</key>
-		<string>Saturday</string>
-		<key>location</key>
-		<string>KolaracMain</string>
-		<key>artists</key>
-		<array>
-			<string>Good Night</string>
-		</array>
-		<key>title</key>
-		<string>Saturday Saturday Saturday Saturday </string>
-		<key>type</key>
-		<string>OverNight</string>
-		<key>programme</key>
-		<string>Live</string>
-		<key>description</key>
-		<string></string>
+		<key>function</key>
+		<string>dOT</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -880,6 +804,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>rudiPunzo01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -902,6 +828,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -927,6 +855,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>hansJoachimRoedelius00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1026,6 +956,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1048,6 +980,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1070,6 +1004,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1098,6 +1034,8 @@ The BODYSEQ synth combines a bare metal step sequencer interface with simple con
 Using a newly developed, more modular synthesis framework, the 1-day workshop will focus on taking participants through the steps of: soldering up a synthesizer (easy); programming it with a set of predefined modules (easy); and give an introduction to make and integrate your own oscillators, filters, envelopes, etc. (advanced). Mixing different modules the BODYSEQ can play as a monophonic synth, chord-based harmonic generator or sample-based drum machine/sequencer.
 At the end of the workshop we will connect all the newly build synths to each other and play together through the platform’s MIDI and sync capabilities.
 Workshop leaders Jakob Bak and Dennis P. Paul collaborated last year at Resonate’15 on the work Automatic Orchestra, that utilised the synth framework to have 12 individual synthesizers play generative compositions together through networked interactions (https://vimeo.com/151840478). The same engine is here updated for greater flexibility and ease of use.</string>
+		<key>function</key>
+		<string>dennisPPaul00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1173,6 +1111,8 @@ We are going to go through some of the basics on how to use motion capture data 
 		<string>« Mapping the Internet poses numerous problems. The challenge is not just that it contains a staggering amount of extremely complex, rapidly-changing information, but also that it exists nowhere and yet operates simultaneously in the physical world. To be more precise: the Internet produces a new type of space time that bears a loose and flexible relationship to the world. The word “space” in “cyberspace” is highly metaphoric and cannot be separated from the activity conducted within it because the activity is what produces this “space”. » — Dirk van Welden in Else/Where: Mapping New Cartographies of Networks and Territories
 As we can’t map the Internet, we will approach this question from a local/household scale. Indeed, cyberspace exists around us: we are surrounded by electromagnetic waves carrying our data. However, we can’t see (or feel) it, apart from what our screens show, which is in fact just the tip of the iceberg. This workshop aims to show this invisible spectrum of data superimposed onto our physical world, inhabiting our public and privates spaces. To achieve this we will focus on a well-known domestic object: a wireless router.
 Participants will first learn to catch and parse raw data from an open wireless access point. From which, each participant will produce a map or visualization in order to expose and show the realities of this invisible landscape of ever-changing data waving around us.</string>
+		<key>function</key>
+		<string>felicienGoguey02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1225,6 +1165,8 @@ In this workshop, we’ll give you a hands-on introduction to using machine lear
 		<string>This workshops aims to offer tools, resources and creative approaches for realtime control of standard DMX lighting equipment. This knowledge open the doors for creating innovative stage designs or interactive installations.
 After a brief overview on some case studies, and by understanding lighting protocols such as DMX, Artnet, and network communication protocols as OSC, we can create tools that enable live usability of moving head lights, RGB Par Leds, stroboscopes…
 On this workshop we’ll work with Max/MSP and OpenFrameworks to develop, modify and use software that will allow us control lighting fixtures through Low Frequency Oscillators and Time-lining.</string>
+		<key>function</key>
+		<string>playmodes04</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1248,6 +1190,8 @@ On this workshop we’ll work with Max/MSP and OpenFrameworks to develop, modify
 		<string>Conference</string>
 		<key>description</key>
 		<string>Modern 3D graphics programming has advanced a lot in the last decades, and WebGL provides now easy access to the power of the GPU using JavaScript and a browser. The cornerstone of the programming capabilities are shaders, programs that tell the GPU how to display images on screen. WebGL shaders are written in GLSL, a relatively simple language with amazing possibilities. We’ll go through the programmable pipeline of modern GPUs, running shader code in the browser with WebGL, the operations available in GLSL and how to use them to display mind blowing graphics and make slow tasks blazing fast by harvesting the power of parallel computing on the GPU. At the end of the workshop we’ll try to combine all the participants work into a single demo, and create a collaborative audiovisual experience.</string>
+		<key>function</key>
+		<string>ricardoCabello02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1295,6 +1239,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<string>Conference</string>
 		<key>description</key>
 		<string></string>
+		<key>resonateDefault2</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1315,6 +1261,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<string>Conference</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>resonateDefault2</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1336,6 +1284,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<key>description</key>
 		<string>onedotzero is an international moving image and digital arts organisation which commissions, showcases and promotes innovation across all aspects of moving image, digital and interactive arts. The organisation, founded in 1996, is known for representing a diverse array of artistic endeavour via the annual onedotzero_adventures in motion festival and associated touring. It has a cross media and collaborative approach attuned to technological advances and fast paced change within digital arts and the contemporary cultural landscape.
 http://onedotzero.com</string>
+		<key>function</key>
+		<string>onedotzero00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1410,6 +1360,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1432,6 +1384,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<string>Both</string>
 		<key>description</key>
 		<string>Nibiru : Planet of crossing est une installation performative et mecanique qui s’active d’un simple mouvement du corps grâce à l’action de plusieurs pendules. Comme son ancêtre l’harmonographe, cette machine à dessiner produit d’incroyables motifs mathematiques sur des plaques de verre à l’aide d’une aiguille. Les sons de resistance provoques par ce phenomène sont amplifies et viennent sublimer les mouvements circulaires de la machine.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1511,7 +1465,7 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 Domestic Data Streamers is a team of developers from Barcelona that have taken on the challenge of transforming raw data into interactive systems and experiences. With a background in new media and interaction design they play in the boundaries of arts, science and sociology to explore and create new data languages.
 The team was created in October 2013 and since then has been working doing data experiences for several national and international museums and cultural institutions including the CCCB, Smart City Expo, Qatar Foundation or the California Academy of Sciences.</string>
 		<key>function</key>
-		<string>pauGarcia00</string>
+		<string>domesticDataStreamers01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1669,7 +1623,7 @@ Our studio is an environment that invites creativity and exploration. We don’t
 Current fields of interest include the advancement of the retail space, the exploration of virtual reality and the development of digital products.
 http://random.nu</string>
 		<key>function</key>
-		<string>carstenGoertz00</string>
+		<string>randomStudio02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1773,6 +1727,8 @@ http://instagram.com/danhett</string>
 developers of vvvv and principally involved in the language design of
 vvvv and VL. Together with Joreg he runs both the vvvv business and a
 project oriented company named after one of the first boygroups around.</string>
+		<key>function</key>
+		<string>sebastianGregor00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1798,6 +1754,8 @@ project oriented company named after one of the first boygroups around.</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>phoenixPerry01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1923,6 +1881,8 @@ His main interests lie in computer networks and the imperceptibility of the Inte
 		<string>Gael Hugo is a swiss interactive designer established in Paris in 2005, where he’s running « one more studio » since 2009. Starting to play with web technologies in the early 2000s, his design practice aims to reflect the blurry boundaries of visual communication at a digital age. From experimental interactive projects to institutional communication, from Art installation to commercial product design, he likes to produce dedicated design solution relayed by dubious self-made tools to achieve unexpected visual experience in a large range of disciplines.
 This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîte Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
 Since 2006, he’s a regular professor at ECAL/University of art and design Lausanne, in the Media and Interaction Design unit (M&amp;ID) and part-time lecturer at Parsons School for Design for AMT (Art, Media &amp; Technology) where he teaches both workshops and mentoring sessions in Advanced Interaction, Network Related Design and Experimental Game Design.</string>
+		<key>function</key>
+		<string>gaelHugo02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2335,6 +2295,8 @@ Driven by technology – we explore artistic possibilities, tell stories and cre
 		<string>Dan is a creative technologist, visual artist and VJ from Manchester (UK). While working as a research technologist for the BBC’s Research and Development UX group by day, by night Dan creates and peforms large-scale improvised live visuals at exhibitions, concerts and festivals. Dan’s live pratice centers around merging traditional VJ techniques with an improvised livecoding approach: the practice of writing unrehearsed live code on the fly to create intricate audio-reactive visual forms, while keeping the code itself visible to the audience as part of the performance.
 http://blog.danhett.com
 http://instagram.com/danhett</string>
+		<key>function</key>
+		<string>danHett01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2405,6 +2367,8 @@ http://instagram.com/danhett</string>
 		<string>Patricio Gonzalez Vivo is an artist and engineer who uses code and light to turn data into stunning landscapes. His landscapes address the problem of scale and the development of technology to perceive beyond the world in front of us. This technology helps us to see where our eyes are otherwise blind, pushing our cognitive limits. Patricio’s landscapes are not just representations of space but compositions of time and perception. Although his work is technically sophisticated his process is driven by curiosity and playful tinkering. Binoculars, telescopes, astrolabes, compasses, grids, maps, and photographs are some of the apparatus that trigger his imagination.
 Patricio’s work has been shown at FILE Festival (2012, 2013), Espacio Fundación Telefónica, and FASE. He was a MediaLab resident at Centro Cultural Español. Patricio currently makes open source mapping tools at Mapzen. His work has been featured in Gizmodo, The Atlantic, and Fast Company. He developed visual systems for the interactive Clouds documentary. He teaches at Parsons, where he received his MFA in Design and Technology.
 Patricio lives in Brooklyn and Buenos Aires. In his previous life he was a clinical psychologist and art therapist. He believes in developing a better together.</string>
+		<key>function</key>
+		<string>patricioGonzalezVivo01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2654,6 +2618,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 Atau’s first inspirations came upon meeting John Cage during his Norton Lectures at Harvard. He moved to Europe in the 90’s and formed Sensorband with Zbigniew Karkowski and Edwin van der Heide. He then moved to Japan and came in contact with the noise music scene, playing with Merzbow, Otomo, KK Null and others. In Tokyo he was artist in residence at NTT InterCommunication Center (ICC), and visiting professor at Keio University SFC.
 He helped to establish the conference, New Interfaces for Musical Expression (NIME). His research in this area covers biosignal interfaces, networked performance, and mobile locative media. With the democratization of these technologies, he looks at the societal impact of creative practice with digital media in major projects for the Research Councils UK (RCUK) Digital Economy Hub, Social Inclusion through the Digital Economy (SiDE).
 Atau has released solo, group, and compilation recordings on labels such as Sub Rosa, Bip-hop, Caipirinha Music, Touch/Ash, Sonoris, Sirr-ecords. His work has been presented at Ars Electronica, SFMOMA, Eyebeam, V2, ZKM, and has received support from the Fondation Daniel Langlois. He was Artistic Co-Director of the Studio for Electro-Instrumental Music (STEIM) and mentor at the National Endowment for Science Technology and the Arts (NESTA, UK).</string>
+		<key>function</key>
+		<string>atauTanaka00</string>
 	</dict>
 	<dict>
 		<key>duration</key>

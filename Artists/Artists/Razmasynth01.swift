@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func razmasynth01() -> Path {
 	
-	var bezier2Path = UIBezierPath()
+	let bezier2Path = UIBezierPath()
 	bezier2Path.moveToPoint(CGPointMake(216.38, 675.7))
 	bezier2Path.addCurveToPoint(CGPointMake(213.68, 676), controlPoint1: CGPointMake(215.48, 675.8), controlPoint2: CGPointMake(214.58, 675.9))
 	bezier2Path.addCurveToPoint(CGPointMake(212.18, 661.7), controlPoint1: CGPointMake(213.18, 671.2), controlPoint2: CGPointMake(212.48, 666.5))

@@ -78,6 +78,9 @@
 		1F64C9211CB5A466006886BF /* DanielSciboz00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9131CB5A466006886BF /* DanielSciboz00.swift */; };
 		1F64C9221CB5A466006886BF /* BuildersClub02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9141CB5A466006886BF /* BuildersClub02.swift */; };
 		1F64C9231CB5A466006886BF /* AtauTanaka00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9151CB5A466006886BF /* AtauTanaka00.swift */; };
+		1F64C9251CB5BC4E006886BF /* RicardoCabello02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */; };
+		1F64C9271CB5BC56006886BF /* ResonateDefault2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */; };
+		1F94A5D61CB5BE9F008FDC5C /* DOT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A5D51CB5BE9F008FDC5C /* DOT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +156,9 @@
 		1F64C9131CB5A466006886BF /* DanielSciboz00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielSciboz00.swift; sourceTree = "<group>"; };
 		1F64C9141CB5A466006886BF /* BuildersClub02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildersClub02.swift; sourceTree = "<group>"; };
 		1F64C9151CB5A466006886BF /* AtauTanaka00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtauTanaka00.swift; sourceTree = "<group>"; };
+		1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RicardoCabello02.swift; sourceTree = "<group>"; };
+		1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateDefault2.swift; sourceTree = "<group>"; };
+		1F94A5D51CB5BE9F008FDC5C /* DOT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOT.swift; sourceTree = "<group>"; };
 		E543778607A7B6E06DDDE31A /* Pods-Artists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artists.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artists/Pods-Artists.release.xcconfig"; sourceTree = "<group>"; };
 		EF29795ECA4B337DEFF7FC71 /* Pods-Artists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artists.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artists/Pods-Artists.debug.xcconfig"; sourceTree = "<group>"; };
 		FE55A298DEAFABCFAF80F495 /* Pods_Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +267,9 @@
 				1F64C9131CB5A466006886BF /* DanielSciboz00.swift */,
 				1F64C9141CB5A466006886BF /* BuildersClub02.swift */,
 				1F64C9151CB5A466006886BF /* AtauTanaka00.swift */,
+				1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */,
+				1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */,
+				1F94A5D51CB5BE9F008FDC5C /* DOT.swift */,
 				1F64C75E1CB4F8B9006886BF /* Info.plist */,
 			);
 			path = Artists;
@@ -399,6 +408,7 @@
 				1F64C8D61CB58081006886BF /* AndreasMuller01.swift in Sources */,
 				1F64C8EE1CB58081006886BF /* Kimchi&Chips01.swift in Sources */,
 				1F64C8EA1CB58081006886BF /* JanNemecek00.swift in Sources */,
+				1F94A5D61CB5BE9F008FDC5C /* DOT.swift in Sources */,
 				1F64C8E31CB58081006886BF /* EliasHolzer00.swift in Sources */,
 				1F64C9011CB58081006886BF /* RefikAnadol03.swift in Sources */,
 				1F64C91C1CB5A466006886BF /* JohnFass00.swift in Sources */,
@@ -413,6 +423,7 @@
 				1F64C79F1CB4F971006886BF /* ArtistsEngineers04.swift in Sources */,
 				1F64C8E71CB58081006886BF /* Hans-JoachimRoedelius00.swift in Sources */,
 				1F64C8F91CB58081006886BF /* PauGarcia00.swift in Sources */,
+				1F64C9251CB5BC4E006886BF /* RicardoCabello02.swift in Sources */,
 				1F64C8E41CB58081006886BF /* ElliotWoods00.swift in Sources */,
 				1F64C9191CB5A466006886BF /* NicholasFelton03.swift in Sources */,
 				1F64C9051CB58081006886BF /* TravisKirton00.swift in Sources */,
@@ -422,6 +433,7 @@
 				1F64C8D81CB58081006886BF /* ArtificialRome01.swift in Sources */,
 				1F64C8EB1CB58081006886BF /* JoshuaNoble01.swift in Sources */,
 				1F64C91B1CB5A466006886BF /* MemoAkten01.swift in Sources */,
+				1F64C9271CB5BC56006886BF /* ResonateDefault2.swift in Sources */,
 				1F64C91D1CB5A466006886BF /* GorkaCortazar03.swift in Sources */,
 				1F64C8FF1CB58081006886BF /* Razmasynth01.swift in Sources */,
 				1F64C8FD1CB58081006886BF /* Playmodes04.swift in Sources */,

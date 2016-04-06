@@ -66,5 +66,7 @@ public var selectors = [
     "memoAkten01" : memoAkten01,
     "nicholasFelton03" : nicholasFelton03,
     "patricioGonzalezVivo01" : patricioGonzalezVivo01,
-    "sophiKravitz02" : sophiKravitz02
+    "sophiKravitz02" : sophiKravitz02,
+    "ricardoCabello02" : ricardoCabello02,
+    "resonateDefault2" : resonateDefault2
 ]
