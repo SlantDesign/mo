@@ -1,7 +1,7 @@
 import UIKit
 import C4
-public func artistsAndEngineers04() -> Path {
 
+public func artistsAndEngineers04() -> Path {
 	var bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(77.4, 364.83))
 	bezierPath.addCurveToPoint(CGPointMake(88.4, 346.53), controlPoint1: CGPointMake(82.1, 369.03), controlPoint2: CGPointMake(87.8, 350.03))

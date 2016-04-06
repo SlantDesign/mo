@@ -188,6 +188,8 @@ P.S. If we get really advanced, we’ll show you how to control M-O from an iPho
 		<string>Visual programming has been around since the early days of computers but has mostly been successful in niche markets for many years.
 Computer sciences neglected visual programming mostly criticising its ack of readability and scalability and the fact that programming metaphors like object-orientation can not be expressed well and compact in a visual form.
 With vvvv we’ve been on a mission to tackle those issues for around 15 years. In April 2015 we released a preview of VL, our new approach to visual programming that we claim will solve many of the known problems and open visual programming to a wider range of audiences.</string>
+		<key>function</key>
+		<string>sebastianGregor00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -377,6 +379,8 @@ Source code scaffolding will be provided to maximize time for experimentation.</
 		<key>description</key>
 		<string>ABCD was conceived as a participative sound performance and done in Berlin, Braga, Hailuoto, Athens and Bern, and it will be staged as an intensive workshop with local students for the first time at Resonate.
 While these performances were mostly taking part during music and sound art festivals, with a spontaneous participation of the audience, this particular workshop will give the students detailed introduction into the history and the specificity of two-way and cardinal radio communication offered by walkie-talkie devices. The focus of the workshop is a common creation of a radio form which relies on both spontaneous and mutually conceived, sound and linguistic narrative – at, and around Kalemegdan fortress.</string>
+		<key>function</key>
+		<string>lukatoyboy01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -408,6 +412,8 @@ During the workshop, we will use only black pencil, charcoal, paint, papers to v
 It’s not about deep speculating but more finding joy in being observant, unawareness and self-forgetting.
  
 Curated in collaboration with Bright Collisions.</string>
+		<key>function</key>
+		<string>mimiSon00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -437,6 +443,8 @@ This module is designed as a Modular Synth DIY and can use any Eurorack compatib
 The Tools are provided and the price of the workshop is included in the price of the module that we supply.
 The Workshop will not teach you everything about making your own modular synthesizer, but you’ll learn enough to have a nice start, distinguish components, learn basics of soldering, and how to populate printed circuit boards.
 But be careful: Modular Synthesis is highly addictive!!!</string>
+		<key>function</key>
+		<string>razmasynth01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -500,6 +508,8 @@ But be careful: Modular Synthesis is highly addictive!!!</string>
 		<key>description</key>
 		<string>Kaitlyn Aurelia Smith’s formative years were spent communing with nature on Orcas Island in the northwest region of Washington state, a place she describes as “one of the most magical and peaceful places I have ever been.” Though she wouldn’t begin experimenting with modular synthesis until many years later, her creative work continues to be infused with and inspired by the vitality and serenity of Orcas.
 Smith left the island to attend Berklee College of Music, where she studied composition and sound engineering, initially focusing on her voice as her primary instrument, before switching to classical guitar and piano. She employed many of the skills she refined in college in her indie-folk band Ever Isles, but a fateful encounter with a neighbor who lent her a Buchla 100 synthesizer, had a profound effect on her. Mesmerized by the Buchla’s potential, she explains “I got so distracted and enamored with the process of making sounds with it that I abandoned the next Ever Isles album.” Starting with rhythmic patterns and melodic pulses, she soon began sculpting lush and exciting worlds of sound.</string>
+		<key>function</key>
+		<string>kaitlynAureliaSmith00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -537,6 +547,8 @@ Another series is Lieder vom Steinfeld. Begun in 1995, Roedelius recites poems o
 Roedelius had been growing substantially in fame since Cluster began touring again in 1996. He is often cited by electronic musicians and releases several albums a year, many of which are collaborations with modern musicians who are fans. He works extensively with Tim Story and released Fibre recorded with Jez Coad, Martin Barker and Georg Taylor an album which has reached 13th place in “the Third Uncut Playlist of 2009” for Uncut Magazine, ahead of Bruce Springsteen’s Working on a Dream.
 Qluster
 In November 2010 it was announced that Cluster had split up for the third time. In the official announcement, the split up was described as Moebius leaving the group. In the wake of this news, Roedelius announced that he was beginning a new project called Qluster, to follow on from Cluster and Kluster. The band is made up of Roedelius and accomplished electronic musician Onnen Bock with third member Armin Metz and released a trilogy consisting of “Rufen”, “Fragen” and “Antworten” (Calling, Asking andAnswering) in 2011. The then released a recording of a live concert made at CTM-Festival in Berlin, titled “Lauschen” ( Listening ).</string>
+		<key>function</key>
+		<string>hansJoachimRoedelius00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -561,6 +573,8 @@ In November 2010 it was announced that Cluster had split up for the third time. 
 		<string>Pierre Bastien: Where music and mechanics collide (FR / Rephlex / Morphine).
 Pierre Bastien’s is a french gentleman born 1953 who builds his own machineries, at the cross between music and visual art, that blends live trumpet sounds with screen projections of on-site, mechanical sound sculptures in a very poetic way. His work is described as “a timeless sounding orchestra, both futuristic and slightly dada, conjuring ancient traditions in its surprisingly sensuous music.”
 Bastien has been called a “mad musical scientist with a celebrity following” by The Guardian. Collaborating in the past with filmmaker Pierrick Sorin, fashion designer Issey Miyake, singer and composer Robert Wyatt and Aphex Twin (who released three of his albums on his label Rephlex) to name a few, he is one of the most influential experimental musicians working in the field. In 1986 he formed his own self made one man orchestra, Mecanium and made over 20 records over the years. Pierre’s new album is just released via Morphine Records on Nov 24th 2015.</string>
+		<key>function</key>
+		<string>pierreBastien00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -738,6 +752,8 @@ Bastien has been called a “mad musical scientist with a celebrity following”
 		<string>Live</string>
 		<key>description</key>
 		<string>Intrigued by the phenomena and history of optical sound, Mariska de Groot [1982, NL] makes and performs comprehensive analog light-to-sound instruments and installations which explore this principle in new ways. Her work often has a reference to media inventions from the past, with which she aims to excite a multi-sensorial and phenomenological experiences in light, sound, movement and space.</string>
+		<key>function</key>
+		<string>mariskaDeGroot00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -764,6 +780,8 @@ His latest book, Pop Grenade, is an adrenalin-charged collection of reportage on
 Pop Grenade has been described by Irvine Welsh as “an amazing collection of tales of inspirational courage and madness from the front line of popular culture”.
 At Resonate ’16, he’ll be discussing how music has been used as a political tool in the new media era by both freedom fighters and authoritarian governments.
 Matthew has also worked as a foreign correspondent for the BBC, Al Jazeera and Agence France-Presse, and as editor for The Big Issue, i-D magazine, the Time Out website and the Balkan Investigative Reporting Network. He has written for many newspapers and magazines, including The Guardian, The Observer, Mixmag, The Wire and Mojo.</string>
+		<key>function</key>
+		<string>matthewCollin00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -788,6 +806,8 @@ Matthew has also worked as a foreign correspondent for the BBC, Al Jazeera and A
 		<string>With his band Atari Teenage Riot and his label Digital Hardcore, Alec Empire was a pivotal figure in the politicisation of early 90’s rave culture.
 Empire’s ‘Low On Ice’ (The Icelandic Sessions) is a unique monument of atmospheric poignancy and sonic radicalism. It was created in 1994 in a single session in Iceland when, immediately after a festival appearance with Atari Teenage Riot, Empire “drove with buzzing ears to the great outdoors, seeking an exact opposite experience” in which to experiment with minimalist analogue electronic hardware.
 This new audiovisual live performance has been created to celebrate the 20th anniversary of this seminal point in electronic music, and features a new collaboration with laptop performer, violinist and and video artist Zan Lyons.</string>
+		<key>function</key>
+		<string>alecEmpire00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -812,6 +832,8 @@ This new audiovisual live performance has been created to celebrate the 20th ann
 		<string>Daniel Miller is the founder of Mute, launched in 1978 with his own 7” single – ‘Warm Leatherette’ under the name The Normal.
 Since then, Mute has grown from Miller’s one-man operation into a global group of companies and today, as ever, Miller remains heavily focussed on Mute’s creative output.
 Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by an invitation from Karl O’Connor aka Regis who invited him to perform at a Sandwell District event at Berlin’s Berghain. There he caught the bug to play again and since has been playing regular techno  sets worldwide including Sonar, ENTER at Space in Ibiza, ADE in Amsterdam, IMS at Ibiza, Electron festival, LEAF festival in London as well as at Culture Box in Copenhagen, Bootleg in Tel Aviv and, of course, a legendary performance at M-Nus’ Christmas Boiler Room in Berlin.</string>
+		<key>function</key>
+		<string>danielMiller00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -834,6 +856,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string>In this workshop Mr Punzo will, together with participants, be experimenting with the sound of a fluid matter, that is: electrons and photons. Dividing participants into several teams which will be in charge for different building tasks (oscillators, rhythm robots, electronics, solar panels) with the final goal of making the sculpture that will be transforming light, sound and tactile instances into one living and breathing machine, and at the end of the workshop the band of participants will perform together with Mr 480 on this sculpture.</string>
+		<key>function</key>
+		<string>rudiPunzo01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -927,6 +951,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>thirtyThreeTen00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -951,6 +977,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>aO00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -974,6 +1002,8 @@ Although he DJed many years ago, Daniel Miller’s recent DJing was inspired by 
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>aliGuney00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1091,6 +1121,8 @@ Workshop leaders Jakob Bak and Dennis P. Paul collaborated last year at Resonate
 		<key>description</key>
 		<string>This workshop will introduce methods for projecting onto dancers, actors, or your audience. We’ll demonstrate a really simple way how to calibrate a video projector to a depth camera using Rulr (free and open source), and then stream or export that calibration into another application of your choice where you can apply patterns and graphics onto your subjects in an accurate and flexible way.
 This workshop is sponsored by Orbbec who have developed their own community friendly depth sensor which they will provide for use at the workshop. The workshop will be led by guest workshop host Elliot Woods from Kimchi and Chips.</string>
+		<key>function</key>
+		<string>elliotWoods00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1115,6 +1147,8 @@ This workshop is sponsored by Orbbec who have developed their own community frie
 		<string>I’ve been exploring how to incorporate motion capture data into my work for the last couple of months and it has been tons of fun, so I think others might enjoy as well.
 https://vimeo.com/album/3669106
 We are going to go through some of the basics on how to use motion capture data in openFrameworks and some of the techniques that are useful when working with dance performance data.</string>
+		<key>function</key>
+		<string>andreasMuller01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1165,6 +1199,8 @@ Participants will first learn to catch and parse raw data from an open wireless 
 For example, imagine you are building an interaction using an Arduino with some sensors to control sound when a dancer moves around a space. Instead of writing a computer program to specify which sound to play based on the sensor values, you can simply use machine learning to record the data the sensors output when the dancer moves, and provide a set of example sounds to trigger when the dancer makes those gestures. A machine learning tool can then learn how you want the sound to change based on the movement over time.
 In this way, machine learning makes it possible to quickly build expressive interactions that aren’t possible to create using only programming. Also, it makes it easy for non-programmers to design and customize interactive environments.
 In this workshop, we’ll give you a hands-on introduction to using machine learning for creating interactive art, music, games, and other real-time systems. Using the Wekinator (http://www.wekinator.org/), created by the course’s instructor Rebecca Fiebrink, we will cover an introduction to using machine learning for creative practice. This free and cross-platform software tool connects a wide variety of existing hardware and software (e.g., Arduino, Unity 3D, Max/MSP, PD, Ableton, openFrameworks, Processing, Kinect, Bitalino, …) using OpenSoundControl (OSC). Expect to learn the basics of a few standard techniques to help you get started integrating machine learning into your own projects.</string>
+		<key>function</key>
+		<string>phoenixPerry01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1321,6 +1357,8 @@ http://onedotzero.com</string>
 		<key>description</key>
 		<string>Bethany Koby is a mom, CEO, designer, educator and art director interested in creating brands, businesses and experiences that help imagine a more positive and collaborative future.
 In 2012 Bethany co-founded Technology Will Save Us – a business dedicated to sparking the imagination of young people using hands-on technology. Their beautifully designed DIY Gadget kits and digital resources are the most accessible way for families, young people and educators to make, play, code and invent with technology.</string>
+		<key>function</key>
+		<string>bethanyKoby00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1346,6 +1384,8 @@ In 2012 Bethany co-founded Technology Will Save Us – a business dedicated to s
 		<string>Sakchin Bessette has spearheaded the creation of over 350 multimedia shows and installations around the world. He leads the studio, Moment Factory, in a perpetual quest to amaze, inspire and bring people together by exploring new types of entertainment. 
 
 Bessette has fostered an ecosystem where artists can strive, collaborate and evolve. His great responsibility is to provide guidance, vision and inspiration to the diverse multidisciplinary artists that have joined the team over the years, pushing them to think in new ways, create with passion, and make no sacrifices to mediocrity. The collaboration and cross–disciplinary process that he has put in place in the studio is key to its success. </string>
+		<key>function</key>
+		<string>momentFactory00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1415,6 +1455,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>ninosDuBrasil00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1439,6 +1481,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<string>Live</string>
 		<key>description</key>
 		<string></string>
+		<key>function</key>
+		<string>janNemecek00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1464,6 +1508,8 @@ Bessette has fostered an ecosystem where artists can strive, collaborate and evo
 		<string>Data changes the way we see our world. We can learn more from ourselves and nature surrounding us than ever before in human history. For this reason, we need new tools to reach and translate this information into a universal language.
 Domestic Data Streamers is a team of developers from Barcelona that have taken on the challenge of transforming raw data into interactive systems and experiences. With a background in new media and interaction design they play in the boundaries of arts, science and sociology to explore and create new data languages.
 The team was created in October 2013 and since then has been working doing data experiences for several national and international museums and cultural institutions including the CCCB, Smart City Expo, Qatar Foundation or the California Academy of Sciences.</string>
+		<key>function</key>
+		<string>pauGarcia00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1488,6 +1534,8 @@ The team was created in October 2013 and since then has been working doing data 
 		<string>Trained as an architect, Pablo Garcia’s recent work has evolved from design-for-hire to internationally exhibited artworks, provocations and research studies. Born in 1975, Garcia was in college when the first internet browser launched. Composite training in traditional analog and then-nascent digital technologies inspired a research practice into the intersection and overlap of art and technology, obsolescence and the cutting edge, the real and the virtual. Garcia’s work ranges from scholarly contributions to art historical studies to contemporary artworks examining digital culture.
 His expertise in the history and technique of drawing technologies has contributed to research for institutions such as The Art Institute of Chicago, The American Philosophical Society, The Polytechnic Museum (Moscow), and The Victoria &amp; Albert Museum (London). Garcia’s work has been exhibited in galleries and festivals across North America, South America, and Europe. His work has also been featured in the most widely-read journals in the world, including Art in America, WIRED, FastCompany, Huffington Post, GQ, Mashable. Garcia’s Core77 Award winning NeoLucida (in collaboration with Golan Levin) was among the Top 100 highest grossing Kickstarter campaigns of all time. Previously, Garcia has taught at Carnegie Mellon University, Parsons School of Design, and The University of Michigan. He holds degrees in architecture from Cornell and Princeton Universities. Universities.
 http://pablogarcia.org</string>
+		<key>function</key>
+		<string>pabloGarcia01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1508,6 +1556,8 @@ http://pablogarcia.org</string>
 		<string>Lecture</string>
 		<key>programme</key>
 		<string>Conference</string>
+		<key>function</key>
+		<string>romainTardy00</string>
 		<key>description</key>
 		<string>Romain Tardy is a visual artist, and focuses his work primarily in digital arts.
 Born on September 23, 1984, in Paris, he studied at the ecole des Beaux-Arts before working for various animation and post-production studios in Paris. He also worked as a VJ at numerous events in France and across Europe, which led him to further examine the complex connections between sound and image. With this experience,Tardy, along with three other artists, created the European visual label Antivj in 2008, which formed the base of his research and work on projected light and its in uence on perception. He remained one of the label’s main artists until late 2013.
@@ -1536,6 +1586,8 @@ His installations, which often use the technique of videomapping, are conceived 
 		<string>Daniel Hirschmann (@danielhirschman) is an artist, educator and entrepreneur who uses technology at the core of his work. He is the founder of technology and design consultancy Hirsch &amp; Mann (@hirschandmann), and the co-founder of Technology Will Save Us (@techwillsaveus), a business dedicated to getting people making and creating with tech.
 Daniel has been developing custom electronic products and experiences for over a decade at various businesses, art institutions and universities. He has shown artwork at institutions including the Whitney Museum of Art, the V&amp;A, and the Centre Pompidou and has participated in events including TED, SXSW and many Design Weeks.
 He loves thinking by making.</string>
+		<key>function</key>
+		<string>danielHirschmann03</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1561,6 +1613,8 @@ He loves thinking by making.</string>
 On graduating from Design Products (MA) at the Royal College of Art in 2001 James moved to Dublin to conduct research at the Media Lac Europe (MLE) exploring the theme of human communication as mediated by technology. After MLE he worked in Tokyo as guest designer at the Issey Miyake Design Studio developing new concepts for mobile telephones. Between 2005 and 2015 James was part of the critically acclaimed Design Interactions department at the RCA, teaching on the MA programme and continuing his development of critical and speculative approaches to design, design research and technology, completing his PhD on the subject in 2012.
 Running parallel to his academic work James is half of the speculative design practice Auger-Loizeau, a collaboration founded in 2000. Auger-Loizeau projects have been published and exhibited internationally, including MoMA, New York; 21_21, Tokyo; The Science Museum, London; The National Museum of China, Beijing and Ars Electronice, Linz. Their work is in the permanent collection at MoMA.
 James recently moved to Portugal to conduct research at the Madeira Interactive Technologies Institute. He plans to explore the potential of the Island as an experimental laboratory through a combination of fictional, factual, functional and hypothetical multi-scale proposals and projects.</string>
+		<key>function</key>
+		<string>jamesAuger00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1584,6 +1638,8 @@ James recently moved to Portugal to conduct research at the Madeira Interactive 
 		<key>description</key>
 		<string>Ishac Bertran is a designer and artist from Barcelona, currently living in New York. His work revolves around the relationship between people and technology. As a designer he helps companies envision and develop new products around emerging technologies. He’s also an advisor for thesis projects at Copenhagen Institute of Interaction Design.
 As an artist he explores with new forms of creative expression combining digital and analog mediums. He has recently done experiments in computer-generated photography, written about fictional forms of interacting with machines, and curated a book of poetry written with code.</string>
+		<key>function</key>
+		<string>ishacBertran00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1610,6 +1666,8 @@ As an artist he explores with new forms of creative expression combining digital
 Our studio is an environment that invites creativity and exploration. We don’t work with frameworks, blueprints, or an agency signature; we work with the values of a brand and our intuition: Sensing the pulse of contemporary culture, embracing the unexpected. The international team of Random Studio mirrors the diversity of disciplines, nationalities and cultures. With the history of a production company we know how to produce things in the virtual and the real world.
 Current fields of interest include the advancement of the retail space, the exploration of virtual reality and the development of digital products.
 http://random.nu</string>
+		<key>function</key>
+		<string>carstenGoertz00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1634,6 +1692,8 @@ http://random.nu</string>
 		<string>Pe Lang is a Swiss-born artist know for creating minimal kinetic artworks that control and put physical forces in action with a captivating elegance. His sculptures and installations combine hand made mechanized systems with a stringent constructive optimization in which each element can be deciphered with respect to its functionality.
 Lang’s work have been represented in exhibitions and installations for more then a decade. After completing his certificate in electrical skills in 1994, he began creating experimental mechanical sound objects presenting them in the form of live performances / installations at various European and North America art spaces and festivals, including the Transmediale in Berlin, ISEA Singapore, sonicActs Amsterdam or the Elektra Festival in Montreal.From 2005 to 2008, these sound objects where exhibited as part of a collaborative project under the title  “Untitled Sound Objects. In 2007, Lang received an one year artist-in-Lab research residency fellowship at the Swiss Center for Electronics and Microtechnology CSEM. Lang was twice honored with the prestigious swiss art award  (2009 and 2010). Among other awards, Lang received themediaprojects award in 2005, 2008 and 2011 from the Swiss Federal Department of Culture.
 His has received commissions by the Villa Empain – Boghossian Foundation in Brussels and the Exploratorium in San Francisco as well as his works can be found in private, museum and foundation collections such as the EMMA – Espoo Museum of Modern Art, the Borusan Contemporary in Istanbul, the Museum of Science, Art and Human Perception in San Francisco, the Maxine and Stuart Frankel Foundation for Art in Mischigan, and the Artphilein Foundation in Liechtenstein. Exhibitions of Lang’s work include the Centro de Arte Santa Museum Mónica, Barcelona; Kunsthalle Bern; växjö art hall, Sweden; The Leonardo, Utah Museum Science and Technology Arts Museum; the InterCommunication Center [ICC], Tokyo.</string>
+		<key>function</key>
+		<string>peLang02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1658,6 +1718,8 @@ His has received commissions by the Villa Empain – Boghossian Foundation in Br
 		<string>Neil likes to use digital and mechanical technology to bring objects and spaces to life. He graduated from Oxford University with a master’s degree in maths and computer science and has worked in many fields during his career, from game development to numerical analysis. For the last few years his focus has been on creating work at the intersection of art and technology. He is currently a graduate student at UCLA’s Department of Design Media Arts.
 His work has been exhibited by The AND Festival, The Barbican, BBC Big Screens, ISEA, Kinetica, The Museum of London, The Nottingham Playhouse, Oi Futuro, PICNIC Festival, The Science Museum, The V&amp;A and Watermans, among others. He was also a founding member of the collective “is this good?” and has worked for a diverse range of clients over the years creating projects ranging from printer orchestras to glowing pyramids.
 www.neilmendoza.com</string>
+		<key>function</key>
+		<string>neilMendoza00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1682,6 +1744,8 @@ www.neilmendoza.com</string>
 		<string>Dan is a creative technologist, visual artist and VJ from Manchester (UK). While working as a research technologist for the BBC’s Research and Development UX group by day, by night Dan creates and peforms large-scale improvised live visuals at exhibitions, concerts and festivals. Dan’s live pratice centers around merging traditional VJ techniques with an improvised livecoding approach: the practice of writing unrehearsed live code on the fly to create intricate audio-reactive visual forms, while keeping the code itself visible to the audience as part of the performance.
 http://blog.danhett.com
 http://instagram.com/danhett</string>
+		<key>function</key>
+		<string>danHett01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1755,6 +1819,8 @@ project oriented company named after one of the first boygroups around.</string>
 		<key>description</key>
 		<string>Since 2004, Artifical Rome provides deep interactive experiences. Forever experimenting, AR combines cutting edge technologies with a human touch. Every task involves a matrix of challenges. It is within this matrix that Artificial Rome strives to create rich, immersive and effective solutions based on aesthetic ideals; a process hinges on flexibility and an ability to seize new opportunities. AR’s approach is characterised by transparency and visualisation of technical and conceptual processes for brands such as Adidas, BMW, Audi, Google, and Swarovski.
 http://www.artificialrome.com</string>
+		<key>function</key>
+		<string>artificialRome01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1777,6 +1843,8 @@ http://www.artificialrome.com</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Over the past twelve years, Travis has been producing custom software, installations, and has explored the merging of hardware and software systems in the context of cultural and spatial experience. Travis is the original author of C4, a creative-coding framework for animation, media and interaction on iOS. He holds an MA Interface Culture and a BSc Interactive Arts. After years spent as a researcher in institutions such as the Banff Centre for the Performing Arts, the Alberta College of Art + Design, and the University of Calgary’s Innovation in Visualization Lab, Travis and founded L&amp;F as a studio dedicated to media art research.</string>
+		<key>function</key>
+		<string>travisKirton00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1801,6 +1869,8 @@ http://www.artificialrome.com</string>
 		<string>Gael Hugo is a swiss interactive designer established in Paris in 2005, where he’s running « one more studio » since 2009. Starting to play with web technologies in the early 2000s, his design practice aims to reflect the blurry boundaries of visual communication at a digital age. From experimental interactive projects to institutional communication, from Art installation to commercial product design, he likes to produce dedicated design solution relayed by dubious self-made tools to achieve unexpected visual experience in a large range of disciplines.
 This experimental and playful way to work gave him the opportunity to create unique projects with musicians (Breakbot, Philippe Cohen-Solal/Gotan Project), cultural institutions (Gaîte Lyrique, Van Gogh museum, Google Cultural Institute), plasticians (Mrzyk &amp; Moriceau) or commercial brands (Chanel, Hermes, Samsung) among others.
 Since 2006, he’s a regular professor at ECAL/University of art and design Lausanne, in the Media and Interaction Design unit (M&amp;ID) and part-time lecturer at Parsons School for Design for AMT (Art, Media &amp; Technology) where he teaches both workshops and mentoring sessions in Advanced Interaction, Network Related Design and Experimental Game Design.</string>
+		<key>function</key>
+		<string>gaelHugo02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1825,6 +1895,8 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<key>description</key>
 		<string>Felicien is a french designer based in Switzerland and currently an assistant teacher in MA Media Design at Geneva University of Art and Design (HEAD — Genève). He uses his multiple skills to create interactive installations, live performances, applications and connected objects. He explores the creative potential of programming languages and new technologies with a preference for open-source tools.
 His main interests lie in computer networks and the imperceptibility of the Internet, more precisely in the factors responsible for its imperceptibility and the invisible mechanisms that a user encounters, as well as their political and social consequences. His research involves design methods that question or develop strategies to tackle these issues.</string>
+		<key>function</key>
+		<string>felicienGoguey02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1871,6 +1943,8 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<string>Conference</string>
 		<key>description</key>
 		<string>Cathrine Kramer is a Norwegian artist and curator working internationally. She is the co-founder of two artist-led think tanks: the Center for Genomic Gastronomy, and CoClimate. In 2014, she received a VIDA Art and Artificial Life International Award for her work with the Center for Genomic Gastronomy. Cathrine has curated exhibitions for the Center of Contemporary Culture, Barcelona (CCCB) and Science Gallery, Dublin. She has lectured at numerous academic institutions around the world, and holds degrees from the Royal College of Art, London and the University of Technology, Sydney. Cathrine works at the intersection of art and science, with a focus on the ecological, cultural and ethical dimensions of life on Spaceship Earth.</string>
+		<key>function</key>
+		<string>cathrineKramer02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1894,6 +1968,8 @@ Since 2006, he’s a regular professor at ECAL/University of art and design Laus
 		<key>description</key>
 		<string>Joshua Noble is a designer and engineer working with at the intersection of code, design, and science fiction, currently working at frog design to create and prototype automobiles, dressing rooms, alarm clocks, park benches, billboards, home appliances, bathrooms, and imaginary futures. He’s the author of 6 books on programming aimed at designers and artists and faculty at the Interaction Design Program at CIID in Copenhagen Denmark.
 http://thefactoryfactory.com/</string>
+		<key>function</key>
+		<string>joshuaNoble01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1918,6 +1994,8 @@ http://thefactoryfactory.com/</string>
 		<string>Chris Sugrue is an artist and programmer developing interactive installations, audio-visual performances and experimental interfaces. Her works experiment with technology in playful and curious ways and investigate topics such as artificial life, eye-tracking and optical illusions. She has exhibited internationally in such festivals and galleries as Ars Electronica, Sónar Festival, Pixel Gallery, Medialab-Prado, Matadero Madrid, and La Noche En Blanco Madrid.
 Sugrue’s interactive installation, Delicate Boundaries received an honorary mention from Vida Art and Artificial Life Awards and first prize from Share Festival. In 2009, she collaborated to help develop the EyeWriter, a low-cost eye controlled drawing tool for ALS patients. The EyeWriter was honored with Design of the Year award for interactive category, the Future Everything Award, and a Golden Nica from Ars Electronica.
 Sugrue holds a Masters of Fine Arts in Design and Technology from Parsons School of Design. She has worked as a creative engineer at the Ars Electronica Futurelab where she was the lead interaction developer for a stereoscopic interactive dance performance with artist and choreographer Klaus Obermaier. Sugrue was the recipient of a year-long fellowship at the Eyebeam Art and Technology Center in New York, and has held artist residencies with Hangar in Barcelona, La Casa De Velázquez in Madrid and Harvestworks in New York. She has taught courses in the Design and Technology department at Parsons School of Design, the Interface Culture program at the KunstUniversität in Linz, Austria, and numerous workshops on visual and creative programming.</string>
+		<key>function</key>
+		<string>chrisSugrue02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1935,7 +2013,7 @@ Sugrue holds a Masters of Fine Arts in Design and Technology from Parsons School
 		<key>title</key>
 		<string></string>
 		<key>type</key>
-		<string>green</string>
+		<string>Lecture</string>
 		<key>programme</key>
 		<string>Conference</string>
 		<key>description</key>
@@ -1943,6 +2021,8 @@ Sugrue holds a Masters of Fine Arts in Design and Technology from Parsons School
 When not creating, he regularly travels the world consulting, lecturing and teaching workshops about code literacy, open source and employing code as creative tool. He is a prolific contributor to several large open source projects, was an early contributor to the Processing.org project and to several books about programming and graphic design. His work has been featured and exhibited internationally, including the MoMA New York, Design Museum, Barbican Centre and Victoria and Albert Museum, London.
 http://postspectacular.com
 https://github.com/postspectacular/</string>
+		<key>function</key>
+		<string>karstenSchmidt02</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1967,6 +2047,8 @@ https://github.com/postspectacular/</string>
 		<string>Kimchi and Chips is a Seoul based art studio founded by Elliot Woods (UK) and Mimi Son (South Korea). They are known for discovering novel interactions involving people and media materials, discovering new technical and artistic paradigms.
 They formed in 2009 to combine the disciplines of code, form, material, concept and mechanism. They create installations and dialogues which have been exhibited on four continents. They create an emulsion of imagined reality within our physical world, in order to develop natural interactions between people, nature and the possibilities of the digital network.
 http://www.kimchiandchips.com</string>
+		<key>function</key>
+		<string>kimchiAndChips01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -1989,6 +2071,8 @@ http://www.kimchiandchips.com</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Kevin Walker leads the Information Experience Design (IED) programme at the Royal College of Art. As an artist, designer, writer and researcher working at the boundaries of digital and physical, he focuses on curation and computation in physical spaces, grounded in cognitive and cultural theory. His installations and screen-based work have won awards internationally, and he is author of Hackers &amp; Slackers (2012), co-editor of Digital Technologies and the Museum Experience (2008).</string>
+		<key>function</key>
+		<string>kevinWalker00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2011,6 +2095,8 @@ http://www.kimchiandchips.com</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>onedotzero is an international moving image and digital arts organisation which commissions, showcases and promotes innovation across all aspects of moving image, digital and interactive arts. The organisation, founded in 1996, is known for representing a diverse array of artistic endeavour via the annual onedotzero_adventures in motion festival and associated touring. It has a cross media and collaborative approach attuned to technological advances and fast paced change within digital arts and the contemporary cultural landscape.</string>
+		<key>function</key>
+		<string>onedotzero00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2037,6 +2123,8 @@ He is working in the fields of site-specific public art with parametric data scu
 As a media artist, designer and spatial thinker, Refik Anadol is intrigued by the ways in which the transformation of the subject of contemporary culture requires rethinking of the new aesthetic, technique and dynamic perception of space. Anadol builds his works on the nomadic subject’s reaction to and interactions with unconventional spatial orientations. Embedding media arts into architecture, he questions the possibility of a post digital architectural future in which there are no more non-digital realities. He invites the viewers to visualize alternative realities by presenting them the possibility of re-defining the functionalities of both interior and exterior architectural formations. Anadol’s work suggests that all spaces and facades have potentials to be utilized as the media artists’ canvases.
 He has been given awards, residencies and has served as a guest lecturer. He is the recipient of a number of awards, prizes including Microsoft Research’s Best Vision Awards, UCLA Art+Architecture Moss Awards, The University of California Institute for Research in the Arts Awards and CODAvideo Awards. His site-specific audio/visual performances have been seen in Walt Disney Concert Hall (USA), Hammer Museum (USA), International Digital Arts Biennial Montreal (Canada), Ars Electronica Festival (Austria), l’Usine | Genève (Switzerland), Arc De Triomf (Spain), Zollverein | SANAA’s School of Design Building (Germany), santralistanbul Contemporary Art Center (Turkey), Outdoor Vision Festival SantaFe New Mexico (USA), Istanbul Design Biennial (Turkey), Sydney City Art (Australia), Lichtrouten (Germany).
 http://www.refikanadol.com</string>
+		<key>function</key>
+		<string>refikAnadol03</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2060,6 +2148,8 @@ http://www.refikanadol.com</string>
 		<string>Conference</string>
 		<key>description</key>
 		<string>Kris works at digital production company Resn where he contributes to and leads creative vision through: Creative Direction, Creative Ideation, Game Design, and Experience Design… Tasty stuff.</string>
+		<key>function</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2085,6 +2175,8 @@ http://www.refikanadol.com</string>
 In 2013 her first solo exhibition was co-produced by Skol and Elektra Festival in Montreal (CA). She recently presented her work at: Modern Art Oxford (UK), WRO Media Art Biennale (PL), FACT (UK), CTM Festival (DE), and LEAP Berlin.
 She has been awarded several commissions and production stipends from Canadian, German and EU funded Programs such as The Art and Civic Media’ program at the „Art and Civic Media“ of the Innovation Incubator at Leuphana University of Lüneburg and an International Production Stipend from The Edith- Russ-Haus for Media Art, Oldenburg (DE).
 Darsha is an avid technologist and educator. Her do-it-yourself electronics workshops are an integral part of her discipline and are presented internationally. In 2013 she founded the DARDI_2000 Mentorship Program in partnership with The Studio for Electro-Instrumental Music (STEIM) in Amsterdam.</string>
+		<key>function</key>
+		<string>darshaHewitt01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2112,6 +2204,8 @@ We bring together experience in engineering, film production, events, digital, s
 We love to facilitate great ideas – using our in-house engineering and production skills combined with a close-knit group of specialists.
 Based in a renovated hospital building in east London, the A&amp;E studio is a creative hub that brings together artists, inventors and creators of all kinds. This is the ideal environment for recognising and nurturing emerging talent and offering exciting new approaches.
 http://www.artistsandengineers.co.uk</string>
+		<key>function</key>
+		<string>artistsAndEngineers04</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2509,6 +2603,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 		<string>Conference</string>
 		<key>description</key>
 		<string>Dr. Rebecca Fiebrink is a Lecturer at Goldsmiths, University of London. She designs new ways for humans to interact with computers in creative practice, and she is the developer of the Wekinator software for interactive machine learning. This software has been downloaded thousands of times and used by world-renowned composers and artists including Laetitia Sonami, Phoenix Perry, Dan Trueman, Michelle Nagai, and Anne Hege to make new musical instruments and interactive experiences. She has worked with companies including Microsoft Research, Sun Microsystems Research Labs, Imagine Research, and Smule, where she helped to build the #1 iTunes app “I am T-Pain.” She is the creator of a massively open online course (MOOC) titled “Machine Learning for Musicians and Artists,” offered in 2016 by Kadenze.  She holds a PhD in Computer Science from Princeton University. Prior to moving to Goldsmiths, she was an Assistant Professor at Princeton University, where she co-directed the Princeton Laptop Orchestra.</string>
+		<key>function</key>
+		<string>rebeccaFiebrink01</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2557,6 +2653,8 @@ Atau has released solo, group, and compilation recordings on labels such as Sub 
 		<key>description</key>
 		<string>Dennis works as an interaction designer and new media artist, lives in Bremen and holds a professorship for Interaktion und Raum in the Digitale Medien Program at Hochschule für Künste Bremen. He was the co-founder of the Berlin-based studio for spatial, media-related design The Product.
 In his work he is concerned with the interaction between humans and technology and the relationship between the conceptual, the virtual, the immaterial and the physical. His works frequently take the form of installations in public spaces, physical interfaces and generative systems. With great interest he is researching the communicative, playful, narrative, and critical qualities of new and digital media. He strongly believes that technology must be something warm and emotional. His work has been exhibited internationally and has received various renown awards.</string>
+		<key>function</key>
+		<string>dennisPPaul00</string>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -2605,6 +2703,8 @@ Akten received the Prix Ars Electronic Golden Nica in 2013 for his collaboration
 They use self-made technologies to create immersive installations, projection mapping projects, interactive experiences, theatre scenography and audiovisual instruments.
 They are passionate about art, design, music, maths, code and nature, and we try to share all these passions by giving lectures in universities, schools and institutions.
 They love to experiment with all kind of new formats and collaborate with people from around the world to deliver innovative projects, both in the cultural and commercial spectrum.</string>
+		<key>function</key>
+		<string>playmodes04</string>
 	</dict>
 	<dict>
 		<key>duration</key>

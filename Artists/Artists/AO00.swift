@@ -1,6 +1,6 @@
 import UIKit
 import C4
-public func aSlashSlashO00() -> Path {
+public func aO00() -> Path {
 	
 	var bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(561.7, 1023.72))
