@@ -35,7 +35,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     var events = [Event]()
 
-    var shapeLayers = [CellBackgroundLayer]()
+    var animatablePaths = [AnimatableCellPath]()
 
     override func awakeFromNib() {
         setup()
@@ -99,9 +99,10 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
         ShapeLayer.disableActions = true
         for event in events {
-            shapeLayers.append(CellBackgroundLayer(event: event, visibleFrame: frameFor(event)))
+            let frame = frameFor(event)
+            let color = colorFor(event)
+            animatablePaths.append(AnimatableCellPath(frame: frame, event: event, color: color))
         }
-        ShapeLayer.disableActions = false
     }
 
     func indexPathsOfEventsBetween(start: NSDate, end: NSDate) -> [NSIndexPath] {
@@ -126,10 +127,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
-        let shapeLayer = shapeLayers[indexPath.item]
-        cell.shapeLayer.removeFromSuperlayer()
-        cell.shapeLayer = shapeLayer
-        cell.animate()
+        cell.animatablePath = animatablePaths[indexPath.item]
         return cell
     }
 
@@ -141,6 +139,30 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return CGRect(x: x, y: y, width: w, height: h)
     }
 
+    func colorFor(event: Event) -> CGColor {
+        switch event.type {
+        case "IntensiveWorkshop":
+            return UIColor.blueColor().CGColor
+        case "Workshop":
+            return UIColor.redColor().CGColor
+        case "Screening":
+            return UIColor.greenColor().CGColor
+        case "Lecture":
+            return UIColor.darkGrayColor().CGColor
+        case "Performance":
+            return UIColor.purpleColor().CGColor
+        case "QA":
+            return UIColor.magentaColor().CGColor
+        case "Panel":
+            return UIColor.orangeColor().CGColor
+        case "Venue":
+            return UIColor.yellowColor().CGColor
+        case "OverNight":
+            return UIColor.whiteColor().CGColor
+        default:
+            return UIColor.lightGrayColor().CGColor
+        }
+    }
     func levelForVenue(venue: String, day: String) -> Int {
         return venueOrder[day]!.indexOf(venue)!
     }

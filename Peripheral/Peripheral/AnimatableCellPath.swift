@@ -1,26 +1,30 @@
 //
-//  CellBackgroundLayer.swift
+//  AnimatableCellPath.swift
 //  Peripheral
 //
-//  Created by travis on 2016-04-04.
+//  Created by travis on 2016-04-05.
 //  Copyright © 2016 C4. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import C4
 
-class CellBackgroundLayer: ShapeLayer {
+class AnimatableCellPath {
+    var path: CGPath!
+    var fillColor: CGColor!
     var animationOffset: CGFloat = 0.0
     var visibleFrame = CGRectZero
+    var event: Event!
 
-    convenience init(event: Event, visibleFrame: CGRect) {
-        self.init()
-        self.visibleFrame = visibleFrame
-        self.backgroundColor = UIColor.clearColor().CGColor
-        self.generateLabel(event)
+    init(frame f: CGRect, event e: Event, color c: CGColor) {
+        visibleFrame = f
+        event = e
+        fillColor = c
+        generatePath()
     }
 
-    func generateLabel(event: Event) {
+    func generatePath() {
         let font = Font(name: "AppleSDGothicNeo-Bold", size: Double(visibleFrame.size.height))!
 
         //create a titleElements array
@@ -29,7 +33,7 @@ class CellBackgroundLayer: ShapeLayer {
             titleElements.append(event.title)
         }
 
-        let tt = TextShape(text: event.title.uppercaseString+"_", font: font)!
+        let tt = TextShape(text: event.title.uppercaseString+"–", font: font)!
         if tt.width < Double(visibleFrame.width) {
             for artist in event.artists {
                 titleElements.append(artist)
@@ -44,8 +48,9 @@ class CellBackgroundLayer: ShapeLayer {
             }
         }
 
-        if title.isEmpty {
-            print("")
+        guard title != "" else {
+            print("Could not create a title")
+            return
         }
 
         let t = TextShape(text: (title + "–").uppercaseString, font: font)!
@@ -93,47 +98,5 @@ class CellBackgroundLayer: ShapeLayer {
         CGPathAddPath(backgroundPath, &transformOrigin, t.path!.CGPath)
 
         path = backgroundPath
-        bounds = CGPathGetBoundingBox(backgroundPath)
-
-        fillColor = colorForType(event.type)
-    }
-
-    func colorForType(type: String) -> CGColor {
-        switch type {
-        case "IntensiveWorkshop":
-            return UIColor.blueColor().CGColor
-        case "Workshop":
-            return UIColor.redColor().CGColor
-        case "Screening":
-            return UIColor.greenColor().CGColor
-        case "Lecture":
-            return UIColor.darkGrayColor().CGColor
-        case "Performance":
-            return UIColor.purpleColor().CGColor
-        case "QA":
-            return UIColor.magentaColor().CGColor
-        case "Panel":
-            return UIColor.orangeColor().CGColor
-        case "Venue":
-            return UIColor.yellowColor().CGColor
-        case "OverNight":
-            return UIColor.whiteColor().CGColor
-        default:
-            return UIColor.lightGrayColor().CGColor
-        }
-    }
-
-    func animate() {
-        removeAllAnimations()
-        position = CGPoint(x: bounds.midX, y: bounds.midY)
-        let keyPath = "position"
-        let animation = CABasicAnimation(keyPath: keyPath)
-        animation.duration = 30.0
-        animation.beginTime = CACurrentMediaTime()
-        animation.keyPath = keyPath
-        animation.fromValue = NSValue(CGPoint: position)
-        animation.toValue = NSValue(CGPoint: CGPoint(x: position.x - animationOffset, y: position.y))
-        animation.repeatCount = Float.infinity
-        addAnimation(animation, forKey:"Animate:\(keyPath)")
     }
 }
