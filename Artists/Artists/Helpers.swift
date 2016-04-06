@@ -52,5 +52,19 @@ public var selectors = [
  	"romainTardy00" : romainTardy00,
  	"danielHirschmann00" : danielHirschmann00,
  	"ishacBertran00" : ishacBertran00,
- 	"domesticDataStreamers01" : domesticDataStreamers01
+ 	"domesticDataStreamers01" : domesticDataStreamers01,
+ 	"muratPak02" : muratPak02,
+    "eNCAC00" : eNCAC00,
+    "squarepusher00" : squarepusher00,
+    "atauTanaka00" : atauTanaka00,
+    "buildersClub02" : buildersClub02,
+    "danielSciboz00" : danielSciboz00,
+    "digitalArtFestivalsAssessmentAndProspects00" : digitalArtFestivalsAssessmentAndProspects00,
+    "entropy00" : entropy00,
+    "gorkaCortazar03" : gorkaCortazar03,
+    "johnFass00" : johnFass00,
+    "memoAtken01" : memoAtken01,
+    "nicholasFelton03" : nicholasFelton03,
+    "patricioGonzalezVivo01" : patricioGonzalezVivo01,
+    "sophiKravitz02" : sophiKravitz02
 ]

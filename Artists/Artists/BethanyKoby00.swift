@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func bethanyKoby00() -> Path {
-var bezierPath = UIBezierPath()
+let bezierPath = UIBezierPath()
 bezierPath.moveToPoint(CGPointMake(558, 627.27))
 bezierPath.addCurveToPoint(CGPointMake(580.3, 629.27), controlPoint1: CGPointMake(565.2, 630.77), controlPoint2: CGPointMake(572.9, 629.07))
 bezierPath.addCurveToPoint(CGPointMake(619.7, 626.17), controlPoint1: CGPointMake(593.5, 629.67), controlPoint2: CGPointMake(606.6, 627.27))

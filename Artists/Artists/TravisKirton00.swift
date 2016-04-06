@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func travisKirton00() -> Path {
 
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(66.3, 322.98))
 	bezierPath.addCurveToPoint(CGPointMake(67.9, 324.88), controlPoint1: CGPointMake(67.5, 322.98), controlPoint2: CGPointMake(69.2, 322.58))
 	bezierPath.addCurveToPoint(CGPointMake(67.8, 327.78), controlPoint1: CGPointMake(67.5, 325.68), controlPoint2: CGPointMake(67.8, 326.78))

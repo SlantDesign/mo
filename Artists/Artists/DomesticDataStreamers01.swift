@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func domesticDataStreamers01() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(0.7, 493.03))
 	bezierPath.addCurveToPoint(CGPointMake(24.14, 451.73), controlPoint1: CGPointMake(8.56, 479.22), controlPoint2: CGPointMake(16.28, 465.41))
 	bezierPath.addCurveToPoint(CGPointMake(0.7, 506.46), controlPoint1: CGPointMake(23.89, 472.64), controlPoint2: CGPointMake(11.47, 489.49))

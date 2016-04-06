@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func peLang02() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(760.75, 1.61))
 	bezierPath.addCurveToPoint(CGPointMake(759.53, 3.46), controlPoint1: CGPointMake(761.37, 2.84), controlPoint2: CGPointMake(760.15, 2.97))
 	bezierPath.addCurveToPoint(CGPointMake(745.7, 20.68), controlPoint1: CGPointMake(759.53, 3.46), controlPoint2: CGPointMake(746.5, 19.69))

@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func alecEmpire00() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(490.1, 408.53))
 	bezierPath.addCurveToPoint(CGPointMake(486.7, 408.33), controlPoint1: CGPointMake(489, 408.43), controlPoint2: CGPointMake(487.9, 408.23))
 	bezierPath.addCurveToPoint(CGPointMake(469.1, 411.53), controlPoint1: CGPointMake(480.8, 408.43), controlPoint2: CGPointMake(473.7, 401.93))

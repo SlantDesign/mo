@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func joshuaNoble01() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(531.7, 318.18))
 	bezierPath.addCurveToPoint(CGPointMake(534.74, 322.82), controlPoint1: CGPointMake(532.76, 319.64), controlPoint2: CGPointMake(534.21, 321.1))
 	bezierPath.addCurveToPoint(CGPointMake(542.55, 337.66), controlPoint1: CGPointMake(536.59, 328.12), controlPoint2: CGPointMake(540.16, 332.63))

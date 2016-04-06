@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func ishacBertran00() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(754.59, 489.88))
 	bezierPath.addCurveToPoint(CGPointMake(722.19, 477.58), controlPoint1: CGPointMake(744.16, 484.61), controlPoint2: CGPointMake(733.11, 481.34))
 	bezierPath.addCurveToPoint(CGPointMake(699.83, 473.43), controlPoint1: CGPointMake(715.15, 475.19), controlPoint2: CGPointMake(707.37, 474.19))

@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func darshaHewitt01() -> Path {
 
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(421.2, 314.39))
 	bezierPath.addCurveToPoint(CGPointMake(411, 316.39), controlPoint1: CGPointMake(417.8, 314.99), controlPoint2: CGPointMake(414.4, 315.69))
 	bezierPath.addCurveToPoint(CGPointMake(410.6, 317.79), controlPoint1: CGPointMake(410.9, 316.89), controlPoint2: CGPointMake(410.7, 317.29))

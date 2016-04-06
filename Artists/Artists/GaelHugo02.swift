@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func gaelHugo02() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(325, 597.74))
 	bezierPath.addCurveToPoint(CGPointMake(331.9, 600.14), controlPoint1: CGPointMake(327.3, 598.54), controlPoint2: CGPointMake(329.6, 599.34))
 	bezierPath.addCurveToPoint(CGPointMake(301.7, 617.44), controlPoint1: CGPointMake(323.8, 608.14), controlPoint2: CGPointMake(308.6, 608.34))

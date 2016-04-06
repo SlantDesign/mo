@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func kimchiAndChips01() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(235.99, 579.78))
 	bezierPath.addCurveToPoint(CGPointMake(276.19, 572.48), controlPoint1: CGPointMake(242.69, 584.18), controlPoint2: CGPointMake(273.69, 578.98))
 	bezierPath.addCurveToPoint(CGPointMake(235.99, 579.78), controlPoint1: CGPointMake(261.89, 575.08), controlPoint2: CGPointMake(248.89, 577.38))

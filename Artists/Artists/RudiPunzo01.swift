@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func rudiPunzo01() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(486.5, 210.2))
 	bezierPath.addCurveToPoint(CGPointMake(368.3, 212.2), controlPoint1: CGPointMake(457, 206.2), controlPoint2: CGPointMake(375.5, 207.1))
 	bezierPath.addCurveToPoint(CGPointMake(391.1, 215.2), controlPoint1: CGPointMake(376.6, 213.3), controlPoint2: CGPointMake(383.8, 214.9))

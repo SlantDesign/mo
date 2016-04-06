@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func ninosDuBrasil00() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(201.39, 594.79))
 	bezierPath.addCurveToPoint(CGPointMake(184.99, 589.29), controlPoint1: CGPointMake(195.39, 593.69), controlPoint2: CGPointMake(190.39, 592.49))
 	bezierPath.addCurveToPoint(CGPointMake(181.59, 582.79), controlPoint1: CGPointMake(182.59, 587.79), controlPoint2: CGPointMake(181.49, 585.59))

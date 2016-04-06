@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func artificialRome01() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(390.5, 591.92))
 	bezierPath.addCurveToPoint(CGPointMake(390.1, 589.62), controlPoint1: CGPointMake(390.4, 591.12), controlPoint2: CGPointMake(390.2, 590.42))
 	bezierPath.addCurveToPoint(CGPointMake(379.6, 590.82), controlPoint1: CGPointMake(386.6, 590.02), controlPoint2: CGPointMake(382.7, 589.52))

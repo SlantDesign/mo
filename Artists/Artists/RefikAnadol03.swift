@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func refikAnadol03() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(115.4, 35.1))
 	bezierPath.addCurveToPoint(CGPointMake(114.4, 36.8), controlPoint1: CGPointMake(115.1, 35.7), controlPoint2: CGPointMake(114.8, 36.3))
 	bezierPath.addCurveToPoint(CGPointMake(120, 40.5), controlPoint1: CGPointMake(116.3, 38), controlPoint2: CGPointMake(118, 39.5))

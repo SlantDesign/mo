@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func momentFactory00() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(304.34, 811.65))
 	bezierPath.addCurveToPoint(CGPointMake(298.53, 804.95), controlPoint1: CGPointMake(301.5, 809.46), controlPoint2: CGPointMake(298.53, 809.33))
 	bezierPath.addCurveToPoint(CGPointMake(298.53, 787.66), controlPoint1: CGPointMake(298.4, 799.27), controlPoint2: CGPointMake(298.4, 793.33))

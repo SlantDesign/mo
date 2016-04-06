@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func kevinWalker00() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(0.3, 410.1))
 	bezierPath.addCurveToPoint(CGPointMake(24.1, 410.8), controlPoint1: CGPointMake(7.7, 410.3), controlPoint2: CGPointMake(16.9, 409.1))
 	bezierPath.addCurveToPoint(CGPointMake(25.9, 429.9), controlPoint1: CGPointMake(28.4, 411.8), controlPoint2: CGPointMake(27.9, 427.2))

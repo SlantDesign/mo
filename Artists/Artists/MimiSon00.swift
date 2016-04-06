@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func mimiSon00() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(309.53, 714.56))
 	bezierPath.addCurveToPoint(CGPointMake(305.98, 713.36), controlPoint1: CGPointMake(305.98, 714.76), controlPoint2: CGPointMake(305.48, 714.46))
 	bezierPath.addCurveToPoint(CGPointMake(304.06, 710.46), controlPoint1: CGPointMake(307.1, 710.96), controlPoint2: CGPointMake(306.29, 710.26))

@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func playmodes04() -> Path {
 	
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 	bezierPath.moveToPoint(CGPointMake(253.8, 127.85))
 	bezierPath.addCurveToPoint(CGPointMake(252.7, 116.55), controlPoint1: CGPointMake(246.7, 128.15), controlPoint2: CGPointMake(245.6, 116.75))
 	bezierPath.addCurveToPoint(CGPointMake(253.8, 127.85), controlPoint1: CGPointMake(260.7, 116.35), controlPoint2: CGPointMake(262.2, 127.75))

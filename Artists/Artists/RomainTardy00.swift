@@ -1,7 +1,7 @@
 import UIKit
 import C4
 public func romainTardy00() -> Path {
-	var bezierPath = UIBezierPath()
+	let bezierPath = UIBezierPath()
 bezierPath.moveToPoint(CGPointMake(420.67, 230.31))
 bezierPath.addCurveToPoint(CGPointMake(443.71, 222.63), controlPoint1: CGPointMake(430.24, 232.66), controlPoint2: CGPointMake(434.52, 226.93))
 bezierPath.addCurveToPoint(CGPointMake(420.67, 230.31), controlPoint1: CGPointMake(433.39, 223.28), controlPoint2: CGPointMake(427.85, 224.84))
