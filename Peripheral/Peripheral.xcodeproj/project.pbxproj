@@ -75,7 +75,7 @@
 		1F545E1F1C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F64C6CA1CB4DF9B006886BF /* AnimatableCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCellPath.swift; sourceTree = "<group>"; };
 		1F64C7641CB4F909006886BF /* Artists.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Artists.framework; path = "../../../Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphonesimulator/Artists.framework"; sourceTree = "<group>"; };
-		1F64C80A1CB4FDD0006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Artists.framework; path = "/Users/travis/Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphoneos/Artists.framework"; sourceTree = "<absolute>"; };
+		1F64C80A1CB4FDD0006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Artists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
