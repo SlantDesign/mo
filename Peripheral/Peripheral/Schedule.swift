@@ -89,7 +89,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
             let location = event["location"] as! String
             let summary = event["description"] as! String
             let type = event["type"] as! String
-            let event = Event(date: date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type)
+            let function = event["function"] as! String
+            let event = Event(date: date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type, function: function)
             events.append(event)
         }
 

@@ -15,6 +15,7 @@
 		1F64C6CB1CB4DF9B006886BF /* AnimatableCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C6CA1CB4DF9B006886BF /* AnimatableCellPath.swift */; };
 		1F64C80B1CB4FDD0006886BF /* Artists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; };
 		1F64C80C1CB4FDD0006886BF /* Artists.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1F94A5D81CB5C9EC008FDC5C /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */; };
 		1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
@@ -76,6 +77,7 @@
 		1F64C6CA1CB4DF9B006886BF /* AnimatableCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCellPath.swift; sourceTree = "<group>"; };
 		1F64C7641CB4F909006886BF /* Artists.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Artists.framework; path = "../../../Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphonesimulator/Artists.framework"; sourceTree = "<group>"; };
 		1F64C80A1CB4FDD0006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Artists.framework; path = "/Users/travis/Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphoneos/Artists.framework"; sourceTree = "<absolute>"; };
+		1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
 		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				D9C6342D1C9896F000AB3F75 /* SocketManager.swift */,
 				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
 				1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */,
+				1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */,
 				1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
 				1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */,
@@ -414,6 +417,7 @@
 			files = (
 				D9C634481C98C99100AB3F75 /* Gesture.swift in Sources */,
 				D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */,
+				1F94A5D81CB5C9EC008FDC5C /* ArtistView.swift in Sources */,
 				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
 				1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */,

@@ -1239,8 +1239,8 @@ During the first part of the workshop we’ll learn about Openframe. We’ll dis
 		<string>Conference</string>
 		<key>description</key>
 		<string></string>
-		<key>resonateDefault2</key>
-		<string></string>
+		<key>function</key>
+		<string>resonateDefault2</string>
 	</dict>
 	<dict>
 		<key>duration</key>

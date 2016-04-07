@@ -19,11 +19,19 @@ class ScheduleViewController: UICollectionViewController {
         collectionView?.registerNib(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
         collectionView?.delegate = self
 
+        ShapeLayer.disableActions = true
         indicator.lineWidth = 0.0
+        indicator.zPosition = Double(Int.max)
         collectionView?.add(indicator)
+        ArtistView.shared.opacity = 0.0
+        ShapeLayer.disableActions = false
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let e = Schedule.shared.eventAt(indexPath)
+        ArtistView.shared.event = e
+        collectionView.superview?.add(ArtistView.shared)
+        ArtistView.shared.reveal()
     }
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -40,7 +48,8 @@ class ScheduleViewController: UICollectionViewController {
         x *= 768.0
         x *= 2.0
         x += Double(scrollView.contentOffset.x)
+        ShapeLayer.disableActions = true
         indicator.center = Point(x ,indicator.center.y)
-        indicator.zPosition = Double(Int.max)
+        ShapeLayer.disableActions = false
     }
 }

@@ -24,6 +24,7 @@ struct Event: Equatable, Hashable, CustomStringConvertible {
     var artists = ["Travis Kirton, Jake Lim"]
     var summary = "M/O"
     var type = "Unknown"
+    var function = ""
 
     var hashValue: Int {
         return "\(date)\(duration)\(location)\(title)".hashValue
