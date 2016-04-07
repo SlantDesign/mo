@@ -43,11 +43,31 @@ public class ScheduleViewController: UICollectionViewController {
         ArtistView.shared.opacity = 0.0
         ShapeLayer.disableActions = false
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(generateShapeFromTap))
+        collectionView?.addGestureRecognizer(tap)
+
         if let grs = collectionView?.gestureRecognizers {
             for g in grs {
                 g.addTarget(self, action: #selector(ScheduleViewController.registerUserInteraction(_:)))
             }
         }
+    }
+
+    func generateShapeFromTap(tap: UITapGestureRecognizer) {
+        var center = tap.location
+        center.x += Double(collectionView!.contentOffset.x)
+        generateShapeAtPoint(center)
+    }
+
+    func generateShapeAtPoint(point: Point) {
+        let shapeData: (Gradient, NSData) = ResonateShapeGenerator.shared.createRandomShape(point)
+
+        shapeData.0.zPosition = -500
+        collectionView?.add(shapeData.0)
+
+        let deviceId = SocketManager.sharedManager.deviceID
+        let packet = Packet(type: PacketType.ResonateShape, id: deviceId, data: shapeData.1)
+        SocketManager.sharedManager.broadcastPacket(packet)
     }
 
     override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -116,7 +136,6 @@ public class ScheduleViewController: UICollectionViewController {
 
     public func registerRemoteCease(id: Int) {
         interactionsByID[id] = nil
-        DDLogVerbose("\(SocketManager.sharedManager.deviceID) | \(id)... \(interactionsByID.count)")
     }
 
     func remoteScrollTo(point: CGPoint) {
@@ -154,7 +173,6 @@ public class ScheduleViewController: UICollectionViewController {
     }
 
     func interactionTimedOut() {
-        print(#function)
         lastLocalInteractionTimestamp = nil
         scrollUniverseDelegate?.shouldSendCease()
     }

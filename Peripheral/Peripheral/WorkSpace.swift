@@ -55,7 +55,14 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegat
             let point = UnsafePointer<CGPoint>(d.bytes).memory
             let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
             scheduleViewController?.registerRemoteUserInteraction(interaction)
+        case .ResonateShape:
+            guard let d = packet.data else {
+                DDLogVerbose("Packet does not contain data")
+                return
+            }
 
+            let shape = ResonateShapeGenerator.shared.rebuildShape(d)
+            scheduleViewController?.collectionView?.add(shape)
         case .Cease:
             scheduleViewController?.registerRemoteCease(packet.id)
         default:
@@ -63,7 +70,6 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegat
         }
     }
 
-    var currentOffset = CGPointZero
     func shouldSendScrollData() {
         var point = scheduleViewController!.collectionView!.contentOffset
         let data = NSMutableData()

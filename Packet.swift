@@ -15,6 +15,9 @@ public enum PacketType: Int8 {
 
     /// Packet sent when a device is done controlling scroll events
     case Cease
+
+    /// Packet sent when a shape is added to the collectionView
+    case ResonateShape
 }
 
 enum PacketInitializationError: ErrorType {

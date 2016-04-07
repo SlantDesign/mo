@@ -18,6 +18,7 @@
 		1F94A5D81CB5C9EC008FDC5C /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */; };
 		1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */; };
 		1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */; };
+		1F94A69D1CB70559008FDC5C /* ResonateShapeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */; };
 		1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
@@ -82,6 +83,7 @@
 		1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
 		1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-LightUltraCn.otf"; sourceTree = "<group>"; };
 		1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
+		1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateShapeGenerator.swift; sourceTree = "<group>"; };
 		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */,
 				1FEA02E41CB3A17A00BE9EF1 /* Event.swift */,
 				1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */,
+				1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */,
 				1FEA02E61CB3A17A00BE9EF1 /* Schedule.swift */,
 				1FEA02E71CB3A17A00BE9EF1 /* ScheduleLayout.swift */,
 				1FEA02E81CB3A17A00BE9EF1 /* EventCell.swift */,
@@ -435,6 +438,7 @@
 				1F64C6CB1CB4DF9B006886BF /* AnimatableCellPath.swift in Sources */,
 				1FEA02F81CB4293300BE9EF1 /* HourHeaderView.swift in Sources */,
 				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
+				1F94A69D1CB70559008FDC5C /* ResonateShapeGenerator.swift in Sources */,
 				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
 				1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */,
 				1FEA02F01CB3A17A00BE9EF1 /* ScheduleLayout.swift in Sources */,
