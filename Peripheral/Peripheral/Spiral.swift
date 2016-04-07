@@ -10,15 +10,16 @@ import C4
 import UIKit
 import CocoaLumberjack
 
+enum ScrollSource {
+    case Local
+    case Remote
+}
+
 public class Spiral : UniverseController {
     let scrollViewRotation = -0.01
     let pageCount = 60
     let interactionTimeout = NSTimeInterval(10)
 
-    enum ScrollSource {
-        case Local
-        case Remote
-    }
     var scrollSource = ScrollSource.Local
 
     let container = View()

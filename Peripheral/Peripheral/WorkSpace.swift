@@ -16,12 +16,13 @@ public protocol SpiralUniverseDelegate {
     func shouldSendCease()
 }
 
-class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegate {
+class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegate {
     var socketManager: SocketManager?
     var currentUniverse: UniverseController?
     var scheduleViewController: ScheduleViewController?
 
     override func setup() {
+        initializeSocketManager()
         initializeCollectionView()
     }
 
@@ -35,16 +36,12 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
         }
         canvas.add(scheduleViewController?.collectionView)
         scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(SocketManager.sharedManager.deviceID-1) * 997.0, y: 0)
+        scheduleViewController?.scrollUniverseDelegate = self
     }
 
     func initializeSocketManager() {
         socketManager = SocketManager.sharedManager
         socketManager?.workspace = self
-
-        let s = Spiral()
-        s.spiralUniverseDelegate = self
-        currentUniverse = s
-        canvas.add(currentUniverse?.canvas)
     }
 
     func receivePacket(packet: Packet) {
@@ -57,15 +54,10 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
 
             let point = UnsafePointer<CGPoint>(d.bytes).memory
             let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
-            if let s = currentUniverse as? Spiral {
-                s.registerRemoteUserInteraction(interaction)
-            }
+            scheduleViewController?.registerRemoteUserInteraction(interaction)
 
         case .Cease:
-            if let s = currentUniverse as? Spiral {
-                s.registerRemoteCease(packet.id)
-            }
-
+            scheduleViewController?.registerRemoteCease(packet.id)
         default:
             break
         }
@@ -73,11 +65,7 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, SpiralUniverseDelegat
 
     var currentOffset = CGPointZero
     func shouldSendScrollData() {
-        guard let spiral = currentUniverse as? Spiral else {
-            return
-        }
-
-        var point = spiral.scrollview.contentOffset
+        var point = scheduleViewController!.collectionView!.contentOffset
         let data = NSMutableData()
         data.appendBytes(&point, length: sizeof(CGPoint))
 
