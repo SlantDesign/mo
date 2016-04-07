@@ -105,8 +105,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
         }
     }
 
-    func indexPathsOfEventsBetween(start: NSDate, end: NSDate) -> [NSIndexPath] {
-        var paths = [NSIndexPath]()
+    func indexesOfEventsBetween(start: NSDate, end: NSDate) -> [Int] {
+        var indexes = [Int]()
         for (index, event) in events.enumerate() {
             //if the event date occurs before the visible end date
             //and if the event endDate occurs after the visible start date
@@ -115,10 +115,10 @@ class Schedule: NSObject, UICollectionViewDataSource {
             let a = eventStart.earlierDate(end) === eventStart
             let b = start.laterDate(eventEnd) === eventEnd
             if a && b {
-                paths.append(NSIndexPath(forItem: index, inSection: 0))
+                indexes.append(index)
             }
         }
-        return paths
+        return indexes
     }
 
     func eventAt(indexPath: NSIndexPath) -> Event {
