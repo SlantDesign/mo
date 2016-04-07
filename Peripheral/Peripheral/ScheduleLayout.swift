@@ -48,36 +48,49 @@ class ScheduleLayout: UICollectionViewLayout {
 
     func indexPathsOfItemsIn(rect: CGRect) -> [NSIndexPath] {
         currentLayoutRect = rect
-        var paths = [NSIndexPath]()
-        let startNormalized = NSTimeInterval((rect.minX % Schedule.shared.singleContentWidth) / Schedule.shared.singleContentWidth)
-        let endNormalized = NSTimeInterval((rect.maxX % Schedule.shared.singleContentWidth) / Schedule.shared.singleContentWidth)
 
-        let start = Schedule.shared.startDate.dateByAddingTimeInterval(startNormalized * Schedule.shared.totalInterval)
-        let end = Schedule.shared.startDate.dateByAddingTimeInterval(endNormalized * Schedule.shared.totalInterval)
-
-        if let dataSource = self.collectionView?.dataSource as? Schedule {
-            if startNormalized > endNormalized {
-                paths = dataSource.indexPathsOfEventsBetween(start, end: Schedule.shared.endDate)
-                paths += dataSource.indexPathsOfEventsBetween(Schedule.shared.startDate, end: end)
-            } else {
-                paths = dataSource.indexPathsOfEventsBetween(start, end: end)
-            }
+        guard let schedule = self.collectionView?.dataSource as? Schedule else {
+            return []
         }
-        return paths
+
+        let startNormalized = NSTimeInterval(rect.minX / schedule.singleContentWidth)
+        let startTimestamp = (startNormalized % 1.0) * schedule.totalInterval
+        let startSection = Int(floor(startNormalized))
+
+        let endNormalized = NSTimeInterval(rect.maxX / schedule.singleContentWidth)
+        let endTimestamp = (endNormalized % 1.0) * schedule.totalInterval
+        let endSection = Int(floor(endNormalized))
+
+        var indexPaths = [NSIndexPath]()
+        if startTimestamp > endTimestamp {
+            let end = schedule.startDate.dateByAddingTimeInterval(endTimestamp)
+            let beginIndexes = schedule.indexesOfEventsBetween(schedule.startDate, end: end)
+            indexPaths.appendContentsOf(beginIndexes.map({ NSIndexPath(forItem: $0, inSection: endSection) }))
+
+            let start = schedule.startDate.dateByAddingTimeInterval(startTimestamp)
+            let endIndexes = schedule.indexesOfEventsBetween(start, end: schedule.endDate)
+            indexPaths.appendContentsOf(endIndexes.map({ NSIndexPath(forItem: $0, inSection: startSection) }))
+        } else {
+            let start = schedule.startDate.dateByAddingTimeInterval(startTimestamp)
+            let end = schedule.startDate.dateByAddingTimeInterval(endTimestamp)
+            let indexes = schedule.indexesOfEventsBetween(start, end: end)
+            indexPaths.appendContentsOf(indexes.map({ NSIndexPath(forItem: $0, inSection: startSection) }))
+        }
+
+        return indexPaths
     }
 
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        var attributes: UICollectionViewLayoutAttributes?
-        if let dataSource = collectionView?.dataSource as? Schedule {
-            let event = dataSource.eventAt(indexPath)
-            attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-
-            var frame = dataSource.frameFor(event)
-            if !CGRectIntersectsRect(frame, currentLayoutRect) {
-                frame.origin.x += Schedule.shared.singleContentWidth
-            }
-            attributes?.frame = frame
+        guard let schedule = collectionView?.dataSource as? Schedule else {
+            return nil
         }
+
+        let event = schedule.eventAt(indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+
+        attributes.frame = schedule.frameFor(event)
+        attributes.frame.origin.x += CGFloat(indexPath.section) * schedule.singleContentWidth
+
         return attributes
     }
 
@@ -101,16 +114,12 @@ class ScheduleLayout: UICollectionViewLayout {
         let highIndex = hourIndexFromCoordinate(rect.maxX + hour.width)
         let maxIndex = hourIndexFromCoordinate(Schedule.shared.singleContentWidth)
 
-        var indexPaths = Set<NSIndexPath>()
+        var indexPaths = [NSIndexPath]()
         for i in lowIndex..<highIndex {
-            indexPaths.insert(NSIndexPath(forItem: i % maxIndex, inSection: i < maxIndex ? 0 : 1))
+            indexPaths.append(NSIndexPath(forItem: i % maxIndex, inSection: i < maxIndex ? 0 : 1))
         }
 
-        var paths = [NSIndexPath](indexPaths)
-        paths.sortInPlace {
-            $0.item < $1.item
-        }
-        return paths
+        return indexPaths
     }
 
     func hourIndexFromCoordinate(x: CGFloat) -> Int {

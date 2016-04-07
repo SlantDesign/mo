@@ -13,7 +13,6 @@ import Foundation
 class EventCell: UICollectionViewCell {
     var animatablePath: AnimatableCellPath! {
         didSet {
-            frame = animatablePath.visibleFrame
             createLayer()
             animate()
         }
