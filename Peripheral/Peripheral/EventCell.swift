@@ -49,7 +49,7 @@ class EventCell: UICollectionViewCell {
         shapeLayer.bounds = CGPathGetBoundingBox(animatablePath.path)
         shapeLayer.fillColor = animatablePath.fillColor
         shapeLayer.position = CGPoint(x: shapeLayer.bounds.midX, y: frame.height/2.0)
-        shapeLayer.backgroundColor = CGColorCreateCopyWithAlpha(shapeLayer.fillColor, 0.1)
+        shapeLayer.backgroundColor = CGColorCreateCopyWithAlpha(shapeLayer.fillColor, 0.3)
         layer.addSublayer(shapeLayer)
         ShapeLayer.disableActions = false
     }
@@ -57,10 +57,6 @@ class EventCell: UICollectionViewCell {
     func setup() {
         backgroundColor = UIColor.clearColor()
         clipsToBounds = true
-
-        layer.backgroundColor = UIColor.clearColor().CGColor
-        layer.borderColor = UIColor.blackColor().CGColor
-        layer.borderWidth = 2.0
     }
 
     func animate() {

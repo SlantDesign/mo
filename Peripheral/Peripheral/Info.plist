@@ -38,5 +38,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>UniversLTStd-LightUltraCn.otf</string>
+		<string>Inconsolata.otf</string>
+	</array>
 </dict>
 </plist>

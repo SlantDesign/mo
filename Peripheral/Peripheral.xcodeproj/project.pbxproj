@@ -16,6 +16,8 @@
 		1F64C80B1CB4FDD0006886BF /* Artists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; };
 		1F64C80C1CB4FDD0006886BF /* Artists.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64C80A1CB4FDD0006886BF /* Artists.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F94A5D81CB5C9EC008FDC5C /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */; };
+		1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */; };
+		1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */; };
 		1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
@@ -78,6 +80,8 @@
 		1F64C7641CB4F909006886BF /* Artists.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Artists.framework; path = "../../../Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphonesimulator/Artists.framework"; sourceTree = "<group>"; };
 		1F64C80A1CB4FDD0006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Artists.framework; path = "/Users/travis/Library/Developer/Xcode/DerivedData/MO-cyormbdxbwelpbbucosiysjwropz/Build/Products/Debug-iphoneos/Artists.framework"; sourceTree = "<absolute>"; };
 		1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
+		1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-LightUltraCn.otf"; sourceTree = "<group>"; };
+		1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
 		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
 				1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */,
 				1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */,
+				1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */,
+				1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */,
 				1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
 				1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */,
@@ -331,7 +337,9 @@
 				1FEA02F41CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard in Resources */,
 				D9DAAE591CB2D524000D647A /* LaunchScreen.xib in Resources */,
 				D9DAAE5A1CB2D524000D647A /* Main.storyboard in Resources */,
+				1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
+				1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */,
 				1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
 				1FEA02F61CB428B600BE9EF1 /* HourHeaderView.xib in Resources */,

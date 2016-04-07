@@ -25,7 +25,7 @@ class AnimatableCellPath {
     }
 
     func generatePath() {
-        let font = Font(name: "AppleSDGothicNeo-Bold", size: Double(visibleFrame.size.height))!
+        let font = Font(name: "UniversLTStd-LightUltraCn", size: Double(visibleFrame.size.height))!
 
         //create a titleElements array
         var titleElements = [String]()

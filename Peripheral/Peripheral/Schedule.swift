@@ -137,29 +137,30 @@ class Schedule: NSObject, UICollectionViewDataSource {
         let h = heightForDay(event.day)
         let y = CGFloat(levelForVenue(event.location, day: event.day)) * h
         let w = CGFloat(event.duration) / 60.0 * hour.width
-        return CGRect(x: x, y: y, width: w, height: h)
+        let base = CGRect(x: x, y: y, width: w, height: h)
+        return CGRectInset(base, 2, 6)
     }
 
     func colorFor(event: Event) -> CGColor {
         switch event.type {
-        case "IntensiveWorkshop":
-            return UIColor.blueColor().CGColor
-        case "Workshop":
-            return UIColor.redColor().CGColor
-        case "Screening":
-            return UIColor.greenColor().CGColor
-        case "Lecture":
-            return UIColor.darkGrayColor().CGColor
         case "Performance":
-            return UIColor.purpleColor().CGColor
+            return UIColor(red: 0.176, green: 1.0, blue: 0.89, alpha: 1.0).CGColor
+        case "Workshop":
+            return UIColor(red: 0.243, green: 0.831, blue: 1.0, alpha: 1.0).CGColor
+        case "Lecture":
+            return UIColor(red: 0.427, green: 0.522, blue: 1.0, alpha: 1.0).CGColor
+        case "Screening":
+            return UIColor(red: 0.176, green: 0.945, blue: 1.0, alpha: 1.0).CGColor
+        case "IntensiveWorkshop":
+            return UIColor(red: 0.369, green: 0.627, blue: 1.0, alpha: 1.0).CGColor
         case "QA":
-            return UIColor.magentaColor().CGColor
+            return UIColor(red: 0.467, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
         case "Panel":
-            return UIColor.orangeColor().CGColor
+            return UIColor(red: 0.298, green: 0.725, blue: 1.0, alpha: 1.0).CGColor
         case "Venue":
-            return UIColor.yellowColor().CGColor
+            return UIColor(red: 0.635, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
         case "OverNight":
-            return UIColor.whiteColor().CGColor
+            return UIColor(red: 0.769, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
         default:
             return UIColor.lightGrayColor().CGColor
         }

@@ -119,7 +119,7 @@ class ArtistView: View, UITextViewDelegate {
         let f = Rect(20,20, self.width - 40, self.height-20)
         self.textView = UITextView(frame: CGRect(f))
         self.textView.contentInset = UIEdgeInsets(top: 740.0, left: 0, bottom: 20.0, right: 0)
-        self.textView.font = UIFont(name: "Inconsolata", size: 16.0)
+        self.textView.font = UIFont(name: "Inconsolata", size: 17.0)
         self.textView.textColor = .lightGrayColor()
         self.textView.backgroundColor = .clearColor()
         self.textView.selectable = true
