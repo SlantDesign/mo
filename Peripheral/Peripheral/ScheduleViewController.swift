@@ -24,8 +24,9 @@ public class ScheduleViewController: UICollectionViewController {
     var lastLocalInteractionTimestamp: NSTimeInterval?
     weak var interactionCeaseTimer: NSTimer?
     var scrollUniverseDelegate: ScrollUniverseDelegate?
-
+    var tap: UITapGestureRecognizer!
     var dx : CGFloat = 0.0
+    var shapeTimer: Timer!
 
     override public func viewDidLoad() {
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
@@ -40,12 +41,17 @@ public class ScheduleViewController: UICollectionViewController {
         ArtistView.shared.opacity = 0.0
         ShapeLayer.disableActions = false
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(generateShapeFromTap))
+        tap = UITapGestureRecognizer(target: self, action: #selector(generateShapeFromRecognizer))
         collectionView?.addGestureRecognizer(tap)
+        tap.numberOfTapsRequired = 2
+        tap.delaysTouchesBegan = true
 
         if let grs = collectionView?.gestureRecognizers {
-            for g in grs {
-                g.addTarget(self, action: #selector(ScheduleViewController.registerUserInteraction(_:)))
+            for i in 0..<grs.count {
+                if i == 1 {
+                    let g = grs[i]
+                    g.addTarget(self, action: #selector(registerUserInteraction))
+                }
             }
         }
 
@@ -53,19 +59,39 @@ public class ScheduleViewController: UICollectionViewController {
         indicator.center = Point(collectionView!.center)
         indicator.zPosition = Double(Int.max)
         collectionView?.add(indicator)
+
+        shapeTimer = Timer(interval: 28.0) {
+            let x = random01() * frameCanvasWidth
+            let y = random01() * Double(self.collectionView!.bounds.height)
+            self.generateShapeAtPoint(Point(x+Double(self.collectionView!.contentOffset.x),y))
+        }
+
+        wait(Double(SocketManager.sharedManager.deviceID)) {
+            self.shapeTimer.start()
+        }
     }
 
-    func generateShapeFromTap(tap: UITapGestureRecognizer) {
-        var center = tap.location
+    func generateShapeFromRecognizer(gr: UIGestureRecognizer) {
+        var center = gr.location
         center.x += Double(collectionView!.contentOffset.x)
         generateShapeAtPoint(center)
     }
 
+    public func generateShapeFromData(data: NSData) {
+        let shape = ResonateShapeGenerator.shared.rebuildShape(data)
+        addShapeToBack(shape)
+
+    }
+
+    func addShapeToBack(shape: Gradient) {
+        shape.zPosition = -1000
+        collectionView?.add(shape)
+        collectionView?.sendSubviewToBack(shape.view)
+    }
+
     func generateShapeAtPoint(point: Point) {
         let shapeData: (Gradient, NSData) = ResonateShapeGenerator.shared.createRandomShape(point)
-
-        shapeData.0.zPosition = -500
-        collectionView?.add(shapeData.0)
+        addShapeToBack(shapeData.0)
 
         let deviceId = SocketManager.sharedManager.deviceID
         let packet = Packet(type: PacketType.ResonateShape, id: deviceId, data: shapeData.1)
@@ -113,10 +139,6 @@ public class ScheduleViewController: UICollectionViewController {
     }
 
     //MARK: RemoteInteraction
-
-    public var shouldReportScroll: Bool {
-        return scrollSource == .Local
-    }
 
     public func registerUserInteraction(gestureRecognizer: UIGestureRecognizer) {
         scrollSource = .Local
@@ -204,5 +226,4 @@ public class ScheduleViewController: UICollectionViewController {
 
         return indicator
     }
-}
 }

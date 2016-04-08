@@ -30,6 +30,7 @@ class ResonateShapeGenerator {
         shape.fillColor = clear
         shape.lineJoin = .Miter
         shape.strokeEnd = 0.0
+        shape.interactionEnabled = false
 
         let inset = CGFloat(-shape.lineWidth/2.0)
         let insetFrame = CGRectInset(shape.view.bounds, inset, inset)
@@ -47,7 +48,6 @@ class ResonateShapeGenerator {
         let reveal = ViewAnimation(duration: 2.0) {
             shape.strokeEnd = 1.0
         }
-        reveal.delay = 0.25
         reveal.curve = .EaseInOut
 
         let hide = ViewAnimation(duration: 2.0) {

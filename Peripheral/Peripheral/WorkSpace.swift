@@ -61,8 +61,7 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegat
                 return
             }
 
-            let shape = ResonateShapeGenerator.shared.rebuildShape(d)
-            scheduleViewController?.collectionView?.add(shape)
+            scheduleViewController?.generateShapeFromData(d)
         case .Cease:
             scheduleViewController?.registerRemoteCease(packet.id)
         default:
