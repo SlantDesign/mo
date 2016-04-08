@@ -80,7 +80,7 @@ class ArtistView: View, UITextViewDelegate {
             return
         }
 
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             let shapes = self.generateShapes(function())
             dispatch_async(dispatch_get_main_queue()) {
                 self.animateShapes(shapes)

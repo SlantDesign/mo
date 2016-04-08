@@ -14,9 +14,10 @@ import Artists
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var socketManager: SocketManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        SocketManager.sharedManager
+
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
         return true

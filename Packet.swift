@@ -18,6 +18,9 @@ public enum PacketType: Int8 {
 
     /// Packet sent when a shape is added to the collectionView
     case ResonateShape
+
+    /// Packet sent when it's time to change universes
+    case SwitchUniverse
 }
 
 enum PacketInitializationError: ErrorType {

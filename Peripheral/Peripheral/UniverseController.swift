@@ -31,7 +31,11 @@ public class UniverseController : CanvasController {
             return Double(id-1) * frameCanvasWidth - frameGap/2.0
         }
     }
-    
+
+    public func receivePacket(packet: Packet) {
+        
+    }
+
     public func handleGesture(gesture: Gesture) {
         
     }

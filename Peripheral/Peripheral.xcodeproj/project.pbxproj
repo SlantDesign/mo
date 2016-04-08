@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545D751C97E64C00436812 /* AppDelegate.swift */; };
-		1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E0A1C97E64D00436812 /* WorkSpace.swift */; };
+		1F545E0B1C97E64D00436812 /* Resonate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E0A1C97E64D00436812 /* Resonate.swift */; };
 		1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E0C1C97E64D00436812 /* Main.storyboard */; };
 		1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F545E111C97E64D00436812 /* LaunchScreen.xib */; };
 		1F545E1E1C97E64D00436812 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545E1D1C97E64D00436812 /* PeripheralTests.swift */; };
@@ -20,6 +20,10 @@
 		1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */; };
 		1F94A69D1CB70559008FDC5C /* ResonateShapeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */; };
 		1F94A75E1CB760FC008FDC5C /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A75D1CB760FC008FDC5C /* programme2016.plist */; };
+		1F94A7631CB77A5A008FDC5C /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A7621CB77A5A008FDC5C /* WorkSpace.swift */; };
+		1F94A7651CB78738008FDC5C /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A7641CB78738008FDC5C /* Status.swift */; };
+		1F94A7671CB78F44008FDC5C /* ThinVeil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A7661CB78F44008FDC5C /* ThinVeil.mp3 */; };
+		1F94A8EF1CB7B370008FDC5C /* BlackVelvet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A8EE1CB7B370008FDC5C /* BlackVelvet.mp3 */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
 		1FEA02EE1CB3A17A00BE9EF1 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */; };
@@ -69,7 +73,7 @@
 /* Begin PBXFileReference section */
 		1F545D721C97E64C00436812 /* Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F545D751C97E64C00436812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F545E0A1C97E64D00436812 /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
+		1F545E0A1C97E64D00436812 /* Resonate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resonate.swift; sourceTree = "<group>"; };
 		1F545E0D1C97E64D00436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F545E0F1C97E64D00436812 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F545E121C97E64D00436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,6 +89,10 @@
 		1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
 		1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateShapeGenerator.swift; sourceTree = "<group>"; };
 		1F94A75D1CB760FC008FDC5C /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
+		1F94A7621CB77A5A008FDC5C /* WorkSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
+		1F94A7641CB78738008FDC5C /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		1F94A7661CB78F44008FDC5C /* ThinVeil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ThinVeil.mp3; sourceTree = "<group>"; };
+		1F94A8EE1CB7B370008FDC5C /* BlackVelvet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlackVelvet.mp3; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -186,12 +194,14 @@
 				D9C6344B1C98CA6600AB3F75 /* InfiniteScrollview.swift */,
 				A93957C01CA24F0900EF809A /* RemoteInteraction.swift */,
 				1F545D751C97E64C00436812 /* AppDelegate.swift */,
+				1F94A7621CB77A5A008FDC5C /* WorkSpace.swift */,
 				D9C6342D1C9896F000AB3F75 /* SocketManager.swift */,
-				1F545E0A1C97E64D00436812 /* WorkSpace.swift */,
 				1FEA02F71CB4293300BE9EF1 /* HourHeaderView.swift */,
 				1F94A5D71CB5C9EC008FDC5C /* ArtistView.swift */,
 				1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */,
 				1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */,
+				1F94A7661CB78F44008FDC5C /* ThinVeil.mp3 */,
+				1F94A8EE1CB7B370008FDC5C /* BlackVelvet.mp3 */,
 				1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
 				1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */,
@@ -234,7 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				D9C634441C98C93800AB3F75 /* UniverseController.swift */,
+				1F94A7641CB78738008FDC5C /* Status.swift */,
 				D9C634491C98CA2700AB3F75 /* Spiral.swift */,
+				1F545E0A1C97E64D00436812 /* Resonate.swift */,
 			);
 			name = Universes;
 			sourceTree = "<group>";
@@ -341,10 +353,12 @@
 				D9DAAE591CB2D524000D647A /* LaunchScreen.xib in Resources */,
 				1F94A75E1CB760FC008FDC5C /* programme2016.plist in Resources */,
 				D9DAAE5A1CB2D524000D647A /* Main.storyboard in Resources */,
+				1F94A7671CB78F44008FDC5C /* ThinVeil.mp3 in Resources */,
 				1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
 				1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
+				1F94A8EF1CB7B370008FDC5C /* BlackVelvet.mp3 in Resources */,
 				1FEA02F61CB428B600BE9EF1 /* HourHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,17 +444,19 @@
 				D9C6342E1C9896F000AB3F75 /* SocketManager.swift in Sources */,
 				1F94A5D81CB5C9EC008FDC5C /* ArtistView.swift in Sources */,
 				D9C634361C98A01200AB3F75 /* Packet.swift in Sources */,
+				1F94A7631CB77A5A008FDC5C /* WorkSpace.swift in Sources */,
 				1F545D761C97E64C00436812 /* AppDelegate.swift in Sources */,
 				1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */,
 				D9C634451C98C93800AB3F75 /* UniverseController.swift in Sources */,
 				1FEA02F11CB3A17A00BE9EF1 /* EventCell.swift in Sources */,
 				1FEA02EF1CB3A17A00BE9EF1 /* Schedule.swift in Sources */,
 				1F64C6CB1CB4DF9B006886BF /* AnimatableCellPath.swift in Sources */,
+				1F94A7651CB78738008FDC5C /* Status.swift in Sources */,
 				1FEA02F81CB4293300BE9EF1 /* HourHeaderView.swift in Sources */,
 				D9C6344C1C98CA6600AB3F75 /* InfiniteScrollview.swift in Sources */,
 				1F94A69D1CB70559008FDC5C /* ResonateShapeGenerator.swift in Sources */,
 				D9C6344A1C98CA2700AB3F75 /* Spiral.swift in Sources */,
-				1F545E0B1C97E64D00436812 /* WorkSpace.swift in Sources */,
+				1F545E0B1C97E64D00436812 /* Resonate.swift in Sources */,
 				1FEA02F01CB3A17A00BE9EF1 /* ScheduleLayout.swift in Sources */,
 				1FEA02EE1CB3A17A00BE9EF1 /* ScheduleViewController.swift in Sources */,
 				A93957C11CA24F0900EF809A /* RemoteInteraction.swift in Sources */,

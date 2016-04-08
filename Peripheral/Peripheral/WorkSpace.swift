@@ -2,41 +2,42 @@
 //  WorkSpace.swift
 //  Peripheral
 //
-//  Created by travis on 2016-03-14.
+//  Created by travis on 2016-04-07.
 //  Copyright © 2016 C4. All rights reserved.
 //
 
-import C4
-import UIKit
-import CocoaAsyncSocket
+import Foundation
 import CocoaLumberjack
+import C4
 
-public protocol SpiralUniverseDelegate {
-    func shouldSendScrollData()
-    func shouldSendCease()
-}
-
-class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegate {
+class WorkSpace: CanvasController {
     var socketManager: SocketManager?
     var currentUniverse: UniverseController?
-    var scheduleViewController: ScheduleViewController?
+    var resonate: Resonate?
+    var status: Status?
+    var tap: UITapGestureRecognizer!
 
     override func setup() {
         initializeSocketManager()
-        initializeCollectionView()
+
+        status = Status()
+        currentUniverse = status
+        canvas.add(currentUniverse?.canvas)
+
+        tap = canvas.addTapGestureRecognizer { locations, center, state in
+            self.prepareUniverse()
+        }
     }
 
-    func initializeCollectionView() {
-        let storyboard = UIStoryboard(name: "ScheduleViewController", bundle: nil)
-        scheduleViewController = storyboard.instantiateViewControllerWithIdentifier("ScheduleViewController") as? ScheduleViewController
-        scheduleViewController?.collectionView?.dataSource = Schedule.shared
-        guard scheduleViewController != nil else {
-            print("Collection view could not be instantiated from storyboard.")
-            return
+    func prepareUniverse() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            self.resonate = Resonate()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.currentUniverse?.unload()
+                self.view.removeGestureRecognizer(self.tap)
+                self.switchUniverse(self.resonate!)
+            }
         }
-        canvas.add(scheduleViewController?.collectionView)
-        scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(SocketManager.sharedManager.deviceID-1) * 997.0, y: 0)
-        scheduleViewController?.scrollUniverseDelegate = self
     }
 
     func initializeSocketManager() {
@@ -46,42 +47,40 @@ class WorkSpace: CanvasController, GCDAsyncSocketDelegate, ScrollUniverseDelegat
 
     func receivePacket(packet: Packet) {
         switch packet.packetType {
-        case .Scroll:
-            guard let d = packet.data else {
-                DDLogVerbose("Packet does not contain point data")
-                return
+        case .SwitchUniverse:
+            if let name = extractNewUniverseName(packet.data) {
+                selectUniverse(name)
             }
-
-            let point = UnsafePointer<CGPoint>(d.bytes).memory
-            let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
-            scheduleViewController?.registerRemoteUserInteraction(interaction)
-        case .ResonateShape:
-            guard let d = packet.data else {
-                DDLogVerbose("Packet does not contain data")
-                return
-            }
-
-            scheduleViewController?.generateShapeFromData(d)
-        case .Cease:
-            scheduleViewController?.registerRemoteCease(packet.id)
         default:
-            break
+            currentUniverse?.receivePacket(packet)
+       }
+    }
+
+    func extractNewUniverseName(data: NSData?) -> String? {
+        if let d = data,
+        let name = NSString(data: d, encoding: NSUTF8StringEncoding) {
+            return name as String
+        }
+        return nil
+    }
+
+    func selectUniverse(name: String) -> UniverseController? {
+        switch name {
+        case "Resonate":
+            return resonate
+        default:
+            return nil
         }
     }
 
-    func shouldSendScrollData() {
-        var point = scheduleViewController!.collectionView!.contentOffset
-        let data = NSMutableData()
-        data.appendBytes(&point, length: sizeof(CGPoint))
-
-        let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: PacketType.Scroll, id: deviceId, data: data)
-        socketManager?.broadcastPacket(packet)
+    func switchUniverse(newUniverse: UniverseController) {
+        UIView.transitionFromView(currentUniverse!.canvas.view, toView: newUniverse.canvas.view, duration: 0.5, options: [UIViewAnimationOptions.BeginFromCurrentState, UIViewAnimationOptions.TransitionCrossDissolve]) { (Bool) -> Void in
+            self.currentUniverse?.unload()
+            self.currentUniverse = newUniverse
+        }
     }
 
-    func shouldSendCease() {
-        let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: .Cease, id: deviceId)
-        socketManager?.broadcastPacket(packet)
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
