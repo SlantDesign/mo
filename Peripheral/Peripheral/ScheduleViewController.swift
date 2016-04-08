@@ -18,6 +18,7 @@ public protocol ScrollUniverseDelegate {
 
 public class ScheduleViewController: UICollectionViewController {
     let interactionTimeout = NSTimeInterval(5)
+    var indicator: Shape!
     var scrollSource = ScrollSource.Local
     var interactionsByID = [Int: RemoteInteraction]()
     var lastLocalInteractionTimestamp: NSTimeInterval?
@@ -25,7 +26,6 @@ public class ScheduleViewController: UICollectionViewController {
     var scrollUniverseDelegate: ScrollUniverseDelegate?
 
     var dx : CGFloat = 0.0
-    let indicator = Circle(center: Point(0,1014), radius: 5)
 
     override public func viewDidLoad() {
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
@@ -37,9 +37,6 @@ public class ScheduleViewController: UICollectionViewController {
         collectionView?.registerNib(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
         collectionView?.delegate = self
         ShapeLayer.disableActions = true
-        indicator.lineWidth = 0.0
-        indicator.zPosition = Double(Int.max)
-        collectionView?.add(indicator)
         ArtistView.shared.opacity = 0.0
         ShapeLayer.disableActions = false
 
@@ -51,6 +48,11 @@ public class ScheduleViewController: UICollectionViewController {
                 g.addTarget(self, action: #selector(ScheduleViewController.registerUserInteraction(_:)))
             }
         }
+
+        indicator = createScrollIndicator()
+        indicator.center = Point(collectionView!.center)
+        indicator.zPosition = Double(Int.max)
+        collectionView?.add(indicator)
     }
 
     func generateShapeFromTap(tap: UITapGestureRecognizer) {
@@ -87,12 +89,16 @@ public class ScheduleViewController: UICollectionViewController {
             scrollView.contentOffset = newOffset
         }
 
-        var x = Double(scrollView.contentOffset.x / scrollView.contentSize.width)
-        x *= 768.0
-        x *= 2.0
-        x += Double(scrollView.contentOffset.x)
+        let x = Double(scrollView.contentOffset.x / Schedule.shared.singleContentWidth)
         ShapeLayer.disableActions = true
-        indicator.center = Point(x ,indicator.center.y)
+        let a = max(x*768.0 - 5,0) / 768.0
+        let b = min(x*768.0 + 5, 768.0) / 768.0
+
+        indicator.strokeStart = a
+        indicator.strokeEnd = b
+
+        indicator.center = Point(Double(scrollView.contentOffset.x+scrollView.frame.width/2.0), Double(scrollView.frame.height) - indicator.height)
+
         ShapeLayer.disableActions = false
 
         if scrollSource != .Local {
@@ -177,4 +183,26 @@ public class ScheduleViewController: UICollectionViewController {
         scrollUniverseDelegate?.shouldSendCease()
     }
 
+    func createScrollIndicator() -> Shape {
+        let dx = Vector(x: 5, y: 0)
+        let dxdy = Vector(x: 10, y: -5)
+
+        var point = Point()
+        let path = Path()
+
+        while point.x <= 758.0 {
+            path.moveToPoint(point)
+            path.addLineToPoint(point + dxdy)
+            point += dx
+        }
+
+        let indicator = Shape(path)
+        indicator.frame = Rect(0,0,768,indicator.height)
+        indicator.fillColor = clear
+        indicator.lineWidth = 0.5
+        indicator.strokeColor = white
+
+        return indicator
+    }
+}
 }
