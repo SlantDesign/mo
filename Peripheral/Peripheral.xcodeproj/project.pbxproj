@@ -19,7 +19,7 @@
 		1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */; };
 		1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */; };
 		1F94A69D1CB70559008FDC5C /* ResonateShapeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */; };
-		1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */; };
+		1F94A75E1CB760FC008FDC5C /* programme2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F94A75D1CB760FC008FDC5C /* programme2016.plist */; };
 		1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */; };
 		1FEA02ED1CB3A17A00BE9EF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E41CB3A17A00BE9EF1 /* Event.swift */; };
 		1FEA02EE1CB3A17A00BE9EF1 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */; };
@@ -84,7 +84,7 @@
 		1F94A5D91CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-LightUltraCn.otf"; sourceTree = "<group>"; };
 		1F94A5DB1CB6E14C008FDC5C /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
 		1F94A69C1CB70559008FDC5C /* ResonateShapeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateShapeGenerator.swift; sourceTree = "<group>"; };
-		1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
+		1F94A75D1CB760FC008FDC5C /* programme2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = programme2016.plist; sourceTree = "<group>"; };
 		1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = venueOrder.plist; sourceTree = "<group>"; };
 		1FEA02E41CB3A17A00BE9EF1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				D9C634471C98C99100AB3F75 /* Gesture.swift */,
 				D9DAAE491CB2D524000D647A /* Base.lproj */,
 				D9DAAE521CB2D524000D647A /* Images.xcassets */,
-				1FEA02E11CB3A17A00BE9EF1 /* programme2016.plist */,
+				1F94A75D1CB760FC008FDC5C /* programme2016.plist */,
 				1FEA02E21CB3A17A00BE9EF1 /* venueOrder.plist */,
 				1FEA02E41CB3A17A00BE9EF1 /* Event.swift */,
 				1FEA02E51CB3A17A00BE9EF1 /* ScheduleViewController.swift */,
@@ -339,11 +339,11 @@
 				1FEA02EB1CB3A17A00BE9EF1 /* venueOrder.plist in Resources */,
 				1FEA02F41CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard in Resources */,
 				D9DAAE591CB2D524000D647A /* LaunchScreen.xib in Resources */,
+				1F94A75E1CB760FC008FDC5C /* programme2016.plist in Resources */,
 				D9DAAE5A1CB2D524000D647A /* Main.storyboard in Resources */,
 				1F94A5DA1CB6E097008FDC5C /* UniversLTStd-LightUltraCn.otf in Resources */,
 				1F545E131C97E64D00436812 /* LaunchScreen.xib in Resources */,
 				1F94A5DC1CB6E14C008FDC5C /* Inconsolata.otf in Resources */,
-				1FEA02EA1CB3A17A00BE9EF1 /* programme2016.plist in Resources */,
 				1F545E0E1C97E64D00436812 /* Main.storyboard in Resources */,
 				1FEA02F61CB428B600BE9EF1 /* HourHeaderView.xib in Resources */,
 			);
