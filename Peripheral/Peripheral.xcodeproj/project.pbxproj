@@ -75,7 +75,6 @@
 		1F545D751C97E64C00436812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F545E0A1C97E64D00436812 /* Resonate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resonate.swift; sourceTree = "<group>"; };
 		1F545E0D1C97E64D00436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1F545E0F1C97E64D00436812 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F545E121C97E64D00436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1F545E141C97E64D00436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F545E191C97E64D00436812 /* PeripheralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeripheralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,7 +204,6 @@
 				1FEA02F31CB3A1BF00BE9EF1 /* ScheduleViewController.storyboard */,
 				1F545E0C1C97E64D00436812 /* Main.storyboard */,
 				1FEA02F51CB428B600BE9EF1 /* HourHeaderView.xib */,
-				1F545E0F1C97E64D00436812 /* Images.xcassets */,
 				1F545E111C97E64D00436812 /* LaunchScreen.xib */,
 				1F545E141C97E64D00436812 /* Info.plist */,
 				1F4227F11C97FE3D00B731FE /* Frameworks */,
