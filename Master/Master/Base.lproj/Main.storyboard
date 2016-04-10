@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -674,13 +674,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUw-Dh-6WW">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="209"/>
                                 <clipView key="contentView" id="vPK-Bw-xNZ">
-                                    <rect key="frame" x="1" y="23" width="478" height="246"/>
+                                    <rect key="frame" x="1" y="0.0" width="478" height="208"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="DDz-lD-oHe" viewBased="YES" id="I29-kc-mbY">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="246"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="185"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -807,11 +807,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-Wd-VZn">
+                                <rect key="frame" x="14" y="222" width="141" height="32"/>
+                                <buttonCell key="cell" type="push" title="Sync Animations" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LZC-Sg-bcU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="syncAnimations:" target="XfG-lQ-9wD" id="w1C-DG-2qE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aUw-Dh-6WW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4Mu-Nm-Nqx"/>
+                            <constraint firstItem="Wgh-Wd-VZn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5qR-fj-hVm"/>
                             <constraint firstAttribute="trailing" secondItem="aUw-Dh-6WW" secondAttribute="trailing" id="Q2D-U7-k1S"/>
-                            <constraint firstItem="aUw-Dh-6WW" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="YgN-F0-VK0"/>
+                            <constraint firstItem="aUw-Dh-6WW" firstAttribute="top" secondItem="Wgh-Wd-VZn" secondAttribute="bottom" constant="20" id="ghe-rH-sw6"/>
+                            <constraint firstItem="Wgh-Wd-VZn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="phf-bn-V6E"/>
                             <constraint firstAttribute="bottom" secondItem="aUw-Dh-6WW" secondAttribute="bottom" id="rph-qf-1Qk"/>
                         </constraints>
                     </view>

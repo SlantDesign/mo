@@ -49,6 +49,7 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
             let point = UnsafePointer<CGPoint>(d.bytes).memory
             let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
             scheduleViewController?.registerRemoteUserInteraction(interaction)
+
         case .ResonateShape:
             guard let d = packet.data else {
                 DDLogVerbose("Packet does not contain data")
@@ -56,8 +57,13 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
             }
 
             scheduleViewController?.generateShapeFromData(d)
+
         case .Cease:
             scheduleViewController?.registerRemoteCease(packet.id)
+
+        case .Sync:
+            scheduleViewController?.syncTimestamp = CFAbsoluteTimeGetCurrent()
+
         default:
             break
         }

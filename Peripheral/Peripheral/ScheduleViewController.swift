@@ -27,6 +27,19 @@ public class ScheduleViewController: UICollectionViewController {
     var tap: UITapGestureRecognizer!
     var dx : CGFloat = 0.0
     var shapeTimer: Timer!
+    var syncTimestamp: NSTimeInterval = 0 {
+        didSet {
+            Schedule.shared.syncTimestamp = syncTimestamp
+            guard let collectionView = collectionView else {
+                return
+            }
+            for cell in collectionView.visibleCells() {
+                if let eventCell = cell as? EventCell {
+                    eventCell.syncTimestamp = syncTimestamp
+                }
+            }
+        }
+    }
 
     override public func viewDidLoad() {
         collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")

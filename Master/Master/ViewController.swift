@@ -21,6 +21,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         tableView.reloadData()
     }
 
+    @IBAction func syncAnimations(sender: NSButton) {
+        let p = Packet(type: .Sync, id: SocketManager.masterID)
+        socketManager.socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+    }
+
+
     // MARK: - NSTableViewDataSource
 
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {

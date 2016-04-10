@@ -16,6 +16,7 @@ class WorkSpace: CanvasController {
     var resonate: Resonate?
     var status: Status?
     var tap: UITapGestureRecognizer!
+    var syncTimestamp: NSTimeInterval = 0
 
     override func setup() {
         initializeSocketManager()

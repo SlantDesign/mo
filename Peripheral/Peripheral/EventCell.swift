@@ -11,13 +11,18 @@ import UIKit
 import Foundation
 
 class EventCell: UICollectionViewCell {
-    var animatablePath: AnimatableCellPath! {
+    var animatablePath: AnimatableCellPath? {
         didSet {
             createLayer()
             animate()
         }
     }
     var shapeLayer: ShapeLayer = ShapeLayer()
+    var syncTimestamp: NSTimeInterval = 0 {
+        didSet {
+            animate()
+        }
+    }
 
     override func awakeFromNib() {
         setup()
@@ -45,9 +50,9 @@ class EventCell: UICollectionViewCell {
         ShapeLayer.disableActions = true
         shapeLayer.removeFromSuperlayer()
         shapeLayer.removeAllAnimations()
-        shapeLayer.path = animatablePath.path
-        shapeLayer.bounds = CGPathGetBoundingBox(animatablePath.path)
-        shapeLayer.fillColor = animatablePath.fillColor
+        shapeLayer.path = animatablePath?.path
+        shapeLayer.bounds = CGPathGetBoundingBox(animatablePath?.path)
+        shapeLayer.fillColor = animatablePath?.fillColor
         shapeLayer.position = CGPoint(x: shapeLayer.bounds.midX, y: frame.height/2.0)
         shapeLayer.backgroundColor = CGColorCreateCopyWithAlpha(shapeLayer.fillColor, 0.3)
         layer.addSublayer(shapeLayer)
@@ -60,10 +65,15 @@ class EventCell: UICollectionViewCell {
     }
 
     func animate() {
+        guard let animatablePath = animatablePath else {
+            return
+        }
+
         shapeLayer.removeAllAnimations()
         let keyPath = "position"
         let animation = CABasicAnimation(keyPath: keyPath)
         animation.duration = 30.0
+        animation.timeOffset = (CFAbsoluteTimeGetCurrent() - syncTimestamp) % animation.duration
         animation.beginTime = CACurrentMediaTime()
         animation.keyPath = keyPath
         animation.fromValue = NSValue(CGPoint: shapeLayer.position)

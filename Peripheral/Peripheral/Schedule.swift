@@ -33,6 +33,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return CGFloat(totalInterval) / 3600.0 * hour.width
     }
 
+    var syncTimestamp: NSTimeInterval = 0
     var events = [Event]()
 
     var animatablePaths = [AnimatableCellPath]()
@@ -128,6 +129,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
+        cell.syncTimestamp = syncTimestamp
         cell.animatablePath = animatablePaths[indexPath.item]
         return cell
     }

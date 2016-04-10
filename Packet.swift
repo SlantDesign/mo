@@ -21,6 +21,9 @@ public enum PacketType: Int8 {
 
     /// Packet sent when it's time to change universes
     case SwitchUniverse
+
+    /// Animation sync packer
+    case Sync
 }
 
 enum PacketInitializationError: ErrorType {
