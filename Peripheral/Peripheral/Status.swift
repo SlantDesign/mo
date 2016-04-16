@@ -54,9 +54,11 @@ class Status: UniverseController {
 
     func setupTimer() {
         timer = Timer(interval: 1.0/60.0) {
+            ShapeLayer.disableActions = true
             self.player.updateMeters()
             self.generateNextPoints()
             self.updateShapes()
+            ShapeLayer.disableActions = false
         }
 
         timer?.start()

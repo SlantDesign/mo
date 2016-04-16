@@ -9,7 +9,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let masterID = Int(INT_MAX)
     static let masterPort = UInt16(10101)
     static let peripheralPort = UInt16(11111)
-    static let broadcastHost = "10.0.255.255"
+    static let broadcastHost = "10.0.0.255"
     static let pingInterval = 0.5
     
     static let sharedManager = SocketManager()

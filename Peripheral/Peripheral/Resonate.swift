@@ -25,6 +25,10 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
         initializeCollectionView()
     }
 
+    override func load() {
+        Schedule.shared
+    }
+
     func initializeCollectionView() {
         let storyboard = UIStoryboard(name: "ScheduleViewController", bundle: nil)
         scheduleViewController = storyboard.instantiateViewControllerWithIdentifier("ScheduleViewController") as? ScheduleViewController
@@ -34,7 +38,7 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
             return
         }
         canvas.add(scheduleViewController?.collectionView)
-        scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(SocketManager.sharedManager.deviceID-1) * 997.0, y: 0)
+        scheduleViewController?.collectionView?.contentOffset = CGPoint(x: CGFloat(SocketManager.sharedManager.deviceID-1) * 997.0 + 1, y: 0)
         scheduleViewController?.scrollUniverseDelegate = self
     }
 

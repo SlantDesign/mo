@@ -2,7 +2,7 @@ import UIKit
 import C4
 public func mariskaDeGroot00() -> Path {
 	
-	var bezier2Path = UIBezierPath()
+	let bezier2Path = UIBezierPath()
 	bezier2Path.moveToPoint(CGPointMake(454.7, 7))
 	bezier2Path.addCurveToPoint(CGPointMake(450.4, 10.4), controlPoint1: CGPointMake(453.3, 8.1), controlPoint2: CGPointMake(451.8, 9.3))
 	bezier2Path.addCurveToPoint(CGPointMake(474.8, 24), controlPoint1: CGPointMake(458.5, 14.9), controlPoint2: CGPointMake(466.7, 19.5))

@@ -58,8 +58,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
         let df = NSDateFormatter()
         df.timeZone = NSTimeZone(name: "GMT")
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        startDate = df.dateFromString("2016-04-11 17:00:00")
-        endDate = df.dateFromString("2016-04-17 11:00:00")
+        startDate = df.dateFromString("2016-04-11 13:00:00")
+        endDate = df.dateFromString("2016-04-17 12:00:00")
 
         guard startDate != nil && endDate != nil else {
             print("Couldn't create the start and end dates")
@@ -136,8 +136,8 @@ class Schedule: NSObject, UICollectionViewDataSource {
 
     func frameFor(event:Event) -> CGRect {
         let x = CGFloat(event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width
-        let h = heightForDay(event.day)
-        let y = CGFloat(levelForVenue(event.location, day: event.day)) * h
+        let h = event.type == "OverNight" ? 980 : heightForDay(event.day)
+        let y = event.type == "OverNight" ? 0 : CGFloat(levelForVenue(event.location, day: event.day)) * h
         let w = CGFloat(event.duration) / 60.0 * hour.width
         let base = CGRect(x: x, y: y, width: w, height: h)
         return CGRectInset(base, 2, 6)
@@ -162,7 +162,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         case "Venue":
             return UIColor(red: 0.635, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
         case "OverNight":
-            return UIColor(red: 0.769, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.0).CGColor
         default:
             return UIColor.lightGrayColor().CGColor
         }
@@ -193,7 +193,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HourHeaderView", forIndexPath: indexPath)
 
         if let hour = headerView as? HourHeaderView {
-            hour.label!.text = String(format:"%2d:00", (indexPath.item + 10) % 24)
+            hour.label!.text = String(format:"%2d:00", (indexPath.item + 6) % 24)
         }
 
         return headerView

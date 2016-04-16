@@ -182,7 +182,12 @@ class ArtistView: View, UITextViewDelegate {
         if type != "" {
             completeString += type + "\n"
         }
-        completeString += "\(date)\n"
+
+        let df = NSDateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        df.timeZone = NSTimeZone(name: "PST")
+
+        completeString += "\(df.stringFromDate(date))\n"
         if location != "" {
             completeString += location + "\n"
         }

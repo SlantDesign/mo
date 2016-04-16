@@ -113,6 +113,9 @@ public class ScheduleViewController: UICollectionViewController {
 
     override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let e = Schedule.shared.eventAt(indexPath)
+        if e.type == "OverNight" || e.type == "Unknown" {
+            return
+        }
         ArtistView.shared.event = e
         collectionView.superview?.add(ArtistView.shared)
         ArtistView.shared.reveal()

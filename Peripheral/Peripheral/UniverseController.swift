@@ -19,6 +19,10 @@ public class UniverseController : CanvasController {
         }
     }
 
+    func load() {
+
+    }
+
     var accesPoints : Int {
         get {
             return 5
