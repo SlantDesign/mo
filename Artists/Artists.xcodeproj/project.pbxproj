@@ -7,161 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1846F37F821350825D8E90C1 /* Pods_Artists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE55A298DEAFABCFAF80F495 /* Pods_Artists.framework */; };
 		1F64C75D1CB4F8B9006886BF /* Artists.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F64C75C1CB4F8B9006886BF /* Artists.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F64C79F1CB4F971006886BF /* ArtistsEngineers04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7691CB4F971006886BF /* ArtistsEngineers04.swift */; };
-		1F64C8D01CB57FF3006886BF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C8CF1CB57FF3006886BF /* Helpers.swift */; };
-		1F64C8D11CB58081006886BF /* DarshaHewitt01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76A1CB4F971006886BF /* DarshaHewitt01.swift */; };
-		1F64C8D21CB58081006886BF /* KevinWalker00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76B1CB4F971006886BF /* KevinWalker00.swift */; };
-		1F64C8D41CB58081006886BF /* AlecEmpire00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76D1CB4F971006886BF /* AlecEmpire00.swift */; };
-		1F64C8D51CB58081006886BF /* AliGuney00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76E1CB4F971006886BF /* AliGuney00.swift */; };
 		1F64C8D61CB58081006886BF /* AndreasMuller01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */; };
-		1F64C8D71CB58081006886BF /* AO00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7701CB4F971006886BF /* AO00.swift */; };
-		1F64C8D81CB58081006886BF /* ArtificialRome01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7711CB4F971006886BF /* ArtificialRome01.swift */; };
-		1F64C8D91CB58081006886BF /* BethanyKoby00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7721CB4F971006886BF /* BethanyKoby00.swift */; };
-		1F64C8DA1CB58081006886BF /* CarstenGoertz00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7731CB4F971006886BF /* CarstenGoertz00.swift */; };
-		1F64C8DB1CB58081006886BF /* CathrineKramer02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7741CB4F971006886BF /* CathrineKramer02.swift */; };
-		1F64C8DC1CB58081006886BF /* ChrisSugrue02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7751CB4F971006886BF /* ChrisSugrue02.swift */; };
-		1F64C8DD1CB58081006886BF /* DanHett01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7761CB4F971006886BF /* DanHett01.swift */; };
-		1F64C8DE1CB58081006886BF /* DanielHirschmann00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7771CB4F971006886BF /* DanielHirschmann00.swift */; };
-		1F64C8DF1CB58081006886BF /* DanielHirschmann03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7781CB4F971006886BF /* DanielHirschmann03.swift */; };
-		1F64C8E01CB58081006886BF /* DanielMiller00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7791CB4F971006886BF /* DanielMiller00.swift */; };
-		1F64C8E11CB58081006886BF /* DennisPPaul00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77A1CB4F971006886BF /* DennisPPaul00.swift */; };
-		1F64C8E21CB58081006886BF /* DomesticDataStreamers01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77B1CB4F971006886BF /* DomesticDataStreamers01.swift */; };
-		1F64C8E31CB58081006886BF /* EliasHolzer00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77C1CB4F971006886BF /* EliasHolzer00.swift */; };
-		1F64C8E41CB58081006886BF /* ElliotWoods00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77D1CB4F971006886BF /* ElliotWoods00.swift */; };
-		1F64C8E51CB58081006886BF /* FelicienGoguey02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77E1CB4F971006886BF /* FelicienGoguey02.swift */; };
-		1F64C8E61CB58081006886BF /* GaelHugo02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C77F1CB4F971006886BF /* GaelHugo02.swift */; };
-		1F64C8E71CB58081006886BF /* Hans-JoachimRoedelius00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7801CB4F971006886BF /* Hans-JoachimRoedelius00.swift */; };
-		1F64C8E81CB58081006886BF /* IshacBertran00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7811CB4F971006886BF /* IshacBertran00.swift */; };
-		1F64C8E91CB58081006886BF /* JamesAuger00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7821CB4F971006886BF /* JamesAuger00.swift */; };
-		1F64C8EA1CB58081006886BF /* JanNemecek00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7831CB4F971006886BF /* JanNemecek00.swift */; };
-		1F64C8EB1CB58081006886BF /* JoshuaNoble01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7841CB4F971006886BF /* JoshuaNoble01.swift */; };
-		1F64C8EC1CB58081006886BF /* KaitlynAureliaSmith00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7851CB4F971006886BF /* KaitlynAureliaSmith00.swift */; };
-		1F64C8ED1CB58081006886BF /* KarstenSchmidt02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7861CB4F971006886BF /* KarstenSchmidt02.swift */; };
-		1F64C8EE1CB58081006886BF /* Kimchi&Chips01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7871CB4F971006886BF /* Kimchi&Chips01.swift */; };
-		1F64C8EF1CB58081006886BF /* KrisHermansson00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7881CB4F971006886BF /* KrisHermansson00.swift */; };
-		1F64C8F01CB58081006886BF /* Lukatoyboy01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7891CB4F971006886BF /* Lukatoyboy01.swift */; };
-		1F64C8F11CB58081006886BF /* MariskaDeGroot00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78A1CB4F971006886BF /* MariskaDeGroot00.swift */; };
-		1F64C8F21CB58081006886BF /* MatthewCollin00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78B1CB4F971006886BF /* MatthewCollin00.swift */; };
-		1F64C8F31CB58081006886BF /* MimiSon00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78C1CB4F971006886BF /* MimiSon00.swift */; };
-		1F64C8F41CB58081006886BF /* MomentFactory00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78D1CB4F971006886BF /* MomentFactory00.swift */; };
-		1F64C8F51CB58081006886BF /* NeilMendoza00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78E1CB4F971006886BF /* NeilMendoza00.swift */; };
-		1F64C8F61CB58081006886BF /* NinosDuBrasil00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C78F1CB4F971006886BF /* NinosDuBrasil00.swift */; };
-		1F64C8F71CB58081006886BF /* Onedotzero00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7901CB4F971006886BF /* Onedotzero00.swift */; };
-		1F64C8F81CB58081006886BF /* PabloGarcia01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7911CB4F971006886BF /* PabloGarcia01.swift */; };
-		1F64C8F91CB58081006886BF /* PauGarcia00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7921CB4F971006886BF /* PauGarcia00.swift */; };
-		1F64C8FA1CB58081006886BF /* PeLang02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7931CB4F971006886BF /* PeLang02.swift */; };
-		1F64C8FB1CB58081006886BF /* PhoenixPerry01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7941CB4F971006886BF /* PhoenixPerry01.swift */; };
-		1F64C8FC1CB58081006886BF /* PierreBastien00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7951CB4F971006886BF /* PierreBastien00.swift */; };
-		1F64C8FD1CB58081006886BF /* Playmodes04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7961CB4F971006886BF /* Playmodes04.swift */; };
-		1F64C8FE1CB58081006886BF /* RandomStudio02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7971CB4F971006886BF /* RandomStudio02.swift */; };
-		1F64C8FF1CB58081006886BF /* Razmasynth01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7981CB4F971006886BF /* Razmasynth01.swift */; };
-		1F64C9001CB58081006886BF /* RebeccaFiebrink01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C7991CB4F971006886BF /* RebeccaFiebrink01.swift */; };
-		1F64C9011CB58081006886BF /* RefikAnadol03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C79A1CB4F971006886BF /* RefikAnadol03.swift */; };
-		1F64C9021CB58081006886BF /* RomainTardy00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C79B1CB4F971006886BF /* RomainTardy00.swift */; };
-		1F64C9031CB58081006886BF /* RudiPunzo01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C79C1CB4F971006886BF /* RudiPunzo01.swift */; };
-		1F64C9041CB58081006886BF /* SebastianGregor00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C79D1CB4F971006886BF /* SebastianGregor00.swift */; };
-		1F64C9051CB58081006886BF /* TravisKirton00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C79E1CB4F971006886BF /* TravisKirton00.swift */; };
-		1F64C9071CB58247006886BF /* thirtyThreeTen00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9061CB58247006886BF /* thirtyThreeTen00.swift */; };
-		1F64C9161CB5A466006886BF /* Squarepusher00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9081CB5A466006886BF /* Squarepusher00.swift */; };
-		1F64C9171CB5A466006886BF /* SophiKravitz02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9091CB5A466006886BF /* SophiKravitz02.swift */; };
-		1F64C9181CB5A466006886BF /* PatricioGonzalezVivo01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90A1CB5A466006886BF /* PatricioGonzalezVivo01.swift */; };
-		1F64C9191CB5A466006886BF /* NicholasFelton03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90B1CB5A466006886BF /* NicholasFelton03.swift */; };
-		1F64C91A1CB5A466006886BF /* MuratPak02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90C1CB5A466006886BF /* MuratPak02.swift */; };
-		1F64C91B1CB5A466006886BF /* MemoAkten01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90D1CB5A466006886BF /* MemoAkten01.swift */; };
-		1F64C91C1CB5A466006886BF /* JohnFass00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90E1CB5A466006886BF /* JohnFass00.swift */; };
-		1F64C91D1CB5A466006886BF /* GorkaCortazar03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C90F1CB5A466006886BF /* GorkaCortazar03.swift */; };
-		1F64C91E1CB5A466006886BF /* Entropy00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9101CB5A466006886BF /* Entropy00.swift */; };
-		1F64C91F1CB5A466006886BF /* ENCAC00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9111CB5A466006886BF /* ENCAC00.swift */; };
-		1F64C9201CB5A466006886BF /* DigitalArtFestivalsAssessmentAndProspects00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9121CB5A466006886BF /* DigitalArtFestivalsAssessmentAndProspects00.swift */; };
-		1F64C9211CB5A466006886BF /* DanielSciboz00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9131CB5A466006886BF /* DanielSciboz00.swift */; };
-		1F64C9221CB5A466006886BF /* BuildersClub02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9141CB5A466006886BF /* BuildersClub02.swift */; };
-		1F64C9231CB5A466006886BF /* AtauTanaka00.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9151CB5A466006886BF /* AtauTanaka00.swift */; };
-		1F64C9251CB5BC4E006886BF /* RicardoCabello02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */; };
-		1F64C9271CB5BC56006886BF /* ResonateDefault2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */; };
-		1F94A5D61CB5BE9F008FDC5C /* DOT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94A5D51CB5BE9F008FDC5C /* DOT.swift */; };
+		D9B867361DAEB16D0051B1B1 /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B867351DAEB16D0051B1B1 /* C4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F64C7591CB4F8B9006886BF /* Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Artists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F64C75C1CB4F8B9006886BF /* Artists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artists.h; sourceTree = "<group>"; };
 		1F64C75E1CB4F8B9006886BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F64C7691CB4F971006886BF /* ArtistsEngineers04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsEngineers04.swift; sourceTree = "<group>"; };
-		1F64C76A1CB4F971006886BF /* DarshaHewitt01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarshaHewitt01.swift; sourceTree = "<group>"; };
-		1F64C76B1CB4F971006886BF /* KevinWalker00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KevinWalker00.swift; sourceTree = "<group>"; };
-		1F64C76D1CB4F971006886BF /* AlecEmpire00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlecEmpire00.swift; sourceTree = "<group>"; };
-		1F64C76E1CB4F971006886BF /* AliGuney00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliGuney00.swift; sourceTree = "<group>"; };
 		1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndreasMuller01.swift; sourceTree = "<group>"; };
-		1F64C7701CB4F971006886BF /* AO00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AO00.swift; sourceTree = "<group>"; };
-		1F64C7711CB4F971006886BF /* ArtificialRome01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtificialRome01.swift; sourceTree = "<group>"; };
-		1F64C7721CB4F971006886BF /* BethanyKoby00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BethanyKoby00.swift; sourceTree = "<group>"; };
-		1F64C7731CB4F971006886BF /* CarstenGoertz00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarstenGoertz00.swift; sourceTree = "<group>"; };
-		1F64C7741CB4F971006886BF /* CathrineKramer02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CathrineKramer02.swift; sourceTree = "<group>"; };
-		1F64C7751CB4F971006886BF /* ChrisSugrue02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChrisSugrue02.swift; sourceTree = "<group>"; };
-		1F64C7761CB4F971006886BF /* DanHett01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanHett01.swift; sourceTree = "<group>"; };
-		1F64C7771CB4F971006886BF /* DanielHirschmann00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielHirschmann00.swift; sourceTree = "<group>"; };
-		1F64C7781CB4F971006886BF /* DanielHirschmann03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielHirschmann03.swift; sourceTree = "<group>"; };
-		1F64C7791CB4F971006886BF /* DanielMiller00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielMiller00.swift; sourceTree = "<group>"; };
-		1F64C77A1CB4F971006886BF /* DennisPPaul00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DennisPPaul00.swift; sourceTree = "<group>"; };
-		1F64C77B1CB4F971006886BF /* DomesticDataStreamers01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomesticDataStreamers01.swift; sourceTree = "<group>"; };
-		1F64C77C1CB4F971006886BF /* EliasHolzer00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliasHolzer00.swift; sourceTree = "<group>"; };
-		1F64C77D1CB4F971006886BF /* ElliotWoods00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElliotWoods00.swift; sourceTree = "<group>"; };
-		1F64C77E1CB4F971006886BF /* FelicienGoguey02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FelicienGoguey02.swift; sourceTree = "<group>"; };
-		1F64C77F1CB4F971006886BF /* GaelHugo02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaelHugo02.swift; sourceTree = "<group>"; };
-		1F64C7801CB4F971006886BF /* Hans-JoachimRoedelius00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hans-JoachimRoedelius00.swift"; sourceTree = "<group>"; };
-		1F64C7811CB4F971006886BF /* IshacBertran00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IshacBertran00.swift; sourceTree = "<group>"; };
-		1F64C7821CB4F971006886BF /* JamesAuger00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JamesAuger00.swift; sourceTree = "<group>"; };
-		1F64C7831CB4F971006886BF /* JanNemecek00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanNemecek00.swift; sourceTree = "<group>"; };
-		1F64C7841CB4F971006886BF /* JoshuaNoble01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoshuaNoble01.swift; sourceTree = "<group>"; };
-		1F64C7851CB4F971006886BF /* KaitlynAureliaSmith00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaitlynAureliaSmith00.swift; sourceTree = "<group>"; };
-		1F64C7861CB4F971006886BF /* KarstenSchmidt02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarstenSchmidt02.swift; sourceTree = "<group>"; };
-		1F64C7871CB4F971006886BF /* Kimchi&Chips01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kimchi&Chips01.swift"; sourceTree = "<group>"; };
-		1F64C7881CB4F971006886BF /* KrisHermansson00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrisHermansson00.swift; sourceTree = "<group>"; };
-		1F64C7891CB4F971006886BF /* Lukatoyboy01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lukatoyboy01.swift; sourceTree = "<group>"; };
-		1F64C78A1CB4F971006886BF /* MariskaDeGroot00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MariskaDeGroot00.swift; sourceTree = "<group>"; };
-		1F64C78B1CB4F971006886BF /* MatthewCollin00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatthewCollin00.swift; sourceTree = "<group>"; };
-		1F64C78C1CB4F971006886BF /* MimiSon00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimiSon00.swift; sourceTree = "<group>"; };
-		1F64C78D1CB4F971006886BF /* MomentFactory00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentFactory00.swift; sourceTree = "<group>"; };
-		1F64C78E1CB4F971006886BF /* NeilMendoza00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeilMendoza00.swift; sourceTree = "<group>"; };
-		1F64C78F1CB4F971006886BF /* NinosDuBrasil00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinosDuBrasil00.swift; sourceTree = "<group>"; };
-		1F64C7901CB4F971006886BF /* Onedotzero00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onedotzero00.swift; sourceTree = "<group>"; };
-		1F64C7911CB4F971006886BF /* PabloGarcia01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PabloGarcia01.swift; sourceTree = "<group>"; };
-		1F64C7921CB4F971006886BF /* PauGarcia00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauGarcia00.swift; sourceTree = "<group>"; };
-		1F64C7931CB4F971006886BF /* PeLang02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeLang02.swift; sourceTree = "<group>"; };
-		1F64C7941CB4F971006886BF /* PhoenixPerry01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoenixPerry01.swift; sourceTree = "<group>"; };
-		1F64C7951CB4F971006886BF /* PierreBastien00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PierreBastien00.swift; sourceTree = "<group>"; };
-		1F64C7961CB4F971006886BF /* Playmodes04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playmodes04.swift; sourceTree = "<group>"; };
-		1F64C7971CB4F971006886BF /* RandomStudio02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomStudio02.swift; sourceTree = "<group>"; };
-		1F64C7981CB4F971006886BF /* Razmasynth01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Razmasynth01.swift; sourceTree = "<group>"; };
-		1F64C7991CB4F971006886BF /* RebeccaFiebrink01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RebeccaFiebrink01.swift; sourceTree = "<group>"; };
-		1F64C79A1CB4F971006886BF /* RefikAnadol03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefikAnadol03.swift; sourceTree = "<group>"; };
-		1F64C79B1CB4F971006886BF /* RomainTardy00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomainTardy00.swift; sourceTree = "<group>"; };
-		1F64C79C1CB4F971006886BF /* RudiPunzo01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RudiPunzo01.swift; sourceTree = "<group>"; };
-		1F64C79D1CB4F971006886BF /* SebastianGregor00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SebastianGregor00.swift; sourceTree = "<group>"; };
-		1F64C79E1CB4F971006886BF /* TravisKirton00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisKirton00.swift; sourceTree = "<group>"; };
 		1F64C8CF1CB57FF3006886BF /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		1F64C9061CB58247006886BF /* thirtyThreeTen00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirtyThreeTen00.swift; sourceTree = "<group>"; };
-		1F64C9081CB5A466006886BF /* Squarepusher00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarepusher00.swift; sourceTree = "<group>"; };
-		1F64C9091CB5A466006886BF /* SophiKravitz02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SophiKravitz02.swift; sourceTree = "<group>"; };
-		1F64C90A1CB5A466006886BF /* PatricioGonzalezVivo01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatricioGonzalezVivo01.swift; sourceTree = "<group>"; };
-		1F64C90B1CB5A466006886BF /* NicholasFelton03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicholasFelton03.swift; sourceTree = "<group>"; };
-		1F64C90C1CB5A466006886BF /* MuratPak02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuratPak02.swift; sourceTree = "<group>"; };
-		1F64C90D1CB5A466006886BF /* MemoAkten01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAkten01.swift; sourceTree = "<group>"; };
-		1F64C90E1CB5A466006886BF /* JohnFass00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnFass00.swift; sourceTree = "<group>"; };
-		1F64C90F1CB5A466006886BF /* GorkaCortazar03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GorkaCortazar03.swift; sourceTree = "<group>"; };
-		1F64C9101CB5A466006886BF /* Entropy00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entropy00.swift; sourceTree = "<group>"; };
-		1F64C9111CB5A466006886BF /* ENCAC00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENCAC00.swift; sourceTree = "<group>"; };
-		1F64C9121CB5A466006886BF /* DigitalArtFestivalsAssessmentAndProspects00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalArtFestivalsAssessmentAndProspects00.swift; sourceTree = "<group>"; };
-		1F64C9131CB5A466006886BF /* DanielSciboz00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielSciboz00.swift; sourceTree = "<group>"; };
-		1F64C9141CB5A466006886BF /* BuildersClub02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildersClub02.swift; sourceTree = "<group>"; };
-		1F64C9151CB5A466006886BF /* AtauTanaka00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtauTanaka00.swift; sourceTree = "<group>"; };
-		1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RicardoCabello02.swift; sourceTree = "<group>"; };
-		1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateDefault2.swift; sourceTree = "<group>"; };
-		1F94A5D51CB5BE9F008FDC5C /* DOT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOT.swift; sourceTree = "<group>"; };
-		E543778607A7B6E06DDDE31A /* Pods-Artists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artists.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artists/Pods-Artists.release.xcconfig"; sourceTree = "<group>"; };
-		EF29795ECA4B337DEFF7FC71 /* Pods-Artists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artists.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artists/Pods-Artists.debug.xcconfig"; sourceTree = "<group>"; };
-		FE55A298DEAFABCFAF80F495 /* Pods_Artists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B867351DAEB16D0051B1B1 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../C4iOS/build/Release-iphoneos/C4.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1846F37F821350825D8E90C1 /* Pods_Artists.framework in Frameworks */,
+				D9B867361DAEB16D0051B1B1 /* C4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +38,6 @@
 			children = (
 				1F64C75B1CB4F8B9006886BF /* Artists */,
 				1F64C75A1CB4F8B9006886BF /* Products */,
-				3034C63BD87FB533A010CCD0 /* Pods */,
 				55E306C5156497FC597B4B62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -199,95 +55,16 @@
 			children = (
 				1F64C75C1CB4F8B9006886BF /* Artists.h */,
 				1F64C8CF1CB57FF3006886BF /* Helpers.swift */,
-				1F64C7691CB4F971006886BF /* ArtistsEngineers04.swift */,
-				1F64C76A1CB4F971006886BF /* DarshaHewitt01.swift */,
-				1F64C76B1CB4F971006886BF /* KevinWalker00.swift */,
-				1F64C9061CB58247006886BF /* thirtyThreeTen00.swift */,
-				1F64C76D1CB4F971006886BF /* AlecEmpire00.swift */,
-				1F64C76E1CB4F971006886BF /* AliGuney00.swift */,
 				1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */,
-				1F64C7701CB4F971006886BF /* AO00.swift */,
-				1F64C7711CB4F971006886BF /* ArtificialRome01.swift */,
-				1F64C7721CB4F971006886BF /* BethanyKoby00.swift */,
-				1F64C7731CB4F971006886BF /* CarstenGoertz00.swift */,
-				1F64C7741CB4F971006886BF /* CathrineKramer02.swift */,
-				1F64C7751CB4F971006886BF /* ChrisSugrue02.swift */,
-				1F64C7761CB4F971006886BF /* DanHett01.swift */,
-				1F64C7771CB4F971006886BF /* DanielHirschmann00.swift */,
-				1F64C7781CB4F971006886BF /* DanielHirschmann03.swift */,
-				1F64C7791CB4F971006886BF /* DanielMiller00.swift */,
-				1F64C77A1CB4F971006886BF /* DennisPPaul00.swift */,
-				1F64C77B1CB4F971006886BF /* DomesticDataStreamers01.swift */,
-				1F64C77C1CB4F971006886BF /* EliasHolzer00.swift */,
-				1F64C77D1CB4F971006886BF /* ElliotWoods00.swift */,
-				1F64C77E1CB4F971006886BF /* FelicienGoguey02.swift */,
-				1F64C77F1CB4F971006886BF /* GaelHugo02.swift */,
-				1F64C7801CB4F971006886BF /* Hans-JoachimRoedelius00.swift */,
-				1F64C7811CB4F971006886BF /* IshacBertran00.swift */,
-				1F64C7821CB4F971006886BF /* JamesAuger00.swift */,
-				1F64C7831CB4F971006886BF /* JanNemecek00.swift */,
-				1F64C7841CB4F971006886BF /* JoshuaNoble01.swift */,
-				1F64C7851CB4F971006886BF /* KaitlynAureliaSmith00.swift */,
-				1F64C7861CB4F971006886BF /* KarstenSchmidt02.swift */,
-				1F64C7871CB4F971006886BF /* Kimchi&Chips01.swift */,
-				1F64C7881CB4F971006886BF /* KrisHermansson00.swift */,
-				1F64C7891CB4F971006886BF /* Lukatoyboy01.swift */,
-				1F64C78A1CB4F971006886BF /* MariskaDeGroot00.swift */,
-				1F64C78B1CB4F971006886BF /* MatthewCollin00.swift */,
-				1F64C78C1CB4F971006886BF /* MimiSon00.swift */,
-				1F64C78D1CB4F971006886BF /* MomentFactory00.swift */,
-				1F64C78E1CB4F971006886BF /* NeilMendoza00.swift */,
-				1F64C78F1CB4F971006886BF /* NinosDuBrasil00.swift */,
-				1F64C7901CB4F971006886BF /* Onedotzero00.swift */,
-				1F64C7911CB4F971006886BF /* PabloGarcia01.swift */,
-				1F64C7921CB4F971006886BF /* PauGarcia00.swift */,
-				1F64C7931CB4F971006886BF /* PeLang02.swift */,
-				1F64C7941CB4F971006886BF /* PhoenixPerry01.swift */,
-				1F64C7951CB4F971006886BF /* PierreBastien00.swift */,
-				1F64C7961CB4F971006886BF /* Playmodes04.swift */,
-				1F64C7971CB4F971006886BF /* RandomStudio02.swift */,
-				1F64C7981CB4F971006886BF /* Razmasynth01.swift */,
-				1F64C7991CB4F971006886BF /* RebeccaFiebrink01.swift */,
-				1F64C79A1CB4F971006886BF /* RefikAnadol03.swift */,
-				1F64C79B1CB4F971006886BF /* RomainTardy00.swift */,
-				1F64C79C1CB4F971006886BF /* RudiPunzo01.swift */,
-				1F64C79D1CB4F971006886BF /* SebastianGregor00.swift */,
-				1F64C79E1CB4F971006886BF /* TravisKirton00.swift */,
-				1F64C9081CB5A466006886BF /* Squarepusher00.swift */,
-				1F64C9091CB5A466006886BF /* SophiKravitz02.swift */,
-				1F64C90A1CB5A466006886BF /* PatricioGonzalezVivo01.swift */,
-				1F64C90B1CB5A466006886BF /* NicholasFelton03.swift */,
-				1F64C90C1CB5A466006886BF /* MuratPak02.swift */,
-				1F64C90D1CB5A466006886BF /* MemoAkten01.swift */,
-				1F64C90E1CB5A466006886BF /* JohnFass00.swift */,
-				1F64C90F1CB5A466006886BF /* GorkaCortazar03.swift */,
-				1F64C9101CB5A466006886BF /* Entropy00.swift */,
-				1F64C9111CB5A466006886BF /* ENCAC00.swift */,
-				1F64C9121CB5A466006886BF /* DigitalArtFestivalsAssessmentAndProspects00.swift */,
-				1F64C9131CB5A466006886BF /* DanielSciboz00.swift */,
-				1F64C9141CB5A466006886BF /* BuildersClub02.swift */,
-				1F64C9151CB5A466006886BF /* AtauTanaka00.swift */,
-				1F64C9241CB5BC4E006886BF /* RicardoCabello02.swift */,
-				1F64C9261CB5BC56006886BF /* ResonateDefault2.swift */,
-				1F94A5D51CB5BE9F008FDC5C /* DOT.swift */,
 				1F64C75E1CB4F8B9006886BF /* Info.plist */,
 			);
 			path = Artists;
 			sourceTree = "<group>";
 		};
-		3034C63BD87FB533A010CCD0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EF29795ECA4B337DEFF7FC71 /* Pods-Artists.debug.xcconfig */,
-				E543778607A7B6E06DDDE31A /* Pods-Artists.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		55E306C5156497FC597B4B62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE55A298DEAFABCFAF80F495 /* Pods_Artists.framework */,
+				D9B867351DAEB16D0051B1B1 /* C4.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,12 +87,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F64C7611CB4F8B9006886BF /* Build configuration list for PBXNativeTarget "Artists" */;
 			buildPhases = (
-				4304A0A6289D7B0792D18E57 /* 📦 Check Pods Manifest.lock */,
 				1F64C7541CB4F8B9006886BF /* Sources */,
 				1F64C7551CB4F8B9006886BF /* Frameworks */,
 				1F64C7561CB4F8B9006886BF /* Headers */,
 				1F64C7571CB4F8B9006886BF /* Resources */,
-				E420BAF8A9B8596D9AE7252F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,11 +107,12 @@
 		1F64C7501CB4F8B9006886BF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = C4;
 				TargetAttributes = {
 					1F64C7581CB4F8B9006886BF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -367,116 +143,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4304A0A6289D7B0792D18E57 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E420BAF8A9B8596D9AE7252F /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Artists/Pods-Artists-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		1F64C7541CB4F8B9006886BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1F64C8D61CB58081006886BF /* AndreasMuller01.swift in Sources */,
-				1F64C8EE1CB58081006886BF /* Kimchi&Chips01.swift in Sources */,
-				1F64C8EA1CB58081006886BF /* JanNemecek00.swift in Sources */,
-				1F94A5D61CB5BE9F008FDC5C /* DOT.swift in Sources */,
-				1F64C8E31CB58081006886BF /* EliasHolzer00.swift in Sources */,
-				1F64C9011CB58081006886BF /* RefikAnadol03.swift in Sources */,
-				1F64C91C1CB5A466006886BF /* JohnFass00.swift in Sources */,
-				1F64C8D91CB58081006886BF /* BethanyKoby00.swift in Sources */,
-				1F64C8F41CB58081006886BF /* MomentFactory00.swift in Sources */,
-				1F64C9021CB58081006886BF /* RomainTardy00.swift in Sources */,
-				1F64C8E01CB58081006886BF /* DanielMiller00.swift in Sources */,
-				1F64C8E81CB58081006886BF /* IshacBertran00.swift in Sources */,
-				1F64C8DA1CB58081006886BF /* CarstenGoertz00.swift in Sources */,
-				1F64C8FE1CB58081006886BF /* RandomStudio02.swift in Sources */,
-				1F64C8EC1CB58081006886BF /* KaitlynAureliaSmith00.swift in Sources */,
-				1F64C79F1CB4F971006886BF /* ArtistsEngineers04.swift in Sources */,
-				1F64C8E71CB58081006886BF /* Hans-JoachimRoedelius00.swift in Sources */,
-				1F64C8F91CB58081006886BF /* PauGarcia00.swift in Sources */,
-				1F64C9251CB5BC4E006886BF /* RicardoCabello02.swift in Sources */,
-				1F64C8E41CB58081006886BF /* ElliotWoods00.swift in Sources */,
-				1F64C9191CB5A466006886BF /* NicholasFelton03.swift in Sources */,
-				1F64C9051CB58081006886BF /* TravisKirton00.swift in Sources */,
-				1F64C8FC1CB58081006886BF /* PierreBastien00.swift in Sources */,
-				1F64C8DB1CB58081006886BF /* CathrineKramer02.swift in Sources */,
-				1F64C8E61CB58081006886BF /* GaelHugo02.swift in Sources */,
-				1F64C8D81CB58081006886BF /* ArtificialRome01.swift in Sources */,
-				1F64C8EB1CB58081006886BF /* JoshuaNoble01.swift in Sources */,
-				1F64C91B1CB5A466006886BF /* MemoAkten01.swift in Sources */,
-				1F64C9271CB5BC56006886BF /* ResonateDefault2.swift in Sources */,
-				1F64C91D1CB5A466006886BF /* GorkaCortazar03.swift in Sources */,
-				1F64C8FF1CB58081006886BF /* Razmasynth01.swift in Sources */,
-				1F64C8FD1CB58081006886BF /* Playmodes04.swift in Sources */,
-				1F64C8D21CB58081006886BF /* KevinWalker00.swift in Sources */,
-				1F64C8E11CB58081006886BF /* DennisPPaul00.swift in Sources */,
-				1F64C9171CB5A466006886BF /* SophiKravitz02.swift in Sources */,
-				1F64C8F71CB58081006886BF /* Onedotzero00.swift in Sources */,
-				1F64C9221CB5A466006886BF /* BuildersClub02.swift in Sources */,
-				1F64C91A1CB5A466006886BF /* MuratPak02.swift in Sources */,
-				1F64C9181CB5A466006886BF /* PatricioGonzalezVivo01.swift in Sources */,
-				1F64C8F01CB58081006886BF /* Lukatoyboy01.swift in Sources */,
-				1F64C8D51CB58081006886BF /* AliGuney00.swift in Sources */,
-				1F64C91F1CB5A466006886BF /* ENCAC00.swift in Sources */,
-				1F64C8D11CB58081006886BF /* DarshaHewitt01.swift in Sources */,
-				1F64C8F31CB58081006886BF /* MimiSon00.swift in Sources */,
-				1F64C8DD1CB58081006886BF /* DanHett01.swift in Sources */,
-				1F64C8F21CB58081006886BF /* MatthewCollin00.swift in Sources */,
-				1F64C8DE1CB58081006886BF /* DanielHirschmann00.swift in Sources */,
-				1F64C8F11CB58081006886BF /* MariskaDeGroot00.swift in Sources */,
-				1F64C8ED1CB58081006886BF /* KarstenSchmidt02.swift in Sources */,
-				1F64C8E91CB58081006886BF /* JamesAuger00.swift in Sources */,
-				1F64C9041CB58081006886BF /* SebastianGregor00.swift in Sources */,
-				1F64C8DC1CB58081006886BF /* ChrisSugrue02.swift in Sources */,
-				1F64C8EF1CB58081006886BF /* KrisHermansson00.swift in Sources */,
-				1F64C8D41CB58081006886BF /* AlecEmpire00.swift in Sources */,
-				1F64C8D71CB58081006886BF /* AO00.swift in Sources */,
-				1F64C8E21CB58081006886BF /* DomesticDataStreamers01.swift in Sources */,
-				1F64C8E51CB58081006886BF /* FelicienGoguey02.swift in Sources */,
-				1F64C9031CB58081006886BF /* RudiPunzo01.swift in Sources */,
-				1F64C9211CB5A466006886BF /* DanielSciboz00.swift in Sources */,
-				1F64C8D01CB57FF3006886BF /* Helpers.swift in Sources */,
-				1F64C9161CB5A466006886BF /* Squarepusher00.swift in Sources */,
-				1F64C8F81CB58081006886BF /* PabloGarcia01.swift in Sources */,
-				1F64C8F61CB58081006886BF /* NinosDuBrasil00.swift in Sources */,
-				1F64C8DF1CB58081006886BF /* DanielHirschmann03.swift in Sources */,
-				1F64C9001CB58081006886BF /* RebeccaFiebrink01.swift in Sources */,
-				1F64C9201CB5A466006886BF /* DigitalArtFestivalsAssessmentAndProspects00.swift in Sources */,
-				1F64C91E1CB5A466006886BF /* Entropy00.swift in Sources */,
-				1F64C9071CB58247006886BF /* thirtyThreeTen00.swift in Sources */,
-				1F64C8FA1CB58081006886BF /* PeLang02.swift in Sources */,
-				1F64C8FB1CB58081006886BF /* PhoenixPerry01.swift in Sources */,
-				1F64C9231CB5A466006886BF /* AtauTanaka00.swift in Sources */,
-				1F64C8F51CB58081006886BF /* NeilMendoza00.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,8 +169,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -546,8 +220,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,6 +243,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,38 +253,44 @@
 		};
 		1F64C7621CB4F8B9006886BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF29795ECA4B337DEFF7FC71 /* Pods-Artists.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Artists/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Artists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		1F64C7631CB4F8B9006886BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E543778607A7B6E06DDDE31A /* Pods-Artists.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Artists/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = C4.Artists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
