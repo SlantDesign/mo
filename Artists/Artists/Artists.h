@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double ArtistsVersionNumber;
 //! Project version string for Artists.
 FOUNDATION_EXPORT const unsigned char ArtistsVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Artists/PublicHeader.h>
+// In this header, y:you should import all the public headers of your framework using statements like #import <Artists/PublicHeader.h>
 
 

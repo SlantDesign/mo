@@ -9,12 +9,23 @@
 import Foundation
 import Artists
 import C4
+import UIKit
 
-var artistViewSetup: dispatch_once_t = 0
+var artistViewSetup: Int = 0
 
-class ArtistView: View, UITextViewDelegate {
-    static let shared = ArtistView(frame: Rect(UIScreen.mainScreen().bounds))
-    let priority = DISPATCH_QUEUE_PRIORITY_HIGH
+open class ArtistView: View, UITextViewDelegate {
+//    private static var __once: () = {
+//            self.createShapeView()
+//            self.createTextView()
+//            self.createExitButton()
+//            DispatchQueue.main.async {
+//                self.add(self.shapeView)
+//                self.add(self.textView)
+//                self.add(self.exitButton)
+//            }
+//        }()
+    static let shared = ArtistView(frame: Rect(UIScreen.main.bounds))
+    let priority = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
 
     var shapeView: View!
     var textView: UITextView!
@@ -34,15 +45,14 @@ class ArtistView: View, UITextViewDelegate {
 
     func setup() {
         backgroundColor = black.colorWithAlpha(0.90)
-        dispatch_once(&artistViewSetup) {
-            self.createShapeView()
-            self.createTextView()
-            self.createExitButton()
-            dispatch_async(dispatch_get_main_queue()) {
-                self.add(self.shapeView)
-                self.add(self.textView)
-                self.add(self.exitButton)
-            }
+//        _ = ArtistView.__once
+        self.createShapeView()
+        self.createTextView()
+        self.createExitButton()
+        DispatchQueue.main.async {
+            self.add(self.shapeView)
+            self.add(self.textView)
+            self.add(self.exitButton)
         }
     }
 
@@ -50,7 +60,7 @@ class ArtistView: View, UITextViewDelegate {
         shapeView = View(frame: bounds)
     }
 
-    func generateShapes(path: Path) -> [Shape] {
+    func generateShapes(_ path: Path) -> [Shape] {
         ShapeLayer.disableActions = true
         var shapes = [Shape]()
         for _ in 0...3 {
@@ -80,15 +90,15 @@ class ArtistView: View, UITextViewDelegate {
             return
         }
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
             let shapes = self.generateShapes(function())
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.animateShapes(shapes)
             }
         }
     }
 
-    func animateShapes(shapes: [Shape]) {
+    func animateShapes(_ shapes: [Shape]) {
         for i in 0..<shapes.count {
             let shape = shapes[i]
             shapeView.add(shape)
@@ -97,7 +107,7 @@ class ArtistView: View, UITextViewDelegate {
         }
     }
 
-    func short(shape: Shape, duration: Double, delay: Double) {
+    func short(_ shape: Shape, duration: Double, delay: Double) {
         let strokeEndOut = ViewAnimation(duration: duration) {
             shape.strokeEnd = 1.0
         }
@@ -120,9 +130,9 @@ class ArtistView: View, UITextViewDelegate {
         self.textView = UITextView(frame: CGRect(f))
         self.textView.contentInset = UIEdgeInsets(top: 740.0, left: 0, bottom: 20.0, right: 0)
         self.textView.font = UIFont(name: "Inconsolata", size: 17.0)
-        self.textView.textColor = .lightGrayColor()
-        self.textView.backgroundColor = .clearColor()
-        self.textView.selectable = true
+        self.textView.textColor = .lightGray
+        self.textView.backgroundColor = .clear
+        self.textView.isSelectable = true
         self.textView.delegate = self
     }
 
@@ -132,12 +142,12 @@ class ArtistView: View, UITextViewDelegate {
         circle.lineWidth = 0
 
         let xPath = UIBezierPath()
-        xPath.moveToPoint(CGPointMake(73.3, 21.7))
-        xPath.addLineToPoint(CGPointMake(21.6, 73.3))
-        xPath.moveToPoint(CGPointMake(21.6, 21.7))
-        xPath.addLineToPoint(CGPointMake(73.3, 73.3))
+        xPath.move(to: CGPoint(x: 73.3, y: 21.7))
+        xPath.addLine(to: CGPoint(x: 21.6, y: 73.3))
+        xPath.move(to: CGPoint(x: 21.6, y: 21.7))
+        xPath.addLine(to: CGPoint(x: 73.3, y: 73.3))
 
-        let p = Path(path: xPath.CGPath)
+        let p = Path(path: xPath.cgPath)
         let x = Shape(p)
         x.fillColor = clear
         x.strokeColor = white
@@ -183,11 +193,11 @@ class ArtistView: View, UITextViewDelegate {
             completeString += type + "\n"
         }
 
-        let df = NSDateFormatter()
+        let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        df.timeZone = NSTimeZone(name: "PST")
+        df.timeZone = TimeZone(identifier: "PST")
 
-        completeString += "\(df.stringFromDate(date))\n"
+        completeString += "\(df.string(from: date as Date))\n"
         if location != "" {
             completeString += location + "\n"
         }
@@ -213,7 +223,7 @@ class ArtistView: View, UITextViewDelegate {
         a.animate()
     }
 
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         return false
     }
 }

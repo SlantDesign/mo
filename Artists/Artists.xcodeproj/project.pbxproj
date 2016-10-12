@@ -9,7 +9,78 @@
 /* Begin PBXBuildFile section */
 		1F64C75D1CB4F8B9006886BF /* Artists.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F64C75C1CB4F8B9006886BF /* Artists.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F64C8D61CB58081006886BF /* AndreasMuller01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */; };
-		D9B867361DAEB16D0051B1B1 /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B867351DAEB16D0051B1B1 /* C4.framework */; };
+		D9266BEC1DAEB97E00109049 /* AlecEmpire00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BA61DAEB97E00109049 /* AlecEmpire00.swift */; };
+		D9266BED1DAEB97E00109049 /* AliGuney00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BA71DAEB97E00109049 /* AliGuney00.swift */; };
+		D9266BEE1DAEB97E00109049 /* AO00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BA81DAEB97E00109049 /* AO00.swift */; };
+		D9266BEF1DAEB97E00109049 /* ArtificialRome01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BA91DAEB97E00109049 /* ArtificialRome01.swift */; };
+		D9266BF01DAEB97E00109049 /* ArtistsEngineers04.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAA1DAEB97E00109049 /* ArtistsEngineers04.swift */; };
+		D9266BF11DAEB97E00109049 /* AtauTanaka00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAB1DAEB97E00109049 /* AtauTanaka00.swift */; };
+		D9266BF21DAEB97E00109049 /* BethanyKoby00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAC1DAEB97E00109049 /* BethanyKoby00.swift */; };
+		D9266BF31DAEB97E00109049 /* BuildersClub02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAD1DAEB97E00109049 /* BuildersClub02.swift */; };
+		D9266BF41DAEB97E00109049 /* CarstenGoertz00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAE1DAEB97E00109049 /* CarstenGoertz00.swift */; };
+		D9266BF51DAEB97E00109049 /* CathrineKramer02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BAF1DAEB97E00109049 /* CathrineKramer02.swift */; };
+		D9266BF61DAEB97E00109049 /* ChrisSugrue02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB01DAEB97E00109049 /* ChrisSugrue02.swift */; };
+		D9266BF71DAEB97E00109049 /* DanHett01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB11DAEB97E00109049 /* DanHett01.swift */; };
+		D9266BF81DAEB97E00109049 /* DanielHirschmann00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB21DAEB97E00109049 /* DanielHirschmann00.swift */; };
+		D9266BF91DAEB97E00109049 /* DanielHirschmann03.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB31DAEB97E00109049 /* DanielHirschmann03.swift */; };
+		D9266BFA1DAEB97E00109049 /* DanielMiller00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB41DAEB97E00109049 /* DanielMiller00.swift */; };
+		D9266BFB1DAEB97E00109049 /* DanielSciboz00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB51DAEB97E00109049 /* DanielSciboz00.swift */; };
+		D9266BFC1DAEB97E00109049 /* DarshaHewitt01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB61DAEB97E00109049 /* DarshaHewitt01.swift */; };
+		D9266BFD1DAEB97E00109049 /* DennisPPaul00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB71DAEB97E00109049 /* DennisPPaul00.swift */; };
+		D9266BFE1DAEB97E00109049 /* DigitalArtFestivalsAssessmentAndProspects00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB81DAEB97E00109049 /* DigitalArtFestivalsAssessmentAndProspects00.swift */; };
+		D9266BFF1DAEB97E00109049 /* DomesticDataStreamers01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BB91DAEB97E00109049 /* DomesticDataStreamers01.swift */; };
+		D9266C001DAEB97E00109049 /* DOT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBA1DAEB97E00109049 /* DOT.swift */; };
+		D9266C011DAEB97E00109049 /* EliasHolzer00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBB1DAEB97E00109049 /* EliasHolzer00.swift */; };
+		D9266C021DAEB97E00109049 /* ElliotWoods00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBC1DAEB97E00109049 /* ElliotWoods00.swift */; };
+		D9266C031DAEB97E00109049 /* ENCAC00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBD1DAEB97E00109049 /* ENCAC00.swift */; };
+		D9266C041DAEB97E00109049 /* Entropy00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBE1DAEB97E00109049 /* Entropy00.swift */; };
+		D9266C051DAEB97E00109049 /* FelicienGoguey02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BBF1DAEB97E00109049 /* FelicienGoguey02.swift */; };
+		D9266C061DAEB97E00109049 /* GaelHugo02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC01DAEB97E00109049 /* GaelHugo02.swift */; };
+		D9266C071DAEB97E00109049 /* GorkaCortazar03.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC11DAEB97E00109049 /* GorkaCortazar03.swift */; };
+		D9266C081DAEB97E00109049 /* Hans-JoachimRoedelius00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC21DAEB97E00109049 /* Hans-JoachimRoedelius00.swift */; };
+		D9266C091DAEB97E00109049 /* IshacBertran00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC31DAEB97E00109049 /* IshacBertran00.swift */; };
+		D9266C0A1DAEB97E00109049 /* JamesAuger00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC41DAEB97E00109049 /* JamesAuger00.swift */; };
+		D9266C0B1DAEB97E00109049 /* JanNemecek00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC51DAEB97E00109049 /* JanNemecek00.swift */; };
+		D9266C0C1DAEB97E00109049 /* JohnFass00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC61DAEB97E00109049 /* JohnFass00.swift */; };
+		D9266C0D1DAEB97E00109049 /* JoshuaNoble01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC71DAEB97E00109049 /* JoshuaNoble01.swift */; };
+		D9266C0E1DAEB97E00109049 /* KaitlynAureliaSmith00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC81DAEB97E00109049 /* KaitlynAureliaSmith00.swift */; };
+		D9266C0F1DAEB97E00109049 /* KarstenSchmidt02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BC91DAEB97E00109049 /* KarstenSchmidt02.swift */; };
+		D9266C101DAEB97E00109049 /* KevinWalker00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCA1DAEB97E00109049 /* KevinWalker00.swift */; };
+		D9266C111DAEB97E00109049 /* Kimchi&Chips01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCB1DAEB97E00109049 /* Kimchi&Chips01.swift */; };
+		D9266C121DAEB97E00109049 /* KrisHermansson00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCC1DAEB97E00109049 /* KrisHermansson00.swift */; };
+		D9266C131DAEB97E00109049 /* Lukatoyboy01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCD1DAEB97E00109049 /* Lukatoyboy01.swift */; };
+		D9266C141DAEB97E00109049 /* MariskaDeGroot00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCE1DAEB97E00109049 /* MariskaDeGroot00.swift */; };
+		D9266C151DAEB97E00109049 /* MatthewCollin00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BCF1DAEB97E00109049 /* MatthewCollin00.swift */; };
+		D9266C161DAEB97E00109049 /* MemoAkten01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD01DAEB97E00109049 /* MemoAkten01.swift */; };
+		D9266C171DAEB97E00109049 /* MimiSon00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD11DAEB97E00109049 /* MimiSon00.swift */; };
+		D9266C181DAEB97E00109049 /* MomentFactory00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD21DAEB97E00109049 /* MomentFactory00.swift */; };
+		D9266C191DAEB97E00109049 /* MuratPak02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD31DAEB97E00109049 /* MuratPak02.swift */; };
+		D9266C1A1DAEB97E00109049 /* NeilMendoza00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD41DAEB97E00109049 /* NeilMendoza00.swift */; };
+		D9266C1B1DAEB97E00109049 /* NicholasFelton03.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD51DAEB97E00109049 /* NicholasFelton03.swift */; };
+		D9266C1C1DAEB97E00109049 /* NinosDuBrasil00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD61DAEB97E00109049 /* NinosDuBrasil00.swift */; };
+		D9266C1D1DAEB97E00109049 /* Onedotzero00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD71DAEB97E00109049 /* Onedotzero00.swift */; };
+		D9266C1E1DAEB97E00109049 /* PabloGarcia01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD81DAEB97E00109049 /* PabloGarcia01.swift */; };
+		D9266C1F1DAEB97E00109049 /* PatricioGonzalezVivo01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BD91DAEB97E00109049 /* PatricioGonzalezVivo01.swift */; };
+		D9266C201DAEB97E00109049 /* PauGarcia00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDA1DAEB97E00109049 /* PauGarcia00.swift */; };
+		D9266C211DAEB97E00109049 /* PeLang02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDB1DAEB97E00109049 /* PeLang02.swift */; };
+		D9266C221DAEB97E00109049 /* PhoenixPerry01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDC1DAEB97E00109049 /* PhoenixPerry01.swift */; };
+		D9266C231DAEB97E00109049 /* PierreBastien00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDD1DAEB97E00109049 /* PierreBastien00.swift */; };
+		D9266C241DAEB97E00109049 /* Playmodes04.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDE1DAEB97E00109049 /* Playmodes04.swift */; };
+		D9266C251DAEB97E00109049 /* RandomStudio02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BDF1DAEB97E00109049 /* RandomStudio02.swift */; };
+		D9266C261DAEB97E00109049 /* Razmasynth01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE01DAEB97E00109049 /* Razmasynth01.swift */; };
+		D9266C271DAEB97E00109049 /* RebeccaFiebrink01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE11DAEB97E00109049 /* RebeccaFiebrink01.swift */; };
+		D9266C281DAEB97E00109049 /* RefikAnadol03.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE21DAEB97E00109049 /* RefikAnadol03.swift */; };
+		D9266C291DAEB97E00109049 /* ResonateDefault2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE31DAEB97E00109049 /* ResonateDefault2.swift */; };
+		D9266C2A1DAEB97E00109049 /* RicardoCabello02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE41DAEB97E00109049 /* RicardoCabello02.swift */; };
+		D9266C2B1DAEB97E00109049 /* RomainTardy00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE51DAEB97E00109049 /* RomainTardy00.swift */; };
+		D9266C2C1DAEB97E00109049 /* RudiPunzo01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE61DAEB97E00109049 /* RudiPunzo01.swift */; };
+		D9266C2D1DAEB97E00109049 /* SebastianGregor00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE71DAEB97E00109049 /* SebastianGregor00.swift */; };
+		D9266C2E1DAEB97E00109049 /* SophiKravitz02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE81DAEB97E00109049 /* SophiKravitz02.swift */; };
+		D9266C2F1DAEB97E00109049 /* Squarepusher00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BE91DAEB97E00109049 /* Squarepusher00.swift */; };
+		D9266C301DAEB97E00109049 /* thirtyThreeTen00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BEA1DAEB97E00109049 /* thirtyThreeTen00.swift */; };
+		D9266C311DAEB97E00109049 /* TravisKirton00.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9266BEB1DAEB97E00109049 /* TravisKirton00.swift */; };
+		D9C853031DAED5B600ADDB71 /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C853021DAED5B600ADDB71 /* C4.framework */; };
+		D9C853041DAED91500ADDB71 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64C8CF1CB57FF3006886BF /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +89,77 @@
 		1F64C75E1CB4F8B9006886BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndreasMuller01.swift; sourceTree = "<group>"; };
 		1F64C8CF1CB57FF3006886BF /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		D9B867351DAEB16D0051B1B1 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../C4iOS/build/Release-iphoneos/C4.framework"; sourceTree = "<group>"; };
+		D9266BA61DAEB97E00109049 /* AlecEmpire00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlecEmpire00.swift; sourceTree = "<group>"; };
+		D9266BA71DAEB97E00109049 /* AliGuney00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliGuney00.swift; sourceTree = "<group>"; };
+		D9266BA81DAEB97E00109049 /* AO00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AO00.swift; sourceTree = "<group>"; };
+		D9266BA91DAEB97E00109049 /* ArtificialRome01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtificialRome01.swift; sourceTree = "<group>"; };
+		D9266BAA1DAEB97E00109049 /* ArtistsEngineers04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsEngineers04.swift; sourceTree = "<group>"; };
+		D9266BAB1DAEB97E00109049 /* AtauTanaka00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtauTanaka00.swift; sourceTree = "<group>"; };
+		D9266BAC1DAEB97E00109049 /* BethanyKoby00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BethanyKoby00.swift; sourceTree = "<group>"; };
+		D9266BAD1DAEB97E00109049 /* BuildersClub02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildersClub02.swift; sourceTree = "<group>"; };
+		D9266BAE1DAEB97E00109049 /* CarstenGoertz00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarstenGoertz00.swift; sourceTree = "<group>"; };
+		D9266BAF1DAEB97E00109049 /* CathrineKramer02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CathrineKramer02.swift; sourceTree = "<group>"; };
+		D9266BB01DAEB97E00109049 /* ChrisSugrue02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChrisSugrue02.swift; sourceTree = "<group>"; };
+		D9266BB11DAEB97E00109049 /* DanHett01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanHett01.swift; sourceTree = "<group>"; };
+		D9266BB21DAEB97E00109049 /* DanielHirschmann00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielHirschmann00.swift; sourceTree = "<group>"; };
+		D9266BB31DAEB97E00109049 /* DanielHirschmann03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielHirschmann03.swift; sourceTree = "<group>"; };
+		D9266BB41DAEB97E00109049 /* DanielMiller00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielMiller00.swift; sourceTree = "<group>"; };
+		D9266BB51DAEB97E00109049 /* DanielSciboz00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanielSciboz00.swift; sourceTree = "<group>"; };
+		D9266BB61DAEB97E00109049 /* DarshaHewitt01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarshaHewitt01.swift; sourceTree = "<group>"; };
+		D9266BB71DAEB97E00109049 /* DennisPPaul00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DennisPPaul00.swift; sourceTree = "<group>"; };
+		D9266BB81DAEB97E00109049 /* DigitalArtFestivalsAssessmentAndProspects00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalArtFestivalsAssessmentAndProspects00.swift; sourceTree = "<group>"; };
+		D9266BB91DAEB97E00109049 /* DomesticDataStreamers01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomesticDataStreamers01.swift; sourceTree = "<group>"; };
+		D9266BBA1DAEB97E00109049 /* DOT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOT.swift; sourceTree = "<group>"; };
+		D9266BBB1DAEB97E00109049 /* EliasHolzer00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliasHolzer00.swift; sourceTree = "<group>"; };
+		D9266BBC1DAEB97E00109049 /* ElliotWoods00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElliotWoods00.swift; sourceTree = "<group>"; };
+		D9266BBD1DAEB97E00109049 /* ENCAC00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENCAC00.swift; sourceTree = "<group>"; };
+		D9266BBE1DAEB97E00109049 /* Entropy00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entropy00.swift; sourceTree = "<group>"; };
+		D9266BBF1DAEB97E00109049 /* FelicienGoguey02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FelicienGoguey02.swift; sourceTree = "<group>"; };
+		D9266BC01DAEB97E00109049 /* GaelHugo02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaelHugo02.swift; sourceTree = "<group>"; };
+		D9266BC11DAEB97E00109049 /* GorkaCortazar03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GorkaCortazar03.swift; sourceTree = "<group>"; };
+		D9266BC21DAEB97E00109049 /* Hans-JoachimRoedelius00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hans-JoachimRoedelius00.swift"; sourceTree = "<group>"; };
+		D9266BC31DAEB97E00109049 /* IshacBertran00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IshacBertran00.swift; sourceTree = "<group>"; };
+		D9266BC41DAEB97E00109049 /* JamesAuger00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JamesAuger00.swift; sourceTree = "<group>"; };
+		D9266BC51DAEB97E00109049 /* JanNemecek00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanNemecek00.swift; sourceTree = "<group>"; };
+		D9266BC61DAEB97E00109049 /* JohnFass00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnFass00.swift; sourceTree = "<group>"; };
+		D9266BC71DAEB97E00109049 /* JoshuaNoble01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoshuaNoble01.swift; sourceTree = "<group>"; };
+		D9266BC81DAEB97E00109049 /* KaitlynAureliaSmith00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaitlynAureliaSmith00.swift; sourceTree = "<group>"; };
+		D9266BC91DAEB97E00109049 /* KarstenSchmidt02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarstenSchmidt02.swift; sourceTree = "<group>"; };
+		D9266BCA1DAEB97E00109049 /* KevinWalker00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KevinWalker00.swift; sourceTree = "<group>"; };
+		D9266BCB1DAEB97E00109049 /* Kimchi&Chips01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kimchi&Chips01.swift"; sourceTree = "<group>"; };
+		D9266BCC1DAEB97E00109049 /* KrisHermansson00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrisHermansson00.swift; sourceTree = "<group>"; };
+		D9266BCD1DAEB97E00109049 /* Lukatoyboy01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lukatoyboy01.swift; sourceTree = "<group>"; };
+		D9266BCE1DAEB97E00109049 /* MariskaDeGroot00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MariskaDeGroot00.swift; sourceTree = "<group>"; };
+		D9266BCF1DAEB97E00109049 /* MatthewCollin00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatthewCollin00.swift; sourceTree = "<group>"; };
+		D9266BD01DAEB97E00109049 /* MemoAkten01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAkten01.swift; sourceTree = "<group>"; };
+		D9266BD11DAEB97E00109049 /* MimiSon00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimiSon00.swift; sourceTree = "<group>"; };
+		D9266BD21DAEB97E00109049 /* MomentFactory00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentFactory00.swift; sourceTree = "<group>"; };
+		D9266BD31DAEB97E00109049 /* MuratPak02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuratPak02.swift; sourceTree = "<group>"; };
+		D9266BD41DAEB97E00109049 /* NeilMendoza00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeilMendoza00.swift; sourceTree = "<group>"; };
+		D9266BD51DAEB97E00109049 /* NicholasFelton03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicholasFelton03.swift; sourceTree = "<group>"; };
+		D9266BD61DAEB97E00109049 /* NinosDuBrasil00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinosDuBrasil00.swift; sourceTree = "<group>"; };
+		D9266BD71DAEB97E00109049 /* Onedotzero00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onedotzero00.swift; sourceTree = "<group>"; };
+		D9266BD81DAEB97E00109049 /* PabloGarcia01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PabloGarcia01.swift; sourceTree = "<group>"; };
+		D9266BD91DAEB97E00109049 /* PatricioGonzalezVivo01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatricioGonzalezVivo01.swift; sourceTree = "<group>"; };
+		D9266BDA1DAEB97E00109049 /* PauGarcia00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauGarcia00.swift; sourceTree = "<group>"; };
+		D9266BDB1DAEB97E00109049 /* PeLang02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeLang02.swift; sourceTree = "<group>"; };
+		D9266BDC1DAEB97E00109049 /* PhoenixPerry01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoenixPerry01.swift; sourceTree = "<group>"; };
+		D9266BDD1DAEB97E00109049 /* PierreBastien00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PierreBastien00.swift; sourceTree = "<group>"; };
+		D9266BDE1DAEB97E00109049 /* Playmodes04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playmodes04.swift; sourceTree = "<group>"; };
+		D9266BDF1DAEB97E00109049 /* RandomStudio02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomStudio02.swift; sourceTree = "<group>"; };
+		D9266BE01DAEB97E00109049 /* Razmasynth01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Razmasynth01.swift; sourceTree = "<group>"; };
+		D9266BE11DAEB97E00109049 /* RebeccaFiebrink01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RebeccaFiebrink01.swift; sourceTree = "<group>"; };
+		D9266BE21DAEB97E00109049 /* RefikAnadol03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefikAnadol03.swift; sourceTree = "<group>"; };
+		D9266BE31DAEB97E00109049 /* ResonateDefault2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResonateDefault2.swift; sourceTree = "<group>"; };
+		D9266BE41DAEB97E00109049 /* RicardoCabello02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RicardoCabello02.swift; sourceTree = "<group>"; };
+		D9266BE51DAEB97E00109049 /* RomainTardy00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomainTardy00.swift; sourceTree = "<group>"; };
+		D9266BE61DAEB97E00109049 /* RudiPunzo01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RudiPunzo01.swift; sourceTree = "<group>"; };
+		D9266BE71DAEB97E00109049 /* SebastianGregor00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SebastianGregor00.swift; sourceTree = "<group>"; };
+		D9266BE81DAEB97E00109049 /* SophiKravitz02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SophiKravitz02.swift; sourceTree = "<group>"; };
+		D9266BE91DAEB97E00109049 /* Squarepusher00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarepusher00.swift; sourceTree = "<group>"; };
+		D9266BEA1DAEB97E00109049 /* thirtyThreeTen00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirtyThreeTen00.swift; sourceTree = "<group>"; };
+		D9266BEB1DAEB97E00109049 /* TravisKirton00.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisKirton00.swift; sourceTree = "<group>"; };
+		D9C853021DAED5B600ADDB71 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../C4iOS/build/Debug-iphoneos/C4.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B867361DAEB16D0051B1B1 /* C4.framework in Frameworks */,
+				D9C853031DAED5B600ADDB71 /* C4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +196,77 @@
 			children = (
 				1F64C75C1CB4F8B9006886BF /* Artists.h */,
 				1F64C8CF1CB57FF3006886BF /* Helpers.swift */,
+				D9266BA61DAEB97E00109049 /* AlecEmpire00.swift */,
+				D9266BA71DAEB97E00109049 /* AliGuney00.swift */,
 				1F64C76F1CB4F971006886BF /* AndreasMuller01.swift */,
+				D9266BA81DAEB97E00109049 /* AO00.swift */,
+				D9266BA91DAEB97E00109049 /* ArtificialRome01.swift */,
+				D9266BAA1DAEB97E00109049 /* ArtistsEngineers04.swift */,
+				D9266BAB1DAEB97E00109049 /* AtauTanaka00.swift */,
+				D9266BAC1DAEB97E00109049 /* BethanyKoby00.swift */,
+				D9266BAD1DAEB97E00109049 /* BuildersClub02.swift */,
+				D9266BAE1DAEB97E00109049 /* CarstenGoertz00.swift */,
+				D9266BAF1DAEB97E00109049 /* CathrineKramer02.swift */,
+				D9266BB01DAEB97E00109049 /* ChrisSugrue02.swift */,
+				D9266BB11DAEB97E00109049 /* DanHett01.swift */,
+				D9266BB21DAEB97E00109049 /* DanielHirschmann00.swift */,
+				D9266BB31DAEB97E00109049 /* DanielHirschmann03.swift */,
+				D9266BB41DAEB97E00109049 /* DanielMiller00.swift */,
+				D9266BB51DAEB97E00109049 /* DanielSciboz00.swift */,
+				D9266BB61DAEB97E00109049 /* DarshaHewitt01.swift */,
+				D9266BB71DAEB97E00109049 /* DennisPPaul00.swift */,
+				D9266BB81DAEB97E00109049 /* DigitalArtFestivalsAssessmentAndProspects00.swift */,
+				D9266BB91DAEB97E00109049 /* DomesticDataStreamers01.swift */,
+				D9266BBA1DAEB97E00109049 /* DOT.swift */,
+				D9266BBB1DAEB97E00109049 /* EliasHolzer00.swift */,
+				D9266BBC1DAEB97E00109049 /* ElliotWoods00.swift */,
+				D9266BBD1DAEB97E00109049 /* ENCAC00.swift */,
+				D9266BBE1DAEB97E00109049 /* Entropy00.swift */,
+				D9266BBF1DAEB97E00109049 /* FelicienGoguey02.swift */,
+				D9266BC01DAEB97E00109049 /* GaelHugo02.swift */,
+				D9266BC11DAEB97E00109049 /* GorkaCortazar03.swift */,
+				D9266BC21DAEB97E00109049 /* Hans-JoachimRoedelius00.swift */,
+				D9266BC31DAEB97E00109049 /* IshacBertran00.swift */,
+				D9266BC41DAEB97E00109049 /* JamesAuger00.swift */,
+				D9266BC51DAEB97E00109049 /* JanNemecek00.swift */,
+				D9266BC61DAEB97E00109049 /* JohnFass00.swift */,
+				D9266BC71DAEB97E00109049 /* JoshuaNoble01.swift */,
+				D9266BC81DAEB97E00109049 /* KaitlynAureliaSmith00.swift */,
+				D9266BC91DAEB97E00109049 /* KarstenSchmidt02.swift */,
+				D9266BCA1DAEB97E00109049 /* KevinWalker00.swift */,
+				D9266BCB1DAEB97E00109049 /* Kimchi&Chips01.swift */,
+				D9266BCC1DAEB97E00109049 /* KrisHermansson00.swift */,
+				D9266BCD1DAEB97E00109049 /* Lukatoyboy01.swift */,
+				D9266BCE1DAEB97E00109049 /* MariskaDeGroot00.swift */,
+				D9266BCF1DAEB97E00109049 /* MatthewCollin00.swift */,
+				D9266BD01DAEB97E00109049 /* MemoAkten01.swift */,
+				D9266BD11DAEB97E00109049 /* MimiSon00.swift */,
+				D9266BD21DAEB97E00109049 /* MomentFactory00.swift */,
+				D9266BD31DAEB97E00109049 /* MuratPak02.swift */,
+				D9266BD41DAEB97E00109049 /* NeilMendoza00.swift */,
+				D9266BD51DAEB97E00109049 /* NicholasFelton03.swift */,
+				D9266BD61DAEB97E00109049 /* NinosDuBrasil00.swift */,
+				D9266BD71DAEB97E00109049 /* Onedotzero00.swift */,
+				D9266BD81DAEB97E00109049 /* PabloGarcia01.swift */,
+				D9266BD91DAEB97E00109049 /* PatricioGonzalezVivo01.swift */,
+				D9266BDA1DAEB97E00109049 /* PauGarcia00.swift */,
+				D9266BDB1DAEB97E00109049 /* PeLang02.swift */,
+				D9266BDC1DAEB97E00109049 /* PhoenixPerry01.swift */,
+				D9266BDD1DAEB97E00109049 /* PierreBastien00.swift */,
+				D9266BDE1DAEB97E00109049 /* Playmodes04.swift */,
+				D9266BDF1DAEB97E00109049 /* RandomStudio02.swift */,
+				D9266BE01DAEB97E00109049 /* Razmasynth01.swift */,
+				D9266BE11DAEB97E00109049 /* RebeccaFiebrink01.swift */,
+				D9266BE21DAEB97E00109049 /* RefikAnadol03.swift */,
+				D9266BE31DAEB97E00109049 /* ResonateDefault2.swift */,
+				D9266BE41DAEB97E00109049 /* RicardoCabello02.swift */,
+				D9266BE51DAEB97E00109049 /* RomainTardy00.swift */,
+				D9266BE61DAEB97E00109049 /* RudiPunzo01.swift */,
+				D9266BE71DAEB97E00109049 /* SebastianGregor00.swift */,
+				D9266BE81DAEB97E00109049 /* SophiKravitz02.swift */,
+				D9266BE91DAEB97E00109049 /* Squarepusher00.swift */,
+				D9266BEA1DAEB97E00109049 /* thirtyThreeTen00.swift */,
+				D9266BEB1DAEB97E00109049 /* TravisKirton00.swift */,
 				1F64C75E1CB4F8B9006886BF /* Info.plist */,
 			);
 			path = Artists;
@@ -64,7 +275,7 @@
 		55E306C5156497FC597B4B62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9B867351DAEB16D0051B1B1 /* C4.framework */,
+				D9C853021DAED5B600ADDB71 /* C4.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,7 +359,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C853041DAED91500ADDB71 /* Helpers.swift in Sources */,
+				D9266C1E1DAEB97E00109049 /* PabloGarcia01.swift in Sources */,
+				D9266BF61DAEB97E00109049 /* ChrisSugrue02.swift in Sources */,
+				D9266C041DAEB97E00109049 /* Entropy00.swift in Sources */,
+				D9266C2E1DAEB97E00109049 /* SophiKravitz02.swift in Sources */,
+				D9266C311DAEB97E00109049 /* TravisKirton00.swift in Sources */,
+				D9266C281DAEB97E00109049 /* RefikAnadol03.swift in Sources */,
+				D9266C1B1DAEB97E00109049 /* NicholasFelton03.swift in Sources */,
+				D9266C081DAEB97E00109049 /* Hans-JoachimRoedelius00.swift in Sources */,
+				D9266BFA1DAEB97E00109049 /* DanielMiller00.swift in Sources */,
+				D9266BF11DAEB97E00109049 /* AtauTanaka00.swift in Sources */,
+				D9266C021DAEB97E00109049 /* ElliotWoods00.swift in Sources */,
+				D9266C301DAEB97E00109049 /* thirtyThreeTen00.swift in Sources */,
+				D9266C2A1DAEB97E00109049 /* RicardoCabello02.swift in Sources */,
+				D9266C1F1DAEB97E00109049 /* PatricioGonzalezVivo01.swift in Sources */,
+				D9266C131DAEB97E00109049 /* Lukatoyboy01.swift in Sources */,
+				D9266BFB1DAEB97E00109049 /* DanielSciboz00.swift in Sources */,
+				D9266C111DAEB97E00109049 /* Kimchi&Chips01.swift in Sources */,
+				D9266C241DAEB97E00109049 /* Playmodes04.swift in Sources */,
+				D9266C121DAEB97E00109049 /* KrisHermansson00.swift in Sources */,
+				D9266BFC1DAEB97E00109049 /* DarshaHewitt01.swift in Sources */,
+				D9266BEC1DAEB97E00109049 /* AlecEmpire00.swift in Sources */,
+				D9266BF51DAEB97E00109049 /* CathrineKramer02.swift in Sources */,
+				D9266C001DAEB97E00109049 /* DOT.swift in Sources */,
+				D9266BF31DAEB97E00109049 /* BuildersClub02.swift in Sources */,
+				D9266C2B1DAEB97E00109049 /* RomainTardy00.swift in Sources */,
+				D9266C261DAEB97E00109049 /* Razmasynth01.swift in Sources */,
+				D9266C1D1DAEB97E00109049 /* Onedotzero00.swift in Sources */,
+				D9266C171DAEB97E00109049 /* MimiSon00.swift in Sources */,
+				D9266C251DAEB97E00109049 /* RandomStudio02.swift in Sources */,
+				D9266BEE1DAEB97E00109049 /* AO00.swift in Sources */,
+				D9266C101DAEB97E00109049 /* KevinWalker00.swift in Sources */,
+				D9266C191DAEB97E00109049 /* MuratPak02.swift in Sources */,
+				D9266BFD1DAEB97E00109049 /* DennisPPaul00.swift in Sources */,
+				D9266C1A1DAEB97E00109049 /* NeilMendoza00.swift in Sources */,
+				D9266BFF1DAEB97E00109049 /* DomesticDataStreamers01.swift in Sources */,
+				D9266C2D1DAEB97E00109049 /* SebastianGregor00.swift in Sources */,
+				D9266BFE1DAEB97E00109049 /* DigitalArtFestivalsAssessmentAndProspects00.swift in Sources */,
 				1F64C8D61CB58081006886BF /* AndreasMuller01.swift in Sources */,
+				D9266C0A1DAEB97E00109049 /* JamesAuger00.swift in Sources */,
+				D9266BF01DAEB97E00109049 /* ArtistsEngineers04.swift in Sources */,
+				D9266C1C1DAEB97E00109049 /* NinosDuBrasil00.swift in Sources */,
+				D9266C061DAEB97E00109049 /* GaelHugo02.swift in Sources */,
+				D9266BEF1DAEB97E00109049 /* ArtificialRome01.swift in Sources */,
+				D9266C051DAEB97E00109049 /* FelicienGoguey02.swift in Sources */,
+				D9266C091DAEB97E00109049 /* IshacBertran00.swift in Sources */,
+				D9266C0C1DAEB97E00109049 /* JohnFass00.swift in Sources */,
+				D9266BF41DAEB97E00109049 /* CarstenGoertz00.swift in Sources */,
+				D9266C221DAEB97E00109049 /* PhoenixPerry01.swift in Sources */,
+				D9266BF91DAEB97E00109049 /* DanielHirschmann03.swift in Sources */,
+				D9266C0F1DAEB97E00109049 /* KarstenSchmidt02.swift in Sources */,
+				D9266C141DAEB97E00109049 /* MariskaDeGroot00.swift in Sources */,
+				D9266C151DAEB97E00109049 /* MatthewCollin00.swift in Sources */,
+				D9266C0E1DAEB97E00109049 /* KaitlynAureliaSmith00.swift in Sources */,
+				D9266C2C1DAEB97E00109049 /* RudiPunzo01.swift in Sources */,
+				D9266C211DAEB97E00109049 /* PeLang02.swift in Sources */,
+				D9266BF21DAEB97E00109049 /* BethanyKoby00.swift in Sources */,
+				D9266C231DAEB97E00109049 /* PierreBastien00.swift in Sources */,
+				D9266BF81DAEB97E00109049 /* DanielHirschmann00.swift in Sources */,
+				D9266C0B1DAEB97E00109049 /* JanNemecek00.swift in Sources */,
+				D9266BF71DAEB97E00109049 /* DanHett01.swift in Sources */,
+				D9266C161DAEB97E00109049 /* MemoAkten01.swift in Sources */,
+				D9266C181DAEB97E00109049 /* MomentFactory00.swift in Sources */,
+				D9266C031DAEB97E00109049 /* ENCAC00.swift in Sources */,
+				D9266BED1DAEB97E00109049 /* AliGuney00.swift in Sources */,
+				D9266C071DAEB97E00109049 /* GorkaCortazar03.swift in Sources */,
+				D9266C201DAEB97E00109049 /* PauGarcia00.swift in Sources */,
+				D9266C291DAEB97E00109049 /* ResonateDefault2.swift in Sources */,
+				D9266C011DAEB97E00109049 /* EliasHolzer00.swift in Sources */,
+				D9266C0D1DAEB97E00109049 /* JoshuaNoble01.swift in Sources */,
+				D9266C271DAEB97E00109049 /* RebeccaFiebrink01.swift in Sources */,
+				D9266C2F1DAEB97E00109049 /* Squarepusher00.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

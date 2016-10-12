@@ -20,23 +20,23 @@ class ScheduleLayout: UICollectionViewLayout {
         super.init(coder: aDecoder)
     }
 
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize : CGSize {
         return CGSize(width:Schedule.shared.totalWidth, height:1024.0)
     }
 
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
 
         let visibleIndexPaths = indexPathsOfItemsIn(rect)
         for indexPath in visibleIndexPaths {
-            if let attributes = layoutAttributesForItemAtIndexPath(indexPath) {
+            if let attributes = layoutAttributesForItem(at: indexPath) {
                 layoutAttributes.append(attributes)
             }
         }
 
         let hourHeaderViewIndexPaths = indexPathsOfHourHeaderViewsInRect(rect)
         for path in hourHeaderViewIndexPaths {
-            if let attributes = layoutAttributesForSupplementaryViewOfKind("HourHeaderView", atIndexPath: path) {
+            if let attributes = layoutAttributesForSupplementaryView(ofKind: "HourHeaderView", at: path) {
                 layoutAttributes.append(attributes)
             }
         }
@@ -44,85 +44,85 @@ class ScheduleLayout: UICollectionViewLayout {
         return layoutAttributes
     }
 
-    var currentLayoutRect = CGRectZero
+    var currentLayoutRect = CGRect.zero
 
-    func indexPathsOfItemsIn(rect: CGRect) -> [NSIndexPath] {
+    func indexPathsOfItemsIn(_ rect: CGRect) -> [IndexPath] {
         currentLayoutRect = rect
 
         guard let schedule = self.collectionView?.dataSource as? Schedule else {
             return []
         }
 
-        let startNormalized = NSTimeInterval(rect.minX / schedule.singleContentWidth)
-        let startTimestamp = (startNormalized % 1.0) * schedule.totalInterval
+        let startNormalized = TimeInterval(rect.minX / schedule.singleContentWidth)
+        let startTimestamp = (startNormalized.truncatingRemainder(dividingBy: 1.0)) * schedule.totalInterval
         let startSection = Int(floor(startNormalized))
 
-        let endNormalized = NSTimeInterval(rect.maxX / schedule.singleContentWidth)
-        let endTimestamp = (endNormalized % 1.0) * schedule.totalInterval
+        let endNormalized = TimeInterval(rect.maxX / schedule.singleContentWidth)
+        let endTimestamp = (endNormalized.truncatingRemainder(dividingBy: 1.0)) * schedule.totalInterval
         let endSection = Int(floor(endNormalized))
 
-        var indexPaths = [NSIndexPath]()
+        var indexPaths = [IndexPath]()
         if startTimestamp > endTimestamp {
-            let end = schedule.startDate.dateByAddingTimeInterval(endTimestamp)
+            let end = schedule.startDate.addingTimeInterval(endTimestamp)
             let beginIndexes = schedule.indexesOfEventsBetween(schedule.startDate, end: end)
-            indexPaths.appendContentsOf(beginIndexes.map({ NSIndexPath(forItem: $0, inSection: endSection) }))
+            indexPaths.append(contentsOf: beginIndexes.map({ IndexPath(item: $0, section: endSection) }))
 
-            let start = schedule.startDate.dateByAddingTimeInterval(startTimestamp)
+            let start = schedule.startDate.addingTimeInterval(startTimestamp)
             let endIndexes = schedule.indexesOfEventsBetween(start, end: schedule.endDate)
-            indexPaths.appendContentsOf(endIndexes.map({ NSIndexPath(forItem: $0, inSection: startSection) }))
+            indexPaths.append(contentsOf: endIndexes.map({ IndexPath(item: $0, section: startSection) }))
         } else {
-            let start = schedule.startDate.dateByAddingTimeInterval(startTimestamp)
-            let end = schedule.startDate.dateByAddingTimeInterval(endTimestamp)
+            let start = schedule.startDate.addingTimeInterval(startTimestamp)
+            let end = schedule.startDate.addingTimeInterval(endTimestamp)
             let indexes = schedule.indexesOfEventsBetween(start, end: end)
-            indexPaths.appendContentsOf(indexes.map({ NSIndexPath(forItem: $0, inSection: startSection) }))
+            indexPaths.append(contentsOf: indexes.map({ IndexPath(item: $0, section: startSection) }))
         }
 
         return indexPaths
     }
 
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let schedule = collectionView?.dataSource as? Schedule else {
             return nil
         }
 
         let event = schedule.eventAt(indexPath)
-        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
 
         attributes.frame = schedule.frameFor(event)
-        attributes.frame.origin.x += CGFloat(indexPath.section) * schedule.singleContentWidth
+        attributes.frame.origin.x += CGFloat((indexPath as NSIndexPath).section) * schedule.singleContentWidth
 
         return attributes
     }
 
-    override func layoutAttributesForSupplementaryViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let maxIndex = hourIndexFromCoordinate(Schedule.shared.singleContentWidth)
-        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, withIndexPath: indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
 
         if elementKind == "HourHeaderView" {
-            attributes.frame = CGRect(x: hour.width * CGFloat(indexPath.item + indexPath.section * maxIndex), y: UIScreen.mainScreen().bounds.maxY-37, width: CGFloat(hour.width), height: 37)
+            attributes.frame = CGRect(x: hour.width * CGFloat((indexPath as NSIndexPath).item + (indexPath as NSIndexPath).section * maxIndex), y: UIScreen.main.bounds.maxY-37, width: CGFloat(hour.width), height: 37)
             attributes.zIndex = -1000
         }
         return attributes
     }
 
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
 
-    func indexPathsOfHourHeaderViewsInRect(rect: CGRect) -> [NSIndexPath] {
+    func indexPathsOfHourHeaderViewsInRect(_ rect: CGRect) -> [IndexPath] {
         let lowIndex = hourIndexFromCoordinate(rect.minX)
         let highIndex = hourIndexFromCoordinate(rect.maxX + hour.width)
         let maxIndex = hourIndexFromCoordinate(Schedule.shared.singleContentWidth)
 
-        var indexPaths = [NSIndexPath]()
+        var indexPaths = [IndexPath]()
         for i in lowIndex..<highIndex {
-            indexPaths.append(NSIndexPath(forItem: i % maxIndex, inSection: i < maxIndex ? 0 : 1))
+            indexPaths.append(IndexPath(item: i % maxIndex, section: i < maxIndex ? 0 : 1))
         }
 
         return indexPaths
     }
 
-    func hourIndexFromCoordinate(x: CGFloat) -> Int {
+    func hourIndexFromCoordinate(_ x: CGFloat) -> Int {
         return Int(x / hour.width)
     }
 }

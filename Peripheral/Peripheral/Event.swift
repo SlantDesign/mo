@@ -9,14 +9,14 @@
 import Foundation
 
 struct Event: Equatable, Hashable, CustomStringConvertible {
-    var date = NSDate() {
+    var date = Date() {
         didSet {
 
         }
     }
     var day = ""
-    var endDate: NSDate {
-        return date.dateByAddingTimeInterval(duration*60.0)
+    var endDate: Date {
+        return date.addingTimeInterval(duration*60.0)
     }
     var duration = 0.0
     var location = "Belgrade"
@@ -36,14 +36,14 @@ struct Event: Equatable, Hashable, CustomStringConvertible {
 }
 
 func ==(lhs: Event, rhs: Event) -> Bool {
-    return lhs.date.isEqualToDate(rhs.date) &&
+    return (lhs.date == rhs.date) &&
         lhs.duration == rhs.duration &&
         lhs.location == lhs.location &&
         lhs.title == lhs.title
 }
 
 func >(lhs: Event, rhs: Event) -> Bool {
-    return lhs.date.laterDate(rhs.date) === lhs.date ? true : false
+    return (lhs.date as NSDate).laterDate(rhs.date) == lhs.date ? true : false
 }
 
 func <(lhs: Event, rhs: Event) -> Bool {

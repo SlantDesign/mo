@@ -16,7 +16,7 @@ class WorkSpace: CanvasController {
     var resonate: Resonate?
     var status: Status?
     var tap: UITapGestureRecognizer!
-    var syncTimestamp: NSTimeInterval = 0
+    var syncTimestamp: TimeInterval = 0
     var loading: View!
 
     var preparing: Bool = false
@@ -75,12 +75,12 @@ class WorkSpace: CanvasController {
     }
 
     func prepareUniverse() {
-        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
-        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
-        dispatch_async(backgroundQueue, {
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
             self.resonate = Resonate()
             self.resonate?.load()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 self.canvas.remove(self.loading)
                 self.preparing = false
                 self.loading = nil
@@ -96,10 +96,10 @@ class WorkSpace: CanvasController {
         socketManager?.workspace = self
     }
 
-    func receivePacket(packet: Packet) {
+    func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case .SwitchUniverse:
-            if let name = extractNewUniverseName(packet.data) {
+        case .switchUniverse:
+            if let name = extractNewUniverseName(packet.data as Data?) {
                 selectUniverse(name)
             }
         default:
@@ -107,15 +107,15 @@ class WorkSpace: CanvasController {
        }
     }
 
-    func extractNewUniverseName(data: NSData?) -> String? {
+    func extractNewUniverseName(_ data: Data?) -> String? {
         if let d = data,
-        let name = NSString(data: d, encoding: NSUTF8StringEncoding) {
+        let name = NSString(data: d, encoding: String.Encoding.utf8.rawValue) {
             return name as String
         }
         return nil
     }
 
-    func selectUniverse(name: String) -> UniverseController? {
+    func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
         case "Resonate":
             return resonate
@@ -124,13 +124,9 @@ class WorkSpace: CanvasController {
         }
     }
 
-    func switchUniverse(newUniverse: UniverseController) {
-        UIView.transitionFromView(currentUniverse!.canvas.view, toView: newUniverse.canvas.view, duration: 0.25, options: [UIViewAnimationOptions.BeginFromCurrentState, UIViewAnimationOptions.TransitionCrossDissolve]) { (Bool) -> Void in
+    func switchUniverse(_ newUniverse: UniverseController) {
+        UIView.transition(from: currentUniverse!.canvas.view, to: newUniverse.canvas.view, duration: 0.25, options: [UIViewAnimationOptions.beginFromCurrentState, UIViewAnimationOptions.transitionCrossDissolve]) { (Bool) -> Void in
             self.currentUniverse = newUniverse
         }
-    }
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
 }

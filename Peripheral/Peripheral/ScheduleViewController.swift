@@ -16,24 +16,24 @@ public protocol ScrollUniverseDelegate {
     func shouldSendCease()
 }
 
-public class ScheduleViewController: UICollectionViewController {
-    let interactionTimeout = NSTimeInterval(5)
+open class ScheduleViewController: UICollectionViewController {
+    let interactionTimeout = TimeInterval(5)
     var indicator: Shape!
-    var scrollSource = ScrollSource.Local
+    var scrollSource = ScrollSource.local
     var interactionsByID = [Int: RemoteInteraction]()
-    var lastLocalInteractionTimestamp: NSTimeInterval?
-    weak var interactionCeaseTimer: NSTimer?
+    var lastLocalInteractionTimestamp: TimeInterval?
+    var interactionCeaseTimer: UIKit.Timer?
     var scrollUniverseDelegate: ScrollUniverseDelegate?
     var tap: UITapGestureRecognizer!
     var dx : CGFloat = 0.0
-    var shapeTimer: Timer!
-    var syncTimestamp: NSTimeInterval = 0 {
+    var shapeTimer: C4.Timer!
+    var syncTimestamp: TimeInterval = 0 {
         didSet {
             Schedule.shared.syncTimestamp = syncTimestamp
             guard let collectionView = collectionView else {
                 return
             }
-            for cell in collectionView.visibleCells() {
+            for cell in collectionView.visibleCells {
                 if let eventCell = cell as? EventCell {
                     eventCell.syncTimestamp = syncTimestamp
                 }
@@ -41,14 +41,14 @@ public class ScheduleViewController: UICollectionViewController {
         }
     }
 
-    override public func viewDidLoad() {
-        collectionView?.registerClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
+    override open func viewDidLoad() {
+        collectionView?.register(EventCell.self, forCellWithReuseIdentifier: "EventCell")
 
         let id = SocketManager.sharedManager.deviceID
         dx = CGFloat(id-1) * CGFloat(frameCanvasWidth)
 
         let headerViewNib = UINib.init(nibName: "HourHeaderView", bundle: nil)
-        collectionView?.registerNib(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
+        collectionView?.register(headerViewNib, forSupplementaryViewOfKind: "HourHeaderView", withReuseIdentifier: "HourHeaderView")
         collectionView?.delegate = self
         ShapeLayer.disableActions = true
         ArtistView.shared.opacity = 0.0
@@ -73,7 +73,7 @@ public class ScheduleViewController: UICollectionViewController {
         indicator.zPosition = Double(Int.max)
         collectionView?.add(indicator)
 
-        shapeTimer = Timer(interval: 28.0) {
+        shapeTimer = C4.Timer(interval: 28.0) {
             let x = random01() * frameCanvasWidth
             let y = random01() * Double(self.collectionView!.bounds.height)
             self.generateShapeAtPoint(Point(x+Double(self.collectionView!.contentOffset.x),y))
@@ -84,34 +84,34 @@ public class ScheduleViewController: UICollectionViewController {
         }
     }
 
-    func generateShapeFromRecognizer(gr: UIGestureRecognizer) {
+    func generateShapeFromRecognizer(_ gr: UIGestureRecognizer) {
         var center = gr.location
         center.x += Double(collectionView!.contentOffset.x)
         generateShapeAtPoint(center)
     }
 
-    public func generateShapeFromData(data: NSData) {
-        let shape = ResonateShapeGenerator.shared.rebuildShape(data)
+    open func generateShapeFromData(_ data: Data) {
+        let shape = ResonateShapeGenerator.shared.rebuildShape(data as NSData)
         addShapeToBack(shape)
 
     }
 
-    func addShapeToBack(shape: Gradient) {
+    func addShapeToBack(_ shape: Gradient) {
         shape.zPosition = -1000
         collectionView?.add(shape)
-        collectionView?.sendSubviewToBack(shape.view)
+        collectionView?.sendSubview(toBack: shape.view)
     }
 
-    func generateShapeAtPoint(point: Point) {
+    func generateShapeAtPoint(_ point: Point) {
         let shapeData: (Gradient, NSData) = ResonateShapeGenerator.shared.createRandomShape(point)
         addShapeToBack(shapeData.0)
 
         let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: PacketType.ResonateShape, id: deviceId, data: shapeData.1)
+        let packet = Packet(type: PacketType.resonateShape, id: deviceId, data: shapeData.1 as Data)
         SocketManager.sharedManager.broadcastPacket(packet)
     }
 
-    override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let e = Schedule.shared.eventAt(indexPath)
         if e.type == "OverNight" || e.type == "Unknown" {
             return
@@ -121,7 +121,7 @@ public class ScheduleViewController: UICollectionViewController {
         ArtistView.shared.reveal()
     }
 
-    override public func scrollViewDidScroll(scrollView: UIScrollView) {
+    override open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var newOffset = scrollView.contentOffset
         if newOffset.x < 0 {
             newOffset.x += Schedule.shared.singleContentWidth
@@ -143,28 +143,28 @@ public class ScheduleViewController: UICollectionViewController {
 
         ShapeLayer.disableActions = false
 
-        if scrollSource != .Local {
+        if scrollSource != .local {
             return
         }
 
         scrollUniverseDelegate?.shouldSendScrollData()
-        lastLocalInteractionTimestamp = NSDate().timeIntervalSinceReferenceDate
+        lastLocalInteractionTimestamp = Date().timeIntervalSinceReferenceDate
 
         interactionCeaseTimer?.invalidate()
-        interactionCeaseTimer = NSTimer.scheduledTimerWithTimeInterval(interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
+        interactionCeaseTimer = Timer.scheduledTimer(timeInterval: interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
     }
 
     //MARK: RemoteInteraction
 
-    public func registerUserInteraction(gestureRecognizer: UIGestureRecognizer) {
-        scrollSource = .Local
+    open func registerUserInteraction(_ gestureRecognizer: UIGestureRecognizer) {
+        scrollSource = .local
     }
 
-    public func registerRemoteUserInteraction(interaction: RemoteInteraction) {
+    open func registerRemoteUserInteraction(_ interaction: RemoteInteraction) {
         interactionsByID[interaction.deviceID] = interaction
 
-        let currentTimestamp = NSDate().timeIntervalSinceReferenceDate
-        if let timestamp = lastLocalInteractionTimestamp where currentTimestamp - timestamp < interactionTimeout {
+        let currentTimestamp = Date().timeIntervalSinceReferenceDate
+        if let timestamp = lastLocalInteractionTimestamp , currentTimestamp - timestamp < interactionTimeout {
             // Local interactions trump remote ones
             // TODO: maybe start moving slowly as time goes by?
             return
@@ -178,16 +178,16 @@ public class ScheduleViewController: UICollectionViewController {
         }
     }
 
-    public func registerRemoteCease(id: Int) {
+    open func registerRemoteCease(_ id: Int) {
         interactionsByID[id] = nil
     }
 
-    func remoteScrollTo(point: CGPoint) {
+    func remoteScrollTo(_ point: CGPoint) {
         if collectionView?.contentOffset == point {
             return
         }
 
-        scrollSource = .Remote
+        scrollSource = .remote
         collectionView?.setContentOffset(point, animated: false)
 
     }

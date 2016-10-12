@@ -11,16 +11,16 @@ import UIKit
 import CocoaLumberjack
 
 enum ScrollSource {
-    case Local
-    case Remote
+    case local
+    case remote
 }
 
-public class Spiral : UniverseController {
+open class Spiral : UniverseController {
     let scrollViewRotation = -0.01
     let pageCount = 60
-    let interactionTimeout = NSTimeInterval(10)
+    let interactionTimeout = TimeInterval(10)
 
-    var scrollSource = ScrollSource.Local
+    var scrollSource = ScrollSource.local
 
     let container = View()
     let scrollview = InfiniteScrollView()
@@ -29,14 +29,14 @@ public class Spiral : UniverseController {
     var spiralUniverseDelegate: SpiralUniverseDelegate?
 
     var interactionsByID = [Int: RemoteInteraction]()
-    var lastLocalInteractionTimestamp: NSTimeInterval?
-    weak var interactionCeaseTimer: NSTimer?
+    var lastLocalInteractionTimestamp: TimeInterval?
+    var interactionCeaseTimer: UIKit.Timer?
 
-    public override func setup() {
+    open override func setup() {
 
         container.frame = canvas.frame
         scrollview.frame = view.frame
-        scrollview.userInteractionEnabled = false
+        scrollview.isUserInteractionEnabled = false
         container.add(scrollview)
         canvas.add(container)
 
@@ -54,13 +54,13 @@ public class Spiral : UniverseController {
         scrollview.contentSize = CGSize(width: scrollview.frame.width * CGFloat(pageCount + 1), height: 1)
 
         interaction.frame = CGRect(inset(canvas.frame, dx: -canvas.width * 0.22, dy: -canvas.height * 0.11))
-        interaction.layer.borderColor = UIColor.redColor().CGColor
+        interaction.layer.borderColor = UIColor.red.cgColor
         interaction.layer.borderWidth = 1.0
         interaction.contentSize = CGSize(width: interaction.frame.width * CGFloat(pageCount + 1), height: 1)
 
-        interaction.addObserver(self, forKeyPath: "contentOffset", options: .New, context: nil)
+        interaction.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
 
-        interaction.transform = CGAffineTransformMakeRotation(CGFloat(scrollViewRotation))
+        interaction.transform = CGAffineTransform(rotationAngle: CGFloat(scrollViewRotation))
 
         var p = canvas.center
         p.x += dx
@@ -74,7 +74,7 @@ public class Spiral : UniverseController {
         }
     }
 
-    func createViewAtIndex(index: Int) -> View {
+    func createViewAtIndex(_ index: Int) -> View {
         let v = View(frame: canvas.frame)
         v.backgroundColor = colorAtIndex(index)
 
@@ -88,7 +88,7 @@ public class Spiral : UniverseController {
         return v
     }
 
-    func colorAtIndex(index: Int) -> Color {
+    func colorAtIndex(_ index: Int) -> Color {
         let c1 = C4Pink
         let c2 = C4Blue
         let vA = Vector(x: c1.red, y: c1.green, z: c1.blue)
@@ -98,19 +98,19 @@ public class Spiral : UniverseController {
         return Color(red: vC.x, green: vC.y, blue: vC.z, alpha: 1.0)
     }
 
-    public var shouldReportScroll: Bool {
-        return scrollSource == .Local
+    open var shouldReportScroll: Bool {
+        return scrollSource == .local
     }
 
-    public func registerUserInteraction(gestureRecognizer: UIGestureRecognizer) {
-        scrollSource = .Local
+    open func registerUserInteraction(_ gestureRecognizer: UIGestureRecognizer) {
+        scrollSource = .local
     }
 
-    public func registerRemoteUserInteraction(interaction: RemoteInteraction) {
+    open func registerRemoteUserInteraction(_ interaction: RemoteInteraction) {
         interactionsByID[interaction.deviceID] = interaction
 
-        let currentTimestamp = NSDate().timeIntervalSinceReferenceDate
-        if let timestamp = lastLocalInteractionTimestamp where currentTimestamp - timestamp < interactionTimeout {
+        let currentTimestamp = Date().timeIntervalSinceReferenceDate
+        if let timestamp = lastLocalInteractionTimestamp , currentTimestamp - timestamp < interactionTimeout {
             // Local interactions trump remote ones
             // TODO: maybe start moving slowly as time goes by?
             return
@@ -121,16 +121,16 @@ public class Spiral : UniverseController {
         }
     }
 
-    public func registerRemoteCease(id: Int) {
+    open func registerRemoteCease(_ id: Int) {
         interactionsByID[id] = nil
     }
 
-    func remoteScrollTo(point: CGPoint) {
+    func remoteScrollTo(_ point: CGPoint) {
         if scrollview.contentOffset == point {
             return
         }
 
-        scrollSource = .Remote
+        scrollSource = .remote
         scrollview.contentOffset = point
 
         let normalOffset = (scrollview.contentOffset.x / scrollview.contentSize.width)
@@ -165,8 +165,8 @@ public class Spiral : UniverseController {
         return minInteraction
     }
 
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if scrollSource != .Local {
+     override open func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
+        if scrollSource != .local {
             return
         }
 
@@ -179,10 +179,10 @@ public class Spiral : UniverseController {
             spiralUniverseDelegate?.shouldSendScrollData()
         }
 
-        lastLocalInteractionTimestamp = NSDate().timeIntervalSinceReferenceDate
+        lastLocalInteractionTimestamp = Date().timeIntervalSinceReferenceDate
 
         interactionCeaseTimer?.invalidate()
-        interactionCeaseTimer = NSTimer.scheduledTimerWithTimeInterval(interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
+        interactionCeaseTimer = Timer.scheduledTimer(timeInterval: interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
     }
 
     func interactionTimedOut() {

@@ -1,1 +1,19 @@
+CGPath > cgPath
+
 closePath > close
+
+CGPoint\( > CGPoint\(x:
+
+y:control > control
+
+.moveToPoint\( > .move(to: 
+
+.addCurveToPoint\( > 
+
+.addLineToPoint\( > .addLine(to:
+
+, > , y:
+
+.addCurveToPoint\(CGPoint\( > .addCurve(to: CGPoint(x: 
+
+.moveToPoint\(CGPoint\( > .move\(to: CGPoint\(x: 

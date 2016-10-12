@@ -3,7 +3,7 @@ import Foundation
 import CocoaAsyncSocket
 import CocoaLumberjack
 
-public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
+open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let masterPort = UInt16(10101)
     static let peripheralPort = UInt16(11111)
     static let masterHost = "10.0.0.1"
@@ -21,9 +21,9 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     //the socket that will be used to connect to the core app
     var socket: GCDAsyncUdpSocket!
 
-    public lazy var deviceID: Int = {
-        var deviceName = UIDevice.currentDevice().name
-        deviceName = deviceName.stringByReplacingOccurrencesOfString("MO", withString: "")
+    open lazy var deviceID: Int = {
+        var deviceName = UIDevice.current.name
+        deviceName = deviceName.replacingOccurrences(of: "MO", with: "")
         if let deviceID = Int(deviceName) {
             return deviceID
         }
@@ -33,16 +33,16 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     public override init() {
         super.init()
 
-        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
+        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         try! socket.enableBroadcast(true)
-        try! socket.bindToPort(SocketManager.peripheralPort)
+        try! socket.bind(toPort: SocketManager.peripheralPort)
         try! socket.beginReceiving()
 
-        let packet = Packet(type: .Handshake, id: deviceID)
-        socket.sendData(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
+        let packet = Packet(type: .handshake, id: deviceID)
+        socket.send(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
     }
 
-    public func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
+    @nonobjc open func udpSocket(_ sock: GCDAsyncUdpSocket!, didReceive data: Data!, fromAddress address: Data!, withFilterContext filterContext: AnyObject!) {
         var packet: Packet!
         do {
             packet = try Packet(data)
@@ -52,19 +52,19 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         }
 
         switch packet.packetType {
-        case .Handshake:
+        case .handshake:
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
-        case .Ping:
-            let packet = Packet(type: .Ping, id: deviceID)
-            socket.sendData(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
+        case .ping:
+            let packet = Packet(type: .ping, id: deviceID)
+            socket.send(packet.serialize(), toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
 
         default:
             workspace?.receivePacket(packet)
         }
     }
 
-    public func broadcastPacket(packet: Packet) {
-        socket.sendData(packet.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+    open func broadcastPacket(_ packet: Packet) {
+        socket.send(packet.serialize() as Data, toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 }
