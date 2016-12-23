@@ -16,24 +16,24 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
     func reload() {
         let array = Array(socketManager.peripherals.values)
-        let sorted = (array as NSArray).sortedArrayUsingDescriptors(tableView.sortDescriptors)
+        let sorted = (array as NSArray).sortedArray(using: tableView.sortDescriptors)
         sortedPeripherals = sorted as! [Peripheral]
         tableView.reloadData()
     }
 
-    @IBAction func syncAnimations(sender: NSButton) {
-        let p = Packet(type: .Sync, id: SocketManager.masterID)
-        socketManager.socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+    @IBAction func syncAnimations(_ sender: NSButton) {
+        let p = Packet(type: .sync, id: SocketManager.masterID)
+        socketManager.socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
 
     // MARK: - NSTableViewDataSource
 
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return sortedPeripherals.count
     }
 
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         guard let column = tableColumn else {
             return nil
         }
@@ -54,18 +54,18 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     }
 
-    func tableView(tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
         reload()
     }
 
 
     // MARK: - NSTableViewDelegate
 
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let column = tableColumn else {
             return nil
         }
-        guard let view = tableView.makeViewWithIdentifier(column.identifier, owner: self) as? NSTableCellView else {
+        guard let view = tableView.make(withIdentifier: column.identifier, owner: self) as? NSTableCellView else {
             return nil
         }
         let peripheral = sortedPeripherals[row]

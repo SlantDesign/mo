@@ -14,7 +14,7 @@ class AnimatableCellPath {
     var path: CGPath!
     var fillColor: CGColor!
     var animationOffset: CGFloat = 0.0
-    var visibleFrame = CGRectZero
+    var visibleFrame = CGRect.zero
     var event: Event!
 
     init(frame f: CGRect, event e: Event, color c: CGColor) {
@@ -33,7 +33,7 @@ class AnimatableCellPath {
             titleElements.append(event.title)
         }
 
-        let tt = TextShape(text: event.title.uppercaseString+"–", font: font)!
+        let tt = TextShape(text: event.title.uppercased()+"–", font: font)!
         if tt.width < Double(visibleFrame.width) {
             for artist in event.artists {
                 titleElements.append(artist)
@@ -53,13 +53,13 @@ class AnimatableCellPath {
             return
         }
 
-        let t = TextShape(text: (title + "–").uppercaseString, font: font)!
+        let t = TextShape(text: (title + "–").uppercased(), font: font)!
 
         let originalTextPath = t.path!.CGPath
-        let originalTextPathBounds = CGPathGetBoundingBox(originalTextPath)
+        let originalTextPathBounds = originalTextPath.boundingBox
 
         //finds gap between last character and first character of repeating elements
-        let suffix = "\(title[title.endIndex.predecessor()])"
+        let suffix = "\(title[title.characters.index(before: title.endIndex)])"
         let first = "\(title[title.startIndex])"
 
         let t1 = TextShape(text: suffix, font: font)!
@@ -82,20 +82,20 @@ class AnimatableCellPath {
                 title += "–"
             }
             title += "\(characters[i])"
-            t.text = title.uppercaseString
+            t.text = title.uppercased()
             i += 1
             if i >= characters.count {
                 i = 0
             }
         }
 
-        let completeBounds = CGPathGetBoundingBox(t.path!.CGPath)
+        let completeBounds = (t.path!.CGPath).boundingBox
         let backgroundFrame = CGRect(x: 0, y: 0, width: completeBounds.width, height: visibleFrame.height)
-        let backgroundPath = CGPathCreateMutableCopy(CGPathCreateWithRect(backgroundFrame, nil))
+        let backgroundPath = CGPath(rect: backgroundFrame, transform: nil).mutableCopy()
 
-        var transformOrigin = CGAffineTransformMakeTranslation(-originalTextPathBounds.origin.x, -originalTextPathBounds.origin.y + (backgroundFrame.height - completeBounds.height) / 2.0)
+        let transformOrigin = CGAffineTransform(translationX: -originalTextPathBounds.origin.x, y: -originalTextPathBounds.origin.y + (backgroundFrame.height - completeBounds.height) / 2.0)
 
-        CGPathAddPath(backgroundPath, &transformOrigin, t.path!.CGPath)
+        backgroundPath?.addPath(t.path!.CGPath, transform: transformOrigin)
 
         path = backgroundPath
     }

@@ -5,17 +5,17 @@ import Foundation
 import UIKit
 
 public enum GestureType : Int8 {
-    case Tap
-    case Swipe
-    case LongPress
-    case Pan
-    case None
+    case tap
+    case swipe
+    case longPress
+    case pan
+    case none
 }
 
 public struct Gesture {
-    var type = GestureType.None
+    var type = GestureType.none
     var center = Point()
-    var state = UIGestureRecognizerState.Began
+    var state = UIGestureRecognizerState.began
     var velocity : Vector?
     var translation : Vector?
     var direction : UISwipeGestureRecognizerDirection?
@@ -41,45 +41,45 @@ public struct Gesture {
         state = s
     }
 
-    func serialize() -> NSData {
+    func serialize() -> Data {
         let data = NSMutableData()
         var t = type.rawValue
-        data.appendBytes(&t, length: sizeof(Int8))
+        data.append(&t, length: MemoryLayout<Int8>.size)
         var c = center
-        data.appendBytes(&c, length: sizeof(Point))
+        data.append(&c, length: MemoryLayout<Point>.size)
         var s = state.rawValue
-        data.appendBytes(&s, length: sizeof(UIGestureRecognizerState))
-        if type == GestureType.Pan {
+        data.append(&s, length: MemoryLayout<UIGestureRecognizerState>.size)
+        if type == GestureType.pan {
             var v = velocity
-            data.appendBytes(&v, length: sizeof(Vector))
+            data.append(&v, length: MemoryLayout<Vector>.size)
             var tr = translation
-            data.appendBytes(&tr, length: sizeof(Vector))
-        } else if type == GestureType.Swipe {
+            data.append(&tr, length: MemoryLayout<Vector>.size)
+        } else if type == GestureType.swipe {
             var d = direction
-            data.appendBytes(&d, length: sizeof(UISwipeGestureRecognizerDirection))
+            data.append(&d, length: MemoryLayout<UISwipeGestureRecognizerDirection>.size)
         }
-        return data
+        return data as Data
     }
     
-    init(_ data: NSData) {
+    init(_ data: Data) {
         var index = 0
-        type = GestureType(rawValue: UnsafePointer<Int8>(data.bytes).memory)!
-        index += sizeof(Int8)
+        type = GestureType(rawValue: (data as NSData).bytes.bindMemory(to: Int8.self, capacity: data.count).pointee)!
+        index += MemoryLayout<Int8>.size
         
-        center = UnsafePointer<Point>(data.bytes + index).memory
-        index += sizeof(Point)
+        center = data.extract(Point.self, at: index)
+        index += MemoryLayout<Point>.size
         
-        state = UIGestureRecognizerState(rawValue: UnsafePointer<Int>(data.bytes+index).memory)!
-        index += sizeof(UIGestureRecognizerState)
+        state = UIGestureRecognizerState(rawValue: data.extract(Int.self, at: index)) ?? .possible
+        index += MemoryLayout<UIGestureRecognizerState>.size
         
-        if type == GestureType.Pan {
-            velocity = UnsafePointer<Vector>(data.bytes + index).memory
-            index += sizeof(Vector)
-            translation = UnsafePointer<Vector>(data.bytes + index).memory
-            index += sizeof(Vector)
-        } else if type == GestureType.Swipe {
-            direction = UnsafePointer<UISwipeGestureRecognizerDirection>(data.bytes + index).memory
-            index += sizeof(UISwipeGestureRecognizerDirection)
+        if type == GestureType.pan {
+            velocity = data.extract(Vector.self, at: index)
+            index += MemoryLayout<Vector>.size
+            translation = data.extract(Vector.self, at: index)
+            index += MemoryLayout<Vector>.size
+        } else if type == GestureType.swipe {
+            direction = data.extract(UISwipeGestureRecognizerDirection.self, at: index)
+            index += MemoryLayout<UISwipeGestureRecognizerDirection>.size
         }
     }
 }

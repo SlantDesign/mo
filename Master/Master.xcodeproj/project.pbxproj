@@ -11,6 +11,8 @@
 		1F545D341C97E27100436812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F545D331C97E27100436812 /* ViewController.swift */; };
 		1F545D361C97E27100436812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F545D351C97E27100436812 /* Assets.xcassets */; };
 		1F545D391C97E27100436812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F545D371C97E27100436812 /* Main.storyboard */; };
+		611B896A1E0DC91E001AAD5F /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B89691E0DC91E001AAD5F /* DataExtension.swift */; };
+		611B896B1E0DC9E5001AAD5F /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B89691E0DC91E001AAD5F /* DataExtension.swift */; };
 		A9B46D0E1C9CAE7200E1D1DD /* MasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B46D0D1C9CAE7200E1D1DD /* MasterTests.swift */; };
 		A9B46D161C9CAE9800E1D1DD /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B46D151C9CAE9800E1D1DD /* PacketTest.swift */; };
 		A9B46D171C9CAEDF00E1D1DD /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C634331C98A00A00AB3F75 /* Packet.swift */; };
@@ -39,6 +41,7 @@
 		1F545D381C97E27100436812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F545D3A1C97E27100436812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		291FC32FE372B510F419277B /* Pods-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Master/Pods-Master.debug.xcconfig"; sourceTree = "<group>"; };
+		611B89691E0DC91E001AAD5F /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataExtension.swift; path = ../DataExtension.swift; sourceTree = "<group>"; };
 		75D84B96CA7451AEE9D31A87 /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B46CF91C9CACE400E1D1DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		A9B46CFA1C9CACE400E1D1DD /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/Mac/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		1F545D251C97E27100436812 = {
 			isa = PBXGroup;
 			children = (
+				611B89691E0DC91E001AAD5F /* DataExtension.swift */,
 				D9C634331C98A00A00AB3F75 /* Packet.swift */,
 				1F545D301C97E27100436812 /* Master */,
 				1F545D2F1C97E27100436812 /* Products */,
@@ -158,12 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F545D3D1C97E27100436812 /* Build configuration list for PBXNativeTarget "Master" */;
 			buildPhases = (
-				9E9C32AB6CF8D030C4FCBB3F /* 📦 Check Pods Manifest.lock */,
+				9E9C32AB6CF8D030C4FCBB3F /* [CP] Check Pods Manifest.lock */,
 				1F545D2A1C97E27100436812 /* Sources */,
 				1F545D2B1C97E27100436812 /* Frameworks */,
 				1F545D2C1C97E27100436812 /* Resources */,
-				39A234475525C63D832DCC86 /* 📦 Embed Pods Frameworks */,
-				5BE5659105384006CA6F0673 /* 📦 Copy Pods Resources */,
+				39A234475525C63D832DCC86 /* [CP] Embed Pods Frameworks */,
+				5BE5659105384006CA6F0673 /* [CP] Copy Pods Resources */,
 				CB3B0AB180BA1042AB82789D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -200,14 +204,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = C4;
 				TargetAttributes = {
 					1F545D2D1C97E27100436812 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 					A9B46D0A1C9CAE7200E1D1DD = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 1F545D2D1C97E27100436812;
 					};
 				};
@@ -251,14 +257,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39A234475525C63D832DCC86 /* 📦 Embed Pods Frameworks */ = {
+		39A234475525C63D832DCC86 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,14 +272,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Master/Pods-Master-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5BE5659105384006CA6F0673 /* 📦 Copy Pods Resources */ = {
+		5BE5659105384006CA6F0673 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,19 +287,19 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Master/Pods-Master-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E9C32AB6CF8D030C4FCBB3F /* 📦 Check Pods Manifest.lock */ = {
+		9E9C32AB6CF8D030C4FCBB3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CB3B0AB180BA1042AB82789D /* Embed Pods Frameworks */ = {
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B46D191C9D02D400E1D1DD /* Peripheral.swift in Sources */,
+				611B896A1E0DC91E001AAD5F /* DataExtension.swift in Sources */,
 				1F545D341C97E27100436812 /* ViewController.swift in Sources */,
 				D9C6342C1C988FF200AB3F75 /* SocketManager.swift in Sources */,
 				1F545D321C97E27100436812 /* AppDelegate.swift in Sources */,
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B46D171C9CAEDF00E1D1DD /* Packet.swift in Sources */,
+				611B896B1E0DC9E5001AAD5F /* DataExtension.swift in Sources */,
 				A9B46D0E1C9CAE7200E1D1DD /* MasterTests.swift in Sources */,
 				A9B46D161C9CAE9800E1D1DD /* PacketTest.swift in Sources */,
 			);
@@ -371,8 +379,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -415,8 +425,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -435,6 +447,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

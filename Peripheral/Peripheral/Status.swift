@@ -12,7 +12,7 @@ import C4
 
 class Status: UniverseController {
     var player: AudioPlayer!
-    var timer: Timer?
+    var timer: C4.Timer?
 
     var maxPaths = (Path(), Path())
     var avgPaths = (Path(), Path())
@@ -46,14 +46,14 @@ class Status: UniverseController {
         player?.play()
     }
 
-    func normalize(val: Double, max: Double) -> Double {
+    func normalize(_ val: Double, max: Double) -> Double {
         var normMax = abs(val)
         normMax /= max
         return normMax * 100.0 + 100.0
     }
 
     func setupTimer() {
-        timer = Timer(interval: 1.0/60.0) {
+        timer = C4.Timer(interval: 1.0/60.0) {
             ShapeLayer.disableActions = true
             self.player.updateMeters()
             self.generateNextPoints()
@@ -64,7 +64,7 @@ class Status: UniverseController {
         timer?.start()
     }
 
-    func generatePoint(val: Double) -> Point {
+    func generatePoint(_ val: Double) -> Point {
         return Point(val * cos(Θ), val * sin(Θ))
     }
 
@@ -123,7 +123,7 @@ class Status: UniverseController {
         avgShapes.1.transform.rotate(M_PI_2 * 3)
     }
 
-    func styleShape(shape: Shape) {
+    func styleShape(_ shape: Shape) {
         shape.lineWidth = 0.25
         shape.fillColor = clear
         shape.strokeColor = white

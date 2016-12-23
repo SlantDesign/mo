@@ -21,13 +21,13 @@ class Peripheral: NSObject {
     /// Whether a hanshake was received
     var status = Status.Connecting
 
-    var lastPingResponse: NSDate?
+    var lastPingResponse: Date?
 
-    var lag: NSTimeInterval {
+    var lag: TimeInterval {
         guard let date = lastPingResponse else {
             return -1
         }
-        return NSDate().timeIntervalSinceDate(date)
+        return NSDate().timeIntervalSince(date)
     }
 
     /// Buffer for reading data
@@ -43,19 +43,19 @@ class Peripheral: NSObject {
     }
 
     func sendHandshake() {
-        let p = Packet(type: .Handshake, id: SocketManager.masterID)
-        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+        let p = Packet(type: .handshake, id: SocketManager.masterID)
+        socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
-    func processData(data: NSData) {
-        readBuffer.appendData(data)
+    func processData(_ data: Data) {
+        readBuffer.append(data)
 
         var readOffset = 0
-        while readBuffer.length >= sizeof(UInt32) {
-            let packetSize = Int(UnsafePointer<UInt32>(readBuffer.bytes + readOffset).memory)
+        while readBuffer.length >= MemoryLayout<UInt32>.size {
+            let packetSize = Int(readBuffer.bytes.advanced(by: readOffset).assumingMemoryBound(to: UInt32.self).pointee)
             if packetSize > 0 && readBuffer.length - readOffset >= packetSize {
                 // We have all the data necessary for the packet
-                let packetData = NSData(bytes: readBuffer.bytes + readOffset, length: packetSize)
+                let packetData = Data(bytes: readBuffer.bytes.advanced(by: readOffset).assumingMemoryBound(to: UInt8.self), count: packetSize)
                 processPacketWithData(packetData)
                 readOffset += packetSize
             } else {
@@ -65,11 +65,11 @@ class Peripheral: NSObject {
 
         // Move remaining data to the beginning of the buffer
         let remainingSize = readBuffer.length - readOffset
-        readBuffer.replaceBytesInRange(NSRange(location: 0, length: remainingSize), withBytes: readBuffer.bytes + readOffset)
+        readBuffer.replaceBytes(in: NSRange(location: 0, length: remainingSize), withBytes: readBuffer.bytes + readOffset)
         readBuffer.length -= readOffset
     }
 
-    func processPacketWithData(data: NSData) {
+    func processPacketWithData(_ data: Data) {
         var packet: Packet
         do {
             packet = try Packet(data)
@@ -79,14 +79,14 @@ class Peripheral: NSObject {
         }
 
         switch packet.packetType {
-        case .Handshake:
+        case .handshake:
             id = packet.id
             status = .Connected
             DDLogVerbose("Got handshake from \(id)")
 
-        case .Ping:
+        case .ping:
             id = packet.id
-            lastPingResponse = NSDate()
+            lastPingResponse = Date()
 
         default:
             break

@@ -11,18 +11,17 @@ import Foundation
 import UIKit
 import C4
 
-var dataLoaded: dispatch_once_t = 0
 let hour: (width: CGFloat, height: CGFloat) = (997.0/2.0, 155.0)
 
 class Schedule: NSObject, UICollectionViewDataSource {
     var venueOrder: [String : [String]]!
-    var dayOffsets: [String : NSTimeInterval]!
+    var dayOffsets: [String : TimeInterval]!
 
     static let shared = Schedule()
-    var startDate: NSDate!
-    var endDate: NSDate!
-    var totalInterval: NSTimeInterval {
-        return endDate.timeIntervalSinceDate(startDate)
+    var startDate: Date!
+    var endDate: Date!
+    var totalInterval: TimeInterval {
+        return endDate.timeIntervalSince(startDate as Date)
     }
 
     var totalWidth: CGFloat {
@@ -33,7 +32,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return CGFloat(totalInterval) / 3600.0 * hour.width
     }
 
-    var syncTimestamp: NSTimeInterval = 0
+    var syncTimestamp: TimeInterval = 0
     var events = [Event]()
 
     var animatablePaths = [AnimatableCellPath]()
@@ -48,18 +47,16 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func setup() {
-        dispatch_once(&dataLoaded) {
-            self.setStartEndDates()
-            self.loadData()
-        }
+        setStartEndDates()
+        loadData()
     }
 
     func setStartEndDates() {
-        let df = NSDateFormatter()
-        df.timeZone = NSTimeZone(name: "GMT")
+        let df = DateFormatter()
+        df.timeZone = TimeZone(abbreviation: "GMT")
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        startDate = df.dateFromString("2016-04-11 13:00:00")
-        endDate = df.dateFromString("2016-04-17 12:00:00")
+        startDate = (df.date(from: "2016-04-11 13:00:00") as NSDate!) as Date!
+        endDate = (df.date(from: "2016-04-17 12:00:00") as NSDate!) as Date!
 
         guard startDate != nil && endDate != nil else {
             print("Couldn't create the start and end dates")
@@ -68,13 +65,13 @@ class Schedule: NSObject, UICollectionViewDataSource {
     }
 
     func loadData() {        
-        let path = NSBundle.mainBundle().pathForResource("programme2016", ofType: "plist")!
+        let path = Bundle.main.path(forResource: "programme2016", ofType: "plist")!
         guard let e = NSArray(contentsOfFile: path) as? [[String : AnyObject]] else {
             print("Could not extract array of events from file")
             return
         }
 
-        let venueOrderPath = NSBundle.mainBundle().pathForResource("venueOrder", ofType: "plist")
+        let venueOrderPath = Bundle.main.path(forResource: "venueOrder", ofType: "plist")
         guard let order = NSDictionary(contentsOfFile: venueOrderPath!) as? [String : [String]] else {
             print("Could not extract array of events from file")
             return
@@ -91,11 +88,11 @@ class Schedule: NSObject, UICollectionViewDataSource {
             let summary = event["description"] as! String
             let type = event["type"] as! String
             let function = event["function"] as! String
-            let event = Event(date: date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type, function: function)
+            let event = Event(date: date as Date, day: day, duration: duration, location: location, title: title, artists: artists, summary: summary, type: type, function: function)
             events.append(event)
         }
 
-        events.sortInPlace {
+        events.sort {
             $0 < $1
         }
 
@@ -107,15 +104,15 @@ class Schedule: NSObject, UICollectionViewDataSource {
         }
     }
 
-    func indexesOfEventsBetween(start: NSDate, end: NSDate) -> [Int] {
+    func indexesOfEventsBetween(_ start: Date, end: Date) -> [Int] {
         var indexes = [Int]()
-        for (index, event) in events.enumerate() {
+        for (index, event) in events.enumerated() {
             //if the event date occurs before the visible end date
             //and if the event endDate occurs after the visible start date
             let eventStart = event.date
             let eventEnd = event.endDate
-            let a = eventStart.earlierDate(end) === eventStart
-            let b = start.laterDate(eventEnd) === eventEnd
+            let a = eventStart < end
+            let b = start < eventEnd
             if a && b {
                 indexes.append(index)
             }
@@ -123,55 +120,55 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return indexes
     }
 
-    func eventAt(indexPath: NSIndexPath) -> Event {
+    func eventAt(_ indexPath: IndexPath) -> Event {
         return events[indexPath.item]
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventCell", for: indexPath) as! EventCell
         cell.syncTimestamp = syncTimestamp
         cell.animatablePath = animatablePaths[indexPath.item]
         return cell
     }
 
-    func frameFor(event:Event) -> CGRect {
-        let x = CGFloat(event.date.timeIntervalSinceDate(startDate)) / 3600.0 * hour.width
+    func frameFor(_ event:Event) -> CGRect {
+        let x = CGFloat(event.date.timeIntervalSince(startDate as Date)) / 3600.0 * hour.width
         let h = event.type == "OverNight" ? 980 : heightForDay(event.day)
         let y = event.type == "OverNight" ? 0 : CGFloat(levelForVenue(event.location, day: event.day)) * h
         let w = CGFloat(event.duration) / 60.0 * hour.width
         let base = CGRect(x: x, y: y, width: w, height: h)
-        return CGRectInset(base, 2, 6)
+        return base.insetBy(dx: 2, dy: 6)
     }
 
-    func colorFor(event: Event) -> CGColor {
+    func colorFor(_ event: Event) -> CGColor {
         switch event.type {
         case "Performance":
-            return UIColor(red: 0.176, green: 1.0, blue: 0.89, alpha: 1.0).CGColor
+            return UIColor(red: 0.176, green: 1.0, blue: 0.89, alpha: 1.0).cgColor
         case "Workshop":
-            return UIColor(red: 0.243, green: 0.831, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.243, green: 0.831, blue: 1.0, alpha: 1.0).cgColor
         case "Lecture":
-            return UIColor(red: 0.427, green: 0.522, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.427, green: 0.522, blue: 1.0, alpha: 1.0).cgColor
         case "Screening":
-            return UIColor(red: 0.176, green: 0.945, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.176, green: 0.945, blue: 1.0, alpha: 1.0).cgColor
         case "IntensiveWorkshop":
-            return UIColor(red: 0.369, green: 0.627, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.369, green: 0.627, blue: 1.0, alpha: 1.0).cgColor
         case "QA":
-            return UIColor(red: 0.467, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.467, green: 0.392, blue: 1.0, alpha: 1.0).cgColor
         case "Panel":
-            return UIColor(red: 0.298, green: 0.725, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.298, green: 0.725, blue: 1.0, alpha: 1.0).cgColor
         case "Venue":
-            return UIColor(red: 0.635, green: 0.392, blue: 1.0, alpha: 1.0).CGColor
+            return UIColor(red: 0.635, green: 0.392, blue: 1.0, alpha: 1.0).cgColor
         case "OverNight":
-            return UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.0).CGColor
+            return UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.0).cgColor
         default:
-            return UIColor.lightGrayColor().CGColor
+            return UIColor.lightGray.cgColor
         }
     }
-    func levelForVenue(venue: String, day: String) -> Int {
-        return venueOrder[day]!.indexOf(venue)!
+    func levelForVenue(_ venue: String, day: String) -> Int {
+        return venueOrder[day]!.index(of: venue)!
     }
 
-    func heightForDay(day: String) -> CGFloat {
+    func heightForDay(_ day: String) -> CGFloat {
         guard let order = venueOrder else {
             print("venueOrder not initialized")
             return 1.0
@@ -181,16 +178,16 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return CGFloat(min(calculatedHeight, 245))
     }
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
 
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HourHeaderView", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HourHeaderView", for: indexPath as IndexPath)
 
         if let hour = headerView as? HourHeaderView {
             hour.label!.text = String(format:"%2d:00", (indexPath.item + 6) % 24)

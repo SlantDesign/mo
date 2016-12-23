@@ -8,5 +8,5 @@ public struct RemoteInteraction {
     public var deviceID: Int
 
     /// The timestamp, from the local clock
-    public var timestamp: NSTimeInterval
+    public var timestamp: TimeInterval
 }

@@ -14,7 +14,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     
     static let sharedManager = SocketManager()
 
-    var queue: dispatch_queue_t
+    var queue: DispatchQueue
     var socket: GCDAsyncUdpSocket!
 
     /// A list of all the peripherals by IP address
@@ -23,21 +23,21 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     /// Action invoked when there is a change in status
     var changeAction: (() -> Void)?
 
-    weak var pingTimer: NSTimer?
+    weak var pingTimer: Timer?
 
     public override init() {
-        queue = dispatch_queue_create("SocketManager", DISPATCH_QUEUE_SERIAL)
+        queue = DispatchQueue(label: "SocketManager", attributes: [])
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: queue)
         try! socket.enableBroadcast(true)
-        try! socket.bindToPort(SocketManager.masterPort)
+        try! socket.bind(toPort: SocketManager.masterPort)
         try! socket.beginReceiving()
 
-        pingTimer = NSTimer.scheduledTimerWithTimeInterval(SocketManager.pingInterval, target: self, selector: #selector(SocketManager.ping), userInfo: nil, repeats: true)
+        pingTimer = Timer.scheduledTimer(timeInterval: SocketManager.pingInterval, target: self, selector: #selector(SocketManager.ping), userInfo: nil, repeats: true)
     }
 
-    public func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
+    public func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
         var hostString: NSString? = NSString()
         var port: UInt16 = 0
         GCDAsyncUdpSocket.getHost(&hostString, port: &port, fromAddress: address)
@@ -57,15 +57,15 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         }
     }
 
-    func processPacket(packet: Packet, peripheral: Peripheral) {
+    func processPacket(_ packet: Packet, peripheral: Peripheral) {
         switch packet.packetType {
-        case .Handshake:
-            dispatch_async(dispatch_get_main_queue()) {
+        case .handshake:
+            DispatchQueue.main.async {
                 self.changeAction?()
             }
 
-        case .Ping:
-            dispatch_async(dispatch_get_main_queue()) {
+        case .ping:
+            DispatchQueue.main.async {
                 self.changeAction?()
             }
 
@@ -79,8 +79,8 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     func ping() {
         updateStatuses()
-        let p = Packet(type: .Ping, id: SocketManager.masterID)
-        socket.sendData(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+        let p = Packet(type: .ping, id: SocketManager.masterID)
+        socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
     func updateStatuses() {
@@ -89,8 +89,8 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
                 // Disconnect if we don't get a ping for a while
                 p.status = .Disconnected
                 DDLogVerbose("Disconnected from: \(p.id)")
-                dispatch_async(queue) {
-                    self.peripherals.removeValueForKey(p.address)
+                queue.async {
+                    self.peripherals.removeValue(forKey: p.address)
                 }
             }
         }

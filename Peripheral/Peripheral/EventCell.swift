@@ -18,7 +18,7 @@ class EventCell: UICollectionViewCell {
         }
     }
     var shapeLayer: ShapeLayer = ShapeLayer()
-    var syncTimestamp: NSTimeInterval = 0 {
+    var syncTimestamp: TimeInterval = 0 {
         didSet {
             animate()
         }
@@ -51,16 +51,16 @@ class EventCell: UICollectionViewCell {
         shapeLayer.removeFromSuperlayer()
         shapeLayer.removeAllAnimations()
         shapeLayer.path = animatablePath?.path
-        shapeLayer.bounds = CGPathGetBoundingBox(animatablePath?.path)
+        shapeLayer.bounds = ((animatablePath?.path)?.boundingBox)!
         shapeLayer.fillColor = animatablePath?.fillColor
         shapeLayer.position = CGPoint(x: shapeLayer.bounds.midX, y: frame.height/2.0)
-        shapeLayer.backgroundColor = CGColorCreateCopyWithAlpha(shapeLayer.fillColor, 0.3)
+        shapeLayer.backgroundColor = (shapeLayer.fillColor)?.copy(alpha: 0.3)
         layer.addSublayer(shapeLayer)
         ShapeLayer.disableActions = false
     }
 
     func setup() {
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         clipsToBounds = true
     }
 
@@ -73,12 +73,12 @@ class EventCell: UICollectionViewCell {
         let keyPath = "position"
         let animation = CABasicAnimation(keyPath: keyPath)
         animation.duration = 30.0
-        animation.timeOffset = (CFAbsoluteTimeGetCurrent() - syncTimestamp) % animation.duration
+        animation.timeOffset = (CFAbsoluteTimeGetCurrent() - syncTimestamp).truncatingRemainder(dividingBy: animation.duration)
         animation.beginTime = CACurrentMediaTime()
         animation.keyPath = keyPath
-        animation.fromValue = NSValue(CGPoint: shapeLayer.position)
-        animation.toValue = NSValue(CGPoint: CGPoint(x: shapeLayer.position.x - animatablePath.animationOffset, y: shapeLayer.position.y))
+        animation.fromValue = NSValue(cgPoint: shapeLayer.position)
+        animation.toValue = NSValue(cgPoint: CGPoint(x: shapeLayer.position.x - animatablePath.animationOffset, y: shapeLayer.position.y))
         animation.repeatCount = Float.infinity
-        shapeLayer.addAnimation(animation, forKey:"Animate:\(keyPath)")
+        shapeLayer.add(animation, forKey:"Animate:\(keyPath)")
     }
 }

@@ -6,8 +6,8 @@ import UIKit
 let frameGap = 229.0
 let frameCanvasWidth = 997.0
 
-public class UniverseController : CanvasController {
-    public override func viewDidLoad() {
+open class UniverseController : CanvasController {
+    open override func viewDidLoad() {
         canvas.bounds.origin.x = dx
         canvas.backgroundColor = clear
         super.viewDidLoad()
@@ -36,15 +36,15 @@ public class UniverseController : CanvasController {
         }
     }
 
-    public func receivePacket(packet: Packet) {
+    open func receivePacket(_ packet: Packet) {
         
     }
 
-    public func handleGesture(gesture: Gesture) {
+    open func handleGesture(_ gesture: Gesture) {
         
     }
     
-    public func unload() {
+    open func unload() {
         
     }
 }
