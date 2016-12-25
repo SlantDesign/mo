@@ -1,22 +1,45 @@
 use_frameworks!
-workspace 'mo'
-project 'Master/Master.xcodeproj'
+project 'MO.xcodeproj'
 
-target 'Master' do
-  platform :osx, '10.11'
-  project 'Master/Master.xcodeproj'
-
-  pod 'CocoaLumberjack/Swift', '~> 3.0'
+abstract_target 'All' do
   pod 'CocoaAsyncSocket', '~> 7.5.1'
-end
 
-target 'Peripheral' do
-  platform :ios, '9.0'
-  project 'Peripheral/Peripheral.xcodeproj'
+  target 'MO-iOS' do
+    platform :ios, '9.3'
+  end
 
-  pod 'C4', '~> 2.0'
-  pod 'CocoaLumberjack/Swift', '~> 3.0'
-  pod 'CocoaAsyncSocket', '~> 7.5.1'
+  target 'MOTests-iOS' do
+    platform :ios, '9.3'
+  end
+
+  target 'MO-tvOS' do
+    platform :tvos, '9.3'
+  end
+
+  target 'MOTests-tvOS' do
+    platform :tvos, '9.3'
+  end
+
+  target 'MO-macOS' do
+    platform :osx, '10.11'
+  end
+
+  target 'MOTests-macOS' do
+    platform :osx, '10.11'
+  end
+
+  target 'Master' do
+    platform :osx, '10.11'
+
+    pod 'CocoaLumberjack/Swift', '~> 3.0'
+  end
+
+  target 'Peripheral' do
+    platform :ios, '9.3'
+
+    pod 'C4', '~> 2.0'
+    pod 'CocoaLumberjack/Swift', '~> 3.0'
+  end
 end
 
 post_install do |installer|
