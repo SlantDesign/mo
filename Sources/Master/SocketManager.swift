@@ -1,4 +1,8 @@
-//  Copyright (c) 2015 C4. All rights reserved.
+// Copyright © 2016 Slant.
+//
+// This file is part of MO. The full MO copyright notice, including terms
+// governing use, modification, and redistribution, is contained in the file
+// LICENSE at the root of the source code distribution tree.
 
 import Foundation
 import Cocoa

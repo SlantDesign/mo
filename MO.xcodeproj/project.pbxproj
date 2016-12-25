@@ -51,7 +51,6 @@
 		6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAF1E0F634100829825 /* ScheduleViewController.storyboard */; };
 		6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAB01E0F634100829825 /* ThinVeil.mp3 */; };
 		6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAB11E0F634100829825 /* UniversLTStd-LightUltraCn.otf */; };
-		6114EB2D1E0F63F500829825 /* MOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EADB1E0F634100829825 /* MOTests.swift */; };
 		6114EB2F1E0F641B00829825 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EB2E1E0F641B00829825 /* PacketTest.swift */; };
 		6114EB481E0F663400829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EB3F1E0F663400829825 /* MO.framework */; };
 		6114EB641E0F664700829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EB5B1E0F664700829825 /* MO.framework */; };
@@ -61,8 +60,6 @@
 		6114EB781E0F7F0D00829825 /* MO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EA7F1E0F2BD100829825 /* MO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6114EB7C1E0F80C200829825 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EB2E1E0F641B00829825 /* PacketTest.swift */; };
 		6114EB7D1E0F80C300829825 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EB2E1E0F641B00829825 /* PacketTest.swift */; };
-		6114EB7E1E0F80C500829825 /* MOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EADB1E0F634100829825 /* MOTests.swift */; };
-		6114EB7F1E0F80C600829825 /* MOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EADB1E0F634100829825 /* MOTests.swift */; };
 		6114EB801E0F80CC00829825 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EAB31E0F634100829825 /* DataExtension.swift */; };
 		6114EB811E0F80CC00829825 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EABA1E0F634100829825 /* Packet.swift */; };
 		6114EB821E0F80CD00829825 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EAB31E0F634100829825 /* DataExtension.swift */; };
@@ -143,6 +140,8 @@
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		611100BF1E0FA33800207571 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		611100C01E0FA37800207571 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6114EA7F1E0F2BD100829825 /* MO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6114EA881E0F2BD100829825 /* MOTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MOTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6114EAA31E0F634100829825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,7 +185,6 @@
 		6114EAD21E0F634100829825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6114EAD41E0F634100829825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6114EAD61E0F634100829825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6114EADB1E0F634100829825 /* MOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTests.swift; sourceTree = "<group>"; };
 		6114EAE61E0F637A00829825 /* Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Master.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6114EAF91E0F638E00829825 /* Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6114EB2E1E0F641B00829825 /* PacketTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTest.swift; sourceTree = "<group>"; };
@@ -295,6 +293,8 @@
 		6114EA751E0F2BD100829825 = {
 			isa = PBXGroup;
 			children = (
+				611100BF1E0FA33800207571 /* README.md */,
+				611100C01E0FA37800207571 /* LICENSE */,
 				6114EAB21E0F634100829825 /* Sources */,
 				6114EAA11E0F634100829825 /* Resources */,
 				6114EAD51E0F634100829825 /* Tests */,
@@ -434,7 +434,6 @@
 			children = (
 				6114EAD61E0F634100829825 /* Info.plist */,
 				6114EB2E1E0F641B00829825 /* PacketTest.swift */,
-				6114EADB1E0F634100829825 /* MOTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1158,7 +1157,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6114EB2D1E0F63F500829825 /* MOTests.swift in Sources */,
 				6114EB2F1E0F641B00829825 /* PacketTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1214,7 +1212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6114EB7C1E0F80C200829825 /* PacketTest.swift in Sources */,
-				6114EB7E1E0F80C500829825 /* MOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,7 +1229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6114EB7D1E0F80C300829825 /* PacketTest.swift in Sources */,
-				6114EB7F1E0F80C600829825 /* MOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

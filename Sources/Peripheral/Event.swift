@@ -1,10 +1,8 @@
+// Copyright © 2016 Slant.
 //
-//  Helpers.swift
-//  Peripheral
-//
-//  Created by travis on 2016-03-21.
-//  Copyright © 2016 C4. All rights reserved.
-//
+// This file is part of MO. The full MO copyright notice, including terms
+// governing use, modification, and redistribution, is contained in the file
+// LICENSE at the root of the source code distribution tree.
 
 import Foundation
 
