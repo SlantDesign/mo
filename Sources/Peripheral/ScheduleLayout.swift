@@ -18,7 +18,7 @@ class ScheduleLayout: UICollectionViewLayout {
         super.init(coder: aDecoder)
     }
 
-    override var collectionViewContentSize : CGSize {
+    override var collectionViewContentSize: CGSize {
         return CGSize(width:Schedule.shared.totalWidth, height:1024.0)
     }
 

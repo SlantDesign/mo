@@ -46,7 +46,7 @@ public struct Packet: Equatable {
         self.id = id
         self.data = data
     }
-    
+
     public func serialize() -> Data {
         let packetData = NSMutableData()
 
@@ -66,7 +66,7 @@ public struct Packet: Equatable {
         }
         return packetData as Data
     }
-    
+
     public init(_ packetData: Data) throws {
         var index = 0
 
@@ -90,12 +90,12 @@ public struct Packet: Equatable {
             data = packetData.subdata(in: packetData.startIndex.advanced(by: index) ..< packetData.startIndex.advanced(by: index + dataLength))
         }
     }
-    
-    public var description : String {
+
+    public var description: String {
         return "Packet: \(packetType), \(id), \(data == nil ? "No Data" : "\(data!.count) bytes of Data")"
     }
 }
 
-public func ==(lhs: Packet, rhs: Packet) -> Bool {
+public func == (lhs: Packet, rhs: Packet) -> Bool {
     return lhs.packetType == rhs.packetType && lhs.id == rhs.id
 }

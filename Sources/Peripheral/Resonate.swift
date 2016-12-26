@@ -10,7 +10,7 @@ import CocoaLumberjack
 import MO
 import UIKit
 
-public protocol SpiralUniverseDelegate {
+public protocol SpiralUniverseDelegate: class {
     func shouldSendScrollData()
     func shouldSendCease()
 }

@@ -28,7 +28,7 @@ class WorkSpace: CanvasController {
         currentUniverse = status
         canvas.add(currentUniverse?.canvas)
 
-        tap = canvas.addTapGestureRecognizer { locations, center, state in
+        tap = canvas.addTapGestureRecognizer { _, _, _ in
             if !self.preparing {
                 self.preparing = true
                 self.showLoading()
@@ -39,7 +39,7 @@ class WorkSpace: CanvasController {
 
     func showLoading() {
         ShapeLayer.disableActions = true
-        loading = View(frame: Rect(0,0,50,50))
+        loading = View(frame: Rect(0, 0, 50, 50))
         loading.rotation += -M_PI_2
         let loader = Circle(center: loading.center, radius: loading.width/2.0)
         loader.fillColor = clear
@@ -64,7 +64,7 @@ class WorkSpace: CanvasController {
         }
         c.delay = 1.25
 
-        let seq = ViewAnimationGroup(animations: [a,b,c])
+        let seq = ViewAnimationGroup(animations: [a, b, c])
         seq.addCompletionObserver {
             seq.animate()
         }
@@ -125,7 +125,7 @@ class WorkSpace: CanvasController {
     }
 
     func switchUniverse(_ newUniverse: UniverseController) {
-        UIView.transition(from: currentUniverse!.canvas.view, to: newUniverse.canvas.view, duration: 0.25, options: [UIViewAnimationOptions.beginFromCurrentState, UIViewAnimationOptions.transitionCrossDissolve]) { (Bool) -> Void in
+        UIView.transition(from: currentUniverse!.canvas.view, to: newUniverse.canvas.view, duration: 0.25, options: [UIViewAnimationOptions.beginFromCurrentState, UIViewAnimationOptions.transitionCrossDissolve]) { (_) -> Void in
             self.currentUniverse = newUniverse
         }
     }

@@ -22,7 +22,7 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     static let sharedManager = SocketManager()
 
     var workspace: WorkSpace?
-    
+
     let maxDeviceID = 28
 
     //the socket that will be used to connect to the core app

@@ -8,11 +8,11 @@ import Foundation
 
 extension Data {
     public func extract<T>(_ type: T.Type, at offset: Int) -> T {
-        return self.withUnsafeBytes{ (pointer: UnsafePointer<UInt8>) -> T in
+        return self.withUnsafeBytes { (pointer: UnsafePointer<UInt8>) -> T in
             pointer.advanced(by: offset).withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
         }
     }
-    
+
     public mutating func append<T>(_ value: T) {
         var varValue = value
         withUnsafePointer(to: &varValue) {

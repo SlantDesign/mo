@@ -33,7 +33,7 @@ struct Event: Equatable, Hashable, CustomStringConvertible {
     }
 }
 
-func ==(lhs: Event, rhs: Event) -> Bool {
+func == (lhs: Event, rhs: Event) -> Bool {
     let isEqual = lhs.date.compare(rhs.date) == .orderedSame
     return isEqual &&
         lhs.duration == rhs.duration &&
@@ -41,10 +41,10 @@ func ==(lhs: Event, rhs: Event) -> Bool {
         lhs.title == lhs.title
 }
 
-func >(lhs: Event, rhs: Event) -> Bool {
+func > (lhs: Event, rhs: Event) -> Bool {
     return lhs.date.compare(rhs.date) == .orderedDescending ? true : false
 }
 
-func <(lhs: Event, rhs: Event) -> Bool {
+func < (lhs: Event, rhs: Event) -> Bool {
     return rhs > lhs
 }

@@ -521,6 +521,7 @@
 				6114EA7C1E0F2BD100829825 /* Headers */,
 				6114EA7D1E0F2BD100829825 /* Resources */,
 				5E7657E91C52A638767BB1EA /* [CP] Copy Pods Resources */,
+				611100C11E1097DE00207571 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -606,6 +607,7 @@
 				6114EB3C1E0F663400829825 /* Headers */,
 				6114EB3D1E0F663400829825 /* Resources */,
 				B96A183B15E1DF0BC0D6FB6D /* [CP] Copy Pods Resources */,
+				611100C31E1097FA00207571 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -647,6 +649,7 @@
 				6114EB581E0F664700829825 /* Headers */,
 				6114EB591E0F664700829825 /* Resources */,
 				BC56542F51A0AF6322435C55 /* [CP] Copy Pods Resources */,
+				611100C41E10980700207571 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -899,6 +902,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-All-MO-iOS/Pods-All-MO-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		611100C11E1097DE00207571 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+		611100C31E1097FA00207571 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+		611100C41E10980700207571 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		61BA9A270E632AF27A8547C8 /* [CP] Check Pods Manifest.lock */ = {

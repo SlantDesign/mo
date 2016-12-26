@@ -126,7 +126,7 @@ class Status: UniverseController {
         shape.fillColor = clear
         shape.strokeColor = white
     }
-    
+
     func resetPaths() {
         maxPaths = (Path(), Path())
         avgPaths = (Path(), Path())

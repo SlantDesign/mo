@@ -33,7 +33,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         socketManager.socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 
-
     // MARK: - NSTableViewDataSource
 
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -65,7 +64,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         reload()
     }
 
-
     // MARK: - NSTableViewDelegate
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -94,4 +92,3 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return view
     }
 }
-

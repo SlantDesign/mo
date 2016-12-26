@@ -36,8 +36,8 @@ class ResonateShapeGenerator {
         shape.origin = Point(Double(-inset), Double(-inset))
 
         gradient.colors = [color0, color1]
-        gradient.startPoint = Point(0,0)
-        gradient.endPoint = Point(1,0)
+        gradient.startPoint = Point(0, 0)
+        gradient.endPoint = Point(1, 0)
         gradient.mask = shape
         gradient.center = center
         gradient.transform.rotate(angle)
@@ -172,7 +172,6 @@ func resHardArc() -> Path {
     path.transform(t)
     return Path(path: bezier.cgPath)
 }
-
 
 func resHardArcLarge() -> Path {
     //// resHardArc Drawing

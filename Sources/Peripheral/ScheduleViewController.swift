@@ -10,7 +10,7 @@ import Foundation
 import MO
 import UIKit
 
-public protocol ScrollUniverseDelegate {
+public protocol ScrollUniverseDelegate: class {
     func shouldSendScrollData()
     func shouldSendCease()
 }
@@ -22,9 +22,9 @@ open class ScheduleViewController: UICollectionViewController {
     var interactionsByID = [Int: RemoteInteraction]()
     var lastLocalInteractionTimestamp: TimeInterval?
     var interactionCeaseTimer: UIKit.Timer?
-    var scrollUniverseDelegate: ScrollUniverseDelegate?
+    weak var scrollUniverseDelegate: ScrollUniverseDelegate?
     var tap: UITapGestureRecognizer!
-    var dx : CGFloat = 0.0
+    var dx: CGFloat = 0.0
     var shapeTimer: C4.Timer!
     var syncTimestamp: TimeInterval = 0 {
         didSet {
@@ -75,7 +75,7 @@ open class ScheduleViewController: UICollectionViewController {
         shapeTimer = C4.Timer(interval: 28.0) {
             let x = random01() * frameCanvasWidth
             let y = random01() * Double(self.collectionView!.bounds.height)
-            self.generateShapeAtPoint(Point(x+Double(self.collectionView!.contentOffset.x),y))
+            self.generateShapeAtPoint(Point(x+Double(self.collectionView!.contentOffset.x), y))
         }
 
         wait(Double(SocketManager.sharedManager.deviceID)) {
@@ -132,7 +132,7 @@ open class ScheduleViewController: UICollectionViewController {
 
         let x = Double(scrollView.contentOffset.x / Schedule.shared.singleContentWidth)
         ShapeLayer.disableActions = true
-        let a = max(x*768.0 - 5,0) / 768.0
+        let a = max(x*768.0 - 5, 0) / 768.0
         let b = min(x*768.0 + 5, 768.0) / 768.0
 
         indicator.strokeStart = a
@@ -153,7 +153,7 @@ open class ScheduleViewController: UICollectionViewController {
         interactionCeaseTimer = UIKit.Timer.scheduledTimer(timeInterval: interactionTimeout, target: self, selector: #selector(interactionTimedOut), userInfo: nil, repeats: false)
     }
 
-    //MARK: RemoteInteraction
+    // MARK: RemoteInteraction
 
     open func registerUserInteraction(_ gestureRecognizer: UIGestureRecognizer) {
         scrollSource = .local
@@ -234,7 +234,7 @@ open class ScheduleViewController: UICollectionViewController {
         }
 
         let indicator = Shape(path)
-        indicator.frame = Rect(0,0,768,indicator.height)
+        indicator.frame = Rect(0, 0, 768, indicator.height)
         indicator.fillColor = clear
         indicator.lineWidth = 0.5
         indicator.strokeColor = white

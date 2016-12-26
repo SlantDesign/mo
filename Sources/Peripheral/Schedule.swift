@@ -62,7 +62,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         }
     }
 
-    func loadData() {        
+    func loadData() {
         let path = Bundle.main.path(forResource: "programme2016", ofType: "plist")!
         guard let e = NSArray(contentsOfFile: path) as? [[String : AnyObject]] else {
             print("Could not extract array of events from file")
@@ -129,7 +129,7 @@ class Schedule: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-    func frameFor(_ event:Event) -> CGRect {
+    func frameFor(_ event: Event) -> CGRect {
         let x = CGFloat(event.date.timeIntervalSince(startDate as Date)) / 3600.0 * hour.width
         let h = event.type == "OverNight" ? 980 : heightForDay(event.day)
         let y = event.type == "OverNight" ? 0 : CGFloat(levelForVenue(event.location, day: event.day)) * h

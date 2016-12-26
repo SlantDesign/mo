@@ -11,7 +11,7 @@ class HourHeaderView: UICollectionReusableView {
     @IBOutlet var label: UILabel?
 
     override func awakeFromNib() {
-        let line = Line(begin: Point(0,Double(self.frame.size.height)), end: Point(0,Double(self.frame.size.height-1024.0)))
+        let line = Line(begin: Point(0, Double(self.frame.size.height)), end: Point(0, Double(self.frame.size.height-1024.0)))
         line.strokeColor = white
         line.lineWidth = 0.25
         clipsToBounds = false

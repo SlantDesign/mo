@@ -109,7 +109,7 @@ class ArtistView: View, UITextViewDelegate {
     }
 
     func createTextView() {
-        let f = Rect(20,20, self.width - 40, self.height-20)
+        let f = Rect(20, 20, self.width - 40, self.height-20)
         self.textView = UITextView(frame: CGRect(f))
         self.textView.contentInset = UIEdgeInsets(top: 740.0, left: 0, bottom: 20.0, right: 0)
         self.textView.font = UIFont(name: "Inconsolata", size: 17.0)
@@ -120,7 +120,7 @@ class ArtistView: View, UITextViewDelegate {
     }
 
     func createExitButton() {
-        let circle = Circle(center: Point(47.5,47.5), radius: 47.5)
+        let circle = Circle(center: Point(47.5, 47.5), radius: 47.5)
         circle.fillColor = Color(red: 0.173, green: 0.185, blue: 0.202, alpha: 0.400)
         circle.lineWidth = 0
 
@@ -140,7 +140,7 @@ class ArtistView: View, UITextViewDelegate {
         circle.zPosition = 1000
         exitButton = circle
 
-        self.exitButton.addTapGestureRecognizer { locations, center, state in
+        self.exitButton.addTapGestureRecognizer { _, _, _ in
             self.hide()
         }
     }

@@ -8,7 +8,7 @@ import C4
 import Foundation
 import UIKit
 
-public enum GestureType : Int8 {
+public enum GestureType: Int8 {
     case tap
     case swipe
     case longPress
@@ -20,10 +20,10 @@ public struct Gesture {
     var type = GestureType.none
     var center = Point()
     var state = UIGestureRecognizerState.began
-    var velocity : Vector?
-    var translation : Vector?
-    var direction : UISwipeGestureRecognizerDirection?
-    
+    var velocity: Vector?
+    var translation: Vector?
+    var direction: UISwipeGestureRecognizerDirection?
+
     public init(type t: GestureType, center c: Point, state s: UIGestureRecognizerState, velocity v: Vector, translation tr: Vector) {
         type = t
         center = c
@@ -64,18 +64,18 @@ public struct Gesture {
         }
         return data as Data
     }
-    
+
     init(_ data: Data) {
         var index = 0
         type = GestureType(rawValue: (data as NSData).bytes.bindMemory(to: Int8.self, capacity: data.count).pointee)!
         index += MemoryLayout<Int8>.size
-        
+
         center = data.extract(Point.self, at: index)
         index += MemoryLayout<Point>.size
-        
+
         state = UIGestureRecognizerState(rawValue: data.extract(Int.self, at: index)) ?? .possible
         index += MemoryLayout<UIGestureRecognizerState>.size
-        
+
         if type == GestureType.pan {
             velocity = data.extract(Vector.self, at: index)
             index += MemoryLayout<Vector>.size

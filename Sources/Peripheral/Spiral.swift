@@ -13,7 +13,7 @@ enum ScrollSource {
     case remote
 }
 
-open class Spiral : UniverseController {
+open class Spiral: UniverseController {
     let scrollViewRotation = -0.01
     let pageCount = 60
     let interactionTimeout = TimeInterval(10)
@@ -24,7 +24,7 @@ open class Spiral : UniverseController {
     let scrollview = InfiniteScrollView()
     let interaction = InfiniteScrollView()
     var primaryCenter = Point()
-    var spiralUniverseDelegate: SpiralUniverseDelegate?
+    weak var spiralUniverseDelegate: SpiralUniverseDelegate?
 
     var interactionsByID = [Int: RemoteInteraction]()
     var lastLocalInteractionTimestamp: TimeInterval?
@@ -171,7 +171,7 @@ open class Spiral : UniverseController {
         let normalOffset = (interaction.contentOffset.x / interaction.contentSize.width)
         let targetOffset = normalOffset * scrollview.contentSize.width
         if scrollview.contentOffset.x != targetOffset {
-            scrollview.contentOffset = CGPoint(x: targetOffset,y: 0)
+            scrollview.contentOffset = CGPoint(x: targetOffset, y: 0)
             let y = primaryCenter.y + map(Double(normalOffset), min: 0, max: 1, toMin: -120, toMax: 120)
             container.center.y = y
             spiralUniverseDelegate?.shouldSendScrollData()

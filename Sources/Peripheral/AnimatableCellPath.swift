@@ -22,6 +22,7 @@ class AnimatableCellPath {
         generatePath()
     }
 
+    // swiftlint:disable:next function_body_length
     func generatePath() {
         let font = Font(name: "UniversLTStd-LightUltraCn", size: Double(visibleFrame.size.height))!
 
