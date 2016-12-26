@@ -59,10 +59,10 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         }
 
         switch packet.packetType {
-        case .handshake:
+        case PacketType.handshake:
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
 
-        case .ping:
+        case PacketType.ping:
             let packet = Packet(type: .ping, id: deviceID)
             socket.send(packet.serialize() as Data, toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
 

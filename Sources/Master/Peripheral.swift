@@ -86,12 +86,12 @@ class Peripheral: NSObject {
         }
 
         switch packet.packetType {
-        case .handshake:
+        case PacketType.handshake:
             id = packet.id
             status = .Connected
             DDLogVerbose("Got handshake from \(id)")
 
-        case .ping:
+        case PacketType.ping:
             id = packet.id
             lastPingResponse = Date()
 

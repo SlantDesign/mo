@@ -97,8 +97,8 @@ class WorkSpace: CanvasController {
 
     func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case .switchUniverse:
-            if let name = extractNewUniverseName(packet.data as Data?) {
+        case PacketType.switchUniverse:
+            if let name = extractNewUniverseName(packet.payload) {
                 //FIXME: This is where we should switch between universes, initiating some kind of 
                 currentUniverse = selectUniverse(name)
             }

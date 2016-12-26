@@ -106,7 +106,7 @@ open class ScheduleViewController: UICollectionViewController {
         addShapeToBack(shapeData.0)
 
         let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: PacketType.resonateShape, id: deviceId, data: shapeData.1 as Data)
+        let packet = Packet(type: PacketType.resonateShape, id: deviceId, payload: shapeData.1)
         SocketManager.sharedManager.broadcastPacket(packet)
     }
 

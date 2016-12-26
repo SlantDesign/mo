@@ -8,6 +8,14 @@ import Cocoa
 import CocoaAsyncSocket
 import MO
 
+extension PacketType {
+    static let scroll = PacketType(rawValue: 10)
+    static let resonateShape = PacketType(rawValue: 11)
+    static let cease = PacketType(rawValue: 12)
+    static let sync = PacketType(rawValue: 13)
+    static let switchUniverse = PacketType(rawValue: 14)
+}
+
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var tableView: NSTableView!
 
@@ -29,7 +37,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     @IBAction func syncAnimations(_ sender: NSButton) {
-        let p = Packet(type: .sync, id: SocketManager.masterID)
+        let p = Packet(type: PacketType.sync, id: SocketManager.masterID)
         socketManager.socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
     }
 

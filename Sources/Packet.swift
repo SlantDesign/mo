@@ -6,93 +6,92 @@
 
 import Foundation
 
-public enum PacketType: Int8 {
-    /// First packet sent when a connection is made, used to identify the peripheral
-    case handshake
+/// Determines the type of a packet.
+public struct PacketType: RawRepresentable, Equatable {
+    public var rawValue: Int32
+
+    public init(rawValue: Int32) {
+        self.rawValue = rawValue
+    }
+
+    /// First packet sent when a connection is made.
+    public static let handshake = PacketType(rawValue: 0)
 
     /// Packet sent periodically to measure lag and detect disconnected peripherals
-    case ping
+    public static let ping = PacketType(rawValue: 1)
 
-    /// Packet sent for scroll events
-    case scroll
-
-    /// Packet sent when a device is done controlling scroll events
-    case cease
-
-    /// Packet sent when a shape is added to the collectionView
-    case resonateShape
-
-    /// Packet sent when it's time to change universes
-    case switchUniverse
-
-    /// Animation sync packer
-    case sync
+    public static func == (lhs: PacketType, rhs: PacketType) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
 }
 
-enum PacketInitializationError: Error {
+/// Possible errors encountered when serializing/deserializing a `Packet`.
+public enum PacketSerializationError: Error {
     case notEnoughData
-    case invalidPacketType
 }
 
+/// Communication packet.
 public struct Packet: Equatable {
+    /// The size of a packet with no payload.
     public static let basePacketSize = MemoryLayout<UInt32>.size + MemoryLayout<PacketType>.size + MemoryLayout<Int32>.size
 
+    /// The packet type.
     public var packetType: PacketType
-    public var id = -1
-    public var data: Data?
 
-    public init(type: PacketType, id: Int, data: Data? = nil) {
+    /// The packet identifier.
+    public var id = -1
+
+    /// Payload data.
+    public var payload: Data?
+
+    /// Creates a `Packet` with a specifc packet type, identifier and optional payload data.
+    public init(type: PacketType, id: Int, payload: Data? = nil) {
         self.packetType = type
         self.id = id
-        self.data = data
+        self.payload = payload
     }
 
+    /// Serializes the packet.
     public func serialize() -> Data {
-        let packetData = NSMutableData()
+        let payloadSize = payload?.count ?? 0
+        let packetSize = UInt32(Packet.basePacketSize + payloadSize)
+        var packetData = Data(capacity: Int(packetSize))
 
         // The first element in the packet data needs to be the packet size to know if we have enought data to build the packet.
-        let dataSize = data?.count ?? 0
-        var packetSize = UInt32(Packet.basePacketSize + dataSize)
-        packetData.append(&packetSize, length: MemoryLayout.size(ofValue: packetSize))
+        packetData.append(packetSize)
+        packetData.append(packetType.rawValue)
+        packetData.append(Int32(id))
 
-        var t = packetType.rawValue
-        packetData.append(&t, length: MemoryLayout.size(ofValue: t))
-
-        var i = Int32(id)
-        packetData.append(&i, length: MemoryLayout.size(ofValue: i))
-
-        if let d = data, d.count > 0 {
-            packetData.append(d as Data)
+        if let d = payload, d.count > 0 {
+            packetData.append(d)
         }
-        return packetData as Data
+        return packetData
     }
 
+    /// Deserializes a packet.
     public init(_ packetData: Data) throws {
         var index = 0
 
         let packetSize = packetData.extract(UInt32.self, at: index)
         if packetData.count < Int(packetSize) {
-            throw PacketInitializationError.notEnoughData
+            throw PacketSerializationError.notEnoughData
         }
         index += MemoryLayout.size(ofValue: packetSize)
 
-        guard let t = PacketType(rawValue: packetData.extract(Int8.self, at: index)) else {
-            throw PacketInitializationError.invalidPacketType
-        }
-        packetType = t
-        index += MemoryLayout.size(ofValue: t)
+        packetType = PacketType(rawValue: packetData.extract(PacketType.RawValue.self, at: index))
+        index += MemoryLayout.size(ofValue: packetType)
 
-        id = packetData.extract(Int.self, at: index)
+        id = Int(packetData.extract(Int32.self, at: index))
         index += MemoryLayout<Int32>.size
 
-        let dataLength = Int(packetSize) - Packet.basePacketSize
-        if dataLength > 0 {
-            data = packetData.subdata(in: packetData.startIndex.advanced(by: index) ..< packetData.startIndex.advanced(by: index + dataLength))
+        let payloadSize = Int(packetSize) - Packet.basePacketSize
+        if payloadSize > 0 {
+            payload = packetData.subdata(in: packetData.startIndex.advanced(by: index) ..< packetData.startIndex.advanced(by: index + payloadSize))
         }
     }
 
     public var description: String {
-        return "Packet: \(packetType), \(id), \(data == nil ? "No Data" : "\(data!.count) bytes of Data")"
+        return "Packet: \(packetType), \(id), \(payload == nil ? "No Data" : "\(payload!.count) bytes of payload")"
     }
 }
 

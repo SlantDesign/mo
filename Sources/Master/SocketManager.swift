@@ -64,12 +64,12 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     func processPacket(_ packet: Packet, peripheral: Peripheral) {
         switch packet.packetType {
-        case .handshake:
+        case PacketType.handshake:
             DispatchQueue.main.async {
                 self.changeAction?()
             }
 
-        case .ping:
+        case PacketType.ping:
             DispatchQueue.main.async {
                 self.changeAction?()
             }

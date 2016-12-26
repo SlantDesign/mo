@@ -10,6 +10,14 @@ import CocoaLumberjack
 import MO
 import UIKit
 
+extension PacketType {
+    static let scroll = PacketType(rawValue: 10)
+    static let resonateShape = PacketType(rawValue: 11)
+    static let cease = PacketType(rawValue: 12)
+    static let sync = PacketType(rawValue: 13)
+    static let switchUniverse = PacketType(rawValue: 14)
+}
+
 public protocol SpiralUniverseDelegate: class {
     func shouldSendScrollData()
     func shouldSendCease()
@@ -25,7 +33,7 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
     }
 
     override func load() {
-        Schedule.shared
+        let _ = Schedule.shared
     }
 
     func initializeCollectionView() {
@@ -43,8 +51,8 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
 
     override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case .scroll:
-            guard let d = packet.data else {
+        case PacketType.scroll:
+            guard let d = packet.payload else {
                 DDLogVerbose("Packet does not contain point data")
                 return
             }
@@ -53,18 +61,18 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
             let interaction = RemoteInteraction(point: point, deviceID: packet.id, timestamp: CFAbsoluteTimeGetCurrent())
             scheduleViewController?.registerRemoteUserInteraction(interaction)
 
-        case .resonateShape:
-            guard let d = packet.data else {
+        case PacketType.resonateShape:
+            guard let d = packet.payload else {
                 DDLogVerbose("Packet does not contain data")
                 return
             }
 
             scheduleViewController?.generateShapeFromData(d)
 
-        case .cease:
+        case PacketType.cease:
             scheduleViewController?.registerRemoteCease(packet.id)
 
-        case .sync:
+        case PacketType.sync:
             scheduleViewController?.syncTimestamp = CFAbsoluteTimeGetCurrent()
 
         default:
@@ -73,12 +81,12 @@ class Resonate: UniverseController, GCDAsyncSocketDelegate, ScrollUniverseDelega
     }
 
     func shouldSendScrollData() {
-        var point = scheduleViewController!.collectionView!.contentOffset
-        let data = NSMutableData()
-        data.append(&point, length: MemoryLayout<CGPoint>.size)
+        let point = scheduleViewController!.collectionView!.contentOffset
+        var data = Data()
+        data.append(point)
 
         let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: PacketType.scroll, id: deviceId, data: data as Data)
+        let packet = Packet(type: PacketType.scroll, id: deviceId, payload: data)
         socketManager.broadcastPacket(packet)
     }
 

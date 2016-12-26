@@ -10,10 +10,10 @@ import XCTest
 class PacketTest: XCTestCase {
 
     func testSerialize() {
-        let type = PacketType.scroll
+        let type = PacketType(rawValue: 4)
         let id = 17
 
-        let packet = Packet(type: type, id: id, data: nil)
+        let packet = Packet(type: type, id: id, payload: nil)
         let data = packet.serialize()
         var array = [UInt8](repeating: 0, count: data.count)
         data.copyBytes(to: &array, count: data.count)
@@ -21,9 +21,10 @@ class PacketTest: XCTestCase {
         let packetSize = Int(data.extract(UInt32.self, at: 0))
         XCTAssertEqual(packetSize, Packet.basePacketSize)
 
-        XCTAssertEqual(array[4], UInt8(type.rawValue))
+        let packetType = data.extract(UInt32.self, at: 4)
+        XCTAssertEqual(packetType, UInt32(type.rawValue))
 
-        let serializedId = Int(data.extract(Int32.self, at: 5))
+        let serializedId = Int(data.extract(Int32.self, at: 8))
         XCTAssertEqual(serializedId, id)
     }
 
@@ -31,7 +32,7 @@ class PacketTest: XCTestCase {
         let type = PacketType.handshake
         let id = 17
 
-        let expectedPacket = Packet(type: type, id: id, data: nil)
+        let expectedPacket = Packet(type: type, id: id, payload: nil)
         let data = expectedPacket.serialize()
         var actualPacket: Packet?
         do {
