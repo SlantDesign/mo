@@ -11,6 +11,13 @@
 		04875B9DEA81AAC286D0A2C3 /* Pods_All_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */; };
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
 		1F77542C1E1ABB9100683FC0 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77542A1E1AB90C00683FC0 /* Video.swift */; };
+		1F7754341E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F77542D1E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov */; };
+		1F7754351E1AD83100683FC0 /* UBC-Video-Boat-MO18.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F77542E1E1AD83100683FC0 /* UBC-Video-Boat-MO18.mov */; };
+		1F7754361E1AD83100683FC0 /* UBC-Video-Boat-MO19.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F77542F1E1AD83100683FC0 /* UBC-Video-Boat-MO19.mov */; };
+		1F7754371E1AD83100683FC0 /* UBC-Video-Boat-MO20.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754301E1AD83100683FC0 /* UBC-Video-Boat-MO20.mov */; };
+		1F7754381E1AD83100683FC0 /* UBC-Video-Boat-MO21.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754311E1AD83100683FC0 /* UBC-Video-Boat-MO21.mov */; };
+		1F7754391E1AD83100683FC0 /* UBC-Video-Boat-MO22.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754321E1AD83100683FC0 /* UBC-Video-Boat-MO22.mov */; };
+		1F77543A1E1AD83100683FC0 /* UBC-Video-Boat-MO23.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754331E1AD83100683FC0 /* UBC-Video-Boat-MO23.mov */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
@@ -137,6 +144,13 @@
 /* Begin PBXFileReference section */
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		1F77542A1E1AB90C00683FC0 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		1F77542D1E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO17.mov"; sourceTree = "<group>"; };
+		1F77542E1E1AD83100683FC0 /* UBC-Video-Boat-MO18.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO18.mov"; sourceTree = "<group>"; };
+		1F77542F1E1AD83100683FC0 /* UBC-Video-Boat-MO19.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO19.mov"; sourceTree = "<group>"; };
+		1F7754301E1AD83100683FC0 /* UBC-Video-Boat-MO20.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO20.mov"; sourceTree = "<group>"; };
+		1F7754311E1AD83100683FC0 /* UBC-Video-Boat-MO21.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO21.mov"; sourceTree = "<group>"; };
+		1F7754321E1AD83100683FC0 /* UBC-Video-Boat-MO22.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO22.mov"; sourceTree = "<group>"; };
+		1F7754331E1AD83100683FC0 /* UBC-Video-Boat-MO23.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "UBC-Video-Boat-MO23.mov"; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +357,13 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				1F77542D1E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov */,
+				1F77542E1E1AD83100683FC0 /* UBC-Video-Boat-MO18.mov */,
+				1F77542F1E1AD83100683FC0 /* UBC-Video-Boat-MO19.mov */,
+				1F7754301E1AD83100683FC0 /* UBC-Video-Boat-MO20.mov */,
+				1F7754311E1AD83100683FC0 /* UBC-Video-Boat-MO21.mov */,
+				1F7754321E1AD83100683FC0 /* UBC-Video-Boat-MO22.mov */,
+				1F7754331E1AD83100683FC0 /* UBC-Video-Boat-MO23.mov */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
@@ -791,13 +812,20 @@
 			files = (
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
+				1F7754381E1AD83100683FC0 /* UBC-Video-Boat-MO21.mov in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
+				1F7754351E1AD83100683FC0 /* UBC-Video-Boat-MO18.mov in Resources */,
+				1F77543A1E1AD83100683FC0 /* UBC-Video-Boat-MO23.mov in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
+				1F7754391E1AD83100683FC0 /* UBC-Video-Boat-MO22.mov in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
+				1F7754361E1AD83100683FC0 /* UBC-Video-Boat-MO19.mov in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
+				1F7754371E1AD83100683FC0 /* UBC-Video-Boat-MO20.mov in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
+				1F7754341E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
