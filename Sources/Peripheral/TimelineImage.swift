@@ -50,7 +50,7 @@ class TimelineImage: Image {
         t.rotate(self.angle + M_PI)
         self.transform = t
 
-        self.opacity = min(scale * 2.0, 1.0)
+        self.opacity = min(scale * scale * 2.0, 1.0)
         if scale < 0.5 {
             self.zPosition = -1000
         } else {
@@ -67,7 +67,8 @@ class TimelineImage: Image {
             scale -= 1.0
         }
 
-        let position = (Vector(x: sin(self.angle), y: cos(self.angle)) * fabs(scale) * 200) + Vector(dxdy)
+        let gap = Vector(x: sin(self.angle), y: cos(self.angle)) * 500
+        let position = (Vector(x: sin(self.angle), y: cos(self.angle)) * fabs(scale) * 300) + Vector(dxdy) + gap
         self.center = Point(position.x, position.y)
     }
 }

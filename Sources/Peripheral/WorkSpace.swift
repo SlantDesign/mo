@@ -16,13 +16,14 @@ class WorkSpace: CanvasController {
     var syncTimestamp: TimeInterval = 0
     var loading: View!
     var helloWorld = HelloWorld()
+    var circularTimeline = CircularTimeline()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        currentUniverse = helloWorld
+        currentUniverse = circularTimeline
         canvas.add(currentUniverse?.canvas)
     }
 
@@ -106,6 +107,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
+        case "CircularTimeline":
+            return circularTimeline
         case "HelloWord":
             return helloWorld
         default:
