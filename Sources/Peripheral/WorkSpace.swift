@@ -13,28 +13,17 @@ import UIKit
 class WorkSpace: CanvasController {
     var socketManager: SocketManager?
     var currentUniverse: UniverseController?
-    var resonate: Resonate?
-    var status: Status?
-    var tap: UITapGestureRecognizer!
     var syncTimestamp: TimeInterval = 0
     var loading: View!
+    var helloWorld = HelloWorld()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        status = Status()
-        currentUniverse = status
+        currentUniverse = helloWorld
         canvas.add(currentUniverse?.canvas)
-
-        tap = canvas.addTapGestureRecognizer { _, _, _ in
-            if !self.preparing {
-                self.preparing = true
-                self.showLoading()
-                self.prepareUniverse()
-            }
-        }
     }
 
     func showLoading() {
@@ -77,16 +66,16 @@ class WorkSpace: CanvasController {
     func prepareUniverse() {
         let backgroundQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
         backgroundQueue.async {
-            self.resonate = Resonate()
-            self.resonate?.load()
-            DispatchQueue.main.async { () -> Void in
-                self.canvas.remove(self.loading)
-                self.preparing = false
-                self.loading = nil
-                self.currentUniverse?.unload()
-                self.view.removeGestureRecognizer(self.tap)
-                self.switchUniverse(self.resonate!)
-            }
+//            self.resonate = Resonate()
+//            self.resonate?.load()
+//            DispatchQueue.main.async { () -> Void in
+//                self.canvas.remove(self.loading)
+//                self.preparing = false
+//                self.loading = nil
+//                self.currentUniverse?.unload()
+//                self.view.removeGestureRecognizer(self.tap)
+//                self.switchUniverse(self.resonate!)
+//            }
         }
     }
 
@@ -117,8 +106,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "Resonate":
-            return resonate
+        case "HelloWord":
+            return helloWorld
         default:
             return nil
         }
