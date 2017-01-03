@@ -67,7 +67,7 @@ class TimelineImage: Image {
             scale -= 1.0
         }
 
-        let gap = Vector(x: sin(self.angle), y: cos(self.angle)) * 500
+        let gap = Vector(x: sin(self.angle), y: cos(self.angle)) * frameCanvasWidth
         let position = (Vector(x: sin(self.angle), y: cos(self.angle)) * fabs(scale) * 300) + Vector(dxdy) + gap
         self.center = Point(position.x, position.y)
     }
