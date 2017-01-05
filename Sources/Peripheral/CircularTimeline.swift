@@ -40,7 +40,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             img.basedt = random01()
             img.update(displacement: 0)
             images.append(img)
-            let neighbourOffset = Double(17 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
+            let neighbourOffset = Double(20 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
             rotationContainer.center = Point(canvas.center.x + dx + neighbourOffset, canvas.height + 500.0)
             rotationContainer.add(img)
         }
