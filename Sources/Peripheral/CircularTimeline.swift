@@ -28,12 +28,11 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
     let deviceId = SocketManager.sharedManager.deviceID
 
     override func setup() {
-        for _ in 0..<300 {
-            let choice = round(random01())
-            let img = TimelineImage(choice == 0 ? "chop" : "rockies")!
+        canvas.backgroundColor = clear
+        for i in 0..<300 {
+            let img = TimelineImage("image\(i)")!
             img.center = canvas.center
             img.constrainsProportions = true
-            img.width = 100.0
             img.angle = random01() * 2 * M_PI
             img.dxdy = rotationContainer.bounds.center
             img.baseWidth = self.canvas.width

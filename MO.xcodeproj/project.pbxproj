@@ -30,7 +30,6 @@
 		6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EACA1E0F634100829825 /* SocketManager.swift */; };
 		6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EACD1E0F634100829825 /* UniverseController.swift */; };
 		6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EACE1E0F634100829825 /* WorkSpace.swift */; };
-		6114EB221E0F63B900829825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA31E0F634100829825 /* Assets.xcassets */; };
 		6114EB231E0F63BD00829825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA41E0F634100829825 /* Main.storyboard */; };
 		6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA71E0F634100829825 /* LaunchScreen.xib */; };
 		6114EB251E0F63CF00829825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA91E0F634100829825 /* Main.storyboard */; };
@@ -58,6 +57,7 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D99B4EC91E26C92D00AB3866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA31E0F634100829825 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -747,7 +747,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6114EB221E0F63B900829825 /* Assets.xcassets in Resources */,
 				6114EB231E0F63BD00829825 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +759,7 @@
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
+				D99B4EC91E26C92D00AB3866 /* Assets.xcassets in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
