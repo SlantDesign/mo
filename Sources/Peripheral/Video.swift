@@ -105,7 +105,7 @@ class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate {
 
     override func load() {
         let id = SocketManager.sharedManager.deviceID
-        let videoName = "UBC-Video-Boat-MO\(id+5).mov"
+        let videoName = "UBC-Video-Boat-MO\(id).mov"
         movie = Movie(videoName)
     }
 
