@@ -16,13 +16,14 @@ class WorkSpace: CanvasController {
     var syncTimestamp: TimeInterval = 0
     var loading: View!
     var helloWorld = HelloWorld()
+    var nosk = Nosk()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        currentUniverse = helloWorld
+        currentUniverse = nosk
         canvas.add(currentUniverse?.canvas)
     }
 
