@@ -47,15 +47,26 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate {
         timer?.start()
     }
 
-    override func receivePacket(_ packet: Packet) {
-        //
+    func sendCreateAsteroid() {
+        let point = CGPoint(x: frandom() * -self.view.frame.size.width , y: -self.view.frame.size.height / 2.0 - 100.0)
+        let deviceId = SocketManager.sharedManager.deviceID
+        var data = Data()
+        data.append(point)
+        let packet = Packet(type: .asteroid, id: deviceId, payload: data)
+        socketManager.broadcastPacket(packet)
     }
 
-    func sendCreateAsteroid() {
-        let point = CGPoint(x: frandom() * -self.view.size.width , y: -self.view.size.height / 2.0 - 100.0)
-        let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: .asteroid, id: deviceId, payload: <#T##Data?#>)
-        socketManager.broadcastPacket(packet)
+    //This is how you receive and decipher a packet with no data
+    override func receivePacket(_ packet: Packet) {
+        switch packet.packetType {
+        case PacketType.asteroid:
+            createAsteroid(packet: packet)
+        default:
+            break
+        }
+    }
+
+    func createAsteroid(packet: Packet) {
     }
 
     func frandom() -> CGFloat {
