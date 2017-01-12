@@ -19,12 +19,21 @@ import GameplayKit
 //Create an extension with a unique series of integers
 extension PacketType {
     static let asteroid = PacketType(rawValue: 200000)
-    static let explode = PacketType(rawValue: 200001)
+    static let asteroidCountReset = PacketType(rawValue: 200001)
+    static let explodeAsteroid = PacketType(rawValue: 200002)
 }
 
-class Asteroids: UniverseController, GCDAsyncSocketDelegate {
+public protocol AsteroidsDelegate {
+    func explodeAsteroid(tag: Int)
+}
+
+class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
     let socketManager = SocketManager.sharedManager
     let asteroidsView = SKView()
+    var asteroidsScene: AsteroidsScene?
+    var asteroidCount = 0
+    var currentAsteroid = -1 //it looked like packets were being sent 2x
+
     private var timer: C4.Timer?
 
     override func setup() {
@@ -34,26 +43,38 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate {
             print("Could not load AsteroidsScene")
             return
         }
-
         scene.scaleMode = .aspectFill
         asteroidsView.presentScene(scene)
+        asteroidsScene = scene
+        asteroidsScene?.asteroidsDelegate = self
+
         asteroidsView.ignoresSiblingOrder = true
         asteroidsView.showsFPS = true
         asteroidsView.showsNodeCount = true
 
-        timer = C4.Timer(interval: 0.25) {
-            self.sendCreateAsteroid()
+        if SocketManager.sharedManager.deviceID == 20 {
+            timer = C4.Timer(interval: 1.0) {
+                self.sendCreateAsteroid()
+            }
+            timer?.start()
         }
-        timer?.start()
     }
 
     func sendCreateAsteroid() {
-        let point = CGPoint(x: frandom() * -self.view.frame.size.width , y: -self.view.frame.size.height / 2.0 - 100.0)
-        let deviceId = SocketManager.sharedManager.deviceID
+        let point = CGPoint(x: frandom() * CGFloat(-frameCanvasWidth) - CGFloat(frameCanvasWidth/2), y: -view.frame.size.height/2.0 - 100)
         var data = Data()
         data.append(point)
-        let packet = Packet(type: .asteroid, id: deviceId, payload: data)
+        let packet = Packet(type: .asteroid, id: asteroidCount, payload: data)
+        asteroidCount += 1
+        if asteroidCount > 1000 {
+            asteroidCount = 0
+        }
         socketManager.broadcastPacket(packet)
+
+        if asteroidCount % 10 == 0 {
+            let packet = Packet(type: .asteroidCountReset, id: asteroidCount)
+            socketManager.broadcastPacket(packet)
+        }
     }
 
     //This is how you receive and decipher a packet with no data
@@ -61,12 +82,38 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate {
         switch packet.packetType {
         case PacketType.asteroid:
             createAsteroid(packet: packet)
+        case PacketType.asteroidCountReset:
+            asteroidCount = packet.id
+        case PacketType.explodeAsteroid:
+            asteroidsScene?.explodeAsteroid(tag: packet.id)
         default:
             break
         }
     }
 
     func createAsteroid(packet: Packet) {
+        guard let d = packet.payload else {
+            print("Asteroid packet did not have data.")
+            return
+        }
+
+        if currentAsteroid != packet.id {
+            currentAsteroid = packet.id
+            var point = (d as NSData).bytes.bindMemory(to: CGPoint.self, capacity: d.count).pointee
+//            if SocketManager.sharedManager.deviceID == 19 {
+//                point.x += CGFloat(frameCanvasWidth)
+//
+//            } else if SocketManager.sharedManager.deviceID == 21 {
+//                point.x -= CGFloat(frameCanvasWidth)
+//                point.y += 12.0
+//            }
+            asteroidsScene?.createAsteroid(point: point, tag: currentAsteroid)
+        }
+    }
+
+    func explodeAsteroid(tag: Int) {
+        let packet = Packet(type: .explodeAsteroid, id: tag)
+        socketManager.broadcastPacket(packet)
     }
 
     func frandom() -> CGFloat {
