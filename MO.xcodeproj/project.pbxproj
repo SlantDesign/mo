@@ -708,7 +708,7 @@
 					};
 					6114EAF81E0F638E00829825 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = G3GED29J33;
+						DevelopmentTeam = 75C7KVJZ99;
 						ProvisioningStyle = Automatic;
 					};
 					6114EB3E1E0F663400829825 = {
@@ -1549,10 +1549,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G3GED29J33;
+				DEVELOPMENT_TEAM = 75C7KVJZ99;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = is.slant.Peripheral;
+				PRODUCT_BUNDLE_IDENTIFIER = is.slant.timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1565,10 +1565,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G3GED29J33;
+				DEVELOPMENT_TEAM = 75C7KVJZ99;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = is.slant.Peripheral;
+				PRODUCT_BUNDLE_IDENTIFIER = is.slant.timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
