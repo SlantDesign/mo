@@ -8,7 +8,7 @@ import C4
 import MO
 import UIKit
 
-let frameGap = 229.0
+let frameGap = 200.0
 let frameCanvasWidth = 997.0
 
 

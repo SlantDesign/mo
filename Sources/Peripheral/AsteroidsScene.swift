@@ -12,32 +12,33 @@ import SceneKit
 import C4
 
 class AsteroidsScene: SKScene {
-    private var node: SKSpriteNode?
+    private var nodes: [SKSpriteNode]?// = [SKSpriteNode]()
     var asteroidsDelegate: AsteroidsDelegate?
 
     override func didMove(to view: SKView) {
-        let w = 100
-        self.node = SKSpriteNode(imageNamed: "asteroid")
-        self.node?.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: w, height: w))
-        self.node?.physicsBody?.affectedByGravity = false
-        self.node?.physicsBody?.friction = 0.0
-
-        if let node = self.node {
+        let w = 132
+        nodes = [SKSpriteNode]()
+        for i in 0...3 {
+            let node = SKSpriteNode(imageNamed: "Asteroid_0\(i)")
+            node.size = CGSize(width: w, height: w)
+            node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: w, height: w))
+            node.physicsBody?.affectedByGravity = false
+            node.physicsBody?.friction = 0.0
             node.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(-M_PI), duration: 1)))
             node.run(SKAction.sequence([SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth*2), dy: 1224), duration: 10),
                                         SKAction.removeFromParent()]))
+            nodes?.append(node)
         }
     }
 
     func createAsteroid(point: CGPoint, tag: Int) {
-        print("---")
-        print(tag)
-       guard let n = self.node?.copy() as! SKSpriteNode? else {
+        guard let n = self.nodes?[tag % 4].copy() as! SKSpriteNode? else {
             return
         }
 
-        for n in self.children {
-            if n.name == "\(tag)" {
+        for child in self.children {
+            if child.name == "\(tag)" {
+                print("found identical tag, aborting")
                 return
             }
         }
@@ -45,26 +46,7 @@ class AsteroidsScene: SKScene {
         n.name = "\(tag)"
         n.position = point
         n.physicsBody?.affectedByGravity = false
-
-        switch tag % 5 {
-        case 0:
-            n.color = UIColor.red
-        case 1:
-            n.color = UIColor.green
-        case 2:
-            n.color = UIColor.blue
-        case 3:
-            n.color = UIColor.yellow
-        case 4:
-            n.color = UIColor.orange
-        default:
-            n.color = UIColor.purple
-            break
-        }
-        n.run(SKAction.colorize(with: n.color, colorBlendFactor: 1.0, duration: 0))
         self.addChild(n)
-        print(n.name)
-        print("---")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

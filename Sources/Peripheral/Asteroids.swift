@@ -32,7 +32,6 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
     let asteroidsView = SKView()
     var asteroidsScene: AsteroidsScene?
     var asteroidCount = 0
-    var currentAsteroid = -1 //it looked like packets were being sent 2x
 
     private var timer: C4.Timer?
 
@@ -70,11 +69,6 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
             asteroidCount = 0
         }
         socketManager.broadcastPacket(packet)
-
-        if asteroidCount % 10 == 0 {
-            let packet = Packet(type: .asteroidCountReset, id: asteroidCount)
-            socketManager.broadcastPacket(packet)
-        }
     }
 
     //This is how you receive and decipher a packet with no data
@@ -97,18 +91,15 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
             return
         }
 
-        if currentAsteroid != packet.id {
-            currentAsteroid = packet.id
-            var point = (d as NSData).bytes.bindMemory(to: CGPoint.self, capacity: d.count).pointee
-//            if SocketManager.sharedManager.deviceID == 19 {
-//                point.x += CGFloat(frameCanvasWidth)
-//
-//            } else if SocketManager.sharedManager.deviceID == 21 {
-//                point.x -= CGFloat(frameCanvasWidth)
-//                point.y += 12.0
-//            }
-            asteroidsScene?.createAsteroid(point: point, tag: currentAsteroid)
+        var point = (d as NSData).bytes.bindMemory(to: CGPoint.self, capacity: d.count).pointee
+        if SocketManager.sharedManager.deviceID == 19 {
+            point.x += CGFloat(frameCanvasWidth)
+
+        } else if SocketManager.sharedManager.deviceID == 21 {
+            point.x -= CGFloat(frameCanvasWidth)
+            point.y += 12.0
         }
+        asteroidsScene?.createAsteroid(point: point, tag: packet.id)
     }
 
     func explodeAsteroid(tag: Int) {

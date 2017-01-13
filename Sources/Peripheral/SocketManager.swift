@@ -41,6 +41,8 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        socket.setIPv4Enabled(true)
+        socket.setIPv6Enabled(false)
         try! socket.enableBroadcast(true)
         try! socket.bind(toPort: SocketManager.peripheralPort)
         try! socket.beginReceiving()
@@ -57,6 +59,8 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
             DDLogVerbose("Could not initialize packet from data: \(error)")
             return
         }
+
+        print("udpSocket received: \(packet.id)")
 
         switch packet.packetType {
         case PacketType.handshake:
