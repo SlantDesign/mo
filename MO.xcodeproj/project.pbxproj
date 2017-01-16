@@ -10,7 +10,6 @@
 		00C15374CF8FBC35BF8A3BB8 /* Pods_All_MOTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */; };
 		04875B9DEA81AAC286D0A2C3 /* Pods_All_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */; };
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
-		1F6092EA1E1EF73900733B5F /* UBC-Video-Boat-MO17.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754331E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov */; };
 		1F77542C1E1ABB9100683FC0 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77542A1E1AB90C00683FC0 /* Video.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
@@ -70,6 +69,8 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D9A434CC1E2C8E2E005A65C9 /* UBC-Video-Boat-MO17.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1F7754331E1AD83100683FC0 /* UBC-Video-Boat-MO17.mov */; };
+		D9C4BDD41E2C817000218EEE /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4BDD21E2C815000218EEE /* PlayPauseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,7 @@
 		BD7AA6E070118E3E943094A7 /* Pods_MO_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
+		D9C4BDD21E2C815000218EEE /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
 				1F77542A1E1AB90C00683FC0 /* Video.swift */,
+				D9C4BDD21E2C815000218EEE /* PlayPauseButton.swift */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -813,7 +816,7 @@
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
-				1F6092EA1E1EF73900733B5F /* UBC-Video-Boat-MO17.mov in Resources */,
+				D9A434CC1E2C8E2E005A65C9 /* UBC-Video-Boat-MO17.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,6 +1262,7 @@
 				6114EB1A1E0F63AE00829825 /* Schedule.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
 				6114EB0F1E0F63AE00829825 /* AnimatableCellPath.swift in Sources */,
+				D9C4BDD41E2C817000218EEE /* PlayPauseButton.swift in Sources */,
 				6114EB151E0F63AE00829825 /* HourHeaderView.swift in Sources */,
 				6114EB1B1E0F63AE00829825 /* ScheduleLayout.swift in Sources */,
 				6114EB111E0F63AE00829825 /* ArtistView.swift in Sources */,

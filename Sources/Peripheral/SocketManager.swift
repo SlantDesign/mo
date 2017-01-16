@@ -41,6 +41,7 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        socket.setIPv6Enabled(false)
         try! socket.enableBroadcast(true)
         try! socket.bind(toPort: SocketManager.peripheralPort)
         try! socket.beginReceiving()

@@ -26,7 +26,8 @@ public protocol VideoUniverseDelegate: class {
     func shouldReset()
 }
 
-class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate {
+class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate, PlayPauseButtonDelegate {
+    let playPause = PlayPauseButton()
     let socketManager = SocketManager.sharedManager
     var movie: Movie?
 
@@ -36,52 +37,10 @@ class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate {
         movie?.loops = true
         canvas.add(movie)
         canvas.sendToBack(movie)
-        createInterface()
-    }
 
-    func createInterface() {
-        guard let playButton = createButton(title: "PLAY", packetMessage: .play) else {
-            print("Could not create \(title) buttton")
-            return
-        }
-
-        playButton.origin = Point(dx + 100, canvas.height - 100)
-        canvas.add(playButton)
-
-        guard let stopButton = createButton(title: "STOP", packetMessage: .stop) else {
-            print("Could not create \(title) buttton")
-            return
-        }
-
-        stopButton.origin = Point(dx + 350, canvas.height - 100)
-        canvas.add(stopButton)
-    }
-
-    func createButton(title: String, packetMessage: PacketType) -> View? {
-        let f = Font(name: "AppleSDGothicNeo-Bold", size: 80)!
-        guard let title = TextShape(text: title, font: f) else {
-            print("Could not create button title")
-            return nil
-        }
-
-        title.interactionEnabled = false
-
-        var frame = title.frame
-        frame.size.width += 20
-        frame.size.height += 20
-
-        let button = Rectangle(frame: frame)
-        button.fillColor = white.colorWithAlpha(0.33)
-
-        title.origin.x += 10
-        title.origin.y += 10
-        button.add(title)
-
-        button.addTapGestureRecognizer { _, _, _ in
-            self.send(videoControlPacket: packetMessage)
-        }
-
-        return button
+        playPause.playPauseDelegate = self
+        playPause.center = Point(canvas.center.x + dx, canvas.height - playPause.height)
+        canvas.add(playPause)
     }
 
     func send(videoControlPacket: PacketType) {
@@ -94,6 +53,9 @@ class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate {
         switch packet.packetType {
         case PacketType.play:
             self.shouldPlay()
+            break
+        case PacketType.pause:
+            self.shouldStop()
             break
         case PacketType.stop:
             self.shouldStop()
@@ -117,17 +79,30 @@ class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate {
 
     func shouldPlay() {
         movie?.play()
+        playPause.animateToPause()
     }
 
     func shouldPause() {
         movie?.pause()
+        playPause.animateToPlay()
     }
 
     func shouldStop() {
         movie?.stop()
+        playPause.animateToPlay()
     }
 
     func shouldReset() {
 
     }
+
+    func sendPause() {
+        self.send(videoControlPacket: .pause)
+    }
+
+    func sendPlay() {
+        self.send(videoControlPacket: .play)
+    }
 }
+
+
