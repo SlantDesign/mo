@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-16T19:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
+		<key>location</key>
+		<string>KolaracS</string>
+		<key>artists</key>
+		<array>
+			<string>Cathrine Kramer</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Cathrine Kramer is a Norwegian artist and curator working internationally. She is the co-founder of two artist-led think tanks: the Center for Genomic Gastronomy, and CoClimate. In 2014, she received a VIDA Art and Artificial Life International Award for her work with the Center for Genomic Gastronomy. Cathrine has curated exhibitions for the Center of Contemporary Culture, Barcelona (CCCB) and Science Gallery, Dublin. She has lectured at numerous academic institutions around the world, and holds degrees from the Royal College of Art, London and the University of Technology, Sydney. Cathrine works at the intersection of art and science, with a focus on the ecological, cultural and ethical dimensions of life on Spaceship Earth.</string>
+		<key>function</key>
+		<string>CathrineKramer02</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>75</integer>
+		<key>date</key>
+		<date>2016-04-13T19:00:00Z</date>
+		<key>day</key>
+		<string>Wednesday</string>
+		<key>location</key>
+		<string>KinotekaCinema</string>
+		<key>artists</key>
+		<array>
+			<string>Mariska De Groot</string>
+		</array>
+		<key>title</key>
+		<string>Q&amp;A</string>
+		<key>type</key>
+		<string>QA</string>
+		<key>programme</key>
+		<string>Live</string>
+		<key>description</key>
+		<string>Intrigued by the phenomena and history of optical sound, Mariska de Groot [1982, NL] makes and performs comprehensive analog light-to-sound instruments and installations which explore this principle in new ways. Her work often has a reference to media inventions from the past, with which she aims to excite a multi-sensorial and phenomenological experiences in light, sound, movement and space.</string>
+		<key>function</key>
+		<string>MariskaDeGroot00</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-15T22:50:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
+		<key>location</key>
+		<string>KinotekaCinema</string>
+		<key>artists</key>
+		<array>
+			<string>Neil Mendoza</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Neil likes to use digital and mechanical technology to bring objects and spaces to life. He graduated from Oxford University with a master’s degree in maths and computer science and has worked in many fields during his career, from game development to numerical analysis. For the last few years his focus has been on creating work at the intersection of art and technology. He is currently a graduate student at UCLA’s Department of Design Media Arts.
+
+His work has been exhibited by The AND Festival, The Barbican, BBC Big Screens, ISEA, Kinetica, The Museum of London, The Nottingham Playhouse, Oi Futuro, PICNIC Festival, The Science Museum, The V&amp;A and Watermans, among others. He was also a founding member of the collective “is this good?” and has worked for a diverse range of clients over the years creating projects ranging from printer orchestras to glowing pyramids.
+
+www.neilmendoza.com</string>
+		<key>function</key>
+		<string>NeilMendoza00</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-16T20:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
+		<key>location</key>
+		<string>KinotekaCinema</string>
+		<key>artists</key>
+		<array>
+			<string>Louis Mustill</string>
+			<string>Artists &amp; Engineers</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Artists and Engineers is a multi-disciplinary production company offering technology and production services to artists, brands and cultural institutions.
+
+We bring together experience in engineering, film production, events, digital, software and the arts to help people realise complex projects.
+
+We love to facilitate great ideas – using our in-house engineering and production skills combined with a close-knit group of specialists.
+
+Based in a renovated hospital building in east London, the A&amp;E studio is a creative hub that brings together artists, inventors and creators of all kinds. This is the ideal environment for recognising and nurturing emerging talent and offering exciting new approaches.
+
+http://www.artistsandengineers.co.uk</string>
+		<key>function</key>
+		<string>ArtistsAndEngineers04</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>30</integer>
+		<key>date</key>
+		<date>2016-04-15T19:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
+		<key>location</key>
+		<string>Kinoteka200</string>
+		<key>artists</key>
+		<array>
+			<string>Builders Club</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Builders Club is the partnership of film director Jonas Hegi and creative director Julien Simshauser.
+
+Rethinking conventional directorial ideas of where an image ends, we unify real and artificial elements seamlessly.
+
+Driven by technology – we explore artistic possibilities, tell stories and create experiences.</string>
+		<key>function</key>
+		<string>BuildersClub02</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-17T00:30:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
+		<key>location</key>
+		<string>KolaracMain</string>
+		<key>artists</key>
+		<array>
+			<string>Nicholas Felton</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Nicholas Felton is a designer, entrepreneur and artist whose work focuses on translating quotidian data into meaningful objects and experiences. He is the author of numerous personal annual reports that condense the events of a year into a tapestry of maps, graphs and statistics. He was one of the lead designers of Facebook’s timeline and is the co-creator of Reporter for iPhone and Daytum.com. He has been profiled by The Wall Street Journal and the New York Times and his work is a part of the permanent collection at MoMA.</string>
+		<key>function</key>
+		<string>NicholasFelton03</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-16T22:00:00Z</date>
+		<key>day</key>
+		<string>Saturday</string>
+		<key>location</key>
+		<string>KinotekaCinema</string>
+		<key>artists</key>
+		<array>
+			<string>Dan Hett</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Dan is a creative technologist, visual artist and VJ from Manchester (UK). While working as a research technologist for the BBC’s Research and Development UX group by day, by night Dan creates and peforms large-scale improvised live visuals at exhibitions, concerts and festivals. Dan’s live pratice centers around merging traditional VJ techniques with an improvised livecoding approach: the practice of writing unrehearsed live code on the fly to create intricate audio-reactive visual forms, while keeping the code itself visible to the audience as part of the performance.
+
+http://blog.danhett.com
+
+http://instagram.com/danhett</string>
+		<key>function</key>
+		<string>DanHett01</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>40</integer>
+		<key>date</key>
+		<date>2016-04-15T20:00:00Z</date>
+		<key>day</key>
+		<string>Friday</string>
+		<key>location</key>
+		<string>KolaracS</string>
+		<key>artists</key>
+		<array>
+			<string>Gorka Cortazar</string>
+		</array>
+		<key>title</key>
+		<string></string>
+		<key>type</key>
+		<string>Lecture</string>
+		<key>programme</key>
+		<string>Conference</string>
+		<key>description</key>
+		<string>Originally from Venezuela, Gorka has a background in sociology and studies in his home country. He started a successful career in the world of technology, focusing on providing creative solutions to communication problems through emerging technologies.  During his career in Latin America he advised projects for global brands like Warner Brothers, Sony Entertainment Television, AXN, Santander Bank and Movistar.  His aim is to explore the boundaries between technology and art, and he specializes in real time generative art, applied trough projection mapping and architectural lighting.  He holds workshops about programming, generative art and projection mapping in various institutions in Spain, Brazil, Mexico and United Kingdom.
+
+In Lighting Design Collective he specializes in creating custom applications that drives permanent lighting installations, in countries as diverse as Finland, Azerbaijan, Tunisia or Holland.</string>
+		<key>function</key>
+		<string>GorkaCortazar03</string>
+	</dict>
+	<dict>
+		<key>duration</key>
+		<integer>480</integer>
+		<key>date</key>
+		<date>2016-04-12T17:00:00Z</date>
+		<key>day</key>
+		<string>Tuesday</string>
+		<key>location</key>
+		<string>Kinoteka200</string>
+		<key>artists</key>
+		<array>
+			<string>Joshua Noble</string>
+		</array>
+		<key>title</key>
+		<string>Volt, Amp, Synth, &amp; Sound</string>
+		<key>type</key>
+		<string>IntensiveWorkshop</string>
+		<key>programme</key>
+		<string>IntensiveWorkshop</string>
+		<key>description</key>
+		<string>Deep down inside code is really just electricity and that means if you have a way to control electricity you have a way to make input, logic, and output without any code at all. All you need is electronics to structure electricity. If you can give structure to electricity, you can make sound. In this workshop we’re going to learn how this works by building two simple synthesizers which you can take home with you. You’ll learn the building blocks of controlling current, building logic, and creating sound, and everyone will receive a 3d printed controller box and and all the electronics needed to make a two small synths that can be powered off of a 9V battery.</string>
+		<key>function</key>
+		<string>JoshuaNoble01</string>
+	</dict>
+</array>
+</plist>
