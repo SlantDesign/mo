@@ -21,30 +21,30 @@ extension PacketType {
     static let mo = PacketType(rawValue: 999999)
 }
 
-public protocol MOSceneDelegate {
-    func test()
+public protocol CometSceneDelegate {
+    func fire()
 }
 
-class MODemo: UniverseController, GCDAsyncSocketDelegate, MOSceneDelegate {
+class Comet: UniverseController, GCDAsyncSocketDelegate, CometSceneDelegate {
     let socketManager = SocketManager.sharedManager
     let moView = SKView()
-    var moScene: MOScene?
+    var cometScene: CometScene?
 
-    func test() {
+    func fire() {
         self.sendCreatePacket()
     }
 
     override func setup() {
         moView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
         canvas.add(moView)
-        guard let scene = MOScene(fileNamed: "MOScene") else {
-            print("Could not load MOScene")
+        guard let scene = CometScene(fileNamed: "CometScene") else {
+            print("Could not load CometScene")
             return
         }
         scene.scaleMode = .aspectFill
         moView.presentScene(scene)
-        moScene = scene
-        moScene?.moDelegate = self
+        cometScene = scene
+        cometScene?.cometDelegate = self
 
         moView.ignoresSiblingOrder = true
         moView.showsFPS = true

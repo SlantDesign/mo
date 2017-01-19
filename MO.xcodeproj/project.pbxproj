@@ -59,9 +59,9 @@
 		D99794801E280AA10089E922 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = D997947C1E280AA10089E922 /* Explode.sks */; };
 		D99794821E280AA10089E922 /* AsteroidsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997947E1E280AA10089E922 /* AsteroidsScene.swift */; };
 		D99794831E280AA10089E922 /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997947F1E280AA10089E922 /* Asteroids.swift */; };
-		D99DE3E61E3158D40051E75F /* MOScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E41E3158B50051E75F /* MOScene.swift */; };
-		D99DE3E91E3159020051E75F /* MODemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E71E3158E20051E75F /* MODemo.swift */; };
-		D99DE3EA1E315C3E0051E75F /* MOScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D99DE3E21E31589C0051E75F /* MOScene.sks */; };
+		D99DE3E61E3158D40051E75F /* CometScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E41E3158B50051E75F /* CometScene.swift */; };
+		D99DE3E91E3159020051E75F /* Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E71E3158E20051E75F /* Comet.swift */; };
+		D99DE3EA1E315C3E0051E75F /* CometScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D99DE3E21E31589C0051E75F /* CometScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,9 +195,9 @@
 		D997947C1E280AA10089E922 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
 		D997947E1E280AA10089E922 /* AsteroidsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsScene.swift; sourceTree = "<group>"; };
 		D997947F1E280AA10089E922 /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
-		D99DE3E21E31589C0051E75F /* MOScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MOScene.sks; sourceTree = "<group>"; };
-		D99DE3E41E3158B50051E75F /* MOScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOScene.swift; sourceTree = "<group>"; };
-		D99DE3E71E3158E20051E75F /* MODemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODemo.swift; sourceTree = "<group>"; };
+		D99DE3E21E31589C0051E75F /* CometScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CometScene.sks; sourceTree = "<group>"; };
+		D99DE3E41E3158B50051E75F /* CometScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometScene.swift; sourceTree = "<group>"; };
+		D99DE3E71E3158E20051E75F /* Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comet.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -439,9 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				D997947C1E280AA10089E922 /* Explode.sks */,
-				D99DE3E21E31589C0051E75F /* MOScene.sks */,
-				D99DE3E41E3158B50051E75F /* MOScene.swift */,
-				D99DE3E71E3158E20051E75F /* MODemo.swift */,
+				D99DE3E21E31589C0051E75F /* CometScene.sks */,
+				D99DE3E41E3158B50051E75F /* CometScene.swift */,
+				D99DE3E71E3158E20051E75F /* Comet.swift */,
 				D997947E1E280AA10089E922 /* AsteroidsScene.swift */,
 				D997947F1E280AA10089E922 /* Asteroids.swift */,
 			);
@@ -786,7 +786,7 @@
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
-				D99DE3EA1E315C3E0051E75F /* MOScene.sks in Resources */,
+				D99DE3EA1E315C3E0051E75F /* CometScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,14 +1216,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99DE3E91E3159020051E75F /* MODemo.swift in Sources */,
+				D99DE3E91E3159020051E75F /* Comet.swift in Sources */,
 				D99794831E280AA10089E922 /* Asteroids.swift in Sources */,
 				6114EB101E0F63AE00829825 /* AppDelegate.swift in Sources */,
 				1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */,
 				D99794821E280AA10089E922 /* AsteroidsScene.swift in Sources */,
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
-				D99DE3E61E3158D40051E75F /* MOScene.swift in Sources */,
+				D99DE3E61E3158D40051E75F /* CometScene.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,

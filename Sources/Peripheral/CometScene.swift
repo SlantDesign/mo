@@ -11,15 +11,15 @@ import GameplayKit
 import SceneKit
 import C4
 
-class MOScene: SKScene {
+class CometScene: SKScene {
     private var nodes: [SKSpriteNode]?// = [SKSpriteNode]()
-    var moDelegate: MOSceneDelegate?
+    var cometDelegate: CometSceneDelegate?
 
     override func didMove(to view: SKView) {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.moDelegate?.test()
+        self.cometDelegate?.fire()
     }
 
     override func update(_ currentTime: TimeInterval) {

@@ -15,14 +15,14 @@ class WorkSpace: CanvasController {
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
-    var modemo = MODemo()
+    var comet = Comet()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        currentUniverse = modemo
+        currentUniverse = comet
         canvas.add(currentUniverse?.canvas)
     }
 
@@ -102,8 +102,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "MODemo":
-            return modemo
+        case "Comet":
+            return comet
         default:
             return nil
         }
