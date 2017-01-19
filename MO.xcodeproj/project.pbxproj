@@ -57,8 +57,6 @@
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
 		D99794801E280AA10089E922 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = D997947C1E280AA10089E922 /* Explode.sks */; };
-		D99794821E280AA10089E922 /* AsteroidsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997947E1E280AA10089E922 /* AsteroidsScene.swift */; };
-		D99794831E280AA10089E922 /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997947F1E280AA10089E922 /* Asteroids.swift */; };
 		D99DE3E61E3158D40051E75F /* MOScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E41E3158B50051E75F /* MOScene.swift */; };
 		D99DE3E91E3159020051E75F /* MODemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E71E3158E20051E75F /* MODemo.swift */; };
 		D99DE3EA1E315C3E0051E75F /* MOScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D99DE3E21E31589C0051E75F /* MOScene.sks */; };
@@ -193,8 +191,6 @@
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
 		D997947C1E280AA10089E922 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
-		D997947E1E280AA10089E922 /* AsteroidsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsScene.swift; sourceTree = "<group>"; };
-		D997947F1E280AA10089E922 /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
 		D99DE3E21E31589C0051E75F /* MOScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MOScene.sks; sourceTree = "<group>"; };
 		D99DE3E41E3158B50051E75F /* MOScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOScene.swift; sourceTree = "<group>"; };
 		D99DE3E71E3158E20051E75F /* MODemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODemo.swift; sourceTree = "<group>"; };
@@ -442,8 +438,6 @@
 				D99DE3E21E31589C0051E75F /* MOScene.sks */,
 				D99DE3E41E3158B50051E75F /* MOScene.swift */,
 				D99DE3E71E3158E20051E75F /* MODemo.swift */,
-				D997947E1E280AA10089E922 /* AsteroidsScene.swift */,
-				D997947F1E280AA10089E922 /* Asteroids.swift */,
 			);
 			name = Asteroids;
 			sourceTree = "<group>";
@@ -1217,10 +1211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99DE3E91E3159020051E75F /* MODemo.swift in Sources */,
-				D99794831E280AA10089E922 /* Asteroids.swift in Sources */,
 				6114EB101E0F63AE00829825 /* AppDelegate.swift in Sources */,
 				1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */,
-				D99794821E280AA10089E922 /* AsteroidsScene.swift in Sources */,
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
 				D99DE3E61E3158D40051E75F /* MOScene.swift in Sources */,
