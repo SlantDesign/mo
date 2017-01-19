@@ -19,11 +19,13 @@ class Nosk: UniverseController, GCDAsyncSocketDelegate {
     var currentPointIndex = 0
 
     override func setup() {
+        canvas.backgroundColor = Color(red: 0.14, green: 0.21, blue: 0.37, alpha: 1.0)
         createConnections()
         createTargets()
         createPoints()
         resetRemainingInnerLocations()
         resetRemainingOuterLocations()
+
     }
 
     func createPoints() {
@@ -53,7 +55,7 @@ class Nosk: UniverseController, GCDAsyncSocketDelegate {
     }
 
     func createTargets() {
-        var r = 240.0
+        var r = 280.0
         var dt =  2 * M_PI / Double(connections.count)
 
         for i in 0...Int(connections.count) {
@@ -61,7 +63,7 @@ class Nosk: UniverseController, GCDAsyncSocketDelegate {
             innerTargets.append(Point(r * cos(angle) + canvas.center.x + dx, r * sin(angle) + canvas.center.y))
         }
 
-        r = 700.0
+        r = 800.0
         dt = M_PI / Double(connections.count)
         for i in 0...(connections.count * 2) {
             let angle = dt * Double(i)

@@ -10,19 +10,15 @@ import Foundation
 import C4
 
 class NoskPoint: View {
-    var imageContainer = View(frame: Rect(0,0,44,44))
+    var imageContainer = Circle(frame: Rect(0, 0, 64, 64))
 
     public convenience override init() {
-        self.init(frame: Rect(0, 0, 220, 44))
+        self.init(frame: Rect(0, 0, 220, 64))
 
-        let f = Rect(CGRect(frame).insetBy(dx: -4, dy: -4))
-        let r = Rectangle(frame: f)
-        r.lineWidth = 1.0
-        r.fillColor = C4Grey
-        add(r)
-
+        imageContainer.origin.x = width/2.0 - 22.0
+        imageContainer.lineWidth = 10.0
+        imageContainer.strokeColor = white
         add(imageContainer)
-        imageContainer.masksToBounds = true
     }
 
     var title: TextShape?
@@ -36,15 +32,15 @@ class NoskPoint: View {
 
             let font = Font(name: "Helvetica-Bold", size: 18)!
             title = TextShape(text: "ELEMENT \(tag)", font: font)!
-            title?.origin = Point(50.0, 0.0)
+            title?.origin = Point(70.0 + width/2.0 - 22.0, 0.0)
             title?.lineWidth = 0.0
-            title?.fillColor = C4Purple
+            title?.fillColor = white
             add(title)
 
             writeup = TextShape(text: "This is a description of element \(tag).", font: font.font(10))
-            writeup?.origin = Point(50.0, title!.height + 6)
+            writeup?.origin = Point(70.0 + width/2.0 - 22.0, title!.height + 6)
             writeup?.lineWidth = 0.0
-            writeup?.fillColor = C4Purple
+            writeup?.fillColor = white
             add(writeup)
 
             for v in imageContainer.view.subviews {
@@ -62,17 +58,18 @@ class NoskPoint: View {
                 image.height = 64
             }
 
+            let m = Circle(frame: imageContainer.frame)
+            m.center = image.bounds.center
+            image.mask = m
+            image.center = imageContainer.bounds.center
             imageContainer.add(image)
-            imageContainer.border.radius = 4.0
-            imageContainer.border.color = C4Purple
-            imageContainer.border.width = 1.0
         }
     }
 
     public override init(frame: Rect) {
         super.init(frame: frame)
 
-        self.addTapGestureRecognizer { _, _, _ in
+        imageContainer.addTapGestureRecognizer { _, _, _ in
             self.post("newPointWasSelected")
         }
     }
