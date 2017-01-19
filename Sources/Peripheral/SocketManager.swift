@@ -60,8 +60,6 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
             return
         }
 
-        print("udpSocket received: \(packet.id)")
-
         switch packet.packetType {
         case PacketType.handshake:
             DDLogVerbose("\(deviceID) shook hands with \(sock)")
