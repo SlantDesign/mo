@@ -134,6 +134,6 @@ class GridImage: View {
 
     func randomImage() -> Image? {
         let index = random(below: 300)
-        return Image("image\(index)")
+        return Image("image\(index%50)")
     }
 }
