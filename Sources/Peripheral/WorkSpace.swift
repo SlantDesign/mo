@@ -15,7 +15,7 @@ class WorkSpace: CanvasController {
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
-    var parallax = Parallax()
+    var collection = Collection()
 
     var preparing: Bool = false
 
@@ -23,7 +23,7 @@ class WorkSpace: CanvasController {
         initializeSocketManager()
 
         parallax.initializeCollectionView()
-        currentUniverse = parallax
+        currentUniverse = collection
         canvas.add(currentUniverse?.canvas)
     }
 

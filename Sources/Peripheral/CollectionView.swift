@@ -22,7 +22,7 @@ public protocol CollectionViewDelegate: class {
     func shouldSendScrollData()
 }
 
-open class Parallax: UniverseController, CollectionViewDelegate, GCDAsyncSocketDelegate {
+open class Collection: UniverseController, CollectionViewDelegate, GCDAsyncSocketDelegate {
     var collectionViewController: CollectionViewController?
 
     func initializeCollectionView() {
