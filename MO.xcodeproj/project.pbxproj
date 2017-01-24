@@ -270,6 +270,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FAFDBDE1E3208A70006E219 /* thumbs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = thumbs;
+			sourceTree = "<group>";
+		};
 		6114EA751E0F2BD100829825 = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +333,7 @@
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
 				6114EAAC1E0F634100829825 /* HourHeaderView.xib */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
+				1FAFDBDE1E3208A70006E219 /* thumbs */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* ScheduleViewController.storyboard */,
 				6114EAB01E0F634100829825 /* ThinVeil.mp3 */,

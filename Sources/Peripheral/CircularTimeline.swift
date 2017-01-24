@@ -30,7 +30,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
     override func setup() {
         canvas.backgroundColor = clear
         for i in 0..<300 {
-            let img = TimelineImage("image\(i)")!
+            let img = TimelineImage("image\(i%50)")!
             img.center = canvas.center
             img.constrainsProportions = true
             img.angle = random01() * 2 * M_PI
@@ -40,7 +40,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             img.update(displacement: 0)
             images.append(img)
             let neighbourOffset = Double(20 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
-            rotationContainer.center = Point(canvas.center.x + dx + neighbourOffset, canvas.height + 500.0)
+            rotationContainer.center = Point(canvas.center.x - frameCanvasWidth * 2.0, canvas.height + 500.0)
             rotationContainer.add(img)
         }
         canvas.add(rotationContainer)
@@ -50,6 +50,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             data.append(translation)
             let packet = Packet(type: PacketType.adjustTimeline, id: self.deviceId, payload: data)
             self.socketManager.broadcastPacket(packet)
+            self.adjust(translation: translation)
         }
     }
 
