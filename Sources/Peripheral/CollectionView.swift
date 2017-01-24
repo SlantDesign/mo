@@ -32,9 +32,11 @@ open class Parallax: UniverseController, CollectionViewDelegate, GCDAsyncSocketD
             print("Collection view could not be instantiated from storyboard.")
             return
         }
-        //        collectionViewController?.collectionView?.dataSource = Schedule.shared
+        collectionViewController?.collectionView?.dataSource = LayoutDataSource.shared
+
         canvas.add(collectionViewController?.collectionView)
         collectionViewController?.collectionViewDelegate = self
+
     }
 
     open override func receivePacket(_ packet: Packet) {
@@ -53,10 +55,10 @@ open class CollectionViewController: UICollectionViewController {
 
     override open func viewDidLoad() {
         collectionView?.register(Cell.self, forCellWithReuseIdentifier: "Cell")
-
         let id = SocketManager.sharedManager.deviceID
-        dx = CGFloat(id-1) * CGFloat(frameCanvasWidth)
-        collectionView?.contentOffset = CGPoint(x: dx + 1, y: 0)
+        dx = CGFloat(id) * CGFloat(frameCanvasWidth) - CGFloat(frameGap/2.0)
+        collectionView?.contentOffset = CGPoint(x: dx, y: 0)
+        collectionView?.dataSource = LayoutDataSource.shared
     }
 
     func remoteScrollTo(_ point: CGPoint) {
@@ -66,7 +68,6 @@ open class CollectionViewController: UICollectionViewController {
         scrollSource = .remote
         collectionView?.setContentOffset(point, animated: false)
     }
-
 }
 
 //You need to create a customizable / repeatable object that represents
@@ -80,12 +81,14 @@ class Cell: UICollectionViewCell {
     override func awakeFromNib() {
         setup()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     func setup() {
-
+        let fileName = random(below: 2) == 0 ? "chop" : "rockies"
+        let image = Image(fileName)
+        add(image)
+        clipsToBounds = true
     }
 }

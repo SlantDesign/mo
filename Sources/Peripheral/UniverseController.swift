@@ -38,7 +38,7 @@ open class UniverseController: CanvasController {
 
     var dx: Double {
         let id = SocketManager.sharedManager.deviceID
-        return Double(id-1) * frameCanvasWidth - frameGap/2.0
+        return Double(id) * frameCanvasWidth //- frameGap/2.0
     }
 
     open func receivePacket(_ packet: Packet) {

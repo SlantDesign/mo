@@ -9,14 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schedule View Controller-->
+        <!--Collection View Controller-->
         <scene sceneID="l8T-Gp-CDf">
             <objects>
-                <collectionViewController storyboardIdentifier="ScheduleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wqz-rw-Auz" customClass="ScheduleViewController" customModule="Peripheral" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wqz-rw-Auz" customClass="CollectionViewController" customModule="Peripheral" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" id="rCI-bJ-o8A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewLayout key="collectionViewLayout" id="WfW-1f-0RF" customClass="ScheduleLayout" customModule="Peripheral" customModuleProvider="target"/>
+                        <color key="backgroundColor" red="0.049357178580000001" green="0.096261398880000001" blue="0.69566761359999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="WfW-1f-0RF" customClass="Layout" customModule="Peripheral" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="EventCell" reuseIdentifier="Cell" id="WOD-BK-0w3" customClass="Cell" customModule="Peripheral" customModuleProvider="target">
                                 <rect key="frame" x="-5" y="0.0" width="384" height="128"/>

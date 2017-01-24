@@ -22,6 +22,7 @@ class WorkSpace: CanvasController {
     override func setup() {
         initializeSocketManager()
 
+        parallax.initializeCollectionView()
         currentUniverse = parallax
         canvas.add(currentUniverse?.canvas)
     }
@@ -66,16 +67,6 @@ class WorkSpace: CanvasController {
     func prepareUniverse() {
         let backgroundQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
         backgroundQueue.async {
-//            self.resonate = Resonate()
-//            self.resonate?.load()
-//            DispatchQueue.main.async { () -> Void in
-//                self.canvas.remove(self.loading)
-//                self.preparing = false
-//                self.loading = nil
-//                self.currentUniverse?.unload()
-//                self.view.removeGestureRecognizer(self.tap)
-//                self.switchUniverse(self.resonate!)
-//            }
         }
     }
 
