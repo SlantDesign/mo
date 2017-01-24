@@ -1,5 +1,5 @@
 PODS:
-  - C4 (2.1.0)
+  - C4 (2.1.1)
   - CocoaAsyncSocket (7.5.1):
     - CocoaAsyncSocket/GCD (= 7.5.1)
   - CocoaAsyncSocket/GCD (7.5.1)
@@ -17,7 +17,7 @@ DEPENDENCIES:
   - CocoaLumberjack/Swift (~> 3.0)
 
 SPEC CHECKSUMS:
-  C4: c1a7995a3962e394c4518472d9873b7bdad73db3
+  C4: 50c631f37096fd84498b462dce124552ad958d88
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
 
