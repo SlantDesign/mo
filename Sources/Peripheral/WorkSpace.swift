@@ -15,14 +15,14 @@ class WorkSpace: CanvasController {
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
-    var helloWorld = HelloWorld()
+    var parallax = Parallax()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        currentUniverse = helloWorld
+        currentUniverse = parallax
         canvas.add(currentUniverse?.canvas)
     }
 
@@ -106,8 +106,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "HelloWord":
-            return helloWorld
+        case "Parallax":
+            return parallax
         default:
             return nil
         }
