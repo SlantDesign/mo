@@ -24,17 +24,9 @@ class WorkSpace: CanvasController {
     override func setup() {
         initializeSocketManager()
 
-        status = Status()
-        currentUniverse = status
+        video = Video()
+        currentUniverse = video
         canvas.add(currentUniverse?.canvas)
-
-        tap = canvas.addTapGestureRecognizer { _, _, _ in
-            if !self.preparing {
-                self.preparing = true
-                self.showLoading()
-                self.prepareUniverse()
-            }
-        }
     }
 
     func showLoading() {
