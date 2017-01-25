@@ -32,6 +32,9 @@ class Video: UniverseController, GCDAsyncSocketDelegate, VideoUniverseDelegate, 
     var movie: Movie?
 
     override func setup() {
+        let id = SocketManager.sharedManager.deviceID
+        let videoName = "UBC-Video-Boat-MO\(id).mov"
+        movie = Movie(videoName)
         movie?.origin = canvas.bounds.origin
         movie?.width = canvas.width
         movie?.loops = true
