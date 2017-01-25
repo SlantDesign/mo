@@ -22,8 +22,15 @@ class PlayPauseButton: View {
 
     override convenience init() {
         self.init(frame: Rect(0, 0, 100, 100))
-        ViewAnimation(duration: 0) { 
-            let circle = Circle(frame: self.frame)
+
+        add(triangle)
+        add(pauseLine)
+        addTapGestureRecognizer { _, _, _ in
+            self.isPlaying ? self.playPauseDelegate?.sendPause() : self.playPauseDelegate?.sendPlay()
+        }
+
+        ViewAnimation(duration: 0.0) {
+            let circle = Circle(frame: self.bounds)
             circle.lineWidth = 10.0
             circle.strokeColor = white
             circle.fillColor = clear
@@ -32,21 +39,16 @@ class PlayPauseButton: View {
             self.triangle.lineWidth = 10.0
             self.triangle.strokeColor = white
             self.triangle.fillColor = clear
-            self.triangle.center = Point(self.center.x + 6, self.center.y)
+            self.triangle.center = Point(self.bounds.center.x + 6, self.bounds.center.y)
 
             self.pauseLine.lineWidth = 10.0
             self.pauseLine.strokeColor = white
             self.pauseLine.fillColor = clear
-            self.pauseLine.center = Point(self.center.x + 6, self.center.y)
+            self.pauseLine.center = Point(self.bounds.center.x + 6, self.bounds.center.y)
             self.pauseLine.strokeStart = 0.67
             self.pauseLine.hidden = true
         }.animate()
 
-        add(triangle)
-        add(pauseLine)
-        addTapGestureRecognizer { _, _, _ in
-            self.isPlaying ? self.playPauseDelegate?.sendPause() : self.playPauseDelegate?.sendPlay()
-        }
     }
 
     func animateToPause() {
