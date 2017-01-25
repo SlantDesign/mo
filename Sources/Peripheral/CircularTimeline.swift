@@ -39,8 +39,8 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             img.basedt = random01()
             img.update(displacement: 0)
             images.append(img)
-            let neighbourOffset = Double(20 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
-            rotationContainer.center = Point(canvas.center.x - frameCanvasWidth * 2.0, canvas.height + 500.0)
+            let neighbourOffset = Double(19 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
+            rotationContainer.center = Point(dx + canvas.width/2.0 + neighbourOffset, canvas.height + 500.0)
             rotationContainer.add(img)
         }
         canvas.add(rotationContainer)
@@ -50,7 +50,6 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             data.append(translation)
             let packet = Packet(type: PacketType.adjustTimeline, id: self.deviceId, payload: data)
             self.socketManager.broadcastPacket(packet)
-            self.adjust(translation: translation)
         }
     }
 
