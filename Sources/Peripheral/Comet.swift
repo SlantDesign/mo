@@ -27,7 +27,7 @@ public protocol CometSceneDelegate {
 
 class Comet: UniverseController, GCDAsyncSocketDelegate, CometSceneDelegate {
     let socketManager = SocketManager.sharedManager
-    let moView = SKView()
+    let cometView = SKView()
     var cometScene: CometScene?
 
     func fire() {
@@ -35,20 +35,20 @@ class Comet: UniverseController, GCDAsyncSocketDelegate, CometSceneDelegate {
     }
 
     override func setup() {
-        moView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
-        canvas.add(moView)
+        cometView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
+        canvas.add(cometView)
         guard let scene = CometScene(fileNamed: "CometScene") else {
             print("Could not load CometScene")
             return
         }
         scene.scaleMode = .aspectFill
-        moView.presentScene(scene)
+        cometView.presentScene(scene)
         cometScene = scene
         cometScene?.cometDelegate = self
 
-        moView.ignoresSiblingOrder = true
-        moView.showsFPS = true
-        moView.showsNodeCount = true
+        cometView.ignoresSiblingOrder = false
+        cometView.showsFPS = true
+        cometView.showsNodeCount = true
     }
 
     func sendCreatePacket() {

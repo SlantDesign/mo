@@ -60,6 +60,7 @@
 		D99DE3E61E3158D40051E75F /* CometScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E41E3158B50051E75F /* CometScene.swift */; };
 		D99DE3E91E3159020051E75F /* Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE3E71E3158E20051E75F /* Comet.swift */; };
 		D99DE3EA1E315C3E0051E75F /* CometScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D99DE3E21E31589C0051E75F /* CometScene.sks */; };
+		D9F1C1C31E31708E00A1DF58 /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F1C1C21E31708E00A1DF58 /* comet_aura.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		D99DE3E21E31589C0051E75F /* CometScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CometScene.sks; sourceTree = "<group>"; };
 		D99DE3E41E3158B50051E75F /* CometScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometScene.swift; sourceTree = "<group>"; };
 		D99DE3E71E3158E20051E75F /* Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comet.swift; sourceTree = "<group>"; };
+		D9F1C1C21E31708E00A1DF58 /* comet_aura.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = comet_aura.atlas; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
 				6114EAAC1E0F634100829825 /* HourHeaderView.xib */,
+				D9F1C1C21E31708E00A1DF58 /* comet_aura.atlas */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* ScheduleViewController.storyboard */,
@@ -371,7 +374,7 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				1FB96FF91E1B0902009CA514 /* HelloWorld.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
-				D99794841E280AAC0089E922 /* Asteroids */,
+				D99794841E280AAC0089E922 /* Comet */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -431,7 +434,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D99794841E280AAC0089E922 /* Asteroids */ = {
+		D99794841E280AAC0089E922 /* Comet */ = {
 			isa = PBXGroup;
 			children = (
 				D997947C1E280AA10089E922 /* Explode.sks */,
@@ -439,7 +442,7 @@
 				D99DE3E41E3158B50051E75F /* CometScene.swift */,
 				D99DE3E71E3158E20051E75F /* Comet.swift */,
 			);
-			name = Asteroids;
+			name = Comet;
 			sourceTree = "<group>";
 		};
 		F7D3B3541649CF7FB1D592D1 /* Pods */ = {
@@ -773,6 +776,7 @@
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
+				D9F1C1C31E31708E00A1DF58 /* comet_aura.atlas in Resources */,
 				D99794801E280AA10089E922 /* Explode.sks in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
