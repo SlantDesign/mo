@@ -16,16 +16,35 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     var elements = [Element]()
 
     func loadData() {
-        for _ in 0...200 {
+        for i in 0..<100 {
             var element = Element()
-            element.position = Point(random01() * frameCanvasWidth * 5.0, random01() * 1024.0)
+
+            let imageName = round(random01()) == 1 ? "chop" : "rockies"
+            element.imageName = imageName
+
+            element.position = Point(Double(i)/100.0 * frameCanvasWidth * 4.0, Double(i) * 10.24)
             elements.append(element)
+
+            if element.position.x < 768.0 {
+                var duplicate = Element()
+                duplicate.imageName = imageName
+                var position = element.position
+                position.x += 4.0 * frameCanvasWidth
+                duplicate.position = position
+                elements.append(duplicate)
+            }
+
+            elements = elements.sorted(by: { (a, b) -> Bool in
+                return a.position.x < b.position.x
+            })
         }
     }
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        cell.setup()
+        cell.label.text = "\(indexPath.item)"
+        cell.layer.zPosition = CGFloat(indexPath.item)
+        cell.image = Image(elements[indexPath.item].imageName)
         return cell
     }
 
@@ -116,6 +135,8 @@ class Layout: UICollectionViewLayout {
 
 struct Element: Equatable {
     var position = Point()
+    var imageName = "chop"
+    var image: Image?
 
     static func == (lhs: Element, rhs: Element) -> Bool {
         return lhs.position == rhs.position ? true : false

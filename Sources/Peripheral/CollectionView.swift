@@ -36,7 +36,6 @@ open class Collection: UniverseController, CollectionViewDelegate, GCDAsyncSocke
 
         canvas.add(collectionViewController?.collectionView)
         collectionViewController?.collectionViewDelegate = self
-
     }
 
     open override func receivePacket(_ packet: Packet) {
@@ -61,6 +60,19 @@ open class CollectionViewController: UICollectionViewController {
         collectionView?.dataSource = LayoutDataSource.shared
     }
 
+    open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        var newOffset = scrollView.contentOffset
+        let dx = CGFloat(4.0 * frameCanvasWidth)
+        if newOffset.x < 0 {
+            newOffset.x = dx
+        } else if newOffset.x > dx {
+            newOffset.x = 0
+        }
+        scrollView.contentOffset = newOffset
+        print(scrollView.contentOffset)
+    }
+
     func remoteScrollTo(_ point: CGPoint) {
         if collectionView?.contentOffset == point {
             return
@@ -73,22 +85,28 @@ open class CollectionViewController: UICollectionViewController {
 //You need to create a customizable / repeatable object that represents
 //the kinds of elements you want to see in your collection view
 class Cell: UICollectionViewCell {
+    var label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+    var image: Image? {
+        willSet {
+            image?.removeFromSuperview()
+        } didSet {
+            add(image)
+            sendToBack(image)
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        clipsToBounds = true
+        add(label)
     }
 
     override func awakeFromNib() {
-        setup()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        clipsToBounds = true
+        add(label)
     }
 
-    func setup() {
-        let fileName = random(below: 2) == 0 ? "chop" : "rockies"
-        let image = Image(fileName)
-        add(image)
-        clipsToBounds = true
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

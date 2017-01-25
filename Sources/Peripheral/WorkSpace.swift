@@ -22,7 +22,7 @@ class WorkSpace: CanvasController {
     override func setup() {
         initializeSocketManager()
 
-        parallax.initializeCollectionView()
+        collection.initializeCollectionView()
         currentUniverse = collection
         canvas.add(currentUniverse?.canvas)
     }
@@ -97,8 +97,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "Parallax":
-            return parallax
+        case "Collection":
+            return collection
         default:
             return nil
         }
