@@ -25,6 +25,8 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     let maxDeviceID = 28
 
+    var bound = false
+
     //the socket that will be used to connect to the core app
     var socket: GCDAsyncUdpSocket!
 
@@ -41,12 +43,30 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
-        try! socket.enableBroadcast(true)
-        try! socket.bind(toPort: SocketManager.peripheralPort)
-        try! socket.beginReceiving()
-
+        open()
+        
         let packet = Packet(type: .handshake, id: deviceID)
         socket.send(packet.serialize() as Data, toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
+    }
+
+    open func close() {
+        socket.close()
+        bound = false
+    }
+
+    open func open() {
+        if !bound {
+            do {
+                try socket.enableBroadcast(true)
+                try socket.bind(toPort: SocketManager.peripheralPort)
+                try socket.beginReceiving()
+            } catch {
+                print("could not open socket")
+                return
+            }
+            bound = true
+
+        }
     }
 
     open func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {

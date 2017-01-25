@@ -35,9 +35,6 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: queue)
-        try! socket.enableBroadcast(true)
-        try! socket.bind(toPort: SocketManager.masterPort)
-        try! socket.beginReceiving()
 
         pingTimer = Timer.scheduledTimer(timeInterval: SocketManager.pingInterval, target: self, selector: #selector(SocketManager.ping), userInfo: nil, repeats: true)
     }
