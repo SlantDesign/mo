@@ -24,7 +24,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
     var rotate: UIPanGestureRecognizer?
     let angle = M_PI_4
     var images = [TimelineImage]()
-    let rotationContainer = View(frame: Rect(0, 0, 1200, 1200))
+    let rotationContainer = View(frame: Rect(0, 0, 3000, 3000))
     let deviceId = SocketManager.sharedManager.deviceID
 
     override func setup() {
@@ -40,7 +40,7 @@ class CircularTimeline: UniverseController, GCDAsyncSocketDelegate {
             img.update(displacement: 0)
             images.append(img)
             let neighbourOffset = Double(19 - SocketManager.sharedManager.deviceID) * frameCanvasWidth
-            rotationContainer.center = Point(dx + canvas.width/2.0 + neighbourOffset, canvas.height + 500.0)
+            rotationContainer.center = Point(dx + canvas.width/2.0 + neighbourOffset, canvas.height + 2000.0)
             rotationContainer.add(img)
         }
         canvas.add(rotationContainer)
