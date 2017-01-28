@@ -23,14 +23,14 @@ extension PacketType {
     static let explodeAsteroid = PacketType(rawValue: 200002)
 }
 
-public protocol AsteroidsDelegate {
+public protocol AsteroidBeltDelegate {
     func explodeAsteroid(tag: Int)
 }
 
-class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
+class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDelegate {
     let socketManager = SocketManager.sharedManager
     let asteroidsView = SKView()
-    var asteroidsScene: AsteroidsScene?
+    var asteroidBeltScene: AsteroidBeltScene?
     var asteroidCount = 0
 
     private var timer: C4.Timer?
@@ -38,21 +38,21 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
     override func setup() {
         asteroidsView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
         canvas.add(asteroidsView)
-        guard let scene = AsteroidsScene(fileNamed: "AsteroidsScene") else {
+        guard let scene = AsteroidBeltScene(fileNamed: "AsteroidBeltScene") else {
             print("Could not load AsteroidsScene")
             return
         }
         scene.scaleMode = .aspectFill
         asteroidsView.presentScene(scene)
-        asteroidsScene = scene
-        asteroidsScene?.asteroidsDelegate = self
+        asteroidBeltScene = scene
+        asteroidBeltScene?.asteroidBeltDelegate = self
 
         asteroidsView.ignoresSiblingOrder = true
         asteroidsView.showsFPS = true
         asteroidsView.showsNodeCount = true
 
-        if SocketManager.sharedManager.deviceID == 20 {
-            timer = C4.Timer(interval: 1.0) {
+        if SocketManager.sharedManager.deviceID == 18 {
+            timer = C4.Timer(interval: 0.5) {
                 self.sendCreateAsteroid()
             }
             timer?.start()
@@ -79,7 +79,7 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
         case PacketType.asteroidCountReset:
             asteroidCount = packet.id
         case PacketType.explodeAsteroid:
-            asteroidsScene?.explodeAsteroid(tag: packet.id)
+            asteroidBeltScene?.explodeAsteroid(tag: packet.id)
         default:
             break
         }
@@ -92,14 +92,14 @@ class Asteroids: UniverseController, GCDAsyncSocketDelegate, AsteroidsDelegate {
         }
 
         var point = (d as NSData).bytes.bindMemory(to: CGPoint.self, capacity: d.count).pointee
-        if SocketManager.sharedManager.deviceID == 19 {
+        if SocketManager.sharedManager.deviceID == 17 {
             point.x += CGFloat(frameCanvasWidth)
 
-        } else if SocketManager.sharedManager.deviceID == 21 {
+        } else if SocketManager.sharedManager.deviceID == 19 {
             point.x -= CGFloat(frameCanvasWidth)
             point.y += 12.0
         }
-        asteroidsScene?.createAsteroid(point: point, tag: packet.id)
+        asteroidBeltScene?.createAsteroid(point: point, tag: packet.id)
     }
 
     func explodeAsteroid(tag: Int) {

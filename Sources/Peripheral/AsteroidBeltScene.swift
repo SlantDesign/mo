@@ -11,9 +11,9 @@ import GameplayKit
 import SceneKit
 import C4
 
-class AsteroidsScene: SKScene {
+class AsteroidBeltScene: SKScene {
     private var nodes: [SKSpriteNode]?// = [SKSpriteNode]()
-    var asteroidsDelegate: AsteroidsDelegate?
+    var asteroidBeltDelegate: AsteroidBeltDelegate?
 
     override func didMove(to view: SKView) {
         let w = 132
@@ -61,7 +61,7 @@ class AsteroidsScene: SKScene {
                     print("Couldn't convert name to Int")
                     return
                 }
-                asteroidsDelegate?.explodeAsteroid(tag: tag)
+                asteroidBeltDelegate?.explodeAsteroid(tag: tag)
             }
         }
     }
