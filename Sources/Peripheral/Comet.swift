@@ -18,21 +18,16 @@ import GameplayKit
 //For any new commands you want to send
 //Create an extension with a unique series of integers
 extension PacketType {
-    static let mo = PacketType(rawValue: 999999)
+    static let comet = PacketType(rawValue: 300001)
 }
 
 public protocol CometSceneDelegate {
-    func fire()
 }
 
 class Comet: UniverseController, GCDAsyncSocketDelegate, CometSceneDelegate {
     let socketManager = SocketManager.sharedManager
     let cometView = SKView()
     var cometScene: CometScene?
-
-    func fire() {
-        self.sendCreatePacket()
-    }
 
     override func setup() {
         cometView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
@@ -51,21 +46,32 @@ class Comet: UniverseController, GCDAsyncSocketDelegate, CometSceneDelegate {
         cometView.showsNodeCount = true
     }
 
-    func sendCreatePacket() {
-        var data = Data()
-        data.append(Point(-1, -1))
-        let packet = Packet(type: .mo, id: 0, payload: data)
-        socketManager.broadcastPacket(packet)
-    }
-
     //This is how you receive and decipher a packet with no data
     override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case PacketType.mo:
-            handleMessage(packet: packet)
+        case PacketType.comet:
+            createComet(packet: packet)
         default:
             break
         }
+    }
+
+    func createComet(packet: Packet) {
+        guard let payload = packet.payload else {
+            print("MO packet did not have data.")
+            return
+        }
+
+        var index = 0
+
+        let imageID = payload.extract(Int.self, at: index)
+        index += MemoryLayout<Int>.size
+        var position = payload.extract(CGPoint.self, at: index)
+
+        let dx = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+        position.x += dx
+
+        cometScene?.createMovingComet(imageID: imageID, at: position)
     }
 
     func handleMessage(packet: Packet) {

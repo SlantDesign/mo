@@ -10,11 +10,42 @@ import SpriteKit
 import GameplayKit
 import SceneKit
 import C4
+import MO
 
 class Asteroid: SKSpriteNode {
     public var aura: SKSpriteNode?
     public var rotationAngle: CGFloat = 0.0
     public var rotationDuration: TimeInterval = 0.0
+    public var imageID = 0
+
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        isUserInteractionEnabled = true
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        isUserInteractionEnabled = true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if let aura = aura {
+//            aura.isHidden = !aura.isHidden
+//        }
+
+        let deviceId = SocketManager.sharedManager.deviceID
+
+        var d = Data()
+        d.append(imageID)
+        d.append(position)
+        let packet = Packet(type: .comet, id: deviceId, payload: d)
+        SocketManager.sharedManager.broadcastPacket(packet)
+
+        /*
+        isHidden = true
+        self.removeFromParent()
+ */
+    }
 }
 
 class CometScene: SKScene {
@@ -30,14 +61,39 @@ class CometScene: SKScene {
             cometAuraFrames?.append(texture)
         }
 
-        createComet(named: "Asteroid_00", at: CGPoint(x: 0, y: -300))
-        createComet(named: "Asteroid_01", at: CGPoint(x: 0, y: -150))
-        createComet(named: "Asteroid_02", at: CGPoint(x: 0, y: 150))
-        createComet(named: "Asteroid_03", at: CGPoint(x: 0, y: 300))
+        if SocketManager.sharedManager.deviceID == 17 {
+            createComets()
+        }
     }
 
-    func addAsteroid(named name: String, to aura: SKSpriteNode) {
-        let asteroid = Asteroid(imageNamed: name)
+    func createComets() {
+        createComet(imageID: 0, at: CGPoint(x: 0, y: -300))
+        createComet(imageID: 1, at: CGPoint(x: 0, y: -150))
+        createComet(imageID: 2, at: CGPoint(x: 0, y: 150))
+        createComet(imageID: 3, at: CGPoint(x: 0, y: 300))
+    }
+
+    func createMovingComet(imageID: Int, at point: CGPoint) {
+        let asteroid = createAsteroid(imageID: imageID, at: point)
+        addAura(to: asteroid)
+        asteroid.aura?.isHidden = false
+        self.addChild(asteroid)
+        cometAura = asteroid
+
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 4.0), dy: 0.0), duration: 5.0)
+        let scale = SKAction.scale(by: 0.25, duration: 1.5)
+        let fade = SKAction.fadeOut(withDuration: 1.5)
+        let wait = SKAction.wait(forDuration: movement.duration-1.5)
+        let fadeScale = SKAction.group([fade, scale])
+        let waitFadeScale = SKAction.sequence([wait, fadeScale, SKAction.removeFromParent()])
+        let moveComet = SKAction.group([movement, waitFadeScale])
+
+        asteroid.run(moveComet)
+    }
+
+    func addAsteroid(imageID: Int, to aura: SKSpriteNode) {
+        let asteroid = Asteroid(imageNamed: "Asteroid_0\(imageID)")
+        asteroid.imageID = imageID
         asteroid.size = CGSize(width: 132, height: 132)
         asteroid.position = CGPoint(x: aura.frame.width/2-asteroid.size.width/2 - 20.0, y: 0)
 
@@ -76,8 +132,9 @@ class CometScene: SKScene {
         asteroid.aura = aura
     }
 
-    func createAsteroid(named name: String, at point: CGPoint) -> Asteroid {
-        let asteroid = Asteroid(imageNamed: name)
+    func createAsteroid(imageID: Int, at point: CGPoint) -> Asteroid {
+        let asteroid = Asteroid(imageNamed: "Asteroid_0\(imageID)")
+        asteroid.imageID = imageID
         asteroid.size = CGSize(width: 90, height: 90)
         asteroid.position = point
 
@@ -91,21 +148,10 @@ class CometScene: SKScene {
         return asteroid
     }
 
-    func createComet(named name: String, at point: CGPoint) {
-        let asteroid = createAsteroid(named: name, at: point)
+    func createComet(imageID: Int, at point: CGPoint) {
+        let asteroid = createAsteroid(imageID: imageID, at: point)
         addAura(to: asteroid)
         self.addChild(asteroid)
-        cometAura = asteroid
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for child in self.children {
-            if let asteroid = child as? Asteroid {
-                if let aura = asteroid.aura {
-                   aura.isHidden = !aura.isHidden
-                }
-            }
-        }
     }
 
     override func update(_ currentTime: TimeInterval) {
