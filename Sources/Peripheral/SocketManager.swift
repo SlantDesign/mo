@@ -43,6 +43,8 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         super.init()
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        socket.setIPv4Enabled(true)
+        socket.setIPv6Enabled(false)
         open()
         
         let packet = Packet(type: .handshake, id: deviceID)
