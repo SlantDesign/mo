@@ -43,9 +43,9 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         bigStarsViewController?.collectionView?.dataSource = BigStarsDataSource.shared
 
         canvas.add(bigStarsViewController?.collectionView)
-        bigStarsViewController?.scrollDelegate = self
-
-        if SocketManager.sharedManager.deviceID != Stars.primaryDevice {
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+            bigStarsViewController?.scrollDelegate = self
+        } else {
             bigStarsViewController?.collectionView?.isUserInteractionEnabled = false
         }
     }
@@ -74,10 +74,15 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
                 return
             }
 
-            var offset = payload.extract(CGPoint.self, at: 0)
-            let dx = CGFloat(currentID - Stars.primaryDevice) * CGFloat(frameCanvasWidth)
-            offset.x += dx
-            bigStarsViewController?.collectionView?.setContentOffset(offset, animated: false)
+            let primaryOffset = payload.extract(CGPoint.self, at: 0)
+            let dxBigOffset = CGFloat(currentID - Stars.primaryDevice) * CGFloat(frameCanvasWidth)
+            let bigOffset = CGPoint(x: primaryOffset.x + dxBigOffset, y: primaryOffset.y)
+
+            bigStarsViewController?.collectionView?.setContentOffset(bigOffset, animated: false)
+
+            //FIXME: Calibrate position of non-primary small star offsets
+            let smallOffset = CGPoint(x: bigOffset.x * SmallStarsViewController.scale, y:bigOffset.y)
+            smallStarsViewController?.collectionView?.setContentOffset(smallOffset, animated: false)
         }
     }
 
@@ -86,14 +91,15 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             return
         }
 
-        smallStarsViewController?.collectionView?.contentOffset = offset
-
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+            let smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
+            smallStarsViewController?.collectionView?.contentOffset = smallOffset
 
             var d = Data()
             d.append(offset)
             let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d)
             SocketManager.sharedManager.broadcastPacket(p)
         }
+
     }
 }

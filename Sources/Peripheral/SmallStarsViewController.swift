@@ -14,6 +14,7 @@ import CocoaLumberjack
 import UIKit
 
 open class SmallStarsViewController: UICollectionViewController {
+    static let scale: CGFloat = 0.8
     var dx: CGFloat = 0.0
     weak var scrollDelegate: ScrollDelegate?
 
@@ -21,16 +22,16 @@ open class SmallStarsViewController: UICollectionViewController {
         collectionView?.register(StarCell.self, forCellWithReuseIdentifier: "StarCell")
         let id = SocketManager.sharedManager.deviceID
         dx = CGFloat(id) * CGFloat(frameCanvasWidth) - CGFloat(frameGap/2.0)
-        collectionView?.contentOffset = CGPoint(x: dx, y: 0)
+        collectionView?.contentOffset = CGPoint(x: dx * SmallStarsViewController.scale, y: 0)
         collectionView?.dataSource = SmallStarsDataSource.shared
     }
 
     open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var newOffset = scrollView.contentOffset
         if newOffset.x < 0 {
-            newOffset.x += (Stars.maxWidth - CGFloat(frameCanvasWidth))
-        } else if newOffset.x > Stars.maxWidth - CGFloat(frameCanvasWidth) {
-            newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth))
+            newOffset.x += (Stars.maxWidth - CGFloat(frameCanvasWidth)) * SmallStarsViewController.scale
+        } else if newOffset.x > Stars.maxWidth - CGFloat(frameCanvasWidth) * SmallStarsViewController.scale {
+            newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth)) * SmallStarsViewController.scale
         }
         scrollView.contentOffset = newOffset
     }

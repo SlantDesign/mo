@@ -23,7 +23,7 @@ class SmallStarsLayout: UICollectionViewLayout {
     }
 
     override var collectionViewContentSize: CGSize {
-        return CGSize(width:Stars.maxWidth, height:1024.0)
+        return CGSize(width:Stars.maxWidth * SmallStarsViewController.scale, height:1024.0)
     }
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

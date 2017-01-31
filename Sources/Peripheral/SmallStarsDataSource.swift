@@ -24,7 +24,7 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
                 continue
             }
 
-            let dx = Double(i) * frameCanvasWidth
+            let dx = Double(i) * frameCanvasWidth * Double(SmallStarsViewController.scale)
             let scale = Transform.makeScale(1.25, 1.25)
             let translate = Transform.makeTranslation(Vector(x: 368.0 + dx, y: 512))
 
@@ -36,9 +36,9 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
                 star.imageName = "smallStar"
                 stars.append(star)
 
-                if star.position.x < frameCanvasWidth {
+                if star.position.x < frameCanvasWidth * Double(SmallStarsViewController.scale) {
                     var duplicate = star.copy()
-                    duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
+                    duplicate.position.x += (Double(Stars.maxWidth) - frameCanvasWidth) * Double(SmallStarsViewController.scale)
                     stars.append(duplicate)
                 }
             }
