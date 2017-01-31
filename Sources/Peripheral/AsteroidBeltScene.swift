@@ -17,8 +17,6 @@ class AsteroidBeltScene: SKScene {
     private var cometAura: SKSpriteNode?
     private let cometAuraAtlas = SKTextureAtlas(named: "comet_aura")
 
-    var asteroidBeltDelegate: AsteroidBeltDelegate?
-
     override func didMove(to view: SKView) {
         cometAuraFrames = [SKTexture]()
         for i in 0..<cometAuraAtlas.textureNames.count/2 {
@@ -28,29 +26,27 @@ class AsteroidBeltScene: SKScene {
 
         copyableAsteroids = [Asteroid]()
         for i in 0...3 {
-            let node = Asteroid(imageNamed: "Asteroid_0\(i)")
-            node.size = CGSize(width: 132, height: 132)
-            node.physicsBody = SKPhysicsBody(rectangleOf: Asteroid.physicsBodySize)
-            node.physicsBody?.affectedByGravity = false
-            node.physicsBody?.friction = 0.0
-            copyableAsteroids?.append(node)
+            let asteroid = Asteroid(imageNamed: "Asteroid_0\(i)")
+            asteroid.size = CGSize(width: 132, height: 132)
+            asteroid.physicsBody = SKPhysicsBody(rectangleOf: Asteroid.physicsBodySize)
+            asteroid.physicsBody?.affectedByGravity = false
+            asteroid.physicsBody?.friction = 0.0
+            copyableAsteroids?.append(asteroid)
         }
     }
 
     func findAsteroid(identifier: Int) -> Asteroid? {
-        var asteroid: Asteroid?
         for child in children {
             if child.name == "\(identifier)" {
-                if let extracted = child as? Asteroid {
-                    asteroid = extracted
-                    break
+                if let asteroid = child as? Asteroid {
+                    return asteroid
                 }
             }
         }
-        return asteroid
+        return nil
     }
 
-    func convertAsteroidToComet(identifier: Int, position: CGPoint) {
+    func removeAsteroidAddComet(identifier: Int, position: CGPoint) {
         createComet(identifier: identifier, position: position)
 
         guard let asteroid = findAsteroid(identifier: identifier) else {
@@ -70,7 +66,6 @@ class AsteroidBeltScene: SKScene {
         comet.physicsBody = nil
         addAura(to: comet)
         comet.run(moveComet())
-
         self.addChild(comet)
     }
 
@@ -119,35 +114,21 @@ class AsteroidBeltScene: SKScene {
 
         asteroid.name = "\(identifier)"
         asteroid.position = point
-        asteroid.physicsBody?.affectedByGravity = false
 
         let rotationDirection = round(random01()) == 0.0 ? -1.0 : 1.0
-        asteroid.rotationAngle = CGFloat(M_PI * rotationDirection)
-        asteroid.rotationDuration = random01() * 2.0 + 2.0
+        let rotationAngle = CGFloat(M_PI * rotationDirection)
+        let rotationDuration = random01() * 2.0 + 2.0
+        let asteroidRotation = SKAction.repeatForever(SKAction.rotate(byAngle: rotationAngle, duration: rotationDuration))
 
-        asteroid.run(SKAction.repeatForever(SKAction.rotate(byAngle: asteroid.rotationAngle, duration: asteroid.rotationDuration)))
+        let vector = CGVector(dx: CGFloat(frameCanvasWidth*2), dy: 1224)
 
-        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth*2), dy: 1224), duration: random01()*2.0 + 9.0),
+        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: vector, duration: random01()*2.0 + 9.0),
                                                       SKAction.removeFromParent()])
-        asteroid.run(asteroidBeltMovement, withKey: Asteroid.asteroidBeltMovementKey)
+
+        let asteroidBehaviour = SKAction.group([asteroidRotation, asteroidBeltMovement])
+        asteroid.run(asteroidBehaviour)
 
         self.addChild(asteroid)
-    }
-
-    func explodeAsteroid(tag: Int) {
-        for asteroid in self.children {
-            print("\(asteroid.name) <> \(tag)")
-            if asteroid.name == "\(tag)" {
-                asteroid.removeFromParent()
-                let explode = SKEmitterNode(fileNamed: "Explode")!
-                explode.position = asteroid.position
-                self.addChild(explode)
-                explode.run(SKAction.move(by: CGVector(dx: 2400, dy: 2200), duration: 10))
-                explode.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.5),
-                                               SKAction.removeFromParent()]))
-            }
-            break
-        }
     }
 
     override func update(_ currentTime: TimeInterval) {

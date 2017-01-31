@@ -19,16 +19,10 @@ import GameplayKit
 //Create an extension with a unique series of integers
 extension PacketType {
     static let asteroid = PacketType(rawValue: 200000)
-    static let asteroidCountReset = PacketType(rawValue: 200001)
-    static let explodeAsteroid = PacketType(rawValue: 200002)
-    static let comet = PacketType(rawValue: 200003)
+    static let comet = PacketType(rawValue: 200001)
 }
 
-public protocol AsteroidBeltDelegate {
-    func explodeAsteroid(tag: Int)
-}
-
-class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDelegate {
+class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
     static let primaryDevice = 18
     let socketManager = SocketManager.sharedManager
     let asteroidBeltView = SKView()
@@ -48,7 +42,6 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDele
         scene.scaleMode = .aspectFill
         asteroidBeltView.presentScene(scene)
         asteroidBeltScene = scene
-        asteroidBeltScene?.asteroidBeltDelegate = self
 
         asteroidBeltView.ignoresSiblingOrder = false
         asteroidBeltView.showsFPS = true
@@ -78,19 +71,15 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDele
     override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
         case PacketType.asteroid:
-            createAsteroid(packet: packet)
+            handleAddAsteroid(packet: packet)
         case PacketType.comet:
-            convertAsteroidToComet(packet: packet)
-        case PacketType.asteroidCountReset:
-            asteroidCount = packet.id
-        case PacketType.explodeAsteroid:
-            asteroidBeltScene?.explodeAsteroid(tag: packet.id)
+            handleAddComet(packet: packet)
         default:
             break
         }
     }
 
-    func convertAsteroidToComet(packet: Packet) {
+    func handleAddComet(packet: Packet) {
         guard let d = packet.payload else {
             print("Comet packet did not have data.")
             return
@@ -104,11 +93,10 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDele
         let offset = packet.id - SocketManager.sharedManager.deviceID
         position.x += CGFloat(frameCanvasWidth * Double(offset))
 
-        asteroidBeltScene?.convertAsteroidToComet(identifier: identifier, position: position)
-
+        asteroidBeltScene?.removeAsteroidAddComet(identifier: identifier, position: position)
     }
 
-    func createAsteroid(packet: Packet) {
+    func handleAddAsteroid(packet: Packet) {
         guard let d = packet.payload else {
             print("Asteroid packet did not have data.")
             return
@@ -118,16 +106,11 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDele
 
         let offset = AsteroidBelt.primaryDevice - SocketManager.sharedManager.deviceID
 
+        //asteroids are only visible on 3 devices, so don't add them if they wouldn't ever appear
         if abs(offset) <= 1 {
             point.x += CGFloat(frameCanvasWidth * Double(offset))
             asteroidBeltScene?.createAsteroid(point: point, identifier: packet.id)
         }
-
-    }
-
-    func explodeAsteroid(tag: Int) {
-        let packet = Packet(type: .explodeAsteroid, id: tag)
-        socketManager.broadcastPacket(packet)
     }
 
     func frandom() -> CGFloat {
@@ -135,20 +118,7 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate, AsteroidBeltDele
     }
 
     override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+        return false
     }
 
     override var prefersStatusBarHidden: Bool {

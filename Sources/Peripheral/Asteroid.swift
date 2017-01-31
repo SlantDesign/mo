@@ -14,8 +14,6 @@ import C4
 class Asteroid: SKSpriteNode {
     static let asteroidBeltMovementKey = "asteroidBeltMovementKey"
     static let physicsBodySize = CGSize(width: 100.0, height: 100.0)
-    public var rotationAngle: CGFloat = 0.0
-    public var rotationDuration: TimeInterval = 0.0
     public var aura: SKSpriteNode?
 
     public convenience init(identifier: Int) {
