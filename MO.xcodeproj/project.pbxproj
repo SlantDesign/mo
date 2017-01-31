@@ -13,13 +13,13 @@
 		1F36B7DF1E40245200441C9B /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DD1E40242400441C9B /* Stars.swift */; };
 		1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DB1E40241400441C9B /* StarCell.swift */; };
 		1F36B7E31E40410600441C9B /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7E21E40410500441C9B /* AstrologicalSignProvider.swift */; };
+		1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */; };
 		1F851D0B1E37E02400BC8AC0 /* BigStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */; };
 		1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */; };
 		1F8F744E1E405F50002DD972 /* BigStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */; };
 		1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */; };
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
-		1F8F74591E406214002DD972 /* SmallStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
@@ -769,7 +769,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8F74591E406214002DD972 /* SmallStarsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +801,7 @@
 				6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
+				1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
