@@ -34,6 +34,7 @@ open class BigStarsViewController: UICollectionViewController {
             newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth))
         }
         scrollView.contentOffset = newOffset
+        scrollDelegate?.shouldSendScrollData()
     }
 
     func remoteScrollTo(_ point: CGPoint) {

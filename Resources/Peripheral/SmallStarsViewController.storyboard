@@ -19,7 +19,7 @@
                         <color key="backgroundColor" red="0.049357178580000001" green="0.096261398880000001" blue="0.69566761359999996" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="WfW-1f-0RF" customClass="SmallStarsLayout" customModule="Peripheral"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="StarCell" reuseIdentifier="StarCell" id="WOD-BK-0w3" customClass="StarCell" customModule="MO" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="StarCell" reuseIdentifier="StarCell" id="WOD-BK-0w3" customClass="StarCell" customModule="Peripheral" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

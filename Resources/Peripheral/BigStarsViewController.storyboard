@@ -13,14 +13,14 @@
         <scene sceneID="l8T-Gp-CDf">
             <objects>
                 <collectionViewController storyboardIdentifier="BigStarsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wqz-rw-Auz" customClass="BigStarsViewController" customModule="Peripheral" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" id="rCI-bJ-o8A">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" id="rCI-bJ-o8A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.049357178580000001" green="0.096261398880000001" blue="0.69566761359999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.049357178580000001" green="0.096261398880000001" blue="0.69566761359999996" alpha="0.0" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="WfW-1f-0RF" customClass="BigStarsLayout" customModule="Peripheral" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="StarCell" reuseIdentifier="StarCell" id="WOD-BK-0w3" customClass="StarCell" customModule="Peripheral" customModuleProvider="target">
-                                <rect key="frame" x="-4.5" y="0.0" width="384" height="128"/>
+                                <rect key="frame" x="-5" y="0.0" width="384" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>

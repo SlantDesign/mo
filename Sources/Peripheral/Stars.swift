@@ -23,6 +23,7 @@ public protocol ScrollDelegate: class {
 }
 
 open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
+    static let primaryDevice = 18
     static let constellationCount = 28
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
     var bigStarsViewController: BigStarsViewController?
@@ -30,7 +31,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
 
     func initializeCollectionView() {
         inititalizeSmallStars()
-//        inititalizeBigStars()
+        inititalizeBigStars()
     }
 
     func inititalizeBigStars() {
@@ -63,6 +64,11 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     }
 
     public func shouldSendScrollData() {
-        //do stuff here
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+            guard let offset = bigStarsViewController?.collectionView?.contentOffset else {
+                return
+            }
+            smallStarsViewController?.collectionView?.contentOffset = offset
+        }
     }
 }
