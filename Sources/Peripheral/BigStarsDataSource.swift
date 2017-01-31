@@ -1,17 +1,18 @@
 //
-//  LayoutDataSource.swift
+//  BigStarsDataSource.swift
 //  MO
 //
 //  Created by travis on 2017-01-30.
 //  Copyright © 2017 Slant. All rights reserved.
 //
 
-import CocoaLumberjack
 import Foundation
 import UIKit
 import C4
 
-class LayoutDataSource: NSObject, UICollectionViewDataSource {
+class BigStarsDataSource: NSObject, UICollectionViewDataSource {
+    static let shared = BigStarsDataSource()
+    var elements = [Star]()
     var stars = [Star]()
 
     func loadData() {
@@ -30,13 +31,13 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
             for var p in sign.small {
                 p.transform(scale)
                 p.transform(translate)
-                var s = Star()
-                s.position = p
-                s.imageName = "smallStar"
-                stars.append(s)
+                var star = Star()
+                star.position = p
+                star.imageName = "smallStar"
+                stars.append(star)
 
-                if s.position.x < frameCanvasWidth {
-                    var duplicate = s.copy()
+                if star.position.x < frameCanvasWidth {
+                    var duplicate = star.copy()
                     duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
                     stars.append(duplicate)
                 }
@@ -45,13 +46,13 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
             for var p in sign.big {
                 p.transform(scale)
                 p.transform(translate)
-                var s = Star()
-                s.position = p
-                s.imageName = "bigStar"
-                stars.append(s)
+                var star = Star()
+                star.position = p
+                star.imageName = "bigStar"
+                stars.append(star)
 
-                if s.position.x < frameCanvasWidth {
-                    var duplicate = s.copy()
+                if star.position.x < frameCanvasWidth {
+                    var duplicate = star.copy()
                     duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
                     stars.append(duplicate)
                 }
@@ -78,7 +79,7 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stars.count
     }
-
+    
     func element(at indexPath: IndexPath) -> Star {
         return stars[indexPath.item]
     }
