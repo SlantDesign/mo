@@ -61,7 +61,6 @@ open class CollectionViewController: UICollectionViewController {
     }
 
     open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
         var newOffset = scrollView.contentOffset
         let dx = CGFloat(4.0 * frameCanvasWidth)
         if newOffset.x < 0 {
@@ -70,7 +69,6 @@ open class CollectionViewController: UICollectionViewController {
             newOffset.x = 0
         }
         scrollView.contentOffset = newOffset
-        print(scrollView.contentOffset)
     }
 
     func remoteScrollTo(_ point: CGPoint) {
