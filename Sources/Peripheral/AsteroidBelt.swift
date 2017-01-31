@@ -31,6 +31,7 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
 
     private var timer: C4.Timer?
 
+    //creates the asteroidBelt view and sets up a timer from the primary device
     override func setup() {
         asteroidBeltView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
         canvas.add(asteroidBeltView)
@@ -49,15 +50,15 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
 
         if SocketManager.sharedManager.deviceID == AsteroidBelt.primaryDevice {
             timer = C4.Timer(interval: 0.5) {
-                self.sendCreateAsteroid()
+                self.broadcastAddAsteroid()
             }
             timer?.start()
         }
     }
 
     //This method is called only on a designated device (see setup where: `SocketManager.sharedManager.deviceID == 18`)
-    func sendCreateAsteroid() {
-        let point = CGPoint(x: frandom() * CGFloat(-frameCanvasWidth) - CGFloat(frameCanvasWidth/2), y: -view.frame.size.height/2.0 - 100)
+    func broadcastAddAsteroid() {
+        let point = CGPoint(x: CGFloat(random01()) * CGFloat(-frameCanvasWidth) - CGFloat(frameCanvasWidth/2), y: -view.frame.size.height/2.0 - 100)
         var data = Data()
         data.append(point)
         data.append(asteroidCount)
@@ -79,6 +80,7 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
         }
     }
 
+    //FIXME: Add second comet to necessary devices for creating wraparound effect
     func handleAddComet(packet: Packet) {
         guard let d = packet.payload else {
             print("Comet packet did not have data.")
@@ -96,6 +98,7 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
         asteroidBeltScene?.removeAsteroidAddComet(identifier: identifier, position: position)
     }
 
+    //adds an asteroid to primary device, as well as devices to its immediate left and right
     func handleAddAsteroid(packet: Packet) {
         guard let d = packet.payload else {
             print("Asteroid packet did not have data.")
@@ -111,10 +114,6 @@ class AsteroidBelt: UniverseController, GCDAsyncSocketDelegate {
             point.x += CGFloat(frameCanvasWidth * Double(offset))
             asteroidBeltScene?.createAsteroid(point: point, identifier: packet.id)
         }
-    }
-
-    func frandom() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 
     override var shouldAutorotate: Bool {

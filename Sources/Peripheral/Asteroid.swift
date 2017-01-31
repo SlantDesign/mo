@@ -37,6 +37,7 @@ class Asteroid: SKSpriteNode {
         isUserInteractionEnabled = true
     }
 
+    //broadcasts a message to create a new comet
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let n = name else {
             print("Couldn't extract name from asteroid")

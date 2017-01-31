@@ -17,6 +17,7 @@ class AsteroidBeltScene: SKScene {
     private var cometAura: SKSpriteNode?
     private let cometAuraAtlas = SKTextureAtlas(named: "comet_aura")
 
+    //sets up frames for creating comet aura, as well as copyable asteroids
     override func didMove(to view: SKView) {
         cometAuraFrames = [SKTexture]()
         for i in 0..<cometAuraAtlas.textureNames.count/2 {
@@ -35,6 +36,7 @@ class AsteroidBeltScene: SKScene {
         }
     }
 
+    //finds an asteroid in the scene's children, based on an identifier
     func findAsteroid(identifier: Int) -> Asteroid? {
         for child in children {
             if child.name == "\(identifier)" {
@@ -46,6 +48,7 @@ class AsteroidBeltScene: SKScene {
         return nil
     }
 
+    // creates a comet at a specific point and removes an asteroid (if the asteroid exists)
     func removeAsteroidAddComet(identifier: Int, position: CGPoint) {
         createComet(identifier: identifier, position: position)
 
@@ -55,6 +58,7 @@ class AsteroidBeltScene: SKScene {
         asteroid.removeFromParent()
     }
 
+    //creates a comet (an asteroid with an animated aura)
     func createComet(identifier: Int, position: CGPoint) {
         guard let comet = self.copyableAsteroids?[identifier % 4].copy() as! Asteroid? else {
             print("Couldn't create a copy of the asteroid")
@@ -69,6 +73,7 @@ class AsteroidBeltScene: SKScene {
         self.addChild(comet)
     }
 
+    //creates an action for the motion of a comet
     func moveComet() -> SKAction {
         let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 4.0), dy: 0.0), duration: 5.0)
         let scale = SKAction.scale(by: 0.25, duration: 1.5)
@@ -79,6 +84,7 @@ class AsteroidBeltScene: SKScene {
         return SKAction.group([movement, waitFadeScale])
     }
 
+    //adds an animated aura to an asteroid
     func addAura(to asteroid: Asteroid) {
         guard let texture = cometAuraFrames?[0] else {
             print("could not extract a texture")
@@ -100,6 +106,7 @@ class AsteroidBeltScene: SKScene {
         asteroid.aura = aura
     }
 
+    //creates an asteroid (with rotation and movement)
     func createAsteroid(point: CGPoint, identifier: Int) {
         guard let asteroid = self.copyableAsteroids?[identifier % 4].copy() as! Asteroid? else {
             return
@@ -129,9 +136,5 @@ class AsteroidBeltScene: SKScene {
         asteroid.run(asteroidBehaviour)
 
         self.addChild(asteroid)
-    }
-
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
     }
 }
