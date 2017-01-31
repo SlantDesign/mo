@@ -44,6 +44,10 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
 
         canvas.add(bigStarsViewController?.collectionView)
         bigStarsViewController?.scrollDelegate = self
+
+        if SocketManager.sharedManager.deviceID != Stars.primaryDevice {
+            bigStarsViewController?.collectionView?.isUserInteractionEnabled = false
+        }
     }
 
     func inititalizeSmallStars() {
@@ -56,6 +60,8 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         smallStarsViewController?.collectionView?.dataSource = SmallStarsDataSource.shared
 
         canvas.add(smallStarsViewController?.collectionView)
+
+        smallStarsViewController?.collectionView?.isUserInteractionEnabled = false
     }
 
     open override func receivePacket(_ packet: Packet) {
