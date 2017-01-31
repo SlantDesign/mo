@@ -23,7 +23,7 @@ open class SmallStarsViewController: UICollectionViewController {
         let id = SocketManager.sharedManager.deviceID
         dx = CGFloat(id) * CGFloat(frameCanvasWidth) - CGFloat(frameGap/2.0)
         collectionView?.contentOffset = CGPoint(x: dx, y: 0)
-        collectionView?.dataSource = BigStarsDataSource.shared
+        collectionView?.dataSource = SmallStarsDataSource.shared
     }
 
     open override func scrollViewDidScroll(_ scrollView: UIScrollView) {

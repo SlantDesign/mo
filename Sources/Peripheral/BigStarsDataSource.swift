@@ -28,21 +28,6 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
             let scale = Transform.makeScale(1.25, 1.25)
             let translate = Transform.makeTranslation(Vector(x: 368.0 + dx, y: 512))
 
-            for var p in sign.small {
-                p.transform(scale)
-                p.transform(translate)
-                var star = Star()
-                star.position = p
-                star.imageName = "smallStar"
-                stars.append(star)
-
-                if star.position.x < frameCanvasWidth {
-                    var duplicate = star.copy()
-                    duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
-                    stars.append(duplicate)
-                }
-            }
-
             for var p in sign.big {
                 p.transform(scale)
                 p.transform(translate)

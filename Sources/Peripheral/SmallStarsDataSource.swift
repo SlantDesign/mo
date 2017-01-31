@@ -1,5 +1,5 @@
 //
-//  BigStarsDataSource.swift
+//  SmallStarsDataSource.swift
 //  MO
 //
 //  Created by travis on 2017-01-30.
@@ -34,21 +34,6 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
                 var star = Star()
                 star.position = p
                 star.imageName = "smallStar"
-                stars.append(star)
-
-                if star.position.x < frameCanvasWidth {
-                    var duplicate = star.copy()
-                    duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
-                    stars.append(duplicate)
-                }
-            }
-
-            for var p in sign.big {
-                p.transform(scale)
-                p.transform(translate)
-                var star = Star()
-                star.position = p
-                star.imageName = "bigStar"
                 stars.append(star)
 
                 if star.position.x < frameCanvasWidth {

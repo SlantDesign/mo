@@ -19,6 +19,7 @@
 		1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */; };
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
+		1F8F74591E406214002DD972 /* SmallStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
@@ -142,6 +143,7 @@
 		1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsDataSource.swift; sourceTree = "<group>"; };
 		1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsLayout.swift; sourceTree = "<group>"; };
 		1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsViewController.swift; sourceTree = "<group>"; };
+		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
@@ -290,9 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				1F36B7E21E40410500441C9B /* AstrologicalSignProvider.swift */,
-				1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */,
 				1F36B7DD1E40242400441C9B /* Stars.swift */,
 				1F36B7DB1E40241400441C9B /* StarCell.swift */,
+				1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */,
 				1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */,
 				1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */,
 				1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */,
@@ -362,6 +364,7 @@
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* BigStarsViewController.storyboard */,
+				1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */,
 				6114EAB01E0F634100829825 /* ThinVeil.mp3 */,
 				6114EAB11E0F634100829825 /* UniversLTStd-LightUltraCn.otf */,
 			);
@@ -766,6 +769,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8F74591E406214002DD972 /* SmallStarsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

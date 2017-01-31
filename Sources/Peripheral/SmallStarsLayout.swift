@@ -43,8 +43,8 @@ class SmallStarsLayout: UICollectionViewLayout {
     func indexPathsOfElements(in rect: CGRect) -> [IndexPath] {
         currentLayoutRect = rect
 
-        guard let layoutDataSource = self.collectionView?.dataSource as? BigStarsDataSource else {
-            print("could not load layoutDataSource")
+        guard let layoutDataSource = self.collectionView?.dataSource as? SmallStarsDataSource else {
+            print("could not load layoutDataSource for small stars")
             return []
         }
 
@@ -60,7 +60,7 @@ class SmallStarsLayout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        guard let layoutDataSource = collectionView?.dataSource as? BigStarsDataSource else {
+        guard let layoutDataSource = collectionView?.dataSource as? SmallStarsDataSource else {
             return nil
         }
 
