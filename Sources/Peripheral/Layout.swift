@@ -16,20 +16,20 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     var elements = [Element]()
 
     func loadData() {
-        for i in 0..<100 {
+        for i in 0..<Stars.constellationCount {
             var element = Element()
 
             let imageName = round(random01()) == 1 ? "chop" : "rockies"
             element.imageName = imageName
 
-            element.position = Point(Double(i)/100.0 * frameCanvasWidth * 4.0, Double(i) * 10.24)
+            element.position = Point(Double(i) * frameCanvasWidth + 368.0, 512.0)
             elements.append(element)
 
-            if element.position.x < 768.0 {
+            if element.position.x < frameCanvasWidth {
                 var duplicate = Element()
                 duplicate.imageName = imageName
                 var position = element.position
-                position.x += 4.0 * frameCanvasWidth
+                position.x += Double(Stars.maxWidth)
                 duplicate.position = position
                 elements.append(duplicate)
             }
@@ -41,11 +41,11 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     }
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        cell.label.text = "\(indexPath.item)"
-        cell.layer.zPosition = CGFloat(indexPath.item)
-        cell.image = Image(elements[indexPath.item].imageName)
-        return cell
+        let star = collectionView.dequeueReusableCell(withReuseIdentifier: "StarCell", for: indexPath) as! StarCell
+        star.label.text = "\(indexPath.item)"
+        star.layer.zPosition = CGFloat(indexPath.item)
+        star.image = Image(elements[indexPath.item].imageName)
+        return star
     }
 
     override init() {
@@ -59,10 +59,6 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
 
     func element(at indexPath: IndexPath) -> Element {
         return elements[indexPath.item]
-    }
-
-    func indexesOfElements(in rect: CGRect) {
-
     }
 }
 
@@ -78,7 +74,7 @@ class Layout: UICollectionViewLayout {
     }
 
     override var collectionViewContentSize: CGSize {
-        return CGSize(width:5.0 * frameCanvasWidth, height:1024.0)
+        return CGSize(width:Stars.maxWidth, height:1024.0)
     }
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -103,12 +99,10 @@ class Layout: UICollectionViewLayout {
             return []
         }
 
-        let start = Int(floor(Double(rect.minX) / frameCanvasWidth))
-
         var indexes = [IndexPath]()
         for i in 0..<layoutDataSource.elements.count {
             let element = layoutDataSource.elements[i]
-            let frame = CGRect(x: element.position.x, y: element.position.y, width: 120, height: 120)
+            let frame = CGRect(x: element.position.x - 60.0, y: element.position.y - 60.0, width: 120, height: 120)
             if rect.intersects(frame) {
                 indexes.append(IndexPath(item: i, section: 0))
             }
@@ -124,7 +118,7 @@ class Layout: UICollectionViewLayout {
 
         let element = layoutDataSource.element(at: indexPath)
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        attributes.frame = CGRect(x: element.position.x, y: element.position.y, width: 120, height: 120)
+        attributes.frame = CGRect(x: element.position.x - 60.0, y: element.position.y - 60.0, width: 120, height: 120)
         return attributes
     }
 
