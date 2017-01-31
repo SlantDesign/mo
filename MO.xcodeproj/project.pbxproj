@@ -10,6 +10,9 @@
 		00C15374CF8FBC35BF8A3BB8 /* Pods_All_MOTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */; };
 		04875B9DEA81AAC286D0A2C3 /* Pods_All_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */; };
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
+		1F36B7A71E3FDED200441C9B /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7A51E3FDEC700441C9B /* Asteroid.swift */; };
+		1F36B7A91E3FE8C400441C9B /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1F36B7A81E3FE8C400441C9B /* comet_aura.atlas */; };
+		1F36B7AA1E3FE8C400441C9B /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1F36B7A81E3FE8C400441C9B /* comet_aura.atlas */; };
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
@@ -56,9 +59,6 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
-		D92E15CA1E3D5D6600CEEE3F /* CometScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D92E15C71E3D5D6600CEEE3F /* CometScene.sks */; };
-		D92E15CB1E3D5D6600CEEE3F /* CometScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E15C81E3D5D6600CEEE3F /* CometScene.swift */; };
-		D92E15CC1E3D5D6600CEEE3F /* Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E15C91E3D5D6600CEEE3F /* Comet.swift */; };
 		D99794801E280AA10089E922 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = D997947C1E280AA10089E922 /* Explode.sks */; };
 		D99794811E280AA10089E922 /* AsteroidBeltScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D997947D1E280AA10089E922 /* AsteroidBeltScene.sks */; };
 		D99794821E280AA10089E922 /* AsteroidBeltScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997947E1E280AA10089E922 /* AsteroidBeltScene.swift */; };
@@ -130,6 +130,8 @@
 
 /* Begin PBXFileReference section */
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		1F36B7A51E3FDEC700441C9B /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
+		1F36B7A81E3FE8C400441C9B /* comet_aura.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = comet_aura.atlas; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,9 +195,6 @@
 		BD7AA6E070118E3E943094A7 /* Pods_MO_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
-		D92E15C71E3D5D6600CEEE3F /* CometScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CometScene.sks; sourceTree = "<group>"; };
-		D92E15C81E3D5D6600CEEE3F /* CometScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometScene.swift; sourceTree = "<group>"; };
-		D92E15C91E3D5D6600CEEE3F /* Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comet.swift; sourceTree = "<group>"; };
 		D997947C1E280AA10089E922 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
 		D997947D1E280AA10089E922 /* AsteroidBeltScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AsteroidBeltScene.sks; sourceTree = "<group>"; };
 		D997947E1E280AA10089E922 /* AsteroidBeltScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidBeltScene.swift; sourceTree = "<group>"; };
@@ -335,6 +334,7 @@
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
 				6114EAAC1E0F634100829825 /* HourHeaderView.xib */,
+				1F36B7A81E3FE8C400441C9B /* comet_aura.atlas */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* ScheduleViewController.storyboard */,
@@ -444,9 +444,7 @@
 				D997947D1E280AA10089E922 /* AsteroidBeltScene.sks */,
 				D997947E1E280AA10089E922 /* AsteroidBeltScene.swift */,
 				D997947F1E280AA10089E922 /* AsteroidBelt.swift */,
-				D92E15C71E3D5D6600CEEE3F /* CometScene.sks */,
-				D92E15C81E3D5D6600CEEE3F /* CometScene.swift */,
-				D92E15C91E3D5D6600CEEE3F /* Comet.swift */,
+				1F36B7A51E3FDEC700441C9B /* Asteroid.swift */,
 			);
 			name = Asteroids;
 			sourceTree = "<group>";
@@ -756,6 +754,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F36B7A91E3FE8C400441C9B /* comet_aura.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,11 +785,11 @@
 				D99794801E280AA10089E922 /* Explode.sks in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
-				D92E15CA1E3D5D6600CEEE3F /* CometScene.sks in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
+				1F36B7AA1E3FE8C400441C9B /* comet_aura.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,13 +1219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92E15CC1E3D5D6600CEEE3F /* Comet.swift in Sources */,
 				D99794831E280AA10089E922 /* AsteroidBelt.swift in Sources */,
 				6114EB101E0F63AE00829825 /* AppDelegate.swift in Sources */,
 				1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */,
+				1F36B7A71E3FDED200441C9B /* Asteroid.swift in Sources */,
 				D99794821E280AA10089E922 /* AsteroidBeltScene.swift in Sources */,
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
-				D92E15CB1E3D5D6600CEEE3F /* CometScene.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
@@ -1540,7 +1538,7 @@
 				DEVELOPMENT_TEAM = 75C7KVJZ99;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = is.slant.asteroids;
+				PRODUCT_BUNDLE_IDENTIFIER = is.slant.asteroidBelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1557,7 +1555,7 @@
 				DEVELOPMENT_TEAM = 75C7KVJZ99;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = is.slant.asteroids;
+				PRODUCT_BUNDLE_IDENTIFIER = is.slant.asteroidBelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
