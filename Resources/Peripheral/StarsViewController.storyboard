@@ -20,7 +20,7 @@
                         <collectionViewLayout key="collectionViewLayout" id="WfW-1f-0RF" customClass="Layout" customModule="Peripheral" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="StarCell" reuseIdentifier="StarCell" id="WOD-BK-0w3" customClass="StarCell" customModule="Peripheral" customModuleProvider="target">
-                                <rect key="frame" x="-4.5" y="0.0" width="384" height="128"/>
+                                <rect key="frame" x="-5" y="0.0" width="384" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>

@@ -14,37 +14,63 @@ import C4
 class LayoutDataSource: NSObject, UICollectionViewDataSource {
     static let shared = LayoutDataSource()
     var elements = [Element]()
+    var stars = [Element]()
 
     func loadData() {
-        for i in 0..<Stars.constellationCount {
-            var element = Element()
+        for i in 0..<AstrologicalSignProvider.shared.order.count {
+            let signName = AstrologicalSignProvider.shared.order[i]
 
-            let imageName = round(random01()) == 1 ? "chop" : "rockies"
-            element.imageName = imageName
-
-            element.position = Point(Double(i) * frameCanvasWidth + 368.0, 512.0)
-            elements.append(element)
-
-            if element.position.x < frameCanvasWidth {
-                var duplicate = Element()
-                duplicate.imageName = imageName
-                var position = element.position
-                position.x += Double(Stars.maxWidth)
-                duplicate.position = position
-                elements.append(duplicate)
+            guard let sign = AstrologicalSignProvider.shared.get(sign: signName) else {
+                print("Could not find sign named: \(signName)")
+                continue
             }
 
-            elements = elements.sorted(by: { (a, b) -> Bool in
-                return a.position.x < b.position.x
-            })
+            let dx = Double(i) * frameCanvasWidth
+            let scale = Transform.makeScale(1.25, 1.25)
+            let translate = Transform.makeTranslation(Vector(x: 368.0 + dx, y: 512))
+
+            for var p in sign.small {
+                p.transform(scale)
+                p.transform(translate)
+                var e = Element()
+                e.position = p
+                e.imageName = "smallStar"
+                stars.append(e)
+
+                if e.position.x < frameCanvasWidth {
+                    var duplicate = e.copy()
+                    duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
+                    stars.append(duplicate)
+                }
+            }
+
+            for var p in sign.big {
+                p.transform(scale)
+                p.transform(translate)
+                var e = Element()
+                e.position = p
+                e.imageName = "bigStar"
+                stars.append(e)
+
+                if e.position.x < frameCanvasWidth {
+                    var duplicate = e.copy()
+                    duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
+                    stars.append(duplicate)
+                }
+            }
         }
+
+        stars = stars.sorted(by: { (a, b) -> Bool in
+            return a.position.x < b.position.x
+        })
     }
+
+
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let star = collectionView.dequeueReusableCell(withReuseIdentifier: "StarCell", for: indexPath) as! StarCell
-        star.label.text = "\(indexPath.item)"
         star.layer.zPosition = CGFloat(indexPath.item)
-        star.image = Image(elements[indexPath.item].imageName)
+        star.image = Image(stars[indexPath.item].imageName)
         return star
     }
 
@@ -54,11 +80,11 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return elements.count
+        return stars.count
     }
 
     func element(at indexPath: IndexPath) -> Element {
-        return elements[indexPath.item]
+        return stars[indexPath.item]
     }
 }
 
@@ -100,10 +126,9 @@ class Layout: UICollectionViewLayout {
         }
 
         var indexes = [IndexPath]()
-        for i in 0..<layoutDataSource.elements.count {
-            let element = layoutDataSource.elements[i]
-            let frame = CGRect(x: element.position.x - 60.0, y: element.position.y - 60.0, width: 120, height: 120)
-            if rect.intersects(frame) {
+        for i in 0..<layoutDataSource.stars.count {
+            let star = layoutDataSource.stars[i]
+            if rect.intersects(CGRect(star.frame)) {
                 indexes.append(IndexPath(item: i, section: 0))
             }
         }
@@ -116,9 +141,9 @@ class Layout: UICollectionViewLayout {
             return nil
         }
 
-        let element = layoutDataSource.element(at: indexPath)
+        let star = layoutDataSource.element(at: indexPath)
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        attributes.frame = CGRect(x: element.position.x - 60.0, y: element.position.y - 60.0, width: 120, height: 120)
+        attributes.frame = CGRect(star.frame)
         return attributes
     }
 
@@ -130,9 +155,27 @@ class Layout: UICollectionViewLayout {
 struct Element: Equatable {
     var position = Point()
     var imageName = "chop"
-    var image: Image?
+
+    var frame: Rect {
+        var side = 60.0
+        if imageName == "smallStar" {
+            side = 38.0
+        } else if imageName == "bigStar" {
+            side = 61.0
+        }
+        var r = Rect(0, 0, side, side)
+        r.center = position
+        return r
+    }
 
     static func == (lhs: Element, rhs: Element) -> Bool {
         return lhs.position == rhs.position ? true : false
+    }
+
+    func copy() -> Element {
+        var e = Element()
+        e.position = position
+        e.imageName = imageName
+        return e
     }
 }

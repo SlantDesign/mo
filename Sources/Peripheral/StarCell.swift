@@ -13,7 +13,7 @@ import C4
 //You need to create a customizable / repeatable object that represents
 //the kinds of elements you want to see in your collection view
 class StarCell: UICollectionViewCell {
-    var label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+//    var label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
     var image: Image? {
         willSet {
             image?.removeFromSuperview()
@@ -26,12 +26,12 @@ class StarCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
-        add(label)
+//        add(label)
     }
 
     override func awakeFromNib() {
         clipsToBounds = true
-        add(label)
+//        add(label)
     }
 
     required init?(coder aDecoder: NSCoder) {

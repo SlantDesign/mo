@@ -11,11 +11,9 @@ import UIKit
 let frameGap = 229.0
 let frameCanvasWidth = 997.0
 
-
 extension PacketType {
 
 }
-
 
 open class UniverseController: CanvasController {
     open override func viewDidLoad() {
