@@ -11,8 +11,8 @@ import Foundation
 import UIKit
 import C4
 
-class LayoutDataSource: NSObject, UICollectionViewDataSource {
-    static let shared = LayoutDataSource()
+class BigStarsDataSource: NSObject, UICollectionViewDataSource {
+    static let shared = BigStarsDataSource()
     var elements = [Element]()
     var stars = [Element]()
 
@@ -88,7 +88,7 @@ class LayoutDataSource: NSObject, UICollectionViewDataSource {
     }
 }
 
-class Layout: UICollectionViewLayout {
+class BigStarsLayout: UICollectionViewLayout {
     var shapeLayers: [CAShapeLayer]!
 
     override init() {
@@ -120,7 +120,7 @@ class Layout: UICollectionViewLayout {
     func indexPathsOfElements(in rect: CGRect) -> [IndexPath] {
         currentLayoutRect = rect
 
-        guard let layoutDataSource = self.collectionView?.dataSource as? LayoutDataSource else {
+        guard let layoutDataSource = self.collectionView?.dataSource as? BigStarsDataSource else {
             print("could not load layoutDataSource")
             return []
         }
@@ -137,7 +137,7 @@ class Layout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        guard let layoutDataSource = collectionView?.dataSource as? LayoutDataSource else {
+        guard let layoutDataSource = collectionView?.dataSource as? BigStarsDataSource else {
             return nil
         }
 

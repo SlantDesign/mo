@@ -25,19 +25,19 @@ public protocol ScrollDelegate: class {
 open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     static let constellationCount = 28
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
-    var starsViewController: StarsViewController?
+    var bigStarsViewController: BigStarsViewController?
 
     func initializeCollectionView() {
-        let storyboard = UIStoryboard(name: "StarsViewController", bundle: nil)
-        starsViewController = storyboard.instantiateViewController(withIdentifier: "StarsViewController") as? StarsViewController
-        guard starsViewController != nil else {
+        let storyboard = UIStoryboard(name: "BigStarsViewController", bundle: nil)
+        bigStarsViewController = storyboard.instantiateViewController(withIdentifier: "BigStarsViewController") as? BigStarsViewController
+        guard bigStarsViewController != nil else {
             print("Collection view could not be instantiated from storyboard.")
             return
         }
-        starsViewController?.collectionView?.dataSource = LayoutDataSource.shared
+        bigStarsViewController?.collectionView?.dataSource = BigStarsDataSource.shared
 
-        canvas.add(starsViewController?.collectionView)
-        starsViewController?.scrollDelegate = self
+        canvas.add(bigStarsViewController?.collectionView)
+        bigStarsViewController?.scrollDelegate = self
     }
 
     open override func receivePacket(_ packet: Packet) {

@@ -13,7 +13,7 @@ import CocoaAsyncSocket
 import CocoaLumberjack
 import UIKit
 
-open class StarsViewController: UICollectionViewController {
+open class BigStarsViewController: UICollectionViewController {
     var dx: CGFloat = 0.0
     var scrollSource = ScrollSource.local
     weak var scrollDelegate: ScrollDelegate?
@@ -23,7 +23,7 @@ open class StarsViewController: UICollectionViewController {
         let id = SocketManager.sharedManager.deviceID
         dx = CGFloat(id) * CGFloat(frameCanvasWidth) - CGFloat(frameGap/2.0)
         collectionView?.contentOffset = CGPoint(x: dx, y: 0)
-        collectionView?.dataSource = LayoutDataSource.shared
+        collectionView?.dataSource = BigStarsDataSource.shared
     }
 
     open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
