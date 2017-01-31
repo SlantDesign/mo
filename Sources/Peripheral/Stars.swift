@@ -13,9 +13,8 @@ import CocoaAsyncSocket
 import CocoaLumberjack
 import UIKit
 
-enum ScrollSource {
-    case local
-    case remote
+extension PacketType {
+    static let scrollStars = PacketType(rawValue: 400000)
 }
 
 public protocol ScrollDelegate: class {
@@ -60,15 +59,35 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     }
 
     open override func receivePacket(_ packet: Packet) {
-        //do stuff here
+        if packet.packetType == .scrollStars {
+            let currentID = SocketManager.sharedManager.deviceID
+            if currentID == Stars.primaryDevice {
+                return
+            }
+            guard let payload = packet.payload else {
+                return
+            }
+
+            var offset = payload.extract(CGPoint.self, at: 0)
+            let dx = CGFloat(currentID - Stars.primaryDevice) * CGFloat(frameCanvasWidth)
+            offset.x += dx
+            bigStarsViewController?.collectionView?.setContentOffset(offset, animated: false)
+        }
     }
 
     public func shouldSendScrollData() {
+        guard let offset = bigStarsViewController?.collectionView?.contentOffset else {
+            return
+        }
+
+        smallStarsViewController?.collectionView?.contentOffset = offset
+
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
-            guard let offset = bigStarsViewController?.collectionView?.contentOffset else {
-                return
-            }
-            smallStarsViewController?.collectionView?.contentOffset = offset
+
+            var d = Data()
+            d.append(offset)
+            let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d)
+            SocketManager.sharedManager.broadcastPacket(p)
         }
     }
 }

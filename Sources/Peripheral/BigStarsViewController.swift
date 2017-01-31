@@ -15,7 +15,6 @@ import UIKit
 
 open class BigStarsViewController: UICollectionViewController {
     var dx: CGFloat = 0.0
-    var scrollSource = ScrollSource.local
     weak var scrollDelegate: ScrollDelegate?
 
     override open func viewDidLoad() {
@@ -41,7 +40,6 @@ open class BigStarsViewController: UICollectionViewController {
         if collectionView?.contentOffset == point {
             return
         }
-        scrollSource = .remote
         collectionView?.setContentOffset(point, animated: false)
     }
 }
