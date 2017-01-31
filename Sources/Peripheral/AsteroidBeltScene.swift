@@ -26,12 +26,11 @@ class AsteroidBeltScene: SKScene {
             cometAuraFrames?.append(texture)
         }
 
-        let w = 132
         copyableAsteroids = [Asteroid]()
         for i in 0...3 {
             let node = Asteroid(imageNamed: "Asteroid_0\(i)")
-            node.size = CGSize(width: w, height: w)
-            node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: w, height: w))
+            node.size = CGSize(width: 132, height: 132)
+            node.physicsBody = SKPhysicsBody(rectangleOf: Asteroid.physicsBodySize)
             node.physicsBody?.affectedByGravity = false
             node.physicsBody?.friction = 0.0
             copyableAsteroids?.append(node)
@@ -48,7 +47,6 @@ class AsteroidBeltScene: SKScene {
                 }
             }
         }
-
         return asteroid
     }
 
@@ -67,6 +65,7 @@ class AsteroidBeltScene: SKScene {
             return
         }
 
+        comet.isUserInteractionEnabled = false
         comet.position = position
         comet.physicsBody = nil
         addAura(to: comet)
