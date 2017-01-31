@@ -13,8 +13,8 @@ import C4
 
 class BigStarsDataSource: NSObject, UICollectionViewDataSource {
     static let shared = BigStarsDataSource()
-    var elements = [Element]()
-    var stars = [Element]()
+    var elements = [Star]()
+    var stars = [Star]()
 
     func loadData() {
         for i in 0..<AstrologicalSignProvider.shared.order.count {
@@ -32,13 +32,13 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
             for var p in sign.small {
                 p.transform(scale)
                 p.transform(translate)
-                var e = Element()
-                e.position = p
-                e.imageName = "smallStar"
-                stars.append(e)
+                var star = Star()
+                star.position = p
+                star.imageName = "smallStar"
+                stars.append(star)
 
-                if e.position.x < frameCanvasWidth {
-                    var duplicate = e.copy()
+                if star.position.x < frameCanvasWidth {
+                    var duplicate = star.copy()
                     duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
                     stars.append(duplicate)
                 }
@@ -47,13 +47,13 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
             for var p in sign.big {
                 p.transform(scale)
                 p.transform(translate)
-                var e = Element()
-                e.position = p
-                e.imageName = "bigStar"
-                stars.append(e)
+                var star = Star()
+                star.position = p
+                star.imageName = "bigStar"
+                stars.append(star)
 
-                if e.position.x < frameCanvasWidth {
-                    var duplicate = e.copy()
+                if star.position.x < frameCanvasWidth {
+                    var duplicate = star.copy()
                     duplicate.position.x += Double(Stars.maxWidth) - frameCanvasWidth
                     stars.append(duplicate)
                 }
@@ -64,8 +64,6 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
             return a.position.x < b.position.x
         })
     }
-
-
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let star = collectionView.dequeueReusableCell(withReuseIdentifier: "StarCell", for: indexPath) as! StarCell
@@ -83,7 +81,7 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
         return stars.count
     }
 
-    func element(at indexPath: IndexPath) -> Element {
+    func element(at indexPath: IndexPath) -> Star {
         return stars[indexPath.item]
     }
 }
@@ -149,33 +147,5 @@ class BigStarsLayout: UICollectionViewLayout {
 
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
-    }
-}
-
-struct Element: Equatable {
-    var position = Point()
-    var imageName = "chop"
-
-    var frame: Rect {
-        var side = 60.0
-        if imageName == "smallStar" {
-            side = 38.0
-        } else if imageName == "bigStar" {
-            side = 61.0
-        }
-        var r = Rect(0, 0, side, side)
-        r.center = position
-        return r
-    }
-
-    static func == (lhs: Element, rhs: Element) -> Bool {
-        return lhs.position == rhs.position ? true : false
-    }
-
-    func copy() -> Element {
-        var e = Element()
-        e.position = position
-        e.imageName = imageName
-        return e
     }
 }
