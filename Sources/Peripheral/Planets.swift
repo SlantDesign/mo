@@ -33,15 +33,13 @@ class Planets: UniverseController, GCDAsyncSocketDelegate, PlanetsSceneDelegate 
 
     private var timer: C4.Timer?
 
+    var isZoomed = false
+
     //creates the asteroidBelt view and sets up a timer from the primary device
     override func setup() {
 
         createPlanets()
         planetsView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
-
-//        let orbits = planetOrbitView()
-//        orbits?.center = Point(Double(Planets.primaryDevice-1) * frameCanvasWidth + frameCanvasWidth/2.0 - frameGap, canvas.center.y)
-//        canvas.add(orbits)
 
         guard let scene = PlanetsScene(fileNamed: "PlanetsScene") else {
             print("Could not load PlanetsScene")
@@ -57,6 +55,19 @@ class Planets: UniverseController, GCDAsyncSocketDelegate, PlanetsSceneDelegate 
         planetsView.ignoresSiblingOrder = false
         planetsView.showsFPS = true
         planetsView.showsNodeCount = true
+
+        canvas.addTapGestureRecognizer { (points, point, state) in
+            self.toggleZoom()
+        }
+    }
+
+    func toggleZoom() {
+        if isZoomed {
+            planetsScene?.zoom(scale: 1.0)
+        } else {
+            planetsScene?.zoom(scale: 5.0)
+        }
+        isZoomed = !isZoomed
     }
 
     func planetList() -> [String : Planet] {
