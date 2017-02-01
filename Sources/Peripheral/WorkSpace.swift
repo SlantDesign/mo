@@ -26,59 +26,6 @@ class WorkSpace: CanvasController {
         canvas.add(currentUniverse?.canvas)
     }
 
-    func showLoading() {
-        ShapeLayer.disableActions = true
-        loading = View(frame: Rect(0, 0, 50, 50))
-        loading.rotation += -M_PI_2
-        let loader = Circle(center: loading.center, radius: loading.width/2.0)
-        loader.fillColor = clear
-        loader.strokeColor = white
-        loader.lineCap = .Round
-        loader.strokeEnd = 0.0
-        loading.add(loader)
-        ShapeLayer.disableActions = false
-
-        let a = ViewAnimation(duration: 1.0) {
-            loader.strokeEnd = 1.0
-        }
-
-        let b = ViewAnimation(duration: 1.0) {
-            loader.strokeStart = 1.0
-        }
-        b.delay = 0.5
-
-        let c = ViewAnimation(duration: 0.0) {
-            loader.strokeEnd = 0.0
-            loader.strokeStart = 0.0
-        }
-        c.delay = 1.25
-
-        let seq = ViewAnimationGroup(animations: [a, b, c])
-        seq.addCompletionObserver {
-            seq.animate()
-        }
-        seq.animate()
-        loading.center = Point(canvas.center.x, canvas.height * 0.75)
-        self.canvas.add(loading)
-        print("loading")
-    }
-
-    func prepareUniverse() {
-        let backgroundQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
-        backgroundQueue.async {
-//            self.resonate = Resonate()
-//            self.resonate?.load()
-//            DispatchQueue.main.async { () -> Void in
-//                self.canvas.remove(self.loading)
-//                self.preparing = false
-//                self.loading = nil
-//                self.currentUniverse?.unload()
-//                self.view.removeGestureRecognizer(self.tap)
-//                self.switchUniverse(self.resonate!)
-//            }
-        }
-    }
-
     func initializeSocketManager() {
         socketManager = SocketManager.sharedManager
         socketManager?.workspace = self
