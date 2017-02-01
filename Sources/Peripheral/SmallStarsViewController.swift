@@ -26,16 +26,6 @@ open class SmallStarsViewController: UICollectionViewController {
         collectionView?.dataSource = SmallStarsDataSource.shared
     }
 
-    open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var newOffset = scrollView.contentOffset
-        if newOffset.x < 0 {
-            newOffset.x += (Stars.maxWidth - CGFloat(frameCanvasWidth)) * SmallStarsViewController.scale
-        } else if newOffset.x > Stars.maxWidth - CGFloat(frameCanvasWidth) * SmallStarsViewController.scale {
-            newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth)) * SmallStarsViewController.scale
-        }
-        scrollView.contentOffset = newOffset
-    }
-
     func remoteScrollTo(_ point: CGPoint) {
         if collectionView?.contentOffset == point {
             return

@@ -74,15 +74,14 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
                 return
             }
 
-            let primaryOffset = payload.extract(CGPoint.self, at: 0)
-            let dxBigOffset = CGFloat(currentID - Stars.primaryDevice) * CGFloat(frameCanvasWidth)
-            let bigOffset = CGPoint(x: primaryOffset.x + dxBigOffset, y: primaryOffset.y)
+            let distanceFromPrimary = CGFloat(frameCanvasWidth * Double(currentID - Stars.primaryDevice))
+            let offset = payload.extract(CGPoint.self, at: 0)
+            let smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
 
-            bigStarsViewController?.collectionView?.setContentOffset(bigOffset, animated: false)
+            bigStarsViewController?.collectionView?.setContentOffset(CGPoint(x: offset.x + distanceFromPrimary, y: 0), animated: false)
 
-            //FIXME: Calibrate position of non-primary small star offsets
-            let smallOffset = CGPoint(x: bigOffset.x * SmallStarsViewController.scale, y:bigOffset.y)
-            smallStarsViewController?.collectionView?.setContentOffset(smallOffset, animated: false)
+//            //FIXME: Calibrate position of non-primary small star offsets
+            smallStarsViewController?.collectionView?.setContentOffset(CGPoint(x: smallOffset.x + distanceFromPrimary * SmallStarsViewController.scale, y: 0), animated: false)
         }
     }
 
@@ -97,6 +96,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
 
             var d = Data()
             d.append(offset)
+            d.append(smallOffset)
             let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d)
             SocketManager.sharedManager.broadcastPacket(p)
         }

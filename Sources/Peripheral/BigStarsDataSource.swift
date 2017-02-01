@@ -24,9 +24,9 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
                 continue
             }
 
-            let dx = Double(i) * frameCanvasWidth
+            let dx = 368.0 + Double(i) * frameCanvasWidth
             let scale = Transform.makeScale(1.25, 1.25)
-            let translate = Transform.makeTranslation(Vector(x: 368.0 + dx, y: 512))
+            let translate = Transform.makeTranslation(Vector(x: dx, y: 512))
 
             for var p in sign.big {
                 p.transform(scale)

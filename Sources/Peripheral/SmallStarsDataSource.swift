@@ -24,9 +24,9 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
                 continue
             }
 
-            let dx = Double(i) * frameCanvasWidth * Double(SmallStarsViewController.scale)
             let scale = Transform.makeScale(1.25, 1.25)
-            let translate = Transform.makeTranslation(Vector(x: 368.0 + dx, y: 512))
+            let dx = 368 + (Double(i) * frameCanvasWidth) * Double(SmallStarsViewController.scale)
+            let translate = Transform.makeTranslation(Vector(x: dx, y: 512))
 
             for var p in sign.small {
                 p.transform(scale)
