@@ -18,7 +18,11 @@ extension PacketType {
     static let planets = PacketType(rawValue: 600000)
 }
 
-class Planets: UniverseController, GCDAsyncSocketDelegate {
+public protocol PlanetsSceneDelegate {
+    func planetList() -> [String: Planet]
+}
+
+class Planets: UniverseController, GCDAsyncSocketDelegate, PlanetsSceneDelegate {
     let socketManager = SocketManager.sharedManager
 
     static let primaryDevice = 19
@@ -33,23 +37,30 @@ class Planets: UniverseController, GCDAsyncSocketDelegate {
     override func setup() {
 
         createPlanets()
+        planetsView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
 
-        let orbits = planetOrbitView()
-        orbits?.center = Point(Double(Planets.primaryDevice-1) * frameCanvasWidth + frameCanvasWidth/2.0 - frameGap, canvas.center.y)
-        canvas.add(orbits)
+//        let orbits = planetOrbitView()
+//        orbits?.center = Point(Double(Planets.primaryDevice-1) * frameCanvasWidth + frameCanvasWidth/2.0 - frameGap, canvas.center.y)
+//        canvas.add(orbits)
 
         guard let scene = PlanetsScene(fileNamed: "PlanetsScene") else {
-            print("Could not load AsteroidsScene")
+            print("Could not load PlanetsScene")
             return
         }
 
+        scene.planetsSceneDelegate = self
         scene.scaleMode = .aspectFill
+        canvas.add(planetsView)
         planetsView.presentScene(scene)
         planetsScene = scene
 
         planetsView.ignoresSiblingOrder = false
         planetsView.showsFPS = true
         planetsView.showsNodeCount = true
+    }
+
+    func planetList() -> [String : Planet] {
+        return planets
     }
 
     //This is how you receive and decipher a packet with no data
@@ -190,7 +201,7 @@ class Planets: UniverseController, GCDAsyncSocketDelegate {
     }
 }
 
-struct Planet {
+public struct Planet {
     var path = Path()
     var cgpath: CGPath {
         return path.CGPath
