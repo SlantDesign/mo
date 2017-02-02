@@ -56,6 +56,9 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D9F908381E43CE300037C077 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F908371E43CE300037C077 /* Sun.swift */; };
+		D9F9083A1E43CE3F0037C077 /* SunScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9F908391E43CE3F0037C077 /* SunScene.sks */; };
+		D9F9083C1E43CE480037C077 /* SunScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9083B1E43CE480037C077 /* SunScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +189,9 @@
 		BD7AA6E070118E3E943094A7 /* Pods_MO_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
+		D9F908371E43CE300037C077 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		D9F908391E43CE3F0037C077 /* SunScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SunScene.sks; sourceTree = "<group>"; };
+		D9F9083B1E43CE480037C077 /* SunScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunScene.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +369,7 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				1FB96FF91E1B0902009CA514 /* HelloWorld.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
+				D9F908361E43CE240037C077 /* Sun */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -420,6 +427,16 @@
 				3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F908361E43CE240037C077 /* Sun */ = {
+			isa = PBXGroup;
+			children = (
+				D9F908371E43CE300037C077 /* Sun.swift */,
+				D9F908391E43CE3F0037C077 /* SunScene.sks */,
+				D9F9083B1E43CE480037C077 /* SunScene.swift */,
+			);
+			name = Sun;
 			sourceTree = "<group>";
 		};
 		F7D3B3541649CF7FB1D592D1 /* Pods */ = {
@@ -727,6 +744,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F9083A1E43CE3F0037C077 /* SunScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,7 +1179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6114EAE01E0F635E00829825 /* DataExtension.swift in Sources */,
+				D9F9083C1E43CE480037C077 /* SunScene.swift in Sources */,
 				6114EAE11E0F635E00829825 /* Packet.swift in Sources */,
+				D9F908381E43CE300037C077 /* Sun.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1506,6 +1526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -1522,6 +1543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
