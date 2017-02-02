@@ -59,6 +59,20 @@
 		D9F9083D1E43CED40037C077 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F908371E43CE300037C077 /* Sun.swift */; };
 		D9F9083E1E43CED40037C077 /* SunScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9F908391E43CE3F0037C077 /* SunScene.sks */; };
 		D9F9083F1E43CED40037C077 /* SunScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9083B1E43CE480037C077 /* SunScene.swift */; };
+		D9F9084E1E43E30A0037C077 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908401E43E30A0037C077 /* fire_04.atlas */; };
+		D9F9084F1E43E30A0037C077 /* fire_09.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908411E43E30A0037C077 /* fire_09.atlas */; };
+		D9F908501E43E30A0037C077 /* fire_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908421E43E30A0037C077 /* fire_10.atlas */; };
+		D9F908511E43E30A0037C077 /* fire_11.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908431E43E30A0037C077 /* fire_11.atlas */; };
+		D9F908521E43E30A0037C077 /* fire_17.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908441E43E30A0037C077 /* fire_17.atlas */; };
+		D9F908531E43E30A0037C077 /* sparks_02.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908451E43E30A0037C077 /* sparks_02.atlas */; };
+		D9F908541E43E30A0037C077 /* sparks_03.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908461E43E30A0037C077 /* sparks_03.atlas */; };
+		D9F908551E43E30A0037C077 /* sparks_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908471E43E30A0037C077 /* sparks_04.atlas */; };
+		D9F908561E43E30A0037C077 /* sparks_06.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908481E43E30A0037C077 /* sparks_06.atlas */; };
+		D9F908571E43E30A0037C077 /* sparks_07.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908491E43E30A0037C077 /* sparks_07.atlas */; };
+		D9F908581E43E30A0037C077 /* sparks_08.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084A1E43E30A0037C077 /* sparks_08.atlas */; };
+		D9F908591E43E30A0037C077 /* sparks_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084B1E43E30A0037C077 /* sparks_10.atlas */; };
+		D9F9085A1E43E30A0037C077 /* sparks_13.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084C1E43E30A0037C077 /* sparks_13.atlas */; };
+		D9F9085B1E43E30A0037C077 /* sparks_15.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084D1E43E30A0037C077 /* sparks_15.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +206,20 @@
 		D9F908371E43CE300037C077 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		D9F908391E43CE3F0037C077 /* SunScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SunScene.sks; sourceTree = "<group>"; };
 		D9F9083B1E43CE480037C077 /* SunScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunScene.swift; sourceTree = "<group>"; };
+		D9F908401E43E30A0037C077 /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
+		D9F908411E43E30A0037C077 /* fire_09.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_09.atlas; sourceTree = "<group>"; };
+		D9F908421E43E30A0037C077 /* fire_10.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_10.atlas; sourceTree = "<group>"; };
+		D9F908431E43E30A0037C077 /* fire_11.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_11.atlas; sourceTree = "<group>"; };
+		D9F908441E43E30A0037C077 /* fire_17.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_17.atlas; sourceTree = "<group>"; };
+		D9F908451E43E30A0037C077 /* sparks_02.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_02.atlas; sourceTree = "<group>"; };
+		D9F908461E43E30A0037C077 /* sparks_03.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_03.atlas; sourceTree = "<group>"; };
+		D9F908471E43E30A0037C077 /* sparks_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_04.atlas; sourceTree = "<group>"; };
+		D9F908481E43E30A0037C077 /* sparks_06.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_06.atlas; sourceTree = "<group>"; };
+		D9F908491E43E30A0037C077 /* sparks_07.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_07.atlas; sourceTree = "<group>"; };
+		D9F9084A1E43E30A0037C077 /* sparks_08.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_08.atlas; sourceTree = "<group>"; };
+		D9F9084B1E43E30A0037C077 /* sparks_10.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_10.atlas; sourceTree = "<group>"; };
+		D9F9084C1E43E30A0037C077 /* sparks_13.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_13.atlas; sourceTree = "<group>"; };
+		D9F9084D1E43E30A0037C077 /* sparks_15.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_15.atlas; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +355,20 @@
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
 				6114EAAC1E0F634100829825 /* HourHeaderView.xib */,
+				D9F908401E43E30A0037C077 /* fire_04.atlas */,
+				D9F908411E43E30A0037C077 /* fire_09.atlas */,
+				D9F908421E43E30A0037C077 /* fire_10.atlas */,
+				D9F908431E43E30A0037C077 /* fire_11.atlas */,
+				D9F908441E43E30A0037C077 /* fire_17.atlas */,
+				D9F908451E43E30A0037C077 /* sparks_02.atlas */,
+				D9F908461E43E30A0037C077 /* sparks_03.atlas */,
+				D9F908471E43E30A0037C077 /* sparks_04.atlas */,
+				D9F908481E43E30A0037C077 /* sparks_06.atlas */,
+				D9F908491E43E30A0037C077 /* sparks_07.atlas */,
+				D9F9084A1E43E30A0037C077 /* sparks_08.atlas */,
+				D9F9084B1E43E30A0037C077 /* sparks_10.atlas */,
+				D9F9084C1E43E30A0037C077 /* sparks_13.atlas */,
+				D9F9084D1E43E30A0037C077 /* sparks_15.atlas */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* ScheduleViewController.storyboard */,
@@ -767,16 +809,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F908571E43E30A0037C077 /* sparks_07.atlas in Resources */,
+				D9F908581E43E30A0037C077 /* sparks_08.atlas in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
+				D9F9084E1E43E30A0037C077 /* fire_04.atlas in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
+				D9F908511E43E30A0037C077 /* fire_11.atlas in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
+				D9F908551E43E30A0037C077 /* sparks_04.atlas in Resources */,
+				D9F908591E43E30A0037C077 /* sparks_10.atlas in Resources */,
+				D9F908531E43E30A0037C077 /* sparks_02.atlas in Resources */,
+				D9F908541E43E30A0037C077 /* sparks_03.atlas in Resources */,
+				D9F9084F1E43E30A0037C077 /* fire_09.atlas in Resources */,
+				D9F908521E43E30A0037C077 /* fire_17.atlas in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
+				D9F908561E43E30A0037C077 /* sparks_06.atlas in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
+				D9F9085B1E43E30A0037C077 /* sparks_15.atlas in Resources */,
+				D9F9085A1E43E30A0037C077 /* sparks_13.atlas in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 				D9F9083E1E43CED40037C077 /* SunScene.sks in Resources */,
+				D9F908501E43E30A0037C077 /* fire_10.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
