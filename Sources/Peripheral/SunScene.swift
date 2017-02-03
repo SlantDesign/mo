@@ -16,10 +16,12 @@ public protocol SunSpriteDelegate {
 
 class SunSprite: SKSpriteNode {
     var sunSpriteDelegate: SunSpriteDelegate?
+    var image: Image?
 
     public convenience init(imageNamed name: String) {
         let t = SKTexture(imageNamed: name)
         self.init(texture: t)
+        image = Image(name)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,12 +34,30 @@ class SunSprite: SKSpriteNode {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
-            sunSpriteDelegate?.randomEffect(at: convertToSKViewCoordinates(t.location(in: self.scene?.view)))
+            var p = t.location(in: self)
+            p.x += self.frame.width/2.0
+            p.y = self.frame.height-p.y
+            if !isClear(at: Point(p)) {
+                sunSpriteDelegate?.randomEffect(at: convertToSKViewCoordinates(t.location(in: self.scene?.view)))
+            }
         }
     }
 
     func convertToSKViewCoordinates(_ point: CGPoint) -> CGPoint {
         return CGPoint(x: point.x - 368.0, y: 512.0 - point.y)
+    }
+
+    public func isClear(at point: Point) -> Bool {
+        guard let pixelImage = image?.cgimage(at: CGPoint(point)) else {
+            print("Could not create pixel Image from CGImage")
+            return false
+        }
+
+        let imageProvider = pixelImage.dataProvider
+        let imageData = imageProvider?.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(imageData)
+
+        return Double(data[0])/255.0 == 0.0
     }
 }
 
