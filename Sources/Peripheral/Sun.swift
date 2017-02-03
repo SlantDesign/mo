@@ -57,9 +57,33 @@ class Sun: UniverseController, GCDAsyncSocketDelegate {
     override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
         case PacketType.sun:
+            handleSun(packet)
             break
         default:
             break
+        }
+    }
+
+    func handleSun(_ packet: Packet) {
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+        var index = 0
+        let id = data.extract(Int.self, at: index)
+        index += MemoryLayout<Int>.size
+        var point = data.extract(CGPoint.self, at: index)
+        index += MemoryLayout<CGPoint>.size
+        let effectNameIndex = data.extract(Int.self, at: index)
+        index += MemoryLayout<Int>.size
+        let angle = data.extract(Int.self, at: index)
+
+        if SocketManager.sharedManager.deviceID == packet.id {
+            sunScene?.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
+        } else if SocketManager.sharedManager.deviceID == id {
+            let dx = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+            point.x += dx
+            sunScene?.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
         }
     }
 

@@ -17,11 +17,35 @@ public protocol SunSpriteDelegate {
 class SunSprite: SKSpriteNode {
     var sunSpriteDelegate: SunSpriteDelegate?
     var image: Image?
+    var data: UnsafePointer<UInt8>?
+    var imageData: CFData?
+    var imageScale: CGFloat = 1.0
 
     public convenience init(imageNamed name: String) {
         let t = SKTexture(imageNamed: name)
         self.init(texture: t)
         image = Image(name)
+
+        guard let cgimg: CGImage = image?.cgImage else {
+            print("Could not create cgimage")
+            return
+        }
+
+        guard let scale = image?.uiimage.scale else {
+            print("Could not get scale")
+            return
+        }
+        imageScale = scale
+
+        guard let imageProvider = cgimg.dataProvider else {
+            print("Could not create imageProvider")
+            return
+        }
+
+        let imageData = imageProvider.data
+        data = CFDataGetBytePtr(imageData)
+        let length = CFDataGetLength(imageData)
+        self.imageData = imageData
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +61,7 @@ class SunSprite: SKSpriteNode {
             var p = t.location(in: self)
             p.x += self.frame.width/2.0
             p.y = self.frame.height-p.y
-            if !isClear(at: Point(p)) {
+            if !isTransparent(at: Point(p)) {
                 sunSpriteDelegate?.randomEffect(at: convertToSKViewCoordinates(t.location(in: self.scene?.view)))
             }
         }
@@ -47,17 +71,13 @@ class SunSprite: SKSpriteNode {
         return CGPoint(x: point.x - 368.0, y: 512.0 - point.y)
     }
 
-    public func isClear(at point: Point) -> Bool {
-        guard let pixelImage = image?.cgimage(at: CGPoint(point)) else {
-            print("Could not create pixel Image from CGImage")
+    public func isTransparent(at point: Point) -> Bool {
+        let position = 4*(Int(self.frame.width * 2.0) * Int(point.y * 2.0) + Int(point.x * 2.0))
+        guard let value = data?[position+3] else {
+            print("Could not get value from data")
             return false
         }
-
-        let imageProvider = pixelImage.dataProvider
-        let imageData = imageProvider?.data
-        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(imageData)
-
-        return Double(data[0])/255.0 == 0.0
+        return Double(value)/255.0 == 0.0
     }
 }
 
@@ -160,21 +180,54 @@ class SunScene: SKScene, SunSpriteDelegate {
         }
     }
 
-    func randomEffect(at point: CGPoint) {
-        let index = random(below: effectNames.count)
-        let effectName = effectNames[index]
+    func createEffect(nameIndex: Int, at point: CGPoint, angle intAngle: Int) {
+        let name = effectNames[nameIndex]
+        guard let rotation = effectRotations[name] else {
+            print("Could not extract rotation")
+            return
+        }
+        let angle = CGFloat(intAngle)/1000.0 * rotation
+        createEffect(named: name, at: point, angle: angle)
+    }
+
+    func createEffect(named effectName: String, at point: CGPoint, angle: CGFloat) {
         if let frames = effects[effectName] {
             let currentEffect = SKSpriteNode(texture: frames[0])
+            currentEffect.isUserInteractionEnabled = false
             if let anchorPoint = effectAnchorPoints[effectName] {
                 currentEffect.anchorPoint = anchorPoint
             }
             currentEffect.position = point
-            let rotate = SKAction.rotate(byAngle: CGFloat(random01()) * effectRotations[effectName]!, duration: 0.0)
+            let rotate = SKAction.rotate(byAngle: angle, duration: 0.0)
             let animate = SKAction.animate(with: frames, timePerFrame: 0.08333, resize: false, restore: true)
             let remove = SKAction.removeFromParent()
             let sequence = SKAction.sequence([rotate, animate, remove])
             addChild(currentEffect)
             currentEffect.run(sequence)
+        }
+    }
+
+    func randomEffect(at point: CGPoint) {
+        let index = random(below: effectNames.count)
+        let angle = random(below: 1000)
+
+        if abs(point.x) > 300.0 {
+            var id = SocketManager.sharedManager.deviceID
+            if point.x < 0 {
+                id -= 1
+            } else {
+                id += 1
+            }
+            var data = Data()
+            data.append(id)
+            data.append(point)
+            data.append(index)
+            data.append(angle)
+
+            let packet = Packet(type: .sun, id: SocketManager.sharedManager.deviceID, payload: data)
+            SocketManager.sharedManager.broadcastPacket(packet)
+        } else {
+            createEffect(nameIndex: index, at: point, angle: angle)
         }
     }
 }
