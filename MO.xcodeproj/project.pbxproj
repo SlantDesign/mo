@@ -56,6 +56,9 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D9C97EB61E451A4E0091AB64 /* SolarSystemScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C97EB21E451A2C0091AB64 /* SolarSystemScene.swift */; };
+		D9C97EB71E451A530091AB64 /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C97EB01E451A220091AB64 /* SolarSystem.swift */; };
+		D9C97EB81E451A530091AB64 /* SolarSystemScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9C97EB41E451A3E0091AB64 /* SolarSystemScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +189,9 @@
 		BD7AA6E070118E3E943094A7 /* Pods_MO_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
+		D9C97EB01E451A220091AB64 /* SolarSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
+		D9C97EB21E451A2C0091AB64 /* SolarSystemScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarSystemScene.swift; sourceTree = "<group>"; };
+		D9C97EB41E451A3E0091AB64 /* SolarSystemScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SolarSystemScene.sks; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +369,7 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				1FB96FF91E1B0902009CA514 /* HelloWorld.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
+				D9C97EAF1E451A0B0091AB64 /* SolarSystem */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -420,6 +427,16 @@
 				3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C97EAF1E451A0B0091AB64 /* SolarSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D9C97EB01E451A220091AB64 /* SolarSystem.swift */,
+				D9C97EB21E451A2C0091AB64 /* SolarSystemScene.swift */,
+				D9C97EB41E451A3E0091AB64 /* SolarSystemScene.sks */,
+			);
+			name = SolarSystem;
 			sourceTree = "<group>";
 		};
 		F7D3B3541649CF7FB1D592D1 /* Pods */ = {
@@ -759,6 +776,7 @@
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
+				D9C97EB81E451A530091AB64 /* SolarSystemScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,8 +1211,10 @@
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
+				D9C97EB61E451A4E0091AB64 /* SolarSystemScene.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,
+				D9C97EB71E451A530091AB64 /* SolarSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
