@@ -56,23 +56,23 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D9C97EA41E43F27F0091AB64 /* fire_11.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908431E43E30A0037C077 /* fire_11.atlas */; };
+		D9C97EA51E43F27F0091AB64 /* fire_17.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908441E43E30A0037C077 /* fire_17.atlas */; };
+		D9C97EA61E43F27F0091AB64 /* sparks_02.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908451E43E30A0037C077 /* sparks_02.atlas */; };
+		D9C97EA71E43F27F0091AB64 /* sparks_03.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908461E43E30A0037C077 /* sparks_03.atlas */; };
+		D9C97EA81E43F27F0091AB64 /* sparks_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908471E43E30A0037C077 /* sparks_04.atlas */; };
+		D9C97EA91E43F27F0091AB64 /* sparks_06.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908481E43E30A0037C077 /* sparks_06.atlas */; };
+		D9C97EAA1E43F27F0091AB64 /* sparks_07.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908491E43E30A0037C077 /* sparks_07.atlas */; };
+		D9C97EAB1E43F27F0091AB64 /* sparks_08.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084A1E43E30A0037C077 /* sparks_08.atlas */; };
+		D9C97EAC1E43F27F0091AB64 /* sparks_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084B1E43E30A0037C077 /* sparks_10.atlas */; };
+		D9C97EAD1E43F27F0091AB64 /* sparks_13.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084C1E43E30A0037C077 /* sparks_13.atlas */; };
+		D9C97EAE1E43F27F0091AB64 /* sparks_15.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084D1E43E30A0037C077 /* sparks_15.atlas */; };
 		D9F9083D1E43CED40037C077 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F908371E43CE300037C077 /* Sun.swift */; };
 		D9F9083E1E43CED40037C077 /* SunScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9F908391E43CE3F0037C077 /* SunScene.sks */; };
 		D9F9083F1E43CED40037C077 /* SunScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9083B1E43CE480037C077 /* SunScene.swift */; };
 		D9F9084E1E43E30A0037C077 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908401E43E30A0037C077 /* fire_04.atlas */; };
 		D9F9084F1E43E30A0037C077 /* fire_09.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908411E43E30A0037C077 /* fire_09.atlas */; };
 		D9F908501E43E30A0037C077 /* fire_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908421E43E30A0037C077 /* fire_10.atlas */; };
-		D9F908511E43E30A0037C077 /* fire_11.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908431E43E30A0037C077 /* fire_11.atlas */; };
-		D9F908521E43E30A0037C077 /* fire_17.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908441E43E30A0037C077 /* fire_17.atlas */; };
-		D9F908531E43E30A0037C077 /* sparks_02.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908451E43E30A0037C077 /* sparks_02.atlas */; };
-		D9F908541E43E30A0037C077 /* sparks_03.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908461E43E30A0037C077 /* sparks_03.atlas */; };
-		D9F908551E43E30A0037C077 /* sparks_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908471E43E30A0037C077 /* sparks_04.atlas */; };
-		D9F908561E43E30A0037C077 /* sparks_06.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908481E43E30A0037C077 /* sparks_06.atlas */; };
-		D9F908571E43E30A0037C077 /* sparks_07.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F908491E43E30A0037C077 /* sparks_07.atlas */; };
-		D9F908581E43E30A0037C077 /* sparks_08.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084A1E43E30A0037C077 /* sparks_08.atlas */; };
-		D9F908591E43E30A0037C077 /* sparks_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084B1E43E30A0037C077 /* sparks_10.atlas */; };
-		D9F9085A1E43E30A0037C077 /* sparks_13.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084C1E43E30A0037C077 /* sparks_13.atlas */; };
-		D9F9085B1E43E30A0037C077 /* sparks_15.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9F9084D1E43E30A0037C077 /* sparks_15.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -809,27 +809,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F908571E43E30A0037C077 /* sparks_07.atlas in Resources */,
-				D9F908581E43E30A0037C077 /* sparks_08.atlas in Resources */,
+				D9C97EAA1E43F27F0091AB64 /* sparks_07.atlas in Resources */,
+				D9C97EAB1E43F27F0091AB64 /* sparks_08.atlas in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				D9F9084E1E43E30A0037C077 /* fire_04.atlas in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
-				D9F908511E43E30A0037C077 /* fire_11.atlas in Resources */,
+				D9C97EA41E43F27F0091AB64 /* fire_11.atlas in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
-				D9F908551E43E30A0037C077 /* sparks_04.atlas in Resources */,
-				D9F908591E43E30A0037C077 /* sparks_10.atlas in Resources */,
-				D9F908531E43E30A0037C077 /* sparks_02.atlas in Resources */,
-				D9F908541E43E30A0037C077 /* sparks_03.atlas in Resources */,
+				D9C97EA81E43F27F0091AB64 /* sparks_04.atlas in Resources */,
+				D9C97EAC1E43F27F0091AB64 /* sparks_10.atlas in Resources */,
+				D9C97EA61E43F27F0091AB64 /* sparks_02.atlas in Resources */,
+				D9C97EA71E43F27F0091AB64 /* sparks_03.atlas in Resources */,
 				D9F9084F1E43E30A0037C077 /* fire_09.atlas in Resources */,
-				D9F908521E43E30A0037C077 /* fire_17.atlas in Resources */,
+				D9C97EA51E43F27F0091AB64 /* fire_17.atlas in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
-				D9F908561E43E30A0037C077 /* sparks_06.atlas in Resources */,
+				D9C97EA91E43F27F0091AB64 /* sparks_06.atlas in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
-				D9F9085B1E43E30A0037C077 /* sparks_15.atlas in Resources */,
-				D9F9085A1E43E30A0037C077 /* sparks_13.atlas in Resources */,
+				D9C97EAE1E43F27F0091AB64 /* sparks_15.atlas in Resources */,
+				D9C97EAD1E43F27F0091AB64 /* sparks_13.atlas in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 				D9F9083E1E43CED40037C077 /* SunScene.sks in Resources */,
 				D9F908501E43E30A0037C077 /* fire_10.atlas in Resources */,

@@ -42,12 +42,15 @@ class Sun: UniverseController, GCDAsyncSocketDelegate {
         sunView.showsFPS = true
         sunView.showsNodeCount = true
 
-//        if SocketManager.sharedManager.deviceID == AsteroidBelt.primaryDevice {
-//            timer = C4.Timer(interval: 0.5) {
-//                self.broadcastAddAsteroid()
-//            }
-//            timer?.start()
+//        canvas.addTapGestureRecognizer { _, point, _ in
+//            self.sunScene?.randomEffect(at: self.convertToSceneKitCoordinates(point))
 //        }
+    }
+
+    func convertToSceneKitCoordinates(_ point: Point) -> CGPoint {
+        let localized = point - Point(self.dx, 0)
+        let normalized = localized - Vector(self.canvas.center)
+        return CGPoint(x: CGFloat(normalized.x), y: -CGFloat(normalized.y))
     }
 
     //This is how you receive and decipher a packet with no data
