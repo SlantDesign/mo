@@ -10,9 +10,12 @@
 		00C15374CF8FBC35BF8A3BB8 /* Pods_All_MOTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */; };
 		04875B9DEA81AAC286D0A2C3 /* Pods_All_Peripheral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */; };
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
+		1F5D44411E45C6F600FE40F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D32651E45BEE50002D17B /* Assets.xcassets */; };
+		1F5D44431E45D10D00FE40F0 /* RocketSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D44421E45D10D00FE40F0 /* RocketSmoke.sks */; };
 		1F9D32611E45AD790002D17B /* Rockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D325B1E45AD1E0002D17B /* Rockets.swift */; };
 		1F9D32621E45AD790002D17B /* RocketsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D325D1E45AD270002D17B /* RocketsScene.swift */; };
 		1F9D32631E45AD790002D17B /* RocketsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D325F1E45AD5A0002D17B /* RocketsScene.sks */; };
+		1F9D32681E45BEEE0002D17B /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D32641E45BEE50002D17B /* Smoke.sks */; };
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
@@ -126,10 +129,13 @@
 
 /* Begin PBXFileReference section */
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		1F5D44421E45D10D00FE40F0 /* RocketSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RocketSmoke.sks; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1F9D325B1E45AD1E0002D17B /* Rockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rockets.swift; sourceTree = "<group>"; };
 		1F9D325D1E45AD270002D17B /* RocketsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketsScene.swift; sourceTree = "<group>"; };
 		1F9D325F1E45AD5A0002D17B /* RocketsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RocketsScene.sks; sourceTree = "<group>"; };
+		1F9D32641E45BEE50002D17B /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		1F9D32651E45BEE50002D17B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +283,9 @@
 			children = (
 				1F9D325B1E45AD1E0002D17B /* Rockets.swift */,
 				1F9D325D1E45AD270002D17B /* RocketsScene.swift */,
+				1F9D32641E45BEE50002D17B /* Smoke.sks */,
+				1F5D44421E45D10D00FE40F0 /* RocketSmoke.sks */,
+				1F9D32651E45BEE50002D17B /* Assets.xcassets */,
 				1F9D325F1E45AD5A0002D17B /* RocketsScene.sks */,
 			);
 			name = Rockets;
@@ -771,11 +780,14 @@
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
+				1F5D44431E45D10D00FE40F0 /* RocketSmoke.sks in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
+				1F9D32681E45BEEE0002D17B /* Smoke.sks in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
+				1F5D44411E45C6F600FE40F0 /* Assets.xcassets in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
