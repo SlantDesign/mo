@@ -17,9 +17,27 @@ extension PacketType {
 }
 
 class Rockets: UniverseController, GCDAsyncSocketDelegate {
+    static let primaryDevice = 18
+    let socketManager = SocketManager.sharedManager
+    let rocketsView = SKView()
+    var rocketsScene: RocketsScene?
 
     override func setup() {
-        
+        rocketsView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
+        canvas.add(rocketsView)
+
+        guard let scene = RocketsScene(fileNamed: "RocketsScene") else {
+            print("Could not load RocketsScene")
+            return
+        }
+        scene.scaleMode = .aspectFill
+        rocketsView.presentScene(scene)
+        rocketsScene = scene
+
+        rocketsView.ignoresSiblingOrder = false
+        rocketsView.showsFPS = true
+        rocketsView.showsNodeCount = true
+
     }
 
     //This is how you receive and decipher a packet with no data
