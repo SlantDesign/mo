@@ -13,7 +13,7 @@ import C4
 import MO
 
 class SolarSystem: UniverseController, GCDAsyncSocketDelegate {
-    static let primaryDevice = 18
+    static let primaryDevice = 17
     static let planetNames: [String] = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
     var solarSystemView = SKView()
     var solarSystemScene: SolarSystemScene?
@@ -37,7 +37,8 @@ class SolarSystem: UniverseController, GCDAsyncSocketDelegate {
     }
 
     override func receivePacket(_ packet: Packet) {
-        if packet.packetType == .planet {
+        switch packet.packetType {
+        case PacketType.planet:
             guard let payload = packet.payload else {
                 print("Couldn't extract payload")
                 return
@@ -47,6 +48,40 @@ class SolarSystem: UniverseController, GCDAsyncSocketDelegate {
             let name = SolarSystem.planetNames[nameIndex]
             let impulse = payload.extract(CGVector.self, at: MemoryLayout<Int>.size)
             solarSystemScene?.apply(impulse: impulse, to: name)
+        case PacketType.planetVelocity:
+            guard let payload = packet.payload else {
+                print("Couldn't extract payload")
+                return
+            }
+
+            let nameIndex = payload.extract(Int.self, at: 0)
+            let name = SolarSystem.planetNames[nameIndex]
+            let velocity = payload.extract(CGVector.self, at: MemoryLayout<Int>.size)
+            solarSystemScene?.set(velocity: velocity, for: name)
+        case PacketType.planetPosition:
+            guard let payload = packet.payload else {
+                print("Couldn't extract payload")
+                return
+            }
+
+            let nameIndex = payload.extract(Int.self, at: 0)
+            let name = SolarSystem.planetNames[nameIndex]
+            var position = payload.extract(CGPoint.self, at: MemoryLayout<Int>.size)
+            let offset = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+            position.x += offset
+            solarSystemScene?.set(position: position, for: name)
+        case PacketType.planetIsDynamic:
+            guard let payload = packet.payload else {
+                print("Couldn't extract payload")
+                return
+            }
+
+            let nameIndex = payload.extract(Int.self, at: 0)
+            let name = SolarSystem.planetNames[nameIndex]
+            let isDynamic = payload.extract(Bool.self, at: MemoryLayout<Int>.size)
+            solarSystemScene?.set(isDynamic: isDynamic, for: name)
+        default:
+            break
         }
     }
 }
