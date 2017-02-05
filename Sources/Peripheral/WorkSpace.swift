@@ -15,52 +15,15 @@ class WorkSpace: CanvasController {
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
-    var helloWorld = HelloWorld()
+    var cassini = Cassini()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        currentUniverse = helloWorld
+        currentUniverse = cassini
         canvas.add(currentUniverse?.canvas)
-    }
-
-    func showLoading() {
-        ShapeLayer.disableActions = true
-        loading = View(frame: Rect(0, 0, 50, 50))
-        loading.rotation += -M_PI_2
-        let loader = Circle(center: loading.center, radius: loading.width/2.0)
-        loader.fillColor = clear
-        loader.strokeColor = white
-        loader.lineCap = .Round
-        loader.strokeEnd = 0.0
-        loading.add(loader)
-        ShapeLayer.disableActions = false
-
-        let a = ViewAnimation(duration: 1.0) {
-            loader.strokeEnd = 1.0
-        }
-
-        let b = ViewAnimation(duration: 1.0) {
-            loader.strokeStart = 1.0
-        }
-        b.delay = 0.5
-
-        let c = ViewAnimation(duration: 0.0) {
-            loader.strokeEnd = 0.0
-            loader.strokeStart = 0.0
-        }
-        c.delay = 1.25
-
-        let seq = ViewAnimationGroup(animations: [a, b, c])
-        seq.addCompletionObserver {
-            seq.animate()
-        }
-        seq.animate()
-        loading.center = Point(canvas.center.x, canvas.height * 0.75)
-        self.canvas.add(loading)
-        print("loading")
     }
 
     func prepareUniverse() {
@@ -106,8 +69,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "HelloWord":
-            return helloWorld
+        case "Cassini":
+            return cassini
         default:
             return nil
         }

@@ -15,6 +15,7 @@
 		1FE364981E47037100B9B16A /* CassiniScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE364961E4702CD00B9B16A /* CassiniScene.swift */; };
 		1FE3649A1E47044500B9B16A /* CassiniRocketFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FE364991E47044500B9B16A /* CassiniRocketFire.sks */; };
 		1FE3649C1E4704D800B9B16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3649B1E4704D800B9B16A /* Assets.xcassets */; };
+		1FE3649E1E470A9300B9B16A /* CassiniScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3649D1E470A9300B9B16A /* CassiniScene.sks */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
@@ -133,6 +134,7 @@
 		1FE364961E4702CD00B9B16A /* CassiniScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniScene.swift; sourceTree = "<group>"; };
 		1FE364991E47044500B9B16A /* CassiniRocketFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CassiniRocketFire.sks; sourceTree = "<group>"; };
 		1FE3649B1E4704D800B9B16A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FE3649D1E470A9300B9B16A /* CassiniScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CassiniScene.sks; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +281,7 @@
 			children = (
 				1FE364931E47023000B9B16A /* Cassini.swift */,
 				1FE364961E4702CD00B9B16A /* CassiniScene.swift */,
+				1FE3649D1E470A9300B9B16A /* CassiniScene.sks */,
 				1FE364991E47044500B9B16A /* CassiniRocketFire.sks */,
 			);
 			name = Cassini;
@@ -777,6 +780,7 @@
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
+				1FE3649E1E470A9300B9B16A /* CassiniScene.sks in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
