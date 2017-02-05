@@ -168,6 +168,7 @@ class Ariane: Rocket {
 
     override func reveal() {
         run(SKAction.fadeAlpha(by: 1.0, duration: 1.0))
+        launching = false
     }
 
     override func launch() {

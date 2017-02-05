@@ -84,15 +84,18 @@ class RocketsScene: SKScene {
     }
 
     func loadFalcon(in view: SKView) {
-    }
+        let ground = SKShapeNode(rect: CGRect(x: 0, y: 0, width: view.frame.width, height: 10.0))
+        ground.physicsBody = SKPhysicsBody(edgeLoopFrom: ground.frame)
+        ground.position = CGPoint(x: -view.frame.width/2.0, y: 80.0-view.frame.height/2.0)
+        ground.physicsBody?.affectedByGravity = false
+        ground.physicsBody?.isDynamic = true
+        addChild(ground)
 
-    func launchSoyuz() {
-
-    }
-    func launchAriane() {
-
-    }
-    func launchFalcon() {
+        rocket = Falcon()
+        rocket?.position = CGPoint(x: 0, y: 180.0-view.frame.height/2.0)
+        if let r = rocket {
+            addChild(r)
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

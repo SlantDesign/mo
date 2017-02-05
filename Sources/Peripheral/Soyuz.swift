@@ -104,6 +104,7 @@ class Soyuz: Rocket {
 
     override func reveal() {
         run(SKAction.fadeAlpha(by: 1.0, duration: 1.0))
+        launching = false
     }
 
     override func launch() {
@@ -115,7 +116,7 @@ class Soyuz: Rocket {
             self.ignite()
         }
 
-        wait(18.0) {
+        wait(17.0) {
             self.liftoff()
         }
 
