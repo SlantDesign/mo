@@ -17,7 +17,7 @@ extension PacketType {
 }
 
 class Rockets: UniverseController, GCDAsyncSocketDelegate {
-    static let primaryDevice = 18
+    static let primaryDevice = 17
     let socketManager = SocketManager.sharedManager
     let rocketsView = SKView()
     var rocketsScene: RocketsScene?
