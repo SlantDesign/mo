@@ -19,7 +19,7 @@ extension PacketType {
 }
 
 class Cassini: UniverseController, GCDAsyncSocketDelegate {
-    static let primaryDevice = 18
+    static let primaryDevice = 17
     let cassiniView = SKView()
     var cassiniScene: CassiniScene?
 
@@ -44,10 +44,22 @@ class Cassini: UniverseController, GCDAsyncSocketDelegate {
     override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
         case PacketType.cassini:
+            guard let payload = packet.payload else {
+                print("Couldn't extract payload")
+                return
+            }
+            let point = payload.extract(CGPoint.self, at: 0)
+            cassiniScene?.transmit(target: convertFromPrimaryDeviceCoordinates(point))
             break
         default:
             break
         }
+    }
+
+    func convertFromPrimaryDeviceCoordinates(_ point: CGPoint) -> CGPoint {
+        var dx = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID)
+        dx *= CGFloat(frameCanvasWidth)
+        return CGPoint(x: point.x + dx, y: point.y)
     }
 
     //This is how you send a packet, with no data
