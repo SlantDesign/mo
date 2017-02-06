@@ -12,7 +12,6 @@
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
 		1F36B7DF1E40245200441C9B /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DD1E40242400441C9B /* Stars.swift */; };
 		1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DB1E40241400441C9B /* StarCell.swift */; };
-		1F36B7E31E40410600441C9B /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7E21E40410500441C9B /* AstrologicalSignProvider.swift */; };
 		1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */; };
 		1F851D0B1E37E02400BC8AC0 /* BigStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */; };
 		1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */; };
@@ -67,6 +66,7 @@
 		6114EB851E0F80D100829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78CF2FF815CEE2B4990ABBD6 /* Pods_All_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241997742A7CC2476E87873F /* Pods_All_Master.framework */; };
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
+		D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,7 @@
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		1F36B7DB1E40241400441C9B /* StarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarCell.swift; sourceTree = "<group>"; };
 		1F36B7DD1E40242400441C9B /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
-		1F36B7E21E40410500441C9B /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
+		1F36B7E21E40410500441C9B /* _AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsViewController.swift; sourceTree = "<group>"; };
 		1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsLayout.swift; sourceTree = "<group>"; };
@@ -208,6 +208,7 @@
 		BD7AA6E070118E3E943094A7 /* Pods_MO_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17C7FE12BE272954BCB42BC /* Pods_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
+		D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB6F45D09AE5D3D540129E6 /* Pods-All-MO-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-macOS/Pods-All-MO-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,7 +292,8 @@
 		1F36B7DA1E40238800441C9B /* Stars */ = {
 			isa = PBXGroup;
 			children = (
-				1F36B7E21E40410500441C9B /* AstrologicalSignProvider.swift */,
+				1F36B7E21E40410500441C9B /* _AstrologicalSignProvider.swift */,
+				D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */,
 				1F36B7DD1E40242400441C9B /* Stars.swift */,
 				1F36B7DB1E40241400441C9B /* StarCell.swift */,
 				1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */,
@@ -1244,10 +1246,10 @@
 				1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */,
 				1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
-				1F36B7E31E40410600441C9B /* AstrologicalSignProvider.swift in Sources */,
 				1F8F744E1E405F50002DD972 /* BigStarsDataSource.swift in Sources */,
 				1F851D0B1E37E02400BC8AC0 /* BigStarsViewController.swift in Sources */,
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,
+				D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

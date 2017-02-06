@@ -24,11 +24,16 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
                 continue
             }
 
-            let scale = Transform.makeScale(1.25, 1.25)
+            let scale = Transform.makeScale(500, 500)
             let dx = 368 + (Double(i) * frameCanvasWidth) * Double(SmallStarsViewController.scale)
             let translate = Transform.makeTranslation(Vector(x: dx, y: 512))
 
-            for var p in sign.small {
+            guard let points = sign.small else {
+                print("Couldn't access small points in \(signName)")
+                continue
+            }
+
+            for var p in points {
                 p.transform(scale)
                 p.transform(translate)
                 var star = Star()

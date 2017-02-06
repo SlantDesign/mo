@@ -25,10 +25,15 @@ class BigStarsDataSource: NSObject, UICollectionViewDataSource {
             }
 
             let dx = 368.0 + Double(i) * frameCanvasWidth
-            let scale = Transform.makeScale(1.25, 1.25)
+            let scale = Transform.makeScale(500, 500)
             let translate = Transform.makeTranslation(Vector(x: dx, y: 512))
 
-            for var p in sign.big {
+            guard let points = sign.big else {
+                print("Couldn't access big points in \(signName)")
+                continue
+            }
+
+            for var p in points {
                 p.transform(scale)
                 p.transform(translate)
                 var star = Star()

@@ -22,15 +22,26 @@ public protocol ScrollDelegate: class {
 }
 
 open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
-    static let primaryDevice = 18
-    static let constellationCount = 28
+    static let primaryDevice = 17
+    static let constellationCount = 89
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
     var bigStarsViewController: BigStarsViewController?
     var smallStarsViewController: SmallStarsViewController?
+    var label: UILabel?
 
     func initializeCollectionView() {
         inititalizeSmallStars()
         inititalizeBigStars()
+
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+            label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+            var p = canvas.center
+            p.y = canvas.height - 88.0
+            label?.center = CGPoint(p)
+            label?.textAlignment = .center
+            label?.text = ""
+            canvas.add(label)
+        }
     }
 
     func inititalizeBigStars() {
@@ -80,7 +91,8 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
 
             bigStarsViewController?.collectionView?.setContentOffset(CGPoint(x: offset.x + distanceFromPrimary, y: 0), animated: false)
 
-//            //FIXME: Calibrate position of non-primary small star offsets
+            //FIXME: Offset final set of stars
+            //FIXME: Calibrate position of non-primary small star offsets
             smallStarsViewController?.collectionView?.setContentOffset(CGPoint(x: smallOffset.x + distanceFromPrimary * SmallStarsViewController.scale, y: 0), animated: false)
         }
     }
@@ -88,6 +100,11 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     public func shouldSendScrollData() {
         guard let offset = bigStarsViewController?.collectionView?.contentOffset else {
             return
+        }
+
+        if let l = label {
+            let index = round(offset.x / CGFloat(frameCanvasWidth))
+            l.text = AstrologicalSignProvider.shared.order[Int(index)]
         }
 
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice {

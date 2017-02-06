@@ -32,6 +32,7 @@ open class BigStarsViewController: UICollectionViewController {
         } else if newOffset.x > Stars.maxWidth - CGFloat(frameCanvasWidth) {
             newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth))
         }
+        print(scrollView.contentOffset)
         scrollView.contentOffset = newOffset
         scrollDelegate?.shouldSendScrollData()
     }
