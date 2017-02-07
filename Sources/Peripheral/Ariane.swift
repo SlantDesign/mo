@@ -13,6 +13,7 @@ import SpriteKit
 import C4
 
 class Ariane: Rocket {
+    let restingPosition = CGPoint(x:0, y: -281.337310791016)
     var preiginteRight: SKEmitterNode?
     var ignitionRight: SKEmitterNode?
     var ignitionFire: SKEmitterNode?
@@ -20,12 +21,18 @@ class Ariane: Rocket {
     var rocketFireRight: SKEmitterNode?
 
     var boosterOffset: CGFloat = 25.0
-    override init() {
-        super.init()
-        path = CGPath.init(ellipseIn: CGRect(x: -50.0, y: -50.0, width: 100, height: 100), transform: nil)
+    var yOffset: CGFloat = 10.0
+    convenience init() {
+        let t = SKTexture(image: #imageLiteral(resourceName: "Ariane"))
+        let c = UIColor.clear
+        let s = CGSize(width: t.size().width * 0.2, height: t.size().height * 0.2)
+        self.init(texture: t, color: c, size: s)
+    }
 
-        physicsBody = SKPhysicsBody(circleOfRadius: 50.0)
-        physicsBody?.isDynamic = true
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+
+        position = restingPosition
 
         preiginte = SKEmitterNode(fileNamed: "PreigniteAriane")
         ignition = SKEmitterNode(fileNamed: "IgnitionSmokeAriane")
@@ -43,7 +50,7 @@ class Ariane: Rocket {
             return
         }
 
-        rf.position = CGPoint(x: -boosterOffset, y: -frame.height/2.0)
+        rf.position = CGPoint(x: -boosterOffset, y: -frame.height/2.0 - yOffset)
         rf.particleBirthRate = 0.0
         addChild(rf)
 
@@ -51,7 +58,7 @@ class Ariane: Rocket {
             return
         }
 
-        rfr.position = CGPoint(x: boosterOffset, y: -frame.height/2.0)
+        rfr.position = CGPoint(x: boosterOffset, y: -frame.height/2.0 - yOffset)
         rfr.particleBirthRate = 0.0
         addChild(rfr)
 
@@ -71,7 +78,7 @@ class Ariane: Rocket {
             print("Could not access preignite")
             return
         }
-        pi.position = CGPoint(x: -boosterOffset, y: -frame.height/2.0 + position.y)
+        pi.position = CGPoint(x: -boosterOffset, y: -frame.height/2.0 + position.y - yOffset)
         pi.particleBirthRate = 30.0
 
         if pi.parent == nil, parent != nil {
@@ -82,7 +89,7 @@ class Ariane: Rocket {
             print("Could not access preignite")
             return
         }
-        pir.position = CGPoint(x: boosterOffset, y: -frame.height/2.0 + position.y)
+        pir.position = CGPoint(x: boosterOffset, y: -frame.height/2.0 + position.y - yOffset)
         pir.particleBirthRate = 30.0
 
         if pir.parent == nil, parent != nil {
@@ -93,7 +100,7 @@ class Ariane: Rocket {
             print("Could not access ignition")
             return
         }
-        ig.position =  CGPoint(x: -boosterOffset, y: -frame.height/2.0 + position.y)
+        ig.position =  CGPoint(x: -boosterOffset, y: -frame.height/2.0 + position.y - yOffset * 1.5)
 
         if ig.parent == nil, parent != nil {
             parent?.addChild(ig)
@@ -104,7 +111,7 @@ class Ariane: Rocket {
             print("Could not access ignition")
             return
         }
-        igr.position =  CGPoint(x: boosterOffset, y: -frame.height/2.0 + position.y)
+        igr.position =  CGPoint(x: boosterOffset, y: -frame.height/2.0 + position.y - yOffset * 1.5)
 
         if igr.parent == nil, parent != nil {
             parent?.addChild(igr)
@@ -163,7 +170,7 @@ class Ariane: Rocket {
         rocketFire?.particleBirthRate = 0.0
         rocketFireRight?.particleBirthRate = 0.0
         run(SKAction.fadeAlpha(by: -1.0, duration: 0.0))
-        physicsBody?.isDynamic = true
+        run(SKAction.move(to: restingPosition, duration: 0.0))
     }
 
     override func reveal() {
@@ -180,11 +187,11 @@ class Ariane: Rocket {
             self.ignite()
         }
 
-        wait(20.0) {
+        wait(19.0) {
             self.liftoff()
         }
 
-        wait(28.0) {
+        wait(29.0) {
             self.reachedOrbit()
         }
 

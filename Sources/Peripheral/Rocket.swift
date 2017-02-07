@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import C4
 
-class Rocket: SKShapeNode {
+class Rocket: SKSpriteNode {
     var preiginte: SKEmitterNode?
     var ignition: SKEmitterNode?
     var rocketFire: SKEmitterNode?

@@ -11,13 +11,18 @@ import SpriteKit
 import C4
 
 class Endeavour: Rocket {
-    override init() {
-        super.init()
-        path = CGPath.init(ellipseIn: CGRect(x: -50.0, y: -50.0, width: 100, height: 100), transform: nil)
+    let restingPosition = CGPoint(x: 0, y: -284.049377441406)
+    convenience init() {
+        let t = SKTexture(image: #imageLiteral(resourceName: "Endeavor"))
+        let c = UIColor.clear
+        let s = CGSize(width: t.size().width * 0.2, height: t.size().height * 0.2)
+        self.init(texture: t, color: c, size: s)
+    }
 
-        physicsBody = SKPhysicsBody(circleOfRadius: 50.0)
-        physicsBody?.isDynamic = true
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
 
+        position = restingPosition
         preiginte = SKEmitterNode(fileNamed: "PreigniteEndeavour")
         ignition = SKEmitterNode(fileNamed: "IgnitionEndeavour")
         rocketFire = SKEmitterNode(fileNamed: "RocketFireEndeavour")
@@ -82,6 +87,7 @@ class Endeavour: Rocket {
     override func reachedOrbit() {
         rocketFire?.particleBirthRate = 0.0
         run(SKAction.fadeAlpha(by: -1.0, duration: 0.0))
+        run(SKAction.move(to: restingPosition, duration: 0.0))
         physicsBody?.isDynamic = true
     }
 
