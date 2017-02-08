@@ -41,13 +41,9 @@
 		6114EB231E0F63BD00829825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA41E0F634100829825 /* Main.storyboard */; };
 		6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA71E0F634100829825 /* LaunchScreen.xib */; };
 		6114EB251E0F63CF00829825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAA91E0F634100829825 /* Main.storyboard */; };
-		6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */; };
-		6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAC1E0F634100829825 /* HourHeaderView.xib */; };
 		6114EB281E0F63DC00829825 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAD1E0F634100829825 /* Images.xcassets */; };
 		6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAE1E0F634100829825 /* Inconsolata.otf */; };
 		6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAAF1E0F634100829825 /* BigStarsViewController.storyboard */; };
-		6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAB01E0F634100829825 /* ThinVeil.mp3 */; };
-		6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6114EAB11E0F634100829825 /* UniversLTStd-LightUltraCn.otf */; };
 		6114EB2F1E0F641B00829825 /* PacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114EB2E1E0F641B00829825 /* PacketTest.swift */; };
 		6114EB481E0F663400829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EB3F1E0F663400829825 /* MO.framework */; };
 		6114EB641E0F664700829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EB5B1E0F664700829825 /* MO.framework */; };
@@ -156,13 +152,9 @@
 		6114EAA51E0F634100829825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6114EAA81E0F634100829825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6114EAAA1E0F634100829825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlackVelvet.mp3; sourceTree = "<group>"; };
-		6114EAAC1E0F634100829825 /* HourHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourHeaderView.xib; sourceTree = "<group>"; };
 		6114EAAD1E0F634100829825 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6114EAAE1E0F634100829825 /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
 		6114EAAF1E0F634100829825 /* BigStarsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BigStarsViewController.storyboard; sourceTree = "<group>"; };
-		6114EAB01E0F634100829825 /* ThinVeil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ThinVeil.mp3; sourceTree = "<group>"; };
-		6114EAB11E0F634100829825 /* UniversLTStd-LightUltraCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-LightUltraCn.otf"; sourceTree = "<group>"; };
 		6114EAB31E0F634100829825 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		6114EAB51E0F634100829825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6114EAB61E0F634100829825 /* Peripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
@@ -357,14 +349,10 @@
 			children = (
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
-				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
-				6114EAAC1E0F634100829825 /* HourHeaderView.xib */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
 				6114EAAE1E0F634100829825 /* Inconsolata.otf */,
 				6114EAAF1E0F634100829825 /* BigStarsViewController.storyboard */,
 				1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */,
-				6114EAB01E0F634100829825 /* ThinVeil.mp3 */,
-				6114EAB11E0F634100829825 /* UniversLTStd-LightUltraCn.otf */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -791,13 +779,9 @@
 			files = (
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
-				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
-				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
-				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
-				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 				1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
