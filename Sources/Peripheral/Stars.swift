@@ -34,13 +34,20 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         inititalizeBigStars()
 
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
-            label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+            label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
             var p = canvas.center
             p.y = canvas.height - 88.0
             label?.center = CGPoint(p)
             label?.textAlignment = .center
             label?.text = ""
             canvas.add(label)
+            label?.textColor = UIColor.white
+
+            guard let f = UIFont(name: "AppleSDGothicNeo-Bold", size: 32.0) else {
+                print("Could not create font")
+                return
+            }
+            label?.font = f
         }
     }
 
@@ -85,38 +92,44 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
                 return
             }
 
-            let distanceFromPrimary = CGFloat(frameCanvasWidth * Double(currentID - Stars.primaryDevice))
             let offset = payload.extract(CGPoint.self, at: 0)
-            let smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
+            let smallOffset = payload.extract(CGPoint.self, at: MemoryLayout<CGPoint>.size)
 
-            bigStarsViewController?.collectionView?.setContentOffset(CGPoint(x: offset.x + distanceFromPrimary, y: 0), animated: false)
+            bigStarsViewController?.collectionView?.setContentOffset(CGPoint(x: offset.x, y: 0), animated: false)
 
             //FIXME: Offset final set of stars
             //FIXME: Calibrate position of non-primary small star offsets
-            smallStarsViewController?.collectionView?.setContentOffset(CGPoint(x: smallOffset.x + distanceFromPrimary * SmallStarsViewController.scale, y: 0), animated: false)
+            smallStarsViewController?.collectionView?.setContentOffset(CGPoint(x: smallOffset.x, y: 0), animated: false)
         }
     }
 
     public func shouldSendScrollData() {
-        guard let offset = bigStarsViewController?.collectionView?.contentOffset else {
+        guard var offset = bigStarsViewController?.collectionView?.contentOffset else {
             return
         }
 
         if let l = label {
             let index = round(offset.x / CGFloat(frameCanvasWidth))
+
+            var alpha = offset.x.truncatingRemainder(dividingBy: CGFloat(frameCanvasWidth))
+            alpha /= CGFloat(frameCanvasWidth)
+            if alpha < 0.5 {
+                alpha = 1 - alpha
+            }
+            alpha -= 0.5
+            alpha *= 2.0
+            l.alpha = alpha
             l.text = AstrologicalSignProvider.shared.order[Int(index)]
         }
 
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
-            let smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
+            var smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
             smallStarsViewController?.collectionView?.contentOffset = smallOffset
-
-            var d = Data()
-            d.append(offset)
-            d.append(smallOffset)
-            let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d)
+            let d = NSMutableData()
+            d.append(&offset, length: MemoryLayout<CGPoint>.size)
+            d.append(&smallOffset, length: MemoryLayout<CGPoint>.size)
+            let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d as Data)
             SocketManager.sharedManager.broadcastPacket(p)
         }
-
     }
 }

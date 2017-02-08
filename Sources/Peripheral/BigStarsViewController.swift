@@ -32,7 +32,6 @@ open class BigStarsViewController: UICollectionViewController {
         } else if newOffset.x > Stars.maxWidth - CGFloat(frameCanvasWidth) {
             newOffset.x -= (Stars.maxWidth - CGFloat(frameCanvasWidth))
         }
-        print(scrollView.contentOffset)
         scrollView.contentOffset = newOffset
         scrollDelegate?.shouldSendScrollData()
     }
@@ -42,5 +41,23 @@ open class BigStarsViewController: UICollectionViewController {
             return
         }
         collectionView?.setContentOffset(point, animated: false)
+    }
+
+    func snap(_ scrollView: UIScrollView) {
+        let index = round(scrollView.contentOffset.x / CGFloat(frameCanvasWidth))
+        let point = CGPoint(x: CGFloat(index) * CGFloat(frameCanvasWidth), y: 0)
+        scrollView.setContentOffset(point, animated: true)
+    }
+
+    override open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+            snap(scrollView)
+        }
+    }
+
+    override open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice && !decelerate {
+            snap(scrollView)
+        }
     }
 }
