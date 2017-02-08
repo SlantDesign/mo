@@ -136,7 +136,6 @@
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		1F36B7DB1E40241400441C9B /* StarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarCell.swift; sourceTree = "<group>"; };
 		1F36B7DD1E40242400441C9B /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
-		1F36B7E21E40410500441C9B /* _AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsViewController.swift; sourceTree = "<group>"; };
 		1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsLayout.swift; sourceTree = "<group>"; };
@@ -292,7 +291,6 @@
 		1F36B7DA1E40238800441C9B /* Stars */ = {
 			isa = PBXGroup;
 			children = (
-				1F36B7E21E40410500441C9B /* _AstrologicalSignProvider.swift */,
 				D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */,
 				1F36B7DD1E40242400441C9B /* Stars.swift */,
 				1F36B7DB1E40241400441C9B /* StarCell.swift */,
