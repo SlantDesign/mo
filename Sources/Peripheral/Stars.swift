@@ -36,6 +36,27 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     open override func setup() {
         super.setup()
         canvas.backgroundColor = black
+        let background = View(frame: Rect(-256, 0, 1024, 1024))
+        for x in 0...3 {
+            for y in 0...3 {
+                guard let image = Image("background") else {
+                    print("Could not create background image")
+                    return
+                }
+                let origin = Point(Double(x) * 256.0, Double(y) * 256.0)
+                image.origin = origin
+                background.add(image)
+            }
+        }
+
+        canvas.add(background)
+
+        let anim = ViewAnimation(duration: 60.0) {
+            background.origin = Point()
+        }
+        anim.repeats = true
+        anim.curve = .Linear
+        anim.animate()
     }
 
     func initializeCollectionViews() {
