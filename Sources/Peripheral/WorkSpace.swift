@@ -22,7 +22,7 @@ class WorkSpace: CanvasController {
     override func setup() {
         initializeSocketManager()
 
-        stars.initializeCollectionView()
+        stars.initializeCollectionViews()
         currentUniverse = stars
         canvas.add(currentUniverse?.canvas)
     }

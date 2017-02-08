@@ -15,6 +15,7 @@ import UIKit
 
 extension PacketType {
     static let scrollStars = PacketType(rawValue: 400000)
+    static let scrollStars2 = PacketType(rawValue: 400001)
 }
 
 public protocol ScrollDelegate: class {
@@ -23,17 +24,40 @@ public protocol ScrollDelegate: class {
 
 open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     static let primaryDevice = 17
+    static let secondaryDevice = 19
     static let constellationCount = 89
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
-    var bigStarsViewController: BigStarsViewController?
-    var smallStarsViewController: SmallStarsViewController?
+    var big1: BigStarsViewController?
+    var big2: BigStarsViewController?
+    var small1: SmallStarsViewController?
+    var small2: SmallStarsViewController?
     var label: UILabel?
 
-    func initializeCollectionView() {
-        inititalizeSmallStars()
-        inititalizeBigStars()
+    open override func setup() {
+        super.setup()
+        canvas.backgroundColor = black
+    }
 
-        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+    func initializeCollectionViews() {
+        if SocketManager.sharedManager.deviceID != Stars.primaryDevice &&
+            SocketManager.sharedManager.deviceID != Stars.secondaryDevice {
+            small2 = inititalizeSmallStars()
+            small2?.collectionView?.alpha = 0.5
+            big2 = inititalizeBigStars()
+            big2?.collectionView?.alpha = 0.5
+            canvas.add(small2?.collectionView)
+            canvas.add(big2?.collectionView)
+            small1 = inititalizeSmallStars()
+            small1?.collectionView?.alpha = 0.5
+            big1 = inititalizeBigStars()
+            big1?.collectionView?.alpha = 0.5
+            canvas.add(small1?.collectionView)
+            canvas.add(big1?.collectionView)
+        } else {
+            small1 = inititalizeSmallStars()
+            big1 = inititalizeBigStars()
+            canvas.add(small1?.collectionView)
+            canvas.add(big1?.collectionView)
             label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
             var p = canvas.center
             p.y = canvas.height - 88.0
@@ -51,41 +75,38 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         }
     }
 
-    func inititalizeBigStars() {
+    func inititalizeBigStars() -> BigStarsViewController? {
         let storyboard = UIStoryboard(name: "BigStarsViewController", bundle: nil)
-        bigStarsViewController = storyboard.instantiateViewController(withIdentifier: "BigStarsViewController") as? BigStarsViewController
-        guard bigStarsViewController != nil else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "BigStarsViewController") as? BigStarsViewController else {
             print("Collection view could not be instantiated from storyboard.")
-            return
+            return nil
         }
-        bigStarsViewController?.collectionView?.dataSource = BigStarsDataSource.shared
-
-        canvas.add(bigStarsViewController?.collectionView)
-        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
-            bigStarsViewController?.scrollDelegate = self
+        vc.collectionView?.dataSource = BigStarsDataSource.shared
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+            vc.scrollDelegate = self
         } else {
-            bigStarsViewController?.collectionView?.isUserInteractionEnabled = false
+            vc.collectionView?.isUserInteractionEnabled = false
         }
+        return vc
     }
 
-    func inititalizeSmallStars() {
+    func inititalizeSmallStars() -> SmallStarsViewController? {
         let storyboard = UIStoryboard(name: "SmallStarsViewController", bundle: nil)
-        smallStarsViewController = storyboard.instantiateViewController(withIdentifier: "SmallStarsViewController") as? SmallStarsViewController
-        guard smallStarsViewController != nil else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SmallStarsViewController") as? SmallStarsViewController else {
             print("Collection view could not be instantiated from storyboard.")
-            return
+            return nil
         }
-        smallStarsViewController?.collectionView?.dataSource = SmallStarsDataSource.shared
-
-        canvas.add(smallStarsViewController?.collectionView)
-
-        smallStarsViewController?.collectionView?.isUserInteractionEnabled = false
+        vc.collectionView?.dataSource = SmallStarsDataSource.shared
+        vc.collectionView?.isUserInteractionEnabled = false
+        return vc
     }
 
     open override func receivePacket(_ packet: Packet) {
-        if packet.packetType == .scrollStars {
+        if packet.packetType == .scrollStars || packet.packetType == .scrollStars2 {
             let currentID = SocketManager.sharedManager.deviceID
-            if currentID == Stars.primaryDevice {
+            if currentID == Stars.primaryDevice ||
+                currentID == Stars.secondaryDevice {
                 return
             }
             guard let payload = packet.payload else {
@@ -95,16 +116,33 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             let offset = payload.extract(CGPoint.self, at: 0)
             let smallOffset = payload.extract(CGPoint.self, at: MemoryLayout<CGPoint>.size)
 
-            bigStarsViewController?.collectionView?.setContentOffset(CGPoint(x: offset.x, y: 0), animated: false)
+            let bigSmall = determineBigOrSmall(packetType: packet.packetType)
+
+            guard let big = bigSmall.0 else {
+                return
+            }
+            big.collectionView?.setContentOffset(CGPoint(x: offset.x, y: 0), animated: false)
 
             //FIXME: Offset final set of stars
             //FIXME: Calibrate position of non-primary small star offsets
-            smallStarsViewController?.collectionView?.setContentOffset(CGPoint(x: smallOffset.x, y: 0), animated: false)
+            guard let small = bigSmall.1 else {
+                return
+            }
+            small.collectionView?.setContentOffset(CGPoint(x: smallOffset.x, y: 0), animated: false)
         }
     }
 
+    func determineBigOrSmall(packetType: PacketType) -> (BigStarsViewController?, SmallStarsViewController?) {
+        if packetType == .scrollStars {
+            return (big1, small1)
+        } else if packetType == .scrollStars2 {
+            return (big2, small2)
+        }
+        return (nil, nil)
+    }
+
     public func shouldSendScrollData() {
-        guard var offset = bigStarsViewController?.collectionView?.contentOffset else {
+        guard var offset = big1?.collectionView?.contentOffset else {
             return
         }
 
@@ -122,13 +160,20 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             l.text = AstrologicalSignProvider.shared.order[Int(index)]
         }
 
-        if SocketManager.sharedManager.deviceID == Stars.primaryDevice {
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
             var smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
-            smallStarsViewController?.collectionView?.contentOffset = smallOffset
+            small1?.collectionView?.contentOffset = smallOffset
             let d = NSMutableData()
             d.append(&offset, length: MemoryLayout<CGPoint>.size)
             d.append(&smallOffset, length: MemoryLayout<CGPoint>.size)
-            let p = Packet(type: .scrollStars, id: SocketManager.sharedManager.deviceID, payload: d as Data)
+
+            var packetType = PacketType.scrollStars
+            if SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+                packetType = .scrollStars2
+            }
+
+            let p = Packet(type: packetType, id: SocketManager.sharedManager.deviceID, payload: d as Data)
             SocketManager.sharedManager.broadcastPacket(p)
         }
     }
