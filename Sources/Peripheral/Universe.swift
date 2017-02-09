@@ -23,7 +23,7 @@ public protocol ScrollDelegate: class {
     func shouldSendScrollData()
 }
 
-open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate, SunSpriteDelegate {
+open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     var currentScene: UniverseScene?
 
     let sceneView = SKView()
@@ -82,16 +82,22 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         anim.animate()
     }
 
-    public func randomEffect(at point: CGPoint) {
-
-    }
-
     //MARK: Sun
     func handleSun(_ packet: Packet) {
+        //If the current scene is not a Sun, do nothing
+        guard let scene = currentScene as? Sun else {
+            print("Current Scene is not Sun")
+            return
+        }
+
+        //If there is no data, do nothing
         guard let data = packet.payload else {
             print("Could not extract payload data")
             return
         }
+
+        //By now, the current scene is a sun, and there is data
+        //Unpack all the variables
         var index = 0
         let id = data.extract(Int.self, at: index)
         index += MemoryLayout<Int>.size
@@ -101,14 +107,12 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         index += MemoryLayout<Int>.size
         let angle = data.extract(Int.self, at: index)
 
-        guard let scene = currentScene as? Sun else {
-            print("Current Scene is not Sun")
-            return
-        }
-
+        //if the sending device is the current device
         if SocketManager.sharedManager.deviceID == packet.id {
+            //create the desired effect in place
             scene.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
         } else if SocketManager.sharedManager.deviceID == id {
+            //otherwise, this device is a neighbour, so we offset the position for the effect
             let dx = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
             point.x += dx
             scene.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
