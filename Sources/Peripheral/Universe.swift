@@ -12,6 +12,7 @@ import C4
 import CocoaAsyncSocket
 import CocoaLumberjack
 import UIKit
+import SpriteKit
 
 extension PacketType {
     static let scrollStars = PacketType(rawValue: 400000)
@@ -28,9 +29,41 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
     var small1: SmallStarsViewController?
     var small2: SmallStarsViewController?
     var label: UILabel?
+    var currentScene: UniverseScene?
+
+    let sceneView = SKView()
 
     open override func setup() {
         super.setup()
+        createBackground()
+        createSceneView()
+        loadScene()
+    }
+
+    func createSceneView() {
+        sceneView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
+        sceneView.ignoresSiblingOrder = false
+        sceneView.showsFPS = true
+        sceneView.showsNodeCount = true
+        sceneView.allowsTransparency = true
+        sceneView.backgroundColor = .clear
+        canvas.add(sceneView)
+    }
+
+    func loadScene() {
+        switch SocketManager.sharedManager.deviceID {
+        case Sun.primaryDevice - 1, Sun.primaryDevice, Sun.primaryDevice + 1:
+            currentScene = Sun(size: sceneView.frame.size)
+        default:
+            break
+        }
+
+        currentScene?.scaleMode = .aspectFill
+        print(currentScene?.frame)
+        sceneView.presentScene(currentScene)
+    }
+
+    func createBackground() {
         canvas.backgroundColor = black
         let background = View(frame: Rect(dx-256, 0, 1024, 1024))
         for x in 0...3 {

@@ -19,7 +19,17 @@ class Sun: UniverseScene, SunSpriteDelegate {
     static let primaryDevice = 18
     var sun: SunSprite?
 
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+
         var sunAssetFilename = ""
         switch SocketManager.sharedManager.deviceID {
         case Sun.primaryDevice-1:
@@ -33,7 +43,7 @@ class Sun: UniverseScene, SunSpriteDelegate {
         let sunSprite = SunSprite(imageNamed: sunAssetFilename)
         sunSprite.isUserInteractionEnabled = true
         sunSprite.anchorPoint = CGPoint(x: 0.5, y: 0.0)
-        sunSprite.position = CGPoint(x: 0.0, y: -view.frame.size.height/2.0)
+        sunSprite.position = CGPoint(x: 0, y: -view.frame.size.height/2.0)
         sunSprite.sunSpriteDelegate = self
         addChild(sunSprite)
 

@@ -66,6 +66,21 @@
 		D916E6A51E4BF08E008F1FCB /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */; };
 		D916E6A81E4BF0E3008F1FCB /* SunSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */; };
 		D916E6AA1E4BF165008F1FCB /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A91E4BF164008F1FCB /* Sun.swift */; };
+		D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D916E6C81E4BF51C008F1FCB /* Sun.xcassets */; };
+		D916E6CB1E4BFBF4008F1FCB /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */; };
+		D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */; };
+		D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */; };
+		D916E6CE1E4BFBF4008F1FCB /* fire_11.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */; };
+		D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B01E4BF50A008F1FCB /* fire_17.atlas */; };
+		D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B11E4BF50A008F1FCB /* sparks_02.atlas */; };
+		D916E6D11E4BFBF4008F1FCB /* sparks_03.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B21E4BF50A008F1FCB /* sparks_03.atlas */; };
+		D916E6D21E4BFBF4008F1FCB /* sparks_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B31E4BF50A008F1FCB /* sparks_04.atlas */; };
+		D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B41E4BF50A008F1FCB /* sparks_06.atlas */; };
+		D916E6D41E4BFBF4008F1FCB /* sparks_07.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B51E4BF50A008F1FCB /* sparks_07.atlas */; };
+		D916E6D51E4BFBF4008F1FCB /* sparks_08.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B61E4BF50A008F1FCB /* sparks_08.atlas */; };
+		D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B71E4BF50A008F1FCB /* sparks_10.atlas */; };
+		D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B81E4BF50A008F1FCB /* sparks_13.atlas */; };
+		D916E6D81E4BFBF4008F1FCB /* sparks_15.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6B91E4BF50A008F1FCB /* sparks_15.atlas */; };
 		D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -207,6 +222,21 @@
 		D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
 		D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunSprite.swift; sourceTree = "<group>"; };
 		D916E6A91E4BF164008F1FCB /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
+		D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_09.atlas; sourceTree = "<group>"; };
+		D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_10.atlas; sourceTree = "<group>"; };
+		D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_11.atlas; sourceTree = "<group>"; };
+		D916E6B01E4BF50A008F1FCB /* fire_17.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_17.atlas; sourceTree = "<group>"; };
+		D916E6B11E4BF50A008F1FCB /* sparks_02.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_02.atlas; sourceTree = "<group>"; };
+		D916E6B21E4BF50A008F1FCB /* sparks_03.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_03.atlas; sourceTree = "<group>"; };
+		D916E6B31E4BF50A008F1FCB /* sparks_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_04.atlas; sourceTree = "<group>"; };
+		D916E6B41E4BF50A008F1FCB /* sparks_06.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_06.atlas; sourceTree = "<group>"; };
+		D916E6B51E4BF50A008F1FCB /* sparks_07.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_07.atlas; sourceTree = "<group>"; };
+		D916E6B61E4BF50A008F1FCB /* sparks_08.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_08.atlas; sourceTree = "<group>"; };
+		D916E6B71E4BF50A008F1FCB /* sparks_10.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_10.atlas; sourceTree = "<group>"; };
+		D916E6B81E4BF50A008F1FCB /* sparks_13.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_13.atlas; sourceTree = "<group>"; };
+		D916E6B91E4BF50A008F1FCB /* sparks_15.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sparks_15.atlas; sourceTree = "<group>"; };
+		D916E6C81E4BF51C008F1FCB /* Sun.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sun.xcassets; sourceTree = "<group>"; };
 		D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +387,7 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				D916E6AB1E4BF4E6008F1FCB /* Sun */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
@@ -476,6 +507,28 @@
 			children = (
 				D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */,
 				D916E6A91E4BF164008F1FCB /* Sun.swift */,
+			);
+			name = Sun;
+			sourceTree = "<group>";
+		};
+		D916E6AB1E4BF4E6008F1FCB /* Sun */ = {
+			isa = PBXGroup;
+			children = (
+				D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */,
+				D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */,
+				D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */,
+				D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */,
+				D916E6B01E4BF50A008F1FCB /* fire_17.atlas */,
+				D916E6B11E4BF50A008F1FCB /* sparks_02.atlas */,
+				D916E6B21E4BF50A008F1FCB /* sparks_03.atlas */,
+				D916E6B31E4BF50A008F1FCB /* sparks_04.atlas */,
+				D916E6B41E4BF50A008F1FCB /* sparks_06.atlas */,
+				D916E6B51E4BF50A008F1FCB /* sparks_07.atlas */,
+				D916E6B61E4BF50A008F1FCB /* sparks_08.atlas */,
+				D916E6B71E4BF50A008F1FCB /* sparks_10.atlas */,
+				D916E6B81E4BF50A008F1FCB /* sparks_13.atlas */,
+				D916E6B91E4BF50A008F1FCB /* sparks_15.atlas */,
+				D916E6C81E4BF51C008F1FCB /* Sun.xcassets */,
 			);
 			name = Sun;
 			sourceTree = "<group>";
@@ -810,11 +863,26 @@
 			files = (
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
+				D916E6D41E4BFBF4008F1FCB /* sparks_07.atlas in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */,
+				D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */,
+				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D916E6A01E4BEEFC008F1FCB /* UniverseScene.sks in Resources */,
+				D916E6CB1E4BFBF4008F1FCB /* fire_04.atlas in Resources */,
+				D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */,
+				D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */,
+				D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */,
+				D916E6D21E4BFBF4008F1FCB /* sparks_04.atlas in Resources */,
+				D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */,
+				D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */,
+				D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */,
+				D916E6D81E4BFBF4008F1FCB /* sparks_15.atlas in Resources */,
 				1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */,
+				D916E6D11E4BFBF4008F1FCB /* sparks_03.atlas in Resources */,
+				D916E6D51E4BFBF4008F1FCB /* sparks_08.atlas in Resources */,
+				D916E6CE1E4BFBF4008F1FCB /* fire_11.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
