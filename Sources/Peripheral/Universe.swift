@@ -22,7 +22,7 @@ public protocol ScrollDelegate: class {
     func shouldSendScrollData()
 }
 
-open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
+open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate, SunSpriteDelegate {
     var big1: BigStarsViewController?
     var big2: BigStarsViewController?
     var small1: SmallStarsViewController?
@@ -194,5 +194,9 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             let p = Packet(type: packetType, id: SocketManager.sharedManager.deviceID, payload: d as Data)
             SocketManager.sharedManager.broadcastPacket(p)
         }
+    }
+
+    public func randomEffect(at point: CGPoint) {
+
     }
 }

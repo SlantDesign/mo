@@ -63,6 +63,9 @@
 		AE8D7CEAF484ACE4FFD39E1D /* Pods_All_MO_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC1DC499E6239D195D07871 /* Pods_All_MO_tvOS.framework */; };
 		D916E6A01E4BEEFC008F1FCB /* UniverseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D916E69F1E4BEEFC008F1FCB /* UniverseScene.sks */; };
 		D916E6A31E4BF012008F1FCB /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A21E4BF012008F1FCB /* Stars.swift */; };
+		D916E6A51E4BF08E008F1FCB /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */; };
+		D916E6A81E4BF0E3008F1FCB /* SunSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */; };
+		D916E6AA1E4BF165008F1FCB /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A91E4BF164008F1FCB /* Sun.swift */; };
 		D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +204,9 @@
 		D0A2F706AB993B4812627BD6 /* Pods-All-Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Master/Pods-All-Master.debug.xcconfig"; sourceTree = "<group>"; };
 		D916E69F1E4BEEFC008F1FCB /* UniverseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UniverseScene.sks; sourceTree = "<group>"; };
 		D916E6A21E4BF012008F1FCB /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
+		D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
+		D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunSprite.swift; sourceTree = "<group>"; };
+		D916E6A91E4BF164008F1FCB /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		E192A463C0B2AD75DD277039 /* Pods_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2C72F53FE7600908FE02D /* Pods-All-Peripheral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Peripheral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Peripheral/Pods-All-Peripheral.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,8 +375,9 @@
 				6114EAB31E0F634100829825 /* DataExtension.swift */,
 				6114EABA1E0F634100829825 /* Packet.swift */,
 				6114EAB41E0F634100829825 /* Master */,
-				D916E6A11E4BEF54008F1FCB /* Universe */,
 				6114EABB1E0F634100829825 /* Peripheral */,
+				D916E6A11E4BEF54008F1FCB /* Universe */,
+				D916E6A61E4BF0B4008F1FCB /* Sun */,
 				1F36B7DA1E40238800441C9B /* Stars */,
 			);
 			path = Sources;
@@ -459,8 +466,18 @@
 			isa = PBXGroup;
 			children = (
 				1F36B7DD1E40242400441C9B /* Universe.swift */,
+				D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */,
 			);
 			name = Universe;
+			sourceTree = "<group>";
+		};
+		D916E6A61E4BF0B4008F1FCB /* Sun */ = {
+			isa = PBXGroup;
+			children = (
+				D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */,
+				D916E6A91E4BF164008F1FCB /* Sun.swift */,
+			);
+			name = Sun;
 			sourceTree = "<group>";
 		};
 		F7D3B3541649CF7FB1D592D1 /* Pods */ = {
@@ -1234,9 +1251,12 @@
 				1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */,
 				1FA1B0D31E405E8500869F26 /* Star.swift in Sources */,
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
+				D916E6A51E4BF08E008F1FCB /* UniverseScene.swift in Sources */,
 				1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
+				D916E6AA1E4BF165008F1FCB /* Sun.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
+				D916E6A81E4BF0E3008F1FCB /* SunSprite.swift in Sources */,
 				1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */,
 				1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
