@@ -117,6 +117,7 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     }
 
     //MARK: SolarSystems
+    //FIXME: Screens within a certain range of solarsystem shoudl have planets +/-4 screens?
     func handlePlanet(_ packet: Packet) {
         guard let scene = currentScene as? SolarSystem else {
             return
