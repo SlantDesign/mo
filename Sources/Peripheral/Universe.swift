@@ -59,7 +59,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         }
 
         currentScene?.scaleMode = .aspectFill
-        print(currentScene?.frame)
         sceneView.presentScene(currentScene)
     }
 
