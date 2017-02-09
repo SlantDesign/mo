@@ -22,13 +22,15 @@ class Sun: UniverseScene, SunSpriteDelegate {
     override init(size: CGSize) {
         super.init(size: size)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        scaleMode = .aspectFill
+        size = view.bounds.size
 
         var sunAssetFilename = ""
         switch SocketManager.sharedManager.deviceID {
@@ -40,6 +42,7 @@ class Sun: UniverseScene, SunSpriteDelegate {
             sunAssetFilename = "SunMiddle"
         }
 
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let sunSprite = SunSprite(imageNamed: sunAssetFilename)
         sunSprite.isUserInteractionEnabled = true
         sunSprite.anchorPoint = CGPoint(x: 0.5, y: 0.0)
@@ -52,6 +55,12 @@ class Sun: UniverseScene, SunSpriteDelegate {
         createEffectRotations()
         createEffectAnchorPoints()
         createEffects()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let t = touches.first {
+            print(t.location(in: nil))
+        }
     }
 
     let effectNames = [

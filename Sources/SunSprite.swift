@@ -37,7 +37,8 @@ class SunSprite: SKSpriteNode {
             return
         }
         imageScale = scale
-
+        print(imageScale)
+        print(image?.size)
         guard let imageProvider = cgimg.dataProvider else {
             print("Could not create imageProvider")
             return

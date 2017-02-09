@@ -67,7 +67,6 @@
 		D916E6A81E4BF0E3008F1FCB /* SunSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */; };
 		D916E6AA1E4BF165008F1FCB /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916E6A91E4BF164008F1FCB /* Sun.swift */; };
 		D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D916E6C81E4BF51C008F1FCB /* Sun.xcassets */; };
-		D916E6CB1E4BFBF4008F1FCB /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */; };
 		D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */; };
 		D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */; };
 		D916E6CE1E4BFBF4008F1FCB /* fire_11.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */; };
@@ -222,7 +221,6 @@
 		D916E6A41E4BF08E008F1FCB /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
 		D916E6A71E4BF0E3008F1FCB /* SunSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunSprite.swift; sourceTree = "<group>"; };
 		D916E6A91E4BF164008F1FCB /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
-		D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
 		D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_09.atlas; sourceTree = "<group>"; };
 		D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_10.atlas; sourceTree = "<group>"; };
 		D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_11.atlas; sourceTree = "<group>"; };
@@ -514,7 +512,6 @@
 		D916E6AB1E4BF4E6008F1FCB /* Sun */ = {
 			isa = PBXGroup;
 			children = (
-				D916E6AC1E4BF50A008F1FCB /* fire_04.atlas */,
 				D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */,
 				D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */,
 				D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */,
@@ -870,7 +867,6 @@
 				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D916E6A01E4BEEFC008F1FCB /* UniverseScene.sks in Resources */,
-				D916E6CB1E4BFBF4008F1FCB /* fire_04.atlas in Resources */,
 				D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */,
 				D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */,
 				D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */,
