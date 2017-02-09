@@ -25,13 +25,12 @@ public protocol ScrollDelegate: class {
 
 open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     var currentScene: UniverseScene?
-
     let sceneView = SKView()
+    var background: View?
 
     open override func setup() {
         super.setup()
         createBackground()
-        initializeCollectionViews()
         createSceneView()
         loadScene()
     }
@@ -46,23 +45,31 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     }
 
     func loadScene() {
+        var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
         case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
             currentScene = AsteroidBelt(size: sceneView.frame.size)
 //        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
 //            currentScene = Sun(size: sceneView.frame.size)
         default:
+            shouldBringViewToFront = false
             currentScene = UniverseScene(size: sceneView.frame.size)
         }
 
         canvas.add(sceneView)
         currentScene?.scaleMode = .aspectFill
         sceneView.presentScene(currentScene)
+
+        initializeCollectionViews()
+
+        if shouldBringViewToFront {
+            canvas.bringToFront(sceneView)
+        }
     }
 
     func createBackground() {
         canvas.backgroundColor = black
-        let background = View(frame: Rect(dx-256, 0, 1024, 1024))
+        let bg = View(frame: Rect(dx-256, 0, 1024, 1024))
         for x in 0...3 {
             for y in 0...3 {
                 guard let image = Image("background") else {
@@ -71,11 +78,13 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
                 }
                 let origin = Point(Double(x) * 256.0, Double(y) * 256.0)
                 image.origin = origin
-                background.add(image)
+                bg.add(image)
             }
         }
 
-        canvas.add(background)
+        bg.zPosition = -1000
+        canvas.add(bg)
+        background = bg
     }
 
     open override func receivePacket(_ packet: Packet) {
@@ -96,7 +105,7 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     //MARK: AsteroidBelt
     func handleAddAsteroid(_ packet: Packet) {
         guard let scene = currentScene as? AsteroidBelt else {
-            print("Current Scene is not AsteroidBelt")
+//            print("Current Scene is not AsteroidBelt")
             return
         }
 
