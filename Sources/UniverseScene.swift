@@ -11,11 +11,12 @@ import MO
 import C4
 
 class UniverseScene: SKScene {
+    var cassini: CassiniSpaceCraft?
     var copyableAsteroids: [Asteroid]?
     var cometAuraFrames: [SKTexture]?
     var cometAura: SKSpriteNode?
     let cometAuraAtlas = SKTextureAtlas(named: "comet_aura")
-
+    
     override init(size: CGSize) {
         super.init(size: size)
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -100,5 +101,17 @@ class UniverseScene: SKScene {
         aura.run(repeatAnim)
         asteroid.addChild(aura)
         asteroid.aura = aura
+    }
+
+    //MARK: Cassini
+    func transmitCassini(coordinates: CGPoint) {
+        cassini?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
+    }
+
+    func convertFromPrimaryDeviceCoordinates(_ point: CGPoint) -> CGPoint {
+        var dx = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID)
+        dx *= CGFloat(frameCanvasWidth)
+        let coordinates = CGPoint(x: point.x + dx, y: point.y)
+        return coordinates
     }
 }

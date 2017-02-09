@@ -115,6 +115,9 @@
 		D917CFD01E4CE69F00445BC2 /* Soyuz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917CFCB1E4CE69F00445BC2 /* Soyuz.swift */; };
 		D917CFD31E4CE70500445BC2 /* Stars.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D917CFD21E4CE70500445BC2 /* Stars.xcassets */; };
 		D917CFD51E4CE7C000445BC2 /* Rockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917CFD41E4CE7C000445BC2 /* Rockets.swift */; };
+		D9773D5E1E4D1AC600CE5A95 /* CassiniRocketFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9773D5D1E4D1AC600CE5A95 /* CassiniRocketFire.sks */; };
+		D9773D5F1E4D1ACA00CE5A95 /* Cassini.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9773D5B1E4D1AB300CE5A95 /* Cassini.xcassets */; };
+		D9773D621E4D1BF500CE5A95 /* CassiniSpacecraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9773D611E4D1BF500CE5A95 /* CassiniSpacecraft.swift */; };
 		D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */; };
 		D9A85A391E4CD41E0046B44A /* SolarSystem.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A85A381E4CD41E0046B44A /* SolarSystem.xcassets */; };
 		D9A85A3C1E4CD7420046B44A /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A85A3B1E4CD7420046B44A /* SolarSystem.swift */; };
@@ -307,6 +310,9 @@
 		D917CFCB1E4CE69F00445BC2 /* Soyuz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soyuz.swift; sourceTree = "<group>"; };
 		D917CFD21E4CE70500445BC2 /* Stars.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stars.xcassets; sourceTree = "<group>"; };
 		D917CFD41E4CE7C000445BC2 /* Rockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rockets.swift; sourceTree = "<group>"; };
+		D9773D5B1E4D1AB300CE5A95 /* Cassini.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cassini.xcassets; sourceTree = "<group>"; };
+		D9773D5D1E4D1AC600CE5A95 /* CassiniRocketFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CassiniRocketFire.sks; sourceTree = "<group>"; };
+		D9773D611E4D1BF500CE5A95 /* CassiniSpacecraft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniSpacecraft.swift; sourceTree = "<group>"; };
 		D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		D9A85A381E4CD41E0046B44A /* SolarSystem.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SolarSystem.xcassets; sourceTree = "<group>"; };
 		D9A85A3B1E4CD7420046B44A /* SolarSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
@@ -482,6 +488,7 @@
 				D9A85A371E4CD40A0046B44A /* SolarSystem */,
 				1FEC13CC1E4C459900D087C0 /* AsteroiBelt */,
 				D916E6AB1E4BF4E6008F1FCB /* Sun */,
+				D9773D5A1E4D1A8800CE5A95 /* Cassini */,
 				D917CFD11E4CE6F500445BC2 /* Stars */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAD1E0F634100829825 /* Images.xcassets */,
@@ -504,6 +511,7 @@
 				1FEC13D41E4C467C00D087C0 /* AsteroidBelt */,
 				D916E6A61E4BF0B4008F1FCB /* Sun */,
 				1F36B7DA1E40238800441C9B /* Stars */,
+				D9773D601E4D1BE200CE5A95 /* Cassini */,
 				D917CFC61E4CE67E00445BC2 /* Rockets */,
 			);
 			path = Sources;
@@ -712,6 +720,24 @@
 				D917CFD21E4CE70500445BC2 /* Stars.xcassets */,
 			);
 			name = Stars;
+			sourceTree = "<group>";
+		};
+		D9773D5A1E4D1A8800CE5A95 /* Cassini */ = {
+			isa = PBXGroup;
+			children = (
+				D9773D5D1E4D1AC600CE5A95 /* CassiniRocketFire.sks */,
+				D9773D5B1E4D1AB300CE5A95 /* Cassini.xcassets */,
+			);
+			name = Cassini;
+			sourceTree = "<group>";
+		};
+		D9773D601E4D1BE200CE5A95 /* Cassini */ = {
+			isa = PBXGroup;
+			children = (
+				D9773D611E4D1BF500CE5A95 /* CassiniSpacecraft.swift */,
+			);
+			name = Cassini;
+			path = Peripheral;
 			sourceTree = "<group>";
 		};
 		D9A85A371E4CD40A0046B44A /* SolarSystem */ = {
@@ -1060,6 +1086,7 @@
 			files = (
 				1FEC13D01E4C45D100D087C0 /* comet_aura.atlas in Resources */,
 				D917CFBB1E4CE65300445BC2 /* RocketFireAriane.sks in Resources */,
+				D9773D5E1E4D1AC600CE5A95 /* CassiniRocketFire.sks in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				D916E6D41E4BFBF4008F1FCB /* sparks_07.atlas in Resources */,
@@ -1103,6 +1130,7 @@
 				D917CFC21E4CE66A00445BC2 /* IgnitionSmokeSoyuz.sks in Resources */,
 				1FEC13D31E4C45E000D087C0 /* AsteroidExplode.sks in Resources */,
 				D917CFA11E4CE60700445BC2 /* IgnitionFalcon.sks in Resources */,
+				D9773D5F1E4D1ACA00CE5A95 /* Cassini.xcassets in Resources */,
 				D9A85A391E4CD41E0046B44A /* SolarSystem.xcassets in Resources */,
 				D916E6CE1E4BFBF4008F1FCB /* fire_11.atlas in Resources */,
 				D917CFB81E4CE65300445BC2 /* IgnitionSmokeAriane.sks in Resources */,
@@ -1536,6 +1564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9773D621E4D1BF500CE5A95 /* CassiniSpacecraft.swift in Sources */,
 				D916E6A31E4BF012008F1FCB /* Stars.swift in Sources */,
 				D917CFCE1E4CE69F00445BC2 /* Endeavour.swift in Sources */,
 				1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */,

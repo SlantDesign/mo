@@ -69,6 +69,12 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         if shouldBringViewToFront {
             canvas.bringToFront(sceneView)
         }
+
+        let spaceCraft = CassiniSpaceCraft()
+        let offset = CGFloat(SocketManager.sharedManager.deviceID - Cassini.primaryDevice) * CGFloat(frameCanvasWidth)
+        spaceCraft.position = CGPoint(x: offset, y: 0)
+        currentScene?.cassini = spaceCraft
+        currentScene?.addChild(spaceCraft)
     }
 
     func createBackground() {
@@ -93,6 +99,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
 
     open override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
+        case PacketType.cassini:
+            handleCassini(packet)
+        case PacketType.cassiniShouldMove:
+            handleCassiniShouldMove()
         case PacketType.asteroid:
             handleAddAsteroid(packet)
         case PacketType.comet:
@@ -115,6 +125,22 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             break
         default:
             break
+        }
+    }
+
+    //MARK: Cassini
+    func handleCassini(_ packet: Packet) {
+        guard let payload = packet.payload else {
+            print("Couldn't extract payload")
+            return
+        }
+        let point = payload.extract(CGPoint.self, at: 0)
+        currentScene?.transmitCassini(coordinates: point)
+    }
+
+    func handleCassiniShouldMove() {
+        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+            currentScene?.cassini?.broadcastMovement()
         }
     }
 
