@@ -42,7 +42,6 @@ class Sun: UniverseScene, SunSpriteDelegate {
             sunAssetFilename = "SunMiddle"
         }
 
-        anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let sunSprite = SunSprite(imageNamed: sunAssetFilename)
         sunSprite.isUserInteractionEnabled = true
         sunSprite.anchorPoint = CGPoint(x: 0.5, y: 0.0)

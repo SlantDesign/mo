@@ -57,14 +57,15 @@ open class BigStarsViewController: UICollectionViewController {
     }
 
     override open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (SocketManager.sharedManager.deviceID == Stars.primaryDevice || SocketManager.sharedManager.deviceID == Stars.secondaryDevice) {
-            snap(scrollView)
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+            self.snap(scrollView)
         }
     }
 
     override open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if (SocketManager.sharedManager.deviceID == Stars.primaryDevice || SocketManager.sharedManager.deviceID == Stars.secondaryDevice) && !decelerate {
-            snap(scrollView)
+            self.snap(scrollView)
         }
     }
 }

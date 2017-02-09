@@ -31,6 +31,7 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     open override func setup() {
         super.setup()
         createBackground()
+        initializeCollectionViews()
         createSceneView()
         loadScene()
     }
@@ -46,10 +47,12 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
 
     func loadScene() {
         switch SocketManager.sharedManager.deviceID {
-        case Sun.primaryDevice - 1, Sun.primaryDevice, Sun.primaryDevice + 1:
-            currentScene = Sun(size: sceneView.frame.size)
+        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+            currentScene = AsteroidBelt(size: sceneView.frame.size)
+//        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
+//            currentScene = Sun(size: sceneView.frame.size)
         default:
-            return
+            currentScene = UniverseScene(size: sceneView.frame.size)
         }
 
         canvas.add(sceneView)
@@ -73,13 +76,64 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         }
 
         canvas.add(background)
+    }
 
-        let anim = ViewAnimation(duration: 60.0) {
-            background.origin = Point(self.dx, 0)
+    open override func receivePacket(_ packet: Packet) {
+        switch packet.packetType {
+        case PacketType.asteroid:
+            handleAddAsteroid(packet)
+        case PacketType.comet:
+            handleAddComet(packet)
+        case PacketType.sun:
+            handleSun(packet)
+        case PacketType.scrollStars, PacketType.scrollStars2:
+            handleScrollingStars(packet)
+        default:
+            break
         }
-        anim.repeats = true
-        anim.curve = .Linear
-        anim.animate()
+    }
+
+    //MARK: AsteroidBelt
+    func handleAddAsteroid(_ packet: Packet) {
+        guard let scene = currentScene as? AsteroidBelt else {
+            print("Current Scene is not AsteroidBelt")
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+
+        var point = data.extract(CGPoint.self, at: 0)
+
+        let offset = AsteroidBelt.primaryDevice - SocketManager.sharedManager.deviceID
+
+        //asteroids are only visible on 3 devices, so don't add them if they wouldn't ever appear
+        if abs(offset) <= 1 {
+            point.x += CGFloat(frameCanvasWidth * Double(offset))
+            scene.createAsteroid(point: point, identifier: packet.id)
+        }
+    }
+
+    //FIXME: Add second comet to necessary devices for creating wraparound effect
+    func handleAddComet(_ packet: Packet) {
+        guard let data = packet.payload else {
+            print("Comet packet did not have data.")
+            return
+        }
+
+        let identifier = data.extract(Int.self, at: 0)
+        var position = data.extract(CGPoint.self, at: MemoryLayout<Int>.size)
+
+        let offset = packet.id - SocketManager.sharedManager.deviceID
+        position.x += CGFloat(frameCanvasWidth * Double(offset))
+
+        if let scene = currentScene as? AsteroidBelt {
+            scene.removeAsteroid(identifier: identifier)
+        }
+        currentScene?.createComet(identifier: identifier, position: position)
     }
 
     //MARK: Sun
@@ -189,17 +243,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         vc.collectionView?.dataSource = SmallStarsDataSource.shared
         vc.collectionView?.isUserInteractionEnabled = false
         return vc
-    }
-
-    open override func receivePacket(_ packet: Packet) {
-        switch packet.packetType {
-        case PacketType.sun:
-            handleSun(packet)
-        case PacketType.scrollStars, PacketType.scrollStars2:
-            handleScrollingStars(packet)
-        default:
-            break
-        }
     }
 
     func updateLabelOpacity(_ offset: CGPoint) {
