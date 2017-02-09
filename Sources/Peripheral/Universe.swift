@@ -47,10 +47,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
-            currentScene = SolarSystem(size: sceneView.frame.size)
-//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-//            currentScene = AsteroidBelt(size: sceneView.frame.size)
+//        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
+//            currentScene = SolarSystem(size: sceneView.frame.size)
+        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+            currentScene = AsteroidBelt(size: sceneView.frame.size)
 //        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
 //            currentScene = Sun(size: sceneView.frame.size)
         default:
@@ -117,6 +117,7 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     }
 
     //MARK: SolarSystems
+    //FIXME: Should add comet explosion when contact with planet is made
     //FIXME: Screens within a certain range of solarsystem shoudl have planets +/-4 screens?
     func handlePlanet(_ packet: Packet) {
         guard let scene = currentScene as? SolarSystem else {
