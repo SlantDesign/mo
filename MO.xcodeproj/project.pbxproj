@@ -20,6 +20,7 @@
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
+		1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
@@ -159,6 +160,7 @@
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
+		1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,6 +514,7 @@
 		D916E6AB1E4BF4E6008F1FCB /* Sun */ = {
 			isa = PBXGroup;
 			children = (
+				1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */,
 				D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */,
 				D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */,
 				D916E6AF1E4BF50A008F1FCB /* fire_11.atlas */,
@@ -871,6 +874,7 @@
 				D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */,
 				D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */,
 				D916E6D21E4BFBF4008F1FCB /* sparks_04.atlas in Resources */,
+				1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */,
 				D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */,
 				D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */,
 				D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */,
