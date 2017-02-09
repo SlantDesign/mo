@@ -114,6 +114,7 @@
 		D917CFCF1E4CE69F00445BC2 /* Ariane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917CFCA1E4CE69F00445BC2 /* Ariane.swift */; };
 		D917CFD01E4CE69F00445BC2 /* Soyuz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917CFCB1E4CE69F00445BC2 /* Soyuz.swift */; };
 		D917CFD31E4CE70500445BC2 /* Stars.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D917CFD21E4CE70500445BC2 /* Stars.xcassets */; };
+		D917CFD51E4CE7C000445BC2 /* Rockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917CFD41E4CE7C000445BC2 /* Rockets.swift */; };
 		D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */; };
 		D9A85A391E4CD41E0046B44A /* SolarSystem.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A85A381E4CD41E0046B44A /* SolarSystem.xcassets */; };
 		D9A85A3C1E4CD7420046B44A /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A85A3B1E4CD7420046B44A /* SolarSystem.swift */; };
@@ -305,6 +306,7 @@
 		D917CFCA1E4CE69F00445BC2 /* Ariane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ariane.swift; sourceTree = "<group>"; };
 		D917CFCB1E4CE69F00445BC2 /* Soyuz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soyuz.swift; sourceTree = "<group>"; };
 		D917CFD21E4CE70500445BC2 /* Stars.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stars.xcassets; sourceTree = "<group>"; };
+		D917CFD41E4CE7C000445BC2 /* Rockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rockets.swift; sourceTree = "<group>"; };
 		D98068831E493C2A001BE775 /* AstrologicalSignProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrologicalSignProvider.swift; sourceTree = "<group>"; };
 		D9A85A381E4CD41E0046B44A /* SolarSystem.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SolarSystem.xcassets; sourceTree = "<group>"; };
 		D9A85A3B1E4CD7420046B44A /* SolarSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 		D917CFC61E4CE67E00445BC2 /* Rockets */ = {
 			isa = PBXGroup;
 			children = (
+				D917CFD41E4CE7C000445BC2 /* Rockets.swift */,
 				D917CFC71E4CE69F00445BC2 /* Rocket.swift */,
 				D917CFC81E4CE69F00445BC2 /* Falcon.swift */,
 				D917CFC91E4CE69F00445BC2 /* Endeavour.swift */,
@@ -1551,6 +1554,7 @@
 				D917CFCF1E4CE69F00445BC2 /* Ariane.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
 				D916E6A81E4BF0E3008F1FCB /* SunSprite.swift in Sources */,
+				D917CFD51E4CE7C000445BC2 /* Rockets.swift in Sources */,
 				D917CFCD1E4CE69F00445BC2 /* Falcon.swift in Sources */,
 				D917CFCC1E4CE69F00445BC2 /* Rocket.swift in Sources */,
 				1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */,
