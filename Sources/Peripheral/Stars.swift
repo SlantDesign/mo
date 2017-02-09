@@ -23,8 +23,8 @@ public protocol ScrollDelegate: class {
 }
 
 open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
-    static let primaryDevice = 17
-    static let secondaryDevice = 19
+    static let primaryDevice = 20
+    static let secondaryDevice = 21
     static let constellationCount = 89
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
     var big1: BigStarsViewController?
