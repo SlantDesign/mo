@@ -57,12 +57,6 @@ class Sun: UniverseScene, SunSpriteDelegate {
         createEffects()
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let t = touches.first {
-            print(t.location(in: nil))
-        }
-    }
-
     let effectNames = [
         "fire_04",
         "fire_09",

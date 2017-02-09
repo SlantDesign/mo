@@ -37,14 +37,13 @@ class SunSprite: SKSpriteNode {
             return
         }
         imageScale = scale
-        print(imageScale)
-        print(image?.size)
         guard let imageProvider = cgimg.dataProvider else {
             print("Could not create imageProvider")
             return
         }
 
         let imageData = imageProvider.data
+        data = CFDataGetBytePtr(imageData)
         self.imageData = imageData
     }
 
@@ -63,6 +62,8 @@ class SunSprite: SKSpriteNode {
             p.y = self.frame.height-p.y
             if !isTransparent(at: Point(p)) {
                 sunSpriteDelegate?.randomEffect(at: convertToSKViewCoordinates(t.location(in: self.scene?.view)))
+            } else {
+                super.touchesBegan(touches, with: event)
             }
         }
     }

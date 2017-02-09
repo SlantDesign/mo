@@ -47,7 +47,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         sceneView.showsNodeCount = true
         sceneView.allowsTransparency = true
         sceneView.backgroundColor = .clear
-        canvas.add(sceneView)
     }
 
     func loadScene() {
@@ -55,9 +54,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         case Sun.primaryDevice - 1, Sun.primaryDevice, Sun.primaryDevice + 1:
             currentScene = Sun(size: sceneView.frame.size)
         default:
-            break
+            return
         }
 
+        canvas.add(sceneView)
         currentScene?.scaleMode = .aspectFill
         sceneView.presentScene(currentScene)
     }
