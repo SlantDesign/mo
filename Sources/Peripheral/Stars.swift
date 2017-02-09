@@ -88,7 +88,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             canvas.add(label)
             label?.textColor = UIColor.white
 
-            guard let f = UIFont(name: "AppleSDGothicNeo-Bold", size: 32.0) else {
+            guard let f = UIFont(name: "Inconsolata", size: 32.0) else {
                 print("Could not create font")
                 return
             }
