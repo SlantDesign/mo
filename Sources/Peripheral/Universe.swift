@@ -154,32 +154,44 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
 
     open override func receivePacket(_ packet: Packet) {
         if packet.packetType == .scrollStars || packet.packetType == .scrollStars2 {
-            let currentID = SocketManager.sharedManager.deviceID
-            if currentID == Stars.primaryDevice ||
-                currentID == Stars.secondaryDevice {
-                return
-            }
-            guard let payload = packet.payload else {
-                return
-            }
-
-            let offset = payload.extract(CGPoint.self, at: 0)
-            let smallOffset = payload.extract(CGPoint.self, at: MemoryLayout<CGPoint>.size)
-
-            let bigSmall = determineBigOrSmall(packetType: packet.packetType)
-
-            guard let big = bigSmall.0 else {
-                return
-            }
-            big.collectionView?.setContentOffset(CGPoint(x: offset.x, y: 0), animated: false)
-
-            //FIXME: Offset final set of stars
-            //FIXME: Calibrate position of non-primary small star offsets
-            guard let small = bigSmall.1 else {
-                return
-            }
-            small.collectionView?.setContentOffset(CGPoint(x: smallOffset.x, y: 0), animated: false)
+            handleScrollingStars(packet: packet)
         }
+    }
+
+    func handleScrollingStars(packet: Packet) {
+        //if the current device is either of the two observatories, do nothing
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+            return
+        }
+
+        //if there is no data, do nothing
+        guard let payload = packet.payload else {
+            return
+        }
+
+        //grab the big stars offset
+        let offset = payload.extract(CGPoint.self, at: 0)
+
+        //grab the small stars offset
+        let smallOffset = payload.extract(CGPoint.self, at: MemoryLayout<CGPoint>.size)
+
+        //extract the big / small stars for the current packet type (e.g. from device 1, or 2)
+        let bigSmall = determineBigOrSmall(packetType: packet.packetType)
+
+        //if there is no big stars controller, do nothing
+        guard let big = bigSmall.0 else {
+            print("Could not extract big")
+            return
+        }
+        big.collectionView?.setContentOffset(CGPoint(x: offset.x, y: 0), animated: false)
+
+        //if there is no small stars controller, do nothing
+        guard let small = bigSmall.1 else {
+            print("Could not extract big")
+            return
+        }
+        small.collectionView?.setContentOffset(CGPoint(x: smallOffset.x, y: 0), animated: false)
     }
 
     func determineBigOrSmall(packetType: PacketType) -> (BigStarsViewController?, SmallStarsViewController?) {
@@ -192,10 +204,36 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
     }
 
     public func shouldSendScrollData() {
-        guard var offset = big1?.collectionView?.contentOffset else {
+        guard let offset = big1?.collectionView?.contentOffset else {
             return
         }
 
+        updateLabelOpacity(offset)
+
+        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+            sendScrollingStarsData(offset)
+        }
+    }
+
+    func sendScrollingStarsData(_ point: CGPoint) {
+        var offset = point
+        var smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
+        small1?.collectionView?.contentOffset = smallOffset
+        let d = NSMutableData()
+        d.append(&offset, length: MemoryLayout<CGPoint>.size)
+        d.append(&smallOffset, length: MemoryLayout<CGPoint>.size)
+
+        var packetType = PacketType.scrollStars
+        if SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
+            packetType = .scrollStars2
+        }
+
+        let p = Packet(type: packetType, id: SocketManager.sharedManager.deviceID, payload: d as Data)
+        SocketManager.sharedManager.broadcastPacket(p)
+    }
+
+    func updateLabelOpacity(_ offset: CGPoint) {
         if let l = label {
             let index = round(offset.x / CGFloat(frameCanvasWidth))
 
@@ -208,23 +246,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
             alpha *= 2.0
             l.alpha = alpha
             l.text = AstrologicalSignProvider.shared.order[Int(index)]
-        }
-
-        if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
-            SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
-            var smallOffset = CGPoint(x: offset.x * SmallStarsViewController.scale, y: offset.y)
-            small1?.collectionView?.contentOffset = smallOffset
-            let d = NSMutableData()
-            d.append(&offset, length: MemoryLayout<CGPoint>.size)
-            d.append(&smallOffset, length: MemoryLayout<CGPoint>.size)
-
-            var packetType = PacketType.scrollStars
-            if SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
-                packetType = .scrollStars2
-            }
-
-            let p = Packet(type: packetType, id: SocketManager.sharedManager.deviceID, payload: d as Data)
-            SocketManager.sharedManager.broadcastPacket(p)
         }
     }
 
