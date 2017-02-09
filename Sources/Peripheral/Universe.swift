@@ -24,11 +24,6 @@ public protocol ScrollDelegate: class {
 }
 
 open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate, SunSpriteDelegate {
-    var big1: BigStarsViewController?
-    var big2: BigStarsViewController?
-    var small1: SmallStarsViewController?
-    var small2: SmallStarsViewController?
-    var label: UILabel?
     var currentScene: UniverseScene?
 
     let sceneView = SKView()
@@ -86,6 +81,46 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         anim.curve = .Linear
         anim.animate()
     }
+
+    public func randomEffect(at point: CGPoint) {
+
+    }
+
+    //MARK: Sun
+    func handleSun(_ packet: Packet) {
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+        var index = 0
+        let id = data.extract(Int.self, at: index)
+        index += MemoryLayout<Int>.size
+        var point = data.extract(CGPoint.self, at: index)
+        index += MemoryLayout<CGPoint>.size
+        let effectNameIndex = data.extract(Int.self, at: index)
+        index += MemoryLayout<Int>.size
+        let angle = data.extract(Int.self, at: index)
+
+        guard let scene = currentScene as? Sun else {
+            print("Current Scene is not Sun")
+            return
+        }
+
+        if SocketManager.sharedManager.deviceID == packet.id {
+            scene.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
+        } else if SocketManager.sharedManager.deviceID == id {
+            let dx = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+            point.x += dx
+            scene.createEffect(nameIndex: effectNameIndex, at: point, angle: angle)
+        }
+    }
+
+    //MARK: Stars
+    var big1: BigStarsViewController?
+    var big2: BigStarsViewController?
+    var small1: SmallStarsViewController?
+    var small2: SmallStarsViewController?
+    var label: UILabel?
 
     func initializeCollectionViews() {
         if SocketManager.sharedManager.deviceID != Stars.primaryDevice &&
@@ -153,12 +188,33 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
     }
 
     open override func receivePacket(_ packet: Packet) {
-        if packet.packetType == .scrollStars || packet.packetType == .scrollStars2 {
-            handleScrollingStars(packet: packet)
+        switch packet.packetType {
+        case PacketType.sun:
+            handleSun(packet)
+        case PacketType.scrollStars, PacketType.scrollStars2:
+            handleScrollingStars(packet)
+        default:
+            break
         }
     }
 
-    func handleScrollingStars(packet: Packet) {
+    func updateLabelOpacity(_ offset: CGPoint) {
+        if let l = label {
+            let index = round(offset.x / CGFloat(frameCanvasWidth))
+
+            var alpha = offset.x.truncatingRemainder(dividingBy: CGFloat(frameCanvasWidth))
+            alpha /= CGFloat(frameCanvasWidth)
+            if alpha < 0.5 {
+                alpha = 1 - alpha
+            }
+            alpha -= 0.5
+            alpha *= 2.0
+            l.alpha = alpha
+            l.text = AstrologicalSignProvider.shared.order[Int(index)]
+        }
+    }
+
+    func handleScrollingStars(_ packet: Packet) {
         //if the current device is either of the two observatories, do nothing
         if SocketManager.sharedManager.deviceID == Stars.primaryDevice ||
             SocketManager.sharedManager.deviceID == Stars.secondaryDevice {
@@ -233,23 +289,4 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate,
         SocketManager.sharedManager.broadcastPacket(p)
     }
 
-    func updateLabelOpacity(_ offset: CGPoint) {
-        if let l = label {
-            let index = round(offset.x / CGFloat(frameCanvasWidth))
-
-            var alpha = offset.x.truncatingRemainder(dividingBy: CGFloat(frameCanvasWidth))
-            alpha /= CGFloat(frameCanvasWidth)
-            if alpha < 0.5 {
-                alpha = 1 - alpha
-            }
-            alpha -= 0.5
-            alpha *= 2.0
-            l.alpha = alpha
-            l.text = AstrologicalSignProvider.shared.order[Int(index)]
-        }
-    }
-
-    public func randomEffect(at point: CGPoint) {
-
-    }
 }
