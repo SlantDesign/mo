@@ -15,15 +15,15 @@ class WorkSpace: CanvasController {
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
-    var stars = Stars()
+    var universe = Universe()
 
     var preparing: Bool = false
 
     override func setup() {
         initializeSocketManager()
 
-        stars.initializeCollectionViews()
-        currentUniverse = stars
+        universe.initializeCollectionViews()
+        currentUniverse = universe
         canvas.add(currentUniverse?.canvas)
     }
 
@@ -60,8 +60,8 @@ class WorkSpace: CanvasController {
 
     func selectUniverse(_ name: String) -> UniverseController? {
         switch name {
-        case "Stars":
-            return stars
+        case "Universe":
+            return universe
         default:
             return nil
         }
