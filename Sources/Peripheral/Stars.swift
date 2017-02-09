@@ -63,15 +63,15 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         if SocketManager.sharedManager.deviceID != Stars.primaryDevice &&
             SocketManager.sharedManager.deviceID != Stars.secondaryDevice {
             small2 = inititalizeSmallStars()
-            small2?.collectionView?.alpha = 0.5
+            small2?.collectionView?.alpha = 0.25
             big2 = inititalizeBigStars()
-            big2?.collectionView?.alpha = 0.5
+            big2?.collectionView?.alpha = 0.25
             canvas.add(small2?.collectionView)
             canvas.add(big2?.collectionView)
             small1 = inititalizeSmallStars()
-            small1?.collectionView?.alpha = 0.5
+            small1?.collectionView?.alpha = 0.25
             big1 = inititalizeBigStars()
-            big1?.collectionView?.alpha = 0.5
+            big1?.collectionView?.alpha = 0.25
             canvas.add(small1?.collectionView)
             canvas.add(big1?.collectionView)
         } else {
@@ -80,7 +80,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             canvas.add(small1?.collectionView)
             canvas.add(big1?.collectionView)
             label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
-            var p = Point(dx + canvas.center.x, canvas.height - 88.0)
+            let p = Point(dx + canvas.center.x, canvas.height - 88.0)
             label?.center = CGPoint(p)
             label?.textAlignment = .center
             label?.text = ""
