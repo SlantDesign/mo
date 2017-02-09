@@ -47,8 +47,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-            currentScene = AsteroidBelt(size: sceneView.frame.size)
+        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
+            currentScene = SolarSystem(size: sceneView.frame.size)
+//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+//            currentScene = AsteroidBelt(size: sceneView.frame.size)
 //        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
 //            currentScene = Sun(size: sceneView.frame.size)
         default:
@@ -97,15 +99,99 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             handleSun(packet)
         case PacketType.scrollStars, PacketType.scrollStars2:
             handleScrollingStars(packet)
+        case PacketType.planet:
+            handlePlanet(packet)
+            break
+        case PacketType.planetIsDynamic:
+            handlePlanetIsDynamic(packet)
+            break
+        case PacketType.planetPosition:
+            handlePlanetPosition(packet)
+            break
+        case PacketType.planetVelocity:
+            handlePlanetVelocity(packet)
+            break
         default:
             break
         }
     }
 
+    //MARK: SolarSystems
+    func handlePlanet(_ packet: Packet) {
+        guard let scene = currentScene as? SolarSystem else {
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+
+        let nameIndex = data.extract(Int.self, at: 0)
+        let name = SolarSystem.planetNames[nameIndex]
+        let impulse = data.extract(CGVector.self, at: MemoryLayout<Int>.size)
+        scene.apply(impulse: impulse, to: name)
+    }
+
+    //MARK: SolarSystems
+    func handlePlanetIsDynamic(_ packet: Packet) {
+        guard let scene = currentScene as? SolarSystem else {
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+
+        let nameIndex = data.extract(Int.self, at: 0)
+        let name = SolarSystem.planetNames[nameIndex]
+        let isDynamic = data.extract(Bool.self, at: MemoryLayout<Int>.size)
+        scene.set(isDynamic: isDynamic, for: name)
+    }
+
+     //MARK: SolarSystems
+    func handlePlanetPosition(_ packet: Packet) {
+        guard let scene = currentScene as? SolarSystem else {
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+        let nameIndex = data.extract(Int.self, at: 0)
+        let name = SolarSystem.planetNames[nameIndex]
+        var position = data.extract(CGPoint.self, at: MemoryLayout<Int>.size)
+        let offset = CGFloat(packet.id - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+        position.x += offset
+        scene.set(position: position, for: name)
+    }
+
+    func handlePlanetVelocity(_ packet: Packet) {
+        guard let scene = currentScene as? SolarSystem else {
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+
+        let nameIndex = data.extract(Int.self, at: 0)
+        let name = SolarSystem.planetNames[nameIndex]
+        let velocity = data.extract(CGVector.self, at: MemoryLayout<Int>.size)
+        scene.set(velocity: velocity, for: name)
+    }
+
     //MARK: AsteroidBelt
     func handleAddAsteroid(_ packet: Packet) {
         guard let scene = currentScene as? AsteroidBelt else {
-//            print("Current Scene is not AsteroidBelt")
+            //print("Current Scene is not AsteroidBelt")
             return
         }
 
