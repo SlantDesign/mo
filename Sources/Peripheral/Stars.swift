@@ -36,7 +36,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     open override func setup() {
         super.setup()
         canvas.backgroundColor = black
-        let background = View(frame: Rect(-256, 0, 1024, 1024))
+        let background = View(frame: Rect(dx-256, 0, 1024, 1024))
         for x in 0...3 {
             for y in 0...3 {
                 guard let image = Image("background") else {
@@ -52,7 +52,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         canvas.add(background)
 
         let anim = ViewAnimation(duration: 60.0) {
-            background.origin = Point()
+            background.origin = Point(self.dx, 0)
         }
         anim.repeats = true
         anim.curve = .Linear
@@ -80,8 +80,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             canvas.add(small1?.collectionView)
             canvas.add(big1?.collectionView)
             label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
-            var p = canvas.center
-            p.y = canvas.height - 88.0
+            var p = Point(dx + canvas.center.x, canvas.height - 88.0)
             label?.center = CGPoint(p)
             label?.textAlignment = .center
             label?.text = ""
@@ -109,6 +108,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
         } else {
             vc.collectionView?.isUserInteractionEnabled = false
         }
+        vc.collectionView?.frame.origin = CGPoint(x: CGFloat(dx), y: 0)
         return vc
     }
 
@@ -118,6 +118,7 @@ open class Stars: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
             print("Collection view could not be instantiated from storyboard.")
             return nil
         }
+        vc.collectionView?.frame.origin = CGPoint(x: CGFloat(dx), y: 0)
         vc.collectionView?.dataSource = SmallStarsDataSource.shared
         vc.collectionView?.isUserInteractionEnabled = false
         return vc
