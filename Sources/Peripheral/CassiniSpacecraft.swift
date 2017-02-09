@@ -12,32 +12,25 @@ import C4
 import MO
 import CocoaAsyncSocket
 
-class CassiniSpaceCraft: SKShapeNode {
+class CassiniSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
     var timer: C4.Timer?
 
-    override init() {
-        super.init()
-        let path = CGMutablePath()
-        path.move(to: CGPoint(x: -25, y: -25))
-        path.addLine(to: CGPoint(x: 25, y: -25))
-        path.addLine(to: CGPoint(x: 50, y: 0))
-        path.addLine(to: CGPoint(x: 25, y: 25))
-        path.addLine(to: CGPoint(x: -25, y: 25))
-        path.addLine(to: CGPoint(x: -25, y: -25))
-        path.addLine(to: CGPoint(x: 25, y: 25))
-        path.addLine(to: CGPoint(x: 25, y: -25))
-        path.addLine(to: CGPoint(x: -25, y: 25))
+    convenience init() {
+        let t = SKTexture(image: #imageLiteral(resourceName: "cassini"))
+        let c = UIColor.clear
+        let s = CGSize(width: t.size().width*0.2, height: t.size().height * 0.2)
+        self.init(texture: t, color: c, size: s)
+    }
 
-        self.path = path
-
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         guard let b = SKEmitterNode(fileNamed: "CassiniRocketFire") else {
             print("Could not create burner.")
             return
         }
         b.position = CGPoint(x: -frame.width/2.0 - b.frame.width, y: 0)
         b.particleBirthRate = 0.0
-        fillColor = UIColor(C4Blue)!
         addChild(b)
         burner = b
 
