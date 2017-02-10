@@ -69,7 +69,7 @@ class SmallStarsDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stars.count
     }
-    
+
     func element(at indexPath: IndexPath) -> Star {
         return stars[indexPath.item]
     }

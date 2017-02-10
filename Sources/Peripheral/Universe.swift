@@ -26,7 +26,6 @@ public protocol ScrollDelegate: class {
 open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate {
     var currentScene: UniverseScene?
     let sceneView = SKView()
-    var background: View?
 
     open override func setup() {
         super.setup()
@@ -78,23 +77,13 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     }
 
     func createBackground() {
-        canvas.backgroundColor = black
-        let bg = View(frame: Rect(dx-256, 0, 1024, 1024))
-        for x in 0...3 {
-            for y in 0...3 {
-                guard let image = Image("background") else {
-                    print("Could not create background image")
-                    return
-                }
-                let origin = Point(Double(x) * 256.0, Double(y) * 256.0)
-                image.origin = origin
-                bg.add(image)
-            }
+        guard let bg = Image("backgroundField\(SocketManager.sharedManager.deviceID%14)") else {
+            canvas.backgroundColor = black
+            return
         }
-
+        bg.origin = Point(dx, 0)
         bg.zPosition = -1000
         canvas.add(bg)
-        background = bg
     }
 
     open override func receivePacket(_ packet: Packet) {
@@ -113,16 +102,12 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             handleScrollingStars(packet)
         case PacketType.planet:
             handlePlanet(packet)
-            break
         case PacketType.planetIsDynamic:
             handlePlanetIsDynamic(packet)
-            break
         case PacketType.planetPosition:
             handlePlanetPosition(packet)
-            break
         case PacketType.planetVelocity:
             handlePlanetVelocity(packet)
-            break
         default:
             break
         }

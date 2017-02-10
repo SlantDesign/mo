@@ -71,9 +71,7 @@ class Ariane: Rocket {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func preignite() {
-        physicsBody?.isDynamic = false
-
+    func createPreignitionSmoke() {
         guard let pi = preiginte else {
             print("Could not access preignite")
             return
@@ -95,7 +93,9 @@ class Ariane: Rocket {
         if pir.parent == nil, parent != nil {
             parent?.addChild(pir)
         }
+    }
 
+    func createIgnitionSmoke() {
         guard let ig = ignition else {
             print("Could not access ignition")
             return
@@ -117,12 +117,14 @@ class Ariane: Rocket {
             parent?.addChild(igr)
         }
         igr.particleBirthRate = 0.0
+    }
 
+    func createIgnitionFire() {
         guard let igf = ignitionFire else {
             print("Could not access ignition fire")
             return
         }
-        igf.position =  ig.position
+        igf.position =  CGPoint(x: -boosterOffset, y: -frame.height/2.0 + position.y - yOffset * 1.5)
 
         if igf.parent == nil, parent != nil {
             parent?.addChild(igf)
@@ -133,12 +135,22 @@ class Ariane: Rocket {
             print("Could not access ignition fire")
             return
         }
-        igfr.position =  igr.position
+        igfr.position =  CGPoint(x: boosterOffset, y: -frame.height/2.0 + position.y - yOffset * 1.5)
 
         if igfr.parent == nil, parent != nil {
             parent?.addChild(igfr)
         }
         igfr.particleBirthRate = 0.0
+    }
+
+    override func preignite() {
+        physicsBody?.isDynamic = false
+
+        createPreignitionSmoke()
+
+        createIgnitionSmoke()
+
+        createIgnitionFire()
     }
 
     override func ignite() {

@@ -16,7 +16,7 @@ class UniverseScene: SKScene {
     var cometAuraFrames: [SKTexture]?
     var cometAura: SKSpriteNode?
     let cometAuraAtlas = SKTextureAtlas(named: "comet_aura")
-    
+
     override init(size: CGSize) {
         super.init(size: size)
         anchorPoint = CGPoint(x: 0.5, y: 0.5)

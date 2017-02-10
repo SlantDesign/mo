@@ -207,7 +207,6 @@ class AstrologicalSignProvider: NSObject {
             "volans": volans,
             "vulpecula": vulpecula
         ]
-
     }
 
     //(mark)  -

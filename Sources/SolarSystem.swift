@@ -180,7 +180,7 @@ class PlanetNode: SKSpriteNode {
         let t = [UITouch](touches)
         let touch = t[0]
         let touchPosition = touch.location(in: scene)
-        let prev = touch.previousLocation(in: scene)
+        //let prev = touch.previousLocation(in: scene)
         var velocity = CGVector(dx: (touchPosition.x - position.x) * 60.0, dy: (touchPosition.y - position.y) * 60.0)
 
         guard let n = name else {
