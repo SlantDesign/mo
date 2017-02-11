@@ -63,14 +63,7 @@ class Sun: UniverseScene, SunSpriteDelegate {
     }
 
     func createAudio() {
-        flareSounds = [SKAudioNode]()
-        for i in 0...4 {
-            let flare = SKAudioNode(fileNamed: "flare\(i).aiff")
-            flare.autoplayLooped = false
-            flareSounds?.append(flare)
-        }
-
-        let sunAmbient = SKAudioNode(fileNamed: "sunAmbient.mp3")
+        let sunAmbient = SKAudioNode(fileNamed: "sunAmbient.aiff")
         sunAmbient.autoplayLooped = true
         addChild(sunAmbient)
     }

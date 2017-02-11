@@ -12,6 +12,7 @@
 		1210C047576F5D0022AC4FE4 /* Pods_All_MO_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF5C00B0CCF69C989ED4D52 /* Pods_All_MO_macOS.framework */; };
 		1F36B7DF1E40245200441C9B /* Universe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DD1E40242400441C9B /* Universe.swift */; };
 		1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F36B7DB1E40241400441C9B /* StarCell.swift */; };
+		1F4FF4141E4F8EE7008D9318 /* sunAmbient.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F4FF4131E4F8EE7008D9318 /* sunAmbient.aiff */; };
 		1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */; };
 		1F851D0B1E37E02400BC8AC0 /* BigStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */; };
 		1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */; };
@@ -19,7 +20,6 @@
 		1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */; };
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
-		1F9B9E971E4F6E8C003F80DC /* sunAmbient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */; };
 		1F9B9E9D1E4F7D42003F80DC /* flare0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E981E4F7D42003F80DC /* flare0.aiff */; };
 		1F9B9E9E1E4F7D42003F80DC /* flare1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E991E4F7D42003F80DC /* flare1.aiff */; };
 		1F9B9E9F1E4F7D42003F80DC /* flare2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */; };
@@ -196,6 +196,7 @@
 		0026205E89B56021B58CEA66 /* Pods-All-MO-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MO-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MO-tvOS/Pods-All-MO-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		1F36B7DB1E40241400441C9B /* StarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarCell.swift; sourceTree = "<group>"; };
 		1F36B7DD1E40242400441C9B /* Universe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Universe.swift; path = Peripheral/Universe.swift; sourceTree = "<group>"; };
+		1F4FF4131E4F8EE7008D9318 /* sunAmbient.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = sunAmbient.aiff; sourceTree = "<group>"; };
 		1F84ACBE171F9F89ADC61B0B /* Pods-All-MOTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MOTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MOTests-iOS/Pods-All-MOTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1F851D091E37DD8300BC8AC0 /* BigStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsViewController.swift; sourceTree = "<group>"; };
 		1F851D0C1E37E96100BC8AC0 /* BigStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsLayout.swift; sourceTree = "<group>"; };
@@ -203,7 +204,6 @@
 		1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsLayout.swift; sourceTree = "<group>"; };
 		1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsViewController.swift; sourceTree = "<group>"; };
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
-		1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sunAmbient.mp3; sourceTree = "<group>"; };
 		1F9B9E981E4F7D42003F80DC /* flare0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare0.aiff; sourceTree = "<group>"; };
 		1F9B9E991E4F7D42003F80DC /* flare1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare1.aiff; sourceTree = "<group>"; };
 		1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare2.aiff; sourceTree = "<group>"; };
@@ -629,12 +629,12 @@
 		D916E6AB1E4BF4E6008F1FCB /* Sun */ = {
 			isa = PBXGroup;
 			children = (
-				1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */,
 				1F9B9E981E4F7D42003F80DC /* flare0.aiff */,
 				1F9B9E991E4F7D42003F80DC /* flare1.aiff */,
 				1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */,
 				1F9B9E9B1E4F7D42003F80DC /* flare3.aiff */,
 				1F9B9E9C1E4F7D42003F80DC /* flare4.aiff */,
+				1F4FF4131E4F8EE7008D9318 /* sunAmbient.aiff */,
 				1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */,
 				D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */,
 				D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */,
@@ -1123,6 +1123,7 @@
 				D916E6A01E4BEEFC008F1FCB /* UniverseScene.sks in Resources */,
 				D917CFC31E4CE66A00445BC2 /* PreigniteSoyuz.sks in Resources */,
 				D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */,
+				1F4FF4141E4F8EE7008D9318 /* sunAmbient.aiff in Resources */,
 				D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */,
 				D917CFAF1E4CE63A00445BC2 /* RocketFireEndeavour.sks in Resources */,
 				D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */,
@@ -1134,7 +1135,6 @@
 				D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */,
 				D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */,
 				D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */,
-				1F9B9E971E4F6E8C003F80DC /* sunAmbient.mp3 in Resources */,
 				D917CFA51E4CE60700445BC2 /* RocketFireFalcon.sks in Resources */,
 				D917CFC41E4CE66A00445BC2 /* RocketFireSoyuz.sks in Resources */,
 				D917CFB91E4CE65300445BC2 /* IgnitionSmokeArianeRight.sks in Resources */,
