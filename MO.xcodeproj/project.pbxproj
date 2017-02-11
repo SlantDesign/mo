@@ -19,6 +19,12 @@
 		1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */; };
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
+		1F9B9E971E4F6E8C003F80DC /* sunAmbient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */; };
+		1F9B9E9D1E4F7D42003F80DC /* flare0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E981E4F7D42003F80DC /* flare0.aiff */; };
+		1F9B9E9E1E4F7D42003F80DC /* flare1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E991E4F7D42003F80DC /* flare1.aiff */; };
+		1F9B9E9F1E4F7D42003F80DC /* flare2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */; };
+		1F9B9EA01E4F7D42003F80DC /* flare3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E9B1E4F7D42003F80DC /* flare3.aiff */; };
+		1F9B9EA11E4F7D42003F80DC /* flare4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9E9C1E4F7D42003F80DC /* flare4.aiff */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */; };
 		1FEC13D01E4C45D100D087C0 /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */; };
@@ -197,6 +203,12 @@
 		1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsLayout.swift; sourceTree = "<group>"; };
 		1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsViewController.swift; sourceTree = "<group>"; };
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
+		1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sunAmbient.mp3; sourceTree = "<group>"; };
+		1F9B9E981E4F7D42003F80DC /* flare0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare0.aiff; sourceTree = "<group>"; };
+		1F9B9E991E4F7D42003F80DC /* flare1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare1.aiff; sourceTree = "<group>"; };
+		1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare2.aiff; sourceTree = "<group>"; };
+		1F9B9E9B1E4F7D42003F80DC /* flare3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare3.aiff; sourceTree = "<group>"; };
+		1F9B9E9C1E4F7D42003F80DC /* flare4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = flare4.aiff; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
@@ -617,6 +629,12 @@
 		D916E6AB1E4BF4E6008F1FCB /* Sun */ = {
 			isa = PBXGroup;
 			children = (
+				1F9B9E961E4F6E8C003F80DC /* sunAmbient.mp3 */,
+				1F9B9E981E4F7D42003F80DC /* flare0.aiff */,
+				1F9B9E991E4F7D42003F80DC /* flare1.aiff */,
+				1F9B9E9A1E4F7D42003F80DC /* flare2.aiff */,
+				1F9B9E9B1E4F7D42003F80DC /* flare3.aiff */,
+				1F9B9E9C1E4F7D42003F80DC /* flare4.aiff */,
 				1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */,
 				D916E6AD1E4BF50A008F1FCB /* fire_09.atlas */,
 				D916E6AE1E4BF50A008F1FCB /* fire_10.atlas */,
@@ -1088,6 +1106,7 @@
 				D917CFBB1E4CE65300445BC2 /* RocketFireAriane.sks in Resources */,
 				D9773D5E1E4D1AC600CE5A95 /* CassiniRocketFire.sks in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
+				1F9B9EA01E4F7D42003F80DC /* flare3.aiff in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				D916E6D41E4BFBF4008F1FCB /* sparks_07.atlas in Resources */,
 				D917CFA31E4CE60700445BC2 /* PreigniteFalcon.sks in Resources */,
@@ -1097,6 +1116,7 @@
 				D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */,
 				D917CFBA1E4CE65300445BC2 /* PreigniteAriane.sks in Resources */,
 				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
+				1F9B9E9D1E4F7D42003F80DC /* flare0.aiff in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D917CFAC1E4CE63A00445BC2 /* IgnitionEndeavour.sks in Resources */,
 				D917CFB71E4CE65300445BC2 /* IgnitionFireAriane.sks in Resources */,
@@ -1110,9 +1130,11 @@
 				D917CFA21E4CE60700445BC2 /* IgnitionFalconRight.sks in Resources */,
 				1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */,
 				D917CFC51E4CE66A00445BC2 /* soyuz.aiff in Resources */,
+				1F9B9E9F1E4F7D42003F80DC /* flare2.aiff in Resources */,
 				D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */,
 				D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */,
 				D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */,
+				1F9B9E971E4F6E8C003F80DC /* sunAmbient.mp3 in Resources */,
 				D917CFA51E4CE60700445BC2 /* RocketFireFalcon.sks in Resources */,
 				D917CFC41E4CE66A00445BC2 /* RocketFireSoyuz.sks in Resources */,
 				D917CFB91E4CE65300445BC2 /* IgnitionSmokeArianeRight.sks in Resources */,
@@ -1126,6 +1148,7 @@
 				D917CFA41E4CE60700445BC2 /* PreigniteFalconMidship.sks in Resources */,
 				D917CFAE1E4CE63A00445BC2 /* PreigniteEndeavour.sks in Resources */,
 				D916E6D51E4BFBF4008F1FCB /* sparks_08.atlas in Resources */,
+				1F9B9E9E1E4F7D42003F80DC /* flare1.aiff in Resources */,
 				D917CFD31E4CE70500445BC2 /* Stars.xcassets in Resources */,
 				D917CFC21E4CE66A00445BC2 /* IgnitionSmokeSoyuz.sks in Resources */,
 				1FEC13D31E4C45E000D087C0 /* AsteroidExplode.sks in Resources */,
@@ -1135,6 +1158,7 @@
 				D916E6CE1E4BFBF4008F1FCB /* fire_11.atlas in Resources */,
 				D917CFB81E4CE65300445BC2 /* IgnitionSmokeAriane.sks in Resources */,
 				D917CFA71E4CE61B00445BC2 /* falcon9.aiff in Resources */,
+				1F9B9EA11E4F7D42003F80DC /* flare4.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

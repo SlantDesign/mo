@@ -18,6 +18,7 @@ extension PacketType {
 class Sun: UniverseScene, SunSpriteDelegate {
     static let primaryDevice = 18
     var sun: SunSprite?
+    var flareSounds: [SKAudioNode]?
 
     override init(size: CGSize) {
         super.init(size: size)
@@ -53,7 +54,25 @@ class Sun: UniverseScene, SunSpriteDelegate {
 
         createEffectRotations()
         createEffectAnchorPoints()
-        createEffects()
+        createAudio()
+        createAtlases()
+    }
+
+    func preload() {
+
+    }
+
+    func createAudio() {
+        flareSounds = [SKAudioNode]()
+        for i in 0...4 {
+            let flare = SKAudioNode(fileNamed: "flare\(i).aiff")
+            flare.autoplayLooped = false
+            flareSounds?.append(flare)
+        }
+
+        let sunAmbient = SKAudioNode(fileNamed: "sunAmbient.mp3")
+        sunAmbient.autoplayLooped = true
+        addChild(sunAmbient)
     }
 
     let effectNames = [
@@ -75,6 +94,7 @@ class Sun: UniverseScene, SunSpriteDelegate {
 
     var effectAnchorPoints = [String: CGPoint]()
     var effects = [String: [SKTexture]]()
+    var atlases = [String: SKTextureAtlas]()
 
     func createEffectAnchorPoints() {
         effectAnchorPoints["fire_04"] = CGPoint(x:0.0, y:0.5)
@@ -115,15 +135,32 @@ class Sun: UniverseScene, SunSpriteDelegate {
     func createEffects() {
         for effectName in effectNames {
             var currentEffectFrames = [SKTexture]()
-            let currentAtlas = SKTextureAtlas(named: effectName)
+
+            guard let currentAtlas = atlases[effectName] else {
+                print("Couldn't access atlas")
+                return
+            }
             let names = currentAtlas.textureNames.sorted()
             for i in 0..<currentAtlas.textureNames.count {
                 let name = names[i]
                 if !name.contains("@") {
-                    currentEffectFrames.append(SKTexture(imageNamed: name))
+                    let texture = SKTexture(imageNamed: name)
+                    currentEffectFrames.append(texture)
                 }
             }
             effects[effectName] = currentEffectFrames
+        }
+    }
+
+    func createAtlases() {
+        for effectName in effectNames {
+            let currentAtlas = SKTextureAtlas(named: effectName)
+            currentAtlas.preload {
+                self.atlases[effectName] = currentAtlas
+                if self.atlases.count == self.effectNames.count {
+                    self.createEffects()
+                }
+            }
         }
     }
 
@@ -138,19 +175,29 @@ class Sun: UniverseScene, SunSpriteDelegate {
     }
 
     func createEffect(named effectName: String, at point: CGPoint, angle: CGFloat) {
+
         if let frames = effects[effectName] {
             let currentEffect = SKSpriteNode(texture: frames[0])
             currentEffect.isUserInteractionEnabled = false
-            if let anchorPoint = effectAnchorPoints[effectName] {
+            if let anchorPoint = self.effectAnchorPoints[effectName] {
                 currentEffect.anchorPoint = anchorPoint
             }
             currentEffect.position = point
             let rotate = SKAction.rotate(byAngle: angle, duration: 0.0)
             let animate = SKAction.animate(with: frames, timePerFrame: 0.08333, resize: false, restore: true)
             let remove = SKAction.removeFromParent()
+
             let sequence = SKAction.sequence([rotate, animate, remove])
-            addChild(currentEffect)
-            currentEffect.run(sequence)
+            self.addChild(currentEffect)
+
+            let randomFlare = SKAudioNode(fileNamed: "flare\(random(below: 5)).aiff")
+            randomFlare.autoplayLooped = false
+            currentEffect.addChild(randomFlare)
+            let audio = SKAction.run({
+                randomFlare.run(SKAction.play())
+            })
+            let group = SKAction.group([sequence, audio])
+            currentEffect.run(group)
         }
     }
 

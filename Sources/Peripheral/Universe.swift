@@ -46,14 +46,14 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-        case Rockets.primaryDevice...Rockets.primaryDevice+3:
-            currentScene = Rockets(size: sceneView.frame.size)
+//        case Rockets.primaryDevice...Rockets.primaryDevice+3:
+//            currentScene = Rockets(size: sceneView.frame.size)
 //        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
 //            currentScene = SolarSystem(size: sceneView.frame.size)
 //        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
 //            currentScene = AsteroidBelt(size: sceneView.frame.size)
-//        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
-//            currentScene = Sun(size: sceneView.frame.size)
+        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
+            currentScene = Sun(size: sceneView.frame.size)
         default:
             shouldBringViewToFront = false
             currentScene = UniverseScene(size: sceneView.frame.size)
