@@ -31,6 +31,8 @@
 		1FE5B2F71E4F990000A92A39 /* spaceAmbient2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */; };
 		1FE5B2F81E4F990000A92A39 /* spaceAmbient1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F31E4F990000A92A39 /* spaceAmbient1.aiff */; };
 		1FE5B2F91E4F990000A92A39 /* spaceAmbient0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F41E4F990000A92A39 /* spaceAmbient0.aiff */; };
+		1FE5B3051E4FA8E600A92A39 /* satelliteResponse0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2FF1E4FA8E600A92A39 /* satelliteResponse0.aiff */; };
+		1FE5B3091E4FA98B00A92A39 /* satelliteTurn.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B3081E4FA98B00A92A39 /* satelliteTurn.aiff */; };
 		1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */; };
 		1FEC13D01E4C45D100D087C0 /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */; };
 		1FEC13D11E4C45D700D087C0 /* AsteroidBelt.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CD1E4C45BA00D087C0 /* AsteroidBelt.xcassets */; };
@@ -221,6 +223,8 @@
 		1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient2.aiff; sourceTree = "<group>"; };
 		1FE5B2F31E4F990000A92A39 /* spaceAmbient1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient1.aiff; sourceTree = "<group>"; };
 		1FE5B2F41E4F990000A92A39 /* spaceAmbient0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient0.aiff; sourceTree = "<group>"; };
+		1FE5B2FF1E4FA8E600A92A39 /* satelliteResponse0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = satelliteResponse0.aiff; sourceTree = "<group>"; };
+		1FE5B3081E4FA98B00A92A39 /* satelliteTurn.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = satelliteTurn.aiff; sourceTree = "<group>"; };
 		1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
 		1FEC13CD1E4C45BA00D087C0 /* AsteroidBelt.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AsteroidBelt.xcassets; sourceTree = "<group>"; };
 		1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = comet_aura.atlas; sourceTree = "<group>"; };
@@ -766,6 +770,8 @@
 		D9773D5A1E4D1A8800CE5A95 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
+				1FE5B3081E4FA98B00A92A39 /* satelliteTurn.aiff */,
+				1FE5B2FF1E4FA8E600A92A39 /* satelliteResponse0.aiff */,
 				D9773D5D1E4D1AC600CE5A95 /* CassiniRocketFire.sks */,
 				D9773D5B1E4D1AB300CE5A95 /* Cassini.xcassets */,
 			);
@@ -1145,6 +1151,7 @@
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D917CFAC1E4CE63A00445BC2 /* IgnitionEndeavour.sks in Resources */,
 				D917CFB71E4CE65300445BC2 /* IgnitionFireAriane.sks in Resources */,
+				1FE5B3051E4FA8E600A92A39 /* satelliteResponse0.aiff in Resources */,
 				D916E6A01E4BEEFC008F1FCB /* UniverseScene.sks in Resources */,
 				D917CFC31E4CE66A00445BC2 /* PreigniteSoyuz.sks in Resources */,
 				D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */,
@@ -1167,6 +1174,7 @@
 				D916E6D81E4BFBF4008F1FCB /* sparks_15.atlas in Resources */,
 				1FEC13D11E4C45D700D087C0 /* AsteroidBelt.xcassets in Resources */,
 				1F60E9261E40643500C40D05 /* SmallStarsViewController.storyboard in Resources */,
+				1FE5B3091E4FA98B00A92A39 /* satelliteTurn.aiff in Resources */,
 				D917CFB61E4CE65300445BC2 /* ariane.aiff in Resources */,
 				D916E6D11E4BFBF4008F1FCB /* sparks_03.atlas in Resources */,
 				D917CFC11E4CE66A00445BC2 /* IgnitionFireSoyuz.sks in Resources */,

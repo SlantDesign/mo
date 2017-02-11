@@ -39,6 +39,7 @@ class UniverseScene: SKScene {
         }
 
         playRandomAmbient()
+        listener = SKNode()
     }
 
     var currentAudio: AudioPlayer?
@@ -52,7 +53,6 @@ class UniverseScene: SKScene {
         }
 
         audio.play()
-        audio.volume = 0.5
         currentAudio = audio
 
         wait(audio.duration) {

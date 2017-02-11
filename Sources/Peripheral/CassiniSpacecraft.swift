@@ -29,6 +29,9 @@ class Cassini {
 class CassiniSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
     var timer: C4.Timer?
+    let turnSound = SKAudioNode(fileNamed:"satelliteTurn.aiff")
+    let satelliteMoveSound = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
+    let satelliteRocketFiresound = SKAudioNode(fileNamed: "")
 
     convenience init() {
         let t = SKTexture(image: #imageLiteral(resourceName: "cassini"))
@@ -52,19 +55,26 @@ class CassiniSpaceCraft: SKSpriteNode {
 
         //FIXME: Change interval to suit the 28 devices
         if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
-            timer = C4.Timer(interval: 60.0) {
+            timer = C4.Timer(interval: 10.0) {
                 self.broadcastMovement()
             }
             timer?.start()
         }
+        turnSound.autoplayLooped = false
+        addChild(turnSound)
+
+        satelliteMoveSound.autoplayLooped = false
+        addChild(satelliteMoveSound)
     }
 
     func broadcastMovement() {
+        timer?.stop()
         var position = randomPoint()
         let data = NSMutableData()
         data.append(&position, length: MemoryLayout<CGPoint>.size)
         let packet = Packet(type: .cassini, id: SocketManager.sharedManager.deviceID, payload: data as Data)
         SocketManager.sharedManager.broadcastPacket(packet)
+        timer?.start()
     }
 
     func broadcastCassiniShouldMove() {
@@ -77,9 +87,8 @@ class CassiniSpaceCraft: SKSpriteNode {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        timer?.stop()
         if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
-            timer?.stop()
-            timer?.start()
             broadcastMovement()
         } else {
             broadcastCassiniShouldMove()
@@ -129,26 +138,35 @@ class CassiniSpaceCraft: SKSpriteNode {
     }
 
     func rotateAndMove(to targetPoint: CGPoint) {
+        removeAllActions()
         let Θ = angle(to: Vector(targetPoint))
         let rotation = rotate(by: Θ)
         rotation.timingMode = .easeInEaseOut
+
         let movement = move(to: targetPoint)
         movement.timingMode = .easeInEaseOut
 
         let startBurner = SKAction.customAction(withDuration: 0.0) { _, _ in
             self.burner?.particleBirthRate = 500.0
+            self.satelliteMoveSound.autoplayLooped = true
+            self.satelliteMoveSound.run(SKAction.repeat(SKAction.play(), count: 20))
         }
 
         let endBurner = SKAction.customAction(withDuration: 0) { _, _ in
             self.burner?.particleBirthRate = 0.0
+            self.satelliteMoveSound.run(SKAction.stop())
         }
 
         let rotateThenMove = SKAction.sequence([rotation, startBurner, movement, endBurner])
         run(rotateThenMove)
+        turnSound.run(SKAction.play())
+        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+            timer?.start()
+        }
     }
 
     func rotate(by Θ: Double) -> SKAction {
-        let duration = abs(Θ) / M_PI
+        let duration = 1.29
         return SKAction.rotate(byAngle: CGFloat(Θ), duration: duration)
     }
 
@@ -157,7 +175,7 @@ class CassiniSpaceCraft: SKSpriteNode {
         let a = Vector(position)
         let b = Vector(targetPoint)
         let distance = (a - b).magnitude
-        let duration = 2.0 //2 * distance / frameCanvasWidth
+        let duration = 2 * distance / frameCanvasWidth
         return SKAction.move(to: CGPoint(x: CGFloat(targetPoint.x), y: CGFloat(targetPoint.y)), duration: duration)
     }
 }
