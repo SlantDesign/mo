@@ -37,6 +37,29 @@ class UniverseScene: SKScene {
             asteroid.physicsBody?.friction = 0.0
             copyableAsteroids?.append(asteroid)
         }
+
+        playRandomAmbient()
+    }
+
+    var currentAudio: AudioPlayer?
+
+    func playRandomAmbient() {
+        let fileName = "spaceAmbient\(random(below: 5)).aiff"
+
+        guard let audio = AudioPlayer(fileName) else {
+            print("Couldn't load \(fileName)")
+            return
+        }
+
+        audio.play()
+        audio.volume = 0.5
+        currentAudio = audio
+
+        wait(audio.duration) {
+            self.currentAudio?.stop()
+            self.currentAudio = nil
+            self.playRandomAmbient()
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

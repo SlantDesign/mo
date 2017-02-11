@@ -26,6 +26,11 @@
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
+		1FE5B2F51E4F990000A92A39 /* spaceAmbient4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */; };
+		1FE5B2F61E4F990000A92A39 /* spaceAmbient3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */; };
+		1FE5B2F71E4F990000A92A39 /* spaceAmbient2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */; };
+		1FE5B2F81E4F990000A92A39 /* spaceAmbient1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F31E4F990000A92A39 /* spaceAmbient1.aiff */; };
+		1FE5B2F91E4F990000A92A39 /* spaceAmbient0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F41E4F990000A92A39 /* spaceAmbient0.aiff */; };
 		1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */; };
 		1FEC13D01E4C45D100D087C0 /* comet_aura.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */; };
 		1FEC13D11E4C45D700D087C0 /* AsteroidBelt.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC13CD1E4C45BA00D087C0 /* AsteroidBelt.xcassets */; };
@@ -211,6 +216,11 @@
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
+		1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient4.aiff; sourceTree = "<group>"; };
+		1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient3.aiff; sourceTree = "<group>"; };
+		1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient2.aiff; sourceTree = "<group>"; };
+		1FE5B2F31E4F990000A92A39 /* spaceAmbient1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient1.aiff; sourceTree = "<group>"; };
+		1FE5B2F41E4F990000A92A39 /* spaceAmbient0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient0.aiff; sourceTree = "<group>"; };
 		1FEC13CA1E4C32E200D087C0 /* fire_04.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = fire_04.atlas; sourceTree = "<group>"; };
 		1FEC13CD1E4C45BA00D087C0 /* AsteroidBelt.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AsteroidBelt.xcassets; sourceTree = "<group>"; };
 		1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = comet_aura.atlas; sourceTree = "<group>"; };
@@ -426,6 +436,18 @@
 			path = Peripheral;
 			sourceTree = "<group>";
 		};
+		1FE5B2EF1E4F96CA00A92A39 /* Universe */ = {
+			isa = PBXGroup;
+			children = (
+				1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */,
+				1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */,
+				1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */,
+				1FE5B2F31E4F990000A92A39 /* spaceAmbient1.aiff */,
+				1FE5B2F41E4F990000A92A39 /* spaceAmbient0.aiff */,
+			);
+			name = Universe;
+			sourceTree = "<group>";
+		};
 		1FEC13CC1E4C459900D087C0 /* AsteroiBelt */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +518,7 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				1FE5B2EF1E4F96CA00A92A39 /* Universe */,
 				D917CF941E4CE59E00445BC2 /* Rockets */,
 				D9A85A371E4CD40A0046B44A /* SolarSystem */,
 				1FEC13CC1E4C459900D087C0 /* AsteroiBelt */,
@@ -1102,9 +1125,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE5B2F51E4F990000A92A39 /* spaceAmbient4.aiff in Resources */,
 				1FEC13D01E4C45D100D087C0 /* comet_aura.atlas in Resources */,
 				D917CFBB1E4CE65300445BC2 /* RocketFireAriane.sks in Resources */,
 				D9773D5E1E4D1AC600CE5A95 /* CassiniRocketFire.sks in Resources */,
+				1FE5B2F71E4F990000A92A39 /* spaceAmbient2.aiff in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				1F4FF41F1E4F93AD008D9318 /* flare3.aiff in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
@@ -1124,9 +1149,11 @@
 				D917CFC31E4CE66A00445BC2 /* PreigniteSoyuz.sks in Resources */,
 				D916E6D61E4BFBF4008F1FCB /* sparks_10.atlas in Resources */,
 				D916E6D71E4BFBF4008F1FCB /* sparks_13.atlas in Resources */,
+				1FE5B2F81E4F990000A92A39 /* spaceAmbient1.aiff in Resources */,
 				D917CFAF1E4CE63A00445BC2 /* RocketFireEndeavour.sks in Resources */,
 				D916E6CD1E4BFBF4008F1FCB /* fire_10.atlas in Resources */,
 				D916E6D21E4BFBF4008F1FCB /* sparks_04.atlas in Resources */,
+				1FE5B2F91E4F990000A92A39 /* spaceAmbient0.aiff in Resources */,
 				D917CFA21E4CE60700445BC2 /* IgnitionFalconRight.sks in Resources */,
 				1FEC13CB1E4C32E200D087C0 /* fire_04.atlas in Resources */,
 				D917CFC51E4CE66A00445BC2 /* soyuz.aiff in Resources */,
@@ -1147,6 +1174,7 @@
 				D917CFA41E4CE60700445BC2 /* PreigniteFalconMidship.sks in Resources */,
 				D917CFAE1E4CE63A00445BC2 /* PreigniteEndeavour.sks in Resources */,
 				D916E6D51E4BFBF4008F1FCB /* sparks_08.atlas in Resources */,
+				1FE5B2F61E4F990000A92A39 /* spaceAmbient3.aiff in Resources */,
 				D917CFD31E4CE70500445BC2 /* Stars.xcassets in Resources */,
 				1F4FF41D1E4F93AD008D9318 /* flare1.aiff in Resources */,
 				D917CFC21E4CE66A00445BC2 /* IgnitionSmokeSoyuz.sks in Resources */,
