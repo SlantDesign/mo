@@ -18,8 +18,7 @@ extension PacketType {
 }
 
 class Cassini {
-    static let primaryDevice = 17
-    static let secondaryDevice = 18
+    static let primaryDevice = 0
     static let targetFrame = CGRect(x: 0,
                                     y: -412.0,
                                     width: CGFloat(4.0 * frameCanvasWidth),
@@ -31,7 +30,6 @@ class CassiniSpaceCraft: SKSpriteNode {
     var timer: C4.Timer?
     let turnSound = SKAudioNode(fileNamed:"satelliteTurn.aiff")
     let satelliteMoveSound = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
-    let satelliteRocketFiresound = SKAudioNode(fileNamed: "")
 
     convenience init() {
         let t = SKTexture(image: #imageLiteral(resourceName: "cassini"))

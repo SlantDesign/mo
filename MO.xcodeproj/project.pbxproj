@@ -26,6 +26,7 @@
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
+		1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */; };
 		1FE5B2F51E4F990000A92A39 /* spaceAmbient4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */; };
 		1FE5B2F61E4F990000A92A39 /* spaceAmbient3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */; };
 		1FE5B2F71E4F990000A92A39 /* spaceAmbient2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */; };
@@ -218,6 +219,7 @@
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
+		1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cometNoise.aiff; sourceTree = "<group>"; };
 		1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient4.aiff; sourceTree = "<group>"; };
 		1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient3.aiff; sourceTree = "<group>"; };
 		1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient2.aiff; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				1FEC13D21E4C45E000D087C0 /* AsteroidExplode.sks */,
+				1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */,
 				1FEC13CF1E4C45D100D087C0 /* comet_aura.atlas */,
 				1FEC13CD1E4C45BA00D087C0 /* AsteroidBelt.xcassets */,
 			);
@@ -1141,6 +1144,7 @@
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				D916E6D41E4BFBF4008F1FCB /* sparks_07.atlas in Resources */,
 				D917CFA31E4CE60700445BC2 /* PreigniteFalcon.sks in Resources */,
+				1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */,
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */,
 				D917CFAD1E4CE63A00445BC2 /* endeavour.aiff in Resources */,

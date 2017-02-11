@@ -50,8 +50,8 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
 //            currentScene = Rockets(size: sceneView.frame.size)
 //        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
 //            currentScene = SolarSystem(size: sceneView.frame.size)
-//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-//            currentScene = AsteroidBelt(size: sceneView.frame.size)
+        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+            currentScene = AsteroidBelt(size: sceneView.frame.size)
 //        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
 //            currentScene = Sun(size: sceneView.frame.size)
         default:

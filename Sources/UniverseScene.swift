@@ -89,19 +89,28 @@ class UniverseScene: SKScene {
         comet.position = position
         comet.physicsBody = nil
         addAura(to: comet)
+
         comet.run(moveComet())
+
         self.addChild(comet)
     }
 
     //creates an action for the motion of a comet
     func moveComet() -> SKAction {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 4.0), dy: 0.0), duration: 5.0)
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 4.0), dy: 0.0), duration: 10.0)
         let scale = SKAction.scale(by: 0.25, duration: 1.5)
         let fade = SKAction.fadeOut(withDuration: 1.5)
         let wait = SKAction.wait(forDuration: movement.duration-1.5)
         let fadeScale = SKAction.group([fade, scale])
         let waitFadeScale = SKAction.sequence([wait, fadeScale, SKAction.removeFromParent()])
         return SKAction.group([movement, waitFadeScale])
+    }
+
+    func cometAudio() -> SKAction {
+        let play = SKAction.play()
+//        let fade = SKAction.changeVolume(to: 0.0, duration: 1.5)
+//        let wait = SKAction.wait(forDuration: 5.0-1.5)
+        return SKAction.sequence([play])
     }
 
     //adds an animated aura to an asteroid
@@ -124,6 +133,10 @@ class UniverseScene: SKScene {
         aura.run(repeatAnim)
         asteroid.addChild(aura)
         asteroid.aura = aura
+
+        let audio = SKAudioNode(fileNamed: "cometNoise.aiff")
+        audio.autoplayLooped = true
+        aura.addChild(audio)
     }
 
     //MARK: Cassini
