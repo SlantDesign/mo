@@ -46,7 +46,7 @@ class CassiniSpaceCraft: SKSpriteNode {
             print("Could not create burner.")
             return
         }
-        b.position = CGPoint(x: -frame.width/2.0 - b.frame.width, y: 0)
+        b.position = CGPoint(x: -frame.width/4.0 - b.frame.width - 10.0, y: frame.height/8.0)
         b.particleBirthRate = 0.0
         addChild(b)
         burner = b
