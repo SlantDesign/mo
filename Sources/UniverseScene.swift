@@ -90,27 +90,31 @@ class UniverseScene: SKScene {
         comet.physicsBody = nil
         addAura(to: comet)
 
-        comet.run(moveComet())
+        let audio = SKAudioNode(fileNamed: "cometNoise.aiff")
+        audio.autoplayLooped = true
+        comet.addChild(audio)
+        audio.isPositional = true
+        let actions = moveComet()
+        comet.run(actions.0)
+        audio.run(actions.1)
 
         self.addChild(comet)
     }
 
     //creates an action for the motion of a comet
-    func moveComet() -> SKAction {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 4.0), dy: 0.0), duration: 10.0)
-        let scale = SKAction.scale(by: 0.25, duration: 1.5)
-        let fade = SKAction.fadeOut(withDuration: 1.5)
-        let wait = SKAction.wait(forDuration: movement.duration-1.5)
+    func moveComet() -> (SKAction, SKAction) {
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 19.5 + random01() * 6.5)
+        let scale = SKAction.scale(by: 0.25, duration: movement.duration * 0.5)
+        let fade = SKAction.fadeOut(withDuration: movement.duration * 0.5)
+        let wait = SKAction.wait(forDuration: movement.duration * 0.5)
         let fadeScale = SKAction.group([fade, scale])
         let waitFadeScale = SKAction.sequence([wait, fadeScale, SKAction.removeFromParent()])
-        return SKAction.group([movement, waitFadeScale])
-    }
 
-    func cometAudio() -> SKAction {
         let play = SKAction.play()
-//        let fade = SKAction.changeVolume(to: 0.0, duration: 1.5)
-//        let wait = SKAction.wait(forDuration: 5.0-1.5)
-        return SKAction.sequence([play])
+        let audioFade = SKAction.changeVolume(to: 0.0, duration: movement.duration*0.5)
+        let audioWaitFade = SKAction.sequence([wait, audioFade, SKAction.stop(), SKAction.removeFromParent()])
+
+        return (SKAction.group([movement, waitFadeScale]), SKAction.group([play, audioWaitFade]))
     }
 
     //adds an animated aura to an asteroid
@@ -133,10 +137,6 @@ class UniverseScene: SKScene {
         aura.run(repeatAnim)
         asteroid.addChild(aura)
         asteroid.aura = aura
-
-        let audio = SKAudioNode(fileNamed: "cometNoise.aiff")
-        audio.autoplayLooped = true
-        aura.addChild(audio)
     }
 
     //MARK: Cassini

@@ -40,7 +40,7 @@ class AsteroidBelt: UniverseScene {
         super.didMove(to: view)
 
         if SocketManager.sharedManager.deviceID == AsteroidBelt.primaryDevice {
-            timer = C4.Timer(interval: 0.5) {
+            timer = C4.Timer(interval: 1.0) {
                 self.broadcastAddAsteroid()
             }
             timer?.start()
@@ -84,12 +84,12 @@ class AsteroidBelt: UniverseScene {
 
         let rotationDirection = round(random01()) == 0.0 ? -1.0 : 1.0
         let rotationAngle = CGFloat(M_PI * rotationDirection)
-        let rotationDuration = random01() * 2.0 + 2.0
+        let rotationDuration = random01() * 3.0 + 3.0
         let asteroidRotation = SKAction.repeatForever(SKAction.rotate(byAngle: rotationAngle, duration: rotationDuration))
 
         let vector = CGVector(dx: CGFloat(frameCanvasWidth*2), dy: 1224)
 
-        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: vector, duration: random01()*2.0 + 9.0),
+        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: vector, duration: random01()*3.0 + 12.0),
                                                       SKAction.removeFromParent()])
 
         let asteroidBehaviour = SKAction.group([asteroidRotation, asteroidBeltMovement])
