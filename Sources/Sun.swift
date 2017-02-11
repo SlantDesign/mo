@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import C4
 import MO
+import AVFoundation
 
 extension PacketType {
     static let sun = PacketType(rawValue: 700000)
@@ -58,13 +59,10 @@ class Sun: UniverseScene, SunSpriteDelegate {
         createAtlases()
     }
 
-    func preload() {
-
-    }
-
     func createAudio() {
         let sunAmbient = SKAudioNode(fileNamed: "sunAmbient.aiff")
         sunAmbient.autoplayLooped = true
+        sunAmbient.run(SKAction.changeVolume(to: 0.33, duration: 0.0))
         addChild(sunAmbient)
     }
 
