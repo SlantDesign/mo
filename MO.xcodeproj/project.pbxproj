@@ -25,6 +25,10 @@
 		1F8F74551E406141002DD972 /* SmallStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */; };
 		1F8F74561E406146002DD972 /* SmallStarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F744F1E4060EF002DD972 /* SmallStarsDataSource.swift */; };
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
+		1F9426E71E509AA700720C5A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9426E51E509A9800720C5A /* Planet.swift */; };
+		1F9426EB1E50A2B000720C5A /* planetBounce2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426E81E50A2B000720C5A /* planetBounce2.aiff */; };
+		1F9426EC1E50A2B000720C5A /* planetBounce1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426E91E50A2B000720C5A /* planetBounce1.aiff */; };
+		1F9426ED1E50A2B000720C5A /* planetBounce0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426EA1E50A2B000720C5A /* planetBounce0.aiff */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */; };
 		1FA5AC8C1E5093F200955D4E /* observatory.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC8B1E5093F200955D4E /* observatory.aiff */; };
@@ -218,6 +222,10 @@
 		1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsLayout.swift; sourceTree = "<group>"; };
 		1F8F74511E4060EF002DD972 /* SmallStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallStarsViewController.swift; sourceTree = "<group>"; };
 		1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SmallStarsViewController.storyboard; sourceTree = "<group>"; };
+		1F9426E51E509A9800720C5A /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		1F9426E81E50A2B000720C5A /* planetBounce2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce2.aiff; sourceTree = "<group>"; };
+		1F9426E91E50A2B000720C5A /* planetBounce1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce1.aiff; sourceTree = "<group>"; };
+		1F9426EA1E50A2B000720C5A /* planetBounce0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce0.aiff; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cometNoise.aiff; sourceTree = "<group>"; };
@@ -796,6 +804,9 @@
 		D9A85A371E4CD40A0046B44A /* SolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1F9426E81E50A2B000720C5A /* planetBounce2.aiff */,
+				1F9426E91E50A2B000720C5A /* planetBounce1.aiff */,
+				1F9426EA1E50A2B000720C5A /* planetBounce0.aiff */,
 				D9A85A381E4CD41E0046B44A /* SolarSystem.xcassets */,
 			);
 			name = SolarSystem;
@@ -805,6 +816,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A85A3B1E4CD7420046B44A /* SolarSystem.swift */,
+				1F9426E51E509A9800720C5A /* Planet.swift */,
 			);
 			name = SolarSystem;
 			sourceTree = "<group>";
@@ -1155,6 +1167,7 @@
 				D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */,
 				D917CFBA1E4CE65300445BC2 /* PreigniteAriane.sks in Resources */,
 				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
+				1F9426EB1E50A2B000720C5A /* planetBounce2.aiff in Resources */,
 				1F4FF41C1E4F93AD008D9318 /* flare0.aiff in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D917CFAC1E4CE63A00445BC2 /* IgnitionEndeavour.sks in Resources */,
@@ -1175,6 +1188,7 @@
 				1F4FF41E1E4F93AD008D9318 /* flare2.aiff in Resources */,
 				D916E6CF1E4BFBF4008F1FCB /* fire_17.atlas in Resources */,
 				D916E6CA1E4BF529008F1FCB /* Sun.xcassets in Resources */,
+				1F9426ED1E50A2B000720C5A /* planetBounce0.aiff in Resources */,
 				D916E6D01E4BFBF4008F1FCB /* sparks_02.atlas in Resources */,
 				D917CFA51E4CE60700445BC2 /* RocketFireFalcon.sks in Resources */,
 				D917CFC41E4CE66A00445BC2 /* RocketFireSoyuz.sks in Resources */,
@@ -1191,6 +1205,7 @@
 				D917CFAE1E4CE63A00445BC2 /* PreigniteEndeavour.sks in Resources */,
 				D916E6D51E4BFBF4008F1FCB /* sparks_08.atlas in Resources */,
 				1FE5B2F61E4F990000A92A39 /* spaceAmbient3.aiff in Resources */,
+				1F9426EC1E50A2B000720C5A /* planetBounce1.aiff in Resources */,
 				D917CFD31E4CE70500445BC2 /* Stars.xcassets in Resources */,
 				1F4FF41D1E4F93AD008D9318 /* flare1.aiff in Resources */,
 				D917CFC21E4CE66A00445BC2 /* IgnitionSmokeSoyuz.sks in Resources */,
@@ -1662,6 +1677,7 @@
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,
 				D9A85A3C1E4CD7420046B44A /* SolarSystem.swift in Sources */,
 				D98068841E493C2A001BE775 /* AstrologicalSignProvider.swift in Sources */,
+				1F9426E71E509AA700720C5A /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
