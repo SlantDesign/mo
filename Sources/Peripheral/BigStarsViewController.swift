@@ -16,6 +16,7 @@ import UIKit
 open class BigStarsViewController: UICollectionViewController {
     var dx: CGFloat = 0.0
     weak var scrollDelegate: ScrollDelegate?
+    let snapped = AudioPlayer("observatory.aiff")
 
     override open func viewDidLoad() {
         collectionView?.register(StarCell.self, forCellWithReuseIdentifier: "StarCell")
@@ -54,6 +55,9 @@ open class BigStarsViewController: UICollectionViewController {
         let index = round(scrollView.contentOffset.x / CGFloat(frameCanvasWidth))
         let point = CGPoint(x: CGFloat(index) * CGFloat(frameCanvasWidth), y: 0)
         scrollView.setContentOffset(point, animated: true)
+        wait(0.25) {
+            self.snapped?.play()
+        }
     }
 
     override open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

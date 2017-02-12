@@ -27,6 +27,7 @@
 		1F8F74571E406146002DD972 /* SmallStarsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F74501E4060EF002DD972 /* SmallStarsLayout.swift */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */; };
+		1FA5AC8C1E5093F200955D4E /* observatory.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC8B1E5093F200955D4E /* observatory.aiff */; };
 		1FE5B2F51E4F990000A92A39 /* spaceAmbient4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */; };
 		1FE5B2F61E4F990000A92A39 /* spaceAmbient3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */; };
 		1FE5B2F71E4F990000A92A39 /* spaceAmbient2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */; };
@@ -220,6 +221,7 @@
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cometNoise.aiff; sourceTree = "<group>"; };
+		1FA5AC8B1E5093F200955D4E /* observatory.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = observatory.aiff; sourceTree = "<group>"; };
 		1FE5B2F01E4F990000A92A39 /* spaceAmbient4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient4.aiff; sourceTree = "<group>"; };
 		1FE5B2F11E4F990000A92A39 /* spaceAmbient3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient3.aiff; sourceTree = "<group>"; };
 		1FE5B2F21E4F990000A92A39 /* spaceAmbient2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = spaceAmbient2.aiff; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 		D917CFD11E4CE6F500445BC2 /* Stars */ = {
 			isa = PBXGroup;
 			children = (
+				1FA5AC8B1E5093F200955D4E /* observatory.aiff */,
 				6114EAAF1E0F634100829825 /* BigStarsViewController.storyboard */,
 				1F8F74581E406214002DD972 /* SmallStarsViewController.storyboard */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
@@ -1148,6 +1151,7 @@
 				6114EB251E0F63CF00829825 /* Main.storyboard in Resources */,
 				6114EB2A1E0F63E400829825 /* BigStarsViewController.storyboard in Resources */,
 				D917CFAD1E4CE63A00445BC2 /* endeavour.aiff in Resources */,
+				1FA5AC8C1E5093F200955D4E /* observatory.aiff in Resources */,
 				D916E6CC1E4BFBF4008F1FCB /* fire_09.atlas in Resources */,
 				D917CFBA1E4CE65300445BC2 /* PreigniteAriane.sks in Resources */,
 				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
