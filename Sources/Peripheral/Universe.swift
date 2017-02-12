@@ -310,8 +310,16 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             big1 = inititalizeBigStars()
             canvas.add(small1?.collectionView)
             canvas.add(big1?.collectionView)
-            label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
-            let p = Point(dx + canvas.center.x, canvas.height - 88.0)
+
+            let eso = Image(uiimage: #imageLiteral(resourceName: "observatory"))
+            eso.constrainsProportions = true
+            eso.width = canvas.width
+            eso.origin = Point(dx, canvas.height - eso.height)
+            canvas.add(eso)
+
+            label = UILabel(frame: CGRect(x: 0, y: 0, width: 240, height: 88))
+            label?.numberOfLines = 2
+            let p = Point(dx + canvas.center.x, eso.origin.y + 56)
             label?.center = CGPoint(p)
             label?.textAlignment = .center
             label?.text = ""
@@ -367,7 +375,7 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             alpha -= 0.5
             alpha *= 2.0
             l.alpha = alpha
-            l.text = AstrologicalSignProvider.shared.order[Int(index)]
+            l.text = AstrologicalSignProvider.shared.readableNames[Int(index)]
         }
     }
 
