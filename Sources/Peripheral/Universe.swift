@@ -46,12 +46,12 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-        case Rockets.primaryDevice...Rockets.primaryDevice+3:
-            currentScene = Rockets(size: sceneView.frame.size)
-        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
-            currentScene = SolarSystem(size: sceneView.frame.size)
-        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-            currentScene = AsteroidBelt(size: sceneView.frame.size)
+//        case Rockets.primaryDevice...Rockets.primaryDevice+3:
+//            currentScene = Rockets(size: sceneView.frame.size)
+//        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
+//            currentScene = SolarSystem(size: sceneView.frame.size)
+//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+//            currentScene = AsteroidBelt(size: sceneView.frame.size)
         case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
             currentScene = Sun(size: sceneView.frame.size)
         default:
@@ -70,14 +70,23 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         }
 
         let spaceCraft1 = CassiniSpaceCraft()
-        let offset = CGFloat(SocketManager.sharedManager.deviceID - Cassini.primaryDevice) * CGFloat(frameCanvasWidth)
+        let offset = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
         spaceCraft1.position = CGPoint(x: offset, y: 0)
-        currentScene?.cassini1 = spaceCraft1
+        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+            spaceCraft1.start()
+        }
         currentScene?.addChild(spaceCraft1)
+        currentScene?.cassini1 = spaceCraft1
 
         let spaceCraft2 = CassiniSpaceCraft()
-        let offset2 = CGFloat(SocketManager.sharedManager.deviceID - Cassini.secondaryDevice) * CGFloat(frameCanvasWidth)
+        let offset2 = CGFloat(Cassini.secondaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
         spaceCraft2.position = CGPoint(x: offset2, y: 0)
+        spaceCraft2.cassiniIdentifier = Cassini.secondaryDevice
+        spaceCraft2.packetType = PacketType.cassini2
+        spaceCraft2.shouldMovePacketType = PacketType.cassini2ShouldMove
+        if SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
+            spaceCraft2.start()
+        }
         currentScene?.cassini2 = spaceCraft2
         currentScene?.addChild(spaceCraft2)
     }
@@ -94,10 +103,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
 
     open override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case PacketType.cassini:
+        case PacketType.cassini, PacketType.cassini2:
             handleCassini(packet)
-        case PacketType.cassiniShouldMove:
-            handleCassiniShouldMove()
+        case PacketType.cassiniShouldMove, PacketType.cassini2ShouldMove:
+            handleCassiniShouldMove(packet.packetType)
         case PacketType.asteroid:
             handleAddAsteroid(packet)
         case PacketType.comet:
@@ -126,18 +135,17 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             return
         }
         let point = payload.extract(CGPoint.self, at: 0)
-        if packet.id == Cassini.primaryDevice {
+        if packet.packetType == .cassini {
             currentScene?.transmitCassini1(coordinates: point)
-        } else if packet.id == Cassini.primaryDevice {
+        } else if packet.packetType == .cassini2 {
             currentScene?.transmitCassini2(coordinates: point)
         }
-
     }
 
-    func handleCassiniShouldMove() {
-        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+    func handleCassiniShouldMove(_ packetType: PacketType) {
+        if packetType == .cassini {
             currentScene?.cassini1?.broadcastMovement()
-        } else if SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
+        } else if packetType == .cassini {
             currentScene?.cassini2?.broadcastMovement()
         }
     }

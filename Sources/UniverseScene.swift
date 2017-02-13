@@ -140,16 +140,17 @@ class UniverseScene: SKScene {
 
     //MARK: Cassini
     func transmitCassini1(coordinates: CGPoint) {
-        cassini1?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
+        cassini1?.rotateAndMove(to: convertCoordinates(coordinates))
     }
 
     func transmitCassini2(coordinates: CGPoint) {
-        cassini2?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
+        cassini2?.rotateAndMove(to: convertCoordinates(coordinates))
     }
 
-    func convertFromPrimaryDeviceCoordinates(_ point: CGPoint) -> CGPoint {
-        var dx = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID)
+    func convertCoordinates(_ point: CGPoint) -> CGPoint {
+        var dx = CGFloat(-SocketManager.sharedManager.deviceID)
         dx *= CGFloat(frameCanvasWidth)
+        dx -= CGFloat(frameCanvasWidth/2.0)
         let coordinates = CGPoint(x: point.x + dx, y: point.y)
         return coordinates
     }
