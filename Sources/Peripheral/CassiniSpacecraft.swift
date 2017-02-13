@@ -28,7 +28,6 @@ class Cassini {
 //FIXME: Increase levels for sun bursts
 //FIXME: Increase reaction time for sun bursts
 //FIXME: Improve physics on planets
-//FIXME: Improve targeting for satellite (random index + random01() * 768 //should avoid gaps)
 //FIXME: More audio for ambient background
 //FIXME: More audio for satellite movement
 
@@ -36,7 +35,19 @@ class CassiniSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
     var timer: C4.Timer?
     let turnSound = SKAudioNode(fileNamed:"satelliteTurn.aiff")
-    let satelliteMoveSound = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
+    var satelliteMoveSound: SKAudioNode? {
+        willSet(newSound) {
+            satelliteMoveSound?.run(SKAction.stop())
+            satelliteMoveSound?.removeFromParent()
+
+            guard let sound = newSound else {
+                print("newSound == nil")
+                return
+            }
+            sound.autoplayLooped = false
+            addChild(sound)
+        }
+    }
     var cassiniIdentifier = Cassini.primaryDevice
     var packetType = PacketType.cassini
     var shouldMovePacketType = PacketType.cassiniShouldMove
@@ -63,10 +74,6 @@ class CassiniSpaceCraft: SKSpriteNode {
 
         turnSound.autoplayLooped = false
         addChild(turnSound)
-
-        satelliteMoveSound.autoplayLooped = false
-        satelliteMoveSound.run(SKAction.changeVolume(to: 0.8, duration: 0.0))
-        addChild(satelliteMoveSound)
     }
 
     func start() {
@@ -82,7 +89,6 @@ class CassiniSpaceCraft: SKSpriteNode {
         let data = NSMutableData()
         data.append(&position, length: MemoryLayout<CGPoint>.size)
         let packet = Packet(type: packetType, id: cassiniIdentifier, payload: data as Data)
-        print(packet.id)
         SocketManager.sharedManager.broadcastPacket(packet)
         timer?.start()
     }
@@ -106,7 +112,7 @@ class CassiniSpaceCraft: SKSpriteNode {
     }
 
     func randomTargetIndex() -> Int {
-        var index = random(min: 15, max: 20)
+        var index = random(min: 1, max: 29)
         if index == Stars.primaryDevice || index == Stars.secondaryDevice {
             index = randomTargetIndex()
         }
@@ -117,7 +123,8 @@ class CassiniSpaceCraft: SKSpriteNode {
     //FIXME: Remove targets for observatory screens
     func randomPoint() -> CGPoint {
         let index = randomTargetIndex()
-        let x = CGFloat(random01() * frameCanvasWidth) + CGFloat(index) * CGFloat(frameCanvasWidth)
+
+        let x = CGFloat(index) * CGFloat(frameCanvasWidth) + CGFloat(frameCanvasWidth/2.0)
         let y = CGFloat(random01() * 824.0 - 412.0)
         let target = CGPoint(x: x, y: y)
         return target
@@ -151,13 +158,13 @@ class CassiniSpaceCraft: SKSpriteNode {
 
         let startBurner = SKAction.customAction(withDuration: 0.0) { _, _ in
             self.burner?.particleBirthRate = 500.0
-            self.satelliteMoveSound.autoplayLooped = true
-            self.satelliteMoveSound.run(SKAction.repeat(SKAction.play(), count: 20))
+            self.satelliteMoveSound?.autoplayLooped = true
+            self.satelliteMoveSound?.run(SKAction.repeat(SKAction.play(), count: 20))
         }
 
         let endBurner = SKAction.customAction(withDuration: 0) { _, _ in
             self.burner?.particleBirthRate = 0.0
-            self.satelliteMoveSound.run(SKAction.stop())
+            self.satelliteMoveSound?.run(SKAction.stop())
         }
 
         let rotateThenMove = SKAction.sequence([rotation, startBurner, movement, endBurner])

@@ -72,6 +72,8 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         let spaceCraft1 = CassiniSpaceCraft()
         let offset = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
         spaceCraft1.position = CGPoint(x: offset, y: 0)
+        let s1 = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
+        spaceCraft1.satelliteMoveSound = s1
         if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
             spaceCraft1.start()
         }
@@ -83,6 +85,8 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         spaceCraft2.position = CGPoint(x: offset2, y: 0)
         spaceCraft2.cassiniIdentifier = Cassini.secondaryDevice
         spaceCraft2.packetType = PacketType.cassini2
+        let s2 = SKAudioNode(fileNamed: "satelliteResponse3.aiff")
+        spaceCraft2.satelliteMoveSound = s2
         spaceCraft2.shouldMovePacketType = PacketType.cassini2ShouldMove
         if SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
             spaceCraft2.start()

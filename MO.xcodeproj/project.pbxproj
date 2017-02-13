@@ -29,6 +29,7 @@
 		1F9426EB1E50A2B000720C5A /* planetBounce2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426E81E50A2B000720C5A /* planetBounce2.aiff */; };
 		1F9426EC1E50A2B000720C5A /* planetBounce1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426E91E50A2B000720C5A /* planetBounce1.aiff */; };
 		1F9426ED1E50A2B000720C5A /* planetBounce0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426EA1E50A2B000720C5A /* planetBounce0.aiff */; };
+		1F9426F41E52036C00720C5A /* satelliteResponse3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426F01E52036C00720C5A /* satelliteResponse3.aiff */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */; };
 		1FA5AC8C1E5093F200955D4E /* observatory.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC8B1E5093F200955D4E /* observatory.aiff */; };
@@ -226,6 +227,7 @@
 		1F9426E81E50A2B000720C5A /* planetBounce2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce2.aiff; sourceTree = "<group>"; };
 		1F9426E91E50A2B000720C5A /* planetBounce1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce1.aiff; sourceTree = "<group>"; };
 		1F9426EA1E50A2B000720C5A /* planetBounce0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = planetBounce0.aiff; sourceTree = "<group>"; };
+		1F9426F01E52036C00720C5A /* satelliteResponse3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = satelliteResponse3.aiff; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cometNoise.aiff; sourceTree = "<group>"; };
@@ -786,6 +788,7 @@
 			children = (
 				1FE5B3081E4FA98B00A92A39 /* satelliteTurn.aiff */,
 				1FE5B2FF1E4FA8E600A92A39 /* satelliteResponse0.aiff */,
+				1F9426F01E52036C00720C5A /* satelliteResponse3.aiff */,
 				D9773D5D1E4D1AC600CE5A95 /* CassiniRocketFire.sks */,
 				D9773D5B1E4D1AB300CE5A95 /* Cassini.xcassets */,
 			);
@@ -1168,6 +1171,7 @@
 				D917CFBA1E4CE65300445BC2 /* PreigniteAriane.sks in Resources */,
 				D916E6D31E4BFBF4008F1FCB /* sparks_06.atlas in Resources */,
 				1F9426EB1E50A2B000720C5A /* planetBounce2.aiff in Resources */,
+				1F9426F41E52036C00720C5A /* satelliteResponse3.aiff in Resources */,
 				1F4FF41C1E4F93AD008D9318 /* flare0.aiff in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				D917CFAC1E4CE63A00445BC2 /* IgnitionEndeavour.sks in Resources */,
