@@ -56,7 +56,6 @@ class Planet: SKSpriteNode {
         data.append(&touchPosition, length: MemoryLayout<CGVector>.size)
         let packet = Packet(type: .planetPosition, id: SocketManager.sharedManager.deviceID, payload: data as Data)
         SocketManager.sharedManager.broadcastPacket(packet)
-
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

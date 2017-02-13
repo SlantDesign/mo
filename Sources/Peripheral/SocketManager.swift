@@ -42,12 +42,12 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
         socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         socket.setIPv6Enabled(false)
-        try! socket.enableBroadcast(true)
-        try! socket.bind(toPort: SocketManager.peripheralPort)
-        try! socket.beginReceiving()
+    }
 
-        let packet = Packet(type: .handshake, id: deviceID)
-        socket.send(packet.serialize() as Data, toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
+    open func awakeFromBackground() {
+        try? socket.enableBroadcast(true)
+        try? socket.bind(toPort: SocketManager.peripheralPort)
+        try? socket.beginReceiving()
     }
 
     open func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {

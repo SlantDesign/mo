@@ -17,7 +17,7 @@ extension PacketType {
 }
 
 class Rockets: UniverseScene {
-    static let primaryDevice = 17
+    static let primaryDevice = 15
     var rocket: Rocket?
     var launching = false
     var launchTime: TimeInterval = 0.0

@@ -17,7 +17,7 @@ extension PacketType {
 }
 
 class Sun: UniverseScene, SunSpriteDelegate {
-    static let primaryDevice = 18
+    static let primaryDevice = 6
     var sun: SunSprite?
     var flareSounds: [SKAudioNode]?
 
@@ -182,6 +182,7 @@ class Sun: UniverseScene, SunSpriteDelegate {
             self.addChild(currentEffect)
 
             let randomFlare = SKAudioNode(fileNamed: "flare\(random(below: 5)).aiff")
+            randomFlare.isPositional = false
             randomFlare.autoplayLooped = false
             currentEffect.addChild(randomFlare)
             let audio = SKAction.run({

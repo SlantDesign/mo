@@ -23,6 +23,9 @@ class WorkSpace: CanvasController {
         initializeSocketManager()
         currentUniverse = universe
         canvas.add(currentUniverse?.canvas)
+        if UIApplication.shared.statusBarOrientation == .portrait {
+            canvas.transform = Transform.makeRotation(M_PI)
+        }
     }
 
     func prepareUniverse() {
@@ -40,7 +43,6 @@ class WorkSpace: CanvasController {
         switch packet.packetType {
         case PacketType.switchUniverse:
             if let name = extractNewUniverseName(packet.payload) {
-                //FIXME: This is where we should switch between universes, initiating some kind of 
                 currentUniverse = selectUniverse(name)
             }
         default:

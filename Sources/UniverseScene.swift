@@ -11,7 +11,8 @@ import MO
 import C4
 
 class UniverseScene: SKScene {
-    var cassini: CassiniSpaceCraft?
+    var cassini1: CassiniSpaceCraft?
+    var cassini2: CassiniSpaceCraft?
     var copyableAsteroids: [Asteroid]?
     var cometAuraFrames: [SKTexture]?
     var cometAura: SKSpriteNode?
@@ -32,9 +33,7 @@ class UniverseScene: SKScene {
         for i in 0...3 {
             let asteroid = Asteroid(imageNamed: "Asteroid_0\(i)")
             asteroid.size = CGSize(width: 132, height: 132)
-            asteroid.physicsBody = SKPhysicsBody(rectangleOf: Asteroid.physicsBodySize)
-            asteroid.physicsBody?.affectedByGravity = false
-            asteroid.physicsBody?.friction = 0.0
+            asteroid.physicsBody = nil
             copyableAsteroids?.append(asteroid)
         }
 
@@ -140,8 +139,12 @@ class UniverseScene: SKScene {
     }
 
     //MARK: Cassini
-    func transmitCassini(coordinates: CGPoint) {
-        cassini?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
+    func transmitCassini1(coordinates: CGPoint) {
+        cassini1?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
+    }
+
+    func transmitCassini2(coordinates: CGPoint) {
+        cassini2?.rotateAndMove(to: convertFromPrimaryDeviceCoordinates(coordinates))
     }
 
     func convertFromPrimaryDeviceCoordinates(_ point: CGPoint) -> CGPoint {

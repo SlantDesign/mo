@@ -15,6 +15,7 @@ import MO
 extension PacketType {
     static let asteroid = PacketType(rawValue: 200000)
     static let comet = PacketType(rawValue: 200001)
+    static let explodeComet = PacketType(rawValue: 200002)
 }
 
 public protocol AsteroidBeltDelegate {
@@ -23,7 +24,7 @@ public protocol AsteroidBeltDelegate {
 }
 
 class AsteroidBelt: UniverseScene {
-    static let primaryDevice = 18
+    static let primaryDevice = 2
     private var timer: C4.Timer?
     var asteroidCount = 0
 
@@ -84,12 +85,12 @@ class AsteroidBelt: UniverseScene {
 
         let rotationDirection = round(random01()) == 0.0 ? -1.0 : 1.0
         let rotationAngle = CGFloat(M_PI * rotationDirection)
-        let rotationDuration = random01() * 3.0 + 3.0
+        let rotationDuration = 3.0
         let asteroidRotation = SKAction.repeatForever(SKAction.rotate(byAngle: rotationAngle, duration: rotationDuration))
 
         let vector = CGVector(dx: CGFloat(frameCanvasWidth*2), dy: 1224)
 
-        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: vector, duration: random01()*3.0 + 12.0),
+        let asteroidBeltMovement = SKAction.sequence([SKAction.move(by: vector, duration: 12.0),
                                                       SKAction.removeFromParent()])
 
         let asteroidBehaviour = SKAction.group([asteroidRotation, asteroidBeltMovement])

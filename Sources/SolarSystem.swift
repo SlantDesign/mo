@@ -20,7 +20,7 @@ extension PacketType {
 }
 
 class SolarSystem: UniverseScene, SKPhysicsContactDelegate {
-    static let primaryDevice = 17
+    static let primaryDevice = 9
     static let planetNames: [String] = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
     static let contactBitmask: UInt32 = 0x2
     var planets = [String: Planet]()
@@ -127,32 +127,11 @@ class SolarSystem: UniverseScene, SKPhysicsContactDelegate {
     }
 
     func didBegin(_ contact: SKPhysicsContact) {
-        var aIsPlanet = false
-        var bIsPlanet = false
-        var aIsAsteroid = false
-        var bIsAsteroid = false
-
-        if let a = contact.bodyA.node as? Planet {
-            aIsPlanet = true
-        } else if let a = contact.bodyA.node as? Asteroid {
-            aIsAsteroid = true
-        }
-
-        if let b = contact.bodyB.node as? Planet {
-            bIsPlanet = true
-        } else if let b = contact.bodyB.node as? Asteroid {
-            bIsAsteroid = true
-        }
-
-        if aIsPlanet && bIsPlanet {
-            for sound in planetBounces {
-                if sound?.playing == false {
-                    sound?.play()
-                    return
-                }
+        for sound in planetBounces {
+            if sound?.playing == false {
+                sound?.play()
+                return
             }
-        } else if aIsAsteroid && bIsPlanet || aIsPlanet && bIsAsteroid {
-            print("should explode asteroid")
         }
     }
 }

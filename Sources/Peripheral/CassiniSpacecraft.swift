@@ -18,13 +18,18 @@ extension PacketType {
 }
 
 class Cassini {
-    static let primaryDevice = 0
-    static let targetFrame = CGRect(x: 0,
-                                    y: -412.0,
-                                    width: CGFloat(4.0 * frameCanvasWidth),
-                                    height: 824.0)
+    static let primaryDevice = 8
+    static let secondaryDevice = 20
 }
 
+//FIXME: Separate Cassini Crafts
+//FIXME: Choose better arrangement
+//FIXME: Increase levels for sun bursts
+//FIXME: Increase reaction time for sun bursts
+//FIXME: Improve physics on planets
+//FIXME: Improve targeting for satellite (random index + random01() * 768 //should avoid gaps)
+//FIXME: More audio for ambient background
+//FIXME: More audio for satellite movement
 class CassiniSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
     var timer: C4.Timer?
@@ -51,8 +56,8 @@ class CassiniSpaceCraft: SKSpriteNode {
 
         isUserInteractionEnabled = true
 
-        //FIXME: Change interval to suit the 28 devices
-        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice ||
+            SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
             timer = C4.Timer(interval: 10.0) {
                 self.broadcastMovement()
             }
@@ -71,6 +76,7 @@ class CassiniSpaceCraft: SKSpriteNode {
         let data = NSMutableData()
         data.append(&position, length: MemoryLayout<CGPoint>.size)
         let packet = Packet(type: .cassini, id: SocketManager.sharedManager.deviceID, payload: data as Data)
+        print(SocketManager.sharedManager.deviceID)
         SocketManager.sharedManager.broadcastPacket(packet)
         timer?.start()
     }
@@ -93,16 +99,20 @@ class CassiniSpaceCraft: SKSpriteNode {
         }
     }
 
+    func randomTargetIndex() -> Int {
+        var index = random(min: 1, max: 14)
+        if index == Stars.primaryDevice || index == Stars.secondaryDevice {
+            index = randomTargetIndex()
+        }
+        return index
+    }
+
     //FIXME: Calibrate to send out coordinates in universe space
     //FIXME: Remove targets for observatory screens
     func randomPoint() -> CGPoint {
-        var calibratedFrame = Cassini.targetFrame
-        var offset = CGFloat(SocketManager.sharedManager.deviceID - Cassini.primaryDevice)
-        offset *= CGFloat(frameCanvasWidth)
-        calibratedFrame.origin.x += offset
-
-        let x = CGFloat(random(min: Int(calibratedFrame.minX), max: Int(calibratedFrame.maxX)))
-        let y = CGFloat(random(min: Int(calibratedFrame.minY), max: Int(calibratedFrame.maxY)))
+        let index = randomTargetIndex()
+        let x = CGFloat(random01() * 768.0) + CGFloat(index) * CGFloat(frameCanvasWidth)
+        let y = CGFloat(random01() * 824.0 + 100.0)
         let target = CGPoint(x: x, y: y)
         return target
     }
@@ -117,17 +127,6 @@ class CassiniSpaceCraft: SKSpriteNode {
         }
 
         return Θ
-    }
-
-    func randomVector() -> Vector {
-        var calibratedFrame = Cassini.targetFrame
-        var offset = CGFloat(SocketManager.sharedManager.deviceID - Cassini.primaryDevice)
-        offset *= CGFloat(frameCanvasWidth)
-        calibratedFrame.origin.x += offset
-
-        let x = random(min: Int(calibratedFrame.minX), max: Int(calibratedFrame.maxX))
-        let y = random(min: Int(calibratedFrame.minY), max: Int(calibratedFrame.maxY))
-        return Vector(x: x, y: y)
     }
 
     func rotate(to targetPoint: CGPoint) {
@@ -168,12 +167,11 @@ class CassiniSpaceCraft: SKSpriteNode {
         return SKAction.rotate(byAngle: CGFloat(Θ), duration: duration)
     }
 
-    //FIXME: Calibrate duration to universe
     func move(to targetPoint: CGPoint) -> SKAction {
         let a = Vector(position)
         let b = Vector(targetPoint)
         let distance = (a - b).magnitude
-        let duration = 2 * distance / frameCanvasWidth
+        let duration = 7.5
         return SKAction.move(to: CGPoint(x: CGFloat(targetPoint.x), y: CGFloat(targetPoint.y)), duration: duration)
     }
 }

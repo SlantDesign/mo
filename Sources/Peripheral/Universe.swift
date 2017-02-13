@@ -46,14 +46,14 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-//        case Rockets.primaryDevice...Rockets.primaryDevice+3:
-//            currentScene = Rockets(size: sceneView.frame.size)
+        case Rockets.primaryDevice...Rockets.primaryDevice+3:
+            currentScene = Rockets(size: sceneView.frame.size)
         case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
             currentScene = SolarSystem(size: sceneView.frame.size)
-//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-//            currentScene = AsteroidBelt(size: sceneView.frame.size)
-//        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
-//            currentScene = Sun(size: sceneView.frame.size)
+        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+            currentScene = AsteroidBelt(size: sceneView.frame.size)
+        case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
+            currentScene = Sun(size: sceneView.frame.size)
         default:
             shouldBringViewToFront = false
             currentScene = UniverseScene(size: sceneView.frame.size)
@@ -69,11 +69,17 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             canvas.bringToFront(sceneView)
         }
 
-        let spaceCraft = CassiniSpaceCraft()
+        let spaceCraft1 = CassiniSpaceCraft()
         let offset = CGFloat(SocketManager.sharedManager.deviceID - Cassini.primaryDevice) * CGFloat(frameCanvasWidth)
-        spaceCraft.position = CGPoint(x: offset, y: 0)
-        currentScene?.cassini = spaceCraft
-        currentScene?.addChild(spaceCraft)
+        spaceCraft1.position = CGPoint(x: offset, y: 0)
+        currentScene?.cassini1 = spaceCraft1
+        currentScene?.addChild(spaceCraft1)
+
+        let spaceCraft2 = CassiniSpaceCraft()
+        let offset2 = CGFloat(SocketManager.sharedManager.deviceID - Cassini.secondaryDevice) * CGFloat(frameCanvasWidth)
+        spaceCraft2.position = CGPoint(x: offset2, y: 0)
+        currentScene?.cassini2 = spaceCraft2
+        currentScene?.addChild(spaceCraft2)
     }
 
     func createBackground() {
@@ -120,18 +126,24 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             return
         }
         let point = payload.extract(CGPoint.self, at: 0)
-        currentScene?.transmitCassini(coordinates: point)
+        if packet.id == Cassini.primaryDevice {
+            currentScene?.transmitCassini1(coordinates: point)
+        } else if packet.id == Cassini.primaryDevice {
+            currentScene?.transmitCassini2(coordinates: point)
+        }
+
     }
 
     func handleCassiniShouldMove() {
         if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
-            currentScene?.cassini?.broadcastMovement()
+            currentScene?.cassini1?.broadcastMovement()
+        } else if SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
+            currentScene?.cassini2?.broadcastMovement()
         }
     }
 
-    //MARK: SolarSystem
-    //FIXME: Should add comet explosion when contact with planet is made
-    //FIXME: Screens within a certain range of solarsystem should have planets +/-4 screens?
+    //MARK: SolarSystems
+    //FIXME: Screens within a certain range of solarsystem shoudl have planets +/-4 screens?
     func handlePlanet(_ packet: Packet) {
         guard let scene = currentScene as? SolarSystem else {
             return
@@ -225,7 +237,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         }
     }
 
-    //FIXME: Add second comet to necessary devices for creating wraparound effect
     func handleAddComet(_ packet: Packet) {
         guard let data = packet.payload else {
             print("Comet packet did not have data.")
