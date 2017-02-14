@@ -49,10 +49,10 @@ class KuiperBelt: UniverseScene {
     }
 
     //finds an asteroid in the scene's children, based on an identifier
-    func findAsteroid(identifier: Int) -> Asteroid? {
+    func findAsteroid(identifier: Int) -> KuiperAsteroid? {
         for child in children {
             if child.name == "\(identifier)" {
-                if let asteroid = child as? Asteroid {
+                if let asteroid = child as? KuiperAsteroid {
                     return asteroid
                 }
             }
@@ -69,7 +69,7 @@ class KuiperBelt: UniverseScene {
 
     //creates an asteroid (with rotation and movement)
     func createAsteroid(point: CGPoint, identifier: Int) {
-        guard let asteroid = self.copyableAsteroids?[identifier % 4].copy() as! Asteroid? else {
+        guard let asteroid = self.copyableKuiperAsteroids?[identifier % 4].copy() as! KuiperAsteroid? else {
             return
         }
 

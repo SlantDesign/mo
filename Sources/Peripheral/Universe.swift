@@ -37,8 +37,8 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func createSceneView() {
         sceneView.frame = CGRect(x: CGFloat(dx), y: 0.0, width: view.frame.width, height: view.frame.height)
         sceneView.ignoresSiblingOrder = false
-        sceneView.showsFPS = true
-        sceneView.showsNodeCount = true
+        sceneView.showsFPS = false
+        sceneView.showsNodeCount = false
         sceneView.allowsTransparency = true
         sceneView.backgroundColor = .clear
     }

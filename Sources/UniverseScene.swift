@@ -14,6 +14,7 @@ class UniverseScene: SKScene {
     var cassini1: CassiniSpaceCraft?
     var cassini2: CassiniSpaceCraft?
     var copyableAsteroids: [Asteroid]?
+    var copyableKuiperAsteroids: [KuiperAsteroid]?
     var cometAuraFrames: [SKTexture]?
     var cometAura: SKSpriteNode?
     let cometAuraAtlas = SKTextureAtlas(named: "comet_aura")
@@ -35,6 +36,14 @@ class UniverseScene: SKScene {
             asteroid.size = CGSize(width: 132, height: 132)
             asteroid.physicsBody = nil
             copyableAsteroids?.append(asteroid)
+        }
+
+        copyableKuiperAsteroids = [KuiperAsteroid]()
+        for i in 0...3 {
+            let asteroid = KuiperAsteroid(imageNamed: "Asteroid_0\(i)")
+            asteroid.size = CGSize(width: 132, height: 132)
+            asteroid.physicsBody = nil
+            copyableKuiperAsteroids?.append(asteroid)
         }
 
         playRandomAmbient()
@@ -105,7 +114,7 @@ class UniverseScene: SKScene {
     }
 
     func createKuiperComet(identifier: Int, position: CGPoint) {
-        guard let comet = self.copyableAsteroids?[identifier % 4].copy() as! Asteroid? else {
+        guard let comet = self.copyableKuiperAsteroids?[identifier % 4].copy() as! KuiperAsteroid? else {
             print("Couldn't create a copy of the asteroid")
             return
         }
@@ -128,7 +137,7 @@ class UniverseScene: SKScene {
 
     //creates an action for the motion of a comet
     func moveComet() -> (SKAction, SKAction) {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 19.5 + random01() * 6.5)
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 26.0)
         let scale = SKAction.scale(by: 0.25, duration: movement.duration * 0.5)
         let fade = SKAction.fadeOut(withDuration: movement.duration * 0.5)
         let wait = SKAction.wait(forDuration: movement.duration * 0.5)
@@ -143,7 +152,7 @@ class UniverseScene: SKScene {
     }
 
     func moveKuiperComet() -> (SKAction, SKAction) {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(-frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 19.5 + random01() * 6.5)
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(-frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 26.0)
         let scale = SKAction.scale(by: 0.25, duration: movement.duration * 0.5)
         let fade = SKAction.fadeOut(withDuration: movement.duration * 0.5)
         let wait = SKAction.wait(forDuration: movement.duration * 0.5)
@@ -180,7 +189,7 @@ class UniverseScene: SKScene {
     }
 
     //adds an animated aura to an asteroid
-    func addKuiperAura(to asteroid: Asteroid) {
+    func addKuiperAura(to asteroid: KuiperAsteroid) {
         guard let texture = cometAuraFrames?[0] else {
             print("could not extract a texture")
             return

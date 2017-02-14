@@ -52,7 +52,7 @@ class KuiperAsteroid: SKSpriteNode {
         d.append(identifier)
         d.append(position)
 
-        let packet = Packet(type: .comet, id: SocketManager.sharedManager.deviceID, payload: d)
+        let packet = Packet(type: .kuiperComet, id: SocketManager.sharedManager.deviceID, payload: d)
         SocketManager.sharedManager.broadcastPacket(packet)
     }
 }
