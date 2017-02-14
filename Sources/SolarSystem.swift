@@ -19,14 +19,16 @@ extension PacketType {
     static let planetIsDynamic = PacketType(rawValue: 800003)
 }
 
+//FIXME: update asteroid comet direction
+//FIXME: update satellite timer
+
 class SolarSystem: UniverseScene, SKPhysicsContactDelegate {
-    static let primaryDevice = 9
+    static let primaryDevice = 15
     static let planetNames: [String] = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
     static let contactBitmask: UInt32 = 0x2
     var planets = [String: Planet]()
     var planetFields = [String: SKFieldNode]()
     var planetFieldBitmasks = [String: UInt32]()
-    var planetBounces = [AudioPlayer("planetBounce0.aiff"), AudioPlayer("planetBounce1.aiff"), AudioPlayer("planetBounce2.aiff")]
 
     func createPlanets() {
         planets["mercury"] = Planet(imageNamed: "Mercury")
@@ -124,14 +126,5 @@ class SolarSystem: UniverseScene, SKPhysicsContactDelegate {
             return
         }
         planet.position = position
-    }
-
-    func didBegin(_ contact: SKPhysicsContact) {
-        for sound in planetBounces {
-            if sound?.playing == false {
-                sound?.play()
-                return
-            }
-        }
     }
 }

@@ -17,7 +17,10 @@ extension PacketType {
 }
 
 class Rockets: UniverseScene {
-    static let primaryDevice = 15
+    static let endeavourDevice = 7
+    static let soyuzDevice = 13
+    static let arianeDevice = 22
+    static let falconDevice = 28
     var rocket: Rocket?
     var launching = false
     var launchTime: TimeInterval = 0.0
@@ -31,20 +34,19 @@ class Rockets: UniverseScene {
     }
 
     func loadRocket() {
-        let flag = SocketManager.sharedManager.deviceID - Rockets.primaryDevice
-        switch flag {
-        case 1:
+        switch SocketManager.sharedManager.deviceID {
+        case Rockets.soyuzDevice:
             rocket = Soyuz()
-        case 2:
+        case Rockets.arianeDevice:
             rocket = Ariane()
-        case 3:
+        case Rockets.falconDevice:
             rocket = Falcon()
         default:
             rocket = Endeavour()
         }
 
         guard let r = rocket else {
-            print("Could not load rocket \(flag).")
+            print("Could not load rocket \(SocketManager.sharedManager.deviceID).")
             return
         }
         addChild(r)

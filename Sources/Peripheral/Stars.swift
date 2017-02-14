@@ -9,8 +9,8 @@
 import UIKit
 
 class Stars {
-    static let primaryDevice = 14
-    static let secondaryDevice = 21
+    static let primaryDevice = 5
+    static let secondaryDevice = 20
     static let constellationCount = 89
     static let maxWidth = CGFloat(constellationCount) * CGFloat(frameCanvasWidth)
 }

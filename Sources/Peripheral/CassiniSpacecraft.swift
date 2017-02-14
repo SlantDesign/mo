@@ -20,16 +20,13 @@ extension PacketType {
 }
 
 class Cassini {
-    static let primaryDevice = 15
-    static let secondaryDevice = 16
+    static let primaryDevice = 1
+    static let secondaryDevice = 28
 }
 
-//FIXME: Choose better arrangement
-//FIXME: Increase levels for sun bursts
 //FIXME: Increase reaction time for sun bursts
 //FIXME: Improve physics on planets
 //FIXME: More audio for ambient background
-//FIXME: More audio for satellite movement
 
 class CassiniSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
@@ -77,7 +74,7 @@ class CassiniSpaceCraft: SKSpriteNode {
     }
 
     func start() {
-        timer = C4.Timer(interval: 10.0) {
+        timer = C4.Timer(interval: 60.0) {
             self.broadcastMovement()
         }
         timer?.start()
@@ -119,8 +116,6 @@ class CassiniSpaceCraft: SKSpriteNode {
         return index
     }
 
-    //FIXME: Calibrate to send out coordinates in universe space
-    //FIXME: Remove targets for observatory screens
     func randomPoint() -> CGPoint {
         let index = randomTargetIndex()
 

@@ -101,7 +101,6 @@ class Falcon: Rocket {
     }
 
     override func ignite() {
-        print(position)
         preiginte?.particleBirthRate = 0.0
         preiginteMidship?.particleBirthRate = 0.0
         ignition?.particleBirthRate = 200.0

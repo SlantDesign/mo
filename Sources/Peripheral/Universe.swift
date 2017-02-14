@@ -46,14 +46,16 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     func loadScene() {
         var shouldBringViewToFront = true
         switch SocketManager.sharedManager.deviceID {
-//        case Rockets.primaryDevice...Rockets.primaryDevice+3:
-//            currentScene = Rockets(size: sceneView.frame.size)
-//        case SolarSystem.primaryDevice...SolarSystem.primaryDevice+3:
-//            currentScene = SolarSystem(size: sceneView.frame.size)
-//        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
-//            currentScene = AsteroidBelt(size: sceneView.frame.size)
+        case Rockets.endeavourDevice, Rockets.soyuzDevice, Rockets.arianeDevice, Rockets.falconDevice:
+            currentScene = Rockets(size: sceneView.frame.size)
+        case SolarSystem.primaryDevice-1...SolarSystem.primaryDevice+4:
+            currentScene = SolarSystem(size: sceneView.frame.size)
+        case AsteroidBelt.primaryDevice - 1...AsteroidBelt.primaryDevice + 1:
+            currentScene = AsteroidBelt(size: sceneView.frame.size)
         case Sun.primaryDevice - 1...Sun.primaryDevice + 1:
             currentScene = Sun(size: sceneView.frame.size)
+        case KuiperBelt.primaryDevice - 1...KuiperBelt.primaryDevice + 1:
+            currentScene = KuiperBelt(size: sceneView.frame.size)
         default:
             shouldBringViewToFront = false
             currentScene = UniverseScene(size: sceneView.frame.size)
@@ -115,6 +117,10 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             handleAddAsteroid(packet)
         case PacketType.comet:
             handleAddComet(packet)
+        case PacketType.kuiperAsteroid:
+            handleAddKuiperAsteroid(packet)
+        case PacketType.kuiperComet:
+            handleAddKuiperComet(packet)
         case PacketType.sun:
             handleSun(packet)
         case PacketType.scrollStars, PacketType.scrollStars2:
@@ -155,7 +161,6 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
     }
 
     //MARK: SolarSystems
-    //FIXME: Screens within a certain range of solarsystem shoudl have planets +/-4 screens?
     func handlePlanet(_ packet: Packet) {
         guard let scene = currentScene as? SolarSystem else {
             return
@@ -249,6 +254,29 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         }
     }
 
+    func handleAddKuiperAsteroid(_ packet: Packet) {
+        guard let scene = currentScene as? KuiperBelt else {
+            //print("Current Scene is not AsteroidBelt")
+            return
+        }
+
+        //If there is no data, do nothing
+        guard let data = packet.payload else {
+            print("Could not extract payload data")
+            return
+        }
+
+        var point = data.extract(CGPoint.self, at: 0)
+
+        let offset = KuiperBelt.primaryDevice - SocketManager.sharedManager.deviceID
+
+        //asteroids are only visible on 3 devices, so don't add them if they wouldn't ever appear
+        if abs(offset) <= 1 {
+            point.x += CGFloat(frameCanvasWidth * Double(offset))
+            scene.createAsteroid(point: point, identifier: packet.id)
+        }
+    }
+
     func handleAddComet(_ packet: Packet) {
         guard let data = packet.payload else {
             print("Comet packet did not have data.")
@@ -265,6 +293,24 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
             scene.removeAsteroid(identifier: identifier)
         }
         currentScene?.createComet(identifier: identifier, position: position)
+    }
+
+    func handleAddKuiperComet(_ packet: Packet) {
+        guard let data = packet.payload else {
+            print("Comet packet did not have data.")
+            return
+        }
+
+        let identifier = data.extract(Int.self, at: 0)
+        var position = data.extract(CGPoint.self, at: MemoryLayout<Int>.size)
+
+        let offset = packet.id - SocketManager.sharedManager.deviceID
+        position.x += CGFloat(frameCanvasWidth * Double(offset))
+
+        if let scene = currentScene as? KuiperBelt {
+            scene.removeAsteroid(identifier: identifier)
+        }
+        currentScene?.createKuiperComet(identifier: identifier, position: position)
     }
 
     //MARK: Sun
