@@ -41,7 +41,7 @@ class AsteroidBelt: UniverseScene {
         super.didMove(to: view)
 
         if SocketManager.sharedManager.deviceID == AsteroidBelt.primaryDevice {
-            timer = C4.Timer(interval: 1.0) {
+            timer = C4.Timer(interval: 1.5) {
                 self.broadcastAddAsteroid()
             }
             timer?.start()

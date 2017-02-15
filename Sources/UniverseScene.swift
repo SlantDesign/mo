@@ -137,7 +137,7 @@ class UniverseScene: SKScene {
 
     //creates an action for the motion of a comet
     func moveComet() -> (SKAction, SKAction) {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 26.0)
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(frameCanvasWidth * 26.0), dy: 0), duration: 10.0)
         let scale = SKAction.scale(by: 0.25, duration: movement.duration * 0.5)
         let fade = SKAction.fadeOut(withDuration: movement.duration * 0.5)
         let wait = SKAction.wait(forDuration: movement.duration * 0.5)
@@ -145,14 +145,15 @@ class UniverseScene: SKScene {
         let waitFadeScale = SKAction.sequence([wait, fadeScale, SKAction.removeFromParent()])
 
         let play = SKAction.play()
-        let audioFade = SKAction.changeVolume(to: 0.0, duration: movement.duration*0.5)
-        let audioWaitFade = SKAction.sequence([wait, audioFade, SKAction.stop(), SKAction.removeFromParent()])
+        let audioWait = SKAction.wait(forDuration: movement.duration * 0.25)
+        let audioFade = SKAction.changeVolume(to: 0.0, duration: movement.duration*0.25)
+        let audioWaitFade = SKAction.sequence([audioWait, audioFade, SKAction.stop(), SKAction.removeFromParent()])
 
         return (SKAction.group([movement, waitFadeScale]), SKAction.group([play, audioWaitFade]))
     }
 
     func moveKuiperComet() -> (SKAction, SKAction) {
-        let movement = SKAction.move(by: CGVector(dx: CGFloat(-frameCanvasWidth * 26.0), dy: CGFloat(random01() * 200 - 100)), duration: 26.0)
+        let movement = SKAction.move(by: CGVector(dx: CGFloat(-frameCanvasWidth * 24.0), dy: 0), duration: 10.0)
         let scale = SKAction.scale(by: 0.25, duration: movement.duration * 0.5)
         let fade = SKAction.fadeOut(withDuration: movement.duration * 0.5)
         let wait = SKAction.wait(forDuration: movement.duration * 0.5)
@@ -160,8 +161,9 @@ class UniverseScene: SKScene {
         let waitFadeScale = SKAction.sequence([wait, fadeScale, SKAction.removeFromParent()])
 
         let play = SKAction.play()
-        let audioFade = SKAction.changeVolume(to: 0.0, duration: movement.duration*0.5)
-        let audioWaitFade = SKAction.sequence([wait, audioFade, SKAction.stop(), SKAction.removeFromParent()])
+        let audioWait = SKAction.wait(forDuration: movement.duration * 0.25)
+        let audioFade = SKAction.changeVolume(to: 0.0, duration: movement.duration*0.25)
+        let audioWaitFade = SKAction.sequence([audioWait, audioFade, SKAction.stop(), SKAction.removeFromParent()])
 
         return (SKAction.group([movement, waitFadeScale]), SKAction.group([play, audioWaitFade]))
     }
