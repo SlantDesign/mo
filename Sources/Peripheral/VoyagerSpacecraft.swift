@@ -13,21 +13,19 @@ import MO
 import CocoaAsyncSocket
 
 extension PacketType {
-    static let cassini = PacketType(rawValue: 110000)
-    static let cassiniShouldMove = PacketType(rawValue: 110001)
+    static let voyager = PacketType(rawValue: 130000)
+    static let voyagerShouldMove = PacketType(rawValue: 130001)
 }
 
-class Cassini {
-    static let primaryDevice = 1
+class Voyager {
+    static let primaryDevice = 28
 }
 
-class CassiniSpaceCraft: SKSpriteNode {
+class VoyagerSpaceCraft: SKSpriteNode {
     var burner: SKEmitterNode?
     var timer: C4.Timer?
     let turnSound = SKAudioNode(fileNamed:"satelliteTurn.aiff")
-    let satelliteMoveSound = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
-    var packetType = PacketType.cassini
-    var shouldMovePacketType = PacketType.cassiniShouldMove
+    let satelliteMoveSound = SKAudioNode(fileNamed: "satelliteResponse3.aiff")
     var moving = false
 
     convenience init() {
@@ -68,13 +66,13 @@ class CassiniSpaceCraft: SKSpriteNode {
         var position = randomPoint()
         let data = NSMutableData()
         data.append(&position, length: MemoryLayout<CGPoint>.size)
-        let packet = Packet(type: packetType, id: SocketManager.sharedManager.deviceID, payload: data as Data)
+        let packet = Packet(type: PacketType.voyager, id: SocketManager.sharedManager.deviceID, payload: data as Data)
         SocketManager.sharedManager.broadcastPacket(packet)
         timer?.start()
     }
 
     func broadcastCassiniShouldMove() {
-        let packet = Packet(type: shouldMovePacketType, id: SocketManager.sharedManager.deviceID)
+        let packet = Packet(type: PacketType.voyagerShouldMove, id: SocketManager.sharedManager.deviceID)
         SocketManager.sharedManager.broadcastPacket(packet)
     }
 
@@ -85,7 +83,7 @@ class CassiniSpaceCraft: SKSpriteNode {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !moving {
             timer?.stop()
-            if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+            if SocketManager.sharedManager.deviceID == Voyager.primaryDevice {
                 broadcastMovement()
             } else {
                 broadcastCassiniShouldMove()
@@ -156,7 +154,7 @@ class CassiniSpaceCraft: SKSpriteNode {
         let rotateThenMove = SKAction.sequence([rotation, startBurner, movement, endBurner])
         run(rotateThenMove)
         turnSound.run(SKAction.play())
-        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+        if SocketManager.sharedManager.deviceID == Voyager.primaryDevice {
             timer?.start()
         }
     }

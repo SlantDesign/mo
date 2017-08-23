@@ -33,6 +33,7 @@
 		1F9426F71E524C9F00720C5A /* KuiperBelt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9426F61E524C9F00720C5A /* KuiperBelt.swift */; };
 		1F9426F91E52501E00720C5A /* KuiperAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9426F81E52501E00720C5A /* KuiperAsteroid.swift */; };
 		1F9426FB1E526F8700720C5A /* planetBounce1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9426FA1E526F8700720C5A /* planetBounce1.mp3 */; };
+		1F9426FE1E53E81600720C5A /* VoyagerSpacecraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9426FC1E53E81600720C5A /* VoyagerSpacecraft.swift */; };
 		1FA1B0D31E405E8500869F26 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1B0D11E405E6B00869F26 /* Star.swift */; };
 		1FA5AC881E4FC85C00955D4E /* cometNoise.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */; };
 		1FA5AC8C1E5093F200955D4E /* observatory.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5AC8B1E5093F200955D4E /* observatory.aiff */; };
@@ -234,6 +235,7 @@
 		1F9426F61E524C9F00720C5A /* KuiperBelt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KuiperBelt.swift; sourceTree = "<group>"; };
 		1F9426F81E52501E00720C5A /* KuiperAsteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KuiperAsteroid.swift; sourceTree = "<group>"; };
 		1F9426FA1E526F8700720C5A /* planetBounce1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = planetBounce1.mp3; sourceTree = "<group>"; };
+		1F9426FC1E53E81600720C5A /* VoyagerSpacecraft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoyagerSpacecraft.swift; sourceTree = "<group>"; };
 		1FA1B0D11E405E6B00869F26 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		1FA1B0D41E405F0500869F26 /* BigStarsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStarsDataSource.swift; sourceTree = "<group>"; };
 		1FA5AC871E4FC85C00955D4E /* cometNoise.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cometNoise.aiff; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				D9773D611E4D1BF500CE5A95 /* CassiniSpacecraft.swift */,
+				1F9426FC1E53E81600720C5A /* VoyagerSpacecraft.swift */,
 			);
 			name = Cassini;
 			path = Peripheral;
@@ -1686,6 +1689,7 @@
 				D917CFCD1E4CE69F00445BC2 /* Falcon.swift in Sources */,
 				D917CFCC1E4CE69F00445BC2 /* Rocket.swift in Sources */,
 				1F36B7E01E4024B900441C9B /* StarCell.swift in Sources */,
+				1F9426FE1E53E81600720C5A /* VoyagerSpacecraft.swift in Sources */,
 				1F851D0E1E37E97200BC8AC0 /* BigStarsLayout.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
 				1F8F744E1E405F50002DD972 /* BigStarsDataSource.swift in Sources */,

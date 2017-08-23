@@ -74,27 +74,20 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         let spaceCraft1 = CassiniSpaceCraft()
         let offset = CGFloat(Cassini.primaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
         spaceCraft1.position = CGPoint(x: offset, y: 0)
-        let s1 = SKAudioNode(fileNamed: "satelliteResponse0.aiff")
-        spaceCraft1.satelliteMoveSound = s1
         if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
             spaceCraft1.start()
         }
         currentScene?.addChild(spaceCraft1)
-        currentScene?.cassini1 = spaceCraft1
+        currentScene?.cassini = spaceCraft1
 
-        let spaceCraft2 = CassiniSpaceCraft()
-        let offset2 = CGFloat(Cassini.secondaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
+        let spaceCraft2 = VoyagerSpaceCraft()
+        let offset2 = CGFloat(Voyager.primaryDevice - SocketManager.sharedManager.deviceID) * CGFloat(frameCanvasWidth)
         spaceCraft2.position = CGPoint(x: offset2, y: 0)
-        spaceCraft2.cassiniIdentifier = Cassini.secondaryDevice
-        spaceCraft2.packetType = PacketType.cassini2
-        let s2 = SKAudioNode(fileNamed: "satelliteResponse3.aiff")
-        spaceCraft2.satelliteMoveSound = s2
-        spaceCraft2.shouldMovePacketType = PacketType.cassini2ShouldMove
-        if SocketManager.sharedManager.deviceID == Cassini.secondaryDevice {
-            spaceCraft2.start()
+        if SocketManager.sharedManager.deviceID == Voyager.primaryDevice {
+            spaceCraft1.start()
         }
-        currentScene?.cassini2 = spaceCraft2
         currentScene?.addChild(spaceCraft2)
+        currentScene?.voyager = spaceCraft2
     }
 
     func createBackground() {
@@ -109,10 +102,14 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
 
     open override func receivePacket(_ packet: Packet) {
         switch packet.packetType {
-        case PacketType.cassini, PacketType.cassini2:
+        case PacketType.cassini:
             handleCassini(packet)
-        case PacketType.cassiniShouldMove, PacketType.cassini2ShouldMove:
+        case PacketType.cassiniShouldMove:
             handleCassiniShouldMove(packet.packetType)
+        case PacketType.voyager:
+            handleVoyager(packet)
+        case PacketType.voyagerShouldMove:
+            handleVoyagerShouldMove(packet.packetType)
         case PacketType.asteroid:
             handleAddAsteroid(packet)
         case PacketType.comet:
@@ -146,17 +143,31 @@ open class Universe: UniverseController, ScrollDelegate, GCDAsyncSocketDelegate 
         }
         let point = payload.extract(CGPoint.self, at: 0)
         if packet.packetType == .cassini {
-            currentScene?.transmitCassini1(coordinates: point)
-        } else if packet.packetType == .cassini2 {
-            currentScene?.transmitCassini2(coordinates: point)
+            currentScene?.transmitCassini(coordinates: point)
+        }
+    }
+
+    //MARK: Cassini
+    func handleVoyager(_ packet: Packet) {
+        guard let payload = packet.payload else {
+            print("Couldn't extract payload")
+            return
+        }
+        let point = payload.extract(CGPoint.self, at: 0)
+        if packet.packetType == .voyager {
+            currentScene?.transmitVoyager(coordinates: point)
         }
     }
 
     func handleCassiniShouldMove(_ packetType: PacketType) {
-        if packetType == .cassini {
-            currentScene?.cassini1?.broadcastMovement()
-        } else if packetType == .cassini {
-            currentScene?.cassini2?.broadcastMovement()
+        if SocketManager.sharedManager.deviceID == Cassini.primaryDevice {
+            currentScene?.cassini?.broadcastMovement()
+        }
+    }
+
+    func handleVoyagerShouldMove(_ packetType: PacketType) {
+        if SocketManager.sharedManager.deviceID == Voyager.primaryDevice {
+            currentScene?.voyager?.broadcastMovement()
         }
     }
 

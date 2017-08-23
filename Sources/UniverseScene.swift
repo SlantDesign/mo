@@ -11,8 +11,8 @@ import MO
 import C4
 
 class UniverseScene: SKScene {
-    var cassini1: CassiniSpaceCraft?
-    var cassini2: CassiniSpaceCraft?
+    var cassini: CassiniSpaceCraft?
+    var voyager: VoyagerSpaceCraft?
     var copyableAsteroids: [Asteroid]?
     var copyableKuiperAsteroids: [KuiperAsteroid]?
     var cometAuraFrames: [SKTexture]?
@@ -214,12 +214,12 @@ class UniverseScene: SKScene {
     }
 
     //MARK: Cassini
-    func transmitCassini1(coordinates: CGPoint) {
-        cassini1?.rotateAndMove(to: convertCoordinates(coordinates))
+    func transmitCassini(coordinates: CGPoint) {
+        cassini?.rotateAndMove(to: convertCoordinates(coordinates))
     }
 
-    func transmitCassini2(coordinates: CGPoint) {
-        cassini2?.rotateAndMove(to: convertCoordinates(coordinates))
+    func transmitVoyager(coordinates: CGPoint) {
+        voyager?.rotateAndMove(to: convertCoordinates(coordinates))
     }
 
     func convertCoordinates(_ point: CGPoint) -> CGPoint {
