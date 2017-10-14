@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable: Any]?) -> Bool {
         _ = SocketManager.sharedManager
 
-        DDLog.add(DDTTYLogger.sharedInstance()) // TTY = Xcode console
-        DDLog.add(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
+        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
         return true
     }
 

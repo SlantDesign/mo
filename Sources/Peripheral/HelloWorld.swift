@@ -26,7 +26,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
         label.center = Point(canvas.center.x + dx, canvas.center.y)
         canvas.add(label)
 
-        canvas.addTapGestureRecognizer { _, center, _ in
+        _ = canvas.addTapGestureRecognizer { _, center, _ in
             if self.localize(point: center).x > self.canvas.center.x {
                 self.send(type: .world)
             } else {
@@ -66,7 +66,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
             self.label.center = center
             self.canvas.backgroundColor = C4Grey
         }
-        anim.curve = .EaseOut
+        anim.curve = .easeOut
         anim.animate()
     }
 
@@ -77,7 +77,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
             self.label.center = center
             self.canvas.backgroundColor = C4Blue
         }
-        anim.curve = .EaseOut
+        anim.curve = .easeOut
         anim.animate()
     }
 }

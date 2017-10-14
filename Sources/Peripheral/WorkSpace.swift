@@ -33,7 +33,7 @@ class WorkSpace: CanvasController {
         let loader = Circle(center: loading.center, radius: loading.width/2.0)
         loader.fillColor = clear
         loader.strokeColor = white
-        loader.lineCap = .Round
+        loader.lineCap = .round
         loader.strokeEnd = 0.0
         loading.add(loader)
         ShapeLayer.disableActions = false
@@ -54,7 +54,7 @@ class WorkSpace: CanvasController {
         c.delay = 1.25
 
         let seq = ViewAnimationGroup(animations: [a, b, c])
-        seq.addCompletionObserver {
+        _ = seq.addCompletionObserver {
             seq.animate()
         }
         seq.animate()

@@ -2,7 +2,7 @@ use_frameworks!
 project 'MO.xcodeproj'
 
 abstract_target 'All' do
-  pod 'CocoaAsyncSocket', '~> 7.5.1'
+  pod 'CocoaAsyncSocket', '~> 7.6.1'
 
   target 'MO-iOS' do
     platform :ios, '9.3'
@@ -31,21 +31,14 @@ abstract_target 'All' do
   target 'Master' do
     platform :osx, '10.11'
 
-    pod 'CocoaLumberjack/Swift', '~> 3.0'
+    pod 'CocoaLumberjack/Swift', '~> 3.3'
   end
 
   target 'Peripheral' do
     platform :ios, '9.3'
 
-    pod 'C4', '~> 2.1.1'
-    pod 'CocoaLumberjack/Swift', '~> 3.0'
+    pod 'C4', '~> 3.0.0'
+    pod 'CocoaLumberjack/Swift', '~> 3.3'
   end
 end
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
-    end
-  end
-end
