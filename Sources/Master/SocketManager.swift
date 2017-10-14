@@ -44,7 +44,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         var port: UInt16 = 0
         GCDAsyncUdpSocket.getHost(&hostString, port: &port, fromAddress: address)
 
-        guard let host = hostString as? String else {
+        guard let host = hostString as String? else {
             DDLogWarn("Received data from an invalid host")
             return
         }
@@ -85,14 +85,12 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
     }
 
     func updateStatuses() {
-        for (_, p) in peripherals {
-            if p.lag > Peripheral.pingTimeout {
-                // Disconnect if we don't get a ping for a while
-                p.status = .Disconnected
-                DDLogVerbose("Disconnected from: \(p.id)")
-                queue.async {
-                    self.peripherals.removeValue(forKey: p.address)
-                }
+        for (_, p) in peripherals where p.lag > Peripheral.pingTimeout {
+            // Disconnect if we don't get a ping for a while
+            p.status = .Disconnected
+            DDLogVerbose("Disconnected from: \(p.id)")
+            queue.async {
+                self.peripherals.removeValue(forKey: p.address)
             }
         }
     }

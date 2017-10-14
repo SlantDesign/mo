@@ -37,7 +37,7 @@ abstract_target 'All' do
   target 'Peripheral' do
     platform :ios, '9.3'
 
-    pod 'C4', '~> 2.1.1’
+    pod 'C4', '~> 2.1.1'
     pod 'CocoaLumberjack/Swift', '~> 3.0'
   end
 end

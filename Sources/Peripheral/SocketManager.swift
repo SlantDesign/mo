@@ -46,7 +46,7 @@ open class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
         socket.setIPv4Enabled(true)
         socket.setIPv6Enabled(false)
         open()
-        
+
         let packet = Packet(type: .handshake, id: deviceID)
         socket.send(packet.serialize() as Data, toHost: SocketManager.masterHost, port: SocketManager.masterPort, withTimeout: -1, tag: 0)
     }
