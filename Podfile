@@ -37,7 +37,14 @@ abstract_target 'All' do
   target 'Peripheral' do
     platform :ios, '9.3'
 
-    pod 'C4', '~> 3.0.0'
+    pod 'C4', '~> 3.0.1'
+    pod 'CocoaLumberjack/Swift', '~> 3.3'
+  end
+
+  target 'Peripheral-tvOS' do
+    platform :tvos, '9.3'
+
+    pod 'C4', '~> 3.0.1'
     pod 'CocoaLumberjack/Swift', '~> 3.3'
   end
 end

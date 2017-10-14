@@ -26,6 +26,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
         label.center = Point(canvas.center.x + dx, canvas.center.y)
         canvas.add(label)
 
+        #if os(iOS)
         _ = canvas.addTapGestureRecognizer { _, center, _ in
             if self.localize(point: center).x > self.canvas.center.x {
                 self.send(type: .world)
@@ -33,6 +34,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
                 self.send(type: .hello)
             }
         }
+        #endif
     }
 
     func localize(point: Point) -> Point {

@@ -119,7 +119,9 @@ class WorkSpace: CanvasController {
         }
     }
 
+    #if os(iOS)
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    #endif
 }
