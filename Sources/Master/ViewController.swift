@@ -54,13 +54,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let peripheral = sortedPeripherals[row]
 
         switch column.identifier {
-        case "id":
+        case NSUserInterfaceItemIdentifier(rawValue: "id"):
             return peripheral.id
 
-        case "status":
+        case NSUserInterfaceItemIdentifier(rawValue: "status"):
             return peripheral.status.rawValue
 
-        case "lag":
+        case NSUserInterfaceItemIdentifier(rawValue: "lag"):
             return peripheral.lag
 
         default:
@@ -78,19 +78,19 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guard let column = tableColumn else {
             return nil
         }
-        guard let view = tableView.make(withIdentifier: column.identifier, owner: self) as? NSTableCellView else {
+        guard let view = tableView.makeView(withIdentifier: column.identifier, owner: self) as? NSTableCellView else {
             return nil
         }
         let peripheral = sortedPeripherals[row]
 
         switch column.identifier {
-        case "id":
+        case NSUserInterfaceItemIdentifier(rawValue: "id"):
             view.textField?.integerValue = peripheral.id
 
-        case "status":
+        case NSUserInterfaceItemIdentifier(rawValue: "status"):
             view.textField?.stringValue = peripheral.status.rawValue
 
-        case "lag":
+        case NSUserInterfaceItemIdentifier(rawValue: "lag"):
             view.textField?.stringValue = String(format: "%.2fms", arguments: [peripheral.lag * 1000.0])
 
         default:

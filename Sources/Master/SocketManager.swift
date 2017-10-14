@@ -78,7 +78,7 @@ public class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     // MARK: - Pinging
 
-    func ping() {
+    @objc func ping() {
         updateStatuses()
         let p = Packet(type: .ping, id: SocketManager.masterID)
         socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)

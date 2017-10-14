@@ -29,7 +29,7 @@ class WorkSpace: CanvasController {
     func showLoading() {
         ShapeLayer.disableActions = true
         loading = View(frame: Rect(0, 0, 50, 50))
-        loading.rotation += -M_PI_2
+        loading.rotation += -.pi / 2
         let loader = Circle(center: loading.center, radius: loading.width/2.0)
         loader.fillColor = clear
         loader.strokeColor = white
