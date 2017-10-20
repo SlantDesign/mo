@@ -1,57 +1,52 @@
-// Copyright © 2016 Slant.
+// Copyright © 2017 Slant.
 //
 // This file is part of MO. The full MO copyright notice, including terms
 // governing use, modification, and redistribution, is contained in the file
 // LICENSE at the root of the source code distribution tree.
 
 import CocoaAsyncSocket
-import CocoaLumberjack
-import MO
 
-class Peripheral: NSObject {
-    enum Status: String {
-        case Connecting
-        case Connected
-        case Disconnected
-    }
+/// Represents a node instance.
+public final class Node {
+    /// Network coniguration.
+    public let networkConfiguration: NetworkConfiguration
 
-    static let pingTimeout = 5.0
+    /// The node's identifier.
+    public internal(set) var id = -1
 
-    var socket: GCDAsyncUdpSocket
+    /// The node's IP address.
+    public internal(set) var address: String
 
-    /// The peripheral's identifier
-    var id = -1
+    /// Current node status.
+    public internal(set) var status = Status.connecting
 
-    /// The peripheral's IP address
-    var address: String
+    /// Last ping response timestamp.
+    public internal(set) var lastPingResponse: Date?
 
-    /// Whether a hanshake was received
-    var status = Status.Connecting
-
-    var lastPingResponse: Date?
-
-    var lag: TimeInterval {
+    /// Time elapsed since the last ping response.
+    public var lag: TimeInterval {
         guard let date = lastPingResponse else {
             return -1
         }
         return NSDate().timeIntervalSince(date)
     }
 
+    var socket: GCDAsyncUdpSocket
+    weak var delegate: SocketManagerDelegate?
+
     /// Buffer for reading data
     var readBuffer = NSMutableData()
 
-    /// The action to invoke when a packet is received
-    var didReceivePacketAction: ((Packet, Peripheral) -> Void)?
-
-    init(address: String, socket: GCDAsyncUdpSocket) {
-        self.socket = socket
+    init(networkConfiguration: NetworkConfiguration, address: String, socket: GCDAsyncUdpSocket, delegate: SocketManagerDelegate?) {
+        self.networkConfiguration = networkConfiguration
         self.address = address
-        super.init()
+        self.socket = socket
+        self.delegate = delegate
     }
 
     func sendHandshake() {
-        let p = Packet(type: .handshake, id: SocketManager.masterID)
-        socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+        let p = Packet(type: .handshake, id: -1)
+        socket.send(p.serialize(), toHost: networkConfiguration.broadcastHost, port: networkConfiguration.nodePort, withTimeout: -1, tag: 0)
     }
 
     func processData(_ data: Data) {
@@ -81,15 +76,15 @@ class Peripheral: NSObject {
         do {
             packet = try Packet(data)
         } catch {
-            DDLogWarn("Invalid packet received from \(id): \(error)")
+            delegate?.handleError("Invalid packet received from \(id): \(error)")
             return
         }
 
         switch packet.packetType {
         case PacketType.handshake:
             id = packet.id
-            status = .Connected
-            DDLogVerbose("Got handshake from \(id)")
+            status = .connected
+            delegate?.handleStatus(status, node: self)
 
         case PacketType.ping:
             id = packet.id
@@ -99,6 +94,6 @@ class Peripheral: NSObject {
             break
         }
 
-        didReceivePacketAction?(packet, self)
+        delegate?.handlePacket(packet, node: self)
     }
 }

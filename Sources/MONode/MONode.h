@@ -1,4 +1,4 @@
-// Copyright © 2016 Slant.
+// Copyright © 2017 Slant.
 //
 // This file is part of MO. The full MO copyright notice, including terms
 // governing use, modification, and redistribution, is contained in the file
@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 //! Project version number for MO.
-FOUNDATION_EXPORT double MOVersionNumber;
+FOUNDATION_EXPORT double MONodeVersionNumber;
 
 //! Project version string for MO.
-FOUNDATION_EXPORT const unsigned char MOVersionString[];
+FOUNDATION_EXPORT const unsigned char MONodeVersionString[];

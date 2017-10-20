@@ -4,48 +4,41 @@ project 'MO.xcodeproj'
 abstract_target 'All' do
   pod 'CocoaAsyncSocket', '~> 7.6.1'
 
-  target 'MO-iOS' do
-    platform :ios, '9.3'
+  abstract_target 'iOS' do
+      platform :ios, '9.3'
+      target 'MOHub-iOS'
+      target 'MONode-iOS'
+      target 'MOHubTests-iOS'
+      target 'MONodeTests-iOS'
+
+      target 'PeripheralApp' do
+          pod 'C4', '~> 3.0.1'
+          pod 'CocoaLumberjack/Swift', '~> 3.3'
+      end
   end
 
-  target 'MOTests-iOS' do
-    platform :ios, '9.3'
+  abstract_target 'tvOS' do
+      platform :tvos, '9.3'
+      target 'MOHub-tvOS'
+      target 'MONode-tvOS'
+      target 'MOHubTests-tvOS'
+      target 'MONodeTests-tvOS'
+
+      target 'PeripheralApp-tvOS' do
+          pod 'C4', '~> 3.0.1'
+          pod 'CocoaLumberjack/Swift', '~> 3.3'
+      end
   end
 
-  target 'MO-tvOS' do
-    platform :tvos, '9.3'
-  end
+  abstract_target 'macOS' do
+      platform :osx, '10.11'
+      target 'MOHub-macOS'
+      target 'MONode-macOS'
+      target 'MOHubTests-macOS'
+      target 'MONodeTests-macOS'
 
-  target 'MOTests-tvOS' do
-    platform :tvos, '9.3'
-  end
-
-  target 'MO-macOS' do
-    platform :osx, '10.11'
-  end
-
-  target 'MOTests-macOS' do
-    platform :osx, '10.11'
-  end
-
-  target 'Master' do
-    platform :osx, '10.11'
-
-    pod 'CocoaLumberjack/Swift', '~> 3.3'
-  end
-
-  target 'Peripheral' do
-    platform :ios, '9.3'
-
-    pod 'C4', '~> 3.0.1'
-    pod 'CocoaLumberjack/Swift', '~> 3.3'
-  end
-
-  target 'Peripheral-tvOS' do
-    platform :tvos, '9.3'
-
-    pod 'C4', '~> 3.0.1'
-    pod 'CocoaLumberjack/Swift', '~> 3.3'
+      target 'MasterApp' do
+          pod 'CocoaLumberjack/Swift', '~> 3.3'
+      end
   end
 end
-

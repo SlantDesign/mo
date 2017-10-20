@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EAF81E0F638E00829825"
-               BuildableName = "Peripheral.app"
-               BlueprintName = "Peripheral"
+               BlueprintIdentifier = "610A6AB51F92C67B003B841A"
+               BuildableName = "PeripheralApp-tvOS.app"
+               BlueprintName = "PeripheralApp-tvOS"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EA871E0F2BD100829825"
-               BuildableName = "MOTests-iOS.xctest"
-               BlueprintName = "MOTests-iOS"
+               BlueprintIdentifier = "615266C41F99A587005C657D"
+               BuildableName = "MONodeTests-tvOS.xctest"
+               BlueprintName = "MONodeTests-tvOS"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EAF81E0F638E00829825"
-            BuildableName = "Peripheral.app"
-            BlueprintName = "Peripheral"
+            BlueprintIdentifier = "610A6AB51F92C67B003B841A"
+            BuildableName = "PeripheralApp-tvOS.app"
+            BlueprintName = "PeripheralApp-tvOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,9 +67,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EAF81E0F638E00829825"
-            BuildableName = "Peripheral.app"
-            BlueprintName = "Peripheral"
+            BlueprintIdentifier = "610A6AB51F92C67B003B841A"
+            BuildableName = "PeripheralApp-tvOS.app"
+            BlueprintName = "PeripheralApp-tvOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,9 +86,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EAF81E0F638E00829825"
-            BuildableName = "Peripheral.app"
-            BlueprintName = "Peripheral"
+            BlueprintIdentifier = "610A6AB51F92C67B003B841A"
+            BuildableName = "PeripheralApp-tvOS.app"
+            BlueprintName = "PeripheralApp-tvOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

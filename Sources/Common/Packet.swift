@@ -20,9 +20,6 @@ public struct PacketType: RawRepresentable, Equatable {
     /// Packet sent periodically to measure lag and detect disconnected peripherals
     public static let ping = PacketType(rawValue: 1)
 
-    /// Packet sent for switching between universe controllers
-    public static let switchUniverse = PacketType(rawValue: -1)
-
     public static func == (lhs: PacketType, rhs: PacketType) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }

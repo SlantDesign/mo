@@ -6,7 +6,10 @@
 
 import Cocoa
 import CocoaAsyncSocket
-import MO
+import CocoaLumberjack
+import MOHub
+
+let config = NetworkConfiguration()
 
 extension PacketType {
     static let scroll = PacketType(rawValue: 10)
@@ -16,42 +19,40 @@ extension PacketType {
     static let switchUniverse = PacketType(rawValue: 14)
 }
 
-class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, SocketManagerDelegate {
+    let socketManager = SocketManager(networkConfiguration: config)
+
     @IBOutlet weak var tableView: NSTableView!
 
-    var socketManager = SocketManager.sharedManager
-    var sortedPeripherals = [Peripheral]()
+    var sortedNodes = [Node]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        socketManager.changeAction = {
-            self.reload()
-        }
     }
 
     func reload() {
-        let array = Array(socketManager.peripherals.values)
+        let array = Array(socketManager.nodes.values)
         let sorted = (array as NSArray).sortedArray(using: tableView.sortDescriptors)
-        sortedPeripherals = sorted as! [Peripheral]
+        sortedNodes = sorted as! [Node]
         tableView.reloadData()
     }
 
     @IBAction func syncAnimations(_ sender: NSButton) {
-        let p = Packet(type: PacketType.sync, id: SocketManager.masterID)
-        socketManager.socket.send(p.serialize(), toHost: SocketManager.broadcastHost, port: SocketManager.peripheralPort, withTimeout: -1, tag: 0)
+        let p = Packet(type: PacketType.sync, id: -1)
+        socketManager.sendPacket(p)
     }
 
     // MARK: - NSTableViewDataSource
 
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return sortedPeripherals.count
+        return sortedNodes.count
     }
 
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         guard let column = tableColumn else {
             return nil
         }
-        let peripheral = sortedPeripherals[row]
+        let peripheral = sortedNodes[row]
 
         switch column.identifier {
         case NSUserInterfaceItemIdentifier(rawValue: "id"):
@@ -81,7 +82,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guard let view = tableView.makeView(withIdentifier: column.identifier, owner: self) as? NSTableCellView else {
             return nil
         }
-        let peripheral = sortedPeripherals[row]
+        let peripheral = sortedNodes[row]
 
         switch column.identifier {
         case NSUserInterfaceItemIdentifier(rawValue: "id"):
@@ -98,5 +99,19 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
 
         return view
+    }
+
+    // MARK: SocketManagerDelegate
+
+    func handleError(_ message: String) {
+        DDLogError(message)
+    }
+
+    func handlePacket(_ packet: Packet, node: Node) {
+        reload()
+    }
+
+    func handleStatus(_ status: Node.Status, node: Node) {
+        reload()
     }
 }

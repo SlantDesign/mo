@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EB5A1E0F664700829825"
-               BuildableName = "MO.framework"
-               BlueprintName = "MO-tvOS"
+               BlueprintIdentifier = "6152667E1F99A554005C657D"
+               BuildableName = "MONode.framework"
+               BlueprintName = "MONode-macOS"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EB621E0F664700829825"
-               BuildableName = "MOTests-tvOS.xctest"
-               BlueprintName = "MOTests-tvOS"
+               BlueprintIdentifier = "615266861F99A555005C657D"
+               BuildableName = "MONodeTests-macOS.xctest"
+               BlueprintName = "MONodeTests-macOS"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EB5A1E0F664700829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-tvOS"
+            BlueprintIdentifier = "6152667E1F99A554005C657D"
+            BuildableName = "MONode.framework"
+            BlueprintName = "MONode-macOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EB5A1E0F664700829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-tvOS"
+            BlueprintIdentifier = "6152667E1F99A554005C657D"
+            BuildableName = "MONode.framework"
+            BlueprintName = "MONode-macOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,9 +84,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EB5A1E0F664700829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-tvOS"
+            BlueprintIdentifier = "6152667E1F99A554005C657D"
+            BuildableName = "MONode.framework"
+            BlueprintName = "MONode-macOS"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

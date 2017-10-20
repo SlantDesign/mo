@@ -13,19 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     fileprivate func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable: Any]?) -> Bool {
-        _ = SocketManager.sharedManager
-
         DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
         DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
         return true
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        SocketManager.sharedManager.open()
-
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        SocketManager.sharedManager.close()
     }
 }

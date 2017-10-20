@@ -7,11 +7,17 @@
 import CocoaLumberjack
 import C4
 import Foundation
-import MO
+import MONode
 import UIKit
 
-class WorkSpace: CanvasController {
-    var socketManager: SocketManager?
+let config = NetworkConfiguration()
+
+extension PacketType {
+    static let switchUniverse = PacketType(rawValue: -1)
+}
+
+class WorkSpace: CanvasController, SocketManagerDelegate {
+    let socketManager = SocketManager(networkConfiguration: config)
     var currentUniverse: UniverseController?
     var syncTimestamp: TimeInterval = 0
     var loading: View!
@@ -20,10 +26,13 @@ class WorkSpace: CanvasController {
     var preparing: Bool = false
 
     override func setup() {
-        initializeSocketManager()
-
+        socketManager.delegate = self
+        helloWorld.socketManager = socketManager
         currentUniverse = helloWorld
         canvas.add(currentUniverse?.canvas)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
     }
 
     func showLoading() {
@@ -79,23 +88,6 @@ class WorkSpace: CanvasController {
         }
     }
 
-    func initializeSocketManager() {
-        socketManager = SocketManager.sharedManager
-        socketManager?.workspace = self
-    }
-
-    func receivePacket(_ packet: Packet) {
-        switch packet.packetType {
-        case PacketType.switchUniverse:
-            if let name = extractNewUniverseName(packet.payload) {
-                //FIXME: This is where we should switch between universes, initiating some kind of 
-                currentUniverse = selectUniverse(name)
-            }
-        default:
-            currentUniverse?.receivePacket(packet)
-       }
-    }
-
     func extractNewUniverseName(_ data: Data?) -> String? {
         if let d = data,
         let name = NSString(data: d as Data, encoding: String.Encoding.utf8.rawValue) {
@@ -124,4 +116,33 @@ class WorkSpace: CanvasController {
         return true
     }
     #endif
+
+    // MARK: Application notifications
+
+    @objc func applicationDidBecomeActive(_ application: UIApplication) {
+        socketManager.open()
+
+    }
+
+    @objc func applicationWillResignActive(_ application: UIApplication) {
+        socketManager.close()
+    }
+
+    // MARK: SocketManagerDelegate
+
+    func handleError(_ message: String) {
+        DDLogError(message)
+    }
+
+    func handlePacket(_ packet: Packet) {
+        switch packet.packetType {
+        case PacketType.switchUniverse:
+            if let name = extractNewUniverseName(packet.payload) {
+                //FIXME: This is where we should switch between universes, initiating some kind of
+                currentUniverse = selectUniverse(name)
+            }
+        default:
+            currentUniverse?.receivePacket(packet)
+        }
+    }
 }

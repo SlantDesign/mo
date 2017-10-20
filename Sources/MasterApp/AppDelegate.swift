@@ -9,12 +9,8 @@ import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var socketManager: SocketManager?
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
         DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
-
-        socketManager = SocketManager.sharedManager
     }
 }

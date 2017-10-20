@@ -1,13 +1,7 @@
-//
-//  HelloMO.swift
-//  MO
-//
-//  Created by travis on 2017-01-02.
 //  Copyright © 2017 Slant. All rights reserved.
-//
 
 import Foundation
-import MO
+import MONode
 import C4
 import CocoaAsyncSocket
 
@@ -19,7 +13,6 @@ extension PacketType {
 }
 
 class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
-    let socketManager = SocketManager.sharedManager
     let label = TextShape(text: "HELLO", font: Font(name: "AppleSDGothicNeo-Bold", size: 120)!)!
 
     override func setup() {
@@ -55,7 +48,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate {
 
     //This is how you send a packet, with no data
     func send(type: PacketType) {
-        let deviceId = SocketManager.sharedManager.deviceID
+        let deviceId = socketManager.deviceID
         let packet = Packet(type: type, id: deviceId)
         socketManager.broadcastPacket(packet)
     }

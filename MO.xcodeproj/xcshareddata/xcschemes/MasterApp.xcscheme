@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EA7E1E0F2BD100829825"
-               BuildableName = "MO.framework"
-               BlueprintName = "MO-iOS"
+               BlueprintIdentifier = "6114EAE51E0F637A00829825"
+               BuildableName = "MasterApp.app"
+               BlueprintName = "MasterApp"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6114EA871E0F2BD100829825"
-               BuildableName = "MOTests-iOS.xctest"
-               BlueprintName = "MOTests-iOS"
+               BlueprintIdentifier = "615266641F99A547005C657D"
+               BuildableName = ".xctest"
+               BlueprintName = "MOHubTests-macOS"
                ReferencedContainer = "container:MO.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EA7E1E0F2BD100829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-iOS"
+            BlueprintIdentifier = "6114EAE51E0F637A00829825"
+            BuildableName = "MasterApp.app"
+            BlueprintName = "MasterApp"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,15 +63,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EA7E1E0F2BD100829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-iOS"
+            BlueprintIdentifier = "6114EAE51E0F637A00829825"
+            BuildableName = "MasterApp.app"
+            BlueprintName = "MasterApp"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -81,15 +82,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6114EA7E1E0F2BD100829825"
-            BuildableName = "MO.framework"
-            BlueprintName = "MO-iOS"
+            BlueprintIdentifier = "6114EAE51E0F637A00829825"
+            BuildableName = "MasterApp.app"
+            BlueprintName = "MasterApp"
             ReferencedContainer = "container:MO.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

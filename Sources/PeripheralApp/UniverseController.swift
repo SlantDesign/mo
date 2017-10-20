@@ -5,7 +5,7 @@
 // LICENSE at the root of the source code distribution tree.
 
 import C4
-import MO
+import MONode
 import UIKit
 
 let frameGap = 229.0
@@ -16,6 +16,8 @@ extension PacketType {
 }
 
 open class UniverseController: CanvasController {
+    var socketManager: SocketManager!
+
     open override func viewDidLoad() {
         canvas.bounds.origin.x = dx
         canvas.backgroundColor = clear
@@ -35,7 +37,7 @@ open class UniverseController: CanvasController {
     }
 
     var dx: Double {
-        let id = SocketManager.sharedManager.deviceID
+        let id = socketManager.deviceID
         return Double(id-1) * frameCanvasWidth - frameGap/2.0
     }
 
