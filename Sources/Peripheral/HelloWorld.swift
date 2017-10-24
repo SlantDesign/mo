@@ -15,8 +15,9 @@ import MapKit
 //For any new commands you want to send
 //Create an extension with a unique series of integers
 extension PacketType {
-    static let handshake = PacketType(rawValue: 12340)
-    static let locationRequest = PacketType(rawValue: 12342)
+    static let handshake = PacketType(rawValue: 123450)
+    static let locationRequest = PacketType(rawValue: 123451)
+    static let location = PacketType(rawValue: 123452)
 }
 
 class HelloWorld: UniverseController, GCDAsyncSocketDelegate, MKMapViewDelegate{
@@ -26,7 +27,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate, MKMapViewDelegate{
     var markerText: NSArray?
     var markers = [Marker]()
     var pairedDevice = 0
-    var thisDevice = 0
+    var isLeft = false
     
     override func setup() {
         
@@ -81,7 +82,7 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate, MKMapViewDelegate{
         
         mapView!.addAnnotations(markers)
         
-        
+        send(type: .handshake)
         
         /*
         canvas.addTapGestureRecognizer { _, center, _ in
@@ -101,21 +102,68 @@ class HelloWorld: UniverseController, GCDAsyncSocketDelegate, MKMapViewDelegate{
 
     //This is how you receive and decipher a packet with no data
     override func receivePacket(_ packet: Packet) {
+        let deviceId = SocketManager.sharedManager.deviceID
+        print("I RECEIVED SOMETHING!!")
         switch packet.packetType {
         case PacketType.handshake:
-            hello()
+            print("Handshake received from " + String(packet.id))
+            if(deviceId > packet.id){
+                pairedDevice = packet.id
+                send(type: .locationRequest)
+                print("Handshake received from " + String(packet.id))
+            }
         case PacketType.locationRequest:
-            world()
+            print("Location request received from " + String(packet.id))
+            if pairedDevice == 0{
+            let payload = packet.payload
+            var id: Int = 0
+            (payload! as NSData).getBytes(&id)
+            if(deviceId == id){
+                isLeft = true
+                pairedDevice = packet.id
+                let loc = CLLocationCoordinate2D(latitude: 56.1304, longitude: -80)
+                let span = MKCoordinateSpan(latitudeDelta: 42.0, longitudeDelta: 0.0)
+                mapView!.setRegion(MKCoordinateRegionMake(loc, span), animated: true)
+                send(type: .location)
+                print("Location request received from " + String(packet.id))
+            }
+            }
         default:
+            print("Invalid packet type")
             break
         }
     }
 
     //This is how you send a packet, with no data
     func send(type: PacketType) {
-        let deviceId = SocketManager.sharedManager.deviceID
-        let packet = Packet(type: type, id: deviceId)
+        let deviceId: Int
+        var data: NSMutableData? = nil
+        switch type{
+        case PacketType.handshake:
+            deviceId = SocketManager.sharedManager.deviceID
+            let deadlineTime = DispatchTime.now() + .milliseconds(100)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                if self.pairedDevice == 0{
+                    self.send(type: .handshake)
+                }
+            }
+        case PacketType.locationRequest:
+            deviceId = SocketManager.sharedManager.deviceID
+            data = NSMutableData()
+            data!.append(&pairedDevice, length: MemoryLayout<Int>.size)
+        default:
+            return
+        }
+        let packet: Packet
+        if data != nil {
+            packet = Packet(type: type, id: deviceId, payload: data as Data?)
+        }
+        else {
+            packet = Packet(type: type, id: deviceId)
+        }
+        //let packet = Packet(type: type, id: deviceId, payload: data as Data?)
         socketManager.broadcastPacket(packet)
+        print("Packet sent")
     }
 
     //Create your own functions to run
