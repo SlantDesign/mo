@@ -13,6 +13,9 @@
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
+		495789F01F9FC1E10067935C /* MapPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 495789EF1F9FC0F00067935C /* MapPoints.json */; };
+		495789F11F9FD65D0067935C /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495789EC1F9FB3D70067935C /* Marker.swift */; };
+		495789F41F9FDF150067935C /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495789F31F9FDF150067935C /* MarkerView.swift */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
 		6114EA891E0F2BD100829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EA7F1E0F2BD100829825 /* MO.framework */; };
 		6114EADF1E0F635800829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -127,6 +130,10 @@
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495789EC1F9FB3D70067935C /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		495789EE1F9FC02D0067935C /* MapPoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapPoints.json; sourceTree = "<group>"; };
+		495789EF1F9FC0F00067935C /* MapPoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = MapPoints.json; path = Resources/Peripheral/MapPoints.json; sourceTree = SOURCE_ROOT; };
+		495789F31F9FDF150067935C /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611100BF1E0FA33800207571 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -317,6 +324,7 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				495789EE1F9FC02D0067935C /* MapPoints.json */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
@@ -363,6 +371,9 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				1FB96FF91E1B0902009CA514 /* HelloWorld.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
+				495789EF1F9FC0F00067935C /* MapPoints.json */,
+				495789EC1F9FB3D70067935C /* Marker.swift */,
+				495789F31F9FDF150067935C /* MarkerView.swift */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -672,7 +683,7 @@
 					};
 					6114EAF81E0F638E00829825 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75C7KVJZ99;
+						DevelopmentTeam = G3GED29J33;
 						ProvisioningStyle = Automatic;
 					};
 					6114EB3E1E0F663400829825 = {
@@ -750,6 +761,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495789F01F9FC1E10067935C /* MapPoints.json in Resources */,
 				6114EB241E0F63C800829825 /* LaunchScreen.xib in Resources */,
 				6114EB281E0F63DC00829825 /* Images.xcassets in Resources */,
 				6114EB271E0F63D800829825 /* HourHeaderView.xib in Resources */,
@@ -1234,11 +1246,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6114EB101E0F63AE00829825 /* AppDelegate.swift in Sources */,
+				495789F11F9FD65D0067935C /* Marker.swift in Sources */,
 				1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */,
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
+				495789F41F9FDF150067935C /* MarkerView.swift in Sources */,
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1546,8 +1560,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75C7KVJZ99;
+				DEVELOPMENT_TEAM = G3GED29J33;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1562,8 +1577,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75C7KVJZ99;
+				DEVELOPMENT_TEAM = G3GED29J33;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
