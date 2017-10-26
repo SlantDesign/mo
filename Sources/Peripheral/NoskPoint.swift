@@ -20,9 +20,17 @@ class NoskPoint: View {
         imageContainer.strokeColor = white
         add(imageContainer)
     }
+    
+    public convenience init(title: String?, type: String?){
+        self.init()
+        self.titleString = title
+        self.typeString = type
+    }
 
     var title: TextShape?
     var writeup: TextShape?
+    var titleString: String?
+    var typeString: String?
 
     var tag = 0 {
         didSet {
@@ -31,13 +39,23 @@ class NoskPoint: View {
             }
 
             let font = Font(name: "Helvetica-Bold", size: 18)!
-            title = TextShape(text: "ELEMENT \(tag)", font: font)!
+            if titleString != nil{
+                title = TextShape(text: titleString!, font: font)!
+            }
+            else{
+                title = TextShape(text: "ELEMENT \(tag)", font: font)!
+            }
             title?.origin = Point(70.0 + width/2.0 - 22.0, 0.0)
             title?.lineWidth = 0.0
             title?.fillColor = white
             add(title)
-
-            writeup = TextShape(text: "This is a description of element \(tag).", font: font.font(10))
+            
+            if typeString != nil{
+                writeup = TextShape(text: typeString!, font: font.font(10))
+            }
+            else{
+                writeup = TextShape(text: "This is a description of element \(tag).", font: font.font(10))
+            }
             writeup?.origin = Point(70.0 + width/2.0 - 22.0, title!.height + 6)
             writeup?.lineWidth = 0.0
             writeup?.fillColor = white
@@ -46,8 +64,8 @@ class NoskPoint: View {
             for v in imageContainer.view.subviews {
                 v.removeFromSuperview()
             }
-
-            guard let image = Image("image\(tag)") else {
+            let imnum = arc4random_uniform(50)
+            guard let image = Image("image\(imnum)") else {
                 return
             }
             image.constrainsProportions = true

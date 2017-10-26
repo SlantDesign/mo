@@ -20,17 +20,44 @@ class Nosk: UniverseController, GCDAsyncSocketDelegate {
 
     override func setup() {
         canvas.backgroundColor = Color(red: 0.14, green: 0.21, blue: 0.37, alpha: 1.0)
-        createConnections()
-        createTargets()
-        createPoints()
-        resetRemainingInnerLocations()
-        resetRemainingOuterLocations()
+        do {
+            if let file = Bundle.main.url(forResource: "vhec_data", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? [String: Any] {
+                    // json is a dictionary
+                    createConnections(object)
+                    createTargets()
+                    createPoints(object)
+                    resetRemainingInnerLocations()
+                    resetRemainingOuterLocations()
+                } else {
+                    print("JSON is invalid")
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
 
     }
 
-    func createPoints() {
+    func createPoints(_ dict: [String: Any]) {
         for i in 0..<connections.count {
-            let p = NoskPoint()
+            let str: String = String(i)
+            var title: String? = nil
+            var type: String? = nil
+            if let item = dict[str] as? [String: Any]{
+                if let s1 = item["title"] as? String{
+                    title = s1
+                }
+                if let s2 = item["type"] as? String{
+                    type = s2
+                }
+            }
+            let p = NoskPoint(title: title, type: type)
             p.center = localize(point: canvas.center)
             p.interactionEnabled = true
             p.tag = i
@@ -153,46 +180,18 @@ class Nosk: UniverseController, GCDAsyncSocketDelegate {
         }
     }
 
-    func createConnections() {
-        for _ in 0...36 {
-            connections.append([0])
+    func createConnections(_ dict: Dictionary<String, Any>) {
+        var i = 0
+        while(true){
+            let str: String = String(i)
+            guard let item = dict[str] as? [String: Any] else{
+                break
+            }
+            guard let related = item["related"] as? [Int] else{
+                break
+            }
+            connections.append(related)
+            i = i+1
         }
-        connections[0]=[1, 2, 3, 36]
-        connections[1]=[0, 2, 12, 13, 26, 36]
-        connections[2]=[0, 1, 12, 14, 26]
-        connections[3]=[0, 4]
-        connections[4]=[3, 5, 6, 7, 8, 24, 28]
-        connections[5]=[4, 6, 22, 24, 23, 36]
-        connections[6]=[4, 5, 13, 14, 23, 24, 30, 36]
-        connections[7]=[4, 8, 9, 36]
-        connections[8]=[4, 7, 9, 10]
-        connections[9]=[7, 8, 10]
-        connections[10]=[8, 9, 11]
-        connections[11]=[10, 12, 13, 14]
-        connections[12]=[1, 2, 11, 13, 14]
-        connections[13]=[1, 6, 11, 12, 14, 15]
-        connections[14]=[1, 2, 6, 12, 13, 15, 16, 17, 18, 19]
-        connections[15]=[13, 14, 16, 17, 18, 19]
-        connections[16]=[14, 15, 17, 18, 19]
-        connections[17]=[14, 15, 16, 18, 19]
-        connections[18]=[14, 15, 16, 17, 19]
-        connections[19]=[14, 15, 16, 17, 18]
-        connections[20]=[21, 22, 24, 25, 26, 27, 35]
-        connections[21]=[20, 25, 27, 35]
-        connections[22]=[5, 20, 23, 24]
-        connections[23]=[5, 6, 22]
-        connections[24]=[4, 5, 6, 14, 20, 22, 25, 32]
-        connections[25]=[20, 21, 24, 26, 27, 35]
-        connections[26]=[1, 20, 25, 28, 35]
-        connections[27]=[20, 21, 25, 28, 35]
-        connections[28]=[4, 26, 29, 30, 31, 33]
-        connections[29]=[28]
-        connections[30]=[6, 28]
-        connections[31]=[28, 32]
-        connections[32]=[24, 31]
-        connections[33]=[28, 34]
-        connections[34]=[5, 6, 22, 33]
-        connections[35]=[20, 21, 25, 26, 27]
-        connections[36]=[0, 2, 5, 6, 23]
     }
 }

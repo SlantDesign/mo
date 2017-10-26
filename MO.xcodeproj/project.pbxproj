@@ -13,6 +13,7 @@
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
+		49137C101FA294F600FF37A7 /* vhec_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 49137C0F1FA2939800FF37A7 /* vhec_data.json */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
 		6114EA891E0F2BD100829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EA7F1E0F2BD100829825 /* MO.framework */; };
 		6114EADF1E0F635800829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -129,6 +130,7 @@
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49137C0F1FA2939800FF37A7 /* vhec_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vhec_data.json; sourceTree = "<group>"; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611100BF1E0FA33800207571 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				49137C0F1FA2939800FF37A7 /* vhec_data.json */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
@@ -763,6 +766,7 @@
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
+				49137C101FA294F600FF37A7 /* vhec_data.json in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 			);
