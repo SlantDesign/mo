@@ -17,7 +17,7 @@ public struct PacketType: RawRepresentable, Equatable {
     /// First packet sent when a connection is made.
     public static let handshake = PacketType(rawValue: 0)
 
-    /// Packet sent periodically to measure lag and detect disconnected peripherals
+    /// Packet sent periodically to measure lag and detect disconnected nodes
     public static let ping = PacketType(rawValue: 1)
 
     public static func == (lhs: PacketType, rhs: PacketType) -> Bool {

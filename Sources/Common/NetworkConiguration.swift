@@ -15,7 +15,7 @@ public struct NetworkConfiguration {
     /// Broadcast IP address, depends on router settings.
     public var broadcastHost = "10.0.0.255"
 
-    /// IP post of the nodes.
+    /// IP port of the nodes.
     public var nodePort = UInt16(11111)
 
     /// How often to ping nodes, in seconds.
