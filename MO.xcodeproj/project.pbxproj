@@ -13,6 +13,9 @@
 		1FB96FFB1E1B0926009CA514 /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB96FF91E1B0902009CA514 /* HelloWorld.swift */; };
 		2418DE1E7D3094BB72C819C9 /* Pods_All_MO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */; };
 		2ECE74AE7A743667E898CDE0 /* Pods_All_MOTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C52ADAC6CAC355A9BB233D6 /* Pods_All_MOTests_tvOS.framework */; };
+		49137C121FA3D6D600FF37A7 /* MapPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 49137C111FA3D6D100FF37A7 /* MapPoints.json */; };
+		49137C151FA3DBC300FF37A7 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49137C131FA3DA9400FF37A7 /* School.swift */; };
+		49137C181FA3E83E00FF37A7 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49137C161FA3E0B100FF37A7 /* ColorPicker.swift */; };
 		52A78E7A94084F9210038B51 /* Pods_All_MOTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5C362A0E701CDC9DC9A3DA /* Pods_All_MOTests_macOS.framework */; };
 		6114EA891E0F2BD100829825 /* MO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114EA7F1E0F2BD100829825 /* MO.framework */; };
 		6114EADF1E0F635800829825 /* MO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114EAB91E0F634100829825 /* MO.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -127,6 +130,9 @@
 		1FB96FF91E1B0902009CA514 /* HelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		241997742A7CC2476E87873F /* Pods_All_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E36866DCFB50FD01F557127 /* Pods_All_Peripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Peripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49137C111FA3D6D100FF37A7 /* MapPoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapPoints.json; sourceTree = "<group>"; };
+		49137C131FA3DA9400FF37A7 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		49137C161FA3E0B100FF37A7 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		4AE8E0895580218DAA803007 /* Pods_All_MOTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MOTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CDBF5434CE8E336C531DB2 /* Pods_All_MO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611100BF1E0FA33800207571 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 		6114EAA61E0F634100829825 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
+				49137C111FA3D6D100FF37A7 /* MapPoints.json */,
 				6114EAA71E0F634100829825 /* LaunchScreen.xib */,
 				6114EAA91E0F634100829825 /* Main.storyboard */,
 				6114EAAB1E0F634100829825 /* BlackVelvet.mp3 */,
@@ -363,6 +370,8 @@
 				6114EACD1E0F634100829825 /* UniverseController.swift */,
 				1FB96FF91E1B0902009CA514 /* HelloWorld.swift */,
 				6114EACE1E0F634100829825 /* WorkSpace.swift */,
+				49137C131FA3DA9400FF37A7 /* School.swift */,
+				49137C161FA3E0B100FF37A7 /* ColorPicker.swift */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -672,7 +681,7 @@
 					};
 					6114EAF81E0F638E00829825 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75C7KVJZ99;
+						DevelopmentTeam = G3GED29J33;
 						ProvisioningStyle = Automatic;
 					};
 					6114EB3E1E0F663400829825 = {
@@ -757,6 +766,7 @@
 				6114EB261E0F63D200829825 /* BlackVelvet.mp3 in Resources */,
 				6114EB2B1E0F63E700829825 /* ThinVeil.mp3 in Resources */,
 				6114EB2A1E0F63E400829825 /* ScheduleViewController.storyboard in Resources */,
+				49137C121FA3D6D600FF37A7 /* MapPoints.json in Resources */,
 				6114EB291E0F63DE00829825 /* Inconsolata.otf in Resources */,
 				6114EB2C1E0F63EA00829825 /* UniversLTStd-LightUltraCn.otf in Resources */,
 			);
@@ -1238,8 +1248,10 @@
 				6114EB211E0F63AE00829825 /* WorkSpace.swift in Sources */,
 				6114EB201E0F63AE00829825 /* UniverseController.swift in Sources */,
 				6114EB1D1E0F63AE00829825 /* SocketManager.swift in Sources */,
+				49137C181FA3E83E00FF37A7 /* ColorPicker.swift in Sources */,
 				6114EB141E0F63AE00829825 /* Gesture.swift in Sources */,
 				6114EB171E0F63AE00829825 /* RemoteInteraction.swift in Sources */,
+				49137C151FA3DBC300FF37A7 /* School.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1546,7 +1558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75C7KVJZ99;
+				DEVELOPMENT_TEAM = G3GED29J33;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
@@ -1562,7 +1574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75C7KVJZ99;
+				DEVELOPMENT_TEAM = G3GED29J33;
 				INFOPLIST_FILE = Support/Peripheral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = is.slant.helloworld;
