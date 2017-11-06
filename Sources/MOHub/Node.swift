@@ -12,7 +12,7 @@ public final class Node {
     public let networkConfiguration: NetworkConfiguration
 
     /// The node's identifier.
-    public internal(set) var id = -1
+    public internal(set) var id: Int32 = -1
 
     /// The node's IP address.
     public internal(set) var address: String

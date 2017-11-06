@@ -11,7 +11,7 @@ class PacketTest: XCTestCase {
 
     func testSerialize() {
         let type = PacketType(rawValue: 4)
-        let id = 17
+        let id = 17 as Int32
 
         let packet = Packet(type: type, id: id, payload: nil)
         let data = packet.serialize()
@@ -24,13 +24,13 @@ class PacketTest: XCTestCase {
         let packetType = data.extract(UInt32.self, at: 4)
         XCTAssertEqual(packetType, UInt32(type.rawValue))
 
-        let serializedId = Int(data.extract(Int32.self, at: 8))
+        let serializedId = data.extract(Int32.self, at: 8)
         XCTAssertEqual(serializedId, id)
     }
 
     func testRoundtrip() {
         let type = PacketType.handshake
-        let id = 17
+        let id = 17 as Int32
 
         let expectedPacket = Packet(type: type, id: id, payload: nil)
         let data = expectedPacket.serialize()

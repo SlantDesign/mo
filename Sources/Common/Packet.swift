@@ -39,13 +39,13 @@ public struct Packet: Equatable {
     public var packetType: PacketType
 
     /// The packet identifier.
-    public var id = -1
+    public var id: Int32 = -1
 
     /// Payload data.
     public var payload: Data?
 
     /// Creates a `Packet` with a specifc packet type, identifier and optional payload data.
-    public init(type: PacketType, id: Int, payload: Data? = nil) {
+    public init(type: PacketType, id: Int32, payload: Data? = nil) {
         self.packetType = type
         self.id = id
         self.payload = payload
@@ -60,7 +60,7 @@ public struct Packet: Equatable {
         // The first element in the packet data needs to be the packet size to know if we have enought data to build the packet.
         packetData.append(packetSize)
         packetData.append(packetType.rawValue)
-        packetData.append(Int32(id))
+        packetData.append(id)
 
         if let d = payload, d.count > 0 {
             packetData.append(d)
@@ -81,7 +81,7 @@ public struct Packet: Equatable {
         packetType = PacketType(rawValue: packetData.extract(PacketType.RawValue.self, at: index))
         index += MemoryLayout.size(ofValue: packetType)
 
-        id = Int(packetData.extract(Int32.self, at: index))
+        id = packetData.extract(Int32.self, at: index)
         index += MemoryLayout<Int32>.size
 
         let payloadSize = Int(packetSize) - Packet.basePacketSize

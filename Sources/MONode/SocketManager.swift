@@ -19,17 +19,17 @@ public final class SocketManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     private var socket: GCDAsyncUdpSocket!
 
-    public lazy var deviceID: Int = {
+    public lazy var deviceID: Int32 = {
         #if os(macOS)
             var deviceName = Host.current().localizedName ?? ""
         #else
             var deviceName = UIDevice.current.name
         #endif
         deviceName = deviceName.replacingOccurrences(of: "MO", with: "")
-        if let deviceID = Int(deviceName) {
+        if let deviceID = Int32(deviceName) {
             return deviceID
         }
-        return 0
+        return Int32(arc4random_uniform(numericCast(Int32.max)))
     }()
 
     /// Initializes a `SocketManager` with a network configuration.
